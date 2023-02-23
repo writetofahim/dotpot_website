@@ -13,10 +13,13 @@
     "@emotion/styled": "^11.10.6",
     "@mui/material": "^5.11.10",
     "material-ui-form": "^1.0.0-alpha.26",
+    "node-sass": "^8.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
-    "react-router-dom": "^6.8.1"
+    "react-router-dom": "^6.8.1",
+    "react-tsparticles": "^2.9.3",
+    "tsparticles": "^2.9.3"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
