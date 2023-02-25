@@ -13,7 +13,6 @@
     "@emotion/styled": "^11.10.6",
     "@mui/icons-material": "^5.11.9",
     "@mui/material": "^5.11.10",
-    "@mui/styles": "^5.11.9",
     "material-ui-form": "^1.0.0-alpha.26",
     "node-sass": "^8.0.0",
     "react": "^18.2.0",
@@ -23,6 +22,7 @@
     "react-router-dom": "^6.8.1",
     "react-slick": "^0.29.0",
     "react-tsparticles": "^2.9.3",
+    "sass": "^1.58.3",
     "slick-carousel": "^1.8.1",
     "tsparticles": "^2.9.3"
   },

@@ -6,9 +6,9 @@ import SimpleSlider from './SimpleSlider'
 
 const Hero = () => {
     return (
-        <div className='w-full flex md:justify-end justify-between items-center h-[70vh] md:h-[calc(100vh-100px)] lg:h-[calc(100vh-100px)] hero '>
+        <div className='w-full h-[70vh] md:h-[calc(100vh-100px)] lg:h-[calc(100vh-100px)] overflow-hidden'>
             <Particle />
-            <div className="container h-full full">
+            <div className="h-full w-full flex justify-center items-center">
                 <SimpleSlider />
             </div>
         </div>

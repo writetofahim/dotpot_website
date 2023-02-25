@@ -1,6 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
 import Slide from "./Slide";
+import {sliderData} from '../../data'
 
 
 const settings = {
@@ -15,10 +16,12 @@ const settings = {
 
 function SimpleSlider() {
   return (
-    <Slider {...settings} className="h-full w-full flex items-center justify-center">
-      <Slide title={"Tonmoy"} image={"dkfjlsdjfalksfjd"} desc={"Description "} />
-      <Slide title={"Tonmoy"} image={"dkfjlsdjfalksfjd"} desc={"Description "} />
-      <Slide title={"Tonmoy"} image={"dkfjlsdjfalksfjd"} desc={"Description "} />
+    <Slider {...settings} className="container h-full w-full flex items-center justify-center">
+      {
+        sliderData.map((slide, index) => {
+          return <Slide key={slide.id} {...slide}/>
+        })
+      }
     </Slider >
   );
 }
