@@ -72,3 +72,37 @@ export const informations = [
         text: "We have highly skill call center operators"
     }
 ]
+
+
+export const outKeyFeatures = [
+    {
+        id: 1,
+        title: "Call Center Support",
+        desc: "We craft the client's needs on web, mobile, and blockchain to tailor the solutions and enhance growth of the businesses."
+    },
+    {
+        id: 2,
+        title: "Dedicated Team",
+        desc: "Our highly skilled team will provide support for you and your team members"
+    },
+    {
+        id: 3,
+        title: "Website Design",
+        desc: "We craft the client's needs on web, mobile, and blockchain to tailor the solutions and enhance growth of the businesses."
+    },
+    {
+        id: 4,
+        title: "Website Development",
+        desc: "We craft the client's needs on web, mobile, and blockchain to tailor the solutions and enhance growth of the businesses."
+    },
+    {
+        id: 5,
+        title: "Mobile App Development",
+        desc: "We craft the client's needs on web, mobile, and blockchain to tailor the solutions and enhance growth of the businesses."
+    },
+    {
+        id: 6,
+        title: "Web App Development",
+        desc: "We craft the client's needs on web, mobile, and blockchain to tailor the solutions and enhance growth of the businesses."
+    }
+]
