@@ -390,3 +390,57 @@ export const PartnershipModelsData = [
         desc: "This model is preferred when clients want additional temporary resources for on-site development. This contract type ensures the engagement is cost-effective and a face-to-face interactions with developers. This model helps in achieving the deadline on time as there is continuous communication during the whole process."
     }
 ]
+
+
+export const IndustriesWeServeData = [
+    {
+        id: 1,
+        logo: "logo url",
+        title: "Retail, Ecommerce"
+    },
+    {
+        id: 2,
+        logo: "logo url",
+        title: "Education & e-learning"
+    },
+    {
+        id: 3,
+        logo: "logo url",
+        title: "Healthcare & Fitness"
+    },
+    {
+        id: 4,
+        logo: "logo url",
+        title: "Logistics & Distribution"
+    },
+    {
+        id: 5,
+        logo: "logo url",
+        title: "Social Networking"
+    },
+    {
+        id: 6,
+        logo: "logo url",
+        title: "Real Estate"
+    },
+    {
+        id: 7,
+        logo: "logo url",
+        title: "Travel & Hospitality"
+    },
+    {
+        id: 8,
+        logo: "logo url",
+        title: "Food & Restaurant"
+    },
+    {
+        id: 9,
+        logo: "logo url",
+        title: "On-Demand Solutions"
+    },
+    {
+        id: 10,
+        logo: "logo url",
+        title: "Gaming"
+    }
+]

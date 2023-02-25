@@ -1,5 +1,6 @@
 import React from 'react'
 import Hero from '../../components/Hero/Hero'
+import IndustriesWeServe from '../../components/IndustriesWeServe/IndustriesWeServe'
 import Information from '../../components/Information/Information'
 import KeyFeatures from '../../components/KeyFeatures/KeyFeatures'
 import PartnershipModels from '../../components/PartnershipModels/PartnershipModels'
@@ -15,6 +16,7 @@ const Home = () => {
       <Services />
       <ProcessWeFollow />
       <PartnershipModels />
+      <IndustriesWeServe />
     </>
   )
 }
