@@ -106,3 +106,230 @@ export const outKeyFeatures = [
         desc: "We craft the client's needs on web, mobile, and blockchain to tailor the solutions and enhance growth of the businesses."
     }
 ]
+
+
+export const servicesData = [
+    {
+        id: 1,
+        icon: "Mobaile",
+        title: "App Development",
+        list: [
+            {
+                id: 1,
+                logo: "Android",
+                text: "Android App"
+            },
+            {
+                id: 2,
+                logo: "iOS",
+                text: "iOS App"
+            },
+            {
+                id: 3,
+                logo: "Frullter",
+                text: "Frullter App"
+            },
+            {
+                id: 4,
+                logo: "React Native",
+                text: "React Native App"
+            },
+            {
+                id: 5,
+                logo: "Kotline",
+                text: "Kotline App"
+            },
+            {
+                id: 6,
+                logo: "Ionic",
+                text: "Ionic App"
+            }
+        ],
+        link: "#"
+    },
+    {
+        id: 2,
+        icon: "Web",
+        title: "Web Development",
+        list:[
+            {
+                id: 1,
+                logo: "HTML5",
+                text: "HTML5"
+            },
+            {
+                id: 2,
+                logo: "CSS3",
+                text: "CSS3"
+            },
+            {
+                id: 3,
+                logo: "JavaScript",
+                text: "JavaScript"
+            },
+            {
+                id: 4,
+                logo: "Bootstrap",
+                text: "Bootstrap"
+            },
+            {
+                id:5,
+                logo: "React",
+                text: "React"
+            },
+            {
+                id: 6,
+                logo: "Angular",
+            }
+        ],
+        link: "#"
+    },
+    {
+        id: 3,
+        icon: "Cart",
+        title: "Ecommerce Development",
+        list:[
+            {
+                id: 1,
+                logo: "Stripe",
+                text: "Stripe"
+            },
+            {
+                id: 2,
+                logo: "Paypal",
+                text: "Paypal"
+            },
+            {
+                id: 3,
+                logo: "Stripe",
+                text: "Stripe"
+            },
+            {
+                id: 4,
+                logo: "Paypal",
+                text: "Paypal"
+            },
+            {
+                id: 5,
+                logo: "Stripe",
+                text: "Stripe"
+            },
+            {
+                id: 6,
+                logo: "Paypal",
+                text: "Paypal"
+            }
+        ]
+    },
+    {
+        id: 4,
+        icon: "Cart",
+        title: "Ecommerce Development",
+        list:[
+            {
+                id: 1,
+                logo: "Stripe",
+                text: "Stripe"
+            },
+            {
+                id: 2,
+                logo: "Paypal",
+                text: "Paypal"
+            },
+            {
+                id: 3,
+                logo: "Stripe",
+                text: "Stripe"
+            },
+            {
+                id: 4,
+                logo: "Paypal",
+                text: "Paypal"
+            },
+            {
+                id: 5,
+                logo: "Stripe",
+                text: "Stripe"
+            },
+            {
+                id: 6,
+                logo: "Paypal",
+                text: "Paypal"
+            }
+        ]
+    },
+    {
+        id: 5,
+        icon: "Cart",
+        title: "Ecommerce Development",
+        list:[
+            {
+                id: 1,
+                logo: "Stripe",
+                text: "Stripe"
+            },
+            {
+                id: 2,
+                logo: "Paypal",
+                text: "Paypal"
+            },
+            {
+                id: 3,
+                logo: "Stripe",
+                text: "Stripe"
+            },
+            {
+                id: 4,
+                logo: "Paypal",
+                text: "Paypal"
+            },
+            {
+                id: 5,
+                logo: "Stripe",
+                text: "Stripe"
+            },
+            {
+                id: 6,
+                logo: "Paypal",
+                text: "Paypal"
+            }
+        ]
+    },
+    {
+        id: 6,
+        icon: "Cart",
+        title: "Ecommerce Development",
+        list:[
+            {
+                id: 1,
+                logo: "Stripe",
+                text: "Stripe"
+            },
+            {
+                id: 2,
+                logo: "Paypal",
+                text: "Paypal"
+            },
+            {
+                id: 3,
+                logo: "Stripe",
+                text: "Stripe"
+            },
+            {
+                id: 4,
+                logo: "Paypal",
+                text: "Paypal"
+            },
+            {
+                id: 5,
+                logo: "Stripe",
+                text: "Stripe"
+            },
+            {
+                id: 6,
+                logo: "Paypal",
+                text: "Paypal"
+            }
+        ]
+    }
+]
