@@ -371,3 +371,22 @@ export const processWeFollowData = [
         desc: "Our company offers you all support and the team is always ready to answer every query after deployment."
     }
 ]
+
+
+export const PartnershipModelsData = [
+    {
+        id: 1,
+        title: "Fixed Price Model",
+        desc: "In this model, the project scope of work with its associated cost and timeline is defined before development starts. This is a preferred model for longer periods of engagement. Client always has peace of mind of knowing the project will remain on the same budget as agreed. This model suits best to clients who have a perfect vision of their requirement."
+    },
+    {
+        id: 2,
+        title: "Hire Dedicated Model",
+        desc: "This is very classic and simple way of engagement wherein clients pay for the number of hours the app developer works on project. Clients easily start the project as they don't have to walk in with detailed specifications. This model also allows client to update new features any time and clients know exactly what they’re paying for. This drives a lot more trust and communication."
+    },
+    {
+        id: 3,
+        title: "On Site Development Model",
+        desc: "This model is preferred when clients want additional temporary resources for on-site development. This contract type ensures the engagement is cost-effective and a face-to-face interactions with developers. This model helps in achieving the deadline on time as there is continuous communication during the whole process."
+    }
+]
