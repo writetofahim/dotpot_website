@@ -9,6 +9,12 @@
   /* overflow-x: hidden; */
 }
 
+/* .slick-slider {
+  position: relative;
+  z-index: 1;
+  display: none;
+} */
+
 .glassmorphism{
   background: rgb(39, 51, 89, 0.4);
   border-radius: 16px;
