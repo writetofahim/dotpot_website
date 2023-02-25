@@ -1,14 +1,16 @@
 .slideContainer{
 
   .slide{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 
     .left{
-
     }
     
     .right{
-      background-image: url(../../assets/img/blob.svg);
+
     }
   }
 }

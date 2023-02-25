@@ -4,7 +4,7 @@ export const sliderData = [
         title: 'Calll center Support',
         subTitle: "We provide support for",
         desc: "We are in top of the callcenter support",
-        img:  "call1.jpg",
+        img:  "https://static.vecteezy.com/system/resources/previews/019/600/767/non_2x/customer-service-illustration-vector.jpg",
         link: "#"
 
     },
@@ -13,7 +13,7 @@ export const sliderData = [
         title: 'Dedicated Team',
         subTitle: "We have Highly skill team",
         desc: "Our highly skilled team will provide support for you and your team members",
-        img:  "call2",
+        img:  "https://static.vecteezy.com/system/resources/previews/005/608/265/non_2x/customer-service-hotline-service-provider-advises-customers-with-a-computer-headset-call-processing-system-call-center-illustration-free-vector.jpg",
         link: "#"
     },
     {
@@ -21,7 +21,7 @@ export const sliderData = [
         title: 'Website Design',
         subTitle: "Custom website design",
         desc: "We will design mordern minimal website for your business",
-        img:  "webDesign",
+        img:  "https://static.vecteezy.com/system/resources/previews/006/552/084/large_2x/isometric-style-illustration-about-a-web-programmer-working-with-his-computer-free-vector.jpg",
         link: "#"
     },
     {
@@ -29,7 +29,7 @@ export const sliderData = [
         title: 'Website Development',
         subTitle: "Custom website development",
         desc: "We will develop website for your business",
-        img:  "webDevelopment",
+        img:  "https://static.vecteezy.com/system/resources/previews/004/579/151/non_2x/the-web-developer-team-is-building-a-smartphone-app-in-flat-design-free-vector.jpg",
         link: "#"
     }
 ]

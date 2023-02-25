@@ -35,6 +35,8 @@ The website features:
 - Tailwind CSS
 - React Router DOM
 - Material UI
+- Sass
+- Slick-Slider
 
 ## Contributing
 

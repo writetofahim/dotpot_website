@@ -5,10 +5,9 @@ import {BsArrowRight} from 'react-icons/bs';
 import "./slide.scss"
 
 const Slide = ({ title, subTitle , desc, img, link }) => {
-  // const imageUrl = require('./assets/image.png');
 
   return (
-    <div className="w-full h-full justify-center items-center slideContainer">
+    <div className="w-full h-full p-5 justify-center items-center slideContainer">
       <div className='w-full flex flex-col-reverse lg:flex-row gap-5 md:max-w[1400px] lg:mag-w[1400px] slide'>
         <div className="left flex-1 h-full flex flex-col justify-center">
             <h1 className="text-6xl text-primary-500 font-bold mb-2">
@@ -32,7 +31,7 @@ const Slide = ({ title, subTitle , desc, img, link }) => {
         </Link>
         </div>
         <div className="right flex-1 flex items-end justify-center ">
-          <img src={`/src/images/${img}`} /> 
+          <img src={img} alt={title} /> 
         </div>
       </div>
     </div>
