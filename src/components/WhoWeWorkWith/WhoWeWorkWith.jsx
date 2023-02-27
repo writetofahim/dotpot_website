@@ -5,7 +5,7 @@ import { whoDoWeWorkData } from '../../data'
 
 export const Card = (props) =>{
     return(
-        <div className="bg-white w-1/3 flex flex-col items-center justify-center p-5 md:p-10 lg:p-10 rounded-xl">
+        <div className="bg-white w-1/3 flex flex-col items-center justify-center p-5 rounded-xl">
             <img src={props.icon} alt="" className='w-[50px] h-[50px] mb-3'/>
             <h3 className='text-gray-400 text-l font-bold'>{props.name}</h3>
         </div>

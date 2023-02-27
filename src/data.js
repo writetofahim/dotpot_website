@@ -510,3 +510,91 @@ export const whoDoWeWorkData = {
         }
     ]
 }
+
+
+export const WhatOurClientSayData = {
+    title:"What Our Clients Say",
+    subTitle: "Here, We make almost every genre of applications. You name it and we build it.",
+    cards:[
+        {
+            id: 1,
+            name: "James",
+            post: "Neighbor Shopper",
+            country: "Massachusetts, USA",
+            text: "DotpotiT Infosystem is dependable and responsive to client's request. Always easy and convenient to communicate with them for any issues and support. Gladly recommend them to anyone who wants to build ideas into real products.",
+            img: "https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/our-client-say/client-icon/neighbor-shopper.png"
+        },
+        {
+            id: 2,
+            name: "Founder",
+            post: "Social Media App",
+            country: "Kenya",
+            text: "Discovering Hyperlink Infosystem is no doubt one of the highlights of my 2018. They took my idea and brought it to life, beautifully. The team assigned to me was diligent, responsive & patient. They did not try to rush the process so that they could quickly jump onto a new client, instead they treated my app with care as if it was their own. I would highly recommend Hyperlink Infosystem to anyone looking to build something special.",
+            img: "https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/our-client-say/client-icon/smyllo.png"
+        },
+        {
+            id: 3,
+            name: "Michael",
+            post: "Social Media App",
+            country: "Kenya",
+            text: "DotpotiT Infosystem is dependable and responsive to client's request. Always easy and convenient to communicate with them for any issues and support. Gladly recommend them to anyone who wants to build ideas into real products.",
+            img: "https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/our-client-say/client-icon/buuurp.png"
+        },
+        {
+            id: 4,
+            name: "Founder",
+            post: "Social Media App",
+            country: "Kenya",
+            text: "Discovering Hyperlink Infosystem is no doubt one of the highlights of my 2018. They took my idea and brought it to life, beautifully. The team assigned to me was diligent, responsive & patient. They did not try to rush the process so that they could quickly jump onto a new client, instead they treated my app with care as if it was their own. I would highly recommend Hyperlink Infosystem to anyone looking to build something special.",
+            img: "https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/our-client-say/client-icon/smyllo.png"
+        },
+        {
+            id: 5,
+            name: "Michael",
+            post: "Social Media App",
+            country: "Kenya",
+            text: "DotpotiT Infosystem is dependable and responsive to client's request. Always easy and convenient to communicate with them for any issues and support. Gladly recommend them to anyone who wants to build ideas into real products.",
+            img: "https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/our-client-say/client-icon/buuurp.png"
+        },
+        {
+            id: 6,
+            name: "Michael",
+            post: "Social Media App",
+            country: "Kenya",
+            text: "DotpotiT Infosystem is dependable and responsive to client's request. Always easy and convenient to communicate with them for any issues and support. Gladly recommend them to anyone who wants to build ideas into real products.",
+            img: "https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/our-client-say/client-icon/buuurp.png"
+        },
+        {
+            id: 7,
+            name: "Michael",
+            post: "Social Media App",
+            country: "Kenya",
+            text: "DotpotiT Infosystem is dependable and responsive to client's request. Always easy and convenient to communicate with them for any issues and support. Gladly recommend them to anyone who wants to build ideas into real products.",
+            img: "https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/our-client-say/client-icon/buuurp.png"
+        },
+        {
+            id: 8,
+            name: "Michael",
+            post: "Social Media App",
+            country: "Kenya",
+            text: "DotpotiT Infosystem is dependable and responsive to client's request. Always easy and convenient to communicate with them for any issues and support. Gladly recommend them to anyone who wants to build ideas into real products.",
+            img: "https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/our-client-say/client-icon/buuurp.png"
+        },
+        {
+            id: 9,
+            name: "Michael",
+            post: "Social Media App",
+            country: "Kenya",
+            text: "DotpotiT Infosystem is dependable and responsive to client's request. Always easy and convenient to communicate with them for any issues and support. Gladly recommend them to anyone who wants to build ideas into real products.",
+            img: "https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/our-client-say/client-icon/buuurp.png"
+        },
+        {
+            id: 10,
+            name: "Michael",
+            post: "Social Media App",
+            country: "Kenya",
+            text: "DotpotiT Infosystem is dependable and responsive to client's request. Always easy and convenient to communicate with them for any issues and support. Gladly recommend them to anyone who wants to build ideas into real products.",
+            img: "https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/our-client-say/client-icon/buuurp.png"
+        },
+    ]
+}

@@ -7,6 +7,7 @@ import PartnershipModels from '../../components/PartnershipModels/PartnershipMod
 import ProcessWeFollow from '../../components/ProcessWeFollow/ProcessWeFollow'
 import RecentWorks from '../../components/RecentWorks/RecentWorks'
 import Services from '../../components/Services/Services'
+import WhatOurClientSay from '../../components/WhatOurClientsSay/WhatOurClientsSay'
 import WhoWeWorkWith from '../../components/WhoWeWorkWith/WhoWeWorkWith'
 
 const Home = () => {
@@ -21,6 +22,7 @@ const Home = () => {
       <IndustriesWeServe />
       <RecentWorks />
       <WhoWeWorkWith />
+      <WhatOurClientSay />
     </>
   )
 }
