@@ -6,7 +6,7 @@ import logo from "../../assets/img/logo.png"
 
 const NavBarItem = ({ title, classprops, setToggleMenu }) => (
     <Link to={`/${title}`}>
-        <li className={`mx-4 cursor-pointer uppercase text-white text-xl hover:text-primary-400 ${classprops}`} onClick={() => setToggleMenu(false)}>{title}</li>
+        <li className={`mx-4 cursor-pointer uppercase text-white md:text-gray-400 text-xl hover:text-primary-400 ${classprops}`} onClick={() => setToggleMenu(false)}>{title}</li>
     </Link>
 );
 

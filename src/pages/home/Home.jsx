@@ -5,6 +5,7 @@ import Information from '../../components/Information/Information'
 import KeyFeatures from '../../components/KeyFeatures/KeyFeatures'
 import PartnershipModels from '../../components/PartnershipModels/PartnershipModels'
 import ProcessWeFollow from '../../components/ProcessWeFollow/ProcessWeFollow'
+import RecentWorks from '../../components/RecentWorks/RecentWorks'
 import Services from '../../components/Services/Services'
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
       <ProcessWeFollow />
       <PartnershipModels />
       <IndustriesWeServe />
+      <RecentWorks />
     </>
   )
 }

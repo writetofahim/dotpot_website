@@ -444,3 +444,42 @@ export const IndustriesWeServeData = [
         title: "Gaming"
     }
 ]
+
+export const recentWorksData = [
+    {
+        id: 1,
+        img: "https://www.hyperlinkinfosystem.com/assets/case-study/astral-adhesives/resiwood-winners-circle-loyalty-program-app.png",
+        title: "Papa John's Pizza Delivery App",
+        tech: ["Android", "IOS", "Node Js", "My SQL"]
+    },
+    {
+        id: 2,
+        img: "https://www.hyperlinkinfosystem.com/assets/case-study/aol/art-of-living.jpg",
+        title: "Art of Living A Meditation App",
+        tech: ["Android", "IOS", "Node Js", "My SQL"]
+    },
+    {
+        id: 3,
+        img: "https://www.hyperlinkinfosystem.com/assets/case-study/tata/tata-power-skill-development-institute.png",
+        title: "Papa John's Pizza Delivery App",
+        tech: ["Android", "IOS", "Node Js"]
+    },
+    {
+        id: 4,
+        img: "https://www.hyperlinkinfosystem.com/assets/case-study/tata/tata-power-skill-development-institute.png",
+        title: "Papa John's Pizza Delivery App",
+        tech: ["Android", "IOS", "Node Js"]
+    },
+    {
+        id: 5,
+        img: "https://www.hyperlinkinfosystem.com/assets/case-study/tata/tata-power-skill-development-institute.png",
+        title: "Papa John's Pizza Delivery App",
+        tech: ["Android", "IOS", "Node Js"]
+    },
+    {
+        id: 6,
+        img: "https://www.hyperlinkinfosystem.com/assets/case-study/tata/tata-power-skill-development-institute.png",
+        title: "Papa John's Pizza Delivery App",
+        tech: ["Android", "IOS", "Node Js"]
+    }
+]
