@@ -15,6 +15,8 @@
   display: none;
 } */
 
+
+/****************************** Navigation Bar Design *******************************/
 .glassmorphism{
   background: rgb(39, 51, 89, 0.4);
   border-radius: 16px;
@@ -25,7 +27,17 @@
 }
 
 
+/****************************** Our Key Fearutes Background *******************************/
 .KeyFeartures{
   background-image: url(https://static.vecteezy.com/system/resources/previews/009/668/661/original/organic-blob-shapes-hand-drawn-illustration-free-png.png);
   background-repeat: no-repeat;
 }
+
+
+/****************************** Who We Work With Section Background *******************************/
+.whoWeWorWith{
+  background-image: url(https://images8.design-editor.com/95/9554401/3958%2F8EA74DF6-870E-4C6D-1A57-361040AB0ED2.png);
+  background-repeat: no-repeat;
+}
+
+

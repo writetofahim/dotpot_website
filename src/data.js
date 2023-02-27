@@ -483,3 +483,30 @@ export const recentWorksData = [
         tech: ["Android", "IOS", "Node Js"]
     }
 ]
+
+export const whoDoWeWorkData = {
+    title: "Who We Work With",
+    desc: "As a leading mobile app development company in USA and India, we worked with 2000+ businesses either it is a start-up or enterprise and delivers the best solution in the industry. At Hyperlink InfoSystem, we offer a broad range of app development services based on business requirements.",
+    blocks: [
+        {
+            id: 1,
+            icon:"https://cdn-icons-png.flaticon.com/512/3188/3188314.png",
+            name: "Start Up Business"
+        },
+        {
+            id: 2,
+            icon:"https://cdn-icons-png.flaticon.com/512/4256/4256900.png",
+            name: "Small & Medium Business"
+        },
+        {
+            id: 3,
+            icon:"https://cdn-icons-png.flaticon.com/512/3061/3061341.png",
+            name: "Enterprise Business"
+        },
+        {
+            id: 4,
+            icon:"https://cdn-icons-png.flaticon.com/512/2640/2640740.png",
+            name: "SAgencies"
+        }
+    ]
+}
