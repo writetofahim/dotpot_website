@@ -7,6 +7,7 @@ import PartnershipModels from '../../components/PartnershipModels/PartnershipMod
 import ProcessWeFollow from '../../components/ProcessWeFollow/ProcessWeFollow'
 import RecentWorks from '../../components/RecentWorks/RecentWorks'
 import Services from '../../components/Services/Services'
+import SocialMedia from '../../components/SocialMedia/SocialMedia'
 import WhatOurClientSay from '../../components/WhatOurClientsSay/WhatOurClientsSay'
 import WhoWeWorkWith from '../../components/WhoWeWorkWith/WhoWeWorkWith'
 
@@ -23,6 +24,7 @@ const Home = () => {
       <RecentWorks />
       <WhoWeWorkWith />
       <WhatOurClientSay />
+      <SocialMedia />
     </>
   )
 }

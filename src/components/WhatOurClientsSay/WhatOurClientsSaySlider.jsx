@@ -46,15 +46,15 @@ var settings = {
 
 export const SingleSlide = (props) => {
     return(
-        <div className="h-[60vh] mx-5 mb-20 p-5 md:p-10 rounded-lg flex flex-col justify-between items-center bg-primary-600 ">
-            <h1 className="text-lg text-center md:text-left text-gray-400 mb-2">{props.text}</h1>
+        <div className="h-[60vh] mx-5 mb-20 p-5 md:p-10 rounded-lg flex flex-col justify-between items-center glassmorphism">
+            <h1 className="text-lg text-center md:text-left mb-2">{props.text}</h1>
             <div className="">
                 <div className="w-full flex flex-col md:flex-row gap-5 items-center text-center md:text-left">
                     <img src={props.img} alt="" className=" rounded-xl pr-5"/>
                     <div className="">
                         <h3 className="text-xl font-bold">{props.name}</h3>
-                        <p className="text-gray-400">{props.post}</p>
-                        <p className="text-gray-400">{props.country}</p>
+                        <p className="">{props.post}</p>
+                        <p className="">{props.country}</p>
                     </div>
                 </div>
             </div>

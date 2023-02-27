@@ -598,3 +598,46 @@ export const WhatOurClientSayData = {
         },
     ]
 }
+
+export const socialNetworkData=[
+    {
+        id: 1,
+        icon: "https://cdn-icons-png.flaticon.com/512/3670/3670127.png",
+        link: "https://twitter.com/dotpotit"
+    },
+    {
+        id: 2,
+        icon: "https://cdn-icons-png.flaticon.com/512/2626/2626269.png",
+        link: "https://www.facebook.com/DotpotiT/"
+    },
+    {
+        id: 3,
+        icon: "https://cdn-icons-png.flaticon.com/512/3670/3670051.png",
+        link: "https://api.whatsapp.com/send/?phone=%2B8801817176192&text&type=phone_number&app_absent=0"
+    },
+    {
+        id: 4,
+        icon: "https://cdn-icons-png.flaticon.com/512/145/145807.png",
+        link: "https://www.linkedin.com/in/dotpotit"
+    },
+    {
+        id: 5,
+        icon: "https://cdn-icons-png.flaticon.com/512/2504/2504848.png",
+        link: "https://www.youtube.com/@dotpotit"
+    },
+    {
+        id: 6,
+        icon: "https://cdn-icons-png.flaticon.com/512/4782/4782345.png",
+        link: "https://www.tiktok.com/@dotpotit"
+    },
+    {
+        id: 7,
+        icon: "https://cdn-icons-png.flaticon.com/512/5968/5968804.png",
+        link: "https://t.me/dotpotit"
+    },
+    {
+        id: 8,
+        icon: "https://cdn-icons-png.flaticon.com/512/3955/3955024.png",
+        link: "https://www.instagram.com/dotpotit"
+    }
+]
