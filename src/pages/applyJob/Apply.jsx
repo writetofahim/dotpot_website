@@ -1,95 +1,44 @@
 import React from 'react'
 import { useParams } from 'react-router-dom';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import { jobPageData } from '../../data';
+import { jobPageData, inputFields } from '../../data';
+import {BsArrowRight} from "react-icons/bs"
+
+
+export const InputFields = ({title,placeholder,type,name,required}) => {
+    return(
+        <div className="mt-1 text-gray-400">
+            <label htmlFor={name}>{title}: </label> <br />
+            <input className='p-2 rounded border w-full outline-none' type={type} name={name} id={name} placeholder={placeholder} required={required} />
+        </div>
+    )    
+}
 
 const Apply = () => {
+
     let { id } = useParams();
+    const jobPosition = jobPageData.jobs[id];
 
     return (
-        <div className='w-screen flex items-center justify-center' >
-            <div className="w-full max-w-[1400px] container p-5 text-center">
-                <h1 className="text-3xl text-primary-500 font-bold mb-10">Apply Now for {jobPageData.jobs[id].title}</h1>
-                <Box
-                    component="form"
-                    sx={{
-                        '& .MuiTextField-root': { m: 1, width: '30ch' },
-                    }}
-                    noValidate
-                    autoComplete="off"
-                    className='border py-2 rounded-lg'
-                    >
-                    <div>
-                        <TextField
-                        id="outlined-multiline-flexible"
-                        label="Multiline"
-                        multiline
-                        maxRows={4}
-                        />
-                        <TextField
-                        id="outlined-textarea"
-                        label="Multiline Placeholder"
-                        placeholder="Placeholder"
-                        multiline
-                        />
-                        <TextField
-                        id="outlined-multiline-static"
-                        label="Multiline"
-                        multiline
-                        rows={4}
-                        defaultValue="Default Value"
-                        />
+        <div className='w-full flex items-center justify-center overflow-x-hidden' >
+            <div className="w-full max-w-[1400px] container p-5 flex flex-col items-center">
+                <h1 className="text-3xl text-primary-500 font-bold mb-10">Apply Now for {jobPosition.title}</h1>
+                <form action="/apply" className='md:w-3/5 border rounded-xl p-5 shadow-lg mb-5'>
+                    <h3 className="text-xl text-center mb-3">{jobPosition.title}</h3>
+                    {
+                        inputFields.map((item, index)=>(
+                            <InputFields key={index} {...item} />
+                        ))
+                    }
+                    <div className="mt-1 text-gray-400">
+                        <label htmlFor="cover">Cover Latter: </label> <br />
+                        <textarea name="cover" id="cover" rows="5" className='p-2 border w-full outline-none'></textarea>
                     </div>
-                    <div>
-                        <TextField
-                        id="filled-multiline-flexible"
-                        label="Multiline"
-                        multiline
-                        maxRows={4}
-                        variant="filled"
-                        />
-                        <TextField
-                        id="filled-textarea"
-                        label="Multiline Placeholder"
-                        placeholder="Placeholder"
-                        multiline
-                        variant="filled"
-                        />
-                        <TextField
-                        id="filled-multiline-static"
-                        label="Multiline"
-                        multiline
-                        rows={4}
-                        defaultValue="Default Value"
-                        variant="filled"
-                        />
-                    </div>
-                    <div>
-                        <TextField
-                        id="standard-multiline-flexible"
-                        label="Multiline"
-                        multiline
-                        maxRows={4}
-                        variant="standard"
-                        />
-                        <TextField
-                        id="standard-textarea"
-                        label="Multiline Placeholder"
-                        placeholder="Placeholder"
-                        multiline
-                        variant="standard"
-                        />
-                        <TextField
-                        id="standard-multiline-static"
-                        label="Multiline"
-                        multiline
-                        rows={4}
-                        defaultValue="Default Value"
-                        variant="standard"
-                        />
-                    </div>
-                    </Box>
+
+                    <button variant="contained" className='bg-primary-500 px-10 py-3 text-white rounded-sm hover:bg-secondary-500 font-bold mt-2 flex items-center gap-3'>
+                        Submit Now <BsArrowRight />
+                    </button>
+
+                </form>
             </div>
         </div>
     )

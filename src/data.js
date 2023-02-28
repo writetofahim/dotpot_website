@@ -767,3 +767,56 @@ export const jobPageData = {
         }
     ]
 }
+
+
+export const inputFields = [
+    {
+        title: "Name",
+        placeholder: "Enter Your Name",
+        type: "text",
+        name: "name",
+        required: true
+    },
+    {
+        title: "Email",
+        placeholder: "Enter Your Email",
+        type: "email",
+        name: "email",
+        required: true
+    },
+    {
+        title: "Phone",
+        placeholder: "Enter phone number",
+        type: "number",
+        name: "number",
+        required: true
+    },
+    {
+        title: "Address",
+        placeholder: "Enter your address",
+        type: "text",
+        name: "address",
+        required: true
+    },
+    {
+        title: "Equcationl Qualification",
+        placeholder: "Enter your educational qualification",
+        type: "text",
+        name: "education",
+        required: true
+    },
+    {
+        title: "Experience",
+        placeholder: "Number of Years Experience",
+        type: "number",
+        name: "experience",
+        required: true
+    },
+    {
+        title: "Your CV",
+        placeholder: "",
+        type: "file",
+        name: "cv",
+        required: true
+    },
+]
