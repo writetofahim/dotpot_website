@@ -820,3 +820,76 @@ export const inputFields = [
         required: true
     },
 ]
+
+
+export const jobTypeAutoCompleteData = [
+    "Software Engineer",
+    "Front-End Developer",
+    "Back-End Developer",
+    "Full-Stack Developer",
+    "Mobile Developer",
+    "Data Scientist",
+    "Data Analyst",
+    "Machine Learning Engineer",
+    "Artificial Intelligence Engineer",
+    "Cloud Solutions Architect",
+    "DevOps Engineer",
+    "IT Manager",
+    "Technical Project Manager",
+    "Technical Writer",
+    "UX Designer",
+    "UI Designer",
+    "Web Designer",
+    "Network Engineer",
+    "Database Administrator",
+    "Security Analyst",
+    "Penetration Tester",
+    "Digital Marketing Manager",
+    "SEO Specialist",
+    "Social Media Manager",
+    "Content Strategist",
+    "Content Marketing Manager",
+    "Product Manager",
+    "Quality Assurance Analyst",
+    "Business Analyst",
+    "Salesforce Developer",
+    "SharePoint Developer",
+    "Java Developer",
+    "Python Developer",
+    "Ruby on Rails Developer",
+    "C++ Developer",
+    ".NET Developer",
+    "PHP Developer",
+    "Node.js Developer",
+    "React Developer",
+    "Angular Developer",
+    "Vue.js Developer"
+];
+
+
+export const jobLocationAutoCompleteData = ["New York", "Los Angeles", "Chicago", "Houston", "Philadelphia", "Phoenix", "San Antonio", "San Diego", "Dallas", "San Jose", "Austin", "Jacksonville", "Fort Worth", "Columbus", "San Francisco", "Charlotte", "Indianapolis", "Seattle", "Denver", "Washington DC", "Boston", "Nashville", "El Paso", "Detroit", "Memphis", "Portland", "Oklahoma City", "Las Vegas", "Louisville", "Baltimore"];
+
+
+
+export const jobFiltersData = [
+    {
+        title: "Date Posted",
+        filters : ["One day", "One week", "One month"]
+    },
+    {
+        title: "Job Type",
+        filters : ["Remote", "On Site", "Hybrid"]
+    },
+    {
+        title: "Employee Type",
+        filters : ["Full Time", "Part Time"]
+    },
+    {
+        title: "Experience Level",
+        filters : ["Junior", "Intermediate", "Expert"]
+    },
+    {
+        title: "Category",
+        filters: ["IT", "Developer", "Designer", "Manager", "Marketing Manager"]
+    }
+]

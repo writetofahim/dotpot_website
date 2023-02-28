@@ -3,6 +3,7 @@ import Hero from '../../components/Hero/Hero'
 import IndustriesWeServe from '../../components/IndustriesWeServe/IndustriesWeServe'
 import Information from '../../components/Information/Information'
 import KeyFeatures from '../../components/KeyFeatures/KeyFeatures'
+import Navbar from '../../components/Navbar/Navbar'
 import PartnershipModels from '../../components/PartnershipModels/PartnershipModels'
 import ProcessWeFollow from '../../components/ProcessWeFollow/ProcessWeFollow'
 import RecentWorks from '../../components/RecentWorks/RecentWorks'
@@ -14,6 +15,7 @@ import WhoWeWorkWith from '../../components/WhoWeWorkWith/WhoWeWorkWith'
 const Home = () => {
   return (
     <>
+      <Navbar />
       <Hero />
       <Information />
       <KeyFeatures />

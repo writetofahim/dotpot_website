@@ -26,7 +26,7 @@ const Navbar = () => {
                 {["home", "about us", "Services", "Contact"].map((item, index) => (
                     <NavBarItem key={item + index} title={item} />
                 ))}
-                <Link to='/apply'>
+                <Link to='/apply' target="_blank">
                     <li className="bg-primary-500 py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-primary-400 text-white">
                         Aplly For Job
                     </li>
