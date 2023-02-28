@@ -6,6 +6,7 @@ import { Route, Routes } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
 import ApplyJob from './pages/applyJob/ApplyJob'
 import Home from './pages/home/Home'
+import Apply from "./pages/applyJob/Apply";
 
 function App() {
 
@@ -14,9 +15,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/apply" element={<ApplyJob />}>
-          {/* <Route path="/0" element={<ApplyJob />} /> */}
-        </Route>  
+        <Route path="/apply" element={<ApplyJob />} />
+        <Route path="/apply/:id" element={<Apply />} />
       </Routes>
     </>
   )
