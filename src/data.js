@@ -641,3 +641,129 @@ export const socialNetworkData=[
         link: "https://www.instagram.com/dotpotit"
     }
 ]
+
+
+
+export const jobPageData = {
+    title: "Apply For Your Dream Job",
+    desc: "Looking for a new and exciting opportunity? Join the team at DotpotiT! We are a fast-growing tech company that specializes in providing a wide range of tech services, including Web & Mobile app development, SEO support, Call Center Support.",
+    jobs:[
+        {
+            id: 0,
+            title:"Full Stack Developer",
+            company: "DotpotiT",
+            company_email: "info@dotpotit.com",
+            type: "On-Site",
+            location: "Mirpur",
+            rating:5,
+            selary: {
+                min: 20000,
+                max: 100000,
+            },
+            benefits: ["good salary", "Nice Enviroment"],
+            des:"GEICO is seeking an experienced Mid/Senior Engineers with a passion for building high performance, low-latency platforms and applications. You will help drive our insurance business transformation as we redefine experience for our customers. Our Mid/Senior Engineer is a key member of the engineering staff working across Business Services Engineering, Data Engineering, Platform Engineering, and Infrastructure Engineering to ensure that we provide a fiction-less experience to our customers, maintain the highest standards of protection and availability. Our team thrives and succeeds in delivering high quality technology products and services in a hyper-growth environment where priorities shift quickly. The ideal candidate has broad and deep technical knowledge, typically ranging from front-end UIs through back-end systems and all points in between.",
+            responsibilities: [
+                "Manage the complete software development process from conception to deployment.",
+                "Scope, design, implement and unit test frontend features for new and existing web applications.",
+                "Design data driven Restful APIs that orchestrates between frontend and backend mircoservices.",
+                "Build product definition and leverage your technical skills to drive towards the right solution.",
+                "Engage in cross-functional collaboration throughout the entire software lifecycle.",
+                "Lead in design sessions and code reviews with peers to elevate the quality of engineering across the organization.",
+                "Define, create and support reusable application components/patterns from a business and technology perspective.",
+                "Mentor other engineers.",
+                "Consistently share best practices and improve processes within and across teams."
+            ],
+            qualification: [
+                "Advanced programming experience with Typescript, ES6+, ReactJS, Redux and Jest",
+                "Advanced understanding of micro-frontend architecture with client side composition methods",
+                "Experience building the architecture and design (architecture, design patterns, reliability and scaling) of new and current systems",
+                "Understanding of existing Monitoring Portals: Splunk or Application Insights"
+            ],
+            experience:[
+                "2-5+ years of professional software development experience",
+                "2-3+ years of experience with architecture and design"
+            ],
+            education:[
+                "Bachelor’s degree in Computer Science, Information Systems, or equivalent education or work experience"
+            ]
+        },
+        {
+            id: 1,
+            title:"Full Frontend Developer",
+            company: "DotpotiT",
+            company_email: "info@dotpotit.com",
+            type: "On-Site",
+            location: "Mirpur",
+            rating:5,
+            selary: {
+                min: 20000,
+                max: 100000,
+            },
+            benefits: ["good salary", "Nice Enviroment"],
+            des:"GEICO is seeking an experienced Mid/Senior Engineers with a passion for building high performance, low-latency platforms and applications. You will help drive our insurance business transformation as we redefine experience for our customers. Our Mid/Senior Engineer is a key member of the engineering staff working across Business Services Engineering, Data Engineering, Platform Engineering, and Infrastructure Engineering to ensure that we provide a fiction-less experience to our customers, maintain the highest standards of protection and availability. Our team thrives and succeeds in delivering high quality technology products and services in a hyper-growth environment where priorities shift quickly. The ideal candidate has broad and deep technical knowledge, typically ranging from front-end UIs through back-end systems and all points in between.",
+            responsibilities: [
+                "Manage the complete software development process from conception to deployment.",
+                "Scope, design, implement and unit test frontend features for new and existing web applications.",
+                "Design data driven Restful APIs that orchestrates between frontend and backend mircoservices.",
+                "Build product definition and leverage your technical skills to drive towards the right solution.",
+                "Engage in cross-functional collaboration throughout the entire software lifecycle.",
+                "Lead in design sessions and code reviews with peers to elevate the quality of engineering across the organization.",
+                "Define, create and support reusable application components/patterns from a business and technology perspective.",
+                "Mentor other engineers.",
+                "Consistently share best practices and improve processes within and across teams."
+            ],
+            qualification: [
+                "Advanced programming experience with Typescript, ES6+, ReactJS, Redux and Jest",
+                "Advanced understanding of micro-frontend architecture with client side composition methods",
+                "Experience building the architecture and design (architecture, design patterns, reliability and scaling) of new and current systems",
+                "Understanding of existing Monitoring Portals: Splunk or Application Insights"
+            ],
+            experience:[
+                "2-5+ years of professional software development experience",
+                "2-3+ years of experience with architecture and design"
+            ],
+            education:[
+                "Bachelor’s degree in Computer Science, Information Systems, or equivalent education or work experience"
+            ]
+        },
+        {
+            id: 2,
+            title:"Degital Marketing Manager",
+            company: "DotpotiT",
+            company_email: "info@dotpotit.com",
+            type: "On-Site",
+            location: "Mirpur",
+            rating:5,
+            selary: {
+                min: 20000,
+                max: 100000,
+            },
+            benefits: ["good salary", "Nice Enviroment"],
+            des:"GEICO is seeking an experienced Mid/Senior Engineers with a passion for building high performance, low-latency platforms and applications. You will help drive our insurance business transformation as we redefine experience for our customers. Our Mid/Senior Engineer is a key member of the engineering staff working across Business Services Engineering, Data Engineering, Platform Engineering, and Infrastructure Engineering to ensure that we provide a fiction-less experience to our customers, maintain the highest standards of protection and availability. Our team thrives and succeeds in delivering high quality technology products and services in a hyper-growth environment where priorities shift quickly. The ideal candidate has broad and deep technical knowledge, typically ranging from front-end UIs through back-end systems and all points in between.",
+            responsibilities: [
+                "Manage the complete software development process from conception to deployment.",
+                "Scope, design, implement and unit test frontend features for new and existing web applications.",
+                "Design data driven Restful APIs that orchestrates between frontend and backend mircoservices.",
+                "Build product definition and leverage your technical skills to drive towards the right solution.",
+                "Engage in cross-functional collaboration throughout the entire software lifecycle.",
+                "Lead in design sessions and code reviews with peers to elevate the quality of engineering across the organization.",
+                "Define, create and support reusable application components/patterns from a business and technology perspective.",
+                "Mentor other engineers.",
+                "Consistently share best practices and improve processes within and across teams."
+            ],
+            qualification: [
+                "Advanced programming experience with Typescript, ES6+, ReactJS, Redux and Jest",
+                "Advanced understanding of micro-frontend architecture with client side composition methods",
+                "Experience building the architecture and design (architecture, design patterns, reliability and scaling) of new and current systems",
+                "Understanding of existing Monitoring Portals: Splunk or Application Insights"
+            ],
+            experience:[
+                "2-5+ years of professional software development experience",
+                "2-3+ years of experience with architecture and design"
+            ],
+            education:[
+                "Bachelor’s degree in Computer Science, Information Systems, or equivalent education or work experience"
+            ]
+        }
+    ]
+}
