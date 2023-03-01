@@ -15,7 +15,7 @@ export const ProcessCard = (props) => {
 
 const ProcessWeFollow = () => {
     return (
-        <div className='w-full overflow-hidden py-10 md:flex md:flex-col md:justify-center bg-primary-100'>
+        <div className='processWeFollow w-full overflow-hidden py-10 md:flex md:flex-col md:justify-center bg-primary-100'>
             <div className="p-5 mt-5 w-full md:max-w-[1400px] self-center flex gap-10 flex-wrap items-center justify-center">
                 <h1 className="mt-10 text-6xl font-bold w-full mb-5 ">Process We Follow</h1>
                 {

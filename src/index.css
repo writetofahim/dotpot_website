@@ -35,9 +35,10 @@
 
 
 /****************************** Who We Work With Section Background *******************************/
-.whoWeWorWith{
+.whoWeWorWith, .processWeFollow, .industriesWeServe{
   background-image: url(https://images8.design-editor.com/95/9554401/3958%2F8EA74DF6-870E-4C6D-1A57-361040AB0ED2.png);
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 
