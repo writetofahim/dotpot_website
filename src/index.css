@@ -6,7 +6,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* overflow-x: hidden; */
 }
 
 /* .slick-slider {
@@ -14,7 +13,6 @@
   z-index: 1;
   display: none;
 } */
-
 
 /****************************** Navigation Bar Design *******************************/
 .glassmorphism{

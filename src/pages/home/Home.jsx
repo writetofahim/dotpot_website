@@ -1,4 +1,6 @@
+import { Fab } from '@mui/material'
 import React from 'react'
+import BackToTop from '../../components/BackToTop/BackToTop'
 import Footer from '../../components/Footer/Footer'
 import Hero from '../../components/Hero/Hero'
 import IndustriesWeServe from '../../components/IndustriesWeServe/IndustriesWeServe'
@@ -31,6 +33,7 @@ const Home = () => {
       <SocialMedia />
       <OurPartnersSlider />
       <Footer />
+      {/* <BackToTop /> */}
     </>
   )
 }
