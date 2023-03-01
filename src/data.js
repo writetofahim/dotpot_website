@@ -4,7 +4,7 @@ export const sliderData = [
         title: 'Calll center Support',
         subTitle: "We provide support for",
         desc: "We are in top of the callcenter support",
-        img:  "https://static.vecteezy.com/system/resources/previews/019/600/767/non_2x/customer-service-illustration-vector.jpg",
+        img: "https://static.vecteezy.com/system/resources/previews/019/600/767/non_2x/customer-service-illustration-vector.jpg",
         link: "#"
 
     },
@@ -13,7 +13,7 @@ export const sliderData = [
         title: 'Dedicated Team',
         subTitle: "We have Highly skill team",
         desc: "Our highly skilled team will provide support for you and your team members",
-        img:  "https://static.vecteezy.com/system/resources/previews/005/608/265/non_2x/customer-service-hotline-service-provider-advises-customers-with-a-computer-headset-call-processing-system-call-center-illustration-free-vector.jpg",
+        img: "https://static.vecteezy.com/system/resources/previews/005/608/265/non_2x/customer-service-hotline-service-provider-advises-customers-with-a-computer-headset-call-processing-system-call-center-illustration-free-vector.jpg",
         link: "#"
     },
     {
@@ -21,7 +21,7 @@ export const sliderData = [
         title: 'Website Design',
         subTitle: "Custom website design",
         desc: "We will design mordern minimal website for your business",
-        img:  "https://static.vecteezy.com/system/resources/previews/006/552/084/large_2x/isometric-style-illustration-about-a-web-programmer-working-with-his-computer-free-vector.jpg",
+        img: "https://static.vecteezy.com/system/resources/previews/006/552/084/large_2x/isometric-style-illustration-about-a-web-programmer-working-with-his-computer-free-vector.jpg",
         link: "#"
     },
     {
@@ -29,7 +29,7 @@ export const sliderData = [
         title: 'Website Development',
         subTitle: "Custom website development",
         desc: "We will develop website for your business",
-        img:  "https://static.vecteezy.com/system/resources/previews/004/579/151/non_2x/the-web-developer-team-is-building-a-smartphone-app-in-flat-design-free-vector.jpg",
+        img: "https://static.vecteezy.com/system/resources/previews/004/579/151/non_2x/the-web-developer-team-is-building-a-smartphone-app-in-flat-design-free-vector.jpg",
         link: "#"
     }
 ]
@@ -151,7 +151,7 @@ export const servicesData = [
         id: 2,
         icon: "Web",
         title: "Web Development",
-        list:[
+        list: [
             {
                 id: 1,
                 logo: "HTML5",
@@ -173,7 +173,7 @@ export const servicesData = [
                 text: "Bootstrap"
             },
             {
-                id:5,
+                id: 5,
                 logo: "React",
                 text: "React"
             },
@@ -188,7 +188,7 @@ export const servicesData = [
         id: 3,
         icon: "Cart",
         title: "Ecommerce Development",
-        list:[
+        list: [
             {
                 id: 1,
                 logo: "Stripe",
@@ -225,7 +225,7 @@ export const servicesData = [
         id: 4,
         icon: "Cart",
         title: "Ecommerce Development",
-        list:[
+        list: [
             {
                 id: 1,
                 logo: "Stripe",
@@ -262,7 +262,7 @@ export const servicesData = [
         id: 5,
         icon: "Cart",
         title: "Ecommerce Development",
-        list:[
+        list: [
             {
                 id: 1,
                 logo: "Stripe",
@@ -299,7 +299,7 @@ export const servicesData = [
         id: 6,
         icon: "Cart",
         title: "Ecommerce Development",
-        list:[
+        list: [
             {
                 id: 1,
                 logo: "Stripe",
@@ -490,22 +490,22 @@ export const whoDoWeWorkData = {
     blocks: [
         {
             id: 1,
-            icon:"https://cdn-icons-png.flaticon.com/512/3188/3188314.png",
+            icon: "https://cdn-icons-png.flaticon.com/512/3188/3188314.png",
             name: "Start Up Business"
         },
         {
             id: 2,
-            icon:"https://cdn-icons-png.flaticon.com/512/4256/4256900.png",
+            icon: "https://cdn-icons-png.flaticon.com/512/4256/4256900.png",
             name: "Small & Medium Business"
         },
         {
             id: 3,
-            icon:"https://cdn-icons-png.flaticon.com/512/3061/3061341.png",
+            icon: "https://cdn-icons-png.flaticon.com/512/3061/3061341.png",
             name: "Enterprise Business"
         },
         {
             id: 4,
-            icon:"https://cdn-icons-png.flaticon.com/512/2640/2640740.png",
+            icon: "https://cdn-icons-png.flaticon.com/512/2640/2640740.png",
             name: "SAgencies"
         }
     ]
@@ -513,9 +513,9 @@ export const whoDoWeWorkData = {
 
 
 export const WhatOurClientSayData = {
-    title:"What Our Clients Say",
+    title: "What Our Clients Say",
     subTitle: "Here, We make almost every genre of applications. You name it and we build it.",
-    cards:[
+    cards: [
         {
             id: 1,
             name: "James",
@@ -599,7 +599,7 @@ export const WhatOurClientSayData = {
     ]
 }
 
-export const socialNetworkData=[
+export const socialNetworkData = [
     {
         id: 1,
         icon: "https://cdn-icons-png.flaticon.com/512/3670/3670127.png",
@@ -647,21 +647,21 @@ export const socialNetworkData=[
 export const jobPageData = {
     title: "Apply For Your Dream Job",
     desc: "Looking for a new and exciting opportunity? Join the team at DotpotiT! We are a fast-growing tech company that specializes in providing a wide range of tech services, including Web & Mobile app development, SEO support, Call Center Support.",
-    jobs:[
+    jobs: [
         {
             id: 0,
-            title:"Full Stack Developer",
+            title: "Full Stack Developer",
             company: "DotpotiT",
             company_email: "info@dotpotit.com",
             type: "On-Site",
             location: "Mirpur",
-            rating:5,
+            rating: 5,
             selary: {
                 min: 20000,
                 max: 100000,
             },
             benefits: ["good salary", "Nice Enviroment"],
-            des:"GEICO is seeking an experienced Mid/Senior Engineers with a passion for building high performance, low-latency platforms and applications. You will help drive our insurance business transformation as we redefine experience for our customers. Our Mid/Senior Engineer is a key member of the engineering staff working across Business Services Engineering, Data Engineering, Platform Engineering, and Infrastructure Engineering to ensure that we provide a fiction-less experience to our customers, maintain the highest standards of protection and availability. Our team thrives and succeeds in delivering high quality technology products and services in a hyper-growth environment where priorities shift quickly. The ideal candidate has broad and deep technical knowledge, typically ranging from front-end UIs through back-end systems and all points in between.",
+            des: "GEICO is seeking an experienced Mid/Senior Engineers with a passion for building high performance, low-latency platforms and applications. You will help drive our insurance business transformation as we redefine experience for our customers. Our Mid/Senior Engineer is a key member of the engineering staff working across Business Services Engineering, Data Engineering, Platform Engineering, and Infrastructure Engineering to ensure that we provide a fiction-less experience to our customers, maintain the highest standards of protection and availability. Our team thrives and succeeds in delivering high quality technology products and services in a hyper-growth environment where priorities shift quickly. The ideal candidate has broad and deep technical knowledge, typically ranging from front-end UIs through back-end systems and all points in between.",
             responsibilities: [
                 "Manage the complete software development process from conception to deployment.",
                 "Scope, design, implement and unit test frontend features for new and existing web applications.",
@@ -679,28 +679,28 @@ export const jobPageData = {
                 "Experience building the architecture and design (architecture, design patterns, reliability and scaling) of new and current systems",
                 "Understanding of existing Monitoring Portals: Splunk or Application Insights"
             ],
-            experience:[
+            experience: [
                 "2-5+ years of professional software development experience",
                 "2-3+ years of experience with architecture and design"
             ],
-            education:[
+            education: [
                 "Bachelor’s degree in Computer Science, Information Systems, or equivalent education or work experience"
             ]
         },
         {
             id: 1,
-            title:"Full Frontend Developer",
+            title: "Full Frontend Developer",
             company: "DotpotiT",
             company_email: "info@dotpotit.com",
             type: "On-Site",
             location: "Mirpur",
-            rating:5,
+            rating: 5,
             selary: {
                 min: 20000,
                 max: 100000,
             },
             benefits: ["good salary", "Nice Enviroment"],
-            des:"GEICO is seeking an experienced Mid/Senior Engineers with a passion for building high performance, low-latency platforms and applications. You will help drive our insurance business transformation as we redefine experience for our customers. Our Mid/Senior Engineer is a key member of the engineering staff working across Business Services Engineering, Data Engineering, Platform Engineering, and Infrastructure Engineering to ensure that we provide a fiction-less experience to our customers, maintain the highest standards of protection and availability. Our team thrives and succeeds in delivering high quality technology products and services in a hyper-growth environment where priorities shift quickly. The ideal candidate has broad and deep technical knowledge, typically ranging from front-end UIs through back-end systems and all points in between.",
+            des: "GEICO is seeking an experienced Mid/Senior Engineers with a passion for building high performance, low-latency platforms and applications. You will help drive our insurance business transformation as we redefine experience for our customers. Our Mid/Senior Engineer is a key member of the engineering staff working across Business Services Engineering, Data Engineering, Platform Engineering, and Infrastructure Engineering to ensure that we provide a fiction-less experience to our customers, maintain the highest standards of protection and availability. Our team thrives and succeeds in delivering high quality technology products and services in a hyper-growth environment where priorities shift quickly. The ideal candidate has broad and deep technical knowledge, typically ranging from front-end UIs through back-end systems and all points in between.",
             responsibilities: [
                 "Manage the complete software development process from conception to deployment.",
                 "Scope, design, implement and unit test frontend features for new and existing web applications.",
@@ -718,28 +718,28 @@ export const jobPageData = {
                 "Experience building the architecture and design (architecture, design patterns, reliability and scaling) of new and current systems",
                 "Understanding of existing Monitoring Portals: Splunk or Application Insights"
             ],
-            experience:[
+            experience: [
                 "2-5+ years of professional software development experience",
                 "2-3+ years of experience with architecture and design"
             ],
-            education:[
+            education: [
                 "Bachelor’s degree in Computer Science, Information Systems, or equivalent education or work experience"
             ]
         },
         {
             id: 2,
-            title:"Degital Marketing Manager",
+            title: "Degital Marketing Manager",
             company: "DotpotiT",
             company_email: "info@dotpotit.com",
             type: "On-Site",
             location: "Mirpur",
-            rating:5,
+            rating: 5,
             selary: {
                 min: 20000,
                 max: 100000,
             },
             benefits: ["good salary", "Nice Enviroment"],
-            des:"GEICO is seeking an experienced Mid/Senior Engineers with a passion for building high performance, low-latency platforms and applications. You will help drive our insurance business transformation as we redefine experience for our customers. Our Mid/Senior Engineer is a key member of the engineering staff working across Business Services Engineering, Data Engineering, Platform Engineering, and Infrastructure Engineering to ensure that we provide a fiction-less experience to our customers, maintain the highest standards of protection and availability. Our team thrives and succeeds in delivering high quality technology products and services in a hyper-growth environment where priorities shift quickly. The ideal candidate has broad and deep technical knowledge, typically ranging from front-end UIs through back-end systems and all points in between.",
+            des: "GEICO is seeking an experienced Mid/Senior Engineers with a passion for building high performance, low-latency platforms and applications. You will help drive our insurance business transformation as we redefine experience for our customers. Our Mid/Senior Engineer is a key member of the engineering staff working across Business Services Engineering, Data Engineering, Platform Engineering, and Infrastructure Engineering to ensure that we provide a fiction-less experience to our customers, maintain the highest standards of protection and availability. Our team thrives and succeeds in delivering high quality technology products and services in a hyper-growth environment where priorities shift quickly. The ideal candidate has broad and deep technical knowledge, typically ranging from front-end UIs through back-end systems and all points in between.",
             responsibilities: [
                 "Manage the complete software development process from conception to deployment.",
                 "Scope, design, implement and unit test frontend features for new and existing web applications.",
@@ -757,11 +757,11 @@ export const jobPageData = {
                 "Experience building the architecture and design (architecture, design patterns, reliability and scaling) of new and current systems",
                 "Understanding of existing Monitoring Portals: Splunk or Application Insights"
             ],
-            experience:[
+            experience: [
                 "2-5+ years of professional software development experience",
                 "2-3+ years of experience with architecture and design"
             ],
-            education:[
+            education: [
                 "Bachelor’s degree in Computer Science, Information Systems, or equivalent education or work experience"
             ]
         }
@@ -874,19 +874,19 @@ export const jobLocationAutoCompleteData = ["New York", "Los Angeles", "Chicago"
 export const jobFiltersData = [
     {
         title: "Date Posted",
-        filters : ["One day", "One week", "One month"]
+        filters: ["One day", "One week", "One month"]
     },
     {
         title: "Job Type",
-        filters : ["Remote", "On Site", "Hybrid"]
+        filters: ["Remote", "On Site", "Hybrid"]
     },
     {
         title: "Employee Type",
-        filters : ["Full Time", "Part Time"]
+        filters: ["Full Time", "Part Time"]
     },
     {
         title: "Experience Level",
-        filters : ["Junior", "Intermediate", "Expert"]
+        filters: ["Junior", "Intermediate", "Expert"]
     },
     {
         title: "Category",
@@ -911,10 +911,10 @@ export const ourPartnersSliderData = [
 
 
 
-export const aboutPageContent =[
+export const aboutPageContent = [
     {
         text: "The website has become an essential and significant part of human life. Every business needs a website to showcase its skill, products, talents, and much more. Everything can be formed and updated with a website. Hyperlink InfoSystem understands the necessities and crafts exquisite website and CMS systems for start-ups or businesses. We are the leading tailor-made web development company, delivering the best web and CMS solutions across the globe.",
-        classes: "" 
+        classes: ""
     },
     {
         text: "Our highly skilled developers have proficient expertise in the latest technology and trends. We worked with global firms to transform recognized ideas into stunning & inventive websites. We have rich experience and creativity in producing phenomenal websites and CMS development for different clients worldwide. Our experts hold a different and unique perspective which helps to tailor web development faster and better. With this web development, the business runs with high functionality, efficiency and enhances it.",
@@ -941,6 +941,94 @@ export const aboutPageContent =[
     },
     {
         text: "Our front-end designers will craft a stunning and striking responsive website following the wireframe, UI/UX design to prototype.",
+        classes: ""
+    },
+    {
+        text: "3) Define Content",
+        classes: "text-2xl font-bold"
+    },
+    {
+        text: "A website is incomplete without content. Thus, we will put informative content on the website and make it SEO-friendly.",
+        classes: ""
+    },
+    {
+        text: "4) Development",
+        classes: "text-2xl font-bold"
+    },
+    {
+        text: "After deciding the website's objectives, it is time for development. The process is the pre-final stage of the website.",
+        classes: ""
+    },
+    {
+        text: "5) Testing",
+        classes: "text-2xl font-bold"
+    },
+    {
+        text: "It is essential to conduct a test to ensure that the website is 100% bug-free and you get a seamless, user-friendly website.",
+        classes: ""
+    },
+    {
+        text: "6) Deployment",
+        classes: "text-2xl font-bold"
+    },
+    {
+        text: "After everything is covered, from design to deployment, it is time to launch the website.",
+        classes: ""
+    },
+    {
+        text: "7) Post Deployment & Maintenance",
+        classes: "text-2xl font-bold"
+    },
+    {
+        text: "After the website's launch, we will provide all support and answer every query after the deployment.",
+        classes: ""
+    },
+    {
+        text: "The Technologies And Services We Use For Website & CMS Development",
+        classes: "text-2xl font-bold"
+    },
+    {
+        text: "Innovative and Advanced Technologies for the Website & CMS Development",
+        classes: ""
+    },
+    {
+        text: "WordPress Web Development",
+        classes: "text-2xl font-bold"
+    },
+    {
+        text: "Our developer provides the best WordPress Web Development to create an efficient website.",
+        classes: ""
+    },
+    {
+        text: "PHP",
+        classes: "text-2xl font-bold"
+    },
+    {
+        text: "With PHP, our proficient developers will deliver highly functional PHP websites to acquire the market.",
+        classes: ""
+    },
+    {
+        text: "WordPress Web Development",
+        classes: "text-2xl font-bold"
+    },
+    {
+        text: "We provide an excellent customization service that delivers optimization and dynamic websites.",
+        classes: ""
+    },
+    {
+        text: "E-commerce And CMS Development",
+        classes: "text-2xl font-bold"
+    },
+    {
+        text: "The top development offers the top robust development service for creating a website.",
+        classes: ""
+    },
+    {
+        text: "Progressive Web Application (PWA)",
+        classes: "text-2xl font-bold"
+    },
+    {
+        text: "PWA facilitate reliable and robust development for the seamless experience in the website.",
         classes: ""
     }
 ]
@@ -973,8 +1061,8 @@ export const aboutPageContent =[
 
 
 export const footerData = {
-    columns:[
-        {   
+    columns: [
+        {
             title: "About",
             links: [
                 {

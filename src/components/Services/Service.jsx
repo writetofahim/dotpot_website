@@ -41,7 +41,7 @@ export const Card = (props) => {
 }
 
 
-const Services = () => {
+const Service = () => {
   return (
     <div className='w-full bg-white overflow-hidden py-10 md:flex md:flex-col md:justify-center'>
       <h1 className="mt-10 text-center text-6xl font-bold text-primary-500">Services We Offer</h1>
@@ -56,4 +56,4 @@ const Services = () => {
   )
 }
 
-export default Services
+export default Service

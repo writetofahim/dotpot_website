@@ -1,149 +1,59 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
-import logo from "../../assets/img/logo.png";
-import { Link } from '@mui/material';
+import React, { useContext, useEffect } from "react";
+import { HiMenuAlt4 } from "react-icons/hi";
+import { AiOutlineClose } from "react-icons/ai";
+import { Link } from "react-router-dom";
+import logo from "../../assets/img/logo.png"
 
-const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-function NacbarJob() {
-    const [anchorElNav, setAnchorElNav] = React.useState(null);
-    const [anchorElUser, setAnchorElUser] = React.useState(null);
+const NavbarJob = () => {
+    const [toggleMenu, setToggleMenu] = React.useState(false);
 
-    const handleOpenNavMenu = (event) => {
-        setAnchorElNav(event.currentTarget);
-    };
-    const handleOpenUserMenu = (event) => {
-        setAnchorElUser(event.currentTarget);
-    };
-
-    const handleCloseNavMenu = () => {
-        setAnchorElNav(null);
-    };
-
-    const handleCloseUserMenu = () => {
-        setAnchorElUser(null);
-    };
 
     return (
-        <AppBar position="static" className='bg-primary-500' sx={{ backgroundColor: 'white', color: 'gray' }}>
-            <Container maxWidth="xl">
-                <Toolbar disableGutters>
-                    <Link to="/" className='cursor-pointer'>
-                        <img src={logo} alt="" className='w-[200px]'/>
-                    </Link>
+        <nav className="w-full flex justify-between items-center p-4 z-999 bg-white" id="nav">
+            <div className="md:flex-[0.5] flex-initial justify-center items-center">
+                <Link to='/'>
+                    <img src={logo} alt="" className="w-60" />
+                </Link>
+                {/* <p className="text-gray-500 hover:text-primary-400 hidden md:hidden lg:block italic">We make your Business Successfull</p> */}
+            </div>
+            <ul className="md:flex hidden list-none flex-row justify-between items-center flex-initial">
+                <Link to="/apply">
+                    <li className="mx-4 cursor-pointer uppercase text-white md:text-gray-400 text-xl hover:text-primary-400" onClick={() => setToggleMenu(false)}>All Jobs</li>
+                </Link>
+                <Link to='/login' target="_blank">
+                    <li className="bg-primary-500 py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-primary-400 text-white">
+                        Login
+                    </li>
+                </Link>
+            </ul>
+            <div className="flex relative md:hidden">
+                {!toggleMenu && (
+                    <HiMenuAlt4 fontSize={28} className="text-gray-500 hover:text-primary-400 md:hidden cursor-pointer" onClick={() => setToggleMenu(true)} />
+                )}
 
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-                        <IconButton
-                        size="large"
-                        aria-label="account of current user"
-                        aria-controls="menu-appbar"
-                        aria-haspopup="true"
-                        onClick={handleOpenNavMenu}
-                        color="gray"
-                        >
-                        <MenuIcon />
-                        </IconButton>
-                        <Menu
-                        id="menu-appbar"
-                        anchorEl={anchorElNav}
-                        anchorOrigin={{
-                            vertical: 'bottom',
-                            horizontal: 'left',
-                        }}
-                        keepMounted
-                        transformOrigin={{
-                            vertical: 'top',
-                            horizontal: 'left',
-                        }}
-                        open={Boolean(anchorElNav)}
-                        onClose={handleCloseNavMenu}
-                        sx={{
-                            display: { xs: 'block', md: 'none' },
-                        }}
-                        >
-                            {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                <Typography textAlign="center" sx={{color: 'gray'}}>{page}</Typography>
-                                </MenuItem>
-                            ))}
-                        </Menu>
-                    </Box>
-                    <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-                    <Typography
-                        variant="h5"
-                        noWrap
-                        component="a"
-                        href=""
-                        sx={{
-                        mr: 2,
-                        display: { xs: 'flex', md: 'none' },
-                        flexGrow: 1,
-                        fontFamily: 'monospace',
-                        fontWeight: 700,
-                        letterSpacing: '.3rem',
-                        color: 'inherit',
-                        textDecoration: 'none',
-                        }}
+                {toggleMenu && (
+                    <ul
+                        className="z-10 fixed -top-0 -right-2 p-3 w-[70vw] h-screen shadow-2xl md:hidden list-none
+                flex flex-col justify-start items-center rounded-md glassmorphism text-gray-500 hover:text-primary-400 animate-slide-in"
                     >
-                        LOGO
-                    </Typography>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                        {pages.map((page) => (
-                        <Button
-                            key={page}
-                            onClick={handleCloseNavMenu}
-                            sx={{ my: 2, color: 'gray', display: 'block' }}
-                        >
-                            {page}
-                        </Button>
-                        ))}
-                    </Box>
-
-                    <Box sx={{ flexGrow: 0 }}>
-                        <Tooltip title="Open settings">
-                        <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                            <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-                        </IconButton>
-                        </Tooltip>
-                        <Menu
-                        sx={{ mt: '45px' }}
-                        id="menu-appbar"
-                        anchorEl={anchorElUser}
-                        anchorOrigin={{
-                            vertical: 'top',
-                            horizontal: 'right',
-                        }}
-                        keepMounted
-                        transformOrigin={{
-                            vertical: 'top',
-                            horizontal: 'right',
-                        }}
-                        open={Boolean(anchorElUser)}
-                        onClose={handleCloseUserMenu}
-                        >
-                        {settings.map((setting) => (
-                            <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                            <Typography textAlign="center">{setting}</Typography>
-                            </MenuItem>
-                        ))}
-                        </Menu>
-                    </Box>
-                </Toolbar>
-            </Container>
-        </AppBar>
+                        <li className="text-xl w-full my-2"><AiOutlineClose onClick={() => setToggleMenu(false)} /></li>
+                        <Link to="/">
+                            <li className="mx-4 cursor-pointer uppercase text-gray md:text-gray-400 text-xl hover:text-primary-400 mt-3" onClick={() => setToggleMenu(false)}>Home</li>
+                        </Link>
+                        <Link to="/apply">
+                            <li className="mx-4 cursor-pointer uppercase text-gray md:text-gray-400 text-xl hover:text-primary-400 mt-3" onClick={() => setToggleMenu(false)}>All Jobs</li>
+                        </Link>
+                        <Link to='/apply' target="_blank">
+                            <li className="bg-primary-500 py-2 px-7 mx-4 mt-5 rounded-full cursor-pointer hover:bg-primary-400 text-white">
+                                Login
+                            </li>
+                        </Link>
+                    </ul>
+                )}
+            </div>
+        </nav>
     );
-}
-export default NacbarJob;
+};
+
+export default NavbarJob;

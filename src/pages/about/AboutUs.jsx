@@ -13,11 +13,11 @@ import { aboutPageContent, PartnershipModelsData } from '../../data'
 
 const AboutUs = () => {
     const heroImg = "https://www.hyperlinkinfosystem.com/assets/uploads/banner/1634022694.png"
-    const button = { title: "Contact Us", link: "/contact"}
+    const button = { title: "Contact Us", link: "/contact" }
     return (
         <div className="w-full">
             <Navbar />
-            <AboutHero heading="About DotpotiT" text="A fast growing IT complay" heroImg={heroImg} button={button}/>
+            <AboutHero heading="About DotpotiT" text="A fast growing IT complay" heroImg={heroImg} button={button} />
             <OurPartnersSlider />
 
             {/* Main Section */}
@@ -25,7 +25,7 @@ const AboutUs = () => {
                 <div className="container flex gap-5 p-5">
                     <div className="left md:w-2/3 w-full">
                         {
-                            aboutPageContent.map((item,idex)=>(
+                            aboutPageContent.map((item, idex) => (
                                 <p className={`mt-3 text-justify ${item.classes}`}>{item.text}</p>
                             ))
                         }
