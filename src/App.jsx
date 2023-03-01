@@ -7,6 +7,7 @@ import Navbar from './components/Navbar/Navbar'
 import ApplyJob from './pages/applyJob/ApplyJob'
 import Home from './pages/home/Home'
 import Apply from "./pages/applyJob/Apply";
+import AboutUs from "./pages/about/AboutUs";
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/apply" element={<ApplyJob />} />
         <Route path="/apply/:id" element={<Apply />} />
+        <Route path="/about" element={<AboutUs />} />
       </Routes>
     </>
   )

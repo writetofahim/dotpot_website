@@ -893,3 +893,113 @@ export const jobFiltersData = [
         filters: ["IT", "Developer", "Designer", "Manager", "Marketing Manager"]
     }
 ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+export const footerData = {
+    columns:[
+        {   
+            title: "About",
+            links: [
+                {
+                    title: "Who We Are",
+                    link: "/about"
+                },
+                {
+                    title: "Career",
+                    link: "/apply"
+                },
+                {
+                    title: "Jobs",
+                    link: "/apply"
+                },
+                {
+                    title: "Contact Us",
+                    link: "/contact"
+                },
+                {
+                    title: "Services",
+                    link: "/services"
+                }
+            ]
+        },
+        {
+            title: "Mobile",
+            links: [
+                {
+                    title: "Android Apps",
+                    link: "/services/android-apps"
+                },
+                {
+                    title: "iPhone Apps",
+                    link: "/services/iphone-apps"
+                },
+                {
+                    title: "Hybrid Apps",
+                    link: "/services/hybrid-apps"
+                },
+                {
+                    title: "Flutter",
+                    link: "/services/flutter",
+                },
+                {
+                    title: "React Native",
+                    link: "/services/react-native"
+                }
+            ]
+        },
+        {
+            title: "Web",
+            links: [
+                {
+                    title: "PHP",
+                    link: "/services/web/php"
+                },
+                {
+                    title: "Java",
+                    link: "/services/web/java"
+                },
+                {
+                    title: "Python",
+                    link: "/services/web/python"
+                },
+                {
+                    title: "Wordpress",
+                    link: "/services/web/wordpress",
+                },
+                {
+                    title: "JavaScript",
+                    link: "/services/web/javascript"
+                }
+            ]
+        }
+    ]
+
+}

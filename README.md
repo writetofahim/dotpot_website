@@ -36,12 +36,18 @@ The website features:
 - React Router DOM
 - Material UI
 - Sass
-- Slick-Slider
+- Slick-Slider 
+
+### All pages are in `src/pages` directory
+
+### All components are in `src/components` directory
+
+### All data are comming from `src/data.js`
+
 
 ## Contributing
 
 Contributions to the project are welcome! If you notice a bug, have a feature request, or would like to contribute code, please open an issue or submit a pull request.
-
 
 
 

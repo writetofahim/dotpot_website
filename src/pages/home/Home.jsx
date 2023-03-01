@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from '../../components/Footer/Footer'
 import Hero from '../../components/Hero/Hero'
 import IndustriesWeServe from '../../components/IndustriesWeServe/IndustriesWeServe'
 import Information from '../../components/Information/Information'
@@ -27,6 +28,7 @@ const Home = () => {
       <WhoWeWorkWith />
       <WhatOurClientSay />
       <SocialMedia />
+      <Footer />
     </>
   )
 }
