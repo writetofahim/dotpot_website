@@ -5,6 +5,7 @@ import IndustriesWeServe from '../../components/IndustriesWeServe/IndustriesWeSe
 import Information from '../../components/Information/Information'
 import KeyFeatures from '../../components/KeyFeatures/KeyFeatures'
 import Navbar from '../../components/Navbar/Navbar'
+import OurPartnersSlider from '../../components/OurPartnersSlider/OurPartnersSlider'
 import PartnershipModels from '../../components/PartnershipModels/PartnershipModels'
 import ProcessWeFollow from '../../components/ProcessWeFollow/ProcessWeFollow'
 import RecentWorks from '../../components/RecentWorks/RecentWorks'
@@ -28,6 +29,7 @@ const Home = () => {
       <WhoWeWorkWith />
       <WhatOurClientSay />
       <SocialMedia />
+      <OurPartnersSlider />
       <Footer />
     </>
   )

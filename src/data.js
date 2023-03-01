@@ -896,6 +896,55 @@ export const jobFiltersData = [
 
 
 
+export const ourPartnersSliderData = [
+    "https://seeklogo.com/images/C/corporate-company-logo-749CEE6ADC-seeklogo.com.png",
+    "https://seeklogo.com/images/L/letter-g-company-logo-1CFBAE2436-seeklogo.com.png",
+    "https://seeklogo.com/images/L/letter-e-company-logo-FCAFFCDAD7-seeklogo.com.png",
+    "https://seeklogo.com/images/C/corporate-company-logo-749CEE6ADC-seeklogo.com.png",
+    "https://seeklogo.com/images/L/letter-g-company-logo-1CFBAE2436-seeklogo.com.png",
+    "https://seeklogo.com/images/L/letter-e-company-logo-FCAFFCDAD7-seeklogo.com.png",
+    "https://seeklogo.com/images/C/corporate-company-logo-749CEE6ADC-seeklogo.com.png",
+    "https://seeklogo.com/images/L/letter-g-company-logo-1CFBAE2436-seeklogo.com.png",
+    "https://seeklogo.com/images/L/letter-e-company-logo-FCAFFCDAD7-seeklogo.com.png",
+]
+
+
+
+
+export const aboutPageContent =[
+    {
+        text: "The website has become an essential and significant part of human life. Every business needs a website to showcase its skill, products, talents, and much more. Everything can be formed and updated with a website. Hyperlink InfoSystem understands the necessities and crafts exquisite website and CMS systems for start-ups or businesses. We are the leading tailor-made web development company, delivering the best web and CMS solutions across the globe.",
+        classes: "" 
+    },
+    {
+        text: "Our highly skilled developers have proficient expertise in the latest technology and trends. We worked with global firms to transform recognized ideas into stunning & inventive websites. We have rich experience and creativity in producing phenomenal websites and CMS development for different clients worldwide. Our experts hold a different and unique perspective which helps to tailor web development faster and better. With this web development, the business runs with high functionality, efficiency and enhances it.",
+        classes: ""
+    },
+    {
+        text: "Process We Follow:",
+        classes: "text-2xl font-bold"
+    },
+    {
+        text: "How Our Experts Handle The Project Efficiently,",
+        classes: ""
+    },
+    {
+        text: "1) Planning",
+        classes: "text-2xl font-bold"
+    },
+    {
+        text: "Gather all the information and plan the project, craft the idea for the website and CMS development."
+    },
+    {
+        text: "2) Development",
+        classes: "text-2xl font-bold"
+    },
+    {
+        text: "Our front-end designers will craft a stunning and striking responsive website following the wireframe, UI/UX design to prototype.",
+        classes: ""
+    }
+]
+
 
 
 

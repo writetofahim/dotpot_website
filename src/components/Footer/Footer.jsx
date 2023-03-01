@@ -46,7 +46,7 @@ const Footer = () => {
     const links = footerData.columns
 
     return (
-        <footer className="bg-gray-800 text-white">
+        <footer className="bg-gray-800 text-white pt-10">
         <div className="container mx-auto py-8 px-4">
             {/* Three columns */}
             <div className="md:grid grid-cols-1 md:grid-cols-4 gap-4 hidden">
