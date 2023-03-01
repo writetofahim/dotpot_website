@@ -12,7 +12,7 @@ const AboutHero = (props) => {
                     <h1 className="text-3xl md:text-5xl text-primary-500 font-bold mb-2">
                         {props.heading}
                     </h1>
-                    <p className='mb-5 text-gray-300 text-2xl text-secondary-500'>{props.text}</p>   
+                    <p className='mb-5 text-2xl text-secondary-500'>{props.text}</p>   
                     <Link to={props.button.link}>
                         <button variant="contained" className='bg-primary-500 px-10 py-3 text-white rounded-sm hover:bg-secondary-500 font-bold mt-2 flex items-center gap-3'>
                             {props.button.title} <BsArrowRight />
