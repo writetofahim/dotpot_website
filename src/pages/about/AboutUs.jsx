@@ -2,6 +2,7 @@ import React from 'react'
 import AboutHero from '../../components/AboutHero/AboutHero'
 import ContactForm from '../../components/ContactForm/ContactForm'
 import Footer from '../../components/Footer/Footer'
+import GoogleMap from '../../components/GoogleMap/GoogleMap'
 import Navbar from '../../components/Navbar/Navbar'
 import OurPartnersSlider from '../../components/OurPartnersSlider/OurPartnersSlider'
 import PartnershipModels from '../../components/PartnershipModels/PartnershipModels'
@@ -42,6 +43,7 @@ const AboutUs = () => {
             <WhoWeWorkWith />
             <RecentWorks />
             <SocialMedia />
+            <GoogleMap />
             <Footer />
         </div>
     )

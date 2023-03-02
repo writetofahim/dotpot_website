@@ -1,34 +1,36 @@
 export const sliderData = [
     {
         id: 1,
-        title: 'Calll center Support',
-        subTitle: "We provide support for",
-        desc: "We are in top of the callcenter support",
+        title: 'Calll center',
+        subTitle: "We call center support for our clients",
+        desc: "Optimize Agent Productivity with our Next-Generation Contact Center Solution. We're a Top Provider in Contact Center Solutions.",
         img: "https://static.vecteezy.com/system/resources/previews/019/600/767/non_2x/customer-service-illustration-vector.jpg",
         link: "#"
 
     },
     {
         id: 2,
-        title: 'Dedicated Team',
-        subTitle: "We have Highly skill team",
-        desc: "Our highly skilled team will provide support for you and your team members",
-        img: "https://static.vecteezy.com/system/resources/previews/005/608/265/non_2x/customer-service-hotline-service-provider-advises-customers-with-a-computer-headset-call-processing-system-call-center-illustration-free-vector.jpg",
+        title: 'Web App',
+        subTitle: "Development company",
+        desc: "DotpotiT provides custom web development services to help businesses establish a strong online presence and achieve their digital goals.",
+        img: "https://static.vecteezy.com/system/resources/previews/006/552/084/large_2x/isometric-style-illustration-about-a-web-programmer-working-with-his-computer-free-vector.jpg",
+        // img: "https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/main-banner/web-development.png",
         link: "#"
     },
     {
         id: 3,
-        title: 'Website Design',
-        subTitle: "Custom website design",
-        desc: "We will design mordern minimal website for your business",
-        img: "https://static.vecteezy.com/system/resources/previews/006/552/084/large_2x/isometric-style-illustration-about-a-web-programmer-working-with-his-computer-free-vector.jpg",
+        title: 'Mobile App',
+        subTitle: "Development company",
+        desc: "We provide comprehensive mobile app development services for both iOS and Android platforms, tailored to meet the unique needs of our clients.",
+        // img: "https://static.vecteezy.com/system/resources/previews/006/552/084/large_2x/isometric-style-illustration-about-a-web-programmer-working-with-his-computer-free-vector.jpg",
+        img: "https://cdn-icons-png.flaticon.com/512/4481/4481249.png",
         link: "#"
     },
     {
         id: 4,
-        title: 'Website Development',
-        subTitle: "Custom website development",
-        desc: "We will develop website for your business",
+        title: 'IT Support',
+        subTitle: "IT Sypport Team",
+        desc: "We provide efficient IT solutions and support to streamline your business operations and enhance productivity.",
         img: "https://static.vecteezy.com/system/resources/previews/004/579/151/non_2x/the-web-developer-team-is-building-a-smartphone-app-in-flat-design-free-vector.jpg",
         link: "#"
     }
@@ -74,36 +76,48 @@ export const informations = [
 ]
 
 
-export const outKeyFeatures = [
+export const ourKeyFeatures = [
     {
         id: 1,
+        icon: "https://cdn-icons-png.flaticon.com/512/870/870175.png",
         title: "Call Center Support",
-        desc: "We craft the client's needs on web, mobile, and blockchain to tailor the solutions and enhance growth of the businesses."
+        desc: "Optimize Agent Productivity with our Next-Generation call Center Solution. We're a Top Provider in  call center Solutions."
     },
     {
         id: 2,
+        icon: "https://cdn-icons-png.flaticon.com/512/476/476863.png",
         title: "Dedicated Team",
-        desc: "Our highly skilled team will provide support for you and your team members"
+        desc: "Empower your business with a dedicated call center team. Maximize customer satisfaction and retention. Trust our experts for seamless call center operations."
     },
     {
         id: 3,
+        icon: "https://cdn-icons-png.flaticon.com/512/922/922699.png",
         title: "Website Design",
-        desc: "We craft the client's needs on web, mobile, and blockchain to tailor the solutions and enhance growth of the businesses."
+        desc: "At Dotpoti, we specialize in creating custom and responsive website designs that not only look great but also improve user experience and drive conversions."
     },
     {
         id: 4,
+        icon: "https://cdn-icons-png.flaticon.com/512/1329/1329016.png",
         title: "Website Development",
-        desc: "We craft the client's needs on web, mobile, and blockchain to tailor the solutions and enhance growth of the businesses."
+        desc: "Our website development services provide modern, responsive, and user-friendly websites that are optimized for search engines and designed to meet our clients' unique needs."
     },
     {
         id: 5,
+        icon: "https://cdn-icons-png.flaticon.com/512/3437/3437364.png",
         title: "Mobile App Development",
-        desc: "We craft the client's needs on web, mobile, and blockchain to tailor the solutions and enhance growth of the businesses."
+        desc: "Expert mobile app development services for iOS and Android platforms, designed to meet your unique business needs and enhance user engagement."
     },
     {
         id: 6,
-        title: "Web App Development",
-        desc: "We craft the client's needs on web, mobile, and blockchain to tailor the solutions and enhance growth of the businesses."
+        icon: "https://cdn-icons-png.flaticon.com/512/2152/2152539.png",
+        title: "Blockchain Development",
+        desc: "Build innovative blockchain solutions with our expert team. From blockchain consulting to development and implementation, we provide end-to-end blockchain services to businesses worldwide."
+    },
+    {
+        id: 7,
+        icon: "https://cdn-icons-png.flaticon.com/512/2057/2057748.png",
+        title: "IT Support",
+        desc: "Expert IT support services for businesses of all sizes. Ensure smooth operations and maximize efficiency with our reliable solutions."
     }
 ]
 
@@ -376,16 +390,19 @@ export const processWeFollowData = [
 export const PartnershipModelsData = [
     {
         id: 1,
+        icon: "https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/fixed-price-model-new.png",
         title: "Fixed Price Model",
         desc: "In this model, the project scope of work with its associated cost and timeline is defined before development starts. This is a preferred model for longer periods of engagement. Client always has peace of mind of knowing the project will remain on the same budget as agreed. This model suits best to clients who have a perfect vision of their requirement."
     },
     {
         id: 2,
+        icon: "https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/hire-dedicated-model.png",
         title: "Hire Dedicated Model",
         desc: "This is very classic and simple way of engagement wherein clients pay for the number of hours the app developer works on project. Clients easily start the project as they don't have to walk in with detailed specifications. This model also allows client to update new features any time and clients know exactly what they’re paying for. This drives a lot more trust and communication."
     },
     {
         id: 3,
+        icon: "https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/on-site-development-model-new.png",
         title: "On Site Development Model",
         desc: "This model is preferred when clients want additional temporary resources for on-site development. This contract type ensures the engagement is cost-effective and a face-to-face interactions with developers. This model helps in achieving the deadline on time as there is continuous communication during the whole process."
     }
@@ -395,52 +412,52 @@ export const PartnershipModelsData = [
 export const IndustriesWeServeData = [
     {
         id: 1,
-        logo: "logo url",
+        logo: "https://cdn-icons-png.flaticon.com/512/1162/1162499.png",
         title: "Retail, Ecommerce"
     },
     {
         id: 2,
-        logo: "logo url",
+        logo: "https://cdn-icons-png.flaticon.com/512/2436/2436874.png",
         title: "Education & e-learning"
     },
     {
         id: 3,
-        logo: "logo url",
+        logo: "https://cdn-icons-png.flaticon.com/512/2382/2382533.png",
         title: "Healthcare & Fitness"
     },
     {
         id: 4,
-        logo: "logo url",
+        logo: "https://cdn-icons-png.flaticon.com/512/2166/2166903.png",
         title: "Logistics & Distribution"
     },
     {
         id: 5,
-        logo: "logo url",
+        logo: "https://cdn-icons-png.flaticon.com/512/1968/1968666.png",
         title: "Social Networking"
     },
     {
         id: 6,
-        logo: "logo url",
+        logo: "https://cdn-icons-png.flaticon.com/512/2113/2113646.png",
         title: "Real Estate"
     },
     {
         id: 7,
-        logo: "logo url",
+        logo: "https://cdn-icons-png.flaticon.com/512/2200/2200326.png",
         title: "Travel & Hospitality"
     },
     {
         id: 8,
-        logo: "logo url",
+        logo: "https://cdn-icons-png.flaticon.com/512/737/737967.png",
         title: "Food & Restaurant"
     },
     {
         id: 9,
-        logo: "logo url",
+        logo: "https://cdn-icons-png.flaticon.com/512/4185/4185733.png",
         title: "On-Demand Solutions"
     },
     {
         id: 10,
-        logo: "logo url",
+        logo: "https://cdn-icons-png.flaticon.com/512/3097/3097980.png",
         title: "Gaming"
     }
 ]

@@ -15,12 +15,12 @@ const Slide = ({ title, subTitle , desc, img, link }) => {
             </h1>
             <p className='mb-5 text-gray-300 text-3xl font-bold'>{subTitle}</p>
             <div className="flex gap-5 items-center mb-5">
-                <div className="pr-5 border-r border-gray-300">
+                {/* <div className="pr-5 border-r border-gray-300">
                   <h1 className="text-4xl text-secondary-500 font-bold">
                     #1
                   </h1>
-                </div>
-                <p className="">
+                </div> */}
+                <p className="md:w-2/3 w-4/5">
                   {desc}
                 </p>
             </div>    
@@ -31,7 +31,7 @@ const Slide = ({ title, subTitle , desc, img, link }) => {
         </Link>
         </div>
         <div className="right flex-1 flex items-end justify-center ">
-          <img src={img} alt={title} /> 
+          <img src={img} alt={title} className="max-h-[50vh]" /> 
         </div>
       </div>
     </div>

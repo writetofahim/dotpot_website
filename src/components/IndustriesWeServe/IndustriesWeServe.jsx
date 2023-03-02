@@ -5,7 +5,7 @@ export const ProcessCard = (props) => {
     return(
         <div className="bg-white rounded-lg flex flex-col items-stretch justify-center p-10 shadow h-[200px] w-[100%] md:w-[18%] md:min-w-[200px]">
             <div className="flex flex-col gap-5 items-center justify-center">
-            <img src="https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/about/app-development-ab.png" alt="app downloads" />
+            <img src={props.logo} alt={props.title} className="w-[50px] h-[50px]" />
                 <p className="text-xl font-bold text-center text-primary-500">{props.title}</p>
             </div>
         </div>

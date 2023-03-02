@@ -8,6 +8,7 @@ import OurPartnersSlider from '../../components/OurPartnersSlider/OurPartnersSli
 import RecentWorks from '../../components/RecentWorks/RecentWorks'
 import WhoWeWorkWith from '../../components/WhoWeWorkWith/WhoWeWorkWith'
 import Service from '../../components/Services/Service'
+import GoogleMap from '../../components/GoogleMap/GoogleMap'
 
 
 const Contact = () => {
@@ -33,6 +34,7 @@ const Contact = () => {
             <WhoWeWorkWith />
             <RecentWorks />
             <SocialMedia />
+            <GoogleMap />
             <Footer />
         </div>
     )

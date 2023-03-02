@@ -1,8 +1,7 @@
 
 import React from "react";
 import Slider from "react-slick";
-import { outKeyFeatures } from "../../data"
-import { HiOutlineDesktopComputer } from "react-icons/hi"
+import { ourKeyFeatures } from "../../data"
 
 
 var settings = {
@@ -14,13 +13,14 @@ var settings = {
     initialSlide: 0,
     autoplay: true,
     autoplaySpeed: 3000,
+    arrows: true,
     cssEase: "linear",
     responsive: [
         {
             breakpoint: 1024,
             settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
+                slidesToShow: 2,
+                slidesToScroll: 1,
                 infinite: true,
                 dots: true
             }
@@ -43,17 +43,17 @@ var settings = {
     ]
 };
 
-export const SingleSlide = ({ id, title, desc }) => {
+export const SingleSlide = (props) => {
     return (
         <div className="w-300px h-[300px] bg-primary-600 mx-5 p-5 rounded-lg shadow-lg">
             <div className="text-6xl">
-                <HiOutlineDesktopComputer />
+                <img src={props.icon} alt="" className="w-[50px] h-[50px]" />
             </div>
             <h2 className="text-2xl font-bold my-5">
-                {title}
+                {props.title}
             </h2>
             <p className="">
-                {desc}
+                {props.desc}
             </p>
         </div>
     )
@@ -64,7 +64,7 @@ function KeyFeatureSlider() {
         <div className="w-full overflow-x-hidden my-10 py-10">
             <Slider {...settings} className="py-2">
                 {
-                    outKeyFeatures.map((feature, index) => (
+                    ourKeyFeatures.map((feature, index) => (
                         <SingleSlide key={index} {...feature} />
                     ))
                 }
