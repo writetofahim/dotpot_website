@@ -6,7 +6,7 @@ export const Card = (props) => {
     return (
         <div className="mx-5 p-5 rounded-lg shadow-lg flex-1">
             <div className="text-6xl">
-                <img class="img-fluid" src={props.icon} alt="fixed price model" />
+                <img className="img-fluid" src={props.icon} alt="fixed price model" />
             </div>
             <h2 className="text-2xl font-bold my-5">
                 {props.title}

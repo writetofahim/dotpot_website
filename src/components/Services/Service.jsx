@@ -9,7 +9,7 @@ export const Card = (props) => {
     <div className="h-[500px] w-[80%] md:w-[30%] shadow p-5 flex flex-col rounded-xl relative">
       <div className="top flex gap-4 mb-5">
         <div className="left">
-          <img class="align-self-center mr-3" src="https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/services-we-offer/web-development.svg" alt="web development" />
+          <img className="align-self-center mr-3" src="https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/services-we-offer/web-development.svg" alt="web development" />
         </div>
         <div className="right text-xl font-bold ">
           {props.title}
@@ -21,7 +21,7 @@ export const Card = (props) => {
             props.list.map((item, index) => (
               <Link to="#" key={index}>
                 <li className='flex items-center mt-2'>
-                  <img class="mr-3" width="23px" height="23px" src="https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/services-we-offer/wordpress.svg" alt="wordpress" />
+                  <img className="mr-3" width="23px" height="23px" src="https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/services-we-offer/wordpress.svg" alt="wordpress" />
                   {item.text}
                 </li>
               </Link>

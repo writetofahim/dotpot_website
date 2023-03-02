@@ -1,6 +1,7 @@
 import { Fab } from '@mui/material'
 import React from 'react'
 import BackToTop from '../../components/BackToTop/BackToTop'
+import CustomizeYourService from '../../components/CustomizeYourService/CustomizeYourService'
 import Footer from '../../components/Footer/Footer'
 import Hero from '../../components/Hero/Hero'
 import IndustriesWeServe from '../../components/IndustriesWeServe/IndustriesWeServe'
@@ -23,7 +24,8 @@ const Home = () => {
       <Hero />
       <Information />
       <KeyFeatures />
-      <Service />
+      {/* <Service /> */}
+      <CustomizeYourService />
       <ProcessWeFollow />
       <PartnershipModels />
       <IndustriesWeServe />

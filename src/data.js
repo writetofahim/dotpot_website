@@ -348,6 +348,95 @@ export const servicesData = [
     }
 ]
 
+
+
+
+export const customizeYourService = [
+    {
+        id: 1,
+        title: "Mobile App Developmnet",
+        icon: "https://cdn-icons-png.flaticon.com/512/2097/2097276.png",
+        technologies: [
+            {
+                title : "Android",
+                icon: "https://cdn-icons-png.flaticon.com/512/214/214490.png",
+                cost: 10000
+            },
+            {
+                title : "IOS",
+                icon: "https://cdn-icons-png.flaticon.com/512/831/831276.png",
+                cost: 15000
+            },
+            {
+                title : "Flutter",
+                icon: "https://www.seekpng.com/png/full/945-9454419_nuff-said-show-me-the-code-flutter-bottom.png",
+                cost: 18000
+            }
+        ],
+        addons: [
+            {
+                title : "Yearly Hosting",
+                icon: "https://cdn-icons-png.flaticon.com/512/1373/1373110.png",
+                cost: 5000
+            },
+            {
+                title: "Maintenance",
+                icon: "https://cdn-icons-png.flaticon.com/512/9851/9851695.png",
+                cost: 2000,
+            }
+        ]
+    },
+    {
+        id: 2,
+        title: "Web Developmnet",
+        icon: "https://cdn-icons-png.flaticon.com/512/1055/1055666.png",
+        technologies: [
+            {
+                title : "Static Website",
+                icon: "https://cdn-icons-png.flaticon.com/512/5219/5219384.png",
+                cost: 10000
+            },
+            {
+                title : "Blog Website",
+                icon: "https://cdn-icons-png.flaticon.com/512/9836/9836465.png",
+                cost: 15000
+            },
+            {
+                title : "Ecommerce Website",
+                icon: "https://cdn-icons-png.flaticon.com/512/1162/1162499.png",
+                cost: 18000
+            },
+            {
+                title: "Custom React Website",
+                icon: "https://cdn-icons-png.flaticon.com/512/1066/1066631.png",
+                cost:50000
+            }
+        ],
+        addons: [
+            {
+                title: "Domain",
+                icon:"https://cdn-icons-png.flaticon.com/512/6114/6114305.png",
+                cost: 1000
+            },
+            {
+                title: "SSL Certificate",
+                icon:"https://cdn-icons-png.flaticon.com/512/6195/6195712.png",
+                cost: 1000
+            },
+            {
+                title : "Yearly Hosting",
+                icon: "https://cdn-icons-png.flaticon.com/512/1373/1373110.png",
+                cost: 5000
+            },
+            {
+                title: "Maintenance",
+                icon: "https://cdn-icons-png.flaticon.com/512/9851/9851695.png",
+                cost: 2000,
+            }
+        ]
+    }
+]
+
 export const processWeFollowData = [
     {
         id: 1,

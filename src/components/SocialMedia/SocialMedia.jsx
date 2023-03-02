@@ -14,7 +14,7 @@ const SocialMedia = () => {
                     {
                         socialNetworkData.map((item, index) => {
                             return (
-                                <Link to={item.link} target="_blank">
+                                <Link to={item.link} key={index} target="_blank">
                                     <div key={index} className="w-[100px] h-[100px] rounded-lg shadow flex items-center justify-center hover:border hover: border-purple-500">
                                         <img src={item.icon} alt="" className="h-[50px] w-[50px]" />
                                     </div>

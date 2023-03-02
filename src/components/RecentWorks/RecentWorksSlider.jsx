@@ -53,7 +53,7 @@ export const SingleSlide = (props) => {
                 <Stack direction="row" spacing={1}>
                     {
                         props.tech.map((tech, index) => (
-                            <Chip label={tech} variant="outlined" />
+                            <Chip label={tech} key={index} variant="outlined" />
                         ))
                     }
                 </Stack>
