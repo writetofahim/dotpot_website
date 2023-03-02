@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { footerData } from '../../data';
 import { BsPlusLg } from 'react-icons/bs';
-import { BiMinus } from "react-icons/bi"
+import { BiMinus} from "react-icons/bi"
 import logo from "../../assets/img/logo.png"
 
 
@@ -89,6 +89,10 @@ const Footer = () => {
                 </Link>
                 <p>
                     Make your Business Success Online
+                </p>
+                <br />
+                <p>
+                Dotpot iT, House-1, Road-3, Block-A, Mirpur-10, Dhaka, Bangladesh
                 </p>
             </div>
             {

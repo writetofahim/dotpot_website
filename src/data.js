@@ -467,7 +467,26 @@ export const customizeYourService = [
             }
         ],
         addons: [
-            
+            {
+                title: "Domain",
+                icon:"https://cdn-icons-png.flaticon.com/512/6114/6114305.png",
+                cost: 1000
+            },
+            {
+                title: "SSL Certificate",
+                icon:"https://cdn-icons-png.flaticon.com/512/6195/6195712.png",
+                cost: 1000
+            },
+            {
+                title : "Yearly Hosting",
+                icon: "https://cdn-icons-png.flaticon.com/512/1373/1373110.png",
+                cost: 5000
+            },
+            {
+                title: "Maintenance",
+                icon: "https://cdn-icons-png.flaticon.com/512/9851/9851695.png",
+                cost: 2000,
+            }
         ]
     },
     {
@@ -497,26 +516,7 @@ export const customizeYourService = [
             }
         ],
         addons: [
-            {
-                title: "Domain",
-                icon:"https://cdn-icons-png.flaticon.com/512/6114/6114305.png",
-                cost: 1000
-            },
-            {
-                title: "SSL Certificate",
-                icon:"https://cdn-icons-png.flaticon.com/512/6195/6195712.png",
-                cost: 1000
-            },
-            {
-                title : "Yearly Hosting",
-                icon: "https://cdn-icons-png.flaticon.com/512/1373/1373110.png",
-                cost: 5000
-            },
-            {
-                title: "Maintenance",
-                icon: "https://cdn-icons-png.flaticon.com/512/9851/9851695.png",
-                cost: 2000,
-            }
+            
         ]
     }
 ]
