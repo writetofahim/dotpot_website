@@ -43,15 +43,15 @@ const CustomizeYourService = () => {
 
 
     return (
-        <div className='w-full h-[100vh] bg-white overflow-hidden py-10 md:flex md:flex-col md:items-center'>
+        <div className='w-full h-[100vh] md:h-auto bg-white overflow-hidden py-10 md:flex md:flex-col md:items-center'>
             <div className="container p-0 md:p-5">
                 <h1 className="mt-10 text-5xl md:text-6xl font-bold text-primary-500 px-5">Cutomize Your Service</h1>
 
 
                 {/* Main Section */}
-                <div className="maincontent flex justify-between mt-10 gap-2 md:gap-5 h-full">
+                <div className="maincontent flex md:flex-col lg:flex-row justify-between mt-10 gap-2 md:gap-5 h-full">
 
-                    <div className="left flex-[0.2] border rounded p-1 md:p-5 h-[70vh]">
+                    <div className="left flex-[0.2] border rounded p-1 md:p-5 h-[75vh]">
                         <h3 className="text-lg md:text-3xl font-bold mb-2">Services</h3>
                         <Divider />
                         {
@@ -66,14 +66,14 @@ const CustomizeYourService = () => {
 
 
                     {/* Right Side */}
-                    <div className="right flex-[0.8] border rounded p-1 md:p-5 overflow-scrool h-[70vh]">
+                    <div className="right flex-[0.8] border rounded p-1 md:p-5 overflow-scrool h-[75vh]">
                         {
                                 cart.length > 0 && (
                                     <div className="w-full flex items-center gap-3">
                                         {
                                             cart.map((item, index)=>(
                                                 <div key={index} className="flex items-center gap-2 py-1 px-2 border rounded-full cursor-pointer hover:border-secondary-500 hover:text-secondary-500" onClick={()=>removeItemFromCart(item.title, item.cost)} >
-                                                    <img src={item.icon} alt={item.title} className="w-4 h-4 md:w-7 w-4 h-4 md:h-7"/>
+                                                    <img src={item.icon} alt={item.title} className="w-4 h-4 md:w-7 md:h-7"/>
                                                     <RxCross1 />
                                                 </div>
                                             ))
