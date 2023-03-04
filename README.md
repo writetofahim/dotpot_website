@@ -4,20 +4,46 @@ This website showcases the services and portfolio of DotpotiT, a digital agency 
 
 ## Getting Started
 
-To get started with the project, clone this repository to your local machine and navigate to the project directory in your terminal.
+To get a local copy of this website up and running, please follow these steps:
 
-Clone the repository
+1. Clone the repository
 
 `git clone https://github.com/DotpotiT/website.git`
 
-Then, install the dependencies:
+2. Then, install the dependencies:
 
     `npm install`
 
-Finally, start the development server:
+3. Run the development server:
     `npm run dev`
 
-This will start the development server on `http://localhost:3000`.
+4. Open the project on browser 
+    `http://localhost:5173`
+
+
+
+## Folder Structure
+- The public directory contains static files like images and index.html file.
+- The src directory contains all the source code of the website.
+- The components directory contains all the reusable components used in the website.
+- The pages directory contains all the web pages of the website.
+- The styles directory contains all the global styles of the website.
+- App.js is the main component that renders all the other components.
+- index.js is the entry point of the website.
+
+
+## Available Scripts
+In the project directory, you can run:
+
+`npm run dev`
+Runs the app in the development mode.
+Open http://localhost:3000 to view it in the browser.
+
+`npm run build`
+Builds the app for production to the build folder.
+
+`npm run start`
+Runs the app in the production mode.
 
 ## Features
 
@@ -37,12 +63,7 @@ The website features:
 - Material UI
 - Sass
 - Slick-Slider 
-
-### All pages are in `src/pages` directory
-
-### All components are in `src/components` directory
-
-### All data are comming from `src/data.js`
+- tsParticles
 
 
 ## Contributing

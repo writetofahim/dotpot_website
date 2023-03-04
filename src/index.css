@@ -8,21 +8,10 @@
   box-sizing: border-box;
 }
 
+/****************************** Slidersn *******************************/
 
-.slick-arrow.slick-prev{
-  margin-left: 20px;
-  z-index: 1;
-  height: 50px;
-  width: 50px;
-  font-size: 30px;
-}
-.slick-arrow.slick-next{
-  margin-right: 20px;
-  z-index: 1;
-  height: 50px;
-  width: 50px;
-  font-size: 30px;
-}
+
+
 
 /****************************** Navigation Bar Design *******************************/
 .glassmorphism{

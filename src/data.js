@@ -1,8 +1,8 @@
 export const sliderData = [
     {
         id: 1,
-        title: 'Calll center',
-        subTitle: "We call center support for our clients",
+        title: 'Contact center',
+        subTitle: "We contact center support for our clients",
         desc: "Optimize Agent Productivity with our Next-Generation Contact Center Solution. We're a Top Provider in Contact Center Solutions.",
         img: "https://static.vecteezy.com/system/resources/previews/019/600/767/non_2x/customer-service-illustration-vector.jpg",
         link: "#"
@@ -41,37 +41,37 @@ export const informations = [
         id: 1,
         icon: "testIcon",
         number: 355,
-        text: "We have highly skill call center operators"
+        text: "We have highly skill contact center operators"
     },
     {
         id: 2,
         icon: "testIcon",
         number: 4501,
-        text: "We have highly skill call center operators"
+        text: "We have highly skill contact center operators"
     },
     {
         id: 3,
         icon: "testIcon",
         number: 450,
-        text: "We have highly skill call center operators"
+        text: "We have highly skill contact center operators"
     },
     {
         id: 4,
         icon: "testIcon",
         number: 140,
-        text: "We have highly skill call center operators"
+        text: "We have highly skill contact center operators"
     },
     {
         id: 5,
         icon: "testIcon",
         number: 210,
-        text: "We have highly skill call center operators"
+        text: "We have highly skill contact center operators"
     },
     {
         id: 6,
         icon: "testIcon",
         number: 6000,
-        text: "We have highly skill call center operators"
+        text: "We have highly skill contact center operators"
     }
 ]
 
@@ -80,14 +80,14 @@ export const ourKeyFeatures = [
     {
         id: 1,
         icon: "https://cdn-icons-png.flaticon.com/512/870/870175.png",
-        title: "Call Center Support",
-        desc: "Optimize Agent Productivity with our Next-Generation call Center Solution. We're a Top Provider in  call center Solutions."
+        title: "Contact Center Support",
+        desc: "Optimize Agent Productivity with our Next-Generation contact Center Solution. We're a Top Provider in  contact center Solutions."
     },
     {
         id: 2,
         icon: "https://cdn-icons-png.flaticon.com/512/476/476863.png",
         title: "Dedicated Team",
-        desc: "Empower your business with a dedicated call center team. Maximize customer satisfaction and retention. Trust our experts for seamless call center operations."
+        desc: "Empower your business with a dedicated contact center team. Maximize customer satisfaction and retention. Trust our experts for seamless contact center operations."
     },
     {
         id: 3,
@@ -491,7 +491,7 @@ export const customizeYourServiceData = [
     },
     {
         id: 4,
-        title: "Call Center",
+        title: "Contact Center",
         icon: "https://cdn-icons-png.flaticon.com/512/2706/2706962.png",
         technologies: [
             {
@@ -897,7 +897,7 @@ export const socialNetworkData = [
 
 export const jobPageData = {
     title: "Apply For Your Dream Job",
-    desc: "Looking for a new and exciting opportunity? Join the team at DotpotiT! We are a fast-growing tech company that specializes in providing a wide range of tech services, including Web & Mobile app development, SEO support, Call Center Support.",
+    desc: "Looking for a new and exciting opportunity? Join the team at DotpotiT! We are a fast-growing tech company that specializes in providing a wide range of tech services, including Web & Mobile app development, SEO support, contact Center Support.",
     jobs: [
         {
             id: 0,

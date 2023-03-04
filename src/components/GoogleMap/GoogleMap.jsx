@@ -2,8 +2,8 @@ import React from 'react'
 
 const GoogleMap = () => {
     return (
-        <div className='w-full py-10 -mb-20'>
-            <h1 className="text-4xl font-bold text-center text-primary-500 mb-5">
+        <div className='w-full py-10 -mb-20 bg-white'>
+            <h1 className="text-6xl font-bold text-center text-primary-500 mb-5">
                 Visit Our Office
             </h1>
             <iframe

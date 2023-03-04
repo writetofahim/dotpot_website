@@ -67,21 +67,28 @@ const CustomizeYourService = () => {
 
                     {/* Right Side */}
                     <div className="right flex-[0.8] border rounded p-1 md:p-5 overflow-scrool h-[75vh]">
-                        {
-                                cart.length > 0 && (
-                                    <div className="w-full flex items-center gap-3">
-                                        {
-                                            cart.map((item, index)=>(
-                                                <div key={index} className="flex items-center gap-2 py-1 px-2 border rounded-full cursor-pointer hover:border-secondary-500 hover:text-secondary-500" onClick={()=>removeItemFromCart(item.title, item.cost)} >
-                                                    <img src={item.icon} alt={item.title} className="w-4 h-4 md:w-7 md:h-7"/>
-                                                    <RxCross1 />
-                                                </div>
-                                            ))
-                                        }
-                                    </div>
-                                )
-                            }
-                        <p className="text-primary-500  md:text-xl">Starting From <span className="font-bold">{price} Tk</span></p>
+                        <div className="flex justify-between">
+                            <div>
+                                {
+                                    cart.length > 0 && (
+                                        <div className='flex'>
+                                            <h1 className="text-sm">Selected services</h1>
+                                            <div className="w-full flex items-center gap-3">
+                                                {
+                                                    cart.map((item, index)=>(
+                                                        <div key={index} className="flex items-center gap-2 py-1 px-2 border rounded-full cursor-pointer hover:border-secondary-500 hover:text-secondary-500" onClick={()=>removeItemFromCart(item.title, item.cost)} >
+                                                            <img src={item.icon} alt={item.title} className="w-4 h-4 md:w-7 md:h-7"/>
+                                                            <RxCross1 />
+                                                        </div>
+                                                    ))
+                                                }
+                                            </div>
+                                        </div>
+                                    )
+                                }
+                            </div>
+                            <p className="text-primary-500  md:text-xl">Starting From <span className="font-bold">{price} Tk</span></p>
+                        </div>
                         {
                             selectedService!==null ? (
                                 <>

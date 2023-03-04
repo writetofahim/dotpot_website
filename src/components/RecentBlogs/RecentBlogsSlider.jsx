@@ -6,6 +6,30 @@ import Slider from "react-slick";
 import { blogData } from "../../data"
 import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
+import {GrNext,GrPrevious} from "react-icons/gr"
+
+
+function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+        return (
+        <GrNext
+            className="text-6xl absolute right-0 top-1/2 cursor-pointer text-secondary-500 opacity-5 hover:opacity-100 -translate-y-10 border p-2 rounded-full"
+            style={{ ...style, display: "block"}}
+            onClick={onClick}
+        />
+        );
+    }
+    
+    function SamplePrevArrow(props) {
+        const { className, style, onClick } = props;
+        return (
+        <GrPrevious
+            className="text-6xl absolute -left-5 top-1/2 cursor-pointer text-secondary-500 opacity-5 hover:opacity-100 -translate-y-10 border p-2 rounded-full"
+            style={{ ...style, display: "block", }}
+            onClick={onClick}
+        />
+        );
+    }
 
 
 var settings = {
@@ -18,6 +42,8 @@ var settings = {
     autoplay: true,
     autoplaySpeed: 3000,
     cssEase: "linear",
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
     responsive: [
         {
             breakpoint: 1024,

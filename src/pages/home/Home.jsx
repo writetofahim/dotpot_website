@@ -3,6 +3,7 @@ import React from 'react'
 import BackToTop from '../../components/BackToTop/BackToTop'
 import CustomizeYourService from '../../components/CustomizeYourService/CustomizeYourService'
 import Footer from '../../components/Footer/Footer'
+import GoogleMap from '../../components/GoogleMap/GoogleMap'
 import Hero from '../../components/Hero/Hero'
 import IndustriesWeServe from '../../components/IndustriesWeServe/IndustriesWeServe'
 import Information from '../../components/Information/Information'
@@ -34,8 +35,9 @@ const Home = () => {
       <WhoWeWorkWith />
       <WhatOurClientSay />
       <SocialMedia />
-      <RecentBlogs />
       <OurPartnersSlider />
+      <RecentBlogs />
+      <GoogleMap />
       <Footer />
       {/* <BackToTop /> */}
     </>

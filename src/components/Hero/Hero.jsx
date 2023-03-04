@@ -1,6 +1,5 @@
 import { Container } from '@mui/system'
 import React from 'react'
-import './Hero.scss'
 import Particle from './Particle'
 import SimpleSlider from './SimpleSlider'
 
