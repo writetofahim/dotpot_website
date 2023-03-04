@@ -359,16 +359,19 @@ export const customizeYourServiceData = [
         technologies: [
             {
                 title: "Android",
+                sdes: "Android app development",
                 icon: "https://cdn-icons-png.flaticon.com/512/214/214490.png",
                 cost: 10000
             },
             {
                 title: "IOS",
+                sdes: "IOS app development",
                 icon: "https://cdn-icons-png.flaticon.com/512/831/831276.png",
                 cost: 15000
             },
             {
                 title: "Flutter",
+                sdes: "Flutter app development",
                 icon: "https://www.seekpng.com/png/full/945-9454419_nuff-said-show-me-the-code-flutter-bottom.png",
                 cost: 18000
             }
@@ -376,11 +379,13 @@ export const customizeYourServiceData = [
         addons: [
             {
                 title: "Yearly Hosting",
+                sdes: "Application hosting yearly",
                 icon: "https://cdn-icons-png.flaticon.com/512/1373/1373110.png",
                 cost: 5000
             },
             {
                 title: "Maintenance",
+                sdes: "Application maintenance service",
                 icon: "https://cdn-icons-png.flaticon.com/512/9851/9851695.png",
                 cost: 2000,
             }
@@ -389,25 +394,30 @@ export const customizeYourServiceData = [
     {
         id: 2,
         title: "Web Developmnet",
+        sdes: "Website and Web app development",
         icon: "https://cdn-icons-png.flaticon.com/512/1927/1927656.png",
         technologies: [
             {
                 title: "Static Website",
+                sdes: "Simple website with static data",
                 icon: "https://cdn-icons-png.flaticon.com/512/5219/5219384.png",
                 cost: 10000
             },
             {
                 title: "Blog Website",
+                sdes: "Bloging website with dynamic data",
                 icon: "https://cdn-icons-png.flaticon.com/512/9836/9836465.png",
                 cost: 15000
             },
             {
                 title: "Ecommerce Website",
+                sdes: "Full-Stack Ecommerce Website with admin",
                 icon: "https://cdn-icons-png.flaticon.com/512/1162/1162499.png",
                 cost: 18000
             },
             {
                 title: "Custom React Website",
+                sdes: "Fully custom high performance React website",
                 icon: "https://cdn-icons-png.flaticon.com/512/1066/1066631.png",
                 cost: 50000
             }
@@ -415,21 +425,25 @@ export const customizeYourServiceData = [
         addons: [
             {
                 title: "Domain",
+                sdes: "1 Domain name registation",
                 icon: "https://cdn-icons-png.flaticon.com/512/6114/6114305.png",
                 cost: 1000
             },
             {
-                title: "SSL Certificate",
+                title: "SSL",
+                sdes: "SSL certificate for the website",
                 icon: "https://cdn-icons-png.flaticon.com/512/6195/6195712.png",
                 cost: 1000
             },
             {
-                title: "Yearly Hosting",
+                title: "Hosting",
+                sdes: "Yearly web hosting",
                 icon: "https://cdn-icons-png.flaticon.com/512/1373/1373110.png",
                 cost: 5000
             },
             {
                 title: "Maintenance",
+                sdes: "Website maintenance service",
                 icon: "https://cdn-icons-png.flaticon.com/512/9851/9851695.png",
                 cost: 2000,
             }
@@ -438,30 +452,36 @@ export const customizeYourServiceData = [
     {
         id: 4,
         title: "iT Support",
+        sdes: "Every types of iT support",
         icon: "https://cdn-icons-png.flaticon.com/512/2058/2058768.png",
         technologies: [
             {
                 title: "Hardware support",
+                sdes: "Hardware maintenance/ repair/ replacement",
                 icon: "https://cdn-icons-png.flaticon.com/512/3868/3868395.png",
                 cost: 10000
             },
             {
                 title: "Software support",
+                sdes: "Software development/ maintenance/ Installation",
                 icon: "https://cdn-icons-png.flaticon.com/512/838/838490.png",
                 cost: 15000
             },
             {
                 title: "Network support",
+                sdes: "Network configuration, Maintenance",
                 icon: "https://cdn-icons-png.flaticon.com/512/3598/3598209.png",
                 cost: 18000
             },
             {
                 title: "Security support",
+                sdes: "Cyber security support",
                 icon: "https://cdn-icons-png.flaticon.com/512/2592/2592258.png",
                 cost: 50000
             },
             {
                 title: "Cloud support",
+                sdes: "Cloud storage",
                 icon: "https://cdn-icons-png.flaticon.com/512/3305/3305673.png",
                 cost: 50000
             }
@@ -469,21 +489,25 @@ export const customizeYourServiceData = [
         addons: [
             {
                 title: "Domain",
+                sdes: "1 Domain name registation",
                 icon: "https://cdn-icons-png.flaticon.com/512/6114/6114305.png",
                 cost: 1000
             },
             {
-                title: "SSL Certificate",
+                title: "SSL",
+                sdes: "SSL certificate for the website",
                 icon: "https://cdn-icons-png.flaticon.com/512/6195/6195712.png",
                 cost: 1000
             },
             {
-                title: "Yearly Hosting",
+                title: "Hosting",
+                sdes: "Yearly web hosting",
                 icon: "https://cdn-icons-png.flaticon.com/512/1373/1373110.png",
                 cost: 5000
             },
             {
                 title: "Maintenance",
+                sdes: "Website maintenance service",
                 icon: "https://cdn-icons-png.flaticon.com/512/9851/9851695.png",
                 cost: 2000,
             }
@@ -492,31 +516,59 @@ export const customizeYourServiceData = [
     {
         id: 4,
         title: "Contact Center",
+        sdes: "Contact Center support for companies",
         icon: "https://cdn-icons-png.flaticon.com/512/1687/1687136.png",
         technologies: [
             {
                 title: "Static Website",
+                sdes: "Simple website with static data",
                 icon: "https://cdn-icons-png.flaticon.com/512/5219/5219384.png",
                 cost: 10000
             },
             {
                 title: "Blog Website",
+                sdes: "Bloging website with dynamic data",
                 icon: "https://cdn-icons-png.flaticon.com/512/9836/9836465.png",
                 cost: 15000
             },
             {
                 title: "Ecommerce Website",
+                sdes: "Full-Stack Ecommerce Website with admin",
                 icon: "https://cdn-icons-png.flaticon.com/512/1162/1162499.png",
                 cost: 18000
             },
             {
                 title: "Custom React Website",
+                sdes: "Fully custom high performance React website",
                 icon: "https://cdn-icons-png.flaticon.com/512/1066/1066631.png",
                 cost: 50000
             }
         ],
         addons: [
-
+            {
+                title: "Domain",
+                sdes: "1 Domain name registation",
+                icon: "https://cdn-icons-png.flaticon.com/512/6114/6114305.png",
+                cost: 1000
+            },
+            {
+                title: "SSL",
+                sdes: "SSL certificate for the website",
+                icon: "https://cdn-icons-png.flaticon.com/512/6195/6195712.png",
+                cost: 1000
+            },
+            {
+                title: "Hosting",
+                sdes: "Yearly web hosting",
+                icon: "https://cdn-icons-png.flaticon.com/512/1373/1373110.png",
+                cost: 5000
+            },
+            {
+                title: "Maintenance",
+                sdes: "Website maintenance service",
+                icon: "https://cdn-icons-png.flaticon.com/512/9851/9851695.png",
+                cost: 2000,
+            }
         ]
     }
 ]
@@ -1148,15 +1200,15 @@ export const jobFiltersData = [
 
 
 export const ourPartnersSliderData = [
-    "https://seeklogo.com/images/C/corporate-company-logo-749CEE6ADC-seeklogo.com.png",
-    "https://seeklogo.com/images/L/letter-g-company-logo-1CFBAE2436-seeklogo.com.png",
-    "https://seeklogo.com/images/L/letter-e-company-logo-FCAFFCDAD7-seeklogo.com.png",
-    "https://seeklogo.com/images/C/corporate-company-logo-749CEE6ADC-seeklogo.com.png",
-    "https://seeklogo.com/images/L/letter-g-company-logo-1CFBAE2436-seeklogo.com.png",
-    "https://seeklogo.com/images/L/letter-e-company-logo-FCAFFCDAD7-seeklogo.com.png",
-    "https://seeklogo.com/images/C/corporate-company-logo-749CEE6ADC-seeklogo.com.png",
-    "https://seeklogo.com/images/L/letter-g-company-logo-1CFBAE2436-seeklogo.com.png",
-    "https://seeklogo.com/images/L/letter-e-company-logo-FCAFFCDAD7-seeklogo.com.png",
+    "https://www.batbangladesh.com/group/sites/BAT_9T5FQ2.nsf/vwPagesWebLive/DOBWKDUF/$FILE/BAT_Bangladsesh-logo-(Bengali-version).png?openelement",
+    "https://www.roopokar.com/wp-content/uploads/2015/03/danish_logo.png",
+    "https://www.roopokar.com/wp-content/uploads/2015/03/smart-group-software-development-company-bangladesh.png",
+    "https://www.roopokar.com/wp-content/uploads/2015/03/education_immigration_development.png",
+    "https://www.roopokar.com/wp-content/uploads/2015/03/ots.png",
+    "https://www.roopokar.com/wp-content/uploads/2015/03/Husain-Tyres-website-development.png",
+    "https://www.roopokar.com/wp-content/uploads/2015/03/tritone-website-development.png",
+    "https://gplex.com/images/gPlexcc.png",
+    "https://www.roopokar.com/wp-content/uploads/2015/03/nahid-group-website-development.png",
 ]
 
 
