@@ -4,8 +4,8 @@ import { Stack } from "@mui/system";
 import React from "react";
 import Slider from "react-slick";
 import { blogData } from "../../data"
-import ReactHtmlParser from 'react-html-parser';
 import { Link } from "react-router-dom";
+import { BsArrowRight } from "react-icons/bs";
 
 
 var settings = {
@@ -48,29 +48,27 @@ var settings = {
 
 export const SingleSlide = (props) => {
     return (
-        <Link to={`/blog/${props.id}`} className="hover:text-secondary-500">
-            <div className="mx-5 mb-20 rounded-lg">
-                <img src={props.img} alt="" className="rounded-tl-xl rounded-tr-xl w-full aspect-video" />
-                <div className=" bg-white rounded-bl-xl rounded-br-xl shadow p-5 flex flex-col">
-                    <Stack direction="row" spacing={1}>
-                        {
-                            props.categories.map((tech, index) => (
-                                <Chip label={tech} key={index} variant="outlined" className="hover:border-primary-500 cursor-pointer" />
-                            ))
-                        }
-                    </Stack>
-                    <p className="mt-2 text-gray-400">{props.date}</p>
-                    <h1 className="text-xl font-bold text-gray-400 my-2">{props.title}</h1>
-                    <Link to={`/blog/${props.id}`} className="hover:text-secondary-500">Read More...</Link> 
-                </div>
+        <div className="mx-5 mb-20 rounded-lg">
+            <img src={props.img} alt="" className="rounded-tl-xl rounded-tr-xl w-full aspect-video" />
+            <div className=" bg-white rounded-bl-xl rounded-br-xl shadow p-5 flex flex-col">
+                <Stack direction="row" className="flex flex-wrap gap-1">
+                    {
+                        props.categories.map((tech, index) => (
+                            <Chip label={tech} key={index} variant="outlined" className="hover:border-primary-500 cursor-pointer" />
+                        ))
+                    }
+                </Stack>
+                <p className="mt-2 text-gray-400">{props.date}</p>
+                <h1 className="text-xl font-bold text-gray-400 my-2">{props.title}</h1>
+                <Link to={`/blog/${props.id}`} className="hover:text-secondary-500 flex items-center gap-2">Read More <BsArrowRight /></Link> 
             </div>
-        </Link>
+        </div>
     )
 }
 
 function RecentWorksSlider() {
     return (
-        <div className="w-full my-10">
+        <div className="w-full my-2">
             <Slider {...settings} className="py-2">
                 {
                     blogData.map((item, index) => (

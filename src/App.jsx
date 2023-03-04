@@ -10,6 +10,8 @@ import Apply from "./pages/applyJob/Apply";
 import AboutUs from "./pages/about/AboutUs";
 import Services from "./pages/services/Services";
 import Contact from "./pages/contact/Contact";
+import Blogs from "./pages/blog/Blog";
+import SingleBlog from "./pages/blog/SingleBlog";
 
 function App() {
 
@@ -22,6 +24,8 @@ function App() {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/blog" element={<Blogs />} />
+        <Route path="/blog/:id" element={<SingleBlog />} />
       </Routes>
     </>
   )
