@@ -1,6 +1,7 @@
 import React from 'react'
 import { processWeFollowData } from "../../data"
-import process from "../../assets/img/process.png"
+import processLg from "../../assets/img/processLg.png"
+import processSm from "../../assets/img/processSm.png"
 
 export const ProcessCard = (props) => {
     return (
@@ -18,7 +19,7 @@ const ProcessWeFollow = () => {
     return (
         <div className='processWeFollow w-full overflow-hidden py-10 md:flex md:flex-col md:justify-center bg-primary-100'>
             <div className="p-5 mt-5 w-full md:max-w-[1400px] self-center flex gap-10 flex-wrap items-center justify-center">
-                <h1 className="text-6xl font-bold w-full mb-5 ">Process We Follow</h1>
+                <h1 className="text-6xl text-secondary-500 font-bold w-full mb-5 ">Process We Follow</h1>
                 {/* {
                     processWeFollowData.map((item, index) => {
                         return (
@@ -26,7 +27,8 @@ const ProcessWeFollow = () => {
                         )
                     })
                 } */}
-                <img src={process} alt="" className='md:w-1/2' />
+                <img src={processLg} alt="" className='md:w-3/4 lg:2/3 hidden md:block' />
+                <img src={processSm} alt="" className='block md:hidden' />
             </div>
         </div>
     )

@@ -58,6 +58,12 @@ const Footer = () => {
                 <p>
                     Make your Business Success Online
                 </p>
+                <p>
+                Dotpot iT, House-1, Road-3, Block-A, Mirpur-10, Dhaka, Bangladesh
+                </p>
+                <br />
+                <p><strong>Phone:</strong> +880 1817 176 192</p>
+                <p><strong>Email:</strong> help@dotpotit.com</p>
             </div>
 
             {/* Columns */}
@@ -94,6 +100,8 @@ const Footer = () => {
                 <p>
                 Dotpot iT, House-1, Road-3, Block-A, Mirpur-10, Dhaka, Bangladesh
                 </p>
+                <p><strong>Phone:</strong> +880 1817 176 192</p>
+                <p><strong>Email:</strong> help@dotpotit.com</p>
             </div>
             {
                 links.map((item, index)=>(

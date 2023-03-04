@@ -1,6 +1,6 @@
 import { Divider } from '@mui/material'
 import React, { useState } from 'react'
-import { customizeYourService } from '../../data'
+import { customizeYourServiceData } from '../../data'
 import {RxCross1} from "react-icons/rx"
 
 const CustomizeYourService = () => {
@@ -55,10 +55,10 @@ const CustomizeYourService = () => {
                         <h3 className="text-lg md:text-3xl font-bold mb-2">Services</h3>
                         <Divider />
                         {
-                            customizeYourService.map((item,index)=>(
+                            customizeYourServiceData.map((item,index)=>(
                             <div key={index} className="w-full p-1 md:p-3 border rounded mt-2 md:mt-5 hover:border-primary-500 flex flex-col md:flex-row items-center cursor-pointer gap-1 md:gap-3 shadow" onClick={(e)=>handeService(item)}>
-                                    <img src={item.icon} alt={item.title} className="w-5 h-5 md:h-[100px] md:w-[100px]" />
-                                    <p className="text-sm text-center md:text-left md:text-xl md:font-bold hover:text-primary-500">{item.title}</p>
+                                    <img src={item.icon} alt={item.title} className="w-5 h-5 md:h-[50px] md:w-[50px]" />
+                                    <p className="text-sm text-center md:text-left md:text-lg md:font-bold hover:text-primary-500">{item.title}</p>
                                 </div>
                             ))
                         }
@@ -90,7 +90,7 @@ const CustomizeYourService = () => {
                                         {
                                             selectedService.technologies.map((tech, index)=>(
                                                 <div key={index} onClick={()=>handelTechnology(tech)} className="p-1 md:p-5 border rounded flex flex-col items-center justify-center md:gap-3 hover:border-primary-500 shadow ">
-                                                    <img src={tech.icon} alt={tech.title} className="w-[20px] md:w-[100px] " />
+                                                    <img src={tech.icon} alt={tech.title} className="w-[20px] md:w-[50px] " />
                                                     <div className="text-sm">{tech.title}</div>
                                                 </div>
                                             ))
@@ -106,7 +106,7 @@ const CustomizeYourService = () => {
                                                     {
                                                         selectedService.addons.map((item, index)=>(
                                                             <div key={index} onClick={()=>handelAddons(item)} className="p-1 md:p-5 border rounded flex flex-col items-center justify-center md:gap-3 hover:border-primary-500 shadow ">
-                                                                <img src={item.icon} alt={item.title} className="w-[20px] md:w-[100px]" />
+                                                                <img src={item.icon} alt={item.title} className="w-[20px] md:w-[50px]" />
                                                                 <div className="text-sm">{item.title}</div>
                                                             </div>
                                                         ))

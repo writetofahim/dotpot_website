@@ -7,7 +7,7 @@ const SocialMedia = () => {
         <div className='w-full overflow-hidden py-10 md:flex md:flex-col md:justify-center bg-white'>
             <div className="p-5 mt-5 w-full md:max-w-[1400px] self-center flex gap-10 justify-between items-center flex-col md:flex-row lg:flex-row">
                 <div className="flex-1">
-                    <h3 className="text-3xl font-bold mb-5 text-primary-500">Social Media</h3>
+                    <h3 className="text-6xl font-bold mb-5 text-primary-500">Social Media</h3>
                     <p>Don’t Miss To Follow Us On Our Social Networks Accounts.</p>
                 </div>
                 <div className="flex-1 gap-5 flex flex-wrap justify-center">
@@ -15,7 +15,7 @@ const SocialMedia = () => {
                         socialNetworkData.map((item, index) => {
                             return (
                                 <Link to={item.link} key={index} target="_blank">
-                                    <div key={index} className="w-[100px] h-[100px] rounded-lg shadow flex items-center justify-center hover:border hover: border-purple-500">
+                                    <div key={index} className="md:w-[100px] md:h-[100px] p-2 rounded-full md:rounded-lg shadow flex items-center justify-center hover:border hover: border-purple-500">
                                         <img src={item.icon} alt="" className="h-[50px] w-[50px]" />
                                     </div>
                                 </Link>
