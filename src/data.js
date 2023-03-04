@@ -351,11 +351,11 @@ export const servicesData = [
 
 
 
-export const customizeYourService = [
+export const customizeYourServiceData = [
     {
         id: 1,
         title: "Mobile App Developmnet",
-        icon: "https://cdn-icons-png.flaticon.com/512/2097/2097276.png",
+        icon: "https://cdn-icons-png.flaticon.com/512/3137/3137807.png",
         technologies: [
             {
                 title : "Android",
@@ -389,7 +389,7 @@ export const customizeYourService = [
     {
         id: 2,
         title: "Web Developmnet",
-        icon: "https://cdn-icons-png.flaticon.com/512/1055/1055666.png",
+        icon: "https://cdn-icons-png.flaticon.com/512/888/888846.png",
         technologies: [
             {
                 title : "Static Website",
@@ -675,6 +675,21 @@ export const recentWorksData = [
         tech: ["Android", "IOS", "Node Js"]
     }
 ]
+
+
+
+export const blogData = [
+    {
+        id: 1,
+        title: "How To Find and Hire the Best Unity 3D Developers in 2023?",
+        categories: [""],
+        img: "https://www.hyperlinkinfosystem.com/assets/uploads/blog/1677799964.jpg",
+        date: "03/03/2023",
+        desc: "Unity3D is likely the most well-liked game production software platform, with 4.5 million registered developers as of today. Because it's usable by both amateurs and experts, you may anticipate meeting developers of all skill levels during you hire unity 3D developers. It can be difficult to find the ideal engineer for your unique Unity3D needs. This article about hiring Unity 3D developers can assist you in creating the ideal job posting and ensure that you can quickly identify and recruit someone who meets your exact requirements. It is the business of a game development company."
+    }
+]
+
+
 
 export const whoDoWeWorkData = {
     title: "Who We Work With",
