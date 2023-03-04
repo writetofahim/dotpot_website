@@ -1,6 +1,7 @@
 import { Fab } from '@mui/material'
 import React from 'react'
 import BackToTop from '../../components/BackToTop/BackToTop'
+import ContactCenterServices from '../../components/ContactCenterServices/ContactCenterServices'
 import CustomizeYourService from '../../components/CustomizeYourService/CustomizeYourService'
 import Footer from '../../components/Footer/Footer'
 import GoogleMap from '../../components/GoogleMap/GoogleMap'
@@ -27,6 +28,7 @@ const Home = () => {
       <Information />
       <KeyFeatures />
       {/* <Service /> */}
+      <ContactCenterServices />
       <CustomizeYourService />
       <ProcessWeFollow />
       <PartnershipModels />

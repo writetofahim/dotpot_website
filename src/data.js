@@ -358,24 +358,24 @@ export const customizeYourServiceData = [
         icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",
         technologies: [
             {
-                title : "Android",
+                title: "Android",
                 icon: "https://cdn-icons-png.flaticon.com/512/214/214490.png",
                 cost: 10000
             },
             {
-                title : "IOS",
+                title: "IOS",
                 icon: "https://cdn-icons-png.flaticon.com/512/831/831276.png",
                 cost: 15000
             },
             {
-                title : "Flutter",
+                title: "Flutter",
                 icon: "https://www.seekpng.com/png/full/945-9454419_nuff-said-show-me-the-code-flutter-bottom.png",
                 cost: 18000
             }
         ],
         addons: [
             {
-                title : "Yearly Hosting",
+                title: "Yearly Hosting",
                 icon: "https://cdn-icons-png.flaticon.com/512/1373/1373110.png",
                 cost: 5000
             },
@@ -392,39 +392,39 @@ export const customizeYourServiceData = [
         icon: "https://cdn-icons-png.flaticon.com/512/1927/1927656.png",
         technologies: [
             {
-                title : "Static Website",
+                title: "Static Website",
                 icon: "https://cdn-icons-png.flaticon.com/512/5219/5219384.png",
                 cost: 10000
             },
             {
-                title : "Blog Website",
+                title: "Blog Website",
                 icon: "https://cdn-icons-png.flaticon.com/512/9836/9836465.png",
                 cost: 15000
             },
             {
-                title : "Ecommerce Website",
+                title: "Ecommerce Website",
                 icon: "https://cdn-icons-png.flaticon.com/512/1162/1162499.png",
                 cost: 18000
             },
             {
                 title: "Custom React Website",
                 icon: "https://cdn-icons-png.flaticon.com/512/1066/1066631.png",
-                cost:50000
+                cost: 50000
             }
         ],
         addons: [
             {
                 title: "Domain",
-                icon:"https://cdn-icons-png.flaticon.com/512/6114/6114305.png",
+                icon: "https://cdn-icons-png.flaticon.com/512/6114/6114305.png",
                 cost: 1000
             },
             {
                 title: "SSL Certificate",
-                icon:"https://cdn-icons-png.flaticon.com/512/6195/6195712.png",
+                icon: "https://cdn-icons-png.flaticon.com/512/6195/6195712.png",
                 cost: 1000
             },
             {
-                title : "Yearly Hosting",
+                title: "Yearly Hosting",
                 icon: "https://cdn-icons-png.flaticon.com/512/1373/1373110.png",
                 cost: 5000
             },
@@ -441,44 +441,44 @@ export const customizeYourServiceData = [
         icon: "https://cdn-icons-png.flaticon.com/512/2058/2058768.png",
         technologies: [
             {
-                title : "Hardware support",
+                title: "Hardware support",
                 icon: "https://cdn-icons-png.flaticon.com/512/3868/3868395.png",
                 cost: 10000
             },
             {
-                title : "Software support",
+                title: "Software support",
                 icon: "https://cdn-icons-png.flaticon.com/512/838/838490.png",
                 cost: 15000
             },
             {
-                title : "Network support",
+                title: "Network support",
                 icon: "https://cdn-icons-png.flaticon.com/512/3598/3598209.png",
                 cost: 18000
             },
             {
                 title: "Security support",
                 icon: "https://cdn-icons-png.flaticon.com/512/2592/2592258.png",
-                cost:50000
+                cost: 50000
             },
             {
                 title: "Cloud support",
                 icon: "https://cdn-icons-png.flaticon.com/512/3305/3305673.png",
-                cost:50000
+                cost: 50000
             }
         ],
         addons: [
             {
                 title: "Domain",
-                icon:"https://cdn-icons-png.flaticon.com/512/6114/6114305.png",
+                icon: "https://cdn-icons-png.flaticon.com/512/6114/6114305.png",
                 cost: 1000
             },
             {
                 title: "SSL Certificate",
-                icon:"https://cdn-icons-png.flaticon.com/512/6195/6195712.png",
+                icon: "https://cdn-icons-png.flaticon.com/512/6195/6195712.png",
                 cost: 1000
             },
             {
-                title : "Yearly Hosting",
+                title: "Yearly Hosting",
                 icon: "https://cdn-icons-png.flaticon.com/512/1373/1373110.png",
                 cost: 5000
             },
@@ -495,28 +495,28 @@ export const customizeYourServiceData = [
         icon: "https://cdn-icons-png.flaticon.com/512/1687/1687136.png",
         technologies: [
             {
-                title : "Static Website",
+                title: "Static Website",
                 icon: "https://cdn-icons-png.flaticon.com/512/5219/5219384.png",
                 cost: 10000
             },
             {
-                title : "Blog Website",
+                title: "Blog Website",
                 icon: "https://cdn-icons-png.flaticon.com/512/9836/9836465.png",
                 cost: 15000
             },
             {
-                title : "Ecommerce Website",
+                title: "Ecommerce Website",
                 icon: "https://cdn-icons-png.flaticon.com/512/1162/1162499.png",
                 cost: 18000
             },
             {
                 title: "Custom React Website",
                 icon: "https://cdn-icons-png.flaticon.com/512/1066/1066631.png",
-                cost:50000
+                cost: 50000
             }
         ],
         addons: [
-            
+
         ]
     }
 ]
@@ -730,7 +730,7 @@ export const blogData = [
         "img": "https://mishpacha.com/wp-content/uploads/2022/07/So-You-Want-to-Be-a%E2%80%A6-Web-Developer-R.jpg",
         "date": "01/01/2023",
         "desc": "<h2>The Future of Web Development in 2023</h2><p>Web development is an ever-evolving field, and 2023 is set to bring a host of new changes to the industry. With the rise of technologies such as AI, machine learning, and blockchain, web developers will need to stay on top of their game to keep up with the changing demands of the market.</p><p>In the coming years, we can expect to see more websites and applications built with progressive web app (PWA) technology, which provides a native app-like experience on the web. Additionally, web developers will need to focus on building sites and apps that are more accessible and inclusive to users of all abilities.</p><p>One thing is for sure: web development will continue to be a critical component of the digital landscape, and those who can keep up with the changing technology will be in high demand. Are you ready for the future of web development?</p>"
-    }      
+    }
 ]
 
 
@@ -1281,6 +1281,50 @@ export const aboutPageContent = [
     {
         text: "PWA facilitate reliable and robust development for the seamless experience in the website.",
         classes: ""
+    }
+]
+
+
+export const contactCenterServicesData = [
+    {
+        title: "ACD",
+        text: "Automatic Call Destribution"
+    },
+    {
+        title: "IVR",
+        text: "Interactive Voice Response"
+    },
+    {
+        title: "CTI",
+        text: "Computer Telephony Integration"
+    },
+    {
+        title: "Email",
+        text: "Email Integration"
+    },
+    {
+        title: "Chat",
+        text: "Web Chat"
+    },
+    {
+        title: "PD",
+        text: "Predictive Dialer"
+    },
+    {
+        title: "App",
+        text: "Mobile App"
+    },
+    {
+        title: "CS",
+        text: "Customer Services"
+    },
+    {
+        title: "Marketing",
+        text: "Tele Marketing"
+    },
+    {
+        title: "CC",
+        text: "Call Center"
     }
 ]
 
