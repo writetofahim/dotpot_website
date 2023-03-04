@@ -4,7 +4,31 @@ import { Stack } from "@mui/system";
 import React from "react";
 import Slider from "react-slick";
 import { recentWorksData } from "../../data"
+import {GrNext,GrPrevious} from 'react-icons/gr'
 
+
+
+function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+        return (
+        <GrNext
+            className="text-6xl absolute right-0 top-1/2 cursor-pointer text-secondary-500 opacity-20 hover:opacity-100 hover:bg-secondary-500 -translate-y-[100%] border p-2 rounded-full translate-x-[70%] shadow"
+            style={{ ...style, display: "block"}}
+            onClick={onClick}
+        />
+        );
+    }
+    
+function SamplePrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+    <GrPrevious
+        className="z-10 text-6xl absolute left-0 top-1/2 cursor-pointer text-secondary-500 opacity-20 hover:opacity-100 hover:bg-secondary-500 -translate-y-[100%] border p-2 rounded-full -translate-x-[70%] shadow"
+        style={{ ...style, display: "block", }}
+        onClick={onClick}
+    />
+    );
+}
 
 var settings = {
     dots: true,
@@ -16,6 +40,8 @@ var settings = {
     autoplay: true,
     autoplaySpeed: 3000,
     cssEase: "linear",
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
     responsive: [
         {
             breakpoint: 1024,

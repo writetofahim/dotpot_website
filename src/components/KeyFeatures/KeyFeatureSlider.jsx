@@ -2,7 +2,31 @@
 import React from "react";
 import Slider from "react-slick";
 import { ourKeyFeatures } from "../../data"
+import {GrNext,GrPrevious} from 'react-icons/gr'
 
+
+
+function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+        return (
+        <GrNext
+            className="text-6xl absolute right-0 top-1/2 cursor-pointer text-secondary-500 opacity-20 hover:opacity-100 hover:bg-secondary-500 border p-2 rounded-full -translate-x-[30%] shadow"
+            style={{ ...style, display: "block"}}
+            onClick={onClick}
+        />
+        );
+    }
+    
+function SamplePrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+    <GrPrevious
+        className="z-10 text-6xl absolute left-0 top-1/2 cursor-pointer text-secondary-500 opacity-20 hover:opacity-100 hover:bg-secondary-500 border p-2 rounded-full translate-x-[30%] shadow"
+        style={{ ...style, display: "block", }}
+        onClick={onClick}
+    />
+    );
+}
 
 var settings = {
     dots: true,
@@ -15,6 +39,8 @@ var settings = {
     autoplaySpeed: 3000,
     arrows: true,
     cssEase: "linear",
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
     responsive: [
         {
             breakpoint: 1024,
