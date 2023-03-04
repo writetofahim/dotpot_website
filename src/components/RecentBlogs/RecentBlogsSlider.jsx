@@ -3,7 +3,9 @@ import { Chip } from "@mui/material";
 import { Stack } from "@mui/system";
 import React from "react";
 import Slider from "react-slick";
-import { recentWorksData } from "../../data"
+import { blogData } from "../../data"
+import ReactHtmlParser from 'react-html-parser';
+import { Link } from "react-router-dom";
 
 
 var settings = {
@@ -46,19 +48,23 @@ var settings = {
 
 export const SingleSlide = (props) => {
     return (
-        <div className="mx-5 mb-20 rounded-lg relative">
-            <img src={props.img} alt="" className=" rounded-xl" />
-            <div className="absolute b-0 left-1/2 transform -translate-x-1/2 translate-y-[-50%] bg-white w-[80%] rounded-xl shadow p-5 flex flex-col items-center">
-                <h1 className="text-xl font-bold text-gray-400 mb-2">{props.title}</h1>
-                <Stack direction="row" spacing={1}>
-                    {
-                        props.tech.map((tech, index) => (
-                            <Chip label={tech} key={index} variant="outlined" />
-                        ))
-                    }
-                </Stack>
+        <Link to={`/blog/${props.id}`} className="hover:text-secondary-500">
+            <div className="mx-5 mb-20 rounded-lg">
+                <img src={props.img} alt="" className="rounded-tl-xl rounded-tr-xl w-full aspect-video" />
+                <div className=" bg-white rounded-bl-xl rounded-br-xl shadow p-5 flex flex-col">
+                    <Stack direction="row" spacing={1}>
+                        {
+                            props.categories.map((tech, index) => (
+                                <Chip label={tech} key={index} variant="outlined" className="hover:border-primary-500 cursor-pointer" />
+                            ))
+                        }
+                    </Stack>
+                    <p className="mt-2 text-gray-400">{props.date}</p>
+                    <h1 className="text-xl font-bold text-gray-400 my-2">{props.title}</h1>
+                    <Link to={`/blog/${props.id}`} className="hover:text-secondary-500">Read More...</Link> 
+                </div>
             </div>
-        </div>
+        </Link>
     )
 }
 
@@ -67,7 +73,7 @@ function RecentWorksSlider() {
         <div className="w-full my-10">
             <Slider {...settings} className="py-2">
                 {
-                    recentWorksData.map((item, index) => (
+                    blogData.map((item, index) => (
                         <SingleSlide key={index} {...item} />
                     ))
                 }
