@@ -23,16 +23,16 @@ const Navbar = () => {
                         <NavBarItem key={item + index} title={item} />
                     ))} */}
                     <Link to="/">
-                        <li className="mx-4 cursor-pointer uppercase text-white md:text-gray-400 text-xl hover:text-primary-400" onClick={() => setToggleMenu(false)}>Home</li>
+                        <li className="mx-4 cursor-pointer uppercase text-white md:text-gray-400 text-lg hover:scale-110 hover:text-primary-400" onClick={() => setToggleMenu(false)}>Home</li>
                     </Link>
                     <Link to="/about">
-                        <li className="mx-4 cursor-pointer uppercase text-white md:text-gray-400 text-xl hover:text-primary-400" onClick={() => setToggleMenu(false)}>About Us</li>
+                        <li className="mx-4 cursor-pointer uppercase text-white md:text-gray-400 text-lg hover:scale-110 hover:text-primary-400" onClick={() => setToggleMenu(false)}>About Us</li>
                     </Link>
                     <Link to="/services">
-                        <li className="mx-4 cursor-pointer uppercase text-white md:text-gray-400 text-xl hover:text-primary-400" onClick={() => setToggleMenu(false)}>Services</li>
+                        <li className="mx-4 cursor-pointer uppercase text-white md:text-gray-400 text-lg hover:scale-110 hover:text-primary-400" onClick={() => setToggleMenu(false)}>Services</li>
                     </Link>
                     <Link to="/contact">
-                        <li className="mx-4 cursor-pointer uppercase text-white md:text-gray-400 text-xl hover:text-primary-400" onClick={() => setToggleMenu(false)}>Contact</li>
+                        <li className="mx-4 cursor-pointer uppercase text-white md:text-gray-400 text-lg hover:scale-110 hover:text-primary-400" onClick={() => setToggleMenu(false)}>Contact</li>
                     </Link>
                     <Link to='/apply' target="_blank">
                         <li className="bg-primary-500 py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-primary-400 text-white">

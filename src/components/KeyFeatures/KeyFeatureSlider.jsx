@@ -72,10 +72,10 @@ var settings = {
 export const SingleSlide = (props) => {
     return (
         <div className="w-300px h-[300px] bg-primary-600 mx-5 p-5 rounded-lg shadow-lg">
-            <div className="text-6xl">
-                <img src={props.icon} alt="" className="w-[50px] h-[50px]" />
+            <div className="text-6xl border p-3 max-w-max rounded-full bg-white hover:bg-secondary-500 hover:border-black cursor-pointer">
+                <img src={props.icon} alt="" className="w-[40px] h-[40px]" />
             </div>
-            <h2 className="text-2xl font-bold my-5">
+            <h2 className="text-2xl font-bold mb-5">
                 {props.title}
             </h2>
             <p className="">

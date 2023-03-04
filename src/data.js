@@ -79,43 +79,43 @@ export const informations = [
 export const ourKeyFeatures = [
     {
         id: 1,
-        icon: "https://cdn-icons-png.flaticon.com/512/870/870175.png",
+        icon: "https://cdn-icons-png.flaticon.com/512/2706/2706907.png",
         title: "Contact Center Support",
         desc: "Optimize Agent Productivity with our Next-Generation contact Center Solution. We're a Top Provider in  contact center Solutions."
     },
     {
         id: 2,
-        icon: "https://cdn-icons-png.flaticon.com/512/476/476863.png",
+        icon: "https://cdn-icons-png.flaticon.com/512/476/476700.png",
         title: "Dedicated Team",
         desc: "Empower your business with a dedicated contact center team. Maximize customer satisfaction and retention. Trust our experts for seamless contact center operations."
     },
     {
         id: 3,
-        icon: "https://cdn-icons-png.flaticon.com/512/922/922699.png",
+        icon: "https://cdn-icons-png.flaticon.com/512/3159/3159310.png",
         title: "Website Design",
         desc: "At Dotpoti, we specialize in creating custom and responsive website designs that not only look great but also improve user experience and drive conversions."
     },
     {
         id: 4,
-        icon: "https://cdn-icons-png.flaticon.com/512/1329/1329016.png",
+        icon: "https://cdn-icons-png.flaticon.com/512/2010/2010990.png",
         title: "Website Development",
         desc: "Our website development services provide modern, responsive, and user-friendly websites that are optimized for search engines and designed to meet our clients' unique needs."
     },
     {
         id: 5,
-        icon: "https://cdn-icons-png.flaticon.com/512/3437/3437364.png",
+        icon: "https://cdn-icons-png.flaticon.com/512/5738/5738077.png",
         title: "Mobile App Development",
         desc: "Expert mobile app development services for iOS and Android platforms, designed to meet your unique business needs and enhance user engagement."
     },
     {
         id: 6,
-        icon: "https://cdn-icons-png.flaticon.com/512/2152/2152539.png",
+        icon: "https://cdn-icons-png.flaticon.com/512/2152/2152349.png",
         title: "Blockchain Development",
         desc: "Build innovative blockchain solutions with our expert team. From blockchain consulting to development and implementation, we provide end-to-end blockchain services to businesses worldwide."
     },
     {
         id: 7,
-        icon: "https://cdn-icons-png.flaticon.com/512/2057/2057748.png",
+        icon: "https://cdn-icons-png.flaticon.com/512/2618/2618477.png",
         title: "IT Support",
         desc: "Expert IT support services for businesses of all sizes. Ensure smooth operations and maximize efficiency with our reliable solutions."
     }
@@ -355,7 +355,7 @@ export const customizeYourServiceData = [
     {
         id: 1,
         title: "Mobile App Developmnet",
-        icon: "https://cdn-icons-png.flaticon.com/512/3137/3137807.png",
+        icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",
         technologies: [
             {
                 title : "Android",
@@ -389,7 +389,7 @@ export const customizeYourServiceData = [
     {
         id: 2,
         title: "Web Developmnet",
-        icon: "https://cdn-icons-png.flaticon.com/512/888/888846.png",
+        icon: "https://cdn-icons-png.flaticon.com/512/1927/1927656.png",
         technologies: [
             {
                 title : "Static Website",
@@ -438,7 +438,7 @@ export const customizeYourServiceData = [
     {
         id: 4,
         title: "iT Support",
-        icon: "https://cdn-icons-png.flaticon.com/512/4961/4961736.png",
+        icon: "https://cdn-icons-png.flaticon.com/512/2058/2058768.png",
         technologies: [
             {
                 title : "Hardware support",
@@ -492,7 +492,7 @@ export const customizeYourServiceData = [
     {
         id: 4,
         title: "Contact Center",
-        icon: "https://cdn-icons-png.flaticon.com/512/2706/2706962.png",
+        icon: "https://cdn-icons-png.flaticon.com/512/1687/1687136.png",
         technologies: [
             {
                 title : "Static Website",
