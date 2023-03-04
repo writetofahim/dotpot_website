@@ -5,15 +5,24 @@ import Service from '../../components/Services/Service'
 import CustomizeYourService from '../../components/CustomizeYourService/CustomizeYourService'
 import RecentWorks from '../../components/RecentWorks/RecentWorks'
 import WhoWeWorkWith from '../../components/WhoWeWorkWith/WhoWeWorkWith'
+import ContactCenterServices from '../../components/ContactCenterServices/ContactCenterServices'
+import PartnershipModels from '../../components/PartnershipModels/PartnershipModels'
+import RecentBlogs from '../../components/RecentBlogs/RecentBlogs'
+import SocialMedia from '../../components/SocialMedia/SocialMedia'
+
 
 const Services = () => {
     return (
         <div className="full">
             <Navbar />
-            <Service />
             <CustomizeYourService />
+            <Service />
+            <ContactCenterServices />
+            <PartnershipModels />
             <RecentWorks />
             <WhoWeWorkWith />
+            <RecentBlogs />
+            <SocialMedia />
             <Footer />
         </div>
     )
