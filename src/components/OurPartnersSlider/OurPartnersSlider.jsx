@@ -49,7 +49,7 @@ function OurPartnersSlider() {
             <Slider {...settings} className="py-2">
                 {
                     ourPartnersSliderData.map((item, index) => (
-                        <div className="mx-5 p-5 rounded-lg flex items-center justify-center" key={index}>
+                        <div className="mx-5 p-5 rounded-lg flex items-center justify-center hover:scale-110 transition-all" key={index}>
                             <img src={ourPartnersSliderData[index]} className="h-[100px]" />
                         </div>
                     ))

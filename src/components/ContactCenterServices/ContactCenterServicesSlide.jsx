@@ -70,7 +70,7 @@ var settings = {
 
 export const SingleSlide = (props) => {
     return (
-        <div className="bg-white md:w-[1/8] mx-2 h-[150px] p-3 rounded-xl shadow flex flex-col items-center justify-center hover:border hover:border-primary-500">
+        <div className="bg-white md:w-[1/8] mx-2 h-[150px] p-3 rounded-xl shadow flex flex-col items-center justify-center hover:border hover:border-primary-500 transition-all">
             <h1 className="text-3xl font-bold italic text-primary-500">{props.title}</h1>
             <p className="mt-5 text-center">{props.text}</p>
         </div>

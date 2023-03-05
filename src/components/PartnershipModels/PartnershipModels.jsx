@@ -4,7 +4,7 @@ import { PartnershipModelsData } from "../../data"
 
 export const Card = (props) => {
     return (
-        <div className="mx-5 p-5 rounded-lg shadow-lg flex-1">
+        <div className="mx-5 p-5 rounded-lg shadow-lg flex-1 hover:scale-110 transition-all">
             <div className="text-6xl">
                 <img className="img-fluid" src={props.icon} alt="fixed price model" />
             </div>

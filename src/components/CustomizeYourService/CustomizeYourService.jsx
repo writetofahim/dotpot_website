@@ -28,7 +28,7 @@ const Technologies = ({ addTechnology, tech,removeTechnology, technology }) => {
     },[technology])
     
     return (
-        <div className="p-1 md:p-5 md:h-[120px] md:w-[130px] border rounded flex flex-col items-center justify-center md:gap-3 hover:border-primary-500 shadow relative">
+        <div className="p-1 md:p-5 md:h-[120px] md:w-[130px] border rounded flex flex-col items-center justify-center md:gap-3 hover:border-primary-500 hover:scale-110 transition-all shadow relative">
             <img src={tech.icon} alt={tech.title} className="w-[20px] md:w-[50px] " />
             <div className="text-sm text-center">{tech.title}</div>
             {
@@ -69,7 +69,7 @@ const Addons = ({ item, addAddons, removeAddons,addons }) => {
     },[addons])
 
     return (
-        <div className="p-1 md:p-5 md:h-[120px] md:w-[130px] border rounded flex flex-col items-center justify-center md:gap-3 hover:border-primary-500 shadow relative">
+        <div className="p-1 md:p-5 md:h-[120px] md:w-[130px] border rounded flex flex-col items-center justify-center md:gap-3 hover:border-primary-500 hover:scale-110 transition-all shadow relative">
             <img src={item.icon} alt={item.title} className="w-[20px] md:w-[50px]" />
             <div className="text-sm">{item.title}</div>
             {
@@ -158,7 +158,7 @@ const CustomizeYourService = () => {
                         <Divider />
                         {
                             customizeYourServiceData.map((item, index) => (
-                                <div key={index} className="w-full p-1 md:p-3 border rounded mt-2 md:mt-5 hover:border-primary-500 flex flex-col md:flex-row items-center cursor-pointer gap-1 md:gap-3 shadow" onClick={(e) => addService(item)}>
+                                <div key={index} className="w-full p-1 md:p-3 border rounded mt-2 md:mt-5 hover:border-primary-500 flex flex-col md:flex-row items-center cursor-pointer gap-1 md:gap-3 shadow hover:scale-110 transition-all" onClick={(e) => addService(item)}>
                                     <img src={item.icon} alt={item.title} className="w-5 h-5 md:h-[50px] md:w-[50px]" />
                                     <p className="text-sm text-center md:text-left md:text-lg md:font-bold hover:text-primary-500">{item.title}</p>
                                 </div>
@@ -168,7 +168,8 @@ const CustomizeYourService = () => {
 
 
                     {/* Right Side */}
-                    <div className="right flex-[0.8] border rounded p-1 md:p-5 overflow-scrool h-[75vh]">
+                    <div className="right flex-[0.8] border rounded p-1 md:p-5 overflow-scrool h-[75vh] relative">
+                    <button className='absolute bottom-2 right-2 px-3 py-2 bg-primary-500 text-white cursor-pointer font-bold rounded hover:bg-secondary-500'>Order Now</button>
                         <div className="flex justify-between">
                             <div>
                                 {
@@ -177,7 +178,7 @@ const CustomizeYourService = () => {
                                             <h1 className="text-sm">Selected services</h1>
                                             <div className="w-full flex items-center gap-3">
                                                 {
-                                                    <div key={technology} className="flex items-center gap-2 py-1 px-2 border  cursor-pointer hover:border-secondary-500 hover:text-secondary-500"
+                                                    <div key={technology} className="flex items-center gap-2 py-1 px-2 border  cursor-pointer hover:border-secondary-500 hover:text-secondary-500 hover:scale-110 transition-all"
                                                     onClick={()=>removeTechnology()}>
                                                         <img src={technology.icon} alt={technology.title} className="w-4 h-4 md:w-8 md:h-8" />
                                                         <RxCross1 />
@@ -185,7 +186,7 @@ const CustomizeYourService = () => {
                                                 }
                                                 {
                                                     addons.map((item, index) => (
-                                                        <div key={index} className="flex items-center gap-2 py-1 px-2 border rounded-full cursor-pointer hover:border-secondary-500 hover:text-secondary-500"
+                                                        <div key={index} className="flex items-center gap-2 py-1 px-2 border rounded-full cursor-pointer hover:border-secondary-500 hover:text-secondary-500 hover:scale-110 transition-all"
                                                         onClick={()=>removeAddons(item)}>
                                                             <img src={item.icon} alt={item.title} className="w-4 h-4 md:w-6 md:h-6" />
                                                             <RxCross1 className='text-sm'/>
@@ -203,7 +204,7 @@ const CustomizeYourService = () => {
                             selectedService !== null ? (
                                 <>
                                     <h3 className="md:mt-5 mt-2 font-bold text-xl">{selectedService.title}</h3>
-                                    <div className="w-full mt-5 flex flex-wrap items-center justify-center gap-1 md:gap-5 mb-5">
+                                    <div className="w-full mt-5 flex flex-wrap items-center justify-center gap-1 md:gap-5 mb-5 ">
                                         {
                                             selectedService.technologies.map((tech, index) => (
                                                 <Technologies key={index} tech={tech} addTechnology={addTechnology} removeTechnology={removeTechnology} technology={technology} />
