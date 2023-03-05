@@ -36,7 +36,7 @@ var settings = {
     slidesToScroll: 1,
     initialSlide: 0,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2000,
     arrows: true,
     cssEase: "linear",
     nextArrow: <SampleNextArrow />,
@@ -71,8 +71,8 @@ var settings = {
 
 export const SingleSlide = (props) => {
     return (
-        <div className="w-300px h-[300px] bg-primary-600 mx-5 p-5 rounded-lg shadow-lg">
-            <div className="text-6xl border p-3 max-w-max rounded-full bg-white hover:bg-secondary-500 hover:border-black cursor-pointer">
+        <div className="w-300px h-[300px] bg-white mx-5 p-5 rounded-lg shadow-lg text-gray-400">
+            <div className="text-6xl border p-3 max-w-max rounded-full hover:bg-primary-100 hover:border-black cursor-pointer">
                 <img src={props.icon} alt="" className="w-[40px] h-[40px]" />
             </div>
             <h2 className="text-2xl font-bold mb-5">

@@ -195,7 +195,7 @@ const CustomizeYourService = () => {
                                     )
                                 }
                             </div>
-                            <p className="text-primary-500  md:text-xl">Starting From <span className="font-bold">{price} Tk</span></p>
+                            <p className="md:text-xl">Starting From <span className="font-bold text-secondary-500">{price}</span> $</p>
                         </div>
                         {
                             selectedService !== null ? (

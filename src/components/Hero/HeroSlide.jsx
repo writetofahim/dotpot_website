@@ -57,13 +57,13 @@ export const SingleSlide = (props) => {
                     #1
                   </h1>
                 </div> */}
-            <p className="md:w-2/3 w-4/5">
+            <p className="md:w-2/3 w-4/5 text-xl">
               {props.desc}
             </p>
           </div>
           <Link to={props.link}>
-            <button variant="contained" className='bg-primary-500 px-10 py-3 text-white rounded-sm hover:bg-secondary-500 font-bold mt-2 flex items-center gap-3'>
-              Send <BsArrowRight />
+            <button className='bg-primary-500 px-10 py-3 text-white rounded-sm hover:bg-secondary-500 font-bold mt-2 flex items-center gap-3'>
+              Contact <BsArrowRight />
             </button>
           </Link>
         </div>
