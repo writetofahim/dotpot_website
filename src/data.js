@@ -1443,6 +1443,10 @@ export const footerData = {
             title: "About",
             links: [
                 {
+                    title: "Home",
+                    link: "/"
+                },
+                {
                     title: "Who We Are",
                     link: "/about"
                 },
@@ -1465,7 +1469,7 @@ export const footerData = {
             ]
         },
         {
-            title: "Mobile",
+            title: "Tech Support",
             links: [
                 {
                     title: "Android Apps",
@@ -1473,6 +1477,10 @@ export const footerData = {
                 },
                 {
                     title: "iPhone Apps",
+                    link: "/services/iphone-apps"
+                },
+                {
+                    title: "Web Apps",
                     link: "/services/iphone-apps"
                 },
                 {
@@ -1490,28 +1498,32 @@ export const footerData = {
             ]
         },
         {
-            title: "Web",
+            title: "Contact Cernet",
             links: [
                 {
-                    title: "PHP",
+                    title: "Contact Center Supports",
                     link: "/services/web/php"
                 },
                 {
-                    title: "Java",
-                    link: "/services/web/java"
+                    title: "ACD",
+                    link: "/services/"
                 },
                 {
-                    title: "Python",
-                    link: "/services/web/python"
+                    title: "CTI",
+                    link: "/services/"
                 },
                 {
-                    title: "Wordpress",
-                    link: "/services/web/wordpress",
+                    title: "IVR",
+                    link: "/services/",
                 },
                 {
-                    title: "JavaScript",
-                    link: "/services/web/javascript"
-                }
+                    title: "Emain",
+                    link: "/services/"
+                },
+                {
+                    title: "Web Chat",
+                    link: "/services/"
+                },
             ]
         }
     ]
