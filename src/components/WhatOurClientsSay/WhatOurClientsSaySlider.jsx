@@ -1,10 +1,8 @@
-
-import { Chip } from "@mui/material";
-import { Stack } from "@mui/system";
 import React from "react";
 import Slider from "react-slick";
 import {WhatOurClientSayData} from "../../data"
 import {GrNext,GrPrevious} from 'react-icons/gr'
+import {ImQuotesRight, ImQuotesLeft} from 'react-icons/im'
 
 
 
@@ -12,7 +10,7 @@ function SampleNextArrow(props) {
     const { className, style, onClick } = props;
         return (
         <GrNext
-            className="text-6xl absolute right-0 top-1/2 cursor-pointer text-secondary-500 opacity-20 hover:opacity-100 hover:bg-secondary-500 -translate-y-[100%] border p-2 rounded-full translate-x-[70%] shadow"
+            className="text-6xl absolute right-0 top-1/2 cursor-pointer text-secondary-500 opacity-20 hover:opacity-100 hover:bg-secondary-500 -translate-y-[130%] border p-2 rounded-full translate-x-[70%] shadow"
             style={{ ...style, display: "block"}}
             onClick={onClick}
         />
@@ -23,7 +21,7 @@ function SamplePrevArrow(props) {
     const { className, style, onClick } = props;
     return (
     <GrPrevious
-        className="z-10 text-6xl absolute left-0 top-1/2 cursor-pointer text-secondary-500 opacity-20 hover:opacity-100 hover:bg-secondary-500 -translate-y-[100%] border p-2 rounded-full -translate-x-[70%] shadow"
+        className="z-10 text-6xl absolute left-0 top-1/2 cursor-pointer text-secondary-500 opacity-20 hover:opacity-100 hover:bg-secondary-500 -translate-y-[130%] border p-2 rounded-full -translate-x-[70%] shadow"
         style={{ ...style, display: "block", }}
         onClick={onClick}
     />
@@ -72,16 +70,18 @@ var settings = {
 
 export const SingleSlide = (props) => {
     return(
-        <div className="h-[60vh] mx-5 mb-20 p-5 md:p-10 rounded-lg flex flex-col justify-between items-center bg-white shadow-xl">
-            <h1 className="text-lg text-center md:text-left mb-2">{props.text}</h1>
-            <div className="">
-                <div className="w-full flex flex-col md:flex-row gap-5 items-center text-center md:text-left">
-                    <img src={props.img} alt="" className=" rounded-xl pr-5"/>
-                    <div className="">
-                        <h3 className="text-xl font-bold">{props.name}</h3>
-                        <p className="">{props.post}</p>
-                        <p className="">{props.country}</p>
-                    </div>
+        <div className="mx-5 mb-20 p-2 md:p-0 rounded-2xl flex flex-col justify-between items-center bg-white shadow-xl ">
+            <div className="flex flex-col md:grid md:grid-cols-3 md:gap-10 ">
+                <div className=" col-span-1">
+                    <img src={props.img} alt=""  className="md:rounded-tl-xl md:rounded-bl-xl aspect-square object-cover " />
+                </div>
+
+                <div className="col-span-2 p-5 ">
+
+                    <h1 className=""> <ImQuotesLeft className="text-primary-500  font-bold text-xl inline-block mr-2"/> {props.text} <ImQuotesRight className="text-primary-500   text-xl inline-block ml-2"/></h1>
+                    <h2 className="font-bold text-xl text-secondary-500 mt-3 text-center md:text-left ">{props.name}</h2>
+                    <h3 className="font-bold text-center md:text-left">{props.post}</h3>
+                    <h3 className="font-medium text-center md:text-left">{props.company}</h3>
                 </div>
             </div>
         </div>

@@ -106,6 +106,8 @@ const CustomizeYourService = () => {
 
     const addService = (props) => {
         setSelectedService(props)
+        setTechnology({id:null,cost:0})
+        setAddons([])
         setIsOpen(false)
         setPrice(0)
     }
