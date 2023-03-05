@@ -1,26 +1,43 @@
 import { Divider } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { customizeYourServiceData } from '../../data'
 import { RxCross1 } from "react-icons/rx"
-import { TiTickOutline, TiTick } from 'react-icons/ti'
+import { TiTick } from 'react-icons/ti'
 import { AiOutlineInfoCircle } from 'react-icons/ai'
+import {BsCircle} from 'react-icons/bs'
 
 
-const Technologies = ({ handelTechnology, tech }) => {
+const Technologies = ({ addTechnology, tech,removeTechnology, technology }) => {
     const [select, setSelect] = useState(false);
-    const handelClick = (tech) => {
+
+    const addItem = (tech) => {
         setSelect(!select)
-        handelTechnology(tech)
+        addTechnology(tech)
     }
+    const removeItem = (tech) => {
+        setSelect(!select)
+        removeTechnology();
+    }
+
+    useEffect(()=>{
+        if(technology.id == tech.id){
+            setSelect(true)
+        }else{
+            setSelect(false)
+        }
+    },[technology])
+    
     return (
         <div className="p-1 md:p-5 md:h-[120px] md:w-[130px] border rounded flex flex-col items-center justify-center md:gap-3 hover:border-primary-500 shadow relative">
             <img src={tech.icon} alt={tech.title} className="w-[20px] md:w-[50px] " />
             <div className="text-sm text-center">{tech.title}</div>
             {
                 !select ? (
-                    <TiTickOutline className="absolute top-[2px] right-[2px] text-gray-400 hover:border hover:text-xl hover:animate-pulse rounded-full hover:border-black cusor-pointer" onClick={() => handelClick(tech)} />
+                    <BsCircle className="absolute top-[2px] right-[2px] text-gray-400 hover:border hover:animate-pulse rounded-full hover:border-black cusor-pointer" 
+                    onClick={() => addItem(tech)} />
                 ) : (
-                    <TiTick className="absolute top-[2px] right-[2px] hover:border hover:text-xl hover:animate-pulse rounded-full border border-blacks text-secondary-500 cusor-pointer" />
+                    <TiTick className="absolute top-[2px] right-[2px] hover:border hover:animate-pulse rounded-full border border-blacks text-secondary-500 cusor-pointer" 
+                    onClick={() => removeItem(tech)}/>
                 )
             }
             <abbr title={tech.sdes}>
@@ -32,21 +49,34 @@ const Technologies = ({ handelTechnology, tech }) => {
 }
 
 
-const Addons = ({ item, handelAddons }) => {
+const Addons = ({ item, addAddons, removeAddons,addons }) => {
     const [select, setSelect] = useState(false);
-    const handelClick = (tech) => {
+    const addItem = (item) => {
         setSelect(!select)
-        handelTechnology(tech)
+        addAddons(item)
     }
+    const removeItem = (item) => {
+        setSelect(!select)
+        removeAddons(item)
+    }
+
+    useEffect(()=>{
+        if(addons.some((obj) => obj.id === item.id)){
+            setSelect(true)
+        }else{
+            setSelect(false)
+        }
+    },[addons])
+
     return (
-        <div onClick={() => handelAddons(item)} className="p-1 md:p-5 md:h-[120px] md:w-[130px] border rounded flex flex-col items-center justify-center md:gap-3 hover:border-primary-500 shadow relative">
+        <div className="p-1 md:p-5 md:h-[120px] md:w-[130px] border rounded flex flex-col items-center justify-center md:gap-3 hover:border-primary-500 shadow relative">
             <img src={item.icon} alt={item.title} className="w-[20px] md:w-[50px]" />
             <div className="text-sm">{item.title}</div>
             {
                 !select ? (
-                    <TiTickOutline className="absolute top-[2px] right-[2px] text-gray-400 hover:border hover:text-xl hover:animate-pulse rounded-full hover:border-black cusor-pointer" onClick={() => handelClick(item)} />
+                    <BsCircle className="absolute top-[2px] right-[2px] text-gray-400 hover:border hover:animate-pulse rounded-full hover:border-black cusor-pointer" onClick={() => addItem(item)} />
                 ) : (
-                    <TiTick className="absolute top-[2px] right-[2px] hover:border hover:text-xl hover:animate-pulse rounded-full border border-blacks text-secondary-500 cusor-pointer" />
+                    <TiTick className="absolute top-[2px] right-[2px] hover:border hover:animate-pulse rounded-full border border-blacks text-secondary-500 cusor-pointer" onClick={() => removeItem(item)} />
                 )
             }
             <abbr title={item.sdes}>
@@ -61,40 +91,53 @@ const Addons = ({ item, handelAddons }) => {
 const CustomizeYourService = () => {
 
     const [selectedService, setSelectedService] = useState(null)
-    const [selectedTechnology, setSelectedTechnology] = useState(null)
     const [price, setPrice] = useState(0)
     const [isOpen, setIsOpen] = useState(false)
-    const [cart, setCart] = useState([])
+    const [addons, setAddons]= useState([])
+    const [technology, setTechnology]= useState({
+        id: null,
+        title: null,
+        sdes: null,
+        icon: null,
+        cost: 0
+    })
 
 
 
-    const handeService = (props) => {
+    const addService = (props) => {
         setSelectedService(props)
         setIsOpen(false)
         setPrice(0)
     }
 
-    const handelTechnology = (props) => {
-        setSelectedTechnology(props)
-        setCart([props])
-        setPrice(props.cost)
+    const addTechnology=(props)=>{
+        setTechnology(props)
         setIsOpen(true)
+        setAddons([])
     }
 
-    const handelAddons = (props) => {
-        setPrice(price + props.cost)
-        setCart([...cart, props])
+    const removeTechnology=(props)=>{
+        setTechnology({id:null,cost:0})
+        setPrice(0)
+        setAddons([])
+    }
+    
+    const addAddons=(props)=>{
+        setAddons([...addons, props])
     }
 
-    const removeItemFromCart = (title, cost) => {
-        console.log(cost)
-        const filterCart = cart.filter(item => item.title !== title)
-        setCart(filterCart)
-        setPrice(price - cost)
+    const removeAddons=(props)=>{
+        const filteredArray = addons.filter(obj => obj.id !== props.id);
+        setAddons(filteredArray)
     }
 
+    useEffect(()=>{
+        const techCost=technology.cost
+        const addonsCost = addons.reduce((acc, item) => acc + item.cost, 0);
+        const total = techCost + addonsCost
+        setPrice(total)
 
-    console.log(cart)
+    },[technology, addAddons])
 
 
     return (
@@ -106,12 +149,14 @@ const CustomizeYourService = () => {
                 {/* Main Section */}
                 <div className="maincontent flex md:flex-col lg:flex-row justify-between mt-10 gap-2 md:gap-5 h-full">
 
+
+                    {/* Left Sidebar */}
                     <div className="left flex-[0.2] border rounded p-1 md:p-5 h-[75vh]">
                         <h3 className="text-lg md:text-3xl font-bold mb-2">Services</h3>
                         <Divider />
                         {
                             customizeYourServiceData.map((item, index) => (
-                                <div key={index} className="w-full p-1 md:p-3 border rounded mt-2 md:mt-5 hover:border-primary-500 flex flex-col md:flex-row items-center cursor-pointer gap-1 md:gap-3 shadow" onClick={(e) => handeService(item)}>
+                                <div key={index} className="w-full p-1 md:p-3 border rounded mt-2 md:mt-5 hover:border-primary-500 flex flex-col md:flex-row items-center cursor-pointer gap-1 md:gap-3 shadow" onClick={(e) => addService(item)}>
                                     <img src={item.icon} alt={item.title} className="w-5 h-5 md:h-[50px] md:w-[50px]" />
                                     <p className="text-sm text-center md:text-left md:text-lg md:font-bold hover:text-primary-500">{item.title}</p>
                                 </div>
@@ -125,15 +170,23 @@ const CustomizeYourService = () => {
                         <div className="flex justify-between">
                             <div>
                                 {
-                                    cart.length > 0 && (
+                                    technology.id !== null && (
                                         <div className='flex'>
                                             <h1 className="text-sm">Selected services</h1>
                                             <div className="w-full flex items-center gap-3">
                                                 {
-                                                    cart.map((item, index) => (
-                                                        <div key={index} className="flex items-center gap-2 py-1 px-2 border rounded-full cursor-pointer hover:border-secondary-500 hover:text-secondary-500" onClick={() => removeItemFromCart(item.title, item.cost)} >
-                                                            <img src={item.icon} alt={item.title} className="w-4 h-4 md:w-7 md:h-7" />
-                                                            <RxCross1 />
+                                                    <div key={technology} className="flex items-center gap-2 py-1 px-2 border  cursor-pointer hover:border-secondary-500 hover:text-secondary-500"
+                                                    onClick={()=>removeTechnology()}>
+                                                        <img src={technology.icon} alt={technology.title} className="w-4 h-4 md:w-8 md:h-8" />
+                                                        <RxCross1 />
+                                                    </div>
+                                                }
+                                                {
+                                                    addons.map((item, index) => (
+                                                        <div key={index} className="flex items-center gap-2 py-1 px-2 border rounded-full cursor-pointer hover:border-secondary-500 hover:text-secondary-500"
+                                                        onClick={()=>removeAddons(item)}>
+                                                            <img src={item.icon} alt={item.title} className="w-4 h-4 md:w-6 md:h-6" />
+                                                            <RxCross1 className='text-sm'/>
                                                         </div>
                                                     ))
                                                 }
@@ -151,7 +204,7 @@ const CustomizeYourService = () => {
                                     <div className="w-full mt-5 flex flex-wrap items-center justify-center gap-1 md:gap-5 mb-5">
                                         {
                                             selectedService.technologies.map((tech, index) => (
-                                                <Technologies key={index} tech={tech} handelTechnology={handelTechnology} />
+                                                <Technologies key={index} tech={tech} addTechnology={addTechnology} removeTechnology={removeTechnology} technology={technology} />
                                             ))
                                         }
                                     </div>
@@ -164,7 +217,7 @@ const CustomizeYourService = () => {
                                                 <div className="mt-5 flex flex-wrap items-center justify-center gap-5 mb-5">
                                                     {
                                                         selectedService.addons.map((item, index) => (
-                                                            <Addons key={index} handelAddons={handelAddons} item={item} />
+                                                            <Addons key={index} addAddons={addAddons} removeAddons={removeAddons} item={item} addons={addons} />
                                                         ))
                                                     }
                                                 </div>
