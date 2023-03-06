@@ -722,39 +722,39 @@ export const IndustriesWeServeData = [
 export const recentWorksData = [
     {
         id: 1,
-        img: "https://www.hyperlinkinfosystem.com/assets/case-study/astral-adhesives/resiwood-winners-circle-loyalty-program-app.png",
-        title: "Papa John's Pizza Delivery App",
-        tech: ["Android", "IOS", "Node Js", "My SQL"]
+        img: "https://images.pexels.com/photos/326503/pexels-photo-326503.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        title: "Social Media App",
+        tech: ["ReactJs",  "Node Js", "MongoDB"]
     },
     {
         id: 2,
-        img: "https://www.hyperlinkinfosystem.com/assets/case-study/aol/art-of-living.jpg",
-        title: "Art of Living A Meditation App",
-        tech: ["Android", "IOS", "Node Js", "My SQL"]
+        img: "https://images.pexels.com/photos/34577/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        title: "Ecommerce Website",
+        tech: ["ReactJs",  "Node Js", "MongoDB"]
     },
     {
         id: 3,
-        img: "https://www.hyperlinkinfosystem.com/assets/case-study/tata/tata-power-skill-development-institute.png",
-        title: "Papa John's Pizza Delivery App",
-        tech: ["Android", "IOS", "Node Js"]
+        img: "https://images.pexels.com/photos/316080/pexels-photo-316080.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        title: "Real Estate App",
+        tech: ["Bootstrap", "MongoDB", "Node Js"]
     },
     {
         id: 4,
-        img: "https://www.hyperlinkinfosystem.com/assets/case-study/tata/tata-power-skill-development-institute.png",
-        title: "Papa John's Pizza Delivery App",
-        tech: ["Android", "IOS", "Node Js"]
+        img: "https://images.pexels.com/photos/13794762/pexels-photo-13794762.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        title: "Travel & Destination App",
+        tech: ["React Native", "MySQL", "Node Js"]
     },
     {
         id: 5,
-        img: "https://www.hyperlinkinfosystem.com/assets/case-study/tata/tata-power-skill-development-institute.png",
-        title: "Papa John's Pizza Delivery App",
-        tech: ["Android", "IOS", "Node Js"]
+        img: "https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        title: "Gaming App",
+        tech: ["GDevelop", "Unity", "Twine"]
     },
     {
         id: 6,
-        img: "https://www.hyperlinkinfosystem.com/assets/case-study/tata/tata-power-skill-development-institute.png",
-        title: "Papa John's Pizza Delivery App",
-        tech: ["Android", "IOS", "Node Js"]
+        img: "https://images.pexels.com/photos/414781/pexels-photo-414781.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        title: "Personal Blog",
+        tech: ["ReactJs", "MongoDB", "Node Js"]
     }
 ]
 
@@ -854,97 +854,97 @@ export const WhatOurClientSayData = {
             name: "James",
             post: "Neighbor Shopper",
             country: "Massachusetts, USA",
-            text: "DotpotiT Infosystem is dependable and responsive to client's request.",
+            text: "A robust congratulations to the team at DotpotiT Solutions for a job well done developing our health app.  They've worked closely with us throughout the process, staying on task, on target, and on budget",
             // img: "https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/our-client-say/client-icon/neighbor-shopper.png"
             img:"https://images.pexels.com/photos/927022/pexels-photo-927022.jpeg",
-            company:"DotpotiT"
+            company:"Leading Medical College & Hospital, Seattle, WA"
         },
         {
             id: 2,
-            name: "Founder",
+            name: "Kate",
             post: "Social Media App",
-            country: "Kenya",
-            text: "Discovering Hyperlink Infosystem is no doubt one of the highlights of my 2018.",
+            country: "Canada",
+            text: "Awesome experience !!! I am really impressed by the quality of services I received from DotpotiT. My revenue has increased because of the collaboration with the DotpotiT and I will definitely use your services again.",
             // img: "https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/our-client-say/client-icon/smyllo.png"
             img:"https://images.pexels.com/photos/1181649/pexels-photo-1181649.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            company:"DotpotiT"
+            company:"Polymorph Organizations Ltd."
         },
         {
             id: 3,
-            name: "Michael",
-            post: "Social Media App",
-            country: "Kenya",
-            text: "DotpotiT Infosystem is dependable and responsive to client's request.",
+            name: "Natalia",
+            post: "COO",
+            country: "Los Angeles, USA",
+            text: "Great work!!! The DotpotiT team was solid, efficient and knowledgeable. They did an amazing job on my very challenging app as per our requirements. I will be using them again. Thank you for doing such a great job! ",
             // img: "https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/our-client-say/client-icon/buuurp.png"
             img:"https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            company:"DotpotiT"
+            company:"HoneyPot Real Estate Ltd."
         },
         {
             id: 4,
-            name: "Founder",
-            post: "Social Media App",
-            country: "Kenya",
-            text: "Discovering Hyperlink Infosystem is no doubt one of the highlights of my 2018.",
+            name: "Emma",
+            post: "Lead Sales Operator",
+            country: "France",
+            text: "DotpotiT has done a great job taking our company’s idea and developing a website as per our niche specifications. The team is technically strong and creative. I will not hesitate to recommend them. ",
             // img: "https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/our-client-say/client-icon/smyllo.png"
             img:"https://images.pexels.com/photos/4467687/pexels-photo-4467687.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            company:"DotpotiT"
+            company:"Fashoinysta"
         },
         {
             id: 5,
-            name: "Michael",
-            post: "Social Media App",
-            country: "Kenya",
-            text: "DotpotiT Infosystem is dependable and responsive to client's request.",
+            name: "Megan",
+            post: "Business Head",
+            country: "London, UK",
+            text: "It has been an easy ride being associated with DotpotiT. They provide wide range of solutions for all spheres of our business. Their softwares are user friendly and this team is available 24*7 for support.",
             // img: "https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/our-client-say/client-icon/buuurp.png"
             img:"https://images.pexels.com/photos/3201696/pexels-photo-3201696.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            company:"DotpotiT"
+            company:"Beverage Food Chain & Restaurants"
         },
         {
             id: 6,
-            name: "Michael",
-            post: "Social Media App",
-            country: "Kenya",
-            text: "DotpotiT Infosystem is dependable and responsive to client's request. ",
+            name: "Polin",
+            post: "Senior App Developer",
+            country: "Warsaw, Poland",
+            text: "Our cooperation on iOS and Android APP with DotpotiT couldn’t have gone smoother. DotpotiT's attention to detail helped to sharply define the project and its workflow, resulting in accurate and speedy deliverables. ",
             // img: "https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/our-client-say/client-icon/buuurp.png"
             img:"https://images.pexels.com/photos/4238496/pexels-photo-4238496.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            company:"DotpotiT"
+            company:"SkyGames Corporations"
         },
         {
             id: 7,
-            name: "Michael",
+            name: "Leonard",
             post: "Social Media App",
-            country: "Kenya",
-            text: "DotpotiT Infosystem is dependable and responsive to client's request.",
+            country: "Birmingham, UK",
+            text: "We have been working with DotpotiT team for over 2 years now. I must say we have come a long way together and all along their team has been flexible to our ad-hoc requests. I definitely see DotpotiT as our long-term partners.",
             // img: "https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/our-client-say/client-icon/buuurp.png"
             img:"https://images.pexels.com/photos/2182971/pexels-photo-2182971.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            company:"DotpotiT"
+            company:"Welfare Consultancy"
         },
         {
             id: 8,
-            name: "Michael",
-            post: "Social Media App",
-            country: "Kenya",
-            text: "DotpotiT Infosystem is dependable and responsive to client's request. ",
+            name: "Catherine",
+            post: "Lead Content Creator",
+            country: "Michigan, USA",
+            text: "I wanted to take a moment to thank DotpotiT for the services your team has provided. Your team has been a pleasure to work with, professional and timely. Job well done and I hope we can continue to grow together.",
             // img: "https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/our-client-say/client-icon/buuurp.png"
             img:"https://images.pexels.com/photos/8485714/pexels-photo-8485714.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            company:"DotpotiT"
+            company:"Landscape Videos"
         },
         {
             id: 9,
-            name: "Michael",
-            post: "Social Media App",
-            country: "Kenya",
-            text: "DotpotiT Infosystem is dependable and responsive to client's request. ",
+            name: "Amber",
+            post: "Promotional Lead",
+            country: "Chaco, Argentina",
+            text: "Under tight deadlines and with high expectations, DotpotiT was a pleasure to partner with, on a high profile political campaign website. I wouldn't hesitate in recommending them to other agencies.",
             // img: "https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/our-client-say/client-icon/buuurp.png"
             img:"https://images.pexels.com/photos/4050436/pexels-photo-4050436.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            company:"DotpotiT"
+            company:"People's Mainland"
         },
         {
             id: 10,
-            name: "Michael",
-            post: "Social Media App",
-            country: "Kenya",
-            text: "DotpotiT Infosystem is dependable and responsive to client's request.",
+            name: "Angela",
+            post: "CEO",
+            country: "Florida, USA",
+            text: "I can't say enough about the excellent work that DotpotiT has done on our website. They took a below-average website and transformed it into an appealing and informative website. It was an absolute pleasure to work with them.",
             // img: "https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/our-client-say/client-icon/buuurp.png"
             img:"https://images.pexels.com/photos/4491443/pexels-photo-4491443.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             company:"DotpotiT"

@@ -81,7 +81,7 @@ export const SingleSlide = (props) => {
         <div className="mx-5 mb-20 p-2 md:p-0 rounded-2xl flex flex-col justify-between items-center bg-white shadow-xl ">
             <div className="flex flex-col md:grid md:grid-cols-3 md:gap-10 ">
                 <div className=" col-span-1">
-                    <img src={props.img} alt=""  className="md:rounded-tl-xl md:rounded-bl-xl aspect-square object-cover " />
+                    <img src={props.img} alt=""  className="md:rounded-tl-xl md:rounded-bl-xl aspect-square object-cover h-full" />
                 </div>
 
                 <div className="col-span-2 p-5 ">
