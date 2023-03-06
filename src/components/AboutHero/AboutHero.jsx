@@ -1,3 +1,16 @@
+/** 
+The AboutHero component is a React functional component that is used to render the hero section of the about page. It takes props as parameters and returns JSX elements that make up the hero section.
+
+Props
+The component accepts the following props:
+
+heading: a string representing the main heading of the hero section.
+text: a string representing the supporting text of the hero section.
+button: an object containing the title and link properties. The title property is a string representing the text of the CTA button, and the link property is a string representing the URL to which the button should link.
+heroImg: a string representing the URL of the hero image.
+
+**/
+
 import React from 'react'
 import { BsArrowRight } from 'react-icons/bs'
 import { Link } from 'react-router-dom'

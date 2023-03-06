@@ -1,3 +1,10 @@
+/**
+The GoogleMap component is a functional component that renders a Google Map embedded in an iFrame. 
+It takes no props and displays a heading above the map. 
+The map is centered on the location of the company Dotpot iT, with a marker and information about the company's address. 
+The component uses tailwind CSS for styling.
+ */
+
 import React from 'react'
 
 const GoogleMap = () => {

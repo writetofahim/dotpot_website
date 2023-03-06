@@ -1,3 +1,16 @@
+/**
+This is a React component that exports a RecentWorksSlider function. 
+The component uses MUI's Chip and Stack components, as well as the react-slick library to create a slider with recent blog posts. 
+It also uses icons from react-icons/gr and react-icons/bs.
+
+The component includes two helper functions, SampleNextArrow and SamplePrevArrow, that define the appearance and behavior of the slider's previous and next arrows.
+
+The blogData array contains objects that represent each blog post's data, including the post's img, categories, date, title, and id.
+
+The component includes a SingleSlide function that creates a single slide for the slider based on the data provided through its props. 
+Finally, the RecentWorksSlider function maps over the blogData array to create a slider with multiple SingleSlide components.
+ */
+
 
 import { Chip } from "@mui/material";
 import { Stack } from "@mui/system";

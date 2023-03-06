@@ -1,3 +1,18 @@
+/**
+This component is a React slider that displays recent works data in the form of slides. 
+It uses the following dependencies: @mui/material, @mui/system, and react-slick.
+
+The slider includes two arrow components for navigating to the next and previous slide. 
+These components are defined using react-icons/gr and named SampleNextArrow and SamplePrevArrow, respectively. 
+The arrow components are passed to the slider component using the nextArrow and prevArrow properties of the settings object.
+
+The settings object defines the behavior of the slider, including the number of slides to show at once, the speed of the slide transitions, and the breakpoints for different screen sizes. 
+The recentWorksData array is mapped to generate the individual slides. 
+Each slide displays an image, title, and a stack of Chip components representing the technologies used in the project.
+
+Finally, the RecentWorksSlider component wraps the slider component and the individual slides to render the complete slider.
+ */
+
 
 import { Chip } from "@mui/material";
 import { Stack } from "@mui/system";
@@ -72,7 +87,7 @@ var settings = {
 
 export const SingleSlide = (props) => {
     return (
-        <div className="mx-5 mb-20 rounded-lg relative">
+        <div className="mx-5 mb-20 rounded-lg relative aspect-square">
             <img src={props.img} alt="" className=" rounded-xl" />
             <div className="absolute b-0 left-1/2 transform -translate-x-1/2 translate-y-[-50%] bg-white w-[80%] rounded-xl shadow p-5 flex flex-col items-center">
                 <h1 className="text-xl font-bold text-gray-400 mb-2">{props.title}</h1>

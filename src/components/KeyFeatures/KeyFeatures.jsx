@@ -1,3 +1,10 @@
+/**
+    KeyFeatures Component
+    This component displays a section containing the key features of the company.
+    It renders the @KeyFeaturesSlider component
+    returns JSX.Element
+ */
+
 import React from 'react'
 import KeyFeatureSlider from './KeyFeatureSlider'
 

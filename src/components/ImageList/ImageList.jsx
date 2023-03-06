@@ -1,3 +1,15 @@
+/*
+This code exports a React component called QuiltedImageList, which displays a list of images using the ImageList and ImageListItem components from the Material UI library. 
+The images are sourced from an array of objects called itemData, which specifies the image URL, title, number of rows, and number of columns to display.
+
+The srcset function takes an image URL, a size, and the number of rows and columns and returns an object with the src and srcSet attributes, which are used to specify the image source and the image source set for different screen sizes.
+
+The ImageList component is configured with the variant property set to quilted, which specifies the layout style, and the cols and rowHeight properties set to 4 and 121 respectively.
+The ImageListItem component is used to render each image, and its cols and rows properties are set based on the itemData array.
+
+The entire ImageList is enclosed in a div with classes w-full h-full flex items-center justify-center, which centers it horizontally and vertically.
+*/
+
 import * as React from 'react';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';

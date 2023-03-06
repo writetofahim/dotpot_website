@@ -1,3 +1,15 @@
+/**
+This is a React component that displays "Industries We Serve" section.
+
+It imports IndustriesWeServeData from a file named data.js 
+The component also imports another custom component called ProcessCard that receives props such as logo and title to display information about an industry in a card format.
+
+The IndustriesWeServe component renders a div that contains a heading and a list of ProcessCard components. 
+The list is generated using the map function that iterates over the IndustriesWeServeData array, passing each item as props to the ProcessCard component.
+
+The component is styled using tailwind CSS classes, with responsive design for different screen sizes.
+ */
+
 import React from 'react'
 import {IndustriesWeServeData} from "../../data"
 

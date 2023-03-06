@@ -1,3 +1,10 @@
+/**
+ * This component is the About Us page of a website. 
+ * It imports several components and data files, including the Navbar, Footer, OurPartnersSlider, AboutHero, PartnershipModels, ProcessWeFollow, WhoWeWorkWith, RecentWorks, SocialMedia, GoogleMap, and ContactForm. 
+ * It uses the imported data files to render different sections of the page, including the hero section, main section, and several other sections, such as the partnership models, process we follow, recent works, and social media sections. 
+ * It also sets a hero image and a button link to the Contact Us page.
+ */
+
 import React from 'react'
 import AboutHero from '../../components/AboutHero/AboutHero'
 import ContactForm from '../../components/ContactForm/ContactForm'

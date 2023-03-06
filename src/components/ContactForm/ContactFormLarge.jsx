@@ -1,3 +1,10 @@
+/**
+This component is called ContactFormLarge and it's a larger version of a contact form. 
+Input fields for the user to fill out including full name, email, contact number, Whatsapp number, Skype, and file upload. 
+RangeSlider component and a message input field. 
+Bottom of the form, there's a button to submit the form that includes an arrow icon. 
+The component also includes a message stating that NDA is signed for all projects.
+ */
 import React from 'react'
 import { BsArrowRight,BsSkype } from 'react-icons/bs'
 import {MdPerson,MdMail,MdPhone,MdMessage} from "react-icons/md"

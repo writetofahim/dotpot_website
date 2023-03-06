@@ -1,3 +1,9 @@
+/**
+The ContactCenterServices component is a functional React component that renders a section of a web page with information about contact center services. It imports React and Link from react-router-dom, as well as a ContactCenterServicesSlide component from a local file for the slider.
+
+**/
+
+
 import React from 'react'
 import { Link } from 'react-router-dom'
 import ContactCenterServicesSlide from './ContactCenterServicesSlide'

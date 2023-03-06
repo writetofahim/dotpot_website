@@ -1,3 +1,14 @@
+/**
+ * This is a React component that renders a blog page with a list of blog cards and pagination. 
+ * The component imports the Navbar, Footer, blogData, Stack, Link, BsArrowRight, Chip, and Pagination components from various packages and files.
+
+The BlogCard component renders a card with a blog post image, categories, date, title, and a "Read More" link.
+
+The Blog component renders a title, a description, a container for the list of BlogCards, and a Pagination component. It also renders the Navbar and Footer components.
+
+Tailwind css is used for styling 
+ */
+
 import React from 'react'
 import Navbar from '../../components/Navbar/Navbar'
 import Footer from '../../components/Footer/Footer'

@@ -1,3 +1,17 @@
+/**
+ * This is a React component named WhoWeWorkWith that displays a section about the clients that the company works with. 
+ * It imports Card component from a local file and whoDoWeWorkData object from ../../data which contains the data to be displayed.
+
+The WhoWeWorkWith component returns a section that contains two div elements, one on the left and one on the right. 
+The left div displays the title and description of the section. 
+The right div contains multiple instances of the Card component, each of which displays an icon and a name of the client.
+
+To use this component, you can import it in another file and include it in your JSX code. 
+You can also customize the data to be displayed by modifying the whoDoWeWorkData object in ../../data file or pass in different props to the Card component.
+
+Tailwind css is used for styling
+ */
+
 import React from 'react'
 import { whoDoWeWorkData } from '../../data'
 

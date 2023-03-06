@@ -1,3 +1,17 @@
+/**
+This is a React component for the jobportal navbar that renders a responsive navigation bar with a logo, links, and a mobile menu icon.
+
+The component imports the following dependencies from React: useContext and useEffect. Additionally, it imports icon from the react-icons library and the Link component from the react-router-dom library. It also imports an image file that used as the logo.
+
+The component contains a state variable toggleMenu that toggles between showing and hiding the mobile menu.
+
+The component returns a navigation bar with a logo and links.
+
+The component uses Tailwind CSS classes for styling..
+
+To use this component, import it into a parent component using import NavbarJob from "./NavbarJob" and place it where desired in the JSX of the parent component. Additionally, make sure to have the dependencies installed and imported in the parent component as well.
+*/
+
 import React, { useContext, useEffect } from "react";
 import { HiMenuAlt4 } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";

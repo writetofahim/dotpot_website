@@ -1,3 +1,16 @@
+/**
+Component Name: JobSearchbar
+
+Props: None
+
+This component displays a search bar with job type and location auto-complete inputs and a send button. 
+It also displays links to post a resume or a job, and a list of filters for job search results.
+
+This component is styled using TailwindCss
+
+All data comes from data.js file
+ */
+
 import React from 'react'
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';

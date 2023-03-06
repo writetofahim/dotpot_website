@@ -1,3 +1,10 @@
+/**
+ * This is the Contact component, which renders the contact page of the website. 
+ * It imports various components such as Navbar, Footer, SocialMedia, ContactFormLarge, OurPartnersSlider, RecentWorks, WhoWeWorkWith, Service, and GoogleMap to display different sections of the page. 
+ * The ContactFormLarge component is used to display a contact form where users can submit their queries.
+ * Tailwind css used for styling
+ */
+
 import React from 'react'
 import Navbar from '../../components/Navbar/Navbar'
 import Footer from '../../components/Footer/Footer'

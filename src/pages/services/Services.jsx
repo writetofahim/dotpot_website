@@ -1,3 +1,8 @@
+/**
+ * This is the services page
+ * Components are imported to construct the whole page
+ */
+
 import React from 'react'
 import Navbar from "../../components/Navbar/Navbar"
 import Footer from "../../components/Footer/Footer"

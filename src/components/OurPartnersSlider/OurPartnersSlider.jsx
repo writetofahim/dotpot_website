@@ -1,4 +1,8 @@
-
+/**
+This component is a slider that displays a list of partners logos. 
+It imports React and Slider from the "react-slick" library, as well as the ourPartnersSliderData array from the ../../data file. It sets some options for the slider, including autoplay and breakpoints for responsiveness. 
+The OurPartnersSlider function returns the slider component with the settings applied, which includes mapping through the ourPartnersSliderData array to display each partner logo as an image within a div.
+ */
 import React from "react";
 import Slider from "react-slick";
 import { ourPartnersSliderData } from "../../data"

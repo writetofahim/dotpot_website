@@ -1,3 +1,11 @@
+/**
+This is a React component called Particle which renders a particle animation using the react-tsparticles library. 
+The animation includes a background color, particles with links, collision detection, interactivity, and more. 
+The component initializes and loads the particle engine using useCallback and loadFull functions respectively. 
+The options object is used to customize the appearance and behavior of the particles. 
+The Particle component can be imported and used in other React components to display the particle animation.
+ */
+
 import React from 'react'
 import { useCallback } from "react";
 import Particles from "react-tsparticles";

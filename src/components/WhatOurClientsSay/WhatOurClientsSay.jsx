@@ -1,3 +1,9 @@
+/**
+This component is a section that displays a slider of quotes from clients. 
+It imports a slider component named WhatOurClientsSaySlider and client data from WhatOurClientSayData. 
+It renders the section with a title, subtitle, and the slider component.
+ */
+
 import React from 'react'
 import WhatOurClientsSaySlider from './WhatOurClientsSaySlider'
 import {WhatOurClientSayData} from "../../data"

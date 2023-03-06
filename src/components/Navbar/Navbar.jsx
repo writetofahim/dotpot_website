@@ -1,3 +1,16 @@
+/**
+This component is a navbar that includes a logo, links to different pages, and a button to apply for a job. It uses React, react-router-dom, and some TailwindCSS for styling.
+
+To use it, import the component from its location and place it in the desired location in your app. 
+The navbar will automatically display the links to different pages and the logo.
+
+The component has a state hook that toggles a menu when the screen size is small, and displays a dropdown with the same links.
+
+To customize the links or add new ones, simply modify the Link components and their corresponding text inside the ul element.
+
+To apply custom styles, modify the with tailwind css classes and the backgroud style is in index.css file.
+ */
+
 import React, { useContext, useEffect } from "react";
 import { HiMenuAlt4 } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";

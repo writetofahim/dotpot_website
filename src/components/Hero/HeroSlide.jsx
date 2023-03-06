@@ -1,3 +1,12 @@
+/**
+This is a React component that renders a full-page hero slider. 
+It uses the react-slick library for the slider functionality and custom arrow components for navigation. 
+The slider data is imported from an external data file and mapped to the SingleSlide component, which renders a single slide with an image, title, subtitle, description, and a button that links to a specified URL. 
+The HeroSlide component maps all the slide data to SingleSlide and renders them within the Slider component with the custom arrow components. 
+The HeroSlide component is then used within the Hero component to display the hero slider with a particle animation in the background. 
+The Hero component is intended to be used as the hero section of a landing page or a website homepage.
+ */
+
 import React from "react";
 import Slider from "react-slick";
 import { GrNext, GrPrevious } from 'react-icons/gr'

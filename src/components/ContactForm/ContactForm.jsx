@@ -1,3 +1,10 @@
+/**
+This is a React functional component called ContactForm. 
+It is a form used for contacting someone and contains input fields for name, email, phone number, and a message. 
+The component uses React Icons library to add icons to the input fields and the button. 
+It also uses React Router DOM to navigate to the Contact page when the button is clicked.
+ */
+
 import React from 'react'
 import { BsArrowRight } from 'react-icons/bs'
 import {MdPerson,MdMail,MdPhone,MdMessage} from "react-icons/md"

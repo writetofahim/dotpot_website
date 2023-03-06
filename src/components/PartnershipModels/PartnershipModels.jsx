@@ -1,3 +1,15 @@
+/**
+This component is a React functional component that displays a section on partnership models. 
+It imports data from a data file and exports two components - PartnershipModels and Card.
+
+Card is a sub-component that takes in props and renders a card displaying an image, title, and description.
+
+PartnershipModels is the main component that renders the section, which includes a heading, introductory paragraph, and multiple instances of the Card component. 
+It maps through the imported data to create each card. 
+The component is responsive for mobile and desktop displays.
+The component uses Tailwind css for styling
+ */
+
 import React from 'react'
 import { PartnershipModelsData } from "../../data"
 

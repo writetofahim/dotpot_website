@@ -1,3 +1,15 @@
+/** 
+This component exports CustomizeYourService component.
+
+The Technologies component displays the technology details, such as title and icon, and has a checkbox. It takes four props: addTechnology, tech, removeTechnology, and technology.
+
+The Addons component displays the add-on details, such as title and icon, and has a checkbox. It takes four props: item, addAddons, removeAddons, and addons.
+
+The CustomizeYourService component is the main component that renders the above two components. It contains state variables like selectedService, technology, addons, price, isOpen.
+
+The component renders two sub-components: Technologies and Addons. The selected technology is displayed on the page, along with the selected add-ons and the total price. When a technology is selected, the add-ons are cleared, and the price is reset to zero. The add-ons' prices are added to the technology price to compute the total price.
+*/
+
 import { Divider } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { customizeYourServiceData } from '../../data'

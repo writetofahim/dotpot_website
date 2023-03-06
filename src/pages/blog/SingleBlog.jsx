@@ -1,3 +1,15 @@
+/**
+ * This is a React functional component called SingleBlog that renders a single blog post. 
+ * It imports React, Link, useParams, Footer, Navbar, RecentBlogs, blogData, and parse.
+
+It uses useParams to get the id of the blog post to be displayed. 
+It then gets the data of the blog post using blogData[id] and renders it with img, title, date, categories, and desc.
+
+The desc property of the blog object is parsed using parse to render any HTML tags that might be included in the blog post content.
+
+This component also renders Navbar, RecentBlogs, and Footer.
+ */
+
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import Footer from '../../components/Footer/Footer'

@@ -1,3 +1,11 @@
+/**
+This is a React component that displays a slider of testimonials from clients. 
+It uses the react-slick library for the slider functionality, and imports data for each testimonial from a separate data file. 
+The component includes two arrow buttons for navigating between slides, styled using React Icons. 
+It is responsive, with different settings for different screen sizes. 
+The SingleSlide component is a child component that renders each individual testimonial slide within the slider.
+ */
+
 import React from "react";
 import Slider from "react-slick";
 import {WhatOurClientSayData} from "../../data"

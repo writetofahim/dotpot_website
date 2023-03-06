@@ -1,4 +1,26 @@
-
+/**
+The KeyFeatureSlider component displays a slider of key features using the Slider component from the react-slick library.
+This component receives the no props:
+The KeyFeatureSlider component imports the following:
+ourKeyFeatures: an array of objects containing information about each key feature to be displayed in the slider.
+SingleSlide: a component that displays the information for a single key feature.
+SampleNextArrow and SamplePrevArrow: components that display custom Next and Previous arrow icons respectively.
+The KeyFeatureSlider component uses the following props with the Slider component:
+dots: a boolean indicating whether to display dots below the slider to indicate the current slide.
+infinite: a boolean indicating whether the slider should loop back to the first slide after reaching the last slide.
+speed: the time in milliseconds for the slider to animate between slides.
+slidesToShow: the number of slides to display at once.
+slidesToScroll: the number of slides to scroll when the Next or Previous arrow is clicked.
+initialSlide: the index of the slide to display first.
+autoplay: a boolean indicating whether to automatically advance to the next slide.
+autoplaySpeed: the time in milliseconds for the slider to automatically advance to the next slide.
+arrows: a boolean indicating whether to display Next and Previous arrow icons.
+cssEase: the easing function to use for the slide animation.
+nextArrow: a custom Next arrow component.
+prevArrow: a custom Previous arrow component.
+responsive: an array of breakpoint objects that specify how many slides to display and scroll at different screen sizes.
+@returns JSX element
+*/
 import React from "react";
 import Slider from "react-slick";
 import { ourKeyFeatures } from "../../data"

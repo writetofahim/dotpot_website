@@ -1,3 +1,18 @@
+/**
+The component Footer renders the footer section of a web page. It consists of three main parts:
+
+Desktop Footer:
+It shows the footer with three columns (two on the left and one on the right).
+The left columns show the company logo, address, and contact information.
+The right column shows links to different sections of the website divided into different categories.
+It is hidden in mobile view.
+Mobile Footer:
+It shows the company logo, address, and contact information.
+It also shows a button to toggle links to different sections of the website.
+It is visible in mobile view.
+MobileMenu:
+It is a helper component to show the links when the toggle button is clicked in mobile view.
+ */
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { footerData } from '../../data';

@@ -1,3 +1,8 @@
+/**
+This is a React functional component called RecentWorks which renders a section of recent works. 
+It imports the RecentWorksSlider component, which is a slider that displays each work item.
+ */
+
 import React from 'react'
 import RecentWorksSlider from './RecentWorksSlider'
 

@@ -1,4 +1,11 @@
-import { Container } from '@mui/system'
+/**
+This is a React component that displays a list of services offered by the company. 
+It imports Link component from react-router-dom, and BsArrowRight icon from the react-icons/bs package. 
+The data of services is imported from a file named servicesData. 
+The Card component displays a single service item, which includes an image, title, list of items, and a "Read More" button. 
+The Service component uses the Card component to display a list of services, with each service being rendered as a Card.
+Tailwind css is used for styling
+ */
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { BsArrowRight } from "react-icons/bs"

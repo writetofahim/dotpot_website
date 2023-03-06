@@ -1,3 +1,14 @@
+/**
+This file has two React components: ProcessCard and ProcessWeFollow.
+
+ProcessCard is a reusable component that renders a card with an image, title, and description. It takes in props as a parameter and uses them to render the card content.
+
+ProcessWeFollow is a component that displays the process the company follows, using a combination of text and images. 
+It uses processLg and processSm images to display the process in diffrent breakpoints, and also has a commented-out block of code that can be used to render the ProcessCard components with data from processWeFollowData.
+
+Tailwind css is used for styling
+ */
+
 import React from 'react'
 import { processWeFollowData } from "../../data"
 import processLg from "../../assets/img/processLg.png"

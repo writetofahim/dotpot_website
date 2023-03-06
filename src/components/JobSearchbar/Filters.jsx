@@ -1,3 +1,10 @@
+/**
+
+This component is a Filters component that allows the user to filter job search results by multiple categories. 
+Here's a short and to-the-point documentation for the component:
+
+ */
+
 import * as React from 'react';
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';

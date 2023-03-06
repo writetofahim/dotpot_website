@@ -1,6 +1,27 @@
-import { Fab } from '@mui/material'
+/**
+ * This is a Home component that imports and renders various components to create home page. 
+ * The component imports and renders the following components:
+
+Navbar
+Hero
+Information
+KeyFeatures
+ContactCenterServices
+CustomizeYourService
+ProcessWeFollow
+PartnershipModels
+IndustriesWeServe
+RecentWorks
+WhoWeWorkWith
+WhatOurClientSay
+SocialMedia
+OurPartnersSlider
+RecentBlogs
+GoogleMap
+Footer
+ */
+
 import React from 'react'
-import BackToTop from '../../components/BackToTop/BackToTop'
 import ContactCenterServices from '../../components/ContactCenterServices/ContactCenterServices'
 import CustomizeYourService from '../../components/CustomizeYourService/CustomizeYourService'
 import Footer from '../../components/Footer/Footer'
@@ -41,7 +62,6 @@ const Home = () => {
       <RecentBlogs />
       <GoogleMap />
       <Footer />
-      {/* <BackToTop /> */}
     </>
   )
 }

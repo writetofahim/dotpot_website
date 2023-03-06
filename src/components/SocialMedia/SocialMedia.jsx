@@ -1,3 +1,12 @@
+/**
+This component is called SocialMedia and it renders a section with social media icons that link to their respective accounts. 
+It imports Link from react-router-dom and socialNetworkData from ../../data.
+
+
+The socialNetworkData array is mapped over and for each item in the array, a Link component is created with a div child. 
+The div contains an image element.
+ */
+
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { socialNetworkData } from '../../data'

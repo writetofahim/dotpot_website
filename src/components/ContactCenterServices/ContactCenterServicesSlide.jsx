@@ -1,3 +1,15 @@
+/*
+This is a React component that displays a slider containing information of hero section.
+
+The component defines a "SingleSlide" component which takes in "title" and "text" props and displays them within a styled div.
+
+The "ContactCenterServicesSlide" component uses the "Slider" component from "react-slick" and passes in settings and "contactCenterServicesData" as props to display a collection of "SingleSlide" components as slides.
+
+The settings object defines the behavior of the slider, including the number of slides to show and scroll, autoplay, and responsiveness. It also includes the arrow components defined earlier.
+
+
+*/
+
 
 import React from "react";
 import Slider from "react-slick";

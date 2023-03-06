@@ -1,3 +1,15 @@
+/**
+This is a React component named RecentBlogs. It is responsible for displaying a section on the webpage containing recent blogs.
+
+The component imports Link from the react-router-dom library and RecentBlogsSlider from another component file.
+
+RecentBlogsSlider is the slide that shows recent blogs.
+
+It uses Link to create a link to the blog page and RecentBlogsSlider to display a slider of recent blog posts.
+
+The RecentBlogsSlider component is responsible for displaying the recent blog posts.
+ */
+
 import React from 'react'
 import { Link } from 'react-router-dom'
 import RecentBlogsSlider from './RecentBlogsSlider'
