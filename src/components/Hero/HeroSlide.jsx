@@ -45,7 +45,7 @@ var settings = {
 export const SingleSlide = (props) => {
   return (
     <div className="w-full h-full flex items-center justify-center">
-      <div className="md:max-w-[1200px] lg:container container flex justify-between items-center">
+      <div className="md:max-w-[1200px] lg:container container flex flex-col-reverse md:flex-row justify-between items-center">
         <div className="left flex-1 h-full flex flex-col justify-center">
           <h1 className="text-6xl text-primary-500 font-bold mb-2">
             {props.title}
@@ -62,8 +62,8 @@ export const SingleSlide = (props) => {
             </p>
           </div>
           <Link to={props.link}>
-            <button className='bg-primary-500 px-10 py-3 text-white rounded-sm hover:bg-secondary-500 hover:scale-110 transition-all font-bold mt-2 flex items-center gap-3'>
-              Contact <BsArrowRight />
+            <button className='bg-secondary-400 hover:bg-secondary-300 px-10 py-3 text-white rounded-sm hover:scale-110 transition-all font-bold mt-2 flex items-center gap-3'>
+              Contact Us <BsArrowRight />
             </button>
           </Link>
         </div>

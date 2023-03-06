@@ -34,6 +34,9 @@ const Navbar = () => {
                     <Link to="/contact">
                         <li className="mx-4 cursor-pointer uppercase text-white md:text-gray-400 text-lg hover:scale-110 hover:text-primary-400" onClick={() => setToggleMenu(false)}>Contact</li>
                     </Link>
+                    <Link to="/blog">
+                        <li className="mx-4 cursor-pointer uppercase text-white md:text-gray-400 text-lg hover:scale-110 hover:text-primary-400" onClick={() => setToggleMenu(false)}>Blog</li>
+                    </Link>
                     <Link to='/apply' target="_blank">
                         <li className="bg-primary-500 py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-primary-400 text-white">
                             Aplly For Job
@@ -62,6 +65,9 @@ const Navbar = () => {
                             </Link>
                             <Link to="/contact">
                                 <li className="mx-4 cursor-pointer uppercase text-gray md:text-gray-400 text-xl hover:text-primary-400 mt-3" onClick={() => setToggleMenu(false)}>Contact</li>
+                            </Link>
+                            <Link to="/blog">
+                                <li className="mx-4 cursor-pointer uppercase text-gray md:text-gray-400 text-xl hover:text-primary-400 mt-3" onClick={() => setToggleMenu(false)}>Blog</li>
                             </Link>
                             <Link to='/apply' target="_blank">
                                 <li className="bg-primary-500 py-2 px-7 mx-4 mt-5 rounded-full cursor-pointer hover:bg-primary-400 text-white">

@@ -4,7 +4,7 @@ import { customizeYourServiceData } from '../../data'
 import { RxCross1 } from "react-icons/rx"
 import { TiTick } from 'react-icons/ti'
 import { AiOutlineInfoCircle } from 'react-icons/ai'
-import {BsCircle} from 'react-icons/bs'
+import {BsArrowRight, BsCircle} from 'react-icons/bs'
 
 
 const Technologies = ({ addTechnology, tech,removeTechnology, technology }) => {
@@ -169,7 +169,7 @@ const CustomizeYourService = () => {
 
                     {/* Right Side */}
                     <div className="right flex-[0.8] border rounded p-1 md:p-5 overflow-scrool h-[75vh] relative">
-                    <button className='absolute bottom-2 right-2 px-3 py-2 bg-primary-500 text-white cursor-pointer font-bold rounded hover:bg-secondary-500'>Order Now</button>
+                    <button className='absolute bottom-2 right-2 px-3 py-2 bg-secondary-400 hover:bg-secondary-300  text-white cursor-pointer font-bold rounded flex items-center gap-2'>Order Now <BsArrowRight /></button>
                         <div className="flex justify-between">
                             <div>
                                 {
