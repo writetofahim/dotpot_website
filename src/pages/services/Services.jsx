@@ -14,12 +14,14 @@ import ContactCenterServices from '../../components/ContactCenterServices/Contac
 import PartnershipModels from '../../components/PartnershipModels/PartnershipModels'
 import RecentBlogs from '../../components/RecentBlogs/RecentBlogs'
 import SocialMedia from '../../components/SocialMedia/SocialMedia'
+import CustomizeService from '../../components/CustomizeService/CustomizeService'
 
 
 const Services = () => {
     return (
         <div className="full">
             <Navbar />
+            <CustomizeService />
             <CustomizeYourService />
             <Service />
             <ContactCenterServices />

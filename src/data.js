@@ -382,7 +382,7 @@ export const customizeYourServiceData = [
         addons: [
             {
                 id: 1,
-                title: "Yearly Hosting",
+                title: "Hosting",
                 sdes: "Application hosting yearly",
                 icon: "https://cdn-icons-png.flaticon.com/512/1373/1373110.png",
                 cost: 5000
@@ -404,28 +404,28 @@ export const customizeYourServiceData = [
         technologies: [
             {
                 id: 1,
-                title: "Static Website",
+                title: "Static",
                 sdes: "Simple website with static data",
                 icon: "https://cdn-icons-png.flaticon.com/512/5219/5219384.png",
                 cost: 10000
             },
             {
                 id: 2,
-                title: "Blog Website",
+                title: "Blog",
                 sdes: "Bloging website with dynamic data",
                 icon: "https://cdn-icons-png.flaticon.com/512/9836/9836465.png",
                 cost: 15000
             },
             {
                 id: 3,
-                title: "Ecommerce Website",
+                title: "Ecommerce",
                 sdes: "Full-Stack Ecommerce Website with admin",
                 icon: "https://cdn-icons-png.flaticon.com/512/1162/1162499.png",
                 cost: 18000
             },
             {
                 id: 4,
-                title: "Custom React Website",
+                title: "Custom",
                 sdes: "Fully custom high performance React website",
                 icon: "https://cdn-icons-png.flaticon.com/512/1066/1066631.png",
                 cost: 50000
@@ -463,42 +463,42 @@ export const customizeYourServiceData = [
         ]
     },
     {
-        id: 4,
-        title: "iT Support",
+        id: 3,
+        title: "iT",
         sdes: "Every types of iT support",
         icon: "https://cdn-icons-png.flaticon.com/512/2058/2058768.png",
         technologies: [
             {
                 id: 1,
-                title: "Hardware support",
+                title: "Hardware",
                 sdes: "Hardware maintenance/ repair/ replacement",
                 icon: "https://cdn-icons-png.flaticon.com/512/3868/3868395.png",
                 cost: 10000
             },
             {
                 id: 2,
-                title: "Software support",
+                title: "Software",
                 sdes: "Software development/ maintenance/ Installation",
                 icon: "https://cdn-icons-png.flaticon.com/512/838/838490.png",
                 cost: 15000
             },
             {
                 id: 3,
-                title: "Network support",
+                title: "Network",
                 sdes: "Network configuration, Maintenance",
                 icon: "https://cdn-icons-png.flaticon.com/512/3598/3598209.png",
                 cost: 18000
             },
             {
                 id: 4,
-                title: "Security support",
+                title: "Security",
                 sdes: "Cyber security support",
                 icon: "https://cdn-icons-png.flaticon.com/512/2592/2592258.png",
                 cost: 50000
             },
             {
                 id: 5,
-                title: "Cloud support",
+                title: "Cloud",
                 sdes: "Cloud storage",
                 icon: "https://cdn-icons-png.flaticon.com/512/3305/3305673.png",
                 cost: 50000
@@ -724,13 +724,13 @@ export const recentWorksData = [
         id: 1,
         img: "https://images.pexels.com/photos/326503/pexels-photo-326503.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         title: "Social Media App",
-        tech: ["ReactJs",  "Node Js", "MongoDB"]
+        tech: ["ReactJs", "Node Js", "MongoDB"]
     },
     {
         id: 2,
         img: "https://images.pexels.com/photos/34577/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         title: "Ecommerce Website",
-        tech: ["ReactJs",  "Node Js", "MongoDB"]
+        tech: ["ReactJs", "Node Js", "MongoDB"]
     },
     {
         id: 3,
@@ -856,8 +856,8 @@ export const WhatOurClientSayData = {
             country: "Massachusetts, USA",
             text: "A robust congratulations to the team at DotpotiT Solutions for a job well done developing our health app.  They've worked closely with us throughout the process, staying on task, on target, and on budget",
             // img: "https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/our-client-say/client-icon/neighbor-shopper.png"
-            img:"https://images.pexels.com/photos/927022/pexels-photo-927022.jpeg",
-            company:"Leading Medical College & Hospital, Seattle, WA"
+            img: "https://images.pexels.com/photos/927022/pexels-photo-927022.jpeg",
+            company: "Leading Medical College & Hospital, Seattle, WA"
         },
         {
             id: 2,
@@ -866,8 +866,8 @@ export const WhatOurClientSayData = {
             country: "Canada",
             text: "Awesome experience !!! I am really impressed by the quality of services I received from DotpotiT. My revenue has increased because of the collaboration with the DotpotiT and I will definitely use your services again.",
             // img: "https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/our-client-say/client-icon/smyllo.png"
-            img:"https://images.pexels.com/photos/1181649/pexels-photo-1181649.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            company:"Polymorph Organizations Ltd."
+            img: "https://images.pexels.com/photos/1181649/pexels-photo-1181649.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            company: "Polymorph Organizations Ltd."
         },
         {
             id: 3,
@@ -876,8 +876,8 @@ export const WhatOurClientSayData = {
             country: "Los Angeles, USA",
             text: "Great work!!! The DotpotiT team was solid, efficient and knowledgeable. They did an amazing job on my very challenging app as per our requirements. I will be using them again. Thank you for doing such a great job! ",
             // img: "https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/our-client-say/client-icon/buuurp.png"
-            img:"https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            company:"HoneyPot Real Estate Ltd."
+            img: "https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            company: "HoneyPot Real Estate Ltd."
         },
         {
             id: 4,
@@ -886,8 +886,8 @@ export const WhatOurClientSayData = {
             country: "France",
             text: "DotpotiT has done a great job taking our company’s idea and developing a website as per our niche specifications. The team is technically strong and creative. I will not hesitate to recommend them. ",
             // img: "https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/our-client-say/client-icon/smyllo.png"
-            img:"https://images.pexels.com/photos/4467687/pexels-photo-4467687.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            company:"Fashoinysta"
+            img: "https://images.pexels.com/photos/4467687/pexels-photo-4467687.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            company: "Fashoinysta"
         },
         {
             id: 5,
@@ -896,8 +896,8 @@ export const WhatOurClientSayData = {
             country: "London, UK",
             text: "It has been an easy ride being associated with DotpotiT. They provide wide range of solutions for all spheres of our business. Their softwares are user friendly and this team is available 24*7 for support.",
             // img: "https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/our-client-say/client-icon/buuurp.png"
-            img:"https://images.pexels.com/photos/3201696/pexels-photo-3201696.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            company:"Beverage Food Chain & Restaurants"
+            img: "https://images.pexels.com/photos/3201696/pexels-photo-3201696.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            company: "Beverage Food Chain & Restaurants"
         },
         {
             id: 6,
@@ -906,8 +906,8 @@ export const WhatOurClientSayData = {
             country: "Warsaw, Poland",
             text: "Our cooperation on iOS and Android APP with DotpotiT couldn’t have gone smoother. DotpotiT's attention to detail helped to sharply define the project and its workflow, resulting in accurate and speedy deliverables. ",
             // img: "https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/our-client-say/client-icon/buuurp.png"
-            img:"https://images.pexels.com/photos/4238496/pexels-photo-4238496.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            company:"SkyGames Corporations"
+            img: "https://images.pexels.com/photos/4238496/pexels-photo-4238496.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            company: "SkyGames Corporations"
         },
         {
             id: 7,
@@ -916,8 +916,8 @@ export const WhatOurClientSayData = {
             country: "Birmingham, UK",
             text: "We have been working with DotpotiT team for over 2 years now. I must say we have come a long way together and all along their team has been flexible to our ad-hoc requests. I definitely see DotpotiT as our long-term partners.",
             // img: "https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/our-client-say/client-icon/buuurp.png"
-            img:"https://images.pexels.com/photos/2182971/pexels-photo-2182971.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            company:"Welfare Consultancy"
+            img: "https://images.pexels.com/photos/2182971/pexels-photo-2182971.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            company: "Welfare Consultancy"
         },
         {
             id: 8,
@@ -926,8 +926,8 @@ export const WhatOurClientSayData = {
             country: "Michigan, USA",
             text: "I wanted to take a moment to thank DotpotiT for the services your team has provided. Your team has been a pleasure to work with, professional and timely. Job well done and I hope we can continue to grow together.",
             // img: "https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/our-client-say/client-icon/buuurp.png"
-            img:"https://images.pexels.com/photos/8485714/pexels-photo-8485714.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            company:"Landscape Videos"
+            img: "https://images.pexels.com/photos/8485714/pexels-photo-8485714.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            company: "Landscape Videos"
         },
         {
             id: 9,
@@ -936,8 +936,8 @@ export const WhatOurClientSayData = {
             country: "Chaco, Argentina",
             text: "Under tight deadlines and with high expectations, DotpotiT was a pleasure to partner with, on a high profile political campaign website. I wouldn't hesitate in recommending them to other agencies.",
             // img: "https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/our-client-say/client-icon/buuurp.png"
-            img:"https://images.pexels.com/photos/4050436/pexels-photo-4050436.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            company:"People's Mainland"
+            img: "https://images.pexels.com/photos/4050436/pexels-photo-4050436.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            company: "People's Mainland"
         },
         {
             id: 10,
@@ -946,8 +946,8 @@ export const WhatOurClientSayData = {
             country: "Florida, USA",
             text: "I can't say enough about the excellent work that DotpotiT has done on our website. They took a below-average website and transformed it into an appealing and informative website. It was an absolute pleasure to work with them.",
             // img: "https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/our-client-say/client-icon/buuurp.png"
-            img:"https://images.pexels.com/photos/4491443/pexels-photo-4491443.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            company:"DotpotiT"
+            img: "https://images.pexels.com/photos/4491443/pexels-photo-4491443.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            company: "DotpotiT"
         },
     ]
 }

@@ -23,6 +23,7 @@ Footer
 
 import React from 'react'
 import ContactCenterServices from '../../components/ContactCenterServices/ContactCenterServices'
+import CustomizeService from '../../components/CustomizeService/CustomizeService'
 import CustomizeYourService from '../../components/CustomizeYourService/CustomizeYourService'
 import Footer from '../../components/Footer/Footer'
 import GoogleMap from '../../components/GoogleMap/GoogleMap'
@@ -50,7 +51,8 @@ const Home = () => {
       <KeyFeatures />
       {/* <Service /> */}
       <ContactCenterServices />
-      <CustomizeYourService />
+      {/* <CustomizeYourService /> */}
+      <CustomizeService />
       <ProcessWeFollow />
       <PartnershipModels />
       <IndustriesWeServe />
