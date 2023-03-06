@@ -106,6 +106,7 @@ const CustomizeYourService = () => {
     const [price, setPrice] = useState(0)
     const [isOpen, setIsOpen] = useState(false)
     const [addons, setAddons]= useState([])
+    const [services, setServices ]= useState([])
     const [technology, setTechnology]= useState({
         id: null,
         title: null,

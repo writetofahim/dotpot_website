@@ -16,7 +16,7 @@ const SocialMedia = () => {
         <div className='w-full overflow-hidden py-10 md:flex md:flex-col md:justify-center bg-white'>
             <div className="p-5 mt-5 w-full md:max-w-[1400px] self-center flex gap-10 justify-between items-center flex-col md:flex-row lg:flex-row">
                 <div className="flex-1">
-                    <h3 className="text-6xl font-bold mb-5 text-primary-500">Social Media</h3>
+                    <h1 className="text-6xl font-bold mb-5 text-primary-500">Social Media</h1>
                     <p>Don’t Miss To Follow Us On Our Social Networks Accounts.</p>
                 </div>
                 <div className="flex-1 gap-5 flex flex-wrap justify-center">

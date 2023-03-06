@@ -90,7 +90,7 @@ export const SingleSlide = (props) => {
         <div className="mx-5 mb-20 rounded-lg relative">
             <img src={props.img} alt="" className=" rounded-xl aspect-[1.4] object-cover" />
             <div className="absolute b-0 left-1/2 transform -translate-x-1/2 translate-y-[-50%] bg-white w-[80%] rounded-xl shadow p-5 flex flex-col items-center">
-                <h1 className="text-xl font-bold text-gray-400 mb-2">{props.title}</h1>
+                <h3 className="text-xl font-bold text-gray-400 mb-2">{props.title}</h3>
                 <Stack direction="row" spacing={1} className="flex flex-wrap">
                     {
                         props.tech.map((tech, index) => (

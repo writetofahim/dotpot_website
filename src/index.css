@@ -8,9 +8,10 @@
   box-sizing: border-box;
 }
 
-/****************************** Slidersn *******************************/
 
-
+h1{
+  text-shadow: 4px 0px 0px rgba(0,0,0,0.22);
+}
 
 
 /****************************** Navigation Bar Design *******************************/
@@ -22,8 +23,6 @@
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(0, 0, 0, 0.3);
 }
-
-
 /****************************** Our Key Fearutes Background *******************************/
 .KeyFeartures{
   background-image: url(https://static.vecteezy.com/system/resources/previews/009/668/661/original/organic-blob-shapes-hand-drawn-illustration-free-png.png);

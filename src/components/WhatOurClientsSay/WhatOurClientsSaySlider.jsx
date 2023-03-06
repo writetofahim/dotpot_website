@@ -86,7 +86,7 @@ export const SingleSlide = (props) => {
 
                 <div className="col-span-2 p-5 ">
 
-                    <h1 className=""> <ImQuotesLeft className="text-primary-500  font-bold text-xl inline-block mr-2"/> {props.text} <ImQuotesRight className="text-primary-500   text-xl inline-block ml-2"/></h1>
+                    <p className=""> <ImQuotesLeft className="text-primary-500  font-bold text-xl inline-block mr-2"/> {props.text} <ImQuotesRight className="text-primary-500   text-xl inline-block ml-2"/></p>
                     <h2 className="font-bold text-xl text-secondary-500 mt-3 text-center md:text-left ">{props.name}</h2>
                     <h3 className="font-bold text-center md:text-left">{props.post}</h3>
                     <h3 className="font-medium text-center md:text-left">{props.company}</h3>
