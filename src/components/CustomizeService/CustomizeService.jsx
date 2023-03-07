@@ -12,7 +12,7 @@ const ServicesCard = (props) => {
   const [isSelect, setIsSelect] = useState(false)
 
   const addService = () => {
-    setOrder([...order, { id: serviceObject.id, title: serviceObject.title, icon: serviceObject.icon }])
+    setOrder([...order, { id: serviceObject.id, title: serviceObject.title, icon: serviceObject.icon, technologies: [{}], addons:[{}] }])
     setIsSelect(!isSelect)
   }
 
@@ -49,6 +49,11 @@ const TechnologyCard = (props) => {
 
   const addTechnologie = () => {
     setIsSelect(!isSelect)
+    const serviceObject = order.find((obj) => obj.id === openService.id);
+    const technologyArray = serviceObject.technologies;
+    if (serviceObject) {
+      serviceObject.technologies = [{...technologyArray}, technologyObject];
+    }
   }
 
   const removeTechnologie = () => {
@@ -74,14 +79,30 @@ const TechnologyCard = (props) => {
 // Addons Card
 const AddonsCard = (props) => {
   const [isSelect, setIsSelect] = useState(false)
+  const { openService, setOpneService, order, setOrder, ...others } = props
+  const addonObject = others
+  const addAddons = () => {
+    setIsSelect(!isSelect)
+    const serviceObject = order.find((obj) => obj.id === openService.id);
+    const addonArray = serviceObject.addons;
+    if (serviceObject) {
+      serviceObject.addons = [{...addonArray}, addonObject];
+      
+    }
+    console.log(serviceObject)
+  }
+
+  const removeAddons = () => {
+    setIsSelect(!isSelect)
+  }
   return (
     <div className="w-[100px] h-[100px] p-2 border rounded-xl flex flex-col items-center justify-evenly hover:scale-105 hover:shadow-xl transition-all relative overflow-hidden">
       <img src={props.icon} alt={props.title} className="w-3/5 aspact-square" />
       {
         !isSelect ?
-          <BiCircle className='absolute top-1 right-1 text-gray-400 cursor-pointer hover:scale-110' onClick={() => setIsSelect(!isSelect)} />
+          <BiCircle className='absolute top-1 right-1 text-gray-400 cursor-pointer hover:scale-110' onClick={() => addAddons()} />
           :
-          <TiTick className='absolute top-1 right-1 text-gray-400 cursor-pointer hover:scale-110' onClick={() => setIsSelect(!isSelect)} />
+          <TiTick className='absolute top-1 right-1 text-gray-400 cursor-pointer hover:scale-110' onClick={() => removeAddons()} />
       }
       <abbr title={props.sdes + 'Starting from ' + props.cost} className="absolute top-1 left-1 text-gray-400 cursor-pointer hover:scale-110"><CiCircleInfo /></abbr>
       <h3 className="text-center text-gray-300 text-sm">{props.title}</h3>
@@ -94,7 +115,7 @@ const CustomizeService = () => {
   const [openService, setOpneService] = useState(null)
   const [selectedServices, setSelectedServices] = useState({})
   const [order, setOrder] = useState([]);
-  console.log(order, openService && openService.id && openService.id)
+  console.log(openService && openService.id && openService.id)
   return (
     <div className='wifull p-10 flex items-center justify-center bg-white' >
       <div className="container">
@@ -130,6 +151,14 @@ const CustomizeService = () => {
             {/* Top Section */}
             <div className="">
               <p className="text-sm text-gray-300">Selected items: </p>
+              {
+                order.map((item,index)=>(
+                  <div key={index} className="flex items-center gap-2">
+                    <img src={item.icon} alt="" className="w-7 h-7 mt-2" />
+                    <p className="">:</p>
+                  </div>
+                ))
+              }
             </div>
 
             <div className="absolute top-1 right-1 flex flex-col items-center">
@@ -170,7 +199,13 @@ const CustomizeService = () => {
                   <div className="w-full p-2 my-2 flex gap-3 flex-wrap">
                     {
                       openService.addons.map((item, index) => (
-                        <AddonsCard key={index} {...item} />
+                        <AddonsCard 
+                        key={index}
+                        order={order}
+                        setOrder={setOrder}
+                        openService={openService}
+                        {...item}
+                        />
                       ))
                     }
                   </div>
