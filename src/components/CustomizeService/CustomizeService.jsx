@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { customizeYourServiceData } from "../../data"
 import { BiCircle } from "react-icons/bi"
 import { TiTick } from "react-icons/ti"
@@ -7,12 +7,12 @@ import { CiCircleInfo } from "react-icons/ci"
 
 // Left sidebars Service Card 
 const ServicesCard = (props) => {
-  const { openService, setOpneService, setOrder, order, ...others } = props
+  const { openService, setOpenService, setOrder, order, ...others } = props
   const serviceObject = { ...others }
   const [isSelect, setIsSelect] = useState(false)
 
   const addService = () => {
-    setOrder([...order, { id: serviceObject.id, title: serviceObject.title, icon: serviceObject.icon, technologies: [{}], addons:[{}] }])
+    setOrder([...order, { id: serviceObject.id, title: serviceObject.title, icon: serviceObject.icon, technologies: [], addons: [] }])
     setIsSelect(!isSelect)
   }
 
@@ -26,7 +26,7 @@ const ServicesCard = (props) => {
     <div
       className={`p-2 flex items-center gap-2 rounded-xl border mt-2 hover:scale-105 hover:shadow-xl transition-all relative cursor-pointer ${openService && serviceObject && openService.id === serviceObject.id && "bg-primary-100 scale-105 shadow-xl"}
       `}
-      onClick={() => props.setOpneService(serviceObject)}
+      onClick={() => props.setOpenService(serviceObject)}
     >
       <img src={props.icon} alt={props.title} className='w-10 h-10' />
       <p className="">{props.title}</p>
@@ -43,21 +43,37 @@ const ServicesCard = (props) => {
 
 // Technology Card
 const TechnologyCard = (props) => {
-  const { openService, setOpneService, order, setOrder, ...others } = props
+  const { openService, setOpenService, order, setOrder, ...others } = props
   const technologyObject = { ...others }
   const [isSelect, setIsSelect] = useState(false)
 
   const addTechnologie = () => {
     setIsSelect(!isSelect)
-    const serviceObject = order.find((obj) => obj.id === openService.id);
-    const technologyArray = serviceObject.technologies;
-    if (serviceObject) {
-      serviceObject.technologies = [{...technologyArray}, technologyObject];
-    }
+    const currentService = order.find((obj) => obj.id === openService.id)
+    const technologies = [...currentService.technologies, technologyObject]
+    const newOrder = order;
+    newOrder.map((service) => {
+      if (service.id === openService.id) {
+        service.technologies = [...service.technologies, technologyObject]
+      }
+    })
+    // newOrder[1].technologies = technologies
+    setOrder(newOrder);
   }
+  console.log(order)
 
-  const removeTechnologie = () => {
+  const removeTechnologie = (id) => {
     setIsSelect(!isSelect)
+    // const currentService = order.find((obj) => obj.id === openService.id)
+    console.log(id)
+    const newOrder = order;
+    newOrder.map((service) => {
+      if (service.id === openService.id) {
+        service.technologies = service.technologies.filter(obj => obj.id !== id);
+      }
+    })
+    // newOrder[1].technologies = technologies
+    setOrder(newOrder);
   }
   return (
     <div className="w-[100px] h-[100px] p-2 border rounded-xl flex flex-col items-center justify-evenly hover:scale-105 hover:shadow-xl transition-all relative overflow-hidden">
@@ -66,7 +82,7 @@ const TechnologyCard = (props) => {
         !isSelect ?
           <BiCircle className='absolute top-1 right-1 text-gray-400 cursor-pointer hover:scale-110' onClick={() => addTechnologie()} />
           :
-          <TiTick className='absolute top-1 right-1 text-gray-400 cursor-pointer hover:scale-110' onClick={() => removeTechnologie()} />
+          <TiTick className='absolute top-1 right-1 text-gray-400 cursor-pointer hover:scale-110' onClick={() => removeTechnologie(props.id)} />
       }
       <abbr title={props.sdes + 'Starting from ' + props.cost} className="absolute top-1 left-1 text-gray-400 cursor-pointer hover:scale-110"><CiCircleInfo /></abbr>
       <h3 className="text-center text-gray-300 text-sm">{props.title}</h3>
@@ -79,18 +95,23 @@ const TechnologyCard = (props) => {
 // Addons Card
 const AddonsCard = (props) => {
   const [isSelect, setIsSelect] = useState(false)
-  const { openService, setOpneService, order, setOrder, ...others } = props
+  const { openService, setOpenService, order, setOrder, ...others } = props
   const addonObject = others
+
   const addAddons = () => {
     setIsSelect(!isSelect)
-    const serviceObject = order.find((obj) => obj.id === openService.id);
-    const addonArray = serviceObject.addons;
-    if (serviceObject) {
-      serviceObject.addons = [{...addonArray}, addonObject];
-      
-    }
-    console.log(serviceObject)
+    const currentService = order.find((obj) => obj.id === openService.id)
+    const addons = [...currentService.addons, addonObject]
+    const newOrder = order;
+    newOrder.map((service) => {
+      if (service.id === openService.id) {
+        service.addons = [...service.addons, addonObject]
+      }
+    })
+    // newOrder[1].technologies = technologies
+    setOrder(newOrder);
   }
+
 
   const removeAddons = () => {
     setIsSelect(!isSelect)
@@ -112,7 +133,7 @@ const AddonsCard = (props) => {
 // End of Addons Card
 
 const CustomizeService = () => {
-  const [openService, setOpneService] = useState(null)
+  const [openService, setOpenService] = useState(null)
   const [selectedServices, setSelectedServices] = useState({})
   const [order, setOrder] = useState([]);
   console.log(openService && openService.id && openService.id)
@@ -132,8 +153,8 @@ const CustomizeService = () => {
               customizeYourServiceData.map((item, index) => (
                 <ServicesCard
                   key={index} {...item}
-                  setOpneService={setOpneService}
                   openService={openService}
+                  setOpenService={setOpenService}
                   selectedServices={selectedServices}
                   setSelectedServices={setSelectedServices}
                   order={order}
@@ -152,7 +173,7 @@ const CustomizeService = () => {
             <div className="">
               <p className="text-sm text-gray-300">Selected items: </p>
               {
-                order.map((item,index)=>(
+                order.map((item, index) => (
                   <div key={index} className="flex items-center gap-2">
                     <img src={item.icon} alt="" className="w-7 h-7 mt-2" />
                     <p className="">:</p>
@@ -199,12 +220,12 @@ const CustomizeService = () => {
                   <div className="w-full p-2 my-2 flex gap-3 flex-wrap">
                     {
                       openService.addons.map((item, index) => (
-                        <AddonsCard 
-                        key={index}
-                        order={order}
-                        setOrder={setOrder}
-                        openService={openService}
-                        {...item}
+                        <AddonsCard
+                          key={index}
+                          order={order}
+                          setOrder={setOrder}
+                          openService={openService}
+                          {...item}
                         />
                       ))
                     }

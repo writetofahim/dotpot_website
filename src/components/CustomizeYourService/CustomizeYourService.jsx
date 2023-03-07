@@ -16,10 +16,10 @@ import { customizeYourServiceData } from '../../data'
 import { RxCross1 } from "react-icons/rx"
 import { TiTick } from 'react-icons/ti'
 import { AiOutlineInfoCircle } from 'react-icons/ai'
-import {BsArrowRight, BsCircle} from 'react-icons/bs'
+import { BsArrowRight, BsCircle } from 'react-icons/bs'
 
 
-const Technologies = ({ addTechnology, tech,removeTechnology, technology }) => {
+const Technologies = ({ addTechnology, tech, removeTechnology, technology }) => {
     const [select, setSelect] = useState(false);
 
     const addItem = (tech) => {
@@ -31,25 +31,25 @@ const Technologies = ({ addTechnology, tech,removeTechnology, technology }) => {
         removeTechnology();
     }
 
-    useEffect(()=>{
-        if(technology.id == tech.id){
+    useEffect(() => {
+        if (technology.id == tech.id) {
             setSelect(true)
-        }else{
+        } else {
             setSelect(false)
         }
-    },[technology])
-    
+    }, [technology])
+
     return (
         <div className="p-1 md:p-5 md:h-[120px] md:w-[130px] border rounded flex flex-col items-center justify-center md:gap-3 hover:border-primary-500 hover:scale-110 transition-all shadow relative">
             <img src={tech.icon} alt={tech.title} className="w-[20px] md:w-[50px] " />
             <div className="text-sm text-center">{tech.title}</div>
             {
                 !select ? (
-                    <BsCircle className="absolute top-[2px] right-[2px] text-gray-400 hover:border hover:animate-pulse rounded-full hover:border-black cusor-pointer" 
-                    onClick={() => addItem(tech)} />
+                    <BsCircle className="absolute top-[2px] right-[2px] text-gray-400 hover:border hover:animate-pulse rounded-full hover:border-black cusor-pointer"
+                        onClick={() => addItem(tech)} />
                 ) : (
-                    <TiTick className="absolute top-[2px] right-[2px] hover:border hover:animate-pulse rounded-full border border-blacks text-secondary-500 cusor-pointer" 
-                    onClick={() => removeItem(tech)}/>
+                    <TiTick className="absolute top-[2px] right-[2px] hover:border hover:animate-pulse rounded-full border border-blacks text-secondary-500 cusor-pointer"
+                        onClick={() => removeItem(tech)} />
                 )
             }
             <abbr title={tech.sdes}>
@@ -61,7 +61,7 @@ const Technologies = ({ addTechnology, tech,removeTechnology, technology }) => {
 }
 
 
-const Addons = ({ item, addAddons, removeAddons,addons }) => {
+const Addons = ({ item, addAddons, removeAddons, addons }) => {
     const [select, setSelect] = useState(false);
     const addItem = (item) => {
         setSelect(!select)
@@ -72,13 +72,13 @@ const Addons = ({ item, addAddons, removeAddons,addons }) => {
         removeAddons(item)
     }
 
-    useEffect(()=>{
-        if(addons.some((obj) => obj.id === item.id)){
+    useEffect(() => {
+        if (addons.some((obj) => obj.id === item.id)) {
             setSelect(true)
-        }else{
+        } else {
             setSelect(false)
         }
-    },[addons])
+    }, [addons])
 
     return (
         <div className="p-1 md:p-5 md:h-[120px] md:w-[130px] border rounded flex flex-col items-center justify-center md:gap-3 hover:border-primary-500 hover:scale-110 transition-all shadow relative">
@@ -105,9 +105,9 @@ const CustomizeYourService = () => {
     const [selectedService, setSelectedService] = useState(null)
     const [price, setPrice] = useState(0)
     const [isOpen, setIsOpen] = useState(false)
-    const [addons, setAddons]= useState([])
-    const [services, setServices ]= useState([])
-    const [technology, setTechnology]= useState({
+    const [addons, setAddons] = useState([])
+    const [services, setServices] = useState([])
+    const [technology, setTechnology] = useState({
         id: null,
         title: null,
         sdes: null,
@@ -119,40 +119,47 @@ const CustomizeYourService = () => {
 
     const addService = (props) => {
         setSelectedService(props)
-        setTechnology({id:null,cost:0})
+        setTechnology({ id: null, cost: 0 })
         setAddons([])
         setIsOpen(false)
         setPrice(0)
+
+        const isExist = services.find((obj) => obj.id === props.id);
+
+        if (isExist == null) {
+            setServices([...services, props])  //This sets the selected services array if already dosent exist
+        }
+
     }
 
-    const addTechnology=(props)=>{
+    const addTechnology = (props) => {
         setTechnology(props)
         setIsOpen(true)
         setAddons([])
     }
 
-    const removeTechnology=(props)=>{
-        setTechnology({id:null,cost:0})
+    const removeTechnology = (props) => {
+        setTechnology({ id: null, cost: 0 })
         setPrice(0)
         setAddons([])
     }
-    
-    const addAddons=(props)=>{
+
+    const addAddons = (props) => {
         setAddons([...addons, props])
     }
 
-    const removeAddons=(props)=>{
+    const removeAddons = (props) => {
         const filteredArray = addons.filter(obj => obj.id !== props.id);
         setAddons(filteredArray)
     }
 
-    useEffect(()=>{
-        const techCost=technology.cost
+    useEffect(() => {
+        const techCost = technology.cost
         const addonsCost = addons.reduce((acc, item) => acc + item.cost, 0);
         const total = techCost + addonsCost
         setPrice(total)
 
-    },[technology, addAddons])
+    }, [technology, addAddons])
 
 
     return (
@@ -182,7 +189,7 @@ const CustomizeYourService = () => {
 
                     {/* Right Side */}
                     <div className="right flex-[0.8] border rounded p-1 md:p-5 overflow-scrool h-[75vh] relative">
-                    <button className='absolute bottom-2 right-2 px-3 py-2 bg-secondary-400 hover:bg-secondary-300  text-white cursor-pointer font-bold rounded flex items-center gap-2'>Order Now <BsArrowRight /></button>
+                        <button className='absolute bottom-2 right-2 px-3 py-2 bg-secondary-400 hover:bg-secondary-300  text-white cursor-pointer font-bold rounded flex items-center gap-2'>Order Now <BsArrowRight /></button>
                         <div className="flex justify-between">
                             <div>
                                 {
@@ -192,7 +199,7 @@ const CustomizeYourService = () => {
                                             <div className="w-full flex items-center gap-3">
                                                 {
                                                     <div key={technology} className="flex items-center gap-2 py-1 px-2 border  cursor-pointer hover:border-secondary-500 hover:text-secondary-500 hover:scale-110 transition-all"
-                                                    onClick={()=>removeTechnology()}>
+                                                        onClick={() => removeTechnology()}>
                                                         <img src={technology.icon} alt={technology.title} className="w-4 h-4 md:w-8 md:h-8" />
                                                         <RxCross1 />
                                                     </div>
@@ -200,9 +207,9 @@ const CustomizeYourService = () => {
                                                 {
                                                     addons.map((item, index) => (
                                                         <div key={index} className="flex items-center gap-2 py-1 px-2 border rounded-full cursor-pointer hover:border-secondary-500 hover:text-secondary-500 hover:scale-110 transition-all"
-                                                        onClick={()=>removeAddons(item)}>
+                                                            onClick={() => removeAddons(item)}>
                                                             <img src={item.icon} alt={item.title} className="w-4 h-4 md:w-6 md:h-6" />
-                                                            <RxCross1 className='text-sm'/>
+                                                            <RxCross1 className='text-sm' />
                                                         </div>
                                                     ))
                                                 }
