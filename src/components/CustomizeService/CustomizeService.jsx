@@ -57,22 +57,17 @@ const TechnologyCard = (props) => {
         service.technologies = [...service.technologies, technologyObject]
       }
     })
-    // newOrder[1].technologies = technologies
     setOrder(newOrder);
   }
-  console.log(order)
 
   const removeTechnologie = (id) => {
     setIsSelect(!isSelect)
-    // const currentService = order.find((obj) => obj.id === openService.id)
-    console.log(id)
     const newOrder = order;
     newOrder.map((service) => {
       if (service.id === openService.id) {
         service.technologies = service.technologies.filter(obj => obj.id !== id);
       }
     })
-    // newOrder[1].technologies = technologies
     setOrder(newOrder);
   }
   return (
@@ -113,8 +108,16 @@ const AddonsCard = (props) => {
   }
 
 
-  const removeAddons = () => {
+  const removeAddons = (id) => {
     setIsSelect(!isSelect)
+    const newOrder = order;
+    newOrder.map((service) => {
+      if (service.id === openService.id) {
+        service.addons = service.addons.filter(obj => obj.id !== id);
+      }
+    })
+    // newOrder[1].technologies = technologies
+    setOrder(newOrder);
   }
   return (
     <div className="w-[100px] h-[100px] p-2 border rounded-xl flex flex-col items-center justify-evenly hover:scale-105 hover:shadow-xl transition-all relative overflow-hidden">
@@ -123,7 +126,7 @@ const AddonsCard = (props) => {
         !isSelect ?
           <BiCircle className='absolute top-1 right-1 text-gray-400 cursor-pointer hover:scale-110' onClick={() => addAddons()} />
           :
-          <TiTick className='absolute top-1 right-1 text-gray-400 cursor-pointer hover:scale-110' onClick={() => removeAddons()} />
+          <TiTick className='absolute top-1 right-1 text-gray-400 cursor-pointer hover:scale-110' onClick={() => removeAddons(props.id)} />
       }
       <abbr title={props.sdes + 'Starting from ' + props.cost} className="absolute top-1 left-1 text-gray-400 cursor-pointer hover:scale-110"><CiCircleInfo /></abbr>
       <h3 className="text-center text-gray-300 text-sm">{props.title}</h3>
@@ -133,10 +136,32 @@ const AddonsCard = (props) => {
 // End of Addons Card
 
 const CustomizeService = () => {
+
   const [openService, setOpenService] = useState(null)
   const [selectedServices, setSelectedServices] = useState({})
   const [order, setOrder] = useState([]);
-  console.log(openService && openService.id && openService.id)
+  const [price, setPrice]= useState(0)
+
+
+  useEffect(()=>{
+    let totalCost = 0;
+
+    order.forEach((service) => {
+      service.technologies.forEach((item) => {
+        totalCost += item.cost;
+      });
+    });
+
+    order.forEach((service) => {
+      service.addons.forEach((item) => {
+        totalCost += item.cost;
+      });
+    });
+
+    setPrice(totalCost)
+  },[])
+
+
   return (
     <div className='wifull p-10 flex items-center justify-center bg-white' >
       <div className="container">
@@ -177,6 +202,22 @@ const CustomizeService = () => {
                   <div key={index} className="flex items-center gap-2">
                     <img src={item.icon} alt="" className="w-7 h-7 mt-2" />
                     <p className="">:</p>
+                    <div className="border-r-gray-500 flex items-center gap-2 cursor-pointer">
+                      {
+                        item.technologies.map((tech, index)=>(
+                          <div key={index} className="">
+                            <img key={index} src={tech.icon} alt={tech.title} className="h-5 w-5" />
+                          </div>
+                        ))
+                      }
+                      {
+                        item.addons.map((tech, index)=>(
+                          <div key={index} className="">
+                            <img key={index} src={tech.icon} alt={tech.title} className="h-5 w-5" />
+                          </div>
+                        ))
+                      }
+                    </div>
                   </div>
                 ))
               }
@@ -184,7 +225,7 @@ const CustomizeService = () => {
 
             <div className="absolute top-1 right-1 flex flex-col items-center">
               <p className="text-sm text-gray-300">Total Cost</p>
-              <p className="text-3xl text-secondary-300 font-bold">1000$</p>
+              <p className="text-3xl text-secondary-300 font-bold">{price}$</p>
             </div>
             {/* End of Top Section */}
 
