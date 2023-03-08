@@ -7,7 +7,6 @@ import React from 'react'
 import Navbar from "../../components/Navbar/Navbar"
 import Footer from "../../components/Footer/Footer"
 import Service from '../../components/Services/Service'
-import CustomizeYourService from '../../components/CustomizeYourService/CustomizeYourService'
 import RecentWorks from '../../components/RecentWorks/RecentWorks'
 import WhoWeWorkWith from '../../components/WhoWeWorkWith/WhoWeWorkWith'
 import ContactCenterServices from '../../components/ContactCenterServices/ContactCenterServices'
@@ -16,7 +15,6 @@ import RecentBlogs from '../../components/RecentBlogs/RecentBlogs'
 import SocialMedia from '../../components/SocialMedia/SocialMedia'
 import ChatPopup from '../../components/ChatPopup/ChatPopup'
 import CustomizeService from '../../components/CustomizeService/CustomizeService'
-import NewCustomizeYourService from '../../components/NewCustomizeYourService/NewCustomizeYourService'
 
 
 const Services = () => {
@@ -24,9 +22,7 @@ const Services = () => {
         <div className="full">
             <Navbar />
             <div className="w-full pt-[15vh]">
-                {/* <NewCustomizeYourService /> */}
                 <CustomizeService />
-                <CustomizeYourService />
                 <Service />
                 <ContactCenterServices />
                 <PartnershipModels />
