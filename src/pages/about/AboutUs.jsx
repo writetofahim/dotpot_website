@@ -7,6 +7,7 @@
 
 import React from 'react'
 import AboutHero from '../../components/AboutHero/AboutHero'
+import ChatPopup from '../../components/ChatPopup/ChatPopup'
 import ContactForm from '../../components/ContactForm/ContactForm'
 import Footer from '../../components/Footer/Footer'
 import GoogleMap from '../../components/GoogleMap/GoogleMap'
@@ -51,6 +52,7 @@ const AboutUs = () => {
             <RecentWorks />
             <SocialMedia />
             <GoogleMap />
+            <ChatPopup />
             <Footer />
         </div>
     )

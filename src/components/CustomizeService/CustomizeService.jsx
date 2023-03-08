@@ -50,7 +50,6 @@ const TechnologyCard = (props) => {
   const addTechnologie = () => {
     setIsSelect(!isSelect)
     const currentService = order.find((obj) => obj.id === openService.id)
-    const technologies = [...currentService.technologies, technologyObject]
     const newOrder = order;
     newOrder.map((service) => {
       if (service.id === openService.id) {
@@ -140,10 +139,10 @@ const CustomizeService = () => {
   const [openService, setOpenService] = useState(null)
   const [selectedServices, setSelectedServices] = useState({})
   const [order, setOrder] = useState([]);
-  const [price, setPrice]= useState(0)
+  const [price, setPrice] = useState(0)
 
 
-  useEffect(()=>{
+  useEffect(() => {
     let totalCost = 0;
 
     order.forEach((service) => {
@@ -159,8 +158,9 @@ const CustomizeService = () => {
     });
 
     setPrice(totalCost)
-  },[])
+  }, [order])
 
+  console.log(order)
 
   return (
     <div className='wifull p-10 flex items-center justify-center bg-white' >
@@ -204,14 +204,14 @@ const CustomizeService = () => {
                     <p className="">:</p>
                     <div className="border-r-gray-500 flex items-center gap-2 cursor-pointer">
                       {
-                        item.technologies.map((tech, index)=>(
+                        item.technologies.map((tech, index) => (
                           <div key={index} className="">
                             <img key={index} src={tech.icon} alt={tech.title} className="h-5 w-5" />
                           </div>
                         ))
                       }
                       {
-                        item.addons.map((tech, index)=>(
+                        item.addons.map((tech, index) => (
                           <div key={index} className="">
                             <img key={index} src={tech.icon} alt={tech.title} className="h-5 w-5" />
                           </div>

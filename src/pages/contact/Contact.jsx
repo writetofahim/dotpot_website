@@ -16,34 +16,38 @@ import RecentWorks from '../../components/RecentWorks/RecentWorks'
 import WhoWeWorkWith from '../../components/WhoWeWorkWith/WhoWeWorkWith'
 import Service from '../../components/Services/Service'
 import GoogleMap from '../../components/GoogleMap/GoogleMap'
+import ChatPopup from '../../components/ChatPopup/ChatPopup'
 
 
 const Contact = () => {
     return (
-        <div className="w-full">
+        <>
             <Navbar />
+            <div className="w-full pt-[15vh]">
 
-            {/* Contact Form Section */}
-            <div className="full flex flex-col items-center justify-center mb-10">
-                <h3 className='mt-10 mb-5 text-5xl text-primary-500 font-bold'>Contact Us</h3>
-                <p className="mb-5 text-center">We would be happy to hear from you, please fill in the form below or mail us your requirements on <br />
-                    <Link to="mailto: help@dotpotit.com" className='text-secondary-500'>
-                        help@dotpotit.com
-                    </Link>
-                </p>
-                <div className="container flex flex-col items-center">
-                    <ContactFormLarge />
+                {/* Contact Form Section */}
+                <div className="full flex flex-col items-center justify-center mb-10">
+                    <h3 className='mt-10 mb-5 text-5xl text-primary-500 font-bold'>Contact Us</h3>
+                    <p className="mb-5 text-center">We would be happy to hear from you, please fill in the form below or mail us your requirements on <br />
+                        <Link to="mailto: help@dotpotit.com" className='text-secondary-500'>
+                            help@dotpotit.com
+                        </Link>
+                    </p>
+                    <div className="container flex flex-col items-center">
+                        <ContactFormLarge />
+                    </div>
                 </div>
-            </div>
 
-            <OurPartnersSlider />
-            <Service />
-            <WhoWeWorkWith />
-            <RecentWorks />
-            <SocialMedia />
-            <GoogleMap />
+                <OurPartnersSlider />
+                <Service />
+                <WhoWeWorkWith />
+                <RecentWorks />
+                <SocialMedia />
+                <GoogleMap />
+                <ChatPopup />
+            </div>
             <Footer />
-        </div>
+        </>
     )
 }
 

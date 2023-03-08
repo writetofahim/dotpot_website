@@ -23,8 +23,8 @@ const Navbar = () => {
 
 
     return (
-        <div className="w-full flex items-center justify-center">
-            <nav className="container flex justify-between items-center p-4 z-999 bg-white" id="nav">
+        <div className="w-full flex items-center justify-center fixed z-10 bg-white z-999">
+            <nav className="container flex justify-between items-center p-4 z-999" id="nav">
                 <div className="md:flex-[0.5] flex-initial justify-center items-center">
                     <Link to='/'>
                         <img src={logo} alt="" className="w-60" />
@@ -60,7 +60,7 @@ const Navbar = () => {
                     {!toggleMenu && (
                         <HiMenuAlt4 fontSize={28} className="text-gray-500 hover:text-primary-400 md:hidden cursor-pointer" onClick={() => setToggleMenu(true)} />
                     )}
-                    
+
                     {toggleMenu && (
                         <ul
                             className="z-10 fixed -top-0 -right-2 p-3 w-[70vw] h-screen shadow-2xl md:hidden list-none

@@ -14,22 +14,28 @@ import ContactCenterServices from '../../components/ContactCenterServices/Contac
 import PartnershipModels from '../../components/PartnershipModels/PartnershipModels'
 import RecentBlogs from '../../components/RecentBlogs/RecentBlogs'
 import SocialMedia from '../../components/SocialMedia/SocialMedia'
+import ChatPopup from '../../components/ChatPopup/ChatPopup'
 import CustomizeService from '../../components/CustomizeService/CustomizeService'
+import NewCustomizeYourService from '../../components/NewCustomizeYourService/NewCustomizeYourService'
 
 
 const Services = () => {
     return (
         <div className="full">
             <Navbar />
-            <CustomizeService />
-            <CustomizeYourService />
-            <Service />
-            <ContactCenterServices />
-            <PartnershipModels />
-            <RecentWorks />
-            <WhoWeWorkWith />
-            <RecentBlogs />
-            <SocialMedia />
+            <div className="w-full pt-[15vh]">
+                {/* <NewCustomizeYourService /> */}
+                <CustomizeService />
+                <CustomizeYourService />
+                <Service />
+                <ContactCenterServices />
+                <PartnershipModels />
+                <RecentWorks />
+                <WhoWeWorkWith />
+                <RecentBlogs />
+                <SocialMedia />
+                <ChatPopup />
+            </div>
             <Footer />
         </div>
     )
