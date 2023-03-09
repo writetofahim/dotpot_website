@@ -54,7 +54,7 @@ export const JobCard = (props) => {
             </div>
 
             {/* For Small Device */}
-            <Link to={`/applym/${2}`}>
+            <Link to={`/applym/${props.id}`}>
                 <div className="job-card w-full p-5 border rounded-xl hover:border-primary-500 text-gray-400 gap-1  md:hidden" onClick={() => props.setId(props.id)}>
                     <div className="flex justify-between items-center">
                         <h3 className="font-bold hover:underline cursor-pointer text-xl">{props.title}</h3>
@@ -162,7 +162,7 @@ const ApplyJob = () => {
                                             <h3 className="text-xl font-bold mt-2">Benefits</h3>
                                             {
                                                 jobPageData.jobs[id].benefits.map((item, index) => (
-                                                    <Chip label={item} variant="outlined" className='mr-1' />
+                                                    <Chip label={item} key={index} variant="outlined" className='mr-1' />
                                                 ))
                                             }
 
