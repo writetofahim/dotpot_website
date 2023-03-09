@@ -4,6 +4,7 @@ import { BiCircle } from "react-icons/bi"
 import { TiTick } from "react-icons/ti"
 import { CiCircleInfo } from "react-icons/ci"
 import { AiOutlineDoubleRight } from "react-icons/ai"
+import { GrFormClose } from "react-icons/gr"
 
 
 // Service Card 
@@ -11,6 +12,15 @@ const ServicesCard = (props) => {
   const { openService, setOpenService, setOrder, order, ...others } = props;
   const serviceObject = { ...others };
   const [isSelect, setIsSelect] = useState(false);
+  const [isExist, setIsExist] = useState(false);
+
+
+  useEffect(() => {
+    // Check if the service is already selected in the order
+    const existInTheArray = order.some((obj) => obj.id === serviceObject.id);
+    setIsExist(existInTheArray);
+  }, [order, serviceObject]);
+
 
   const addService = () => {
     // Copy the existing order, add the new service object, and set it as the new order
@@ -28,14 +38,14 @@ const ServicesCard = (props) => {
   return (
     <div
       // Add the 'bg-primary-100' class if the open service object matches this service object
-      className={`w-[30%] md:w-[20%] md:m-1 lg:w-full p-1 lg:p-2 flex flex-col lg:flex-row items-center gap-1 lg:gap-2 rounded-xl border mt-2 hover:scale-105 hover:shadow-xl transition-all relative cursor-pointer ${openService && serviceObject && openService.id === serviceObject.id && "bg-primary-100 scale-105 shadow-xl"}`}
+      className={`w-[30%] md:w-[20%] md:m-1 lg:w-full p-1 lg:p-2 flex flex-col lg:flex-row items-center gap-1 lg:gap-2 rounded-xl border mt-2 hover:scale-105 hover:shadow-xl transition-all relative cursor-pointer ${isExist && "bg-secondary-200 "} ${openService && serviceObject && openService.id === serviceObject.id && "bg-secondary-100 scale-105 shadow-xl"}`}
       onClick={() => props.setOpenService(serviceObject)}
     >
       <img src={props.icon} alt={props.title} className='w-7 lg:w-10 h-7 lg:h-10' />
-      <p className="text-center text-sm text-gray-300 lg:text-left">{props.title}</p>
+      <p className="text-center text-sm text-gray-500 font-bold lg:text-left">{props.title}</p>
       {
         // Show the 'add' icon if the service is not already selected, otherwise show the 'remove' icon
-        !isSelect ?
+        !isExist ?
           <BiCircle className='absolute top-1 right-1 text-gray-400 cursor-pointer hover:scale-110' onClick={() => addService()} />
           :
           <TiTick className='absolute top-1 right-1 text-gray-400 cursor-pointer hover:scale-110' onClick={() => removeService()} />
@@ -74,13 +84,11 @@ const TechnologyCard = (props) => {
 
     if (currentServiceIndex >= 0) {
       setIsSelect(!isSelect);
-
       const newOrder = [...order];
       newOrder[currentServiceIndex].technologies = [...newOrder[currentServiceIndex].technologies, technologyObject];
-
       setOrder(newOrder);
     } else {
-      alert('Please Select a service first!');
+        setOrder([...order, { id: openService.id, title: openService.title, icon: openService.icon, technologies: [], addons: [] }]);
     }
   };
 
@@ -216,7 +224,25 @@ const CustomizeService = () => {
     setPrice(totalCost)
   }, [order])
 
-  // console.log(order)
+  // Remove technologies from topbar section
+  const removeTechnology = (serviceId, techId) => {
+    const currentServiceIndex = order.findIndex((obj) => obj.id === serviceId);
+    const currentService = order[currentServiceIndex];
+    const technologies = currentService.technologies.filter((obj) => obj.id !== techId);
+    const newOrder = [...order];
+    newOrder[currentServiceIndex] = { ...currentService, technologies };
+    setOrder(newOrder);
+  }
+
+  // Remove addons from topbar section
+  const removeAddons = (serviceId, addonId) => {
+    const currentServiceIndex = order.findIndex((obj) => obj.id === serviceId);
+    const currentService = order[currentServiceIndex];
+    const addons = currentService.addons.filter((obj) => obj.id !== addonId);
+    const newOrder = [...order];
+    newOrder[currentServiceIndex] = { ...currentService, addons };
+    setOrder(newOrder);
+  }
 
   return (
     <div className='w-full  md:p-5 lg:p-10 flex items-center justify-center bg-white' >
@@ -263,15 +289,18 @@ const CustomizeService = () => {
                     <div className="border-r-gray-500 flex items-center gap-2 cursor-pointer">
                       {
                         item.technologies.map((tech, index) => (
-                          <div key={index} className="">
+                          <div key={index} 
+                          className="flex text-sm text-gray-400 items-center gap-1 px-2 py-1 border rounded-full hover:scale-110  transition-all bg-secondary-100">
                             <img key={index} src={tech.icon} alt={tech.title} className="h-5 w-5" />
+                            <GrFormClose className='hover:text-secondary-400' onClick={()=>removeTechnology(item.id, tech.id )} />
                           </div>
                         ))
                       }
                       {
-                        item.addons.map((tech, index) => (
-                          <div key={index} className="">
-                            <img key={index} src={tech.icon} alt={tech.title} className="h-5 w-5" />
+                        item.addons.map((addon, index) => (
+                          <div key={index} className="flex text-sm text-gray-400 items-center gap-1 px-2 py-1 border rounded-full hover:scale-110  transition-all bg-secondary-100">
+                            <img key={index} src={addon.icon} alt={addon.title} className="h-5 w-5" />
+                            <GrFormClose className='hover:text-secondary-400' onClick={()=>removeAddons(item.id, addon.id)} />
                           </div>
                         ))
                       }
@@ -283,7 +312,7 @@ const CustomizeService = () => {
 
             <div className="absolute top-1 right-1 flex flex-col items-center">
               <p className="text-sm text-gray-300">Total Cost</p>
-              <p className="text-3xl text-secondary-300 font-bold">{price}$</p>
+              <p className="text-3xl text-secondary-400 font-bold">{price}$</p>
             </div>
             {/* End of Top Section */}
 

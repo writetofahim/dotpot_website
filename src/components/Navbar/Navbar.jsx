@@ -52,7 +52,7 @@ const Navbar = () => {
                     </Link>
                     <Link to='/apply' target="_blank">
                         <li className="bg-primary-500 py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-primary-400 text-white">
-                            Aplly For Job
+                            Apply For Jobs
                         </li>
                     </Link>
                 </ul>
@@ -84,7 +84,7 @@ const Navbar = () => {
                             </Link>
                             <Link to='/apply' target="_blank">
                                 <li className="bg-primary-500 py-2 px-7 mx-4 mt-5 rounded-full cursor-pointer hover:bg-primary-400 text-white">
-                                    Aplly For Job
+                                    Apply For Jobs
                                 </li>
                             </Link>
                         </ul>
