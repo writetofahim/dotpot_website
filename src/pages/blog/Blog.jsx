@@ -18,22 +18,40 @@ import { Link } from 'react-router-dom'
 import { BsArrowRight } from 'react-icons/bs'
 import { Chip, Pagination } from '@mui/material'
 import ChatPopup from '../../components/ChatPopup/ChatPopup'
+import { AiOutlineDoubleRight } from "react-icons/ai"
 
 const BlogCard = (props) => {
     return (
-        <div className="w-1/1 md:w-1/4 shadow-xl hover:scale-105 transition-all">
-            <img src={props.img} alt="" className="rounded-tl-xl rounded-tr-xl w-full aspect-video" />
-            <div className=" bg-white rounded-bl-xl rounded-br-xl shadow p-5 flex flex-col">
-                <Stack direction="row" className="flex flex-wrap items-center gap-1">
-                    {
-                        props.categories.map((tech, index) => (
-                            <Chip label={tech} key={index} variant="outlined" className="hover:border-primary-500 cursor-pointer" />
-                        ))
-                    }
-                </Stack>
-                <p className="mt-2 text-gray-400">{props.date}</p>
-                <h3 className="text-xl font-bold text-gray-400 my-2">{props.title}</h3>
-                <Link to={`./${props.id}`} className="hover:text-secondary-500 flex items-center gap-2">Read More <BsArrowRight /></Link>
+        <div class="container p-5 mx-auto border rounded-xl shadow-xl">
+            <div class=" lg:flex lg:items-center">
+                <img class="object-cover w-full lg:mx-6 lg:w-1/2 rounded-xl h-72 lg:h-96" src={props.img} alt="" />
+
+                <div class="lg:w-1/2 lg:mt-0 lg:mx-6 ">
+                    <h3 class="text-3xl uppercase">{props.title}</h3>
+
+
+                    <p class="mt-3 text-sm text-gray-500 dark:text-gray-300 md:text-sm">
+                        {props.date}
+                    </p>
+
+                    <div className="flex flex-wrap gap-1 my-5">
+                        {
+                            props.categories.map((cat, index) => (
+                                <Link to={`/blog?category=${cat}`} key={index} >
+                                    <div className="px-3 py-2 border rounded-full">
+                                        <p className="text-gray-400">{cat}</p>
+                                    </div>
+                                </Link>
+                            ))
+                        }
+                    </div>
+
+                    <Link to={`./${props.id}`} class="mt-2 text-secondary-300 hover:text-secondary-500 transition-all flex items-center">
+                        Read more
+                        <AiOutlineDoubleRight />
+                    </Link>
+
+                </div>
             </div>
         </div>
     )

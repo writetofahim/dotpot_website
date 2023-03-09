@@ -23,7 +23,7 @@ const Services = () => {
             <Navbar />
             <div className="w-full pt-[15vh]">
                 <CustomizeService />
-                <Service />
+                {/* <Service /> */}
                 <ContactCenterServices />
                 <PartnershipModels />
                 <RecentWorks />
