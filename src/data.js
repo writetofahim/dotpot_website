@@ -1495,6 +1495,14 @@ export const footerData = {
                 {
                     title: "Services",
                     link: "/services"
+                },
+                {
+                    title: "Privacy Policy",
+                    link: "/privacy"
+                },
+                {
+                    title: "Terms & Conditions",
+                    link: "/terms-conditions"
                 }
             ]
         },

@@ -27,7 +27,7 @@ const SingleBlog = () => {
     return (
         <>
             <Navbar />
-            <div className="w-full p-[15vh]">
+            <div className="w-full md:p-[15vh] pt-[15vh]">
                 <div className='full flex items-center justify-center'>
                     <div className="container flex flex-col items-center p-10 text-justify">
                         <img src={blog.img} alt="" />

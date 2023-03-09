@@ -12,6 +12,7 @@ import Services from "./pages/services/Services";
 import Contact from "./pages/contact/Contact";
 import Blogs from "./pages/blog/Blog";
 import SingleBlog from "./pages/blog/SingleBlog";
+import ApplyMobile from "./pages/applyJob/ApplyMobile";
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/apply" element={<ApplyJob />} />
         <Route path="/apply/:id" element={<Apply />} />
+        <Route path="/applym/:id" element={<ApplyMobile />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<Services />} />
