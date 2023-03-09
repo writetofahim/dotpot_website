@@ -12,9 +12,9 @@ import SocialMedia from "../../components/SocialMedia/SocialMedia"
 import ContactFormLarge from '../../components/ContactForm/ContactFormLarge'
 import { Link } from 'react-router-dom'
 import OurPartnersSlider from '../../components/OurPartnersSlider/OurPartnersSlider'
+import ContactInfo from '../../components/ContactInfo/ContactInfo'
 import RecentWorks from '../../components/RecentWorks/RecentWorks'
 import WhoWeWorkWith from '../../components/WhoWeWorkWith/WhoWeWorkWith'
-import Service from '../../components/Services/Service'
 import GoogleMap from '../../components/GoogleMap/GoogleMap'
 import ChatPopup from '../../components/ChatPopup/ChatPopup'
 
@@ -39,7 +39,7 @@ const Contact = () => {
                 </div>
 
                 <OurPartnersSlider />
-                <Service />
+                <ContactInfo />
                 <WhoWeWorkWith />
                 <RecentWorks />
                 <SocialMedia />

@@ -1390,42 +1390,52 @@ export const aboutPageContent = [
 export const contactCenterServicesData = [
     {
         title: "ACD",
+        icon: "https://cdn-icons-png.flaticon.com/512/950/950299.png",
         text: "Automatic Call Destribution"
     },
     {
         title: "IVR",
+        icon: "https://cdn-icons-png.flaticon.com/512/4176/4176712.png",
         text: "Interactive Voice Response"
     },
     {
         title: "CTI",
-        text: "Computer Telephony Integration"
+        icon: "https://cdn-icons-png.flaticon.com/512/9768/9768256.png",
+        text: "Telephony Integration"
     },
     {
         title: "Email",
+        icon: "https://cdn-icons-png.flaticon.com/512/482/482138.png",
         text: "Email Integration"
     },
     {
         title: "Chat",
+        icon: "https://cdn-icons-png.flaticon.com/512/2593/2593673.png",
         text: "Web Chat"
     },
     {
         title: "PD",
+        icon: "https://cdn-icons-png.flaticon.com/512/231/231677.png",
         text: "Predictive Dialer"
     },
     {
         title: "App",
+        icon: "https://cdn-icons-png.flaticon.com/512/2664/2664673.png",
         text: "Mobile App"
     },
     {
         title: "CS",
+        icon: "https://cdn-icons-png.flaticon.com/512/4149/4149881.png",
         text: "Customer Services"
     },
     {
         title: "Marketing",
+        icon: "https://cdn-icons-png.flaticon.com/512/1077/1077221.png",
         text: "Tele Marketing"
     },
     {
         title: "CC",
+        icon: "https://cdn-icons-png.flaticon.com/512/2706/2706907.png",
         text: "Call Center"
     }
 ]

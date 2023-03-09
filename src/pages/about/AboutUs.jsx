@@ -8,7 +8,7 @@
 import React from 'react'
 import AboutHero from '../../components/AboutHero/AboutHero'
 import ChatPopup from '../../components/ChatPopup/ChatPopup'
-import ContactForm from '../../components/ContactForm/ContactForm'
+import ContactInfo from '../../components/ContactInfo/ContactInfo'
 import Footer from '../../components/Footer/Footer'
 import GoogleMap from '../../components/GoogleMap/GoogleMap'
 import Navbar from '../../components/Navbar/Navbar'
@@ -29,21 +29,7 @@ const AboutUs = () => {
             <AboutHero heading="About DotpotiT" text="A fast growing IT complay" heroImg={heroImg} button={button} />
             <OurPartnersSlider />
 
-            {/* Main Section */}
-            <div className="w-full flex items-center justify-center my-10">
-                <div className="container flex gap-5 p-5">
-                    <div className="left md:w-2/3 w-full">
-                        {
-                            aboutPageContent.map((item, idex) => (
-                                <p className={`mt-3 text-justify ${item.classes}`}>{item.text}</p>
-                            ))
-                        }
-                    </div>
-                    <div className="right hidden md:flex-1 md:block p-5">
-                        <ContactForm />
-                    </div>
-                </div>
-            </div>
+            <ContactInfo />
 
 
             <ProcessWeFollow />
