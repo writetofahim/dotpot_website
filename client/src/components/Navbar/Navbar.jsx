@@ -101,7 +101,7 @@ const Navbar = () => {
                             </Link>
                             {
                                 !isLogin ? (
-                                    <li className="mx-4 cursor-pointer uppercase text-white lg:text-gray-400 text-lg hover:scale-110 hover:text-primary-400" onClick={() => login()}>Login</li>
+                                    <li className="mx-4 cursor-pointer uppercase lg:text-gray-400 text-lg hover:scale-110 hover:text-primary-400" onClick={() => login()}>Login</li>
                                 ) : (
                                     <li className="mx-4 cursor-pointer uppercase text-white lg:text-gray-400 text-lg hover:scale-110 hover:text-primary-400" onClick={() => logout()}>Logout</li>
                                 )
