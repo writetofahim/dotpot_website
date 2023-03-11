@@ -34,6 +34,7 @@ import Information from '../../components/Information/Information'
 import KeyFeatures from '../../components/KeyFeatures/KeyFeatures'
 import Navbar from '../../components/Navbar/Navbar'
 import OurPartnersSlider from '../../components/OurPartnersSlider/OurPartnersSlider'
+import OurTeam from '../../components/OurTeam/OurTeam'
 import PartnershipModels from '../../components/PartnershipModels/PartnershipModels'
 import ProcessWeFollow from '../../components/ProcessWeFollow/ProcessWeFollow'
 import RecentBlogs from '../../components/RecentBlogs/RecentBlogs'
@@ -60,9 +61,10 @@ const Home = () => {
       <RecentWorks />
       <WhoWeWorkWith />
       <WhatOurClientSay />
-      <SocialMedia />
-      <OurPartnersSlider />
       <RecentBlogs />
+      <SocialMedia />
+      <OurTeam />
+      <OurPartnersSlider />
       <GoogleMap />
       <ChatPopup />
       <Footer />

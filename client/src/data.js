@@ -1440,7 +1440,56 @@ export const contactCenterServicesData = [
     }
 ]
 
-
+export const ourTeamData = [
+    {
+        id: 1,
+        img: "https://media.licdn.com/dms/image/D5603AQH9Qvs5u-skZw/profile-displayphoto-shrink_800_800/0/1677527834762?e=1683763200&v=beta&t=LHg805W8SVsj4X7P29rlmegXvT6IxZ7LSFGy2o1izjI",
+        name: "Zakir Hossain",
+        designation: "Founder & CEO",
+        email: "zakir@dotpotit.com",
+        phone: "+8801994743242"
+    },
+    {
+        id: 2,
+        img: "https://media.licdn.com/dms/image/D5603AQH9Qvs5u-skZw/profile-displayphoto-shrink_800_800/0/1677527834762?e=1683763200&v=beta&t=LHg805W8SVsj4X7P29rlmegXvT6IxZ7LSFGy2o1izjI",
+        name: "Zakir Hossain",
+        designation: "Founder & CEO",
+        email: "zakir@dotpotit.com",
+        phone: "+8801994743242"
+    },
+    {
+        id: 3,
+        img: "https://media.licdn.com/dms/image/D5603AQH9Qvs5u-skZw/profile-displayphoto-shrink_800_800/0/1677527834762?e=1683763200&v=beta&t=LHg805W8SVsj4X7P29rlmegXvT6IxZ7LSFGy2o1izjI",
+        name: "Zakir Hossain",
+        designation: "Founder & CEO",
+        email: "zakir@dotpotit.com",
+        phone: "+8801994743242"
+    },
+    {
+        id: 4,
+        img: "https://media.licdn.com/dms/image/D5603AQH9Qvs5u-skZw/profile-displayphoto-shrink_800_800/0/1677527834762?e=1683763200&v=beta&t=LHg805W8SVsj4X7P29rlmegXvT6IxZ7LSFGy2o1izjI",
+        name: "Zakir Hossain",
+        designation: "Founder & CEO",
+        email: "zakir@dotpotit.com",
+        phone: "+8801994743242"
+    },
+    {
+        id: 5,
+        img: "https://media.licdn.com/dms/image/D5603AQH9Qvs5u-skZw/profile-displayphoto-shrink_800_800/0/1677527834762?e=1683763200&v=beta&t=LHg805W8SVsj4X7P29rlmegXvT6IxZ7LSFGy2o1izjI",
+        name: "Zakir Hossain",
+        designation: "Founder & CEO",
+        email: "zakir@dotpotit.com",
+        phone: "+8801994743242"
+    },
+    {
+        id: 6,
+        img: "https://media.licdn.com/dms/image/D5603AQH9Qvs5u-skZw/profile-displayphoto-shrink_800_800/0/1677527834762?e=1683763200&v=beta&t=LHg805W8SVsj4X7P29rlmegXvT6IxZ7LSFGy2o1izjI",
+        name: "Zakir Hossain",
+        designation: "Founder & CEO",
+        email: "zakir@dotpotit.com",
+        phone: "+8801994743242"
+    }
+]
 
 
 
