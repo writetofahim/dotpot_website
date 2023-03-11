@@ -13,6 +13,8 @@ import Contact from "./pages/contact/Contact";
 import Blogs from "./pages/blog/Blog";
 import SingleBlog from "./pages/blog/SingleBlog";
 import ApplyMobile from "./pages/applyJob/ApplyMobile";
+import Login from "./pages/lgoin/Login";
+import Register from "./pages/register/Register";
 
 function App() {
 
@@ -20,6 +22,8 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/apply" element={<ApplyJob />} />
         <Route path="/apply/:id" element={<Apply />} />
         <Route path="/applym/:id" element={<ApplyMobile />} />
