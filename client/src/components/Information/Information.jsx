@@ -23,15 +23,15 @@ const Information = () => {
                     <h1 className="text-4xl text-primary-500 font-bold mb-5 ">DotpotiT</h1>
                     <p className="mb-5">Make your business sucess</p>
                     <p className="text-justify">
-                    DotpotiT offers a range of technology support services, including SEO, web design, and mobile app development. Our team provides tailored high-quality services to meet your specific needs. Whether you need to improve your website's ranking or develop a cutting-edge mobile app, we have the expertise to help you achieve your goals. We are also a leading call center support company, providing top-notch customer service and support. We work closely with each client to develop customized solutions that are tailored to meet their unique requirements. With our extensive experience and expertise, we are confident in providing you with the support and solutions you need to achieve your business objectives.
+                        DotpotiT offers a range of technology support services, including SEO, web design, and mobile app development. Our team provides tailored high-quality services to meet your specific needs. Whether you need to improve your website's ranking or develop a cutting-edge mobile app, we have the expertise to help you achieve your goals. We are also a leading call center support company, providing top-notch customer service and support. We work closely with each client to develop customized solutions that are tailored to meet their unique requirements. With our extensive experience and expertise, we are confident in providing you with the support and solutions you need to achieve your business objectives.
                     </p>
                 </div>
-                <div className="right flex-[3] flex items-center justify-end md:p-10  ">
-                    <iframe 
-                        src={videoUrl} 
-                        title="YouTube video player" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                <div className="right flex-[3] w-full flex items-center justify-center lg:justify-end md:p-10  ">
+                    <iframe
+                        src={videoUrl}
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen
                         className='rounded-3xl w-full md:w-4/5 aspect-video mt-5 shadow-lg'
                     ></iframe>
