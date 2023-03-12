@@ -5,7 +5,7 @@ const login = (req, res) => {
 
 const register = (req, res) => {
   const { email, password } = req.body;
-  res.send(email + ' ' + password)
+  res.status(300).json({email, password})
 }
 
 
