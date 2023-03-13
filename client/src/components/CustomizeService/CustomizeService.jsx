@@ -160,7 +160,7 @@ const AddonsCard = (props) => {
       newOrder[currentServiceIndex] = { ...currentService, addons };
       setOrder(newOrder);
     } else (
-      alert("Please select a service first")
+      props.setOrder([...order, { id: openService.id, title: openService.title, icon: openService.icon, technologies: [], addons: [] }])
     )
   };
 
