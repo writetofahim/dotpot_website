@@ -18,7 +18,7 @@ mongoose
 app.use(express.json());
 
 app.use("/api/auth", authRouter)
-app.use("/api/user", blogRoutes)
+app.use("/api/user", userRoutes)
 app.use("/api/blog", blogRoutes)
 
 

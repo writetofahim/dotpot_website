@@ -38,7 +38,7 @@ exports.updateUser = async (req, res) => {
         }
 
         // Make sure user is the owner or admin
-        if (user._id.toString() !== req.user.id && !req.user.isAdmin) {
+        if (user._id.toString() !== req.user.id ) {
         return res.status(401).json({ msg: 'Not authorized' });
         }
 

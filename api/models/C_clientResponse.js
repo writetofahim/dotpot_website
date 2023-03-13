@@ -1,0 +1,31 @@
+const mongoose = require('mongoose');
+
+const C_clientResponseSchema = new mongoose.Schema({
+    client_id: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Client',
+    },
+    name: {
+        type: String,
+    },
+    email: {
+        type: String,
+    },
+    phone: {
+        type: String,
+    },
+    skype: {
+        type: String,
+    },
+    linkedin: {
+        type: String,
+    },
+    budget: {
+        type: Number,
+    },
+    message: {
+        type: String,
+    },
+}, { timestamps: true });
+
+module.exports = mongoose.model('C_clientResponse', C_clientResponseSchema);

@@ -40,14 +40,6 @@ const clientReviewSchema = new mongoose.Schema({
         url: String
         }]
     },
-    createdAt: {
-        type: Date,
-        default: Date.now
-    },
-    updatedAt: {
-        type: Date,
-        default: Date.now
-    }
-});
+},{timestamps: true});
 
 module.exports = mongoose.model('ClientReview', clientReviewSchema);
