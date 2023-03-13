@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const cClientResponseController = require('../controllers/c_client_response');
+const cClientResponseController = require('../controllers/c_client_responseController');
 
 // Create a new client response
 router.post('/', cClientResponseController.create);

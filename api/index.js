@@ -5,7 +5,8 @@ const dotenv = require("dotenv");
 const authRouter = require("./routes/authRoutes")
 const blogRoutes = require("./routes/blogRoutes")
 const userRoutes = require("./routes/userRoutes")
-const c_client_response = require("./routes/c_client_response")
+const c_client_responseRoutes = require("./routes/c_client_responseRoutes")
+const c_contactCenterServiceRoutes = require("./routes/c_contactCenterServiceRoutes")
 
 dotenv.config();
 
@@ -21,7 +22,10 @@ app.use(express.json());
 app.use("/api/auth", authRouter)
 app.use("/api/user", userRoutes)
 app.use("/api/blog", blogRoutes)
-app.use("/api/client_responce", c_client_response)
+
+// Components
+app.use("/api/client_responce", c_client_responseRoutes)
+app.use("/api/contact_center_service", c_contactCenterServiceRoutes)
 
 
 app.listen(8800, () => {
