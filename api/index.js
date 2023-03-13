@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const authRouter = require("./routes/authRoutes")
+const blogRoutes = require("./routes/blogRoutes")
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ mongoose
 app.use(express.json());
 
 app.use("/api/auth", authRouter)
+app.use("/api/blog", blogRoutes)
 
 
 app.listen(8800, () => {

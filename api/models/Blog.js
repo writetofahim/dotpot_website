@@ -7,13 +7,10 @@ const BlogSchema = new mongoose.Schema({
     },
     slug: {
         type: String,
-        required: true,
-        unique: true
     },
     author: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
-        required: true
     },
     body: {
         type: String,
@@ -21,11 +18,9 @@ const BlogSchema = new mongoose.Schema({
     },
     tags: {
         type: [String],
-        required: true
     },
-    category: {
-        type: String,
-        required: true
+    categories: {
+        type: [String],
     },
     image: {
         type: String,
@@ -33,7 +28,6 @@ const BlogSchema = new mongoose.Schema({
     },
     isPublished: {
         type: Boolean,
-        default: false
     },
     }, { 
     timestamps: true 
