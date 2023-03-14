@@ -23,10 +23,8 @@ To get a local copy of this website up and running, please follow these steps:
     `npm install`
 
 3. Start the  server, run the following command:
-   ``npm run dev``
-   
-4. Open the project on browser 
-    [Server] 'http://localhost:5173'
+   ``npm start``
+
 
 ## Technologies Used
 
