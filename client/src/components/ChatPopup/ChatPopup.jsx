@@ -37,11 +37,11 @@ const ChatPopup = () => {
   const handleOpen = async () => {
     const conversationId = localStorage.getItem("conversation_id")
     if (conversationId && messages.length === 0) {
-      console.log("1")
+
       const { data } = await axios.get(`http://localhost:8800/api/chats/${conversationId}/messages`)
       setMessages(data)
     } if (!conversationId) {
-      console.log("2")
+
       const { data } = await axios.post("http://localhost:8800/api/chats")
       localStorage.setItem("conversation_id", data.conversation_id)
       setMessages(prev => [...prev, data])

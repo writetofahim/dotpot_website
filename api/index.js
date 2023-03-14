@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const http = require("http");
 const { Server } = require("socket.io");
+const cors = require("cors")
 
 const authRouter = require("./routes/authRoutes")
 const blogRoutes = require("./routes/blogRoutes")
@@ -26,6 +27,7 @@ mongoose
     });
 
 app.use(express.json());
+app.use(cors());
 
 const server = http.createServer(app);
 const io = new Server(server, {
@@ -38,7 +40,7 @@ const io = new Server(server, {
 global.io = io;
 
 io.on("connection", (socket) => {
-    console.log(`User Connected: ${socket.id}`);
+    console.log(`User Connected for chat: ${socket.id}`);
 
     socket.on("join_room", (data) => {
         socket.join(data);

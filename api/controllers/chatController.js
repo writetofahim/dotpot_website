@@ -11,7 +11,7 @@ const getAllChats = async (req, res) => {
 }
 
 const createChat = async (req, res) => {
-    console.log(req.body)
+
     const chat = new Conversation({
         creator: "visitor",
         participant: "admin"
@@ -50,7 +50,7 @@ const addMessageToAChat = async (req, res) => {
     try {
         const newMessage = new Message(message);
         const msg = await newMessage.save()
-        console.log(msg)
+
         io.emit('newMessage', msg);
         res.status(201).json(msg);
     } catch (err) {
@@ -69,7 +69,7 @@ const replayToChat = async (req, res) => {
     try {
         const newMessage = new Message(message);
         const msg = await newMessage.save()
-        console.log(msg)
+
         io.emit('newMessage', msg);
         res.status(201).json(msg);
     } catch (err) {
