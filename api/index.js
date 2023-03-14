@@ -10,6 +10,7 @@ const c_contactCenterServiceRoutes = require("./routes/c_contactCenterServiceRou
 const c_heroRoutes = require("./routes/c_heroRoutes")
 const c_industryWeServeRoutes = require("./routes/c_industryWeServeRoutes")
 const c_infoRoutes = require("./routes/c_infoRoutes")
+const c_keyFeatureRouters = require("./routes/c_keyFeatureRouters")
 
 dotenv.config();
 
@@ -32,6 +33,10 @@ app.use("/api/contact_center_service", c_contactCenterServiceRoutes)
 app.use("/api/hero", c_heroRoutes)
 app.use("/api/industry_we_erve", c_industryWeServeRoutes)
 app.use("/api/info", c_infoRoutes)
+app.use("/api/key_feature", c_keyFeatureRouters)
+
+
+
 
 
 app.listen(8800, () => {
