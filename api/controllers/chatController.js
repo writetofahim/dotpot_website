@@ -42,7 +42,8 @@ const getMessagesById = (req, res) => {
 const addMessageToAChat = async (req, res) => {
     const message = {
         conversation_id: req.params.conversationId,
-        text: req.body.text,
+        text: req.body?.text,
+        attachment: req.body?.attachment,
         sender: "visitor",
         receiver: "admin",
         isVisitorSeen: true

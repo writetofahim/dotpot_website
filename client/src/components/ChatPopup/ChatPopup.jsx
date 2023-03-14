@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { FaComments } from "react-icons/fa";
+import { HiOutlineDownload } from "react-icons/hi";
+import { GrAttachment } from "react-icons/gr";
 import { AiOutlineCloseCircle, AiOutlineSend } from "react-icons/ai";
 import axios from "axios"
 import { io } from "socket.io-client";
@@ -18,6 +20,7 @@ const ChatPopup = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
+  const [files, setFiles] = useState(null);
   const messagesEndRef = useRef(null);
 
   useEffect(() => {
@@ -27,6 +30,7 @@ const ChatPopup = () => {
 
   useEffect(() => {
     socket.on("newMessage", data => {
+      console.log(data)
       const conversationId = localStorage.getItem("conversation_id")
       if (conversationId === data.conversation_id && data.sender === "admin") {
         setMessages(prev => ([...prev, data]))
@@ -37,11 +41,9 @@ const ChatPopup = () => {
   const handleOpen = async () => {
     const conversationId = localStorage.getItem("conversation_id")
     if (conversationId && messages.length === 0) {
-
       const { data } = await axios.get(`http://localhost:8800/api/chats/${conversationId}/messages`)
       setMessages(data)
     } if (!conversationId) {
-
       const { data } = await axios.post("http://localhost:8800/api/chats")
       localStorage.setItem("conversation_id", data.conversation_id)
       setMessages(prev => [...prev, data])
@@ -55,8 +57,21 @@ const ChatPopup = () => {
 
   const handleSendMessage = async () => {
     const conversationId = localStorage.getItem("conversation_id")
-    if (newMessage !== "") {
-      const { data } = await axios.post(`http://localhost:8800/api/chats/${conversationId}/messages`, { text: newMessage })
+    let attachment = null;
+
+    if (files) {
+      const filesArray = Array.from(files);
+      const formData = new FormData();
+      filesArray.forEach(file => {
+        formData.append('files[]', file);
+      });
+      const { data: resFiles } = await axios.post("http://localhost:8800/api/upload", formData)
+      attachment = resFiles[0].filename;
+      console.log(attachment)
+    }
+    if (newMessage !== "" || attachment !== null) {
+      const { data } = await axios.post(`http://localhost:8800/api/chats/${conversationId}/messages`, { text: newMessage, attachment: attachment })
+      console.log(data)
       setMessages([...messages, data])
       setNewMessage("");
     }
@@ -86,13 +101,22 @@ const ChatPopup = () => {
                   }`}
               >
                 <p className="font-medium">{message.sender === "visitor" ? "You" : 'DotpotiT'}</p>
-                <p>{message.text}</p>
+                {message.text && <p>{message.text}</p>}
+                {(message.attachment && message.attachment?.includes(".pdf"))
+                  ? <a className="flex items-center gap-2" href={`http://localhost:8800/uploads/conversation/${message.attachment}`} download>
+                    <HiOutlineDownload />
+                    {message.attachment?.slice(0, 20)}...</a>
+                  : <img className="w-40" src={`http://localhost:8800/uploads/conversation/${message.attachment}`} alt="" />}
                 <p className="text-xs text-gray-500">{moment(new Date(message.createdAt)).fromNow()}</p>
               </div>
             ))}
             <div ref={messagesEndRef} />
           </div>
           <div className="p-4 flex items-center justify-between gap-1">
+            <label htmlFor="attachment">
+              <GrAttachment />
+            </label>
+            <input onChange={e => setFiles(e.target.files)} className="hidden" type="file" name="attachment" id="attachment" />
             <textarea
               className="flex-[0.9] p-1 border border-gray-300 rounded-lg h-[50px]"
               value={newMessage}

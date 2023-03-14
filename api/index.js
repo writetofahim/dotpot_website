@@ -16,6 +16,7 @@ const c_industryWeServeRoutes = require("./routes/c_industryWeServeRoutes")
 const c_infoRoutes = require("./routes/c_infoRoutes")
 const c_keyFeatureRouters = require("./routes/c_keyFeatureRouters")
 const chatRoutes = require("./routes/chatRoutes");
+const attachmentUpload = require("./middlewares/attachmentUpload");
 
 dotenv.config();
 
@@ -28,6 +29,8 @@ mongoose
 
 app.use(express.json());
 app.use(cors());
+app.use('/uploads/conversation', express.static(__dirname + '/uploads/conversation'));
+
 
 const server = http.createServer(app);
 const io = new Server(server, {
@@ -56,6 +59,13 @@ app.use("/api/auth", authRouter)
 app.use("/api/user", userRoutes)
 app.use("/api/blog", blogRoutes)
 app.use("/api/chats", chatRoutes);
+app.post("/api/upload", attachmentUpload, (req, res) => {
+    if (req.files) {
+        res.send(req.files)
+    } else {
+        res.send({ error: "File uploads failed" })
+    }
+})
 
 // Components
 app.use("/api/client_responce", c_client_responseRoutes)
