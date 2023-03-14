@@ -9,6 +9,7 @@ const cors = require("cors")
 const authRouter = require("./routes/authRoutes")
 const blogRoutes = require("./routes/blogRoutes")
 const userRoutes = require("./routes/userRoutes")
+const clientReviewRoutes = require("./routes/clientReviewRoutes")
 const c_client_responseRoutes = require("./routes/c_client_responseRoutes")
 const c_contactCenterServiceRoutes = require("./routes/c_contactCenterServiceRoutes")
 const c_heroRoutes = require("./routes/c_heroRoutes")
@@ -60,6 +61,7 @@ io.on("connection", (socket) => {
 app.use("/api/auth", authRouter)
 app.use("/api/user", userRoutes)
 app.use("/api/blog", blogRoutes)
+app.use("/api/client_review", clientReviewRoutes);
 app.use("/api/chats", chatRoutes);
 app.post("/api/upload", attachmentUpload, (req, res) => {
     if (req.files) {
