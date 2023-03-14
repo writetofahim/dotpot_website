@@ -22,6 +22,7 @@ const ChatPopup = () => {
   const [newMessage, setNewMessage] = useState("");
   const [files, setFiles] = useState(null);
   const messagesEndRef = useRef(null);
+  const [error, setError] = useState("")
 
   useEffect(() => {
     // Scroll to the bottom when messages change
@@ -56,24 +57,35 @@ const ChatPopup = () => {
   };
 
   const handleSendMessage = async () => {
+    setError("")
     const conversationId = localStorage.getItem("conversation_id")
     let attachment = null;
 
-    if (files) {
-      const filesArray = Array.from(files);
-      const formData = new FormData();
-      filesArray.forEach(file => {
-        formData.append('files[]', file);
-      });
-      const { data: resFiles } = await axios.post("http://localhost:8800/api/upload", formData)
-      attachment = resFiles[0].filename;
-      console.log(attachment)
-    }
-    if (newMessage !== "" || attachment !== null) {
-      const { data } = await axios.post(`http://localhost:8800/api/chats/${conversationId}/messages`, { text: newMessage, attachment: attachment })
-      console.log(data)
-      setMessages([...messages, data])
-      setNewMessage("");
+    try {
+      if (files) {
+        const filesArray = Array.from(files);
+        const formData = new FormData();
+        filesArray.forEach(file => {
+          formData.append('files[]', file);
+        });
+        const { data: resFiles } = await axios.post("http://localhost:8800/api/upload", formData)
+        attachment = resFiles[0].filename;
+        console.log(attachment)
+      }
+      if (newMessage !== "" || attachment !== null) {
+        const { data } = await axios.post(`http://localhost:8800/api/chats/${conversationId}/messages`, { text: newMessage, attachment: attachment })
+        console.log(data)
+        setMessages([...messages, data])
+        setNewMessage("");
+      }
+    } catch (error) {
+      console.log("error.response", error.response)
+      if (error.response.data.errors.msg) {
+        setError(error.response.data.errors.msg)
+      } else {
+        setError(error.message)
+      }
+
     }
   };
 
@@ -110,6 +122,7 @@ const ChatPopup = () => {
                 <p className="text-xs text-gray-500">{moment(new Date(message.createdAt)).fromNow()}</p>
               </div>
             ))}
+            {error && <p className="text-red-500 text-sm">{error}</p>}
             <div ref={messagesEndRef} />
           </div>
           <div className="p-4 flex items-center justify-between gap-1">
