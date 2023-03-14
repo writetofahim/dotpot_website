@@ -16,14 +16,14 @@ Welcome to DotpotiT! This web application provides a platform for showcase their
 
 To get a local copy of this website up and running, please follow these steps:
 
-1. Start the client-side, run the following command:
+1. Start the server-side, run the following command:
     `cd api`
 
 2. nstall the dependencies, run the following command:
     `npm install`
 
 3. Start the  server, run the following command:
-   `npm run strat`
+   ``npm run dev``
    
 4. Open the project on browser 
     [Server] 'http://localhost:5173'

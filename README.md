@@ -71,11 +71,17 @@ To get the repository of this website, please follow  the steps:
 1. Clone the repository, run the following command:
     `git@github.com:DotpotiT/website.git`
 
-2. Install the dependencies, run the following command:
+2. Start the client-side, run the following command:
+    `cd client`
+    
+    Or Start the server-side, run the following command:
+    `cd api`
+
+3. Install the dependencies, run the following command:
     `npm install`
 
 3. Start the server, run the following command:
-    `npm start`
+    `npm run dev`
 
 4. Open the project on browser  
     [Server] http://localhost:5173
