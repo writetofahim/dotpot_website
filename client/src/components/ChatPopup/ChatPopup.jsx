@@ -1,20 +1,51 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaComments } from "react-icons/fa";
 import { AiOutlineCloseCircle, AiOutlineSend } from "react-icons/ai";
+import axios from "axios"
+import { io } from "socket.io-client";
+import moment from "moment/moment";
 
-const data = [
-  { name: "DotpotiT", message: "Hi there!", timestamp: "11:30 AM" },
-  { name: "DotpotiT", message: "Hey John, how are you?", timestamp: "11:35 AM" },
-  { name: "DotpotiT", message: "I'm good, thanks! How about you?", timestamp: "11:37 AM" },
-  { name: "DotpotiT", message: "I'm doing well too. Thanks for asking!", timestamp: "11:40 AM" },
-];
+const socket = io("http://localhost:8800")
+
+// const data = [
+//   { name: "DotpotiT", message: "Hi there!", timestamp: "11:30 AM" },
+//   { name: "DotpotiT", message: "Hey John, how are you?", timestamp: "11:35 AM" },
+//   { name: "DotpotiT", message: "I'm good, thanks! How about you?", timestamp: "11:37 AM" },
+//   { name: "DotpotiT", message: "I'm doing well too. Thanks for asking!", timestamp: "11:40 AM" },
+// ];
 
 const ChatPopup = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState(data);
+  const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
+  const messagesEndRef = useRef(null);
 
-  const handleOpen = () => {
+  useEffect(() => {
+    // Scroll to the bottom when messages change
+    messagesEndRef.current?.scrollIntoView();
+  }, [messages, isOpen]);
+
+  useEffect(() => {
+    socket.on("newMessage", data => {
+      const conversationId = localStorage.getItem("conversation_id")
+      if (conversationId === data.conversation_id && data.sender === "admin") {
+        setMessages(prev => ([...prev, data]))
+      }
+    })
+  }, [])
+
+  const handleOpen = async () => {
+    const conversationId = localStorage.getItem("conversation_id")
+    if (conversationId && messages.length === 0) {
+      console.log("1")
+      const { data } = await axios.get(`http://localhost:8800/api/chats/${conversationId}/messages`)
+      setMessages(data)
+    } if (!conversationId) {
+      console.log("2")
+      const { data } = await axios.post("http://localhost:8800/api/chats")
+      localStorage.setItem("conversation_id", data.conversation_id)
+      setMessages(prev => [...prev, data])
+    }
     setIsOpen(!isOpen);
   };
 
@@ -22,14 +53,11 @@ const ChatPopup = () => {
     setIsOpen(false);
   };
 
-  const handleSendMessage = () => {
+  const handleSendMessage = async () => {
+    const conversationId = localStorage.getItem("conversation_id")
     if (newMessage !== "") {
-      const message = {
-        name: "You",
-        message: newMessage,
-        timestamp: new Date().toLocaleTimeString(),
-      };
-      setMessages([...messages, message]);
+      const { data } = await axios.post(`http://localhost:8800/api/chats/${conversationId}/messages`, { text: newMessage })
+      setMessages([...messages, data])
       setNewMessage("");
     }
   };
@@ -50,18 +78,19 @@ const ChatPopup = () => {
               <AiOutlineCloseCircle />
             </button>
           </div>
-          <div className="flex flex-col p-4 h-64 overflow-y-auto">
+          <div className="flex flex-col p-4 h-64 overflow-y-auto " >
             {messages.map((message, index) => (
               <div
                 key={index}
-                className={`p-2 rounded-lg my-2 ${message.name === "You" ? "bg-primary-200 text-white self-end" : "bg-gray-200"
+                className={`p-2 rounded-lg my-2 ${message.sender === "visitor" ? "bg-primary-200 text-white self-end" : "bg-gray-200"
                   }`}
               >
-                <p className="font-medium">{message.name}</p>
-                <p>{message.message}</p>
-                <p className="text-xs text-gray-500">{message.timestamp}</p>
+                <p className="font-medium">{message.sender === "visitor" ? "You" : 'DotpotiT'}</p>
+                <p>{message.text}</p>
+                <p className="text-xs text-gray-500">{moment(new Date(message.createdAt)).fromNow()}</p>
               </div>
             ))}
+            <div ref={messagesEndRef} />
           </div>
           <div className="p-4 flex items-center justify-between gap-1">
             <textarea
