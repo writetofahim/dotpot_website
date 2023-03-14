@@ -15,6 +15,8 @@ const c_heroRoutes = require("./routes/c_heroRoutes")
 const c_industryWeServeRoutes = require("./routes/c_industryWeServeRoutes")
 const c_infoRoutes = require("./routes/c_infoRoutes")
 const c_keyFeatureRouters = require("./routes/c_keyFeatureRouters")
+const c_partnershipModelRoutes = require("./routes/c_partnershipModelRoutes")
+const c_whoWeWorkWithRoutes = require("./routes/c_whoWeWorkWithRoutes")
 const chatRoutes = require("./routes/chatRoutes");
 const attachmentUpload = require("./middlewares/attachmentUpload");
 
@@ -74,6 +76,8 @@ app.use("/api/hero", c_heroRoutes)
 app.use("/api/industry_we_erve", c_industryWeServeRoutes)
 app.use("/api/info", c_infoRoutes)
 app.use("/api/key_feature", c_keyFeatureRouters)
+app.use("/api/partnership_model", c_partnershipModelRoutes)
+app.use("/api/who_we_work_with", c_whoWeWorkWithRoutes)
 
 
 
