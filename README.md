@@ -69,13 +69,13 @@ DotpotiT's API is built using NodeJS and ExpressJS, utilizing JWT authentication
 To get the repository of this website, please follow  the steps:
 
 1. Clone the repository, run the following command:
-    'git@github.com:DotpotiT/website.git'
+    `git@github.com:DotpotiT/website.git`
 
 2. Install the dependencies, run the following command:
-    'npm install'
+    `npm install`
 
 3. Start the server, run the following command:
-    'npm start'
+    `npm start`
 
 4. Open the project on browser  
     [Server] http://localhost:5173
