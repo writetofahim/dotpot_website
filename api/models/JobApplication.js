@@ -5,7 +5,6 @@ const jobApplicationSchema = new mongoose.Schema(
         jobId: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Job',
-            required: true,
         },
         companyName: {
             type: String,
@@ -13,7 +12,6 @@ const jobApplicationSchema = new mongoose.Schema(
         },
         companyLogo: {
             type: String,
-            required: true,
         },
         jobTitle: {
             type: String,
@@ -21,23 +19,18 @@ const jobApplicationSchema = new mongoose.Schema(
         },
         name: {
             type: String,
-            required: true,
         },
         email: {
             type: String,
-            required: true,
         },
         phone: {
             type: String,
-            required: true,
         },
         resume: {
             type: String,
-            required: true,
         },
         coverLetter: {
             type: String,
-            required: true,
         },
         socialMediaUrls: {
             type: Map,
