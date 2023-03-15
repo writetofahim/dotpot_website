@@ -34,7 +34,7 @@ const WhoWeWorkWith = () => {
             <div className="mt-5 w-full md:max-w-[1400px]  flex flex-col lg:flex-row md:flex-row gap-5 items-center">
                 <div className="left w-1/1 md:w-1/3 lg:2/3 h-max p-5 text-left">
                     <h3 className="text-4xl font-bold mb-5">{whoDoWeWorkData.title}</h3>
-                    <p className="">
+                    <p className="text-justify">
                         {whoDoWeWorkData.desc}
                     </p>
                 </div>

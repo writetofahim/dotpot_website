@@ -23,7 +23,7 @@ export const Card = (props) => {
             <h2 className="text-2xl font-bold my-5">
                 {props.title}
             </h2>
-            <p className="">
+            <p className="text-justify">
                 {props.desc}
             </p>
         </div>

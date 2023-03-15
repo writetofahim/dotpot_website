@@ -17,7 +17,7 @@ import information from "../../assets/img/information.png"
 const Information = () => {
     const videoUrl = 'https://www.youtube.com/embed/A23jUjVatn4?autoplay=1&loop=1';
     return (
-        <div className='bg-white w-full flex justify-center items-center'>
+        <div className='md:p-5 bg-white w-full flex justify-center items-center'>
             <div className="w-full md:max-w[1400px] lg:max-w-[1400px] p-10 md:px-5 lg:px-0 flex flex-col items-center justify-between md:flex-col lg:flex-row gap-5">
                 <div className="left flex-[2] h-full">
                     <h1 className="text-6xl text-primary-500 font-bold mb-5 ">DotpotiT</h1>
