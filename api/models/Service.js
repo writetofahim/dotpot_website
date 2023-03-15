@@ -2,27 +2,24 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const technologySchema = new Schema({
-    id: { type: Number, required: true },
-    title: { type: String, required: true },
-    sdes: { type: String, required: true },
-    icon: { type: String, required: true },
-    cost: { type: Number, required: true }
+    title: { type: String},
+    sdes: { type: String},
+    icon: { type: String},
+    cost: { type: Number}
     });
 
     const addonSchema = new Schema({
-    id: { type: Number, required: true },
-    title: { type: String, required: true },
-    sdes: { type: String, required: true },
-    icon: { type: String, required: true },
-    cost: { type: Number, required: true }
+    title: { type: String},
+    sdes: { type: String},
+    icon: { type: String},
+    cost: { type: Number}
     });
 
     const serviceSchema = new Schema({
-    id: { type: Number, required: true, unique: true },
     title: { type: String, required: true },
-    icon: { type: String, required: true },
-    technologies: { type: [technologySchema], required: true },
-    addons: { type: [addonSchema], required: true }
+    icon: { type: String},
+    technologies: { type: [technologySchema]},
+    addons: { type: [addonSchema]}
     }, { timestamps: true });
 
 const Service = mongoose.model('Service', serviceSchema);
