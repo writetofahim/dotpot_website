@@ -2,14 +2,16 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Footer from '../../components/Footer/Footer'
 import Navbar from '../../components/Navbar/Navbar'
+import Particle from '../../components/Hero/Particle'
 
 const Login = () => {
   return (
     <>
       <Navbar />
-      <section className="bg-white pt-[10vh]">
+      <Particle />
+      <section className="pt-[10vh] flex items-center justify-center">
         <div className="container min-h-[100vh] flex items-center justify-center p-5">
-          <form className="w-full max-w-md p-5 border rounded-xl shadow-xl">
+          <form className="w-full max-w-md p-5 border rounded-xl shadow-xl glassmorphism">
 
 
             <h1 className="text-center text-6xl text-primary-500 font-bold">SIGN IN</h1>
@@ -39,7 +41,7 @@ const Login = () => {
                 Sign in
               </button>
 
-              <p className="mt-4 text-center text-gray-600 dark:text-gray-400">or sign in with</p>
+              {/* <p className="mt-4 text-center text-gray-600 dark:text-gray-400">or sign in with</p>
 
               <Link href="#" className="flex items-center justify-center px-6 py-3 mt-4 text-gray-600 border rounded-xl hover:bg-primary-100 hover:shadow-xl hover:scale-105 transition-all">
                 <svg className="w-6 h-6 mx-2" viewBox="0 0 40 40">
@@ -50,7 +52,7 @@ const Login = () => {
                 </svg>
 
                 <span className="mx-2">Sign in with Google</span>
-              </Link>
+              </Link> */}
 
               <div className="mt-6 text-center text-secondary-500">
                 <Link to="/register" className="text-sm hover:underline">

@@ -15,7 +15,7 @@ export const JobCard = (props) => {
     return (
         <>
             {/* For Large screen */}
-            <div className="job-card w-full p-5 border rounded-xl hover:border-primary-500 text-gray-400 gap-1 hidden md:block" onClick={() => props.setId(props.id)}>
+            <div className="job-card w-full p-5 border rounded-xl hover:border-primary-500 text-gray-400 gap-1 hidden md:block md:hover:scale-105 md:hover:shadow-xl transition-all" onClick={() => props.setId(props.id)}>
                 <div className="flex justify-between items-center">
                     <h3 className="font-bold hover:underline cursor-pointer text-xl">{props.title}</h3>
 
@@ -120,7 +120,7 @@ const ApplyJob = () => {
                         </div>
 
                         {/* Right sidebar */}
-                        <div className="right md:w-3/5 sticky top-20 rounded-xl border" id='jobDetails'>
+                        <div className="right md:w-3/5 sticky top-20 rounded-xl shadow-xl rounded overflow-hidden border" id='jobDetails'>
                             {
                                 id !== null && (
                                     <>
@@ -155,7 +155,7 @@ const ApplyJob = () => {
                                         </div>
 
                                         {/* // Bottom Section */}
-                                        <div className="p-5 w-full text-gray-500 h-[70vh] overflow-scroll">
+                                        <div className="p-5 w-full text-gray-500 h-[90vh] overflow-scroll">
                                             <h3 className="text-xl font-bold">Job Details</h3>
                                             <p className="">{jobPageData.jobs[id].type}</p>
                                             <Divider className='py-3' />

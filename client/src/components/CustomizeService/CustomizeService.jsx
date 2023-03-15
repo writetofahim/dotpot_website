@@ -88,7 +88,7 @@ const TechnologyCard = (props) => {
       newOrder[currentServiceIndex].technologies = [...newOrder[currentServiceIndex].technologies, technologyObject];
       setOrder(newOrder);
     } else {
-        setOrder([...order, { id: openService.id, title: openService.title, icon: openService.icon, technologies: [], addons: [] }]);
+      setOrder([...order, { id: openService.id, title: openService.title, icon: openService.icon, technologies: [], addons: [] }]);
     }
   };
 
@@ -250,7 +250,7 @@ const CustomizeService = () => {
         <h1 className='text-6xl text-primary-500 font-bold' >Customize Your Services</h1>
 
         {/* Main Container */}
-        <div className="mt-5 flex flex-col lg:flex-row justify-between gap-5 border shadow-xl p-5 rounded-xl">
+        <div className="mt-5 flex flex-col lg:flex-row justify-between gap-5 border shadow-xl p-5 rounded-xl md:min-h-[70vh]">
 
           {/* Left container */}
           <div className="p-3 border rounded-xl flex-[0.2] shadow-xl">
@@ -289,10 +289,10 @@ const CustomizeService = () => {
                     <div className="border-r-gray-500 flex items-center gap-2 cursor-pointer">
                       {
                         item.technologies.map((tech, index) => (
-                          <div key={index} 
-                          className="flex text-sm text-gray-400 items-center gap-1 px-2 py-1 border rounded-full hover:scale-110  transition-all bg-secondary-100">
+                          <div key={index}
+                            className="flex text-sm text-gray-400 items-center gap-1 px-2 py-1 border rounded-full hover:scale-110  transition-all bg-secondary-100">
                             <img key={index} src={tech.icon} alt={tech.title} className="h-5 w-5" />
-                            <GrFormClose className='hover:text-secondary-400' onClick={()=>removeTechnology(item.id, tech.id )} />
+                            <GrFormClose className='hover:text-secondary-400' onClick={() => removeTechnology(item.id, tech.id)} />
                           </div>
                         ))
                       }
@@ -300,7 +300,7 @@ const CustomizeService = () => {
                         item.addons.map((addon, index) => (
                           <div key={index} className="flex text-sm text-gray-400 items-center gap-1 px-2 py-1 border rounded-full hover:scale-110  transition-all bg-secondary-100">
                             <img key={index} src={addon.icon} alt={addon.title} className="h-5 w-5" />
-                            <GrFormClose className='hover:text-secondary-400' onClick={()=>removeAddons(item.id, addon.id)} />
+                            <GrFormClose className='hover:text-secondary-400' onClick={() => removeAddons(item.id, addon.id)} />
                           </div>
                         ))
                       }
