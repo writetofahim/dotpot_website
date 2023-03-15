@@ -12,7 +12,6 @@ const teamMemberSchema = new mongoose.Schema(
         },
         bio: {
         type: String,
-        required: true,
         },
         image: {
         type: String,
@@ -20,11 +19,9 @@ const teamMemberSchema = new mongoose.Schema(
         },
         email: {
         type: String,
-        required: true,
         },
         phone: {
         type: String,
-        required: true,
         },
         socialMediaUrls: {
         type: Map,
