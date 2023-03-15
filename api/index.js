@@ -14,6 +14,7 @@ const jobApplicationRoutes = require("./routes/jobApplicationRoutes")
 const clientReviewRoutes = require("./routes/clientReviewRoutes")
 const ourPartnerRoutes = require("./routes/ourPartnerRoutes")
 const serviceRoutes = require("./routes/serviceRoutes")
+const socialMediaRoutes = require("./routes/socialMediaRoutes")
 const c_client_responseRoutes = require("./routes/c_client_responseRoutes")
 const c_contactCenterServiceRoutes = require("./routes/c_contactCenterServiceRoutes")
 const c_heroRoutes = require("./routes/c_heroRoutes")
@@ -71,6 +72,7 @@ app.use("/api/job", jobRoutes);
 app.use("/api/job_application", jobApplicationRoutes);
 app.use("/api/our_partner", ourPartnerRoutes);
 app.use("/api/service", serviceRoutes);
+app.use("/api/socialmedia", socialMediaRoutes);
 
 
 app.post("/api/upload", attachmentUpload, (req, res) => {
