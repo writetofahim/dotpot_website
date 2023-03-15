@@ -23,6 +23,7 @@ const ChatPopup = () => {
   const [files, setFiles] = useState(null);
   const messagesEndRef = useRef(null);
   const [error, setError] = useState("")
+  const [selectedImage, setSelectedImage] = useState(null)
 
   useEffect(() => {
     // Scroll to the bottom when messages change
@@ -85,12 +86,12 @@ const ChatPopup = () => {
       } else {
         setError(error.message)
       }
-
     }
   };
 
   return (
     <>
+
       <button
         className="fixed z-1 bottom-4 right-4 bg-primary-500 text-white p-4 rounded-full border border-white hover:scale-110 transition-all"
         onClick={handleOpen}
@@ -118,13 +119,14 @@ const ChatPopup = () => {
                   ? <a className="flex items-center gap-2" href={`http://localhost:8800/uploads/conversation/${message.attachment}`} download>
                     <HiOutlineDownload />
                     {message.attachment?.slice(0, 20)}...</a>
-                  : <img className="w-40" src={`http://localhost:8800/uploads/conversation/${message.attachment}`} alt="" />}
+                  : message.attachment && <img onClick={() => setSelectedImage(`http://localhost:8800/uploads/conversation/${message.attachment}`)} className="w-40 cursor-pointer" src={`http://localhost:8800/uploads/conversation/${message.attachment}`} alt="" />}
                 <p className="text-xs text-gray-500">{moment(new Date(message.createdAt)).fromNow()}</p>
               </div>
             ))}
-            {error && <p className="text-red-500 text-sm">{error}</p>}
             <div ref={messagesEndRef} />
+            {error && <p className="text-red-500 text-sm">{error}</p>}
           </div>
+
           <div className="p-4 flex items-center justify-between gap-1">
             <label htmlFor="attachment">
               <GrAttachment />

@@ -30,9 +30,9 @@ const Information = () => {
                     <iframe
                         src={videoUrl}
                         title="YouTube video player"
-                        frameborder="0"
+                        frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen
+                        allowFullScreen
                         className='rounded-3xl w-full md:w-4/5 aspect-video mt-5 shadow-lg'
                     ></iframe>
                 </div>
