@@ -14,6 +14,9 @@ const C_clientResponseSchema = new mongoose.Schema({
     phone: {
         type: String,
     },
+    whatsapp: {
+        type: String,
+    },
     skype: {
         type: String,
     },
@@ -22,6 +25,9 @@ const C_clientResponseSchema = new mongoose.Schema({
     },
     budget: {
         type: Number,
+    },
+    attachment: {
+        type: String,
     },
     message: {
         type: String,

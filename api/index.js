@@ -18,6 +18,7 @@ const socialMediaRoutes = require("./routes/socialMediaRoutes")
 const teamMemberRoutes = require("./routes/teamMemberRoutes")
 const workRoutes = require("./routes/workRoutes")
 const orderRoutes = require("./routes/orderRoutes")
+const uploadRoutes = require("./routes/uploadRoutes")
 const c_client_responseRoutes = require("./routes/c_client_responseRoutes")
 const c_contactCenterServiceRoutes = require("./routes/c_contactCenterServiceRoutes")
 const c_heroRoutes = require("./routes/c_heroRoutes")
@@ -27,7 +28,6 @@ const c_keyFeatureRouters = require("./routes/c_keyFeatureRouters")
 const c_partnershipModelRoutes = require("./routes/c_partnershipModelRoutes")
 const c_whoWeWorkWithRoutes = require("./routes/c_whoWeWorkWithRoutes")
 const chatRoutes = require("./routes/chatRoutes");
-const attachmentUpload = require("./middlewares/attachmentUpload");
 
 dotenv.config();
 
@@ -79,15 +79,7 @@ app.use("/api/socialmedia", socialMediaRoutes);
 app.use("/api/team_member", teamMemberRoutes);
 app.use("/api/work", workRoutes);
 app.use("/api/order", orderRoutes);
-
-
-app.post("/api/upload", attachmentUpload, (req, res) => {
-    if (req.files) {
-        res.send(req.files)
-    } else {
-        res.send({ error: "File uploads failed" })
-    }
-})
+app.use("/api/upload", uploadRoutes)
 
 // Components
 app.use("/api/client_responce", c_client_responseRoutes)

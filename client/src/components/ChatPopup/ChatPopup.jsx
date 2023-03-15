@@ -35,6 +35,7 @@ const ChatPopup = () => {
   }, [messages, isOpen]);
 
   useEffect(() => {
+    // listen event for new message
     socket.on("newMessage", data => {
       console.log(data)
       const conversationId = localStorage.getItem("conversation_id")
@@ -76,6 +77,7 @@ const ChatPopup = () => {
 
     try {
       if (files) {
+        // if files selected then upload file to server and get file name
         const filesArray = Array.from(files);
         const formData = new FormData();
         filesArray.forEach(file => {
