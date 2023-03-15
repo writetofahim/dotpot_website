@@ -78,18 +78,20 @@ var settings = {
 
 export const SingleSlide = (props) => {
     return (
-        <div className="mx-5 mb-20 p-2 md:p-0 rounded-2xl flex flex-col justify-between items-center bg-white shadow-xl ">
+        <div className="mx-5 mb-20 p-2 md:p-0 rounded-2xl flex flex-col justify-between items-center bg-white shadow-xl lg:h-[300px]">
             <div className="flex flex-col md:grid md:grid-cols-3 md:gap-10 ">
-                <div className=" col-span-1">
-                    <img src={props.img} alt="" className="md:rounded-tl-xl md:rounded-bl-xl aspect-square object-cover h-full" />
+                <div className=" col-span-1 h-full">
+                    <img src={props.img} alt="" className="md:rounded-tl-xl md:rounded-bl-xl aspect-square object-cover lg:h-[300px] " />
                 </div>
 
-                <div className="col-span-2 p-5 ">
+                <div className="col-span-2 p-5 flex flex-col justify-between">
 
                     <p className=""> <ImQuotesLeft className="text-primary-500  font-bold text-xl inline-block mr-2" /> {props.text} <ImQuotesRight className="text-primary-500   text-xl inline-block ml-2" /></p>
-                    <h2 className="font-bold text-xl text-secondary-500 mt-3 text-center md:text-left ">{props.name}</h2>
-                    <h3 className="font-bold text-center md:text-left">{props.post}</h3>
-                    <h3 className="font-medium text-center md:text-left">{props.company}</h3>
+                    <div>
+                        <h2 className="font-bold text-xl text-secondary-500 mt-3 text-center md:text-left ">{props.name}</h2>
+                        <h3 className="font-bold text-center md:text-left">{props.post}</h3>
+                        <h3 className="font-medium text-center md:text-left">{props.company}</h3>
+                    </div>
                 </div>
             </div>
         </div>
