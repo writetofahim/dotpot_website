@@ -4,7 +4,7 @@ const OrderSchema = new mongoose.Schema(
 {
     client_id: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Client',
+    ref: 'users',
     },
     total_cost: {
     type: Number,
@@ -13,6 +13,10 @@ const OrderSchema = new mongoose.Schema(
     selected_items: {
     type: Object,
     required: true
+    },
+    status: {
+    type: String,
+    default: 'Pending'
     }
 },
 { timestamps: true }
