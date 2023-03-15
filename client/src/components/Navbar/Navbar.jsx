@@ -31,7 +31,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className="w-full flex items-center justify-between fixed z-10 bg-white z-999">
+        <div className="w-full flex items-center justify-center fixed z-10 bg-white z-999">
             <nav className="container flex justify-between items-center p-4 z-999" id="nav">
                 <div className="lg:flex-[0.5] flex-initial justify-center items-center">
                     <Link to='/'>
@@ -44,26 +44,26 @@ const Navbar = () => {
                         <NavBarItem key={item + index} title={item} />
                     ))} */}
                     <Link to="/">
-                        <li className="mx-4 cursor-pointer uppercase text-white lg:text-gray-400 text-lg hover:scale-110 hover:text-primary-400" onClick={() => setToggleMenu(false)}>Home</li>
+                        <li className="mx-4 cursor-pointer uppercase text-white font-bold lg:text-gray-400 text-lg hover:scale-110 hover:text-primary-400" onClick={() => setToggleMenu(false)}>Home</li>
                     </Link>
                     <Link to="/about">
-                        <li className="mx-4 cursor-pointer uppercase text-white lg:text-gray-400 text-lg hover:scale-110 hover:text-primary-400" onClick={() => setToggleMenu(false)}>About Us</li>
+                        <li className="mx-4 cursor-pointer uppercase text-white font-bold lg:text-gray-400 text-lg hover:scale-110 hover:text-primary-400" onClick={() => setToggleMenu(false)}>About Us</li>
                     </Link>
                     <Link to="/services">
-                        <li className="mx-4 cursor-pointer uppercase text-white lg:text-gray-400 text-lg hover:scale-110 hover:text-primary-400" onClick={() => setToggleMenu(false)}>Services</li>
+                        <li className="mx-4 cursor-pointer uppercase text-white font-bold lg:text-gray-400 text-lg hover:scale-110 hover:text-primary-400" onClick={() => setToggleMenu(false)}>Services</li>
                     </Link>
                     <Link to="/contact">
-                        <li className="mx-4 cursor-pointer uppercase text-white lg:text-gray-400 text-lg hover:scale-110 hover:text-primary-400" onClick={() => setToggleMenu(false)}>Contact</li>
+                        <li className="mx-4 cursor-pointer uppercase text-white font-bold lg:text-gray-400 text-lg hover:scale-110 hover:text-primary-400" onClick={() => setToggleMenu(false)}>Contact</li>
                     </Link>
                     <Link to="/blog">
-                        <li className="mx-4 cursor-pointer uppercase text-white lg:text-gray-400 text-lg hover:scale-110 hover:text-primary-400" onClick={() => setToggleMenu(false)}>Blog</li>
+                        <li className="mx-4 cursor-pointer uppercase text-white font-bold lg:text-gray-400 text-lg hover:scale-110 hover:text-primary-400" onClick={() => setToggleMenu(false)}>Blog</li>
                     </Link>
 
                     {
                         !isLogin ? (
-                            <li className="mx-4 cursor-pointer uppercase text-white lg:text-gray-400 text-lg hover:scale-110 hover:text-primary-400" onClick={() => login()}>Login</li>
+                            <li className="mx-4 cursor-pointer uppercase text-white font-bold lg:text-gray-400 text-lg hover:scale-110 hover:text-primary-400" onClick={() => login()}>Login</li>
                         ) : (
-                            <li className="mx-4 cursor-pointer uppercase text-white lg:text-gray-400 text-lg hover:scale-110 hover:text-primary-400" onClick={() => logout()}>Logout</li>
+                            <li className="mx-4 cursor-pointer uppercase text-white font-bold lg:text-gray-400 text-lg hover:scale-110 hover:text-primary-400" onClick={() => logout()}>Logout</li>
                         )
                     }
 
