@@ -101,7 +101,6 @@ function ContactCenterServicesSlide() {
             .catch(error => console.error(error));
     }, []);
 
-    console.log(data)
 
     return (
         <div className="w-full my-2">

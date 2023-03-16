@@ -10,27 +10,37 @@ The component is responsive for mobile and desktop displays.
 The component uses Tailwind css for styling
  */
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { PartnershipModelsData } from "../../data"
+import axios from "../../utils/axiosInstance"
 
 
 export const Card = (props) => {
     return (
         <div className="mx-5 p-5 rounded-lg shadow-lg flex-1 hover:scale-110 transition-all">
             <div className="text-6xl">
-                <img className="img-fluid" src={props.icon} alt="fixed price model" />
+                <img className="img-fluid" src={props.icon} alt={props.title} />
             </div>
             <h2 className="text-2xl font-bold my-5">
                 {props.title}
             </h2>
             <p className="text-justify">
-                {props.desc}
+                {props.description}
             </p>
         </div>
     )
 }
 
 const PartnershipModels = () => {
+    const [data, setData] = useState(null);
+
+    // Data Fetching
+    useEffect(() => {
+        axios.get(' /partnership_model')
+            .then(response => setData(response.data))
+            .catch(error => console.error(error));
+    }, []);
+
     return (
         <div className='w-full overflow-hidden pt-10 pb-20 md:flex md:flex-col md:justify-center bg-white'>
             <div className="p-5 mt-5 w-full md:max-w-[1400px] self-center">
@@ -39,7 +49,7 @@ const PartnershipModels = () => {
             </div>
             <div className="p-5 mt-5 w-full md:max-w-[1400px] self-center flex flex-col lg:flex-row gap-5 flex-wrap items-center justify-center">
                 {
-                    PartnershipModelsData.map((item, index) => {
+                    data && data.map((item, index) => {
                         return (
                             <Card key={index} {...item} />
                         )
