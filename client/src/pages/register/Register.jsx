@@ -1,18 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Navbar from '../../components/Navbar/Navbar'
 import Footer from '../../components/Footer/Footer'
 import { RxPerson } from "react-icons/rx"
 import Particle from '../../components/Hero/Particle'
+import axios from "../../utils/axiosInstance"
+import { FaSpinner } from "react-icons/fa";
+
 
 const Register = () => {
+  const [isLoading, setIsLoading] = useState(false)
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setIsLoading(true)
+    const user = {
+      username: e.target.username.value,
+      email: e.target.email.value,
+      password: e.target.password.value
+    }
+    const { data } = axios.post("/auth/register", user)
+    console.log(data);
+    setIsLoading(false)
+  }
   return (
     <>
       <Navbar />
       <Particle />
       <section className="pt-[10vh] flex items-center justify-center">
         <div className="container min-h-[100vh] flex items-center justify-center p-3">
-          <form className="w-full max-w-md p-5 border rounded-xl shadow-xl glassmorphism">
+          <form onSubmit={handleSubmit} className="w-full max-w-md p-5 border rounded-xl shadow-xl glassmorphism">
 
 
             <h1 className="text-center text-6xl text-primary-500 font-bold">Register</h1>
@@ -22,7 +39,7 @@ const Register = () => {
                 <RxPerson />
               </span>
 
-              <input type="email" className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300" placeholder="Full Name" />
+              <input name='username' type="email" className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300" placeholder="Full Name" required />
             </div>
 
 
@@ -33,7 +50,7 @@ const Register = () => {
                 </svg>
               </span>
 
-              <input type="email" className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300" placeholder="Email address" />
+              <input name='email' type="email" className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300" placeholder="Email address" required />
             </div>
 
             <div className="relative flex items-center mt-4">
@@ -43,7 +60,7 @@ const Register = () => {
                 </svg>
               </span>
 
-              <input type="password" className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300" placeholder="Password" />
+              <input name='password' type="password" className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300" placeholder="Password" required />
             </div>
 
             <div className="relative flex items-center mt-4">
@@ -53,12 +70,12 @@ const Register = () => {
                 </svg>
               </span>
 
-              <input type="password" className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300" placeholder="Confirm Password" />
+              <input name='confirmPassword' type="password" className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300" placeholder="Confirm Password" required />
             </div>
 
             <div className="mt-6">
-              <button className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize bg-primary-500 rounded-lg hover:bg-primary-400 hover:shadow-xl hover:scale-105 transition-all">
-                Sign up
+              <button disabled={isLoading} className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize bg-primary-500 rounded-lg hover:bg-primary-400 hover:shadow-xl hover:scale-105 transition-all ">
+                <span className='w-[max-content] mx-auto flex items-center gap-2'> Sign up {isLoading && <FaSpinner className="animate-spin" />}</span>
               </button>
 
 

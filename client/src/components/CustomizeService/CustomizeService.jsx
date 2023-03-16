@@ -5,6 +5,16 @@ import { TiTick } from "react-icons/ti"
 import { CiCircleInfo } from "react-icons/ci"
 import { AiOutlineDoubleRight } from "react-icons/ai"
 import { GrFormClose } from "react-icons/gr"
+import axios from "../../utils/axiosInstance"
+import { FaSpinner } from "react-icons/fa";
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
+import { useNavigate } from 'react-router-dom';
+
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
+
 
 
 // Service Card 
@@ -17,28 +27,28 @@ const ServicesCard = (props) => {
 
   useEffect(() => {
     // Check if the service is already selected in the order
-    const existInTheArray = order.some((obj) => obj.id === serviceObject.id);
+    const existInTheArray = order.some((obj) => obj._id === serviceObject._id);
     setIsExist(existInTheArray);
   }, [order, serviceObject]);
 
 
   const addService = () => {
     // Copy the existing order, add the new service object, and set it as the new order
-    setOrder([...order, { id: serviceObject.id, title: serviceObject.title, icon: serviceObject.icon, technologies: [], addons: [] }]);
+    setOrder([...order, { _id: serviceObject._id, title: serviceObject.title, icon: serviceObject.icon, technologies: [], addons: [] }]);
     setIsSelect(true);
   };
 
   const removeService = () => {
     setIsSelect(false);
     // Filter out the service object with the matching ID, and set the new order
-    const newOrder = order.filter((obj) => obj.id !== serviceObject.id);
+    const newOrder = order.filter((obj) => obj._id !== serviceObject._id);
     setOrder(newOrder);
   };
 
   return (
     <div
       // Add the 'bg-primary-100' class if the open service object matches this service object
-      className={`w-[30%] md:w-[20%] md:m-1 lg:w-full p-1 lg:p-2 flex flex-col lg:flex-row items-center gap-1 lg:gap-2 rounded-xl border mt-2 hover:scale-105 hover:shadow-xl transition-all relative cursor-pointer ${isExist && "bg-secondary-200 "} ${openService && serviceObject && openService.id === serviceObject.id && "bg-secondary-100 scale-105 shadow-xl"}`}
+      className={`w-[30%] md:w-[20%] md:m-1 lg:w-full p-1 lg:p-2 flex flex-col lg:flex-row items-center gap-1 lg:gap-2 rounded-xl border mt-2 hover:scale-105 hover:shadow-xl transition-all relative cursor-pointer ${isExist && "bg-secondary-200 "} ${openService && serviceObject && openService._id === serviceObject._id && "bg-secondary-100 scale-105 shadow-xl"}`}
       onClick={() => props.setOpenService(serviceObject)}
     >
       <img src={props.icon} alt={props.title} className='w-7 lg:w-10 h-7 lg:h-10' />
@@ -63,13 +73,13 @@ const TechnologyCard = (props) => {
 
   // Ckeck if already selected or not
   useEffect(() => {
-    const currentServiceIndex = order.findIndex((obj) => obj.id === openService.id);
+    const currentServiceIndex = order.findIndex((obj) => obj._id === openService._id);
     const currentService = order[currentServiceIndex];
     let isExist = false;
 
     if (currentService) {
       const techArray = currentService.technologies;
-      isExist = techArray.find((item) => item.id === technologyObject.id);
+      isExist = techArray.find((item) => item._id === technologyObject._id);
     }
 
     if (isExist) {
@@ -77,10 +87,10 @@ const TechnologyCard = (props) => {
     } else {
       setIsSelect(false);
     }
-  }, [order, openService.id, technologyObject.id]);
+  }, [order, openService._id, technologyObject._id]);
 
   const addTechnologie = () => {
-    const currentServiceIndex = order.findIndex((obj) => obj.id === openService.id);
+    const currentServiceIndex = order.findIndex((obj) => obj._id === openService._id);
 
     if (currentServiceIndex >= 0) {
       setIsSelect(!isSelect);
@@ -88,17 +98,18 @@ const TechnologyCard = (props) => {
       newOrder[currentServiceIndex].technologies = [...newOrder[currentServiceIndex].technologies, technologyObject];
       setOrder(newOrder);
     } else {
-      setOrder([...order, { id: openService.id, title: openService.title, icon: openService.icon, technologies: [], addons: [] }]);
+      setOrder([...order, { _id: openService._id, title: openService.title, icon: openService.icon, technologies: [{ ...props }], addons: [] }]);
+      setIsSelect(!isSelect);
     }
   };
 
   const removeTechnologie = () => {
-    const currentServiceIndex = order.findIndex((obj) => obj.id === openService.id);
+    const currentServiceIndex = order.findIndex((obj) => obj._id === openService._id);
 
     setIsSelect(!isSelect);
 
     const newOrder = [...order];
-    newOrder[currentServiceIndex].technologies = newOrder[currentServiceIndex].technologies.filter((obj) => obj.id !== technologyObject.id);
+    newOrder[currentServiceIndex].technologies = newOrder[currentServiceIndex].technologies.filter((obj) => obj._id !== technologyObject._id);
 
     setOrder(newOrder);
   };
@@ -134,13 +145,13 @@ const AddonsCard = (props) => {
   const addonObject = others;
 
   useEffect(() => {
-    const currentServiceIndex = order.findIndex((obj) => obj.id === openService.id);
+    const currentServiceIndex = order.findIndex((obj) => obj._id === openService._id);
     const currentService = order[currentServiceIndex];
     let isExist = false;
 
     if (currentService) {
       const addonArray = currentService.addons;
-      isExist = addonArray.find((item) => item.id === addonObject.id);
+      isExist = addonArray.find((item) => item._id === addonObject._id);
     }
 
     if (isExist) {
@@ -148,10 +159,10 @@ const AddonsCard = (props) => {
     } else {
       setIsSelect(false);
     }
-  }, [order, openService.id, addonObject.id]);
+  }, [order, openService._id, addonObject._id]);
 
   const addAddons = () => {
-    const currentServiceIndex = order.findIndex((obj) => obj.id === openService.id);
+    const currentServiceIndex = order.findIndex((obj) => obj._id === openService._id);
     const currentService = order[currentServiceIndex];
     if (currentService) {
       setIsSelect(!isSelect);
@@ -159,16 +170,17 @@ const AddonsCard = (props) => {
       const newOrder = [...order];
       newOrder[currentServiceIndex] = { ...currentService, addons };
       setOrder(newOrder);
-    } else (
-      props.setOrder([...order, { id: openService.id, title: openService.title, icon: openService.icon, technologies: [], addons: [] }])
-    )
+    } else {
+      setIsSelect(true)
+      props.setOrder([...order, { _id: openService._id, title: openService.title, icon: openService.icon, technologies: [], addons: [{ ...props }] }])
+    }
   };
 
-  const removeAddons = (id) => {
+  const removeAddons = (_id) => {
     setIsSelect(!isSelect);
-    const currentServiceIndex = order.findIndex((obj) => obj.id === openService.id);
+    const currentServiceIndex = order.findIndex((obj) => obj._id === openService._id);
     const currentService = order[currentServiceIndex];
-    const addons = currentService.addons.filter((obj) => obj.id !== id);
+    const addons = currentService.addons.filter((obj) => obj._id !== _id);
     const newOrder = [...order];
     newOrder[currentServiceIndex] = { ...currentService, addons };
     setOrder(newOrder);
@@ -185,7 +197,7 @@ const AddonsCard = (props) => {
       ) : (
         <TiTick
           className="absolute top-1 right-1 text-gray-400 cursor-pointer hover:scale-110"
-          onClick={() => removeAddons(props.id)}
+          onClick={() => removeAddons(props._id)}
         />
       )}
       <abbr
@@ -207,8 +219,18 @@ const CustomizeService = () => {
   const [selectedServices, setSelectedServices] = useState({})
   const [order, setOrder] = useState([]);
   const [price, setPrice] = useState(0)
+  const [customizeYourService, setCustomizeYourService] = useState([])
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const navigate = useNavigate()
 
 
+  useEffect(() => {
+    axios.get("/service").then(data => {
+      setCustomizeYourService(data.data.services)
+    })
+  }, [])
   useEffect(() => {
     let totalCost = 0;
     order.forEach((service) => {
@@ -226,9 +248,9 @@ const CustomizeService = () => {
 
   // Remove technologies from topbar section
   const removeTechnology = (serviceId, techId) => {
-    const currentServiceIndex = order.findIndex((obj) => obj.id === serviceId);
+    const currentServiceIndex = order.findIndex((obj) => obj._id === serviceId);
     const currentService = order[currentServiceIndex];
-    const technologies = currentService.technologies.filter((obj) => obj.id !== techId);
+    const technologies = currentService.technologies.filter((obj) => obj._id !== techId);
     const newOrder = [...order];
     newOrder[currentServiceIndex] = { ...currentService, technologies };
     setOrder(newOrder);
@@ -236,16 +258,54 @@ const CustomizeService = () => {
 
   // Remove addons from topbar section
   const removeAddons = (serviceId, addonId) => {
-    const currentServiceIndex = order.findIndex((obj) => obj.id === serviceId);
+    const currentServiceIndex = order.findIndex((obj) => obj._id === serviceId);
     const currentService = order[currentServiceIndex];
-    const addons = currentService.addons.filter((obj) => obj.id !== addonId);
+    const addons = currentService.addons.filter((obj) => obj._id !== addonId);
     const newOrder = [...order];
     newOrder[currentServiceIndex] = { ...currentService, addons };
     setOrder(newOrder);
   }
 
+  const handlePlaceOrder = async () => {
+    if (price === 0) return
+    const clientId = JSON.parse(localStorage.getItem("user_id"));
+    if (!clientId) return navigate("/login");
+
+    setIsSubmitting(true);
+    setIsError(false);
+    const newOrder = {
+      client_id: "6412dbbf273f62b05565d47c",
+      total_cost: price,
+      selected_items: order,
+    }
+    try {
+      const { data } = await axios.post("/order", newOrder)
+      console.log(data);
+      setIsSubmitting(false);
+      setIsSuccess(true)
+      setOrder([])
+    } catch (error) {
+      setIsSubmitting(false);
+      setIsError(true)
+      console.log(error);
+    }
+
+  }
+
   return (
     <div className='w-full  md:p-5 lg:p-10 flex items-center justify-center bg-white' >
+      {/* success snackbar start */}
+      {isSuccess && <Snackbar open={isSuccess} autoHideDuration={6000} onClose={() => setIsSuccess(false)}>
+        <Alert onClose={() => setIsSuccess(false)} severity="success" sx={{ width: '100%' }}>
+          Order placed successfully!
+        </Alert>
+      </Snackbar>}
+      {isError && <Snackbar open={isError} autoHideDuration={6000} onClose={() => setIsError(false)}>
+        <Alert onClose={() => setIsError(false)} severity="error" sx={{ width: '100%' }}>
+          Somethings went wrong!
+        </Alert>
+      </Snackbar>}
+      {/* success snackbar end*/}
       <div className="container">
         <h1 className='text-6xl text-primary-500 font-bold' >Customize Your Services</h1>
 
@@ -258,7 +318,7 @@ const CustomizeService = () => {
             <hr />
             <div className="w-full flex gap-1 flex-wrap justify-center lg:block">
               {
-                customizeYourServiceData.map((item, index) => (
+                customizeYourService.map((item, index) => (
                   <ServicesCard
                     key={index} {...item}
                     openService={openService}
@@ -292,7 +352,7 @@ const CustomizeService = () => {
                           <div key={index}
                             className="flex text-sm text-gray-400 items-center gap-1 px-2 py-1 border rounded-full hover:scale-110  transition-all bg-secondary-100">
                             <img key={index} src={tech.icon} alt={tech.title} className="h-5 w-5" />
-                            <GrFormClose className='hover:text-secondary-400' onClick={() => removeTechnology(item.id, tech.id)} />
+                            <GrFormClose className='hover:text-secondary-400' onClick={() => removeTechnology(item._id, tech._id)} />
                           </div>
                         ))
                       }
@@ -300,7 +360,7 @@ const CustomizeService = () => {
                         item.addons.map((addon, index) => (
                           <div key={index} className="flex text-sm text-gray-400 items-center gap-1 px-2 py-1 border rounded-full hover:scale-110  transition-all bg-secondary-100">
                             <img key={index} src={addon.icon} alt={addon.title} className="h-5 w-5" />
-                            <GrFormClose className='hover:text-secondary-400' onClick={() => removeAddons(item.id, addon.id)} />
+                            <GrFormClose className='hover:text-secondary-400' onClick={() => removeAddons(item._id, addon._id)} />
                           </div>
                         ))
                       }
@@ -362,9 +422,9 @@ const CustomizeService = () => {
               )
             }
             {/* End of Show Addons section */}
-            <button className='flex items-center gap-2 absolute bottom-2 right-2 px-3 py-2 rounded-full hover:shadow text-white bg-secondary-400 hover:bg-secondary-300 hover:scale-105 hover:font-bold transition-all'>
+            <button disabled={isSubmitting} onClick={handlePlaceOrder} className={`flex items-center gap-2 absolute bottom-2 right-2 px-3 py-2 rounded-full hover:shadow text-white bg-secondary-400 hover:bg-secondary-300 hover:scale-105 hover:font-bold transition-all disabled:secondary-100 ${isSubmitting && "cursor-not-allowed"}`}>
               Confirm
-              <AiOutlineDoubleRight />
+              {isSubmitting ? <FaSpinner className="animate-spin" /> : <AiOutlineDoubleRight />}
             </button>
           </div>
           {/* End of Right container */}
