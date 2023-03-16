@@ -31,7 +31,7 @@ function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
   return (
     <GrPrevious
-      className="z-10 text-6xl absolute left-0 top-1/2 cursor-pointer text-secondary-500 opacity-30 bg-secondary-500 hover:opacity-100 hover:bg-secondary-500 -translate-y-[100%] border p-2 rounded-full -translate-x-[20%] shadow"
+      className="z-2 text-6xl absolute left-0 top-1/2 cursor-pointer text-secondary-500 opacity-30 bg-secondary-500 hover:opacity-100 hover:bg-secondary-500 -translate-y-[100%] border p-2 rounded-full -translate-x-[20%] shadow"
       style={{ ...style, display: "block", }}
       onClick={onClick}
     />
@@ -59,7 +59,7 @@ export const SingleSlide = (props) => {
           <h1 className="text-6xl text-primary-500 font-bold mb-2">
             {props.title}
           </h1>
-          <p className='mb-5 text-gray-300 text-3xl font-bold'>{props.subTitle}</p>
+          <p className='mb-5 text-gray-300 text-3xl font-bold'>{props.subtitle}</p>
           <div className="flex gap-5 items-center mb-5">
             {/* <div className="pr-5 border-r border-gray-300">
                   <h1 className="text-4xl text-secondary-500 font-bold">
@@ -67,29 +67,34 @@ export const SingleSlide = (props) => {
                   </h1>
                 </div> */}
             <p className="md:w-2/3 w-4/5 text-xl">
-              {props.desc}
+              {props.description}
             </p>
           </div>
-          <Link to={props.link}>
+          <Link to={props.button_link}>
             <button className='bg-secondary-400 hover:bg-secondary-300 px-10 py-3 text-white rounded-sm hover:scale-110 transition-all font-bold mt-2 flex items-center gap-3'>
-              Contact Us <BsArrowRight />
+              {props.button_text} <BsArrowRight />
             </button>
           </Link>
         </div>
         <div className="right flex-1 flex items-end justify-center ">
-          <img src={props.img} alt={props.title} className="max-h-[50vh]" />
+          <img src={props.image} alt={props.title} className="max-h-[50vh]" />
         </div>
       </div>
     </div>
   )
 }
 
-function HeroSlide() {
+function HeroSlide({ heroData }) {
   return (
     <div className="w-full p-3">
       <Slider {...settings} className="py-2">
-        {
+        {/* {
           sliderData.map((item, index) => (
+            <SingleSlide key={index} {...item} />
+          ))
+        } */}
+        {
+          heroData && heroData.map((item, index) => (
             <SingleSlide key={index} {...item} />
           ))
         }

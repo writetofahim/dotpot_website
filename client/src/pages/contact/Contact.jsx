@@ -23,7 +23,7 @@ const Contact = () => {
     return (
         <>
             <Navbar />
-            <div className="w-full pt-[15vh]">
+            <div className="w-full pt-[15vh] p-2">
 
                 {/* Contact Form Section */}
                 <div className="full flex flex-col items-center justify-center mb-10">
