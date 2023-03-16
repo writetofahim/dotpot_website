@@ -5,7 +5,7 @@ The HeroSlide component is responsible for rendering the content slider of the h
 The Hero component has no props and can be used as a standalone component or as a part of a larger layout.
  */
 
-import axios from 'axios';
+import axios from '../../utils/axiosInstance';
 import React, { useEffect, useState } from 'react'
 import HeroSlide from './HeroSlide'
 import Particle from './Particle'
@@ -16,7 +16,7 @@ const Hero = () => {
     useEffect(() => {
         async function fetchHeroData() {
             try {
-                const response = await axios.get('http://localhost:8800/api/hero');
+                const response = await axios.get('/hero');
                 setHeroData(response.data);
             } catch (error) {
                 console.error(error);
