@@ -39,7 +39,6 @@ const WhoWeWorkWith = () => {
             .catch(error => console.error(error));
     }, []);
 
-    console.log(data)
 
     return (
         <div className='whoWeWorWith w-full min-h-[60vh] overflow-hidden py-10 md:flex md:flex-col md:justify-center md:items-center bg-primary-500 text-white'>

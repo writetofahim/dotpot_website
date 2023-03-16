@@ -6,7 +6,7 @@ It renders the section with a title, subtitle, and the slider component.
 
 import React from 'react'
 import WhatOurClientsSaySlider from './WhatOurClientsSaySlider'
-import {WhatOurClientSayData} from "../../data"
+import { WhatOurClientSayData } from "../../data"
 
 
 
