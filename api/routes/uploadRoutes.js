@@ -1,13 +1,14 @@
 const express = require('express');
-const { uploadToConversation, uploadToResponse } = require('../controllers/uploadController');
+const { uploadFileResponse } = require('../controllers/uploadController');
+
 const attachmentUpload = require('../middlewares/attachmentUpload');
 const router = express.Router();
 
 // upload file to conversation folder
-router.post('', attachmentUpload, uploadToConversation);
+router.post('/', attachmentUpload("conversation"), uploadFileResponse);
 
 // upload file to client response folder
-router.post('/response', uploadToResponse);
+router.post('/response', attachmentUpload("response"), uploadFileResponse);
 
 
 module.exports = router;
