@@ -16,32 +16,33 @@ Finally, the RecentWorksSlider component wraps the slider component and the indi
 
 import { Chip } from "@mui/material";
 import { Stack } from "@mui/system";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import { recentWorksData } from "../../data"
-import {GrNext,GrPrevious} from 'react-icons/gr'
+import { GrNext, GrPrevious } from 'react-icons/gr'
+import axios from "../../utils/axiosInstance"
 
 
 
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
-        return (
+    return (
         <GrNext
             className="text-6xl absolute right-0 top-1/2 cursor-pointer text-secondary-500 opacity-30 hover:opacity-100 bg-secondary-500 -translate-y-[100%] border p-2 rounded-full translate-x-[70%] shadow"
-            style={{ ...style, display: "block"}}
+            style={{ ...style, display: "block" }}
             onClick={onClick}
         />
-        );
-    }
-    
+    );
+}
+
 function SamplePrevArrow(props) {
     const { className, style, onClick } = props;
     return (
-    <GrPrevious
-        className="z-10 text-6xl absolute left-0 top-1/2 cursor-pointer text-secondary-500 opacity-30 hover:opacity-100 bg-secondary-500 -translate-y-[100%] border p-2 rounded-full -translate-x-[70%] shadow"
-        style={{ ...style, display: "block", }}
-        onClick={onClick}
-    />
+        <GrPrevious
+            className="z-2 text-6xl absolute left-0 top-1/2 cursor-pointer text-secondary-500 opacity-30 hover:opacity-100 bg-secondary-500 -translate-y-[100%] border p-2 rounded-full -translate-x-[70%] shadow"
+            style={{ ...style, display: "block", }}
+            onClick={onClick}
+        />
     );
 }
 
@@ -88,13 +89,13 @@ var settings = {
 export const SingleSlide = (props) => {
     return (
         <div className="mx-5 mb-20 rounded-lg relative">
-            <img src={props.img} alt="" className=" rounded-xl aspect-[1.4] object-cover" />
+            <img src={props.image} alt="" className=" rounded-xl aspect-[1.4] object-cover" />
             <div className="absolute b-0 left-1/2 transform -translate-x-1/2 translate-y-[-50%] bg-white w-[80%] rounded-xl shadow p-5 flex flex-col items-center">
                 <h3 className="text-xl font-bold text-gray-400 mb-2">{props.title}</h3>
                 <Stack direction="row" spacing={1} className="flex flex-wrap">
                     {
-                        props.tech.map((tech, index) => (
-                            <Chip label={tech} key={index} variant="outlined" />
+                        props.technologies && props.technologies.map((tech, index) => (
+                            <Chip label={tech} key={index} variant="outlined" className="mb-1" />
                         ))
                     }
                 </Stack>
@@ -104,11 +105,20 @@ export const SingleSlide = (props) => {
 }
 
 function RecentWorksSlider() {
+    const [data, setData] = useState(null);
+
+    // Data Fetching
+    useEffect(() => {
+        axios.get('/work')
+            .then(response => setData(response.data.works))
+            .catch(error => console.error(error));
+    }, []);
+
     return (
         <div className="w-full my-10">
             <Slider {...settings} className="py-2">
                 {
-                    recentWorksData.map((item, index) => (
+                    data && data.map((item, index) => (
                         <SingleSlide key={index} {...item} />
                     ))
                 }
