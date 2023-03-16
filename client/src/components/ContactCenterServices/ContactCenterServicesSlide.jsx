@@ -11,7 +11,8 @@ The settings object defines the behavior of the slider, including the number of 
 */
 
 
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "../../utils/axiosInstance"
 import Slider from "react-slick";
 import { contactCenterServicesData } from "../../data"
 import { GrNext, GrPrevious } from "react-icons/gr"
@@ -32,7 +33,7 @@ function SamplePrevArrow(props) {
     const { className, style, onClick } = props;
     return (
         <GrPrevious
-            className="z-10 text-6xl absolute left-0 top-1/2 cursor-pointer text-secondary-500 opacity-30 hover:opacity-100 bg-secondary-500 -translate-y-[50%] border p-2 rounded-full -translate-x-[30%] shadow"
+            className="z-2 text-6xl absolute left-0 top-1/2 cursor-pointer text-secondary-500 opacity-30 hover:opacity-100 bg-secondary-500 -translate-y-[50%] border p-2 rounded-full -translate-x-[30%] shadow"
             style={{ ...style, display: "block", }}
             onClick={onClick}
         />
@@ -85,17 +86,28 @@ export const SingleSlide = (props) => {
         <div className="bg-white md:w-[1/8] mx-2 h-[150px] p-3 rounded-xl shadow flex flex-col items-center justify-center hover:border hover:border-primary-500 transition-all">
             {/* <h3 className="text-3xl font-bold italic text-primary-500">{props.title}</h3> */}
             <img src={props.icon} alt={props.title} className="w-[30%]" />
-            <p className="mt-5 text-center text-primary-500 text-xl font-bold">{props.text}</p>
+            <p className="mt-5 text-center text-primary-500 text-xl font-bold">{props.title}</p>
         </div>
     )
 }
 
 function ContactCenterServicesSlide() {
+    const [data, setData] = useState(null)
+
+    // Data Fetching
+    useEffect(() => {
+        axios.get('/contact_center_service')
+            .then(response => setData(response.data))
+            .catch(error => console.error(error));
+    }, []);
+
+    console.log(data)
+
     return (
         <div className="w-full my-2">
             <Slider {...settings} className="py-2">
                 {
-                    contactCenterServicesData.map((item, index) => (
+                    data && data.map((item, index) => (
                         <SingleSlide key={index} {...item} />
                     ))
                 }

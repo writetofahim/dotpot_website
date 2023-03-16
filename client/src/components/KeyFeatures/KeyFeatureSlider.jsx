@@ -21,32 +21,33 @@ prevArrow: a custom Previous arrow component.
 responsive: an array of breakpoint objects that specify how many slides to display and scroll at different screen sizes.
 @returns JSX element
 */
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import { ourKeyFeatures } from "../../data"
-import {GrNext,GrPrevious} from 'react-icons/gr'
+import { GrNext, GrPrevious } from 'react-icons/gr'
+import axios from "../../utils/axiosInstance";
 
 
 
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
-        return (
+    return (
         <GrNext
             className="text-6xl absolute right-0 top-1/2 cursor-pointer text-secondary-500 opacity-30 bg-secondary-500 hover:opacity-100 hover:bg-secondary-500 border p-2 rounded-full -translate-x-[30%] shadow"
-            style={{ ...style, display: "block"}}
+            style={{ ...style, display: "block" }}
             onClick={onClick}
         />
-        );
-    }
-    
+    );
+}
+
 function SamplePrevArrow(props) {
     const { className, style, onClick } = props;
     return (
-    <GrPrevious
-        className="z-10 text-6xl absolute left-0 top-1/2 cursor-pointer text-secondary-500 opacity-30 bg-secondary-500 hover:opacity-100 hover:bg-secondary-500 border p-2 rounded-full translate-x-[30%] shadow"
-        style={{ ...style, display: "block", }}
-        onClick={onClick}
-    />
+        <GrPrevious
+            className="z-10 text-6xl absolute left-0 top-1/2 cursor-pointer text-secondary-500 opacity-30 bg-secondary-500 hover:opacity-100 hover:bg-secondary-500 border p-2 rounded-full translate-x-[30%] shadow"
+            style={{ ...style, display: "block", }}
+            onClick={onClick}
+        />
     );
 }
 
@@ -101,18 +102,28 @@ export const SingleSlide = (props) => {
                 {props.title}
             </h2>
             <p className="">
-                {props.desc}
+                {props.description}
             </p>
         </div>
     )
 }
 
 function KeyFeatureSlider() {
+    const [data, setData] = useState(null);
+
+    // Data Fetching
+    useEffect(() => {
+        axios.get('/key_feature')
+            .then(response => setData(response.data))
+            .catch(error => console.error(error));
+    }, []);
+
+
     return (
         <div className="w-full overflow-x-hidden my-10 py-10">
             <Slider {...settings} className="py-2">
                 {
-                    ourKeyFeatures.map((feature, index) => (
+                    data && data.map((feature, index) => (
                         <SingleSlide key={index} {...feature} />
                     ))
                 }

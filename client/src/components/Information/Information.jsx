@@ -23,33 +23,30 @@ const Information = () => {
             .catch(error => console.error(error));
     }, []);
 
-    console.log(data)
 
     // const videoUrl = 'https://www.youtube.com/embed/A23jUjVatn4?autoplay=1&loop=1';
     return (
         <div className='md:p-5 bg-white w-full flex justify-center items-center'>
             <div className="w-full md:max-w[1400px] lg:max-w-[1400px] p-10 md:px-5 lg:px-0 flex flex-col items-center justify-between md:flex-col lg:flex-row gap-5">
                 <div className="left flex-[2] h-full">
-                    <h1 className="text-6xl text-primary-500 font-bold mb-5 ">{data.name}</h1>
-                    <p className="mb-5 text-2xl text-gray-300 font-bold">{data.slogan}</p>
+                    <h1 className="text-6xl text-primary-500 font-bold mb-5 ">{data && data.name}</h1>
+                    <p className="mb-5 text-2xl text-gray-300 font-bold">{data && data.slogan}</p>
                     <p className="text-justify text-xl text-gray-300">
-                        {data.about}
+                        {data && data.about}
                     </p>
                 </div>
                 <div className="right flex-[3] w-full flex items-center justify-center lg:justify-end md:p-10  ">
-                    {
-                        data.video_link ?
-                            (<iframe
-                                src={data.video_link}
-                                title="YouTube video player"
-                                frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowFullScreen
-                                className='rounded-3xl w-full md:w-4/5 aspect-video mt-5 shadow-lg'
-                            ></iframe>) : (
-                                <img src={data.image_link} alt="" className="rounded-3xl w-full md:w-4/5 aspect-video mt-5 shadow-lg" />
-                            )
-                    }
+
+                    <iframe
+                        src={data && data.video_link}
+                        title="YouTube video player"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                        className='rounded-3xl w-full md:w-4/5 aspect-video mt-5 shadow-lg'
+                    ></iframe>
+                    {/* <img src={data && data.image_link} alt="" className="rounded-3xl w-full md:w-4/5 aspect-video mt-5 shadow-lg" /> */}
+
                 </div>
             </div>
         </div>
