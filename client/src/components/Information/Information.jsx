@@ -10,31 +10,46 @@ The right column contains an embedded YouTube video with a custom URL.
 The video is responsive and maintains its aspect ratio on different screen sizes.
  */
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from '../../utils/axiosInstance'
 import Card from './Card'
-import information from "../../assets/img/information.png"
 
 const Information = () => {
-    const videoUrl = 'https://www.youtube.com/embed/A23jUjVatn4?autoplay=1&loop=1';
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+        axios.get('/info')
+            .then(response => setData(response.data[0]))
+            .catch(error => console.error(error));
+    }, []);
+
+    console.log(data)
+
+    // const videoUrl = 'https://www.youtube.com/embed/A23jUjVatn4?autoplay=1&loop=1';
     return (
         <div className='md:p-5 bg-white w-full flex justify-center items-center'>
             <div className="w-full md:max-w[1400px] lg:max-w-[1400px] p-10 md:px-5 lg:px-0 flex flex-col items-center justify-between md:flex-col lg:flex-row gap-5">
                 <div className="left flex-[2] h-full">
-                    <h1 className="text-6xl text-primary-500 font-bold mb-5 ">DotpotiT</h1>
-                    <p className="mb-5 text-2xl text-gray-300 font-bold">Make your business sucess</p>
+                    <h1 className="text-6xl text-primary-500 font-bold mb-5 ">{data.name}</h1>
+                    <p className="mb-5 text-2xl text-gray-300 font-bold">{data.slogan}</p>
                     <p className="text-justify text-xl text-gray-300">
-                        DotpotiT offers a range of technology support services, including SEO, web design, and mobile app development. Our team provides tailored high-quality services to meet your specific needs. Whether you need to improve your website's ranking or develop a cutting-edge mobile app, we have the expertise to help you achieve your goals. We are also a leading call center support company, providing top-notch customer service and support. We work closely with each client to develop customized solutions that are tailored to meet their unique requirements. With our extensive experience and expertise, we are confident in providing you with the support and solutions you need to achieve your business objectives.
+                        {data.about}
                     </p>
                 </div>
                 <div className="right flex-[3] w-full flex items-center justify-center lg:justify-end md:p-10  ">
-                    <iframe
-                        src={videoUrl}
-                        title="YouTube video player"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowFullScreen
-                        className='rounded-3xl w-full md:w-4/5 aspect-video mt-5 shadow-lg'
-                    ></iframe>
+                    {
+                        data.video_link ?
+                            (<iframe
+                                src={data.video_link}
+                                title="YouTube video player"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowFullScreen
+                                className='rounded-3xl w-full md:w-4/5 aspect-video mt-5 shadow-lg'
+                            ></iframe>) : (
+                                <img src={data.image_link} alt="" className="rounded-3xl w-full md:w-4/5 aspect-video mt-5 shadow-lg" />
+                            )
+                    }
                 </div>
             </div>
         </div>

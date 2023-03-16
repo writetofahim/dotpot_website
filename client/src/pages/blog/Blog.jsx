@@ -22,15 +22,15 @@ import { AiOutlineDoubleRight } from "react-icons/ai"
 
 const BlogCard = (props) => {
     return (
-        <div class="container p-5 mx-auto border rounded-xl shadow-xl">
-            <div class=" lg:flex lg:items-center">
-                <img class="object-cover w-full lg:mx-6 lg:w-1/2 rounded-xl h-72 lg:h-96" src={props.img} alt="" />
+        <div className="container p-5 mx-auto border rounded-xl shadow-xl">
+            <div className=" lg:flex lg:items-center">
+                <img className="object-cover w-full lg:mx-6 lg:w-1/2 rounded-xl h-72 lg:h-96" src={props.img} alt="" />
 
-                <div class="lg:w-1/2 lg:mt-0 lg:mx-6 ">
-                    <h3 class="text-3xl uppercase">{props.title}</h3>
+                <div className="lg:w-1/2 lg:mt-0 lg:mx-6 ">
+                    <h3 className="text-3xl uppercase">{props.title}</h3>
 
 
-                    <p class="mt-3 text-sm text-gray-500 dark:text-gray-300 md:text-sm">
+                    <p className="mt-3 text-sm text-gray-500 dark:text-gray-300 md:text-sm">
                         {props.date}
                     </p>
 
@@ -46,7 +46,7 @@ const BlogCard = (props) => {
                         }
                     </div>
 
-                    <Link to={`./${props.id}`} class="mt-2 text-secondary-300 hover:text-secondary-500 transition-all flex items-center">
+                    <Link to={`./${props.id}`} className="mt-2 text-secondary-300 hover:text-secondary-500 transition-all flex items-center">
                         Read more
                         <AiOutlineDoubleRight />
                     </Link>
