@@ -4,7 +4,7 @@ const socialMediaSchema = new mongoose.Schema(
     {
         platform: {
         type: String,
-        enum: ['Facebook', 'Twitter', 'Instagram', 'LinkedIn', 'YouTube', 'Pinterest', 'TikTok', 'Snapchat'],
+        enum: ['Facebook', 'Twitter', 'Instagram', 'LinkedIn', 'YouTube', 'Pinterest', 'TikTok', 'Snapchat','Whatsapp'],
         required: true
         },
         username: {

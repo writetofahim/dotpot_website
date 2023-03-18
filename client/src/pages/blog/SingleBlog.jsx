@@ -10,7 +10,7 @@ The desc property of the blog object is parsed using parse to render any HTML ta
 This component also renders Navbar, RecentBlogs, and Footer.
  */
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import Footer from '../../components/Footer/Footer'
 import Navbar from '../../components/Navbar/Navbar'
@@ -18,35 +18,48 @@ import RecentBlogs from '../../components/RecentBlogs/RecentBlogs'
 import { blogData } from '../../data'
 import parse from 'react-html-parser';
 import ChatPopup from '../../components/ChatPopup/ChatPopup'
+import axios from '../../utils/axiosInstance'
 
 const SingleBlog = () => {
 
     const { id } = useParams();
-    const blog = blogData[id]
+    const [data, setData] = useState(null);
+
+    // Data Fetching
+    useEffect(() => {
+        axios.get(`/blog/${id}`)
+            .then(response => setData(response.data))
+            .catch(error => console.error(error));
+    }, []); 
+
 
     return (
         <>
             <Navbar />
             <div className="w-full md:p-[15vh] pt-[15vh]">
-                <div className='full flex items-center justify-center'>
-                    <div className="container flex flex-col items-center p-10 text-justify">
-                        <img src={blog.img} alt="" />
-                        <div className="md:w-3/5">
-                            <h1 className="my-5 text-3xl font-bold text-left">{blog.title}</h1>
-                            <p className="text-gray-400">{blog.date}</p>
-                            {
-                                blog.categories.map((item, index) => (
-                                    <Link key={index} to={`/blog?catergory=${item}`} >
-                                        <p className="inline text-gray-400 hover:text-secondary-500 transition-all">{item}, </p>
-                                    </Link>
-                                ))
-                            }
-                            {
-                                parse(blog.desc)
-                            }
+                {
+                    data && (
+                        <div className='full flex items-center justify-center'>
+                            <div className="container flex flex-col items-center p-10 text-justify">
+                                <img src={data.image} alt="" />
+                                <div className="md:w-3/5">
+                                    <h1 className="my-5 text-3xl font-bold text-left">{data.title}</h1>
+                                    <p className="text-gray-400">{data.date}</p>
+                                    {
+                                        data.categories.map((item, index) => (
+                                            <Link key={index} to={`/blog?catergory=${item}`} >
+                                                <p className="inline text-gray-400 hover:text-secondary-500 transition-all">{item}, </p>
+                                            </Link>
+                                        ))
+                                    }
+                                    {
+                                        parse(data.desc)
+                                    }
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                    )
+                }
 
                 <RecentBlogs />
                 <ChatPopup />

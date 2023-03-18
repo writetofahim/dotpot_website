@@ -9,7 +9,7 @@ The Blog component renders a title, a description, a container for the list of B
 Tailwind css is used for styling 
  */
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../../components/Navbar/Navbar'
 import Footer from '../../components/Footer/Footer'
 import { blogData } from '../../data'
@@ -19,12 +19,14 @@ import { BsArrowRight } from 'react-icons/bs'
 import { Chip, Pagination } from '@mui/material'
 import ChatPopup from '../../components/ChatPopup/ChatPopup'
 import { AiOutlineDoubleRight } from "react-icons/ai"
+import axios from '../../utils/axiosInstance'
 
 const BlogCard = (props) => {
+    const id = props._id
     return (
         <div className="container p-5 mx-auto border rounded-xl shadow-xl">
             <div className=" lg:flex lg:items-center">
-                <img className="object-cover w-full lg:mx-6 lg:w-1/2 rounded-xl h-72 lg:h-96" src={props.img} alt="" />
+                <img className="object-cover w-full lg:mx-6 lg:w-1/2 rounded-xl h-72 lg:h-96" src={props.image} alt="" />
 
                 <div className="lg:w-1/2 lg:mt-0 lg:mx-6 ">
                     <h3 className="text-3xl uppercase">{props.title}</h3>
@@ -46,7 +48,7 @@ const BlogCard = (props) => {
                         }
                     </div>
 
-                    <Link to={`./${props.id}`} className="mt-2 text-secondary-300 hover:text-secondary-500 transition-all flex items-center">
+                    <Link to={`./${id}`} className="mt-2 text-secondary-300 hover:text-secondary-500 transition-all flex items-center">
                         Read more
                         <AiOutlineDoubleRight />
                     </Link>
@@ -58,6 +60,16 @@ const BlogCard = (props) => {
 }
 
 const Blog = () => {
+    const [data, setData] = useState(null);
+
+    // Data Fetching
+    useEffect(() => {
+        axios.get('/blog')
+            .then(response => setData(response.data))
+            .catch(error => console.error(error));
+    }, []); 
+
+
     return (
         <>
             <Navbar />
@@ -67,7 +79,7 @@ const Blog = () => {
                     <p className="text-lg mb-10">Follow our blog to get all the latest tech news</p>
                     <div className="container flex gap-5 md:gap-10 justify-center p-5 flex-wrap">
                         {
-                            blogData.map((item, index) => (
+                            data && data.map((item, index) => (
                                 <BlogCard key={index} {...item} />
                             ))
                         }
