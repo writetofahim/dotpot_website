@@ -14,12 +14,13 @@ Finally, the RecentWorksSlider function maps over the blogData array to create a
 
 import { Chip } from "@mui/material";
 import { Stack } from "@mui/system";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import { blogData } from "../../data"
 import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 import {GrNext,GrPrevious} from "react-icons/gr"
+import axios from "../../utils/axiosInstance";
 
 
 function SampleNextArrow(props) {
@@ -88,12 +89,12 @@ var settings = {
 export const SingleSlide = (props) => {
     return (
         <div className="mx-5 mb-20 rounded-lg">
-            <img src={props.img} alt="" className="rounded-tl-xl rounded-tr-xl w-full aspect-video" />
+            <img src={props.image} alt="" className="rounded-tl-xl rounded-tr-xl w-full aspect-video" />
             <div className=" bg-white rounded-bl-xl rounded-br-xl shadow p-5 flex flex-col">
                 <Stack direction="row" className="flex flex-wrap gap-1">
                     {
-                        props.categories.map((tech, index) => (
-                            <Chip label={tech} key={index} variant="outlined" className="hover:border-primary-500 cursor-pointer" />
+                        props.categories.map((category, index) => (
+                            <Chip label={category} key={index} variant="outlined" className="hover:border-primary-500 cursor-pointer" />
                         ))
                     }
                 </Stack>
@@ -105,12 +106,24 @@ export const SingleSlide = (props) => {
     )
 }
 
-function RecentWorksSlider() {
+function RecentBlogsSlider() {
+
+    const [data, setData] = useState(null);
+
+    // Data Fetching
+    useEffect(() => {
+        axios.get('/blog')
+            .then(response => setData(response.data))
+            .catch(error => console.error(error));
+    }, []);
+
+    console.log(data)
+
     return (
         <div className="w-full my-2">
             <Slider {...settings} className="py-2">
                 {
-                    blogData.map((item, index) => (
+                    data.map((item, index) => (
                         <SingleSlide key={index} {...item} />
                     ))
                 }
@@ -119,4 +132,4 @@ function RecentWorksSlider() {
     );
 }
 
-export default RecentWorksSlider;
+export default RecentBlogsSlider;
