@@ -54,10 +54,12 @@ function OurPartnersSlider() {
 
     // Data Fetching
     useEffect(() => {
-        axios.get('/work')
-            .then(response => setData(response.data.works))
+        axios.get('/our_partner')
+            .then(response => setData(response.data.data))
             .catch(error => console.error(error));
     }, []); 
+
+    console.log(data)
 
 
     return (
@@ -66,7 +68,7 @@ function OurPartnersSlider() {
                 {
                     data && data.map((item, index) => (
                         <div className="mx-5 p-5 rounded-lg flex items-center justify-center hover:scale-110 transition-all" key={index}>
-                            <img src={item.image} alt={item.title} className="h-[100px]" />
+                            <img src={item.logo} alt={item.title} className="h-[100px]" />
                         </div>
                     ))
                 }
