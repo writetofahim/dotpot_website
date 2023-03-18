@@ -22,7 +22,6 @@ const SocialMedia = () => {
             .catch(error => console.error(error));
     }, []);
 
-    console.log(data)
     return (
         <div className='w-full overflow-hidden py-10 md:flex md:flex-col md:justify-center bg-white'>
             <div className="p-5 mt-5 w-full md:max-w-[1400px] self-center flex gap-10 justify-between items-center flex-col md:flex-row lg:flex-row">

@@ -3,9 +3,10 @@ This component is a slider that displays a list of partners logos.
 It imports React and Slider from the "react-slick" library, as well as the ourPartnersSliderData array from the ../../data file. It sets some options for the slider, including autoplay and breakpoints for responsiveness. 
 The OurPartnersSlider function returns the slider component with the settings applied, which includes mapping through the ourPartnersSliderData array to display each partner logo as an image within a div.
  */
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import { ourPartnersSliderData } from "../../data"
+import axios from "../../utils/axiosInstance"
 
 
 var settings = {
@@ -48,13 +49,24 @@ var settings = {
 
 
 function OurPartnersSlider() {
+
+    const [data, setData] = useState(null);
+
+    // Data Fetching
+    useEffect(() => {
+        axios.get('/work')
+            .then(response => setData(response.data.works))
+            .catch(error => console.error(error));
+    }, []); 
+
+
     return (
         <div className="w-full overflow-x-hidden bg-white">
             <Slider {...settings} className="py-2">
                 {
-                    ourPartnersSliderData.map((item, index) => (
+                    data.map((item, index) => (
                         <div className="mx-5 p-5 rounded-lg flex items-center justify-center hover:scale-110 transition-all" key={index}>
-                            <img src={ourPartnersSliderData[index]} className="h-[100px]" />
+                            <img src={item.image} alt={item.title} className="h-[100px]" />
                         </div>
                     ))
                 }
