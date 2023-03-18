@@ -7,11 +7,22 @@ The socialNetworkData array is mapped over and for each item in the array, a Lin
 The div contains an image element.
  */
 
-import React from 'react'
+import axios from '../../utils/axiosInstance';
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { socialNetworkData } from '../../data'
 
 const SocialMedia = () => {
+    const [data, setData] = useState(null);
+
+    // Data Fetching
+    useEffect(() => {
+        axios.get('/socialmedia')
+            .then(response => setData(response.data))
+            .catch(error => console.error(error));
+    }, []);
+
+    console.log(data)
     return (
         <div className='w-full overflow-hidden py-10 md:flex md:flex-col md:justify-center bg-white'>
             <div className="p-5 mt-5 w-full md:max-w-[1400px] self-center flex gap-10 justify-between items-center flex-col md:flex-row lg:flex-row">
@@ -21,7 +32,7 @@ const SocialMedia = () => {
                 </div>
                 <div className="flex-1 gap-5 flex flex-wrap justify-center">
                     {
-                        socialNetworkData.map((item, index) => {
+                        data && data.map((item, index) => {
                             return (
                                 <Link to={item.link} key={index} target="_blank">
                                     <div key={index} className="md:w-[100px] md:h-[100px] p-2 rounded-full md:rounded-lg shadow flex items-center justify-center hover:border hover: border-purple-500 hover:scale-110 hover:shadow-xl transition-all">

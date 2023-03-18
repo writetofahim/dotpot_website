@@ -117,13 +117,12 @@ function RecentBlogsSlider() {
             .catch(error => console.error(error));
     }, []);
 
-    console.log(data)
 
     return (
         <div className="w-full my-2">
             <Slider {...settings} className="py-2">
                 {
-                    data.map((item, index) => (
+                    data && data.map((item, index) => (
                         <SingleSlide key={index} {...item} />
                     ))
                 }

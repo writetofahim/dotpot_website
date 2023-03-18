@@ -9,11 +9,13 @@ const socialMediaSchema = new mongoose.Schema(
         },
         username: {
         type: String,
-        required: true
         },
         url: {
         type: String,
         required: true
+        },
+        icon:{
+        type: String
         }
     },
     { timestamps: true }
