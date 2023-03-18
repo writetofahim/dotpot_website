@@ -8,7 +8,7 @@ The component has a state hook that toggles a menu when the screen size is small
 
 To customize the links or add new ones, simply modify the Link components and their corresponding text inside the ul element.
 
-To apply custom styles, modify the with tailwind css classes and the backgroud style is in index.css file.
+To apply custom styles, modify the with tailwind css classes and the background style is in index.css file.
  */
 
 import React, { useContext, useEffect, useState } from "react";
@@ -16,19 +16,12 @@ import { HiMenuAlt4 } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import logo from "../../assets/img/logo.png"
+import { AuthContext } from "../../contexts/AuthContext";
 
 
 const Navbar = () => {
     const [toggleMenu, setToggleMenu] = useState(false);
-    const [isLogin, setIsLogin] = useState(false);
-
-    const login = () => {
-        setIsLogin(true);
-    }
-
-    const logout = () => {
-        setIsLogin(false);
-    }
+    const { user, login, error, logout } = useContext(AuthContext);
 
     return (
         <div className="w-full flex items-center justify-center fixed z-10 bg-white">
@@ -37,7 +30,7 @@ const Navbar = () => {
                     <Link to='/'>
                         <img src={logo} alt="" className="w-60" />
                     </Link>
-                    <p className="text-gray-500 hover:text-primary-400 hidden lg:hidden lg:block italic">We make your Business Successfull</p>
+                    <p className="text-gray-500 hover:text-primary-400 hidden lg:hidden lg:block italic">We make your Business Successful</p>
                 </div>
                 <ul className="lg:flex hidden list-none flex-row justify-between items-center flex-initial">
                     {/* {["home", "about us", "Services", "Contact"].map((item, index) => (
@@ -60,8 +53,10 @@ const Navbar = () => {
                     </Link>
 
                     {
-                        !isLogin ? (
-                            <li className="mx-4 cursor-pointer uppercase text-white font-bold lg:text-gray-400 text-lg hover:scale-110 hover:text-primary-400" onClick={() => login()}>Login</li>
+                        !user ? (
+                            <Link to="/login">
+                                <li className="mx-4 cursor-pointer uppercase text-white font-bold lg:text-gray-400 text-lg hover:scale-110 hover:text-primary-400">Login</li>
+                            </Link>
                         ) : (
                             <li className="mx-4 cursor-pointer uppercase text-white font-bold lg:text-gray-400 text-lg hover:scale-110 hover:text-primary-400" onClick={() => logout()}>Logout</li>
                         )

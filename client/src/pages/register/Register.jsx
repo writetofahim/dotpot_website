@@ -1,27 +1,46 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-import Navbar from '../../components/Navbar/Navbar'
-import Footer from '../../components/Footer/Footer'
-import { RxPerson } from "react-icons/rx"
-import Particle from '../../components/Hero/Particle'
-import axios from "../../utils/axiosInstance"
+import React, { useContext, useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import Navbar from '../../components/Navbar/Navbar';
+import Footer from '../../components/Footer/Footer';
+import { RxPerson } from "react-icons/rx";
+import Particle from '../../components/Hero/Particle';
 import { FaSpinner } from "react-icons/fa";
+import { AuthContext } from '../../contexts/AuthContext';
 
 
 const Register = () => {
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false);
+  const { user, registration, error } = useContext(AuthContext);
+  const navigate = useNavigate()
+  useEffect(() => {
+    if (user) {
+      // If user exists, navigate to home page ("/")
+      navigate("/");
+    }
+  }, [user]) // This effect runs when the user value changes
 
+  // Define a function to handle form submission
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    setIsLoading(true)
+    e.preventDefault();
+    if (e.target.password.value !== e.target.confirmPassword.value) {
+      // If the password and confirm password fields don't match,
+      return setError("Password and confirm password is not same!")
+    }
+    setIsLoading(true);
     const user = {
       username: e.target.username.value,
       email: e.target.email.value,
       password: e.target.password.value
     }
-    const { data } = axios.post("/auth/register", user)
-    console.log(data);
-    setIsLoading(false)
+    try {
+      // Call the registration function from the AuthContext and pass in the user object
+      await registration(user);
+      e.target.reset();
+      setIsLoading(false);
+    } catch (error) {
+      setIsLoading(false)
+    }
+
   }
   return (
     <>
@@ -30,8 +49,6 @@ const Register = () => {
       <section className="pt-[10vh] flex items-center justify-center">
         <div className="container min-h-[100vh] flex items-center justify-center p-3">
           <form onSubmit={handleSubmit} className="w-full max-w-md p-5 border rounded-xl shadow-xl glassmorphism">
-
-
             <h1 className="text-center text-6xl text-primary-500 font-bold">Register</h1>
 
             <div className="relative flex items-center mt-8">
@@ -39,7 +56,7 @@ const Register = () => {
                 <RxPerson />
               </span>
 
-              <input name='username' type="email" className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300" placeholder="Full Name" required />
+              <input name='username' type="text" className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300" placeholder="Full Name" required />
             </div>
 
 
@@ -74,6 +91,7 @@ const Register = () => {
             </div>
 
             <div className="mt-6">
+              {error && <p className='text-red-500 mb-3'>{error}</p>}
               <button disabled={isLoading} className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize bg-primary-500 rounded-lg hover:bg-primary-400 hover:shadow-xl hover:scale-105 transition-all ">
                 <span className='w-[max-content] mx-auto flex items-center gap-2'> Sign up {isLoading && <FaSpinner className="animate-spin" />}</span>
               </button>

@@ -30,12 +30,15 @@ exports.register = async (req, res) => {
     // Return token
     const payload = {
       user: {
-        id: user.id
+        id: user._id
       }
     };
+
+    const { password: pw, ...rest } = user.toObject()
+
     jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: 3600 }, (err, token) => {
       if (err) throw err;
-      res.json({ token });
+      res.json({ token, user: rest });
     });
   } catch (err) {
     console.error(err.message);
@@ -63,12 +66,14 @@ exports.login = async (req, res) => {
     // Return token
     const payload = {
       user: {
-        id: user.id
+        id: user._id
       }
     };
+    const { password: pw, ...rest } = user.toObject()
+
     jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: 3600 }, (err, token) => {
       if (err) throw err;
-      res.json({ token });
+      res.json({ token, user: rest });
     });
   } catch (err) {
     console.error(err.message);

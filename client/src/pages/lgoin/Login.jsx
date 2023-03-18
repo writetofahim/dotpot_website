@@ -1,17 +1,59 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext, useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import Footer from '../../components/Footer/Footer'
 import Navbar from '../../components/Navbar/Navbar'
 import Particle from '../../components/Hero/Particle'
+import { AuthContext } from '../../contexts/AuthContext'
+import { FaSpinner } from "react-icons/fa";
+
 
 const Login = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  // create a isLoading state and setIsLoading setter using the useState hook, initialize to false
+  const { user, login, error } = useContext(AuthContext);
+  // use the useContext hook to get the user, login, and error values from the AuthContext
+  const navigate = useNavigate();
+  // use the useNavigate hook to get the navigate function
+
+  useEffect(() => {
+    // use the useEffect hook to check if user exists
+    if (user) {
+      // if user exists
+      navigate("/"); // navigate to the home page
+    }
+  }, [user]) // run the effect only when user changes
+
+  const handleSubmit = async (e) => {
+    // define a handleSubmit function that takes an event argument
+    e.preventDefault(); // prevent default form submission behavior
+    setIsLoading(true); // set isLoading state to true
+    // get the email value from the form
+    const email = e.target.email.value;
+    // get the password value from the form
+    const password = e.target.password.value;
+
+    // try to log in the user
+    try {
+      // call the login function with email and password arguments
+      await login(email, password);
+      // reset the form
+      e.target.reset();
+      // set isLoading state to false
+      setIsLoading(false);
+      // if an error occurs
+    } catch (error) {
+      // set isLoading state to false
+      setIsLoading(false);
+    }
+
+  }
   return (
     <>
       <Navbar />
       <Particle />
       <section className="pt-[10vh] flex items-center justify-center">
         <div className="container min-h-[100vh] flex items-center justify-center p-5">
-          <form className="w-full max-w-md p-5 border rounded-xl shadow-xl glassmorphism">
+          <form onSubmit={handleSubmit} className="w-full max-w-md p-5 border rounded-xl shadow-xl glassmorphism">
 
 
             <h1 className="text-center text-6xl text-primary-500 font-bold">SIGN IN</h1>
@@ -23,7 +65,7 @@ const Login = () => {
                 </svg>
               </span>
 
-              <input type="email" className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300" placeholder="Email address" />
+              <input type="email" name='email' className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300" placeholder="Email address" />
             </div>
 
             <div className="relative flex items-center mt-4">
@@ -33,12 +75,13 @@ const Login = () => {
                 </svg>
               </span>
 
-              <input type="password" className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300" placeholder="Password" />
+              <input type="password" name='password' className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300" placeholder="Password" />
             </div>
 
             <div className="mt-6">
+              {error && <p className='text-red-500 mb-3'>{error}</p>}
               <button className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize bg-primary-500 rounded-lg hover:bg-primary-400 hover:shadow-xl hover:scale-105 transition-all">
-                Sign in
+                <span className='w-[max-content] mx-auto flex items-center gap-2'> Sign in {isLoading && <FaSpinner className="animate-spin" />}</span>
               </button>
 
               {/* <p className="mt-4 text-center text-gray-600 dark:text-gray-400">or sign in with</p>
