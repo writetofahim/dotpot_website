@@ -1,3 +1,4 @@
+const fs = require('fs');
 // Import the uploader utility
 const uploader = require("../utilities/uploader");
 
@@ -9,9 +10,14 @@ const uploader = require("../utilities/uploader");
 
 function attachmentUpload(subFolderName) {
     return (req, res, next) => {
+        const folderName = `./uploads/${subFolderName}`;
+        // Check if folder exists, if not create it
+        if (!fs.existsSync(folderName)) {
+            fs.mkdirSync(folderName);
+        }
         const upload = uploader(
             subFolderName,
-            ["image/jpeg", "image/jpg", "image/png", 'application/pdf'],
+            ["image/jpeg", "image/jpg", "image/png", "application/pdf"],
             9273781,
             5,
             "Only .jpg, jpeg, .png or pdf format allowed!"
@@ -27,8 +33,7 @@ function attachmentUpload(subFolderName) {
                 next();
             }
         });
-    }
-
+    };
 }
 
 module.exports = attachmentUpload;
