@@ -64,7 +64,7 @@ function OurPartnersSlider() {
         <div className="w-full overflow-x-hidden bg-white">
             <Slider {...settings} className="py-2">
                 {
-                    data.map((item, index) => (
+                    data && data.map((item, index) => (
                         <div className="mx-5 p-5 rounded-lg flex items-center justify-center hover:scale-110 transition-all" key={index}>
                             <img src={item.image} alt={item.title} className="h-[100px]" />
                         </div>
