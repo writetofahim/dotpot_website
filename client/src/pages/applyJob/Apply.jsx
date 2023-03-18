@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { jobPageData, inputFields } from '../../data';
 import { BsArrowRight } from "react-icons/bs"
 import NavbarJob from '../../components/NavbarJob/NavbarJob';
+import axios from '../../utils/axiosInstance';
 
 
 export const InputFields = ({ title, placeholder, type, name, required }) => {
@@ -16,8 +17,16 @@ export const InputFields = ({ title, placeholder, type, name, required }) => {
 
 const Apply = () => {
 
+    const [data,setData] = useState(null)
+
     let { id } = useParams();
-    const jobPosition = jobPageData.jobs[id];
+
+     // Data Fetching
+     useEffect(() => {
+        axios.get(`/job/${id}`)
+            .then(response => setData(response.data))
+            .catch(error => console.error(error));
+    }, []); 
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -39,9 +48,9 @@ const Apply = () => {
             <NavbarJob />
             <div className='w-full flex items-center justify-center overflow-x-hidden' >
                 <div className="w-full max-w-[1400px] container p-5 flex flex-col items-center">
-                    <h1 className="text-3xl text-primary-500 font-bold mb-10">Apply Now for {jobPosition.title}</h1>
+                    <h1 className="text-3xl text-primary-500 font-bold mb-10">Apply Now for {data && data.title}</h1>
                     <form onSubmit={handleSubmit} className='md:w-3/5 border rounded-xl p-5 shadow-lg mb-5'>
-                        <h3 className="text-xl text-center mb-3">{jobPosition.title}</h3>
+                        <h3 className="text-xl text-center mb-3">{data && data.title}</h3>
                         {
                             inputFields.map((item, index) => (
                                 <InputFields key={index} {...item} />

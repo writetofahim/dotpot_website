@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import NavbarJob from '../../components/NavbarJob/NavbarJob'
 import Footer from '../../components/Footer/Footer'
 import { jobPageData } from '../../data';
@@ -7,14 +7,24 @@ import { TfiLocationPin } from 'react-icons/tfi'
 import { BsArrowRight } from 'react-icons/bs'
 import { Chip, Divider } from '@mui/material';
 import { Link, useParams } from 'react-router-dom';
+import axios from '../../utils/axiosInstance';
 
 
 const ApplyMobile = () => {
   const { id } = useParams();
-  console.log(id)
 
-  const jobs = jobPageData.jobs;
-  const job = jobs.find((obj) => obj.id == id)
+  const [job,setJob] = useState(null)
+
+    // Data Fetching
+    useEffect(() => {
+      axios.get(`/job/${id}`)
+          .then(response => setJob(response.data))
+          .catch(error => console.error(error));
+  }, []); 
+
+
+  console.log(job)
+
 
   return (
     <div className='w-full'>
@@ -22,7 +32,7 @@ const ApplyMobile = () => {
       <div className="flex item-center justify-center py-10">
         <div className="right md:w-3/5 sticky top-20 rounded-xl border" id='jobDetails'>
           {
-            id !== null && (
+            job !== null && (
               <>
                 {/* // Top Section */}
                 <div className="p-5 w-full shadow">
@@ -39,7 +49,7 @@ const ApplyMobile = () => {
                     <p>{job.location}</p>
                   </div>
                   <p>{job.type}</p>
-                  <h3 className='p-1 bg-gray-200 w-max my-1 rounded'>Salary : {job.selary.min}TK - {job.selary.max}TK</h3>
+                  <h3 className='p-1 bg-gray-200 w-max my-1 rounded'>Salary : {job.salary.min}TK - {job.salary.max}TK</h3>
                   <div className="flex flex-wrap gap-1">
                     {
                       job.benefits.map((item, index) => (
@@ -60,12 +70,14 @@ const ApplyMobile = () => {
                   <p className="">{job.type}</p>
                   <Divider className='py-3' />
                   <h3 className="text-xl font-bold mt-2">Benefits</h3>
-                  {
+                  <div className="w-full flex flex-wrap gap-1">
+                    {
                     job.benefits.map((item, index) => (
                       <Chip key={index} label={item} variant="outlined" className='mr-1' />
                     ))
                   }
 
+                  </div>
                   <Divider className='py-3' />
                   <h3 className="text-xl font-bold mt-2">Full Job Description</h3>
                   <p className='text-justify'>{job.des}</p>
@@ -85,7 +97,7 @@ const ApplyMobile = () => {
                   <h3 className="text-xl font-bold mt-2">Qualification</h3>
                   <ul className='list-disc pl-10'>
                     {
-                      job.qualification.map((item, index) => (
+                      job.qualifications.map((item, index) => (
                         <li key={index}>{item}</li>
                       ))
                     }

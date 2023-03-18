@@ -1,5 +1,5 @@
 import { Chip, Divider } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { jobPageData } from '../../data'
 import { SlOptionsVertical } from "react-icons/sl"
 import { AiFillStar } from "react-icons/ai"
@@ -9,13 +9,18 @@ import { Link } from 'react-router-dom'
 import NavbarJob from '../../components/NavbarJob/NavbarJob'
 import JobSearchbar from '../../components/JobSearchbar/JobSearchbar'
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
+import axios from '../../utils/axiosInstance'
 
 export const JobCard = (props) => {
     const [love, setLove] = useState(false)
+    const handelChick = (_id) =>{
+        props.setId(props._id)
+        props.setActiveJob(props)
+    }
     return (
         <>
             {/* For Large screen */}
-            <div className="job-card w-full p-5 border rounded-xl hover:border-primary-500 text-gray-400 gap-1 hidden md:block md:hover:scale-105 md:hover:shadow-xl transition-all" onClick={() => props.setId(props.id)}>
+            <div className="job-card w-full p-5 border rounded-xl hover:border-primary-500 text-gray-400 gap-1 hidden md:block md:hover:scale-105 md:hover:shadow-xl transition-all" onClick={() => handelChick(props._id)}>
                 <div className="flex justify-between items-center">
                     <h3 className="font-bold hover:underline cursor-pointer text-xl">{props.title}</h3>
 
@@ -35,15 +40,22 @@ export const JobCard = (props) => {
                     <p className="mr-3">
                         {props.company}
                     </p>
-                    <p>{props.rating}</p>
-                    <AiFillStar />
+                    {/* <p>{props.rating}</p>
+                    <AiFillStar /> */}
                 </div>
                 <div className="flex items-center gap-2">
                     <TfiLocationPin />
                     <p>{props.location}</p>
                 </div>
-                <p>{props.type}</p>
-                <h3 className='p-1 bg-gray-200 w-max my-1 rounded'>Salary : {props.selary.min}TK - {props.selary.max}TK</h3>
+                {
+                    props.isRemote ? (
+                        <p>Remote</p>
+                    ):
+                    (
+                        <p>On Site</p>
+                    )
+                }
+                <h3 className='p-1 bg-gray-200 w-max my-1 rounded'>Salary : {props.salary.min}TK - {props.salary.max}TK</h3>
                 <div className="flex flex-wrap gap-1">
                     {
                         props.benefits.map((item, index) => (
@@ -54,7 +66,7 @@ export const JobCard = (props) => {
             </div>
 
             {/* For Small Device */}
-            <Link to={`/applym/${props.id}`}>
+            <Link to={`/applym/${props._id}`}>
                 <div className="job-card w-full p-5 border rounded-xl hover:border-primary-500 text-gray-400 gap-1  md:hidden" onClick={() => props.setId(props.id)}>
                     <div className="flex justify-between items-center">
                         <h3 className="font-bold hover:underline cursor-pointer text-xl">{props.title}</h3>
@@ -75,15 +87,22 @@ export const JobCard = (props) => {
                         <p className="mr-3">
                             {props.company}
                         </p>
-                        <p>{props.rating}</p>
-                        <AiFillStar />
+                        {/* <p>{props.rating}</p>
+                        <AiFillStar /> */}
                     </div>
                     <div className="flex items-center gap-2">
                         <TfiLocationPin />
                         <p>{props.location}</p>
                     </div>
-                    <p>{props.type}</p>
-                    <h3 className='p-1 bg-gray-200 w-max my-1 rounded'>Salary : {props.selary.min}TK - {props.selary.max}TK</h3>
+                    {
+                        props.isRemote ? (
+                            <p>Remote</p>
+                        ):
+                        (
+                            <p>On Site</p>
+                        )
+                    }
+                    <h3 className='p-1 bg-gray-200 w-max my-1 rounded'>Salary : {props.salary.min}TK - {props.salary.max}TK</h3>
                     <div className="flex flex-wrap gap-1">
                         {
                             props.benefits.map((item, index) => (
@@ -99,6 +118,17 @@ export const JobCard = (props) => {
 
 const ApplyJob = () => {
     const [id, setId] = useState(null);
+    const [data, setData] = useState(null);
+    const [activeJob, setActiveJob] = useState(null);
+
+    // Data Fetching
+    useEffect(() => {
+        axios.get('/job')
+            .then(response => setData(response.data))
+            .catch(error => console.error(error));
+    }, []); 
+
+
     return (
         <>
             <NavbarJob />
@@ -113,36 +143,36 @@ const ApplyJob = () => {
                             <h3 className="text-xl font-bold text-gray-400">Available Jobs</h3>
                             <Divider className='w-full' />
                             {
-                                jobPageData.jobs.map((item, index) => (
-                                    <JobCard key={index} {...item} setId={setId} />
+                                data && data.map((item, index) => (
+                                    <JobCard key={index} {...item} setId={setId} setActiveJob={setActiveJob} />
                                 ))
                             }
                         </div>
 
                         {/* Right sidebar */}
-                        <div className="right md:w-3/5 sticky top-20 rounded-xl shadow-xl rounded overflow-hidden border" id='jobDetails'>
+                        <div className="right md:w-3/5 sticky top-20 rounded-xl shadow-xl overflow-hidden border" id='jobDetails'>
                             {
-                                id !== null && (
+                                activeJob !== null && (
                                     <>
                                         {/* // Top Section */}
                                         <div className="p-5 w-full shadow">
-                                            <h3 className="font-bold hover:underline cursor-pointer text-xl">{jobPageData.jobs[id].title}</h3>
+                                            <h3 className="font-bold hover:underline cursor-pointer text-xl">{activeJob.title}</h3>
                                             <div className="flex items-center">
                                                 <p className="mr-3">
-                                                    {jobPageData.jobs[id].company}
+                                                    {activeJob.company}
                                                 </p>
-                                                <p>{jobPageData.jobs[id].rating}</p>
+                                                <p>{activeJob.rating}</p>
                                                 <AiFillStar />
                                             </div>
                                             <div className="flex items-center gap-2">
                                                 <TfiLocationPin />
-                                                <p>{jobPageData.jobs[id].location}</p>
+                                                <p>{activeJob.location}</p>
                                             </div>
-                                            <p>{jobPageData.jobs[id].type}</p>
-                                            <h3 className='p-1 bg-gray-200 w-max my-1 rounded'>Salary : {jobPageData.jobs[id].selary.min}TK - {jobPageData.jobs[id].selary.max}TK</h3>
+                                            <p>{activeJob.type}</p>
+                                            <h3 className='p-1 bg-gray-200 w-max my-1 rounded'>Salary : {activeJob.salary.min}TK - {activeJob.salary.max}TK</h3>
                                             <div className="flex flex-wrap gap-1">
                                                 {
-                                                    jobPageData.jobs[id].benefits.map((item, index) => (
+                                                    activeJob.benefits.map((item, index) => (
                                                         <Chip label={item} key={index} variant="outlined" />
                                                     ))
                                                 }
@@ -157,25 +187,25 @@ const ApplyJob = () => {
                                         {/* // Bottom Section */}
                                         <div className="p-5 w-full text-gray-500 h-[90vh] overflow-scroll">
                                             <h3 className="text-xl font-bold">Job Details</h3>
-                                            <p className="">{jobPageData.jobs[id].type}</p>
+                                            <p className="">{activeJob.type}</p>
                                             <Divider className='py-3' />
                                             <h3 className="text-xl font-bold mt-2">Benefits</h3>
                                             {
-                                                jobPageData.jobs[id].benefits.map((item, index) => (
+                                                activeJob.benefits.map((item, index) => (
                                                     <Chip label={item} key={index} variant="outlined" className='mr-1' />
                                                 ))
                                             }
 
                                             <Divider className='py-3' />
                                             <h3 className="text-xl font-bold mt-2">Full Job Description</h3>
-                                            <p className='text-justify'>{jobPageData.jobs[id].des}</p>
+                                            <p className='text-justify'>{activeJob.des}</p>
 
                                             <Divider className='py-3' />
                                             <h3 className="text-xl font-bold mt-2">Position Responsibilities</h3>
-                                            <p>As a {jobPageData.jobs[id].title}, you will:</p>
+                                            <p>As a {activeJob.title}, you will:</p>
                                             <ul className='list-disc pl-10'>
                                                 {
-                                                    jobPageData.jobs[id].responsibilities.map((item, index) => (
+                                                    activeJob.responsibilities.map((item, index) => (
                                                         <li key={index}>{item}</li>
                                                     ))
                                                 }
@@ -185,7 +215,7 @@ const ApplyJob = () => {
                                             <h3 className="text-xl font-bold mt-2">Qualification</h3>
                                             <ul className='list-disc pl-10'>
                                                 {
-                                                    jobPageData.jobs[id].qualification.map((item, index) => (
+                                                    activeJob.qualifications.map((item, index) => (
                                                         <li key={index}>{item}</li>
                                                     ))
                                                 }
@@ -195,7 +225,7 @@ const ApplyJob = () => {
                                             <h3 className="text-xl font-bold mt-2">Experience</h3>
                                             <ul className='list-disc pl-10'>
                                                 {
-                                                    jobPageData.jobs[id].experience.map((item, index) => (
+                                                    activeJob.experience.map((item, index) => (
                                                         <li key={index}>{item}</li>
                                                     ))
                                                 }
@@ -205,7 +235,7 @@ const ApplyJob = () => {
                                             <h3 className="text-xl font-bold mt-2">Education</h3>
                                             <ul className='list-disc pl-10'>
                                                 {
-                                                    jobPageData.jobs[id].education.map((item, index) => (
+                                                    activeJob.education.map((item, index) => (
                                                         <li key={index}>{item}</li>
                                                     ))
                                                 }
