@@ -5,6 +5,9 @@ const CompanyInfoSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    address:{
+        type: String,
+    },
     slogan: {
         type: String
     },
