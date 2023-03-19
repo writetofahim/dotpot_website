@@ -29,6 +29,15 @@ const jobApplicationSchema = new mongoose.Schema(
         resume: {
             type: String,
         },
+        address: {
+            type: String,
+        },
+        education: {
+            type: String,
+        },
+        experience: {
+            type: String,
+        },
         coverLetter: {
             type: String,
         },

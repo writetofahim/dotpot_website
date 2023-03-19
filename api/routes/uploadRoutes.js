@@ -2,6 +2,7 @@ const express = require('express');
 const { uploadFileResponse } = require('../controllers/uploadController');
 
 const attachmentUpload = require('../middlewares/attachmentUpload');
+const resumeUpload = require('../middlewares/resumesUpload');
 const router = express.Router();
 
 // upload file to conversation folder
@@ -11,7 +12,7 @@ router.post('/', attachmentUpload("conversation"), uploadFileResponse);
 router.post('/response', attachmentUpload("response"), uploadFileResponse);
 
 // upload file to resume folder
-router.post('/response', attachmentUpload("resumes"), uploadFileResponse);
+router.post('/resumes', resumeUpload("resumes"), uploadFileResponse);
 
 
 module.exports = router;
