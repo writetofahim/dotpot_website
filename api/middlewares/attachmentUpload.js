@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 // Import the uploader utility
 const uploader = require("../utilities/uploader");
 
@@ -7,14 +8,21 @@ const uploader = require("../utilities/uploader");
  * @param {string} subFolderName - The name of the folder where the uploaded files should be stored
  * @returns {function} - The middleware function that will handle the file upload
  */
-
 function attachmentUpload(subFolderName) {
     return (req, res, next) => {
-        const folderName = `./uploads/${subFolderName}`;
-        // Check if folder exists, if not create it
-        if (!fs.existsSync(folderName)) {
-            fs.mkdirSync(folderName);
+        const parentDirectory = './uploads';
+        const subDirectory = path.join(parentDirectory, subFolderName);
+
+        // Create the parent directory if it doesn't exist
+        if (!fs.existsSync(parentDirectory)) {
+            fs.mkdirSync(parentDirectory);
         }
+
+        // Check if subdirectory exists, if not create it
+        if (!fs.existsSync(subDirectory)) {
+            fs.mkdirSync(subDirectory);
+        }
+
         const upload = uploader(
             subFolderName,
             ["image/jpeg", "image/jpg", "image/png", "application/pdf"],
