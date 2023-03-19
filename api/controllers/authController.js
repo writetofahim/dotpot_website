@@ -30,7 +30,9 @@ exports.register = async (req, res) => {
     // Return token
     const payload = {
       user: {
-        id: user._id
+        id: user._id,
+        role:user.role,
+        username:user.username
       }
     };
 
@@ -66,7 +68,9 @@ exports.login = async (req, res) => {
     // Return token
     const payload = {
       user: {
-        id: user._id
+        id: user._id,
+        role:user.role,
+        username:user.username
       }
     };
     const { password: pw, ...rest } = user.toObject()
