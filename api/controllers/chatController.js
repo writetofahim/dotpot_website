@@ -2,9 +2,17 @@ const Conversation = require("../models/Conversation");
 const Message = require("../models/Message");
 
 const getAllChats = async (req, res) => {
+    const pageSize = 10;
+    const page = parseInt(req.query.page) || 1;
     try {
-        const chats = await Conversation.find();
-        res.json(chats);
+        const chats = await Conversation.find().sort({ createdAt: -1 })
+            .skip((page - 1) * pageSize)
+            .limit(pageSize)
+        const chatsWithLastMessage = await Promise.all(chats.map(async chat => {
+            const lastMessage = await Message.findOne({ conversation_id: chat._id }).sort({ createdAt: -1 });
+            return { ...chat._doc, lastMessage };
+        }));
+        res.json(chatsWithLastMessage);
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
