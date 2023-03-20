@@ -16,7 +16,6 @@ import { Chip } from "@mui/material";
 import { Stack } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
-import { blogData } from "../../data"
 import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 import {GrNext,GrPrevious} from "react-icons/gr"
@@ -87,14 +86,15 @@ var settings = {
 };
 
 export const SingleSlide = (props) => {
+    
     return (
         <div className="mx-5 mb-20 rounded-lg">
-            <img src={props.image} alt="" className="rounded-tl-xl rounded-tr-xl w-full aspect-video" />
+            <img src={`${import.meta.env.REACT_APP_SERVER_PATH}/${props.image}`} alt="" className="rounded-tl-xl rounded-tr-xl w-full aspect-video" />
             <div className=" bg-white rounded-bl-xl rounded-br-xl shadow p-5 flex flex-col">
                 <Stack direction="row" className="flex flex-wrap gap-1">
                     {
-                        props.categories.map((category, index) => (
-                            <Chip label={category} key={index} variant="outlined" className="hover:border-primary-500 cursor-pointer" />
+                        props.tags.map((tag, index) => (
+                            <Chip label={tag} key={index} variant="outlined" className="hover:border-primary-500 cursor-pointer" />
                         ))
                     }
                 </Stack>

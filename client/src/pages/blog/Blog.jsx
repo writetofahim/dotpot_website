@@ -26,7 +26,7 @@ const BlogCard = (props) => {
     return (
         <div className="container p-5 mx-auto border rounded-xl shadow-xl">
             <div className=" lg:flex lg:items-center">
-                <img className="object-cover w-full lg:mx-6 lg:w-1/2 rounded-xl h-72 lg:h-96" src={props.image} alt="" />
+                <img className="object-cover w-full lg:mx-6 lg:w-1/2 rounded-xl h-72 lg:h-96" src={`${import.meta.env.REACT_APP_SERVER_PATH}/${props.image}`} alt="" />
 
                 <div className="lg:w-1/2 lg:mt-0 lg:mx-6 ">
                     <h3 className="text-3xl uppercase">{props.title}</h3>

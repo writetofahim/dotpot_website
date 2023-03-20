@@ -41,7 +41,7 @@ const SingleBlog = () => {
                     data && (
                         <div className='full flex items-center justify-center'>
                             <div className="container flex flex-col items-center p-10 text-justify">
-                                <img src={data.image} alt="" />
+                                <img src={`${import.meta.env.REACT_APP_SERVER_PATH}/${data.image}`} alt="" />
                                 <div className="md:w-3/5">
                                     <h1 className="my-5 text-3xl font-bold text-left">{data.title}</h1>
                                     <p className="text-gray-400">{data.date}</p>
