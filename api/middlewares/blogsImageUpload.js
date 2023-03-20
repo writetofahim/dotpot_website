@@ -8,7 +8,7 @@ const uploader = require("../utilities/uploader");
  * @param {string} subFolderName - The name of the folder where the uploaded files should be stored
  * @returns {function} - The middleware function that will handle the file upload
  */
-function resumeUpload(subFolderName) {
+function blogsImageUpload(subFolderName) {
     return (req, res, next) => {
         const parentDirectory = './uploads';
         const subDirectory = path.join(parentDirectory, subFolderName);
@@ -25,10 +25,10 @@ function resumeUpload(subFolderName) {
 
         const upload = uploader(
             subFolderName,
-            ["application/msword", "application/pdf", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"],
+            ["image/jpeg", "image/jpg", "image/png"],
             9273781,
             5,
-            "Only .doc, .docx or .pdf format allowed!"
+            "Only .jpg, jpeg or .png format allowed!"
         );
         upload.any()(req, res, (err) => {
             if (err) {
@@ -45,4 +45,4 @@ function resumeUpload(subFolderName) {
     };
 }
 
-module.exports = resumeUpload;
+module.exports = blogsImageUpload;

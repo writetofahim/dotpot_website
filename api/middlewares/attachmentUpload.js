@@ -38,6 +38,7 @@ function attachmentUpload(subFolderName) {
                     },
                 });
             } else {
+                req.files[0].filename = `uploads/${subFolderName}/` + req.files[0].filename;
                 next();
             }
         });

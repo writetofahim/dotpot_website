@@ -41,6 +41,8 @@ mongoose
 app.use(express.json());
 app.use(cors());
 app.use('/uploads/conversation', express.static(__dirname + '/uploads/conversation'));
+app.use('/uploads', express.static(__dirname + '/uploads'));
+app.use('/uploads/blogs', express.static(__dirname + '/uploads/blogs'));
 
 
 const server = http.createServer(app);

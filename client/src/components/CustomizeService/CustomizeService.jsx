@@ -268,7 +268,8 @@ const CustomizeService = () => {
 
   const handlePlaceOrder = async () => {
     if (price === 0) return
-    const clientId = JSON.parse(localStorage.getItem("user_id"));
+    const clientId = JSON.parse(localStorage.getItem("user"))?._id
+    console.log("clientId", clientId);
     if (!clientId) return navigate("/login");
 
     setIsSubmitting(true);

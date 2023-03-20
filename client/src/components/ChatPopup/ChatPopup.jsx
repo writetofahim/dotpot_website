@@ -6,7 +6,7 @@ import { GrAttachment } from "react-icons/gr";
 import { AiOutlineCloseCircle, AiOutlineSend } from "react-icons/ai";
 import { FaSpinner } from "react-icons/fa";
 import ImageViewModal from "./ImageViewModal"
-import axios from "axios"
+import axios from "../../utils/axiosInstance"
 import { io } from "socket.io-client";
 import moment from "moment/moment";
 
@@ -55,10 +55,10 @@ const ChatPopup = () => {
   const handleOpen = async () => {
     const conversationId = localStorage.getItem("conversation_id")
     if (conversationId && messages.length === 0) {
-      const { data } = await axios.get(`http://localhost:8800/api/chats/${conversationId}/messages`)
+      const { data } = await axios.get(`/chats/${conversationId}/messages`)
       setMessages(data)
     } if (!conversationId) {
-      const { data } = await axios.post("http://localhost:8800/api/chats")
+      const { data } = await axios.post("/chats")
       localStorage.setItem("conversation_id", data.conversation_id)
       setMessages(prev => [...prev, data])
     }
@@ -83,13 +83,13 @@ const ChatPopup = () => {
         filesArray.forEach(file => {
           formData.append('files[]', file);
         });
-        const { data: resFiles } = await axios.post("http://localhost:8800/api/upload", formData)
+        const { data: resFiles } = await axios.post("/upload", formData)
         attachment = resFiles[0].filename;
         setFiles(null)
 
       }
       if (newMessage !== "" || attachment !== null) {
-        const { data } = await axios.post(`http://localhost:8800/api/chats/${conversationId}/messages`, { text: newMessage, attachment: attachment })
+        const { data } = await axios.post(`/chats/${conversationId}/messages`, { text: newMessage, attachment: attachment })
         console.log(data)
         setMessages([...messages, data])
         setNewMessage("");
@@ -142,10 +142,10 @@ const ChatPopup = () => {
                 <p className="font-medium">{message.sender === "visitor" ? "You" : 'DotpotiT'}</p>
                 {message.text && <p>{message.text}</p>}
                 {(message.attachment && message.attachment?.includes(".pdf"))
-                  ? <a className="flex items-center gap-2" href={`http://localhost:8800/uploads/conversation/${message.attachment}`} download>
+                  ? <a className="flex items-center gap-2" href={`http://localhost:8800/${message.attachment}`} download>
                     <HiOutlineDownload />
                     {message.attachment?.slice(0, 20)}...</a>
-                  : message.attachment && <img onClick={() => handleModalOpen(`http://localhost:8800/uploads/conversation/${message.attachment}`)} className="w-40 cursor-pointer" src={`http://localhost:8800/uploads/conversation/${message.attachment}`} alt="" />}
+                  : message.attachment && <img onClick={() => handleModalOpen(`http://localhost:8800/${message.attachment}`)} className="w-40 cursor-pointer" src={`http://localhost:8800/${message.attachment}`} alt="" />}
                 <p className="text-xs text-gray-500 mt-1">{moment(new Date(message.createdAt)).fromNow()}</p>
               </div>
             ))}
