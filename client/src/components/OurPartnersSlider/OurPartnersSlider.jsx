@@ -59,7 +59,6 @@ function OurPartnersSlider() {
             .catch(error => console.error(error));
     }, []); 
 
-    console.log(data)
 
 
     return (

@@ -38,10 +38,10 @@ const BlogCard = (props) => {
 
                     <div className="flex flex-wrap gap-1 my-5">
                         {
-                            props.categories.map((cat, index) => (
-                                <Link to={`/blog?category=${cat}`} key={index} >
+                            props.tags.map((tag, index) => (
+                                <Link to={`/blog?tag=${tag}`} key={index} >
                                     <div className="px-3 py-2 border rounded-full">
-                                        <p className="text-gray-400">{cat}</p>
+                                        <p className="text-gray-400">{tag}</p>
                                     </div>
                                 </Link>
                             ))
