@@ -113,7 +113,7 @@ function RecentBlogsSlider() {
     // Data Fetching
     useEffect(() => {
         axios.get('/blog')
-            .then(response => setData(response.data))
+            .then(response => setData(response.data.blogs))
             .catch(error => console.error(error));
     }, []);
 
