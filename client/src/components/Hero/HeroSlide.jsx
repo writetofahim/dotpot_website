@@ -77,7 +77,7 @@ export const SingleSlide = (props) => {
           </Link>
         </div>
         <div className="right flex-1 flex items-end justify-center ">
-          <img src={props.image} alt={props.title} className="max-h-[50vh]" />
+          <img src={`${import.meta.env.REACT_APP_SERVER_PATH}/${props.image}`} alt={props.title} className="max-h-[50vh]" />
         </div>
       </div>
     </div>

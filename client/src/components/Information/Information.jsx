@@ -45,7 +45,7 @@ const Information = () => {
                         allowFullScreen
                         className='rounded-3xl w-full md:w-4/5 aspect-video mt-5 shadow-lg'
                     ></iframe>
-                    {/* <img src={data && data.image_link} alt="" className="rounded-3xl w-full md:w-4/5 aspect-video mt-5 shadow-lg" /> */}
+                    {/* <img src={`${import.meta.env.REACT_APP_SERVER_PATH}/${data.image}`} alt="" className="rounded-3xl w-full md:w-4/5 aspect-video mt-5 shadow-lg" /> */}
 
                 </div>
             </div>

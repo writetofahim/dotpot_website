@@ -90,7 +90,7 @@ var settings = {
 export const SingleSlide = (props) => {
     return (
         <div className="mx-5 mb-20 rounded-lg p-5 bg-white flex items-center flex-col shadow-xl cursor-pointer hover:border hover:border-primary-400 hover:scale-x-105 transition-all">
-            <img src={props.image} alt="" className=" w-2/5 aspect-square rounded-full" />
+            <img src={`${import.meta.env.REACT_APP_SERVER_PATH}/${props.image}`} alt="" className=" w-2/5 aspect-square rounded-full" />
             <h3 className="mt-2 text-xl font-bold text-gray-400">{props.name}</h3>
             <p className="font-bold text-secondary-400">{props.title}</p>
             <p className="text-gray-300 ">{props.email}</p>

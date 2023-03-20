@@ -68,7 +68,7 @@ function OurPartnersSlider() {
                 {
                     data && data.map((item, index) => (
                         <div className="mx-5 p-5 rounded-lg flex items-center justify-center hover:scale-110 transition-all" key={index}>
-                            <img src={item.logo} alt={item.title} className="h-[100px]" />
+                            <img src={`${import.meta.env.REACT_APP_SERVER_PATH}/${item.image}`} alt={item.title} className="h-[100px]" />
                         </div>
                     ))
                 }
