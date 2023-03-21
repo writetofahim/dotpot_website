@@ -67,7 +67,7 @@ export const JobCard = (props) => {
 
             {/* For Small Device */}
             <Link to={`/applym/${props._id}`}>
-                <div className="job-card w-full p-5 border rounded-xl hover:border-primary-500 text-gray-400 gap-1  md:hidden" onClick={() => props.setId(props.id)}>
+                <div className="job-card w-full p-5 border rounded-xl hover:border-primary-500 text-gray-400 gap-1  md:hidden" onClick={() => props.setId(props._id)}>
                     <div className="flex justify-between items-center">
                         <h3 className="font-bold hover:underline cursor-pointer text-xl">{props.title}</h3>
 
@@ -124,7 +124,7 @@ const ApplyJob = () => {
     // Data Fetching
     useEffect(() => {
         axios.get('/job')
-            .then(response => setData(response.data))
+            .then(response => setData(response.data.jobs))
             .catch(error => console.error(error));
     }, []); 
 
@@ -225,7 +225,7 @@ const ApplyJob = () => {
                                             <h3 className="text-xl font-bold mt-2">Experience</h3>
                                             <ul className='list-disc pl-10'>
                                                 {
-                                                    activeJob.experience.map((item, index) => (
+                                                    activeJob?.experience?.map((item, index) => (
                                                         <li key={index}>{item}</li>
                                                     ))
                                                 }
@@ -235,7 +235,7 @@ const ApplyJob = () => {
                                             <h3 className="text-xl font-bold mt-2">Education</h3>
                                             <ul className='list-disc pl-10'>
                                                 {
-                                                    activeJob.education.map((item, index) => (
+                                                    activeJob?.education?.map((item, index) => (
                                                         <li key={index}>{item}</li>
                                                     ))
                                                 }

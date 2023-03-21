@@ -21,15 +21,21 @@ const JobSchema = new mongoose.Schema({
     qualifications: {
         type: [String],
     },
+    experience: {
+        type: [String],
+    },
+    education: {
+        type: [String],
+    },
     howToApply: {
         type: String,
     },
     salary: {
         min: {
-        type: Number
+            type: Number
         },
         max: {
-        type: Number
+            type: Number
         }
     },
     benefits: {
@@ -43,8 +49,8 @@ const JobSchema = new mongoose.Schema({
         type: Boolean,
         default: true
     },
-    }, { 
-    timestamps: true 
+}, {
+    timestamps: true
 });
 
 module.exports = mongoose.model('Job', JobSchema);

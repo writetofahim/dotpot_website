@@ -13,14 +13,14 @@ import axios from '../../utils/axiosInstance';
 const ApplyMobile = () => {
   const { id } = useParams();
 
-  const [job,setJob] = useState(null)
+  const [job, setJob] = useState(null)
 
-    // Data Fetching
-    useEffect(() => {
-      axios.get(`/job/${id}`)
-          .then(response => setJob(response.data))
-          .catch(error => console.error(error));
-  }, []); 
+  // Data Fetching
+  useEffect(() => {
+    axios.get(`/job/${id}`)
+      .then(response => setJob(response.data))
+      .catch(error => console.error(error));
+  }, []);
 
 
   console.log(job)
@@ -72,10 +72,10 @@ const ApplyMobile = () => {
                   <h3 className="text-xl font-bold mt-2">Benefits</h3>
                   <div className="w-full flex flex-wrap gap-1">
                     {
-                    job.benefits.map((item, index) => (
-                      <Chip key={index} label={item} variant="outlined" className='mr-1' />
-                    ))
-                  }
+                      job.benefits.map((item, index) => (
+                        <Chip key={index} label={item} variant="outlined" className='mr-1' />
+                      ))
+                    }
 
                   </div>
                   <Divider className='py-3' />
@@ -87,7 +87,7 @@ const ApplyMobile = () => {
                   <p>As a {job.title}, you will:</p>
                   <ul className='list-disc pl-10'>
                     {
-                      job.responsibilities.map((item, index) => (
+                      job?.responsibilities?.map((item, index) => (
                         <li key={index}>{item}</li>
                       ))
                     }
@@ -97,7 +97,7 @@ const ApplyMobile = () => {
                   <h3 className="text-xl font-bold mt-2">Qualification</h3>
                   <ul className='list-disc pl-10'>
                     {
-                      job.qualifications.map((item, index) => (
+                      job?.qualifications?.map((item, index) => (
                         <li key={index}>{item}</li>
                       ))
                     }
@@ -107,7 +107,7 @@ const ApplyMobile = () => {
                   <h3 className="text-xl font-bold mt-2">Experience</h3>
                   <ul className='list-disc pl-10'>
                     {
-                      job.experience.map((item, index) => (
+                      job?.experience?.map((item, index) => (
                         <li key={index}>{item}</li>
                       ))
                     }
@@ -117,7 +117,7 @@ const ApplyMobile = () => {
                   <h3 className="text-xl font-bold mt-2">Education</h3>
                   <ul className='list-disc pl-10'>
                     {
-                      job.education.map((item, index) => (
+                      job?.education?.map((item, index) => (
                         <li key={index}>{item}</li>
                       ))
                     }
