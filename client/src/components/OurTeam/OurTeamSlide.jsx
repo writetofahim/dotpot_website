@@ -105,9 +105,9 @@ function OurTeamSlide() {
     // Data Fetching
     useEffect(() => {
         axios.get('/team_member')
-            .then(response => setData(response.data))
+            .then(response => setData(response.data.teamMembers))
             .catch(error => console.error(error));
-    }, []); 
+    }, []);
 
 
     return (

@@ -84,7 +84,7 @@ app.use("/api/order", orderRoutes);
 app.use("/api/upload", uploadRoutes)
 
 // Components
-app.use("/api/client_responce", c_client_responseRoutes)
+app.use("/api/client_response", c_client_responseRoutes)
 app.use("/api/contact_center_service", c_contactCenterServiceRoutes)
 app.use("/api/hero", c_heroRoutes)
 app.use("/api/industry_we_erve", c_industryWeServeRoutes)
