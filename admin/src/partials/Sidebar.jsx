@@ -919,7 +919,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                           <li className="mb-1 last:mb-0">
                             <NavLink
                               end
-                              to="/contact-center-service/all-contact-center-service"
+                              to="/contact-center-services"
                               className="block text-slate-400 hover:text-slate-200 transition duration-150 truncate"
                             >
                               <div className="flex items-center gap-3">
@@ -975,7 +975,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                           <li className="mb-1 last:mb-0">
                             <NavLink
                               end
-                              to="/industry-we-serve"
+                              to="/industry-we-serve/all-industry-we-serve"
                               className="block text-slate-400 hover:text-slate-200 transition duration-150 truncate"
                             >
                               <div className="flex items-center gap-3">
