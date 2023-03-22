@@ -31,8 +31,8 @@ const IndustriesWeServe = () => {
 
     // Data Fetching
     useEffect(() => {
-        axios.get('/industry_we_erve')
-            .then(response => setData(response.data))
+        axios.get('/industry_we_serve?page=1')
+            .then(response => setData(response.data.industryWeServe))
             .catch(error => console.error(error));
     }, []);
 

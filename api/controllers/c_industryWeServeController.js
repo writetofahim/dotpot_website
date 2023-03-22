@@ -1,12 +1,31 @@
 const IndustryWeServe = require('../models/C_IndustryWeServe');
 
-// GET all industry we serve
+/**
+ * Get all industryWeServe with pagination.
+ * @param {number} page - The page number to retrieve.
+ * @param {number} limit - The maximum number of industryWeServe to retrieve per page.
+ * @returns {Object} - An object containing an array of industryWeServe and metadata.
+ * @throws {Error} - If there is an error retrieving the industryWeServe from the database.
+ */
 exports.getAllIndustryWeServe = async (req, res) => {
   try {
-    const industryWeServe = await IndustryWeServe.find();
-    res.json(industryWeServe);
+      const { page = 1, limit = 10 } = req.query;
+      const industryWeServe = await IndustryWeServe.find()
+          .select('-password')
+          .limit(limit * 1)
+          .skip((page - 1) * limit)
+          .exec()
+
+      const count = await IndustryWeServe.countDocuments();
+      res.json({
+          industryWeServe: industryWeServe.map(industryWeServe => industryWeServe.toObject()),
+          totalPages: Math.ceil(count / limit),
+          currentPage: page,
+          totalIndustryWeServe: count
+      });
   } catch (err) {
-    res.status(500).json({ message: err.message });
+      console.error(err.message);
+      res.status(500).send('Server Error');
   }
 };
 
