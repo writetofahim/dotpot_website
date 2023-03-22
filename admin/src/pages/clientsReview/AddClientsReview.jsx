@@ -3,7 +3,6 @@ import axios from "../../utils/axiosInstance";
 import { FaSpinner } from "react-icons/fa"
 import { useSearchParams } from "react-router-dom";
 import CommonSnackbar from "../../components/ComonSnackbar";
-import WorkTechnology from "./WorkTechnology";
 
 const AddClientsReview = () => {
 
@@ -137,9 +136,6 @@ const AddClientsReview = () => {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               required
             />
-          </div>
-          <div className="mb-5">
-            <WorkTechnology technology={technologies} setTechnology={setTechnologies} />
           </div>
           <div id="imageDiv" className="hidden">
             <div className="w-52 h-52 bg-gray-300 rounded-md flex items-center justify-center mx-auto mb-5">

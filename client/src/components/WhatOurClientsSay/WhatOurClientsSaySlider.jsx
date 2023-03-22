@@ -109,7 +109,7 @@ function WhatOurClientsSaySlider() {
             .catch(error => console.error(error));
     }, []);
 
-    console.log(data)
+    // console.log(data)
     return (
         <div className="w-full mb-10">
             <Slider {...settings} className="py-2">

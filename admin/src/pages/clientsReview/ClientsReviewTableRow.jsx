@@ -20,7 +20,7 @@ const ClientsReviewTableRow = ({ clientsReview, setData, data }) => {
 
     return (
         <>
-            {/* {isModalOpen && <DeleteModal handleDelete={() => handleDelete(_id)} open={isModalOpen} setOpen={setIsModalOpen} />} */}
+            {isModalOpen && <DeleteModal handleDelete={() => handleDelete(_id)} open={isModalOpen} setOpen={setIsModalOpen} />}
             <td className="px-6 py-4">
                 <img className='w-24' src={client_image.includes("https://") ? client_image : `${import.meta.env.REACT_APP_SERVER_PATH}/${client_image}`} alt="" />
             </td>

@@ -33,6 +33,9 @@ import { AuthContext } from "./contexts/AuthContext";
 import RequireAdmin from "./components/RequireAdmin";
 import AllClientsReview from "./pages/clientsReview/AllClientsReview";
 import AddService from "./pages/services/AddServices";
+import AddClientsReview from "./pages/clientsReview/AddClientsReview";
+import AllIndustryWeServe from "./pages/indurstyWeServe/AllIndustryWeServe";
+import AddIndustryWeServe from "./pages/indurstyWeServe/AddIndustryWeServe";
 // import AddClientsReview from "./pages/clientsReview/AddClientsReview";
 
 function App() {
@@ -82,7 +85,9 @@ function App() {
           <Route path="/team/all-team" element={<AllTeam />} />
           <Route path="/team/add-team" element={<AddTeam />} />
           <Route path="/clients-review/all-clients-review" element={<AllClientsReview />} />
-          {/* <Route path="/clients-review/add-clients-review" element={<AddClientsReview />} /> */}
+          <Route path="/clients-review/add-clients-review" element={<AddClientsReview />} />
+          <Route path="/indursty-we-serve/all-indursty-we-serve" element={<AllIndustryWeServe />} />
+          <Route path="/indursty-we-serve/add-indursty-we-serve" element={<AddIndustryWeServe />} />
           <Route path="/section/hero" element={<Hero />} />
           <Route path="/section/company-info" element={<CompanyInfo />} />
         </Route>
