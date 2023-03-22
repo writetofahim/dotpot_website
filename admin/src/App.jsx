@@ -36,6 +36,8 @@ import AddService from "./pages/services/AddServices";
 import AddClientsReview from "./pages/clientsReview/AddClientsReview";
 import AllIndustryWeServe from "./pages/indurstyWeServe/AllIndustryWeServe";
 import AddIndustryWeServe from "./pages/indurstyWeServe/AddIndustryWeServe";
+import AllContactCenterService from "./pages/contactCenterService/AllContactCenterService";
+import AddContactCenterService from "./pages/contactCenterService/AddContactCenterService";
 // import AddClientsReview from "./pages/clientsReview/AddClientsReview";
 
 function App() {
@@ -86,8 +88,10 @@ function App() {
           <Route path="/team/add-team" element={<AddTeam />} />
           <Route path="/clients-review/all-clients-review" element={<AllClientsReview />} />
           <Route path="/clients-review/add-clients-review" element={<AddClientsReview />} />
-          <Route path="/indursty-we-serve/all-indursty-we-serve" element={<AllIndustryWeServe />} />
-          <Route path="/indursty-we-serve/add-indursty-we-serve" element={<AddIndustryWeServe />} />
+          <Route path="/industry-we-serve/all-industry-we-serve" element={<AllIndustryWeServe />} />
+          <Route path="/industry-we-serve/add-industry-we-serve" element={<AddIndustryWeServe />} />
+          <Route path="/contact-center-service/all-contact-center-service" element={<AllContactCenterService />} />
+          <Route path="/contact-center-service/add-contact-center-service" element={<AddContactCenterService />} />
           <Route path="/section/hero" element={<Hero />} />
           <Route path="/section/company-info" element={<CompanyInfo />} />
         </Route>

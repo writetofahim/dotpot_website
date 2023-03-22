@@ -125,7 +125,7 @@ const AddClientsReview = () => {
         <div>
           <div className="mb-4">
             <label className="block text-gray-700 font-bold mb-2">
-              Feature Image
+              Client Image
             </label>
             <input
               type="file"
@@ -142,6 +142,8 @@ const AddClientsReview = () => {
               <div className="" id="preview"></div>
             </div>
           </div>
+        <label className="block text-gray-700 font-bold mb-2">Company Name</label>
+        <input value={title} onChange={(e) => setTitle(e.target.value)} className="mb-5 w-full" type="text" placeholder="Company Name" required />
         </div>
 
         <div className="mt-14 flex justify-center gap-5">
