@@ -1,7 +1,7 @@
-import axios from '../../utils/axiosInstance';
-import * as React from 'react';
-import IndustryWeServeTableRow from './IndustryWeServeTableRow';
-import { Link } from 'react-router-dom';
+import * as React from "react";
+import { Link } from "react-router-dom";
+import axios from "../../utils/axiosInstance";
+import IndustryWeServeTableRow from "./IndustryWeServeTableRow";
 
 export default function AllIndustryWeServe() {
   const [data, setData] = React.useState([]);
@@ -32,10 +32,12 @@ export default function AllIndustryWeServe() {
   };
 
   return (
-    <div className='lg:p-5 p-3'>
+    <div className="lg:p-5 p-3">
       <Link to="/industry-we-serve/add-industry-we-serve">
-          <button className="m-2 px-3 py-2 bg-green-400 text-white font-bold cursor-pointer rounded-lg hover:scale-105 hover:shadow-xl transition-all">Add New Review</button>
-        </Link>
+        <button className="m-2 px-3 py-2 bg-green-400 text-white font-bold cursor-pointer rounded-lg hover:scale-105 hover:shadow-xl transition-all">
+          Add New{" "}
+        </button>
+      </Link>
       <div className="relative overflow-x-auto">
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -59,15 +61,22 @@ export default function AllIndustryWeServe() {
           </thead>
           <tbody>
             {data?.map((industry) => (
-              <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700" key={industry._id}>
-                <IndustryWeServeTableRow industry={industry} setData={setData} data={data} />
+              <tr
+                className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                key={industry._id}
+              >
+                <IndustryWeServeTableRow
+                  industry={industry}
+                  setData={setData}
+                  data={data}
+                />
               </tr>
             ))}
           </tbody>
         </table>
       </div>
 
-      <div className='flex justify-center mt-5'>
+      <div className="flex justify-center mt-5">
         <nav aria-label="Page navigation example ">
           <ul className="inline-flex -space-x-px">
             <li>
@@ -83,8 +92,11 @@ export default function AllIndustryWeServe() {
               <li key={index}>
                 <button
                   onClick={() => setPage(index + 1)}
-                  className={`px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white ${index + 1 === page ? 'text-blue-600 border-blue-600 bg-blue-50' : ''
-                    }`}
+                  className={`px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white ${
+                    index + 1 === page
+                      ? "text-blue-600 border-blue-600 bg-blue-50"
+                      : ""
+                  }`}
                 >
                   {index + 1}
                 </button>
