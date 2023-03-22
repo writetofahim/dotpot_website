@@ -6,11 +6,11 @@ const userController = require('../controllers/userController');
 // Get current user
 router.get('/', authMiddleware, userController.getUser);
 
-// Get current user
-router.get('/:id', authMiddleware, userController.getSingleUser);
-
 // Get all users (admin only)
 router.get('/all', authMiddleware, userController.getAllUsers);
+
+// Get current user
+router.get('/:id', authMiddleware, userController.getSingleUser);
 
 // Update user profile
 router.put('/:id', authMiddleware, userController.updateUser);
