@@ -16,14 +16,17 @@ const Hero = () => {
     button_text: "",
   });
   // const [image, setImage] = useState(null);
+
+
   // Fetching Hero Data
   useEffect(() => {
     axios
       .get("/hero")
       .then((response) => setHeroData(response.data))
       .catch((error) => console.error(error));
-  }, []);
-  console.log(heroData);
+  }, [heroData]);
+
+
   // Update form data when input values change
   const handleChange = (event) => {
     setFormData((prevState) => ({
@@ -39,6 +42,8 @@ const Hero = () => {
     setFormButton("Update");
     setFormData(hero);
   };
+
+
   // Add new Hero
   const handleAdd = () => {
     document.getElementById("Form").classList.remove("hidden");
@@ -53,16 +58,25 @@ const Hero = () => {
     setFormTitle("Add Form");
     setFormButton("Save");
   };
+
+
   // Handle Delete button
-  const handleDelete = (hero) => {
+  const handleDelete = async (hero) => {
     const shouldDelete = window.confirm("Are you sure you want to delete?");
-    if (shouldDelete) {
-      axios
-        .delete(`/hero/${hero._id}`)
-        .then((response) => console.log(response))
-        .catch((error) => console.error(error));
+    if(shouldDelete){
+      try{
+        const response = await axios.delete(`/hero/${hero._id}`);
+        if(response.status == 200){
+          const newArray = heroData.filter(obj => obj._id !== hero._id);
+          setHeroData(newArray);
+        }
+      }catch(error){
+        console.log(error)
+      }
     }
   };
+
+
   // const handleFileInputChange = (event) => {
   //   const file = event.target.files[0];
   //   setImage(URL.createObjectURL(file));
@@ -147,7 +161,7 @@ const Hero = () => {
                   <FaEdit className="hover:scale-125 transition-all duration-200 ease-in-out" />
                 </button>
                 <button onClick={() => handleDelete(hero)}>
-                  <MdDeleteForever className="hover:scale-125 transition-all duration-200 ease-in-out" />
+                  <MdDeleteForever className="hover:scale-125 transition-all duration-200 ease-in-out hover:text-red-500" />
                 </button>
               </div>
             </div>
