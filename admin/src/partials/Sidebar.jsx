@@ -905,7 +905,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                           <li className="mb-1 last:mb-0">
                             <NavLink
                               end
-                              to="/clients-review"
+                              to="/clients-review/all-clients-review"
                               className="block text-slate-400 hover:text-slate-200 transition duration-150 truncate"
                             >
                               <div className="flex items-center gap-3">

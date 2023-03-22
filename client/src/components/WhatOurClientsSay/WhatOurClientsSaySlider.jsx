@@ -105,10 +105,11 @@ function WhatOurClientsSaySlider() {
     // Data Fetching
     useEffect(() => {
         axios.get('/client_review')
-            .then(response => setData(response.data))
+            .then(response => setData(response.data.ClientReviews))
             .catch(error => console.error(error));
     }, []);
 
+    console.log(data)
     return (
         <div className="w-full mb-10">
             <Slider {...settings} className="py-2">

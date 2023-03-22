@@ -31,6 +31,9 @@ import Login from "./pages/Login";
 import ChatBody from "./pages/chat/ChatBody";
 import { AuthContext } from "./contexts/AuthContext";
 import RequireAdmin from "./components/RequireAdmin";
+import AllClientsReview from "./pages/clientsReview/AllClientsReview";
+import AddService from "./pages/services/AddServices";
+// import AddClientsReview from "./pages/clientsReview/AddClientsReview";
 
 function App() {
   const location = useLocation();
@@ -75,9 +78,11 @@ function App() {
           <Route path="/jobs/all-jobs" element={<AllJobs />} />
           <Route path="/jobs/add-jobs" element={<AddJobs />} />
           <Route path="/services/all-services" element={<AllServices />} />
-          <Route path="/services/add-services" element={<AddServices />} />
+          <Route path="/services/add-services" element={<AddService />} />
           <Route path="/team/all-team" element={<AllTeam />} />
           <Route path="/team/add-team" element={<AddTeam />} />
+          <Route path="/clients-review/all-clients-review" element={<AllClientsReview />} />
+          {/* <Route path="/clients-review/add-clients-review" element={<AddClientsReview />} /> */}
           <Route path="/section/hero" element={<Hero />} />
           <Route path="/section/company-info" element={<CompanyInfo />} />
         </Route>

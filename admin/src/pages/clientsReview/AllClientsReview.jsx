@@ -1,6 +1,6 @@
 import axios from '../../utils/axiosInstance';
 import * as React from 'react';
-import ServiceTableRow from './ServiceTableRow';
+import ClientsReviewTableRow from './ClientsReviewTableRow';
 
 export default function AllClientsReview() {
   const [data, setData] = React.useState([]);
@@ -9,8 +9,8 @@ export default function AllClientsReview() {
 
   const fetchData = async (page) => {
     try {
-      const response = await axios.get(`/service?page=${page}`);
-      setData(response.data.services);
+      const response = await axios.get(`/client_review?page=${page}`);
+      setData(response.data.ClientReviews);
       setTotalPages(response.data.totalPages);
       console.log(data);
     } catch (error) {
@@ -38,16 +38,19 @@ export default function AllClientsReview() {
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
               <th scope="col" className="px-6 py-3">
-                Icon
+                Image
               </th>
               <th scope="col" className="px-6 py-3">
-                Service
+                Name
               </th>
               <th scope="col" className="px-6 py-3">
-                Technologies
+                Company Name
               </th>
               <th scope="col" className="px-6 py-3">
-                Addons
+                Position
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Review
               </th>
               <th scope="col" className="px-6 py-3">
                 Action
@@ -55,9 +58,9 @@ export default function AllClientsReview() {
             </tr>
           </thead>
           <tbody>
-            {data?.map((service) => (
-              <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700" key={service._id}>
-                <ServiceTableRow service={service} setData={setData} data={data} />
+            {data?.map((clientsReview) => (
+              <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700" key={clientsReview._id}>
+                <ClientsReviewTableRow clientsReview={clientsReview} setData={setData} data={data} />
               </tr>
             ))}
           </tbody>
