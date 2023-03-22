@@ -4,6 +4,7 @@ import { MdDeleteForever } from "react-icons/md";
 import axios from "../../utils/axiosInstance";
 
 const Hero = () => {
+  const [file, setFile] = useState(null);
   const [heroData, setHeroData] = useState([]);
   const [formTitle, setFormTitle] = useState("Form");
   const [formButton, setFormButton] = useState("");
@@ -17,7 +18,6 @@ const Hero = () => {
   });
   // const [image, setImage] = useState(null);
 
-
   // Fetching Hero Data
   useEffect(() => {
     axios
@@ -25,7 +25,6 @@ const Hero = () => {
       .then((response) => setHeroData(response.data))
       .catch((error) => console.error(error));
   }, [heroData]);
-
 
   // Update form data when input values change
   const handleChange = (event) => {
@@ -35,14 +34,32 @@ const Hero = () => {
     }));
   };
 
+  // handle change image
+  function handleChangeImage(event) {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = function () {
+      const preview = document.getElementById("preview");
+      const imageDiv = document.getElementById("imageDiv");
+      const image = new Image();
+      image.src = reader.result;
+      imageDiv.classList.remove("hidden");
+      preview.innerHTML = "";
+      preview.appendChild(image);
+    };
+    setFile(file);
+    console.log(file);
+  }
   // Set input fields data while clicking the edit icon
   const handleClick = (hero) => {
     document.getElementById("Form").classList.remove("hidden");
     setFormTitle("Edit Form");
     setFormButton("Update");
     setFormData(hero);
+    document.getElementById("pic").value = "";
+    document.getElementById("preview").innerHTML = "";
   };
-
 
   // Add new Hero
   const handleAdd = () => {
@@ -59,23 +76,21 @@ const Hero = () => {
     setFormButton("Save");
   };
 
-
   // Handle Delete button
   const handleDelete = async (hero) => {
     const shouldDelete = window.confirm("Are you sure you want to delete?");
-    if(shouldDelete){
-      try{
+    if (shouldDelete) {
+      try {
         const response = await axios.delete(`/hero/${hero._id}`);
-        if(response.status == 200){
-          const newArray = heroData.filter(obj => obj._id !== hero._id);
+        if (response.status == 200) {
+          const newArray = heroData.filter((obj) => obj._id !== hero._id);
           setHeroData(newArray);
         }
-      }catch(error){
-        console.log(error)
+      } catch (error) {
+        console.log(error);
       }
     }
   };
-
 
   // const handleFileInputChange = (event) => {
   //   const file = event.target.files[0];
@@ -85,18 +100,34 @@ const Hero = () => {
   // };
 
   // Handle form submission
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     // form submission logic
     if (formButton == "Save") {
       // Add new Hero
-      console.log(formData);
+      let attachment;
+      let image;
+      try {
+        if (file) {
+          const formData = new FormData();
+          formData.append("file", file);
+
+          const { data: resFiles } = await axios.post(
+            "/upload/blogs",
+            formData
+          );
+
+          attachment = resFiles[0].filename;
+          setFile(null);
+          image = attachment;
+        }
+      } catch {}
       axios
         .post(`/hero`, {
           title: document.getElementById("title").value,
           subtitle: document.getElementById("subtitle").value,
           description: document.getElementById("description").value,
-          image: document.getElementById("image").value,
+          image: image,
           button_link: document.getElementById("button_link").value,
           button_text: document.getElementById("button_text").value,
         })
@@ -113,12 +144,31 @@ const Hero = () => {
       document.getElementById("Form").classList.add("hidden");
     } else {
       // update hero
+      let attachment;
+      let image;
+      try {
+        if (file) {
+          const formData = new FormData();
+          formData.append("file", file);
+
+          const { data: resFiles } = await axios.post(
+            "/upload/blogs",
+            formData
+          );
+
+          attachment = resFiles[0].filename;
+          setFile(null);
+          image = attachment;
+          console.log("uploaded image", image);
+        }
+      } catch {}
       axios
         .put(`/hero/${formData._id}`, {
           title: document.getElementById("title").value,
           subtitle: document.getElementById("subtitle").value,
           description: document.getElementById("description").value,
-          image: document.getElementById("image").value,
+          // image: document.getElementById("image").value,
+          image: image,
           button_link: document.getElementById("button_link").value,
           button_text: document.getElementById("button_text").value,
         })
@@ -150,7 +200,7 @@ const Hero = () => {
             >
               <img
                 className="opacity-50 absolute inset-0 w-full h-full object-cover"
-                src={hero.image}
+                src={`${import.meta.env.REACT_APP_SERVER_PATH}/${hero.image}`}
                 alt=""
               />
               <h1 className="text-lg w-full font-bold z-10 relative">
@@ -240,20 +290,41 @@ const Hero = () => {
             onChange={handleChange}
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           />
-          <div className="flex mt-4">
-            <img className="w-1/2 mx-auto border" src={formData.image} alt="" />
-          </div>
-          <div className="mt-4">
-            {/* <label htmlFor="image">Choose an image:</label> */}
-            <input
-              type="file"
-              id="image"
-              name="image"
-              accept="image/*"
-              // onChange={handleFileInputChange}
-            />
+        </div>
+
+        <div className="mt-4"></div>
+        <div id="imageDiv" className=" border">
+          <div className="rounded-md flex items-center justify-center gap-3 mx-auto  m-5">
+            <div
+              className="border w-40 h-40 overflow-hidden"
+              id="preview"
+            ></div>
+            <div className="border">
+              <img
+                className="  w-40 h-40 overflow-hidden"
+                src={`${import.meta.env.REACT_APP_SERVER_PATH}/${
+                  formData.image
+                }`}
+                alt=""
+              />
+            </div>
           </div>
         </div>
+        <input
+          type="file"
+          name="pic"
+          id="pic"
+          accept="image/*"
+          onChange={handleChangeImage}
+          className="shadow my-5 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        />
+        {/* <div id="imageDiv" className="flex mt-4">
+          <div className="" id="preview">
+            Image
+          </div>
+          <img className="w-1/2 mx-auto border" src={formData.image} alt="" />
+        </div> */}
+
         <div className="mb-4">
           <label
             htmlFor="button_link"
