@@ -6,8 +6,10 @@ import CommonSnackbar from "../../components/ComonSnackbar";
 
 const AddClientsReview = () => {
 
-  const [title, setTitle] = useState("");
-  const [technologies, setTechnologies] = useState([]);
+  const [clientName, setClientName] = useState("");
+  const [companyName, setCompanyName] = useState("");
+  const [position, setPosition] = useState("");
+  const [reviewText, setReviewText] = useState("");
   const [file, setFile] = useState(null);
 
   const [loading, setLoading] = useState(false);
@@ -15,22 +17,25 @@ const AddClientsReview = () => {
   const [snackbar, setSnackbar] = useState(false);
 
   const [searchParams] = useSearchParams();
-  const workId = searchParams.get("id");
+  const reviewId = searchParams.get("id");
 
 
   useEffect(() => {
-    if (workId) {
-      axios.get(`/work/${workId}`)
+    if (reviewId) {
+      axios.get(`/client_review/${reviewId}`)
         .then(res => {
-          console.log(res.data)
-          const { image: img, title, technologies } = res.data.work
-          setTitle(title);
-          setTechnologies(technologies);
+          const { client_name, client_image, company_name, position, review_text } = res.data
+          setClientName(client_name)
+          setCompanyName(company_name)
+          setPosition(position)
+          setReviewText(review_text)
+
+
 
           const preview = document.getElementById("preview");
           const imageDiv = document.getElementById("imageDiv");
           const image = new Image();
-          image.src = img.includes("https://") ? img : `${import.meta.env.REACT_APP_SERVER_PATH}/${img}`
+          image.src = client_image.includes("https://") ? client_image : `${import.meta.env.REACT_APP_SERVER_PATH}/${client_image}`
           imageDiv.classList.remove("hidden");
           preview.innerHTML = "";
           preview.appendChild(image);
@@ -62,9 +67,11 @@ const AddClientsReview = () => {
     setLoading(true);
     let attachment;
 
-    const newWork = {
-      title,
-      technologies,
+    const newClient_review = {
+      client_name: clientName,
+      company_name: companyName,
+      position: position,
+      review_text: reviewText
     }
 
     try {
@@ -74,25 +81,25 @@ const AddClientsReview = () => {
         const { data: resFiles } = await axios.post("/upload/blogs", formData);
         attachment = resFiles[0].filename;
         setFile(null);
-        newWork.image = attachment;
-        if (workId) {
-          const { data: d } = await axios.patch(`/work/${workId}`, newWork);
+        newClient_review.client_image = attachment;
+        if (reviewId) {
+          const { data: d } = await axios.put(`/client_review/${reviewId}`, newClient_review);
           console.log(d)
-          setMessage("Work updated Successfully!")
+          setMessage("client_review updated Successfully!")
         } else {
-          const { data } = await axios.post("/work", newWork);
-          console.log(newWork);
+          const { data } = await axios.post("/client_review", newClient_review);
+          console.log(newClient_review);
           console.log(data);
-          setMessage("Work Posted Successfully!")
+          setMessage("client_review Posted Successfully!")
           handleReset();
         }
         setLoading(false);
         setSnackbar(true);
 
       }
-      if (!file && workId) {
-        const { data: d } = await axios.patch(`/work/${workId}`, newWork);
-        setMessage("Work Updated Successfully!")
+      if (!file && reviewId) {
+        const { data: d } = await axios.put(`/client_review/${reviewId}`, newClient_review);
+        setMessage("client_review Updated Successfully!")
         setLoading(false);
         setSnackbar(true);
       }
@@ -104,8 +111,10 @@ const AddClientsReview = () => {
   }
 
   const handleReset = () => {
-    setTitle("")
-    setTechnologies([]);
+    setClientName("")
+    setCompanyName("")
+    setReviewText("")
+    setPosition("")
     setFile(null);
     document.getElementById("pic").value = "";
     const imageDiv = document.getElementById("imageDiv");
@@ -118,10 +127,10 @@ const AddClientsReview = () => {
   return (
     <div className="w-3/4 mx-auto py-5 ">
       {snackbar && <CommonSnackbar message={message} open={snackbar} setOpen={setSnackbar} />}
-      <h2 className="text-xl text-center mb-5">{workId ? "Edit" : "Add"} Work</h2>
+      <h2 className="text-xl text-center mb-5">{reviewId ? "Edit" : "Add"} Client Review</h2>
       <form onSubmit={handlePostSubmit}>
-        <label className="block text-gray-700 font-bold mb-2">Title</label>
-        <input value={title} onChange={(e) => setTitle(e.target.value)} className="mb-5 w-full" type="text" placeholder="Title" required />
+        <label className="block text-gray-700 font-bold mb-2">Client Name</label>
+        <input value={clientName} onChange={(e) => setClientName(e.target.value)} className="mb-5 w-full" type="text" placeholder={clientName} required />
         <div>
           <div className="mb-4">
             <label className="block text-gray-700 font-bold mb-2">
@@ -142,8 +151,12 @@ const AddClientsReview = () => {
               <div className="" id="preview"></div>
             </div>
           </div>
-        <label className="block text-gray-700 font-bold mb-2">Company Name</label>
-        <input value={title} onChange={(e) => setTitle(e.target.value)} className="mb-5 w-full" type="text" placeholder="Company Name" required />
+          <label className="block text-gray-700 font-bold mb-2">Company Name</label>
+          <input value={companyName} onChange={(e) => setCompanyName(e.target.value)} className="mb-5 w-full" type="text" placeholder="Company Name" required />
+          <label className="block text-gray-700 font-bold mb-2">Degisnation</label>
+          <input value={position} onChange={(e) => setPosition(e.target.value)} className="mb-5 w-full" type="text" placeholder="Company Name" required />
+          <label className="block text-gray-700 font-bold mb-2">Review Text</label>
+          <textarea value={reviewText} onChange={(e) => setReviewText(e.target.value)} className="mb-5 w-full" type="text" placeholder="Company Name" required />
         </div>
 
         <div className="mt-14 flex justify-center gap-5">

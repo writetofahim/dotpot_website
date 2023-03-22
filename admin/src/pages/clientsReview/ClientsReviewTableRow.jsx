@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 const ClientsReviewTableRow = ({ clientsReview, setData, data }) => {
     console.log(clientsReview)
-    const { company_name, client_image, client_name, _id,position,review_text } = clientsReview;
+    const { company_name, client_image, client_name, _id, position, review_text } = clientsReview;
     const [isModalOpen, setIsModalOpen] = useState();
     const navigate = useNavigate()
 
