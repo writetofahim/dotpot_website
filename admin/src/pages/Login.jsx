@@ -8,20 +8,18 @@ const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
   // create a isLoading state and setIsLoading setter using the useState hook, initialize to false
   const { user, login, error, loading } = useContext(AuthContext);
-  console.log(user)
   // use the useContext hook to get the user, login, and error values from the AuthContext
   const navigate = useNavigate();
   // use the useNavigate hook to get the navigate function
   const location = useLocation();
-  
+
   const from = location.state?.from?.pathname || "/";
-  console.log("location.state?.from?.pathname: " , location.state?.from?.pathname)
 
   useEffect(() => {
-    if (user) {
+    if (user && !loading) {
       navigate(from, { replace: true });
     }
-  }, [from]);
+  }, [from, user, loading]);
 
   const handleSubmit = async (e) => {
     // define a handleSubmit function that takes an event argument
@@ -53,7 +51,7 @@ const Login = () => {
 
   }
 
-  if(loading){
+  if (!user && loading) {
     return <h1>Loading...</h1>
   }
   return (

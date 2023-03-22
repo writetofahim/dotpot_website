@@ -35,6 +35,9 @@ const ResponseTableRow = ({ response, setData, data }) => {
                 Phone: {phone}
             </td>
             <td className="px-6 py-4 flex gap-2">
+                Message:    {message}
+            </td>
+            <td className="px-6 py-4 flex gap-2">
                 <a className='text-blue-500' href={`${import.meta.env.REACT_APP_SERVER_PATH}/${attachment}`}>Download Attachment</a>
             </td>
             <td className="px-6 py-2 ">

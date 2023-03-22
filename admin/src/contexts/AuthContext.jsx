@@ -4,7 +4,7 @@ import axios from "../utils/axiosInstance";
 export const AuthContext = createContext(); // create a new context object
 
 export const AuthContextProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")) || null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
 
@@ -20,9 +20,8 @@ export const AuthContextProvider = ({ children }) => {
     // If the user object is still valid, set it as the current user
     if (currentUser) {
       setUser(JSON.parse(currentUser));
-      setLoading(false);
     }
-    
+    setLoading(false);
   }, [])
 
   // login user with email and password
@@ -80,5 +79,5 @@ export const AuthContextProvider = ({ children }) => {
   }
 
   // Return the AuthContext.Provider with the user object, login, registration, and logout functions as its value
-  return <AuthContext.Provider value={{ user, login, registration, logout, error, loading}}>{children}</AuthContext.Provider>
+  return <AuthContext.Provider value={{ user, login, registration, logout, error, loading }}>{children}</AuthContext.Provider>
 }

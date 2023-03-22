@@ -10,18 +10,16 @@ import { Navigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthContext";
 
 const RequireAdmin = ({ children }) => {
-  const {user, loading} = useContext(AuthContext)
+  const { user, loading } = useContext(AuthContext);
   const location = useLocation();
-  console.log("location requireAdmin",location)
 
   if (loading) {
     return <h1>Loading...</h1>
   }
 
-  if (user?.role !== "ADMIN" ) {
-    return <Navigate to={"/login"} state={{ from: location }} replace={true} />;
+  if (!user && !loading) {
+    return <Navigate to="/login" state={{ from: location }} replace></Navigate>
   }
-  
   return children;
 };
 
