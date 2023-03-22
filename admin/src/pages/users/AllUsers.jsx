@@ -39,17 +39,20 @@ export default function AllUsers() {
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
               <th scope="col" className="px-6 py-3">
-                Thumbnail
+                Picture
               </th>
               <th scope="col" className="px-6 py-3">
-                Title
+                Name
               </th>
               <th scope="col" className="px-6 py-3">
-                Tags
+                Email
               </th>
-              {/* <th scope="col" className="px-6 py-3">
-                Status
-              </th> */}
+              <th scope="col" className="px-6 py-3">
+                Phone
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Role
+              </th>
               <th scope="col" className="px-6 py-3">
                 Action
               </th>

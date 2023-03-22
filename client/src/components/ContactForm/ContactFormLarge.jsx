@@ -56,7 +56,7 @@ const ContactFormLarge = () => {
                 message: e.target.message.value,
                 attachment
             }
-            const { data } = await axios.post("http://localhost:8800/api/client_responce", response)
+            const { data } = await axios.post("http://localhost:8800/api/client_response", response)
             if (data._id) {
                 setOpenModal(true)
             }

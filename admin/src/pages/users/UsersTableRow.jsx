@@ -5,7 +5,7 @@ import axios from "../../utils/axiosInstance"
 import DeleteModal from '../../components/DeleteModal';
 
 const UsersTableRow = ({ user, setData, data }) => {
-    const { fullName, email, role, phoneNumber, photo, _id } = user;
+    const { username, email, role, phoneNumber, photo, _id } = user;
     const [isModalOpen, setIsModalOpen] = useState()
 
     const handleDelete = async (id) => {
@@ -23,16 +23,16 @@ const UsersTableRow = ({ user, setData, data }) => {
                 <img src={`${import.meta.env.REACT_APP_SERVER_PATH}/${photo}`} alt="" className='w-1/5' />
             </th>
             <td className="px-6 py-4">
-                {fullName}
+                {username}
             </td>
             <td className="px-6 py-4">
                 {email}
             </td>
             <td className="px-6 py-4">
-                {role}
+                {phoneNumber}
             </td>
             <td className="px-6 py-4">
-                {phoneNumber}
+                {role}
             </td>
             <td className="px-6 py-2 ">
                 <div className='flex gap-3'>

@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import axios from '../../utils/axiosInstance';
+import { RxCross1 } from "react-icons/rx";
+import {FaSpinner} from "react-icons/fa"
 
 const AddService = () => {
   const [title, setTitle] = useState('');
@@ -16,6 +18,8 @@ const AddService = () => {
   const [newAddonSdes, setNewAddonSdes] = useState('');
   const [newAddonIcon, setNewAddonIcon] = useState('');
   const [newAddonCost, setNewAddonCost] = useState(0);
+
+  const [loading, setLoading] = useState(false);
 
   const [searchParams] = useSearchParams();
   const serviceId = searchParams.get("id");
@@ -58,14 +62,29 @@ const AddService = () => {
 
   const handleServiceSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true)
     const newService = { title, icon, technologies, addons };
-    console.log(newService)
-    await axios.post('/service', newService);
+    // console.log(newService);
+    if(serviceId){
+      await axios.put(`/service/${serviceId}`, newService);
+    } else{
+      await axios.post('/service', newService);
+    }
+    setLoading(false);
     setTitle('');
     setIcon('');
     setTechnologies([]);
     setAddons([]);
   };
+
+  const handleRemoveAddOn = (item) => {
+    setAddons(prev=>prev.filter((addOn)=>addOn._id !== item._id))
+  }
+
+  const handleRemoveTechnology = (item) => {
+    setTechnologies(prev=>prev.filter((tech)=>tech._id !== item._id))
+  }
+  
 
   return (
     <div className="max-w-lg mx-auto">
@@ -105,11 +124,12 @@ const AddService = () => {
           </label>
           <ul className="list-disc list-inside mb-4">
             {technologies.map((tech, index) => (
-              <li className='flex gap-2 my-2' key={index}>
+              <li className='flex gap-2 my-2 items-center' key={index}>
                 <img className='w-5 object-contain' src={tech.icon} alt={tech.title} />
                 {tech.title} ({tech.cost})
               <br />
             <small>{tech.sdes}</small>
+            <RxCross1 onClick={()=>handleRemoveTechnology(tech)} className='text-sm cursor-pointer text-red-500 font-bold'/>
           </li>
         ))}
       </ul>
@@ -167,11 +187,11 @@ const AddService = () => {
       </label>
       <ul className="list-disc list-inside mb-4">
         {addons.map((addon, index) => (
-          <li  className='flex gap-2 my-2' key={index}>
+          <li  className='flex gap-2 my-2 items-center' key={index}>
             <img className='w-5 object-contain' src={addon.icon} alt={addon.title} />
             {addon.title} ({addon.cost})
-            <br />
             <small>{addon.sdes}</small>
+            <RxCross1 onClick={()=>handleRemoveAddOn(addon)} className='text-sm cursor-pointer text-red-500 font-bold'/>
           </li>
         ))}
       </ul>
@@ -225,10 +245,12 @@ const AddService = () => {
     </div>
     <div className="mt-4">
       <button
-        className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        disabled={loading}
+        className="bg-green-500 disabled:bg-green-300 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline flex items-center gap-2"
         type="submit"
       >
         Save Service
+        {loading && <FaSpinner className="animate-spin" />}
       </button>
     </div>
   </form>
