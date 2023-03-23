@@ -858,19 +858,16 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                       </a>
                       <div className="lg:hidden lg:sidebar-expanded:block 2xl:block">
                         <ul className={`pl-9 mt-1 ${!open && "hidden"}`}>
-                          <li
-                            className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
-                              pathname.includes("orders") && "bg-slate-900"
-                            }`}
-                          >
+                          <li className="mb-1 last:mb-0">
                             <NavLink
                               end
-                              to="section/hero"
-                              className={`block text-slate-200 truncate transition duration-150 ${
-                                pathname.includes("orders")
-                                  ? "hover:text-slate-200"
-                                  : "hover:text-white"
-                              }`}
+                              to="/hero"
+                              className={({ isActive }) =>
+                                "block transition duration-150 truncate " +
+                                (isActive
+                                  ? "text-white bg-fuchsia-900 py-1 px-3"
+                                  : "text-slate-400 hover:text-slate-200")
+                              }
                             >
                               <div className="flex items-center gap-3">
                                 <TfiLayoutSlider />
@@ -880,19 +877,16 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                               </div>
                             </NavLink>
                           </li>
-                          <li
-                            className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
-                              pathname.includes("orders") && "bg-slate-900"
-                            }`}
-                          >
+                          <li className="mb-1 last:mb-0">
                             <NavLink
                               end
-                              to="section/company-info"
-                              className={`block text-slate-200 truncate transition duration-150 ${
-                                pathname.includes("orders")
-                                  ? "hover:text-slate-200"
-                                  : "hover:text-white"
-                              }`}
+                              to="/company-info"
+                              className={({ isActive }) =>
+                                "block transition duration-150 truncate " +
+                                (isActive
+                                  ? "text-white bg-fuchsia-900 py-1 px-3"
+                                  : "text-slate-400 hover:text-slate-200")
+                              }
                             >
                               <div className="flex gap-3 items-center">
                                 <AiOutlineInfoCircle />
@@ -906,7 +900,12 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                             <NavLink
                               end
                               to="/clients-review/all-clients-review"
-                              className="block text-slate-400 hover:text-slate-200 transition duration-150 truncate"
+                              className={({ isActive }) =>
+                                "block transition duration-150 truncate " +
+                                (isActive
+                                  ? "text-white bg-fuchsia-900 py-1 px-3"
+                                  : "text-slate-400 hover:text-slate-200")
+                              }
                             >
                               <div className="flex items-center gap-3">
                                 <MdOutlineReviews />
@@ -920,7 +919,12 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                             <NavLink
                               end
                               to="/contact-center-service/all-contact-center-service"
-                              className="block text-slate-400 hover:text-slate-200 transition duration-150 truncate"
+                              className={({ isActive }) =>
+                                "block transition duration-150 truncate " +
+                                (isActive
+                                  ? "text-white bg-fuchsia-900 py-1 px-3"
+                                  : "text-slate-400 hover:text-slate-200")
+                              }
                             >
                               <div className="flex items-center gap-3">
                                 <MdOutlineMiscellaneousServices />
@@ -934,7 +938,12 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                             <NavLink
                               end
                               to="/key-features/all-key-features"
-                              className="block text-slate-400 hover:text-slate-200 transition duration-150 truncate"
+                              className={({ isActive }) =>
+                                "block transition duration-150 truncate " +
+                                (isActive
+                                  ? "text-white bg-fuchsia-900 py-1 px-3"
+                                  : "text-slate-400 hover:text-slate-200")
+                              }
                             >
                               <div className="flex items-center gap-3">
                                 <MdOutlineFeaturedPlayList />
@@ -948,7 +957,12 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                             <NavLink
                               end
                               to="/our-partners/all-our-partners"
-                              className="block text-slate-400 hover:text-slate-200 transition duration-150 truncate"
+                              className={({ isActive }) =>
+                                "block transition duration-150 truncate " +
+                                (isActive
+                                  ? "text-white bg-fuchsia-900 py-1 px-3"
+                                  : "text-slate-400 hover:text-slate-200")
+                              }
                             >
                               <div className="flex items-center gap-3">
                                 <SiHandshake />
@@ -962,7 +976,12 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                             <NavLink
                               end
                               to="/partnership-model/all-partnership-model"
-                              className="block text-slate-400 hover:text-slate-200 transition duration-150 truncate"
+                              className={({ isActive }) =>
+                                "block transition duration-150 truncate " +
+                                (isActive
+                                  ? "text-white bg-fuchsia-900 py-1 px-3"
+                                  : "text-slate-400 hover:text-slate-200")
+                              }
                             >
                               <div className="flex items-center gap-3">
                                 <FaRegHandshake />
@@ -976,7 +995,12 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                             <NavLink
                               end
                               to="/industry-we-serve/all-industry-we-serve"
-                              className="block text-slate-400 hover:text-slate-200 transition duration-150 truncate"
+                              className={({ isActive }) =>
+                                "block transition duration-150 truncate " +
+                                (isActive
+                                  ? "text-white bg-fuchsia-900 py-1 px-3"
+                                  : "text-slate-400 hover:text-slate-200")
+                              }
                             >
                               <div className="flex items-center gap-3">
                                 <FaIndustry />

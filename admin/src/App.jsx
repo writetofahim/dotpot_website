@@ -1,25 +1,42 @@
 import React, { useContext, useEffect } from "react";
-import { Navigate, Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 
 import "./css/style.css";
 
 import "./charts/ChartjsConfig";
 
 // Import pages
+import RequireAdmin from "./components/RequireAdmin";
+import { AuthContext } from "./contexts/AuthContext";
 import DashboardLayout from "./Layouts/DashboardLayout";
 import AddBlogs from "./pages/blogs/AddBlogs";
 import AllBlogs from "./pages/blogs/AllBlogs";
 import Chat from "./pages/chat/Chat";
+import ChatBody from "./pages/chat/ChatBody";
 import AddResponse from "./pages/client-response/AddResponse";
 import AllResponse from "./pages/client-response/AllResponse";
+import AddClientsReview from "./pages/clientsReview/AddClientsReview";
+import AllClientsReview from "./pages/clientsReview/AllClientsReview";
+import AddContactCenterService from "./pages/contactCenterService/AddContactCenterService";
+import AllContactCenterService from "./pages/contactCenterService/AllContactCenterService";
 import Dashboard from "./pages/Dashboard";
+import AddIndustryWeServe from "./pages/indurstyWeServe/AddIndustryWeServe";
+import AllIndustryWeServe from "./pages/indurstyWeServe/AllIndustryWeServe";
 import JobApplications from "./pages/JobApplications";
 import AddJobs from "./pages/jobs/AddJobs";
 import AllJobs from "./pages/jobs/AllJobs";
+import AddKeyFeatures from "./pages/keyFeatures/AddKeyFeatures";
+import AllKeyFeatures from "./pages/keyFeatures/AllKeyFeatures";
+import Login from "./pages/Login";
 import Orders from "./pages/Orders";
+import AllOrders from "./pages/orders/AllOrders";
+import AddOurPartners from "./pages/ourPartners/AddOurPartners";
+import AllOurPartners from "./pages/ourPartners/AllOurPartners";
+import AddPartnershipModel from "./pages/partnershipModel/AddPartnershipModel";
+import AllPartnershipModel from "./pages/partnershipModel/AllPartnershipModel";
 import CompanyInfo from "./pages/sections/CompanyInfo";
 import Hero from "./pages/sections/Hero";
-import AddServices from "./pages/services/AddServices";
+import AddService from "./pages/services/AddServices";
 import AllServices from "./pages/services/AllServices";
 import AddTeam from "./pages/team/AddTeam";
 import AllTeam from "./pages/team/AllTeam";
@@ -27,30 +44,12 @@ import AddUsers from "./pages/users/AddUsers";
 import AllUsers from "./pages/users/AllUsers";
 import AddWorks from "./pages/works/AddWorks";
 import AllWorks from "./pages/works/AllWorks";
-import Login from "./pages/Login";
-import ChatBody from "./pages/chat/ChatBody";
-import { AuthContext } from "./contexts/AuthContext";
-import RequireAdmin from "./components/RequireAdmin";
-import AllClientsReview from "./pages/clientsReview/AllClientsReview";
-import AddService from "./pages/services/AddServices";
-import AddClientsReview from "./pages/clientsReview/AddClientsReview";
-import AllIndustryWeServe from "./pages/indurstyWeServe/AllIndustryWeServe";
-import AddIndustryWeServe from "./pages/indurstyWeServe/AddIndustryWeServe";
-import AllContactCenterService from "./pages/contactCenterService/AllContactCenterService";
-import AddContactCenterService from "./pages/contactCenterService/AddContactCenterService";
-import AllOrders from "./pages/orders/AllOrders";
-import AllKeyFeatures from "./pages/keyFeatures/AllKeyFeatures";
-import AddKeyFeatures from "./pages/keyFeatures/AddKeyFeatures";
-import AllOurPartners from "./pages/ourPartners/AllOurPartners";
-import AddOurPartners from "./pages/ourPartners/AddOurPartners";
-import AllPartnershipModel from "./pages/partnershipModel/AllPartnershipModel";
-import AddPartnershipModel from "./pages/partnershipModel/AddPartnershipModel";
 // import AddClientsReview from "./pages/clientsReview/AddClientsReview";
 
 function App() {
   const location = useLocation();
   const { user } = useContext(AuthContext);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!user) {
@@ -66,9 +65,17 @@ function App() {
     <>
       <Routes>
         <Route path="/login" element={<Login />} />
-        <Route exact path="/" element={<RequireAdmin><DashboardLayout /></RequireAdmin>}>
+        <Route
+          exact
+          path="/"
+          element={
+            <RequireAdmin>
+              <DashboardLayout />
+            </RequireAdmin>
+          }
+        >
           <Route path="/" element={<Dashboard />} />
-          <Route path="/chat" element={<Chat />} >
+          <Route path="/chat" element={<Chat />}>
             <Route path="/chat/:id" element={<ChatBody />} />
           </Route>
           <Route path="/job-applications" element={<JobApplications />} />
@@ -93,21 +100,57 @@ function App() {
           <Route path="/services/add-services" element={<AddService />} />
           <Route path="/team/all-team" element={<AllTeam />} />
           <Route path="/team/add-team" element={<AddTeam />} />
-          <Route path="/clients-review/all-clients-review" element={<AllClientsReview />} />
-          <Route path="/clients-review/add-clients-review" element={<AddClientsReview />} />
-          <Route path="/industry-we-serve/all-industry-we-serve" element={<AllIndustryWeServe />} />
-          <Route path="/industry-we-serve/add-industry-we-serve" element={<AddIndustryWeServe />} />
-          <Route path="/contact-center-service/all-contact-center-service" element={<AllContactCenterService />} />
-          <Route path="/contact-center-service/add-contact-center-service" element={<AddContactCenterService />} />
+          <Route
+            path="/clients-review/all-clients-review"
+            element={<AllClientsReview />}
+          />
+          <Route
+            path="/clients-review/add-clients-review"
+            element={<AddClientsReview />}
+          />
+          <Route
+            path="/industry-we-serve/all-industry-we-serve"
+            element={<AllIndustryWeServe />}
+          />
+          <Route
+            path="/industry-we-serve/add-industry-we-serve"
+            element={<AddIndustryWeServe />}
+          />
+          <Route
+            path="/contact-center-service/all-contact-center-service"
+            element={<AllContactCenterService />}
+          />
+          <Route
+            path="/contact-center-service/add-contact-center-service"
+            element={<AddContactCenterService />}
+          />
           <Route path="/order" element={<AllOrders />} />
-          <Route path="/key-features/all-key-features" element={<AllKeyFeatures />} />
-          <Route path="/key-features/add-key-feature" element={<AddKeyFeatures />} />
-          <Route path="/our-partners/all-our-partners" element={<AllOurPartners />} />
-          <Route path="/our-partners/add-our-partners" element={<AddOurPartners />} />
-          <Route path="/partnership-model/all-partnership-model" element={<AllPartnershipModel />} />
-          <Route path="/partnership-model/add-partnership-model" element={<AddPartnershipModel />} />
-          <Route path="/section/hero" element={<Hero />} />
-          <Route path="/section/company-info" element={<CompanyInfo />} />
+          <Route
+            path="/key-features/all-key-features"
+            element={<AllKeyFeatures />}
+          />
+          <Route
+            path="/key-features/add-key-feature"
+            element={<AddKeyFeatures />}
+          />
+          <Route
+            path="/our-partners/all-our-partners"
+            element={<AllOurPartners />}
+          />
+          <Route
+            path="/our-partners/add-our-partners"
+            element={<AddOurPartners />}
+          />
+          <Route
+            path="/partnership-model/all-partnership-model"
+            element={<AllPartnershipModel />}
+          />
+          <Route
+            path="/partnership-model/add-partnership-model"
+            element={<AddPartnershipModel />}
+          />
+          <Route path="/hero" element={<Hero />} />
+          <Route path="/company-info" element={<CompanyInfo />} />
         </Route>
       </Routes>
     </>
