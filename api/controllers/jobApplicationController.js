@@ -13,13 +13,35 @@ const createJobApplication = async (req, res) => {
 };
 
 const getAllJobApplications = async (req, res) => {
-  try {
-    const jobApplications = await JobApplication.find();
-
-    res.status(200).json({ success: true, data: jobApplications });
-  } catch (error) {
-    res.status(500).json({ success: false, error: error.message });
-  }
+    // Get the current page number from the query parameters, default to 1 if not specified
+    const page = parseInt(req.query.page) || 1;
+    // Get the number of Orders to display per page from the query parameters, default to 10 if not specified
+    const limit = parseInt(req.query.limit) || 10;
+  
+    try {
+      // Get the total number of works in the database
+      const applications = await JobApplication.countDocuments({});
+      // Calculate the total number of pages based on the limit and total number of JobApplications
+      const totalPages = Math.ceil(applications / limit);
+      // Calculate the starting index of the JobApplications to retrieve
+      const startIndex = (page - 1) * limit;
+      // Calculate the ending index of the JobApplications to retrieve
+      const endIndex = page * limit;
+  
+      // Retrieve the JobApplications from the database based on the pagination parameters
+      const JobApplications = await JobApplication.find({}).sort({ createdAt: -1 }).skip(startIndex).limit(limit)
+      // Send the JobApplications as a response along with metadata about the pagination
+      res.json({
+        applications: applications,
+        totalPages,
+        currentPage: page,
+        JobApplications: JobApplications
+      });
+    } catch (err) {
+      // If there's an error, log it to the console and send a 500 response
+      console.log(err);
+      res.status(500).send({ error: 'Server error' });
+    }
 };
 
 const getJobApplicationById = async (req, res) => {

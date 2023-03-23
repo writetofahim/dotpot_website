@@ -1140,7 +1140,7 @@ export const inputFields = [
     {
         title: "Phone",
         placeholder: "Enter phone number",
-        type: "number",
+        type: "text",
         name: "number",
         required: true
     },
