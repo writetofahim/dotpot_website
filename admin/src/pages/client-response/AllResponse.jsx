@@ -43,9 +43,6 @@ export default function AllResponse() {
               <th scope="col" className="px-6 py-3">
                 Information
               </th>
-              <th scope="col" className="px-6 py-3">
-                Message
-              </th>
 
               <th scope="col" className="px-6 py-3">
                 Action
