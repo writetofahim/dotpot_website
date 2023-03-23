@@ -228,7 +228,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
               >
                 <NavLink
                   end
-                  to="/orders"
+                  to="/order"
                   className={`block text-slate-200 truncate transition duration-150 ${
                     pathname.includes("orders")
                       ? "hover:text-slate-200"
