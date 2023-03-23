@@ -114,7 +114,7 @@ function KeyFeatureSlider() {
     // Data Fetching
     useEffect(() => {
         axios.get('/key_feature')
-            .then(response => setData(response.data))
+            .then(response => setData(response.data.KeyFeatures))
             .catch(error => console.error(error));
     }, []);
 

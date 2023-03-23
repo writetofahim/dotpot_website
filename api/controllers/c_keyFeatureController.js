@@ -2,14 +2,34 @@ const KeyFeature = require('../models/C_keyFeature');
 
 // Handle index actions - GET /keyFeatures
 exports.getAllKeyFeatures = async function (req, res) {
+  // Get the current page number from the query parameters, default to 1 if not specified
+  const page = parseInt(req.query.page) || 1;
+  // Get the number of KeyFeatures to display per page from the query parameters, default to 10 if not specified
+  const limit = parseInt(req.query.limit) || 10;
+
   try {
-    const keyFeatures = await KeyFeature.find();
-    res.status(200).json(keyFeatures);
-  } catch (err) {
-    res.status(500).json({
-      status: "error",
-      message: err.message
+    // Get the total number of works in the database
+    const keyFeatures = await KeyFeature.countDocuments({});
+    // Calculate the total number of pages based on the limit and total number of KeyFeatures
+    const totalPages = Math.ceil(keyFeatures / limit);
+    // Calculate the starting index of the KeyFeatures to retrieve
+    const startIndex = (page - 1) * limit;
+    // Calculate the ending index of the KeyFeatures to retrieve
+    const endIndex = page * limit;
+
+    // Retrieve the KeyFeatures from the database based on the pagination parameters
+    const KeyFeatures = await KeyFeature.find({}).sort({ createdAt: -1 }).skip(startIndex).limit(limit)
+    // Send the KeyFeatures as a response along with metadata about the pagination
+    res.json({
+      keyFeatures: keyFeatures,
+      totalPages,
+      currentPage: page,
+      KeyFeatures: KeyFeatures
     });
+  } catch (err) {
+    // If there's an error, log it to the console and send a 500 response
+    console.log(err);
+    res.status(500).send({ error: 'Server error' });
   }
 };
 

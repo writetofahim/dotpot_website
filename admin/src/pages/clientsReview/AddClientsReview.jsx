@@ -153,10 +153,10 @@ const AddClientsReview = () => {
           </div>
           <label className="block text-gray-700 font-bold mb-2">Company Name</label>
           <input value={companyName} onChange={(e) => setCompanyName(e.target.value)} className="mb-5 w-full" type="text" placeholder="Company Name" required />
-          <label className="block text-gray-700 font-bold mb-2">Degisnation</label>
-          <input value={position} onChange={(e) => setPosition(e.target.value)} className="mb-5 w-full" type="text" placeholder="Company Name" required />
+          <label className="block text-gray-700 font-bold mb-2">Designation</label>
+          <input value={position} onChange={(e) => setPosition(e.target.value)} className="mb-5 w-full" type="text" placeholder="Designation" required />
           <label className="block text-gray-700 font-bold mb-2">Review Text</label>
-          <textarea value={reviewText} onChange={(e) => setReviewText(e.target.value)} className="mb-5 w-full" type="text" placeholder="Company Name" required />
+          <textarea value={reviewText} onChange={(e) => setReviewText(e.target.value)} className="mb-5 w-full" type="text" placeholder="Review Text" required />
         </div>
 
         <div className="mt-14 flex justify-center gap-5">
