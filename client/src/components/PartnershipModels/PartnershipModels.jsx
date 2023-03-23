@@ -37,7 +37,7 @@ const PartnershipModels = () => {
     // Data Fetching
     useEffect(() => {
         axios.get('/partnership_model')
-            .then(response => setData(response.data))
+            .then(response => setData(response.data.partnershipModels))
             .catch(error => console.error(error));
     }, []);
 

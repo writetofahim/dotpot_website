@@ -1,15 +1,30 @@
 const PartnershipModel = require('../models/C_partnershipModel');
 
-// Get all partnership models - GET /partnershipModels
-exports.getAllPartnershipModels = async function (req, res) {
+/**
+ * Get all partnershipModel with pagination.
+ * @param {number} page - The page number to retrieve.
+ * @param {number} limit - The maximum number of partnershipModel to retrieve per page.
+ * @returns {Object} - An object containing an array of partnershipModel and metadata.
+ * @throws {Error} - If there is an error retrieving the partnershipModel from the database.
+ */
+exports.getAllPartnershipModels = async (req, res) => {
   try {
-    const partnershipModels = await PartnershipModel.find();
-    res.status(200).json(partnershipModels);
-  } catch (error) {
-    res.status(500).json({
-      status: 'error',
-      message: error.message,
-    });
+      const { page = 1, limit = 10 } = req.query;
+      const partnershipModel = await PartnershipModel.find()
+          .limit(limit * 1)
+          .skip((page - 1) * limit)
+          .exec()
+
+      const count = await PartnershipModel.countDocuments();
+      res.json({
+          partnershipModels: partnershipModel.map(partnership => partnership.toObject()),
+          totalPages: Math.ceil(count / limit),
+          currentPage: page,
+          totalPartnershipModel: count
+      });
+  } catch (err) {
+      console.error(err.message);
+      res.status(500).send('Server Error');
   }
 };
 
