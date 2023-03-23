@@ -1,69 +1,116 @@
 import React from "react";
 
-import DashboardCard01 from "../partials/dashboard/DashboardCard01";
-import DashboardCard02 from "../partials/dashboard/DashboardCard02";
+
+const Card = ({title,link}) => {
+  return(
+    <a href={link} className="w-2/5 lg:w-1/5">
+      <div className="w-full h-24 border flex items-center justify-center rounded-xl hover:shadow-xl hover:scale-105 transition-all bg-gray-100 hover:bg-purple-500 hover:text-white">
+        <h3 className="text-xl font-bold text-center">{title}</h3>
+      </div>
+    </a>
+  )
+}
 
 function Dashboard() {
   return (
-    <div className="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto">
-      {/* Welcome banner */}
-      {/* <WelcomeBanner /> */}
-
-      {/* Dashboard actions */}
-      <div className="sm:flex sm:justify-between sm:items-center mb-8">
-        {/* Left: Avatars */}
-        {/* <DashboardAvatars /> */}
-
-        {/* Right: Actions */}
-        <div className="grid grid-flow-col sm:auto-cols-max justify-start sm:justify-end gap-2">
-          {/* Filter button */}
-          {/* <FilterButton /> */}
-          {/* Datepicker built with flatpickr */}
-          {/* <Datepicker /> */}
-          {/* Add view button */}
-          {/* <button className="btn bg-indigo-500 hover:bg-indigo-600 text-white">
-          <svg
-            className="w-4 h-4 fill-current opacity-50 shrink-0"
-            viewBox="0 0 16 16"
-          >
-            <path d="M15 7H9V1c0-.6-.4-1-1-1S7 .4 7 1v6H1c-.6 0-1 .4-1 1s.4 1 1 1h6v6c0 .6.4 1 1 1s1-.4 1-1V9h6c.6 0 1-.4 1-1s-.4-1-1-1z" />
-          </svg>
-          <span className="hidden xs:block ml-2">Add view</span>
-        </button> */}
-        </div>
-      </div>
-
-      {/* Cards */}
-      <div className="grid grid-cols-12 gap-6">
-        {/* Line chart (Acme Plus) */}
-        <DashboardCard01 />
-        {/* Line chart (Acme Advanced) */}
-        <DashboardCard02 />
-        {/* Line chart (Acme Professional) */}
-        {/* <DashboardCard03 /> */}
-        {/* Bar chart (Direct vs Indirect) */}
-        {/* <DashboardCard04 /> */}
-        {/* Line chart (Real Time Value) */}
-        {/* <DashboardCard05 /> */}
-        {/* Doughnut chart (Top Countries) */}
-        {/* <DashboardCard06 /> */}
-        {/* Table (Top Channels) */}
-        {/* <DashboardCard07 /> */}
-        {/* Line chart (Sales Over Time) */}
-        {/* <DashboardCard08 /> */}
-        {/* Stacked bar chart (Sales VS Refunds) */}
-        {/* <DashboardCard09 /> */}
-        {/* Card (Customers) */}
-        {/* <DashboardCard10 /> */}
-        {/* Card (Reasons for Refunds) */}
-        {/* <DashboardCard11 /> */}
-        {/* Card (Recent Activity) */}
-        {/* <DashboardCard12 /> */}
-        {/* Card (Income/Expenses) */}
-        {/* <DashboardCard13 /> */}
+    <div className="w-full">
+      <h1 className="text-6xl font-bold text-center">Welcome To DotpotiT Dashbord</h1>
+      <div className="w-full flex p-5 flex-wrap gap-5 justify-center mt-10">
+        {
+          data.map((item,index)=>(
+            <Card {...item} key={index} />
+          ))
+        }
       </div>
     </div>
   );
 }
 
 export default Dashboard;
+
+const data = [
+  {
+    title: "Dashboard",
+    link: "/"
+  },
+  {
+    title: "Chat",
+    link: "/chat"
+  },
+  {
+    title: "Job Applications",
+    link: "/job-applications"
+  },
+  {
+    title: "Orders",
+    link: "/order"
+  },
+  {
+    title: "Clients Review",
+    link: "/client-response/all-responses"
+  },
+  {
+    title: "Users",
+    link: "/users/all-users"
+  },
+  {
+    title: "Blogs",
+    link: "/blogs/all-blogs"
+  },
+  {
+    title: "Works",
+    link: "/works/all-works"
+  },
+  {
+    title: "Jobs",
+    link: "/jobs/all-jobs"
+  },
+  {
+    title: "All Services",
+    link: "/services/all-services"
+  },
+  {
+    title: "Add Services",
+    link: "/services/add-services"
+  },
+  {
+    title: "All Teams",
+    link: "/team/all-team"
+  },
+  {
+    title: "Add Team",
+    link: "/team/add-team"
+  },
+  {
+    title: "Edit Hero Section",
+    link: "/section/hero"
+  },
+  {
+    title: "Edit Company Infos",
+    link: "/section/company-info"
+  },
+  {
+    title: "Edit Clients Review",
+    link: "/section/company-info"
+  },
+  {
+    title: "Edit Contact Center Services",
+    link: "/contact-center-service/all-contact-center-service"
+  },
+  {
+    title: "Edit Key Features",
+    link: "/key-features/all-key-features"
+  },
+  {
+    title: "Edit Our Partners",
+    link: "/our-partners/all-our-partners"
+  },
+  {
+    title: "Edit Partnership Model",
+    link: "/partnership-model/all-partnership-model"
+  },
+  {
+    title: "Edit Industry We Serve",
+    link: "/industry-we-serve/all-industry-we-serve"
+  },
+]

@@ -36,7 +36,7 @@ const AllContactCenterService = () => {
     setIsModalOpen(true);
   };
   return (
-    <div className="relative overflow-x-auto">
+    <div className="relative overflow-x-auto p-5">
       {isModalOpen && (
         <DeleteModal
           handleDelete={() => handleDelete(selectedId)}
@@ -49,7 +49,7 @@ const AllContactCenterService = () => {
           Add New
         </button>
       </Link>
-      <table className="mb-14 w-full text-sm text-left text-gray-500 dark:text-gray-400">
+      <table className="mb-14 w-full text-sm text-left text-gray-500 dark:text-gray-400 rounded-lg overflow-hidden">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr>
             <th scope="col" className="px-6 py-3">
