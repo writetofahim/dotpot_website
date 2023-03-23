@@ -4,7 +4,7 @@ const OrderSchema = new mongoose.Schema(
 {
     client_id: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'users',
+    ref: 'User',
     },
     total_cost: {
     type: Number,
@@ -16,7 +16,8 @@ const OrderSchema = new mongoose.Schema(
     },
     status: {
     type: String,
-    default: 'Pending'
+    default: 'Pending',
+    enum: ['Pending', 'Active', 'Delivered', "Cancelled"]
     }
 },
 { timestamps: true }

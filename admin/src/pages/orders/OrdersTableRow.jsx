@@ -4,8 +4,9 @@ import { AiOutlineEdit } from 'react-icons/ai';
 import axios from "../../utils/axiosInstance"
 import DeleteModal from '../../components/DeleteModal';
 import { useNavigate } from 'react-router-dom';
+import moment from 'moment'
 
-const OrdersTableRow = ({ order, setData, data }) => {
+const OrdersTableRow = ({ order, setData, data , refetch}) => {
     const { client_id, createdAt, _id, total_cost, selected_items, status } = order;
     console.log(selected_items)
     const [isModalOpen, setIsModalOpen] = useState();
@@ -18,14 +19,31 @@ const OrdersTableRow = ({ order, setData, data }) => {
         }
     }
 
+    const handleStatusChange =async (e) => {
+      if(!e.target.value) return
+      const response = await axios.put(`/order/${_id}`, {status:e.target.value})
+      if (response.status === 200) {
+        refetch();
+     }
+    }
+    
+
     return (
         <>
             {isModalOpen && <DeleteModal handleDelete={() => handleDelete(_id)} open={isModalOpen} setOpen={setIsModalOpen} />}
             <td className="px-6 py-4">
-                {createdAt}
+                {moment(createdAt).format('LL')}
             </td>
-            <td className="px-6 py-4">
-                {client_id}
+            <td className="px-6 py-4 ">
+              <div>
+                Username: <span className="font-bold"> {client_id?.username}</span> 
+              </div>
+              <div>
+                Email: <span className="font-bold"> {client_id?.email}</span>
+              </div>
+              <div>
+               Phone: <span className="font-bold">{client_id?.phone}</span>
+             </div>
             </td>
             <td className="px-6 py-4">
                 <div className="">
@@ -67,7 +85,17 @@ const OrdersTableRow = ({ order, setData, data }) => {
                 {total_cost}
             </td>
             <td className="px-6 py-4">
-                {status}
+                <span className={`px-2 py-1 ${status==="Pending" && "bg-yellow-200"} ${status==="Active" ? "bg-blue-200" : "bg-gray-300"} ${status==="Cancelled" ? "bg-red-200" : "bg-gray-300"}  ${status==="Delivered" && "bg-green-200"} rounded-full w-24 inline-block text-center`}>{status}</span>
+            </td>
+            
+            <td className="px-6 py-4">
+            <select className='rounded text-sm' onChange={handleStatusChange} name="" id="">
+                  <option value="">Select</option>
+                  <option value="Pending">Pending</option>
+                  <option value="Active">Active</option>
+                  <option value="Delivered">Delivered</option>
+                  <option value="Cancelled">Cancelled</option>
+                </select>
             </td>
             {/* <td className="px-6 py-2 ">
                 <div className='flex gap-3'>

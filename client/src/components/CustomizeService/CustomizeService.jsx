@@ -10,6 +10,8 @@ import { FaSpinner } from "react-icons/fa";
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../../../../admin/src/contexts/AuthContext';
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -215,6 +217,7 @@ const AddonsCard = (props) => {
 
 const CustomizeService = () => {
 
+  const {user} = useContext(AuthContext);
   const [openService, setOpenService] = useState(null)
   const [selectedServices, setSelectedServices] = useState({})
   const [order, setOrder] = useState([]);
@@ -275,7 +278,7 @@ const CustomizeService = () => {
     setIsSubmitting(true);
     setIsError(false);
     const newOrder = {
-      client_id: "6412dbbf273f62b05565d47c",
+      client_id: user._id,
       total_cost: price,
       selected_items: order,
     }

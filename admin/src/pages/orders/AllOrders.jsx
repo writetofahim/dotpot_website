@@ -11,9 +11,8 @@ export default function AllOrders() {
   const fetchData = async (page) => {
     try {
       const response = await axios.get(`/order?page=${page}`);
-      setData(response.data.Orders);
+      setData(response.data.orders);
       setTotalPages(response.data.totalPages);
-      console.log(data);
     } catch (error) {
       console.error(error);
     }
@@ -56,12 +55,15 @@ export default function AllOrders() {
               <th scope="col" className="px-6 py-3">
                 Status
               </th>
+              <th scope="col" className="px-6 py-3">
+                Action
+              </th>
             </tr>
           </thead>
           <tbody>
             {data?.map((order) => (
               <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700" key={order._id}>
-                <OrdersTableRow order={order} setData={setData} data={data} />
+                <OrdersTableRow order={order} setData={setData} data={data} refetch={()=>fetchData(page)}/>
               </tr>
             ))}
           </tbody>

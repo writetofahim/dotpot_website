@@ -23,6 +23,7 @@ exports.createOrder = async (req, res) => {
  * @param {Object} res - The response object
  */
 exports.getAllOrders = async (req, res) => {
+  console.log("hits")
   // Get the current page number from the query parameters, default to 1 if not specified
   const page = parseInt(req.query.page) || 1;
   // Get the number of Orders to display per page from the query parameters, default to 10 if not specified
@@ -39,13 +40,13 @@ exports.getAllOrders = async (req, res) => {
     const endIndex = page * limit;
 
     // Retrieve the Orders from the database based on the pagination parameters
-    const Orders = await Order.find({}).sort({ createdAt: -1 }).skip(startIndex).limit(limit)
+    const orders = await Order.find({}).sort({ createdAt: -1 }).skip(startIndex).limit(limit).populate({path:'client_id', select: '-password'})
     // Send the Orders as a response along with metadata about the pagination
     res.json({
       reviews: reviews,
       totalPages,
       currentPage: page,
-      Orders: Orders
+      orders: orders
     });
   } catch (err) {
     // If there's an error, log it to the console and send a 500 response
@@ -82,14 +83,11 @@ exports.getOrderById = async (req, res) => {
 exports.updateOrderById = async (req, res) => {
   try {
     const { id } = req.params;
-    const { client_id, total_cost, selected_items, status } = req.body;
+    const { status } = req.body;
     let order = await Order.findById(id);
     if (!order) {
       return res.status(404).json({ success: false, error: 'Order not found' });
     }
-    order.client_id = client_id;
-    order.total_cost = total_cost;
-    order.selected_items = selected_items;
     order.status = status;
     order = await order.save();
     res.json({ success: true, data: order });
