@@ -83,15 +83,15 @@ const data = [
   },
   {
     title: "Edit Hero Section",
-    link: "/section/hero"
+    link: "/hero"
   },
   {
     title: "Edit Company Infos",
-    link: "/section/company-info"
+    link: "/company-info"
   },
   {
     title: "Edit Clients Review",
-    link: "/section/company-info"
+    link: "/company-info"
   },
   {
     title: "Edit Contact Center Services",
