@@ -38,6 +38,13 @@ import AllIndustryWeServe from "./pages/indurstyWeServe/AllIndustryWeServe";
 import AddIndustryWeServe from "./pages/indurstyWeServe/AddIndustryWeServe";
 import AllContactCenterService from "./pages/contactCenterService/AllContactCenterService";
 import AddContactCenterService from "./pages/contactCenterService/AddContactCenterService";
+import AllOrders from "./pages/orders/AllOrders";
+import AllKeyFeatures from "./pages/keyFeatures/AllKeyFeatures";
+import AddKeyFeatures from "./pages/keyFeatures/AddKeyFeatures";
+import AllOurPartners from "./pages/ourPartners/AllOurPartners";
+import AddOurPartners from "./pages/ourPartners/AddOurPartners";
+import AllPartnershipModel from "./pages/partnershipModel/AllPartnershipModel";
+import AddPartnershipModel from "./pages/partnershipModel/AddPartnershipModel";
 // import AddClientsReview from "./pages/clientsReview/AddClientsReview";
 
 function App() {
@@ -92,6 +99,13 @@ function App() {
           <Route path="/industry-we-serve/add-industry-we-serve" element={<AddIndustryWeServe />} />
           <Route path="/contact-center-service/all-contact-center-service" element={<AllContactCenterService />} />
           <Route path="/contact-center-service/add-contact-center-service" element={<AddContactCenterService />} />
+          <Route path="/order" element={<AllOrders />} />
+          <Route path="/key-features/all-key-features" element={<AllKeyFeatures />} />
+          <Route path="/key-features/add-key-feature" element={<AddKeyFeatures />} />
+          <Route path="/our-partners/all-our-partners" element={<AllOurPartners />} />
+          <Route path="/our-partners/add-our-partners" element={<AddOurPartners />} />
+          <Route path="/partnership-model/all-partnership-model" element={<AllPartnershipModel />} />
+          <Route path="/partnership-model/add-partnership-model" element={<AddPartnershipModel />} />
           <Route path="/section/hero" element={<Hero />} />
           <Route path="/section/company-info" element={<CompanyInfo />} />
         </Route>

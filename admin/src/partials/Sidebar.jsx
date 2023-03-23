@@ -306,7 +306,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                               </span>
                             </NavLink>
                           </li>
-                          <li className="mb-1 last:mb-0">
+                          {/* <li className="mb-1 last:mb-0">
                             <NavLink
                               end
                               to="/client-response/add-responses"
@@ -321,7 +321,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                                 Add Response
                               </span>
                             </NavLink>
-                          </li>
+                          </li> */}
                         </ul>
                       </div>
                     </React.Fragment>
