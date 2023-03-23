@@ -21,10 +21,12 @@ import ChatPopup from '../../components/ChatPopup/ChatPopup'
 import { AiOutlineDoubleRight } from "react-icons/ai"
 import axios from '../../utils/axiosInstance'
 
+import Particle from '../../components/Hero/Particle'
+
 const BlogCard = (props) => {
     const id = props._id
     return (
-        <div className="container p-5 mx-auto border rounded-xl shadow-xl">
+        <div className="container p-5 mx-auto border rounded-xl shadow-xl bg-white">
             <div className=" lg:flex lg:items-center">
                 <img className="object-cover w-full lg:mx-6 lg:w-1/2 rounded-xl h-72 lg:h-96" src={`${import.meta.env.REACT_APP_SERVER_PATH}/${props.image}`} alt="" />
 
@@ -65,7 +67,7 @@ const Blog = () => {
     // Data Fetching
     useEffect(() => {
         axios.get('/blog')
-            .then(response => setData(response.data))
+            .then(response => setData(response.data.blogs))
             .catch(error => console.error(error));
     }, []); 
 
@@ -73,6 +75,7 @@ const Blog = () => {
     return (
         <>
             <Navbar />
+            <Particle />
             <div className="w-full pt-[15vh]">
                 <div className="w-full flex flex-col items-center justify-center">
                     <h1 className="text-6xl mt-10 mb-2 font-bold italic text-primary-500">Blogs</h1>

@@ -18,11 +18,14 @@ import WhoWeWorkWith from '../../components/WhoWeWorkWith/WhoWeWorkWith'
 import GoogleMap from '../../components/GoogleMap/GoogleMap'
 import ChatPopup from '../../components/ChatPopup/ChatPopup'
 
+import Particle from '../../components/Hero/Particle'
+
 
 const Contact = () => {
     return (
         <>
             <Navbar />
+            <Particle />
             <div className="w-full pt-[15vh] p-2">
 
                 {/* Contact Form Section */}

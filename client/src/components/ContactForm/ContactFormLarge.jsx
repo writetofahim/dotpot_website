@@ -75,7 +75,7 @@ const ContactFormLarge = () => {
     }
 
     return (
-        <div className="shadow w-full p-5 rounded-xl max-w-[1200px]">
+        <div className="shadow w-full p-5 rounded-xl max-w-[1200px] bg-white">
             {openModal && <ResponseSuccessModal openModal={openModal} setOpenModal={setOpenModal} />}
             <form onSubmit={handleSubmit}>
                 <div className="w-full flex flex-col md:flex-row items-center md:gap-5">

@@ -20,11 +20,14 @@ import SocialMedia from '../../components/SocialMedia/SocialMedia'
 import WhoWeWorkWith from '../../components/WhoWeWorkWith/WhoWeWorkWith'
 import { aboutPageContent, PartnershipModelsData } from '../../data'
 
+import Particle from '../../components/Hero/Particle'
+
 const AboutUs = () => {
     const heroImg = "https://www.hyperlinkinfosystem.com/assets/uploads/banner/1634022694.png"
     const button = { title: "Contact Us", link: "/contact" }
     return (
         <div className="w-full">
+            <Particle />
             <Navbar />
             <AboutHero heading="About DotpotiT" text="A fast growing IT complay" heroImg={heroImg} button={button} />
             <OurPartnersSlider />

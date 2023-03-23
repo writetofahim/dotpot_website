@@ -23,7 +23,7 @@ const SocialMedia = () => {
     }, []);
 
     return (
-        <div className='w-full overflow-hidden py-10 md:flex md:flex-col md:justify-center bg-white'>
+        <div className='w-full overflow-hidden py-10 md:flex md:flex-col md:justify-center'>
             <div className="p-5 mt-5 w-full md:max-w-[1400px] self-center flex gap-10 justify-between items-center flex-col md:flex-row lg:flex-row">
                 <div className="flex-1">
                     <h1 className="text-6xl font-bold mb-5 text-primary-500">Social Media</h1>
@@ -34,7 +34,7 @@ const SocialMedia = () => {
                         data && data.map((item, index) => {
                             return (
                                 <Link to={item.url} key={index} target="_blank">
-                                    <div key={index} className="md:w-[100px] md:h-[100px] p-2 rounded-full md:rounded-lg shadow flex items-center justify-center hover:border hover: border-purple-500 hover:scale-110 hover:shadow-xl transition-all">
+                                    <div key={index} className="md:w-[100px] md:h-[100px] p-2 rounded-full md:rounded-lg shadow flex items-center justify-center hover:border hover: border-purple-500 hover:scale-110 hover:shadow-xl transition-all glassmorphism">
                                         <img src={item.icon} alt="" className="h-[50px] w-[50px]" />
                                     </div>
                                 </Link>
