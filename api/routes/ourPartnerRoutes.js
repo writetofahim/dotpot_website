@@ -2,11 +2,11 @@ const express = require('express');
 const router = express.Router();
 const ourPartnerController = require('../controllers/ourPartnerController');
 
-// Create a new partner
-router.post('/', ourPartnerController.createPartner);
-
 // Get all partners
 router.get('/', ourPartnerController.getAllPartners);
+
+// Create a new partner
+router.post('/', ourPartnerController.createPartner);
 
 // Get a specific partner by ID
 router.get('/:id', ourPartnerController.getPartnerById);

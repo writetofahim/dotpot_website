@@ -51,11 +51,12 @@ var settings = {
 function OurPartnersSlider() {
 
     const [data, setData] = useState(null);
+    console.log("our parterner", data)
 
     // Data Fetching
     useEffect(() => {
         axios.get('/our_partner')
-            .then(response => setData(response.data.data))
+            .then(response => setData(response.data.ourPartners))
             .catch(error => console.error(error));
     }, []); 
 
@@ -67,7 +68,7 @@ function OurPartnersSlider() {
                 {
                     data && data.map((item, index) => (
                         <div className="mx-5 p-5 rounded-lg flex items-center justify-center hover:scale-110 transition-all" key={index}>
-                            <img src={`${import.meta.env.REACT_APP_SERVER_PATH}/${item.image}`} alt={item.title} className="h-[100px]" />
+                            <img src={`${import.meta.env.REACT_APP_SERVER_PATH}/${item.logo}`} alt={item.title} className="h-[100px]" />
                         </div>
                     ))
                 }
