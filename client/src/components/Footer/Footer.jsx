@@ -71,7 +71,7 @@ const Footer = () => {
                     <img src={logo} alt="" />
                 </Link>
                 <p>
-                    Make your Business Success Online
+                    Help Business Successful Online
                 </p>
                 <p>
                 Dotpot iT, House-1, Road-3, Block-A, Mirpur-10, Dhaka, Bangladesh

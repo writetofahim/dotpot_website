@@ -1547,11 +1547,11 @@ export const footerData = {
                 },
                 {
                     title: "Privacy Policy",
-                    link: "/privacy"
+                    link: "/privacyPolicy"
                 },
                 {
                     title: "Terms & Conditions",
-                    link: "/terms-conditions"
+                    link: "/terms_conditions"
                 }
             ]
         },
@@ -1560,27 +1560,27 @@ export const footerData = {
             links: [
                 {
                     title: "Android Apps",
-                    link: "/services/android-apps"
+                    link: "/services"
                 },
                 {
                     title: "iPhone Apps",
-                    link: "/services/iphone-apps"
+                    link: "/services"
                 },
                 {
                     title: "Web Apps",
-                    link: "/services/iphone-apps"
+                    link: "/services"
                 },
                 {
                     title: "Hybrid Apps",
-                    link: "/services/hybrid-apps"
+                    link: "/services"
                 },
                 {
                     title: "Flutter",
-                    link: "/services/flutter",
+                    link: "/services",
                 },
                 {
                     title: "React Native",
-                    link: "/services/react-native"
+                    link: "/services"
                 }
             ]
         },
@@ -1589,7 +1589,7 @@ export const footerData = {
             links: [
                 {
                     title: "Contact Center Supports",
-                    link: "/services/web/php"
+                    link: "/services/"
                 },
                 {
                     title: "ACD",
@@ -1604,7 +1604,7 @@ export const footerData = {
                     link: "/services/",
                 },
                 {
-                    title: "Emain",
+                    title: "Email",
                     link: "/services/"
                 },
                 {

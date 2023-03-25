@@ -15,6 +15,8 @@ import SingleBlog from "./pages/blog/SingleBlog";
 import ApplyMobile from "./pages/applyJob/ApplyMobile";
 import Login from "./pages/lgoin/Login";
 import Register from "./pages/register/Register";
+import PrivacyPolicy from "./pages/privacyPolicy/PrivacyPolicy";
+import Terms_Conditions from "./terms_conditions/Terms_Conditions";
 
 function App() {
 
@@ -32,6 +34,8 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/blog" element={<Blogs />} />
         <Route path="/blog/:id" element={<SingleBlog />} />
+        <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
+        <Route path="/terms_conditions" element={<Terms_Conditions />} />
       </Routes>
     </>
   )
