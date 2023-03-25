@@ -12,7 +12,7 @@ import { RiWhatsappFill } from "react-icons/ri"
 import { AiFillDollarCircle } from "react-icons/ai"
 import RangeSlider from '../Range/RangeSlider'
 import { FaSpinner } from "react-icons/fa";
-import axios from 'axios'
+import axios from '../../utils/axiosInstance'
 import ResponseSuccessModal from './ResponseSuccessModal'
 
 const ContactFormLarge = () => {
@@ -41,7 +41,7 @@ const ContactFormLarge = () => {
                 filesArray.forEach(file => {
                     formData.append('files[]', file);
                 });
-                const { data: resFiles } = await axios.post("http://localhost:8800/api/upload/response", formData)
+                const { data: resFiles } = await axios.post("/upload/response", formData)
                 attachment = resFiles[0].filename;
                 setFiles(null)
             }
@@ -56,7 +56,7 @@ const ContactFormLarge = () => {
                 message: e.target.message.value,
                 attachment
             }
-            const { data } = await axios.post("http://localhost:8800/api/client_response", response)
+            const { data } = await axios.post("/client_response", response)
             if (data._id) {
                 setOpenModal(true)
             }

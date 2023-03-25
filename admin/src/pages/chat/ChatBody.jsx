@@ -7,7 +7,7 @@ import axios from "../../utils/axiosInstance"
 import { FaSpinner } from "react-icons/fa";
 import io from "socket.io-client";
 
-const socket = io.connect("http://localhost:8800");
+const socket = io.connect(import.meta.env.REACT_APP_SERVER_PATH);
 
 const ChatBody = () => {
     const [messages, setMessages] = useState([]);
@@ -62,12 +62,12 @@ const ChatBody = () => {
                 filesArray.forEach(file => {
                     formData.append('files[]', file);
                 });
-                const { data: resFiles } = await axios.post("http://localhost:8800/api/upload", formData)
+                const { data: resFiles } = await axios.post("/upload", formData)
                 attachment = resFiles[0].filename;
                 setFiles(null)
             }
             if (newMessage !== "" || attachment !== null) {
-                const { data } = await axios.post(`http://localhost:8800/api/chats/${conversationId}/replay`, { text: newMessage, attachment: attachment })
+                const { data } = await axios.post(`/chats/${conversationId}/replay`, { text: newMessage, attachment: attachment })
                 console.log(data)
                 setMessages([...messages, data]);
                 setNewMessage("");

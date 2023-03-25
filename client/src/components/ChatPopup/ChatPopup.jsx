@@ -10,7 +10,7 @@ import axios from "../../utils/axiosInstance"
 import { io } from "socket.io-client";
 import moment from "moment/moment";
 
-const socket = io("http://localhost:8800")
+const socket = io(import.meta.env.REACT_APP_SERVER_PATH)
 
 // const data = [
 //   { name: "DotpotiT", message: "Hi there!", timestamp: "11:30 AM" },
@@ -142,10 +142,10 @@ const ChatPopup = () => {
                 <p className="font-medium">{message.sender === "visitor" ? "You" : 'DotpotiT'}</p>
                 {message.text && <p>{message.text}</p>}
                 {(message.attachment && message.attachment?.includes(".pdf"))
-                  ? <a className="flex items-center gap-2" href={`http://localhost:8800/${message.attachment}`} download>
+                  ? <a className="flex items-center gap-2" href={`${import.meta.env.REACT_APP_SERVER_PATH}/${message.attachment}`} download>
                     <HiOutlineDownload />
                     {message.attachment?.slice(0, 20)}...</a>
-                  : message.attachment && <img onClick={() => handleModalOpen(`http://localhost:8800/${message.attachment}`)} className="w-40 cursor-pointer" src={`http://localhost:8800/${message.attachment}`} alt="" />}
+                  : message.attachment && <img onClick={() => handleModalOpen(`${import.meta.env.REACT_APP_SERVER_PATH}/${message.attachment}`)} className="w-40 cursor-pointer" src={`${import.meta.env.REACT_APP_SERVER_PATH}/${message.attachment}`} alt="" />}
                 <p className="text-xs text-gray-500 mt-1">{moment(new Date(message.createdAt)).fromNow()}</p>
               </div>
             ))}

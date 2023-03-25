@@ -12,7 +12,7 @@ const adminMiddleware = require('../middlewares/adminMiddleware');
 const router = express.Router();
 
 // GET /chats - get all chats
-router.get("/", adminMiddleware, getAllChats);
+router.get("/",(req, res, next)=>{console.log("hitt"); next()}, adminMiddleware, getAllChats);
 
 // POST / - create a new chat
 router.post("/", createChat);
