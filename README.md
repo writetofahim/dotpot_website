@@ -21,9 +21,13 @@ Welcome to DotpotiT! This web application provides a platform for showcase their
 
 ## Technologies Used
 
+- NodeJs
 - React Vite
+- ExpressJs
+- MongoDB
 - Tailwind CSS
 - React Router DOM
+- Multer
 - Material UI
 - Sass
 - Slick-Slider 
@@ -66,25 +70,26 @@ DotpotiT's API is built using NodeJS and ExpressJS, utilizing JWT authentication
 
 ## Installation:
 
-To get the repository of this website, please follow  the steps:
+To run the website, please follow  the steps:
 
-1. Clone the repository, run the following command:
-    `git@github.com:DotpotiT/website.git`
+1. First, make sure that you have Git and Node.js installed on your computer. If you don't have them, download and install them from the following links:
+    Git: `https://git-scm.com/downloads`
+    Node.js: `https://nodejs.org/en/download/`
 
-2. Start the client-side, run the following command:
-    `cd client`
-    
-    Or Start the server-side, run the following command:
-    `cd api`
+2. Launch the command prompt on your computer and enter this command.
+    `git clone github.com:DotpotiT/website.git`
 
-3. Install the dependencies, run the following command:
-    `npm install`
+3. Client-side Setup
+    a. Start the client side by running the following command: `cd client`
+    b. To install the dependencies, run the following command: `npm install`
+    c. Start the server by running the following command: `npm run dev`
+    d. Open the project on browser at [Server] `http://localhost:port_number`
 
-3. Start the server, run the following command:
-    `npm run dev`
+4. Server-side Setup
+    a. Start the client side by running the following command: `cd api`
+    b. To install the dependencies, run the following command: `npm install`
+    c. Start the server by running the following command: `npm start`
 
-4. Open the project on browser  
-    [Server] http://localhost:5173
 
 ## Contributing:
 
