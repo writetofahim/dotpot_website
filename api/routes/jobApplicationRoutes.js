@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const jobApplicationController = require('../controllers/jobApplicationController');
+const adminMiddleware = require('../middlewares/adminMiddleware');
 
 // Create a job application
 router.post('/', jobApplicationController.createJobApplication);
@@ -15,6 +16,6 @@ router.get('/:id', jobApplicationController.getJobApplicationById);
 router.put('/:id', jobApplicationController.updateJobApplicationById);
 
 // Delete a job application by ID
-router.delete('/:id', jobApplicationController.deleteJobApplicationById);
+router.delete('/:id', adminMiddleware, jobApplicationController.deleteJobApplicationById);
 
 module.exports = router;

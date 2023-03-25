@@ -7,11 +7,12 @@ const {
     replayToChat
 } = require("../controllers/chatController");
 const Message = require("../models/Message");
+const adminMiddleware = require('../middlewares/adminMiddleware');
 
 const router = express.Router();
 
 // GET /chats - get all chats
-router.get("/", getAllChats);
+router.get("/", adminMiddleware, getAllChats);
 
 // POST / - create a new chat
 router.post("/", createChat);

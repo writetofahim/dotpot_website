@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const serviceController = require('../controllers/serviceController');
+const adminMiddleware = require('../middlewares/adminMiddleware');
 
 // Create a new service
-router.post('/', serviceController.createService);
+router.post('/', adminMiddleware, serviceController.createService);
 
 // Get all services
 router.get('/', serviceController.getAllServices);
@@ -12,9 +13,9 @@ router.get('/', serviceController.getAllServices);
 router.get('/:id', serviceController.getServiceById);
 
 // Update a service by ID
-router.put('/:id', serviceController.updateServiceById);
+router.put('/:id', adminMiddleware, serviceController.updateServiceById);
 
 // Delete a service by ID
-router.delete('/:id', serviceController.deleteServiceById);
+router.delete('/:id', adminMiddleware, serviceController.deleteServiceById);
 
 module.exports = router;

@@ -93,11 +93,6 @@ exports.deleteUser = async (req, res) => {
             return res.status(404).json({ msg: 'User not found' });
         }
 
-        // Make sure user is the owner or admin
-        if (user._id.toString() !== req.user.id && !req.user.isAdmin) {
-            return res.status(401).json({ msg: 'Not authorized' });
-        }
-
         await User.findByIdAndRemove(req.params.id);
 
         res.json({ msg: 'User removed' });

@@ -16,7 +16,7 @@ router.post('/response', attachmentUpload("response"), uploadFileResponse);
 router.post('/resumes', resumeUpload("resumes"), uploadFileResponse);
 
 // upload file to resume folder
-router.post('/blogs', blogsImageUpload("blogs"), uploadFileResponse);
+router.post('/blogs',  blogsImageUpload("blogs"), uploadFileResponse);
 
 
 module.exports = router;
