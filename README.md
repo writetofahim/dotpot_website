@@ -76,7 +76,7 @@ To run the website, please follow  the steps:
     Git: `https://git-scm.com/downloads`
     Node.js: `https://nodejs.org/en/download/`
 
-2. Launch the command prompt on your computer and enter this command.
+2. Launch the command prompt on your computer and enter this command:
     `git clone github.com:DotpotiT/website.git`
 
 3. Client-side Setup:
