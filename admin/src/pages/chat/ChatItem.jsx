@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router';
+import moment from 'moment';
 
 const ChatItem = ({ chat }) => {
     const navigate = useNavigate()
@@ -12,9 +13,12 @@ const ChatItem = ({ chat }) => {
             <div className='w-12 '>
                 <img className='rounded-full' src="https://png.pngtree.com/png-vector/20191101/ourmid/pngtree-cartoon-color-simple-male-avatar-png-image_1934459.jpg" alt="" />
             </div>
-            <div>
+            <div className='w-full'>
                 <h3 className='font-bold'>{chat.name ? chat.name : "Unknown"}</h3>
-                <p>{lastMessage.text.slice(0, 16)}...</p>
+                <div className='w-full flex justify-between items-center'>
+                    <span>{lastMessage.text.slice(0, 16)}... </span>
+                    <span className='text-xs'>{moment(new Date(lastMessage.createdAt)).fromNow()}</span>
+                </div>
             </div>
         </div>
     );
