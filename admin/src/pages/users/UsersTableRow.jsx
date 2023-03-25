@@ -20,7 +20,7 @@ const UsersTableRow = ({ user, setData, data }) => {
         <>
             {isModalOpen && <DeleteModal handleDelete={() => handleDelete(_id)} open={isModalOpen} setOpen={setIsModalOpen} />}
             <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                <img src={`${import.meta.env.REACT_APP_SERVER_PATH}/${photo}`} alt="" className='w-1/5' />
+                <img src={` ${photo.includes("https://") ? photo : import.meta.env.REACT_APP_SERVER_PATH}/${photo}`} alt="" className='w-1/5' />
             </th>
             <td className="px-6 py-4">
                 {username}
