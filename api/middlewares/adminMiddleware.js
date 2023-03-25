@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 
-function authMiddleware(req, res, next) {
+function adminMiddleware(req, res, next) {
 
     const authorization = req.header('Authorization')
 
@@ -12,6 +12,9 @@ function authMiddleware(req, res, next) {
 
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        if (decoded.user.role !== 'ADMIN') {
+            return res.status(401).send({ error: 'Unauthorized access! Only admin users can perform this action.' });
+        }
         req.user = decoded;
         next();
         
@@ -21,4 +24,4 @@ function authMiddleware(req, res, next) {
     }
 }
 
-module.exports = authMiddleware;
+module.exports = adminMiddleware;

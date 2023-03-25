@@ -9,8 +9,8 @@ const UsersTableRow = ({ user, setData, data }) => {
     const [isModalOpen, setIsModalOpen] = useState()
 
     const handleDelete = async (id) => {
-        const token = JSON.parse(localStorage.getItem("accessToken"), { headers: { 'Authorization': `Bearer ${token}` } })
-        const response = await axios.delete(`/user/${id}`, {});
+        const token = JSON.parse(localStorage.getItem("accessToken"))
+        const response = await axios.delete(`/user/${id}`, { headers: { 'Authorization': `Bearer ${token}` } });
         if (response.status === 200) {
             setData(existing => existing.filter(d => d._id !== id));
         }

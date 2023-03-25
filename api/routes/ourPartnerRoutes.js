@@ -1,20 +1,21 @@
 const express = require('express');
 const router = express.Router();
 const ourPartnerController = require('../controllers/ourPartnerController');
+const adminMiddleware = require('../middlewares/adminMiddleware');
 
 // Get all partners
 router.get('/', ourPartnerController.getAllPartners);
 
 // Create a new partner
-router.post('/', ourPartnerController.createPartner);
+router.post('/', adminMiddleware, ourPartnerController.createPartner);
 
 // Get a specific partner by ID
 router.get('/:id', ourPartnerController.getPartnerById);
 
 // Update a partner by ID
-router.put('/:id', ourPartnerController.updatePartnerById);
+router.put('/:id', adminMiddleware, ourPartnerController.updatePartnerById);
 
 // Delete a partner by ID
-router.delete('/:id', ourPartnerController.deletePartnerById);
+router.delete('/:id', adminMiddleware, ourPartnerController.deletePartnerById);
 
 module.exports = router;
