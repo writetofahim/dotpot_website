@@ -1,6 +1,6 @@
 // controllers/companyInfoController.js
 
-const CompanyInfo = require('../models/c_info');
+const CompanyInfo = require('../models/C_info');
 
 // Define controller functions for each route
 

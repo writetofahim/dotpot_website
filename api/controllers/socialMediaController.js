@@ -1,4 +1,4 @@
-const SocialMedia = require('../models/socialMedia');
+const SocialMedia = require('../models/SocialMedia');
 
 // Create a new social media account
 exports.createSocialMedia = async (req, res) => {

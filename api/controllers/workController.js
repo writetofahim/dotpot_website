@@ -1,4 +1,4 @@
-const Work = require('../models/work');
+const Work = require('../models/Work');
 
 // Create a work
 exports.createWork = async (req, res) => {
