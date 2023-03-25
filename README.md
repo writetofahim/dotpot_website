@@ -72,23 +72,28 @@ DotpotiT's API is built using NodeJS and ExpressJS, utilizing JWT authentication
 
 To run the website, please follow  the steps:
 
-1. First, make sure that you have Git and Node.js installed on your computer. If you don't have them, download and install them from the following links:
-    Git: `https://git-scm.com/downloads`
-    Node.js: `https://nodejs.org/en/download/`
+1. First, make sure that you have Git and Node.js installed on your computer.
 
-2. Launch the command prompt on your computer and enter this command:
+2. To clone the repository run the command prompt on your computer and enter this command:
     `git clone github.com:DotpotiT/website.git`
 
 3. Client-side Setup:
     - Start the client side by running the following command: `cd client`
-    - To install the dependencies, run the following command: `npm install`
+    - To install the dependencies, run the following command: `npm install --legacy-peer-deps`
     - Start the server by running the following command: `npm run dev`
     - Open the project on browser at [Server] `http://localhost:port_number`
 
 4. Server-side Setup:
     - Start the client side by running the following command: `cd api`
     - To install the dependencies, run the following command: `npm install`
+    - Install Nodemon by running the following command: `npm install nodemon`
     - Start the server by running the following command: `npm start`
+
+5. Admin-side Setup:
+    - Start the client side by running the following command: `cd admin`
+    - To install the dependencies, run the following command: `npm install --legacy-peer-deps`
+    - Start the server by running the following command: `npm run dev`
+    - Open the project on browser at [Server] `http://localhost:port_number`
 
 
 ## Contributing:
