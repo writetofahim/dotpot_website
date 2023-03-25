@@ -10,7 +10,7 @@ import { FaSpinner } from "react-icons/fa";
 const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
   // create a isLoading state and setIsLoading setter using the useState hook, initialize to false
-  const { user, login, error } = useContext(AuthContext);
+  const { user, login, error, googleLogin } = useContext(AuthContext);
   // use the useContext hook to get the user, login, and error values from the AuthContext
   const navigate = useNavigate();
   // use the useNavigate hook to get the navigate function
@@ -84,9 +84,9 @@ const Login = () => {
                 <span className='w-[max-content] mx-auto flex items-center gap-2'> Sign in {isLoading && <FaSpinner className="animate-spin" />}</span>
               </button>
 
-              {/* <p className="mt-4 text-center text-gray-600 dark:text-gray-400">or sign in with</p>
+              <p className="mt-4 text-center text-gray-600 dark:text-gray-400">or sign in with</p>
 
-              <Link href="#" className="flex items-center justify-center px-6 py-3 mt-4 text-gray-600 border rounded-xl hover:bg-primary-100 hover:shadow-xl hover:scale-105 transition-all">
+              <button onClick={googleLogin} className="w-full flex items-center justify-center px-6 py-3 mt-4 text-gray-600 border rounded-xl hover:bg-primary-100 hover:shadow-xl hover:scale-105 transition-all">
                 <svg className="w-6 h-6 mx-2" viewBox="0 0 40 40">
                   <path d="M36.3425 16.7358H35V16.6667H20V23.3333H29.4192C28.045 27.2142 24.3525 30 20 30C14.4775 30 10 25.5225 10 20C10 14.4775 14.4775 9.99999 20 9.99999C22.5492 9.99999 24.8683 10.9617 26.6342 12.5325L31.3483 7.81833C28.3717 5.04416 24.39 3.33333 20 3.33333C10.7958 3.33333 3.33335 10.7958 3.33335 20C3.33335 29.2042 10.7958 36.6667 20 36.6667C29.2042 36.6667 36.6667 29.2042 36.6667 20C36.6667 18.8825 36.5517 17.7917 36.3425 16.7358Z" fill="#FFC107" />
                   <path d="M5.25497 12.2425L10.7308 16.2583C12.2125 12.59 15.8008 9.99999 20 9.99999C22.5491 9.99999 24.8683 10.9617 26.6341 12.5325L31.3483 7.81833C28.3716 5.04416 24.39 3.33333 20 3.33333C13.5983 3.33333 8.04663 6.94749 5.25497 12.2425Z" fill="#FF3D00" />
@@ -95,7 +95,7 @@ const Login = () => {
                 </svg>
 
                 <span className="mx-2">Sign in with Google</span>
-              </Link> */}
+              </button>
 
               <div className="mt-6 text-center text-secondary-500">
                 <Link to="/register" className="text-sm hover:underline">

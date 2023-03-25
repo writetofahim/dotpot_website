@@ -70,7 +70,7 @@ const Login = () => {
                 </svg>
               </span>
 
-              <input type="email" name='email' className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300" placeholder="Email address" />
+              <input type="email" name='email' className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300" placeholder="Email address" required />
             </div>
 
             <div className="relative flex items-center mt-4">
@@ -80,7 +80,7 @@ const Login = () => {
                 </svg>
               </span>
 
-              <input type="password" name='password' className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300" placeholder="Password" />
+              <input type="password" name='password' className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300" placeholder="Password" required />
             </div>
 
             {error && <p className='text-red-500 mt-3'>{error}</p>}

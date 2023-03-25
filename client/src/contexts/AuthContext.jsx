@@ -1,11 +1,39 @@
 import { createContext, useEffect, useState } from "react"
+import { useGoogleLogin } from "@react-oauth/google";
 import axios from "../utils/axiosInstance";
 
 export const AuthContext = createContext(); // create a new context object
 
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [error, setError] = useState("")
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  // sign in with google
+  const googleLogin = useGoogleLogin({
+    flow: "auth-code",
+    onSuccess: async (codeResponse) => {
+      console.log(codeResponse);
+      setLoading(true);
+      const response = await axios.post(
+        "/auth/google",
+        {
+          code: codeResponse.code,
+        }
+      );
+      console.log(response);
+      // Save the access token and user object in localStorage
+      localStorage.setItem("accessToken", JSON.stringify(response.data.token));
+      localStorage.setItem("user", JSON.stringify({ ...response.data.user, timestamp: new Date().getTime() }));
+      // Set the user object as the current user
+      setUser(response.data.user);
+      setLoading(false);
+    },
+    onError: (errorResponse) => {
+      console.log(errorResponse);
+      setLoading(false);
+    },
+  });
 
   useEffect(() => {
     // useEffect hook to run some code after the component is mounted
@@ -34,7 +62,11 @@ export const AuthContextProvider = ({ children }) => {
       // Set the user object as the current user
       setUser(data.user);
     } catch (error) {
-      setError(error.message) // set the error state with the error message
+      if (error?.response?.data?.message) {
+        return setError(error.response.data.message)
+      } {
+        setError(error.message) // set the error state with the error message
+      }
       console.log(error);
     }
   }
@@ -59,20 +91,22 @@ export const AuthContextProvider = ({ children }) => {
         // set the error state with the custom error message
       } else {
         setError(error.message);
-        // set the error state with the default error message
+
       }
     }
   }
 
   // logout user
   const logout = () => {
-    // Remove the access token and user object from localStorage
     localStorage.removeItem("accessToken");
     localStorage.removeItem("user");
-    // Set the current user as null
     setUser(null);
   }
 
+  const values = {
+    user, login, registration, logout, error, googleLogin
+  }
+
   // Return the AuthContext.Provider with the user object, login, registration, and logout functions as its value
-  return <AuthContext.Provider value={{ user, login, registration, logout, error }}>{children}</AuthContext.Provider>
+  return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>
 }
