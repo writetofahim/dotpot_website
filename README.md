@@ -79,16 +79,16 @@ To run the website, please follow  the steps:
 2. Launch the command prompt on your computer and enter this command.
     `git clone github.com:DotpotiT/website.git`
 
-3. Client-side Setup
-    a. Start the client side by running the following command: `cd client`
-    b. To install the dependencies, run the following command: `npm install`
-    c. Start the server by running the following command: `npm run dev`
-    d. Open the project on browser at [Server] `http://localhost:port_number`
+3. Client-side Setup:
+    - Start the client side by running the following command: `cd client`
+    - To install the dependencies, run the following command: `npm install`
+    - Start the server by running the following command: `npm run dev`
+    - Open the project on browser at [Server] `http://localhost:port_number`
 
-4. Server-side Setup
-    a. Start the client side by running the following command: `cd api`
-    b. To install the dependencies, run the following command: `npm install`
-    c. Start the server by running the following command: `npm start`
+4. Server-side Setup:
+    - Start the client side by running the following command: `cd api`
+    - To install the dependencies, run the following command: `npm install`
+    - Start the server by running the following command: `npm start`
 
 
 ## Contributing:
