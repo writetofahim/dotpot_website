@@ -52,6 +52,10 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    navigate("/admin");
+  }, [])
+  
+  useEffect(() => {
     if (!user) {
       navigate("/admin/login");
     }
