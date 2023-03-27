@@ -93,8 +93,8 @@ app.use("/api/key_feature", c_keyFeatureRouters)
 app.use("/api/partnership_model", c_partnershipModelRoutes)
 app.use("/api/who_we_work_with", c_whoWeWorkWithRoutes)
 
+const port = 8800
 
-
-server.listen(8800, () => {
-    console.log("Backend server is running!");
+server.listen(port, () => {
+    console.log("Backend server is running! on port ", port);
 });

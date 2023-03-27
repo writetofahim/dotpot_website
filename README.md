@@ -70,31 +70,38 @@ DotpotiT's API is built using NodeJS and ExpressJS, utilizing JWT authentication
 
 ## Installation:
 
-To run the website, please follow  the steps:
+Follow this steps to install and run the project:
 
 1. First, make sure that you have Git and Node.js installed on your computer.
 
-2. To clone the repository run the command prompt on your computer and enter this command:
-    `git clone github.com:DotpotiT/website.git`
+2. To clone the repository open command prompt on your computer and run:
+    To clone using SSH `git clone git@github.com:DotpotiT/website.git`
 
-3. Client-side Setup:
-    - Start the client side by running the following command: `cd client`
-    - To install the dependencies, run the following command: `npm install --legacy-peer-deps`
-    - Start the server by running the following command: `npm run dev`
-    - Open the project on browser at [Server] `http://localhost:port_number`
+    To clone using Https run `git clone https://github.com/DotpotiT/website.git` on your command prompt
 
-4. Server-side Setup:
-    - Start the client side by running the following command: `cd api`
+3. Open the downloaded 'website' folder on IDE (Vscode).
+
+4. Setup :
+    - Open another terminal in the website directory.
+    - Go to api directory : `cd api`
     - To install the dependencies, run the following command: `npm install`
     - Install Nodemon by running the following command: `npm install nodemon`
     - Start the server by running the following command: `npm start`
+    - The api is running on at [localhost:8800]`http://localhost:8800`
 
-5. Admin-side Setup:
-    - Start the client side by running the following command: `cd admin`
+5. Client-side Setup:
+    - Open a terminal
+    - Go to the client directory: `cd client`
     - To install the dependencies, run the following command: `npm install --legacy-peer-deps`
     - Start the server by running the following command: `npm run dev`
-    - Open the project on browser at [Server] `http://localhost:port_number`
+    - Open the project on browser at [localhost:5173] `http://localhost:5173`
 
+6. Admin-side Setup:
+    - Open another terminal in the website directory.
+    - Go to the admin directory: `cd admin`
+    - To install the dependencies, run the following command: `npm install`
+    - Start the server by running the following command: `npm run dev`
+    - Open the project on browser at [localhost:5174] `http://localhost:5174`
 
 ## Contributing:
 
@@ -103,3 +110,5 @@ Contributions are always welcome! If you have any suggestions or improvements, p
 ## Contact:
 
 If you have any questions or feedback, please feel free to contact us at [DotpotiT] (https://www.dotpotit.com/).
+# or just ask to chatGPT 😜😎🤖.
+
