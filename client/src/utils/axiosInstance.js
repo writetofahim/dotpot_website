@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: 'http://dotpotit.com/api',
+  baseURL: 'https://dotpotit.com/api',
 });
 
 export default instance;
