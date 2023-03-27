@@ -53,7 +53,7 @@ function App() {
 
   useEffect(() => {
     if (!user) {
-      navigate("/login");
+      navigate("/admin/login");
     }
 
     document.querySelector("html").style.scrollBehavior = "auto";
@@ -64,93 +64,93 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/login" element={<Login />} />
+        <Route path="/admin/login" element={<Login />} />
         <Route
           exact
-          path="/"
+          path="/admin/"
           element={
             <RequireAdmin>
               <DashboardLayout />
             </RequireAdmin>
           }
         >
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/chat" element={<Chat />}>
-            <Route path="/chat/:id" element={<ChatBody />} />
+          <Route path="/admin/" element={<Dashboard />} />
+          <Route path="/admin/chat" element={<Chat />}>
+            <Route path="/admin/chat/:id" element={<ChatBody />} />
           </Route>
-          <Route path="/job-applications" element={<JobApplications />} />
-          <Route path="/orders" element={<Orders />} />
+          <Route path="/admin/job-applications" element={<JobApplications />} />
+          <Route path="/admin/orders" element={<Orders />} />
           <Route
-            path="/client-response/all-responses"
+            path="/admin/client-response/all-responses"
             element={<AllResponse />}
           />
           <Route
-            path="/client-response/add-responses"
+            path="/admin/client-response/add-responses"
             element={<AddResponse />}
           />
-          <Route path="/users/all-users" element={<AllUsers />} />
-          <Route path="/users/add-users" element={<AddUsers />} />
-          <Route path="/blogs/all-blogs" element={<AllBlogs />} />
-          <Route path="/blogs/add-blogs" element={<AddBlogs />} />
-          <Route path="/works/all-works" element={<AllWorks />} />
-          <Route path="/works/add-works" element={<AddWorks />} />
-          <Route path="/jobs/all-jobs" element={<AllJobs />} />
-          <Route path="/jobs/add-jobs" element={<AddJobs />} />
-          <Route path="/services/all-services" element={<AllServices />} />
-          <Route path="/services/add-services" element={<AddService />} />
-          <Route path="/team/all-team" element={<AllTeam />} />
-          <Route path="/team/add-team" element={<AddTeam />} />
+          <Route path="/admin/users/all-users" element={<AllUsers />} />
+          <Route path="/admin/users/add-users" element={<AddUsers />} />
+          <Route path="/admin/blogs/all-blogs" element={<AllBlogs />} />
+          <Route path="/admin/blogs/add-blogs" element={<AddBlogs />} />
+          <Route path="/admin/works/all-works" element={<AllWorks />} />
+          <Route path="/admin/works/add-works" element={<AddWorks />} />
+          <Route path="/admin/jobs/all-jobs" element={<AllJobs />} />
+          <Route path="/admin/jobs/add-jobs" element={<AddJobs />} />
+          <Route path="/admin/services/all-services" element={<AllServices />} />
+          <Route path="/admin/services/add-services" element={<AddService />} />
+          <Route path="/admin/team/all-team" element={<AllTeam />} />
+          <Route path="/admin/team/add-team" element={<AddTeam />} />
           <Route
-            path="/clients-review/all-clients-review"
+            path="/admin/clients-review/all-clients-review"
             element={<AllClientsReview />}
           />
           <Route
-            path="/clients-review/add-clients-review"
+            path="/admin/clients-review/add-clients-review"
             element={<AddClientsReview />}
           />
           <Route
-            path="/industry-we-serve/all-industry-we-serve"
+            path="/admin/industry-we-serve/all-industry-we-serve"
             element={<AllIndustryWeServe />}
           />
           <Route
-            path="/industry-we-serve/add-industry-we-serve"
+            path="/admin/industry-we-serve/add-industry-we-serve"
             element={<AddIndustryWeServe />}
           />
           <Route
-            path="/contact-center-service/all-contact-center-service"
+            path="/admin/contact-center-service/all-contact-center-service"
             element={<AllContactCenterService />}
           />
           <Route
-            path="/contact-center-service/add-contact-center-service"
+            path="/admin/contact-center-service/add-contact-center-service"
             element={<AddContactCenterService />}
           />
-          <Route path="/order" element={<AllOrders />} />
+          <Route path="/admin/order" element={<AllOrders />} />
           <Route
-            path="/key-features/all-key-features"
+            path="/admin/key-features/all-key-features"
             element={<AllKeyFeatures />}
           />
           <Route
-            path="/key-features/add-key-feature"
+            path="/admin/key-features/add-key-feature"
             element={<AddKeyFeatures />}
           />
           <Route
-            path="/our-partners/all-our-partners"
+            path="/admin/our-partners/all-our-partners"
             element={<AllOurPartners />}
           />
           <Route
-            path="/our-partners/add-our-partners"
+            path="/admin/our-partners/add-our-partners"
             element={<AddOurPartners />}
           />
           <Route
-            path="/partnership-model/all-partnership-model"
+            path="/admin/partnership-model/all-partnership-model"
             element={<AllPartnershipModel />}
           />
           <Route
-            path="/partnership-model/add-partnership-model"
+            path="/admin/partnership-model/add-partnership-model"
             element={<AddPartnershipModel />}
           />
-          <Route path="/hero" element={<Hero />} />
-          <Route path="/company-info" element={<CompanyInfo />} />
+          <Route path="/admin/hero" element={<Hero />} />
+          <Route path="/admin/company-info" element={<CompanyInfo />} />
         </Route>
       </Routes>
     </>

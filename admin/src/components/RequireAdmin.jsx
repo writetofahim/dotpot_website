@@ -18,7 +18,7 @@ const RequireAdmin = ({ children }) => {
   }
 
   if (!user && !loading) {
-    return <Navigate to="/login" state={{ from: location }} replace></Navigate>
+    return <Navigate to="/admin/login" state={{ from: location }} replace></Navigate>
   }
   return children;
 };

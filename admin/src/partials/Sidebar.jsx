@@ -105,7 +105,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
             </svg>
           </button>
           {/* Logo */}
-          <NavLink end to="/" className="block">
+          <NavLink end to="/admin/" className="block">
             <img src={logo} alt="" />
           </NavLink>
         </div>
@@ -137,7 +137,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                     <React.Fragment>
                       <NavLink
                         end
-                        to="/"
+                        to="/admin/"
                         className={`block text-slate-200 truncate transition duration-150 ${
                           pathname === "/" || pathname.includes("dashboard")
                             ? "hover:text-slate-200"
@@ -171,7 +171,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
               >
                 <NavLink
                   end
-                  to="/chat"
+                  to="/admin/chat"
                   className={`block text-slate-200 truncate transition duration-150 ${
                     pathname.includes("chat")
                       ? "hover:text-slate-200"
@@ -202,7 +202,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
               >
                 <NavLink
                   end
-                  to="/job-applications"
+                  to="/admin/job-applications"
                   className={`block text-slate-200 truncate transition duration-150 ${
                     pathname.includes("job-applications")
                       ? "hover:text-slate-200"
@@ -228,7 +228,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
               >
                 <NavLink
                   end
-                  to="/order"
+                  to="/admin/order"
                   className={`block text-slate-200 truncate transition duration-150 ${
                     pathname.includes("job-applications")
                       ? "hover:text-slate-200"
@@ -256,7 +256,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
               >
                 <NavLink
                   end
-                  to="/client-response/all-responses"
+                  to="/admin/client-response/all-responses"
                   className={`block text-slate-200 truncate transition duration-150 ${
                     pathname.includes("job-applications")
                       ? "hover:text-slate-200"
@@ -315,7 +315,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                           <li className="mb-1 last:mb-0">
                             <NavLink
                               end
-                              to="/users/all-users"
+                              to="/admin/users/all-users"
                               className={({ isActive }) =>
                                 "block transition duration-150 truncate " +
                                 (isActive
@@ -331,7 +331,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                           <li className="mb-1 last:mb-0">
                             <NavLink
                               end
-                              to="/users/add-users"
+                              to="/admin/users/add-users"
                               className={({ isActive }) =>
                                 "block transition duration-150 truncate " +
                                 (isActive
@@ -394,7 +394,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                           <li className="mb-1 last:mb-0">
                             <NavLink
                               end
-                              to="/blogs/all-blogs"
+                              to="/admin/blogs/all-blogs"
                               className={({ isActive }) =>
                                 "block transition duration-150 truncate " +
                                 (isActive
@@ -410,7 +410,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                           <li className="mb-1 last:mb-0">
                             <NavLink
                               end
-                              to="/blogs/add-blogs"
+                              to="/admin/blogs/add-blogs"
                               className={({ isActive }) =>
                                 "block transition duration-150 truncate " +
                                 (isActive
@@ -473,7 +473,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                           <li className="mb-1 last:mb-0">
                             <NavLink
                               end
-                              to="/works/all-works"
+                              to="/admin/works/all-works"
                               className={({ isActive }) =>
                                 "block transition duration-150 truncate " +
                                 (isActive
@@ -489,7 +489,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                           <li className="mb-1 last:mb-0">
                             <NavLink
                               end
-                              to="/works/add-works"
+                              to="/admin/works/add-works"
                               className={({ isActive }) =>
                                 "block transition duration-150 truncate " +
                                 (isActive
@@ -552,7 +552,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                           <li className="mb-1 last:mb-0">
                             <NavLink
                               end
-                              to="/jobs/all-jobs"
+                              to="/admin/jobs/all-jobs"
                               className={({ isActive }) =>
                                 "block transition duration-150 truncate " +
                                 (isActive
@@ -568,7 +568,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                           <li className="mb-1 last:mb-0">
                             <NavLink
                               end
-                              to="/jobs/add-jobs"
+                              to="/admin/jobs/add-jobs"
                               className={({ isActive }) =>
                                 "block transition duration-150 truncate " +
                                 (isActive
@@ -631,7 +631,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                           <li className="mb-1 last:mb-0">
                             <NavLink
                               end
-                              to="/services/all-services"
+                              to="/admin/services/all-services"
                               className={({ isActive }) =>
                                 "block transition duration-150 truncate " +
                                 (isActive
@@ -647,7 +647,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                           <li className="mb-1 last:mb-0">
                             <NavLink
                               end
-                              to="/services/add-services"
+                              to="/admin/services/add-services"
                               className={({ isActive }) =>
                                 "block transition duration-150 truncate " +
                                 (isActive
@@ -710,7 +710,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                           <li className="mb-1 last:mb-0">
                             <NavLink
                               end
-                              to="/team/all-team"
+                              to="/admin/team/all-team"
                               className={({ isActive }) =>
                                 "block transition duration-150 truncate " +
                                 (isActive
@@ -726,7 +726,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                           <li className="mb-1 last:mb-0">
                             <NavLink
                               end
-                              to="/team/add-team"
+                              to="/admin/team/add-team"
                               className={({ isActive }) =>
                                 "block transition duration-150 truncate " +
                                 (isActive
@@ -804,7 +804,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                           <li className="mb-1 last:mb-0">
                             <NavLink
                               end
-                              to="/hero"
+                              to="/admin/hero"
                               className={({ isActive }) =>
                                 "block transition duration-150 truncate " +
                                 (isActive
@@ -823,7 +823,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                           <li className="mb-1 last:mb-0">
                             <NavLink
                               end
-                              to="/company-info"
+                              to="/admin/company-info"
                               className={({ isActive }) =>
                                 "block transition duration-150 truncate " +
                                 (isActive
@@ -842,7 +842,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                           <li className="mb-1 last:mb-0">
                             <NavLink
                               end
-                              to="/clients-review/all-clients-review"
+                              to="/admin/clients-review/all-clients-review"
                               className={({ isActive }) =>
                                 "block transition duration-150 truncate " +
                                 (isActive
@@ -861,7 +861,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                           <li className="mb-1 last:mb-0">
                             <NavLink
                               end
-                              to="/contact-center-service/all-contact-center-service"
+                              to="/admin/contact-center-service/all-contact-center-service"
                               className={({ isActive }) =>
                                 "block transition duration-150 truncate " +
                                 (isActive
@@ -880,7 +880,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                           <li className="mb-1 last:mb-0">
                             <NavLink
                               end
-                              to="/key-features/all-key-features"
+                              to="/admin/key-features/all-key-features"
                               className={({ isActive }) =>
                                 "block transition duration-150 truncate " +
                                 (isActive
@@ -899,7 +899,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                           <li className="mb-1 last:mb-0">
                             <NavLink
                               end
-                              to="/our-partners/all-our-partners"
+                              to="/admin/our-partners/all-our-partners"
                               className={({ isActive }) =>
                                 "block transition duration-150 truncate " +
                                 (isActive
@@ -918,7 +918,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                           <li className="mb-1 last:mb-0">
                             <NavLink
                               end
-                              to="/partnership-model/all-partnership-model"
+                              to="/admin/partnership-model/all-partnership-model"
                               className={({ isActive }) =>
                                 "block transition duration-150 truncate " +
                                 (isActive
@@ -937,7 +937,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                           <li className="mb-1 last:mb-0">
                             <NavLink
                               end
-                              to="/industry-we-serve/all-industry-we-serve"
+                              to="/admin/industry-we-serve/all-industry-we-serve"
                               className={({ isActive }) =>
                                 "block transition duration-150 truncate " +
                                 (isActive
