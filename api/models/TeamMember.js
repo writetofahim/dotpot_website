@@ -28,6 +28,10 @@ const teamMemberSchema = new mongoose.Schema(
         of: String,
         default: {},
         },
+        link:{
+            type: String,
+            default:"#"
+        }
     },
     { timestamps: true }
 );
