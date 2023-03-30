@@ -23,7 +23,7 @@ const TableRow = ({data,setData}) => {
           {data.coverLetter}
       </td>
       <td className="px-6 max-w-2/5">
-      <a href={data.resume} download>Download Resume</a>
+      <a href={`${import.meta.env.REACT_APP_SERVER_PATH}/${data.resume}`} target="_blank">Download Resume</a>
       </td>
       <td className="px-6 max-w-2/5">
           {
