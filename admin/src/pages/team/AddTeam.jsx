@@ -9,6 +9,7 @@ const AddTeam = () => {
     const [title, setTitle] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
+    const [link, setLink] = useState("");
     const [file, setFile] = useState(null);
 
     const [loading, setLoading] = useState(false);
@@ -24,10 +25,11 @@ const AddTeam = () => {
             axios.get(`/team_member/${teamId}`)
                 .then(res => {
                     console.log("Team member data", res.data)
-                    const { image: img, name, title, email, phone } = res.data;
+                    const { image: img, name, title, email, phone,link } = res.data;
                     setName(name);
                     setTitle(title);
                     setEmail(email);
+                    setEmail(link);
                     setPhone(phone);
                     const preview = document.getElementById("preview");
                     const imageDiv = document.getElementById("imageDiv");
@@ -69,6 +71,7 @@ const AddTeam = () => {
             title,
             email,
             phone,
+            link
         }
 
         try {
@@ -113,6 +116,7 @@ const AddTeam = () => {
         setTitle("");
         setEmail("");
         setPhone("");
+        setLink("")
         setFile(null);
         document.getElementById("pic").value = "";
         const imageDiv = document.getElementById("imageDiv");
@@ -158,6 +162,9 @@ const AddTeam = () => {
 
                 <label className="block text-gray-700 font-bold mb-2">Phone</label>
                 <input value={phone} onChange={(e) => setPhone(e.target.value)} className="mb-5 w-full" type="tel" placeholder="Team member phone" required />
+                
+                <label className="block text-gray-700 font-bold mb-2">Linkedin Link</label>
+                <input value={link} onChange={(e) => setLink(e.target.value)} className="mb-5 w-full" type="text" placeholder="Linkedin Profile Link" required />
 
                 <div className="mt-5 flex justify-center gap-5">
                     <button

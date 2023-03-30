@@ -40,21 +40,19 @@ const SingleBlog = () => {
                 {
                     data && (
                         <div className='full flex items-center justify-center'>
-                            <div className="container flex flex-col items-center p-10 text-justify">
+                            <div className="container flex flex-col items-center p-3 md:p-10 text-justify">
                                 <img src={`${import.meta.env.REACT_APP_SERVER_PATH}/${data.image}`} alt="" />
-                                <div className="md:w-3/5">
-                                    <h1 className="my-5 text-3xl font-bold text-left">{data.title}</h1>
+                                <div className="md:w-5/5">
+                                    <h3 className="my-5 text-3xl font-bold text-left">{data.title}</h3>
                                     <p className="text-gray-400">{data.date}</p>
                                     {
-                                        data.categories.map((item, index) => (
-                                            <Link key={index} to={`/blog?catergory=${item}`} >
-                                                <p className="inline text-gray-400 hover:text-secondary-500 transition-all">{item}, </p>
-                                            </Link>
+                                        data?.tags.map((item, index) => (
+                                            <p className="inline px-3 py-1 border rounded-full mr-2 text-gray-400 hover:text-secondary-500 transition-all">{item}, </p>
                                         ))
                                     }
-                                    {
-                                        parse(data.desc)
-                                    }
+                                    <div className="mt-5">
+                                    {parse(data.body)}
+                                    </div>
                                 </div>
                             </div>
                         </div>

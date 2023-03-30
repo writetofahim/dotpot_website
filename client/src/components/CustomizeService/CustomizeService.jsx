@@ -297,7 +297,7 @@ const CustomizeService = () => {
   }
 
   return (
-    <div className='w-full  md:p-5 lg:p-10 flex items-center justify-center ' >
+    <div className='w-full py-10 px-3  md:p-5 lg:p-10 flex items-center justify-center ' >
       {/* success snackbar start */}
       {isSuccess && <Snackbar open={isSuccess} autoHideDuration={6000} onClose={() => setIsSuccess(false)}>
         <Alert onClose={() => setIsSuccess(false)} severity="success" sx={{ width: '100%' }}>
@@ -311,7 +311,7 @@ const CustomizeService = () => {
       </Snackbar>}
       {/* success snackbar end*/}
       <div className="container">
-        <h1 className='text-6xl text-primary-500 font-bold' >Customize Your Services</h1>
+        <h1 className='text-4xl md:text-6xl text-primary-500 font-bold' >Customize Your Services</h1>
 
         {/* Main Container */}
         <div className="mt-5 flex flex-col lg:flex-row justify-between gap-5 border shadow-xl p-5 rounded-xl md:min-h-[70vh] bg-white">

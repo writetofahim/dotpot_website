@@ -31,7 +31,7 @@ const PartnershipModelTableRow = ({ partner, setData, data }) => {
             </td>
             <td className="px-6 py-2 ">
                 <div className='flex gap-3'>
-                    <AiOutlineEdit onClick={() => navigate(`/partnership-model/add-partnership-model?id=${_id}`)} className='text-violet-500 cursor-pointer' />
+                    <AiOutlineEdit onClick={() => navigate(`/admin/partnership-model/add-partnership-model?id=${_id}`)} className='text-violet-500 cursor-pointer' />
                     <RiDeleteBinLine onClick={() => setIsModalOpen(true)} className='text-red-500 cursor-pointer' />
                 </div>
             </td>

@@ -10,6 +10,7 @@ const AddWorks = () => {
   const [title, setTitle] = useState("");
   const [technologies, setTechnologies] = useState([]);
   const [file, setFile] = useState(null);
+  const [link, setLink] = useState(null);
 
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
@@ -24,9 +25,10 @@ const AddWorks = () => {
       axios.get(`/work/${workId}`)
         .then(res => {
           console.log(res.data)
-          const { image: img, title, technologies } = res.data.work
+          const { image: img, title, technologies,link } = res.data.work
           setTitle(title);
           setTechnologies(technologies);
+          setLink(link);
 
           const preview = document.getElementById("preview");
           const imageDiv = document.getElementById("imageDiv");
@@ -66,6 +68,7 @@ const AddWorks = () => {
     const newWork = {
       title,
       technologies,
+      link
     }
 
     try {
@@ -77,7 +80,7 @@ const AddWorks = () => {
         setFile(null);
         newWork.image = attachment;
         if (workId) {
-          const { data: d } = await axios.patch(`/work/${workId}`, newWork);
+          const { data: d } = await axios.put(`/work/${workId}`, newWork);
           console.log(d)
           setMessage("Work updated Successfully!")
         } else {
@@ -92,7 +95,7 @@ const AddWorks = () => {
 
       }
       if (!file && workId) {
-        const { data: d } = await axios.patch(`/work/${workId}`, newWork);
+        const { data: d } = await axios.put(`/work/${workId}`, newWork);
         setMessage("Work Updated Successfully!")
         setLoading(false);
         setSnackbar(true);
@@ -147,6 +150,8 @@ const AddWorks = () => {
             </div>
           </div>
         </div>
+        <label className="block text-gray-700 font-bold mb-2">Project Link</label>
+        <input value={link} onChange={(e) => setLink(e.target.value)} className="mb-5 w-full" type="text" placeholder="Link" />
 
         <div className="mt-14 flex justify-center gap-5">
           <button

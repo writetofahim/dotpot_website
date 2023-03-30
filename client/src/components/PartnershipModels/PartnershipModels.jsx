@@ -17,7 +17,7 @@ import axios from "../../utils/axiosInstance"
 
 export const Card = (props) => {
     return (
-        <div className="mx-5 p-5 rounded-lg shadow-lg flex-1 hover:scale-110 transition-all md:min-h-[450px] glassmorphism">
+        <div className="md:mx-5 p-4 md:p-5 rounded-lg shadow-lg flex-1 hover:scale-110 transition-all md:min-h-[450px] glassmorphism">
             <div className="text-6xl">
                 <img className="img-fluid" src={props.icon} alt={props.title} />
             </div>
@@ -43,11 +43,11 @@ const PartnershipModels = () => {
 
     return (
         <div className='w-full overflow-hidden pt-10 pb-20 md:flex md:flex-col md:justify-center flex-wrap '>
-            <div className="p-5 mt-5 w-full md:max-w-[1400px] self-center">
-                <h1 className="mt-10 text-6xl font-bold w-full text-primary-500 mb-5 ">Partnership Models</h1>
-                <p className="text-gray-400 text-justify">At DotpotiT, we have a variety of partnership models that are designed to foster long-term relationships with our clients. Our team of experienced professionals work closely with our clients to understand their specific requirements and goals, and then develop customized solutions that deliver results. With our deep expertise in mobile app development, we help our clients stay ahead of the competition and achieve their business objectives. To learn more about how we can help you achieve your goals, contact us today.</p>
+            <div className="p-3 md:p-5 mt-5 w-full md:max-w-[1400px] self-center">
+                <h1 className="mt-10 text-4xl md:text-6xl font-bold w-full text-primary-500 mb-5 ">Partnership Models</h1>
+                <p className="text-md text-gray-400 text-justify">Dotpot iT offers partnership models to build long-term relationships with clients.</p>
             </div>
-            <div className="p-5 mt-5 w-full md:max-w-[1400px] self-center flex flex-col lg:flex-row gap-5 flex-wrap items-center justify-center">
+            <div className="p-3 md:p-5 mt-5 w-full md:max-w-[1400px] self-center flex flex-col lg:flex-row gap-5 flex-wrap items-center justify-center">
                 {
                     data && data.map((item, index) => {
                         return (

@@ -10,7 +10,7 @@ import axios from "../../utils/axiosInstance"
 import { io } from "socket.io-client";
 import moment from "moment/moment";
 
-const socket = io(import.meta.env.REACT_APP_SERVER_PATH)
+const socket = io(import.meta.env.REACT_APP_SOCKET_PATH)
 
 // const data = [
 //   { name: "DotpotiT", message: "Hi there!", timestamp: "11:30 AM" },
@@ -37,7 +37,7 @@ const ChatPopup = () => {
   useEffect(() => {
     // listen event for new message
     socket.on("newMessage", data => {
-      console.log(data)
+      console.log("newMessage event fire on client side",data)
       const conversationId = localStorage.getItem("conversation_id")
       if (conversationId === data.conversation_id && data.sender === "admin") {
         setMessages(prev => ([...prev, data]))

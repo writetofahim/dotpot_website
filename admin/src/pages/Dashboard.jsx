@@ -1,13 +1,14 @@
 import React from "react";
+import {Link} from "react-router-dom"
 
 
 const Card = ({title,link}) => {
   return(
-    <a href={link} className="w-2/5 lg:w-1/5">
+    <Link to={link} className="w-2/5 lg:w-1/5">
       <div className="w-full h-24 border flex items-center justify-center rounded-xl hover:shadow-xl hover:scale-105 transition-all bg-gray-100 hover:bg-purple-500 hover:text-white">
         <h3 className="text-xl font-bold text-center">{title}</h3>
       </div>
-    </a>
+    </Link>
   )
 }
 

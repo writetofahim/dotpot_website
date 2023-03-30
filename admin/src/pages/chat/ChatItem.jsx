@@ -9,9 +9,9 @@ const ChatItem = ({ chat }) => {
     const selected = pathname.includes(_id);
     console.log("chat", chat);
     return (
-        <div onClick={() => navigate(`/chat/${_id}`)} className={`flex gap-2 py-2 px-3 cursor-pointer ${selected && "bg-[#8A52FD] text-white"}`}>
+        <div onClick={() => navigate(`/admin/chat/${_id}`)} className={`flex items-center gap-2 py-2 px-3 cursor-pointer ${selected && "bg-[#8A52FD] text-white"}`}>
             <div className='w-12 '>
-                <img className='rounded-full' src="https://png.pngtree.com/png-vector/20191101/ourmid/pngtree-cartoon-color-simple-male-avatar-png-image_1934459.jpg" alt="" />
+                <img className='rounded-full p-1 w-10 aspect-square object-contain border' src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="" />
             </div>
             <div className='w-full'>
                 <h3 className='font-bold'>{chat.name ? chat.name : "Unknown"}</h3>

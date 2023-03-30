@@ -19,8 +19,7 @@ function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
         <GrNext
-            className="text-6xl absolute right-0 top-1/2 cursor-pointer text-secondary-500 opacity-30 hover:opacity-100 bg-secondary-500 -translate-y-[130%] border p-2 rounded-full translate-x-[70%] shadow"
-            style={{ ...style, display: "block" }}
+            className="hidden md:block text-6xl absolute right-0 top-1/2 cursor-pointer text-secondary-500 opacity-30 hover:opacity-100 bg-secondary-500 -translate-y-[130%] border p-2 rounded-full translate-x-[70%] shadow"
             onClick={onClick}
         />
     );
@@ -30,8 +29,7 @@ function SamplePrevArrow(props) {
     const { className, style, onClick } = props;
     return (
         <GrPrevious
-            className="z-2 text-6xl absolute left-0 top-1/2 cursor-pointer text-secondary-500 opacity-30 hover:opacity-100 bg-secondary-500 -translate-y-[130%] border p-2 rounded-full -translate-x-[70%] shadow"
-            style={{ ...style, display: "block", }}
+            className="hidden md:block z-2 text-6xl absolute left-0 top-1/2 cursor-pointer text-secondary-500 opacity-30 hover:opacity-100 bg-secondary-500 -translate-y-[130%] border p-2 rounded-full -translate-x-[70%] shadow"
             onClick={onClick}
         />
     );
@@ -87,7 +85,7 @@ export const SingleSlide = (props) => {
 
                 <div className="col-span-2 p-5 flex flex-col justify-between">
 
-                    <p className=""> <ImQuotesLeft className="text-primary-500  font-bold text-xl inline-block mr-2" /> {props.review_text} <ImQuotesRight className="text-primary-500   text-xl inline-block ml-2" /></p>
+                    <p className="h-[200px] md:h-max"> <ImQuotesLeft className="text-primary-500  font-bold text-xl inline-block mr-2" /> {props.review_text} <ImQuotesRight className="text-primary-500   text-xl inline-block ml-2" /></p>
                     <div>
                         <h2 className="font-bold text-xl text-secondary-500 mt-3 text-center md:text-left ">{props.client_name}</h2>
                         <h3 className="font-bold text-center md:text-left">{props.position}</h3>

@@ -13,7 +13,7 @@ export default function AllOurPartners() {
       const response = await axios.get(`/our_partner?page=${page}`);
       setData(response.data.ourPartners);
       setTotalPages(response.data.totalPages);
-      console.log(data);
+      // console.log(data);
     } catch (error) {
       console.error(error);
     }
@@ -34,7 +34,7 @@ export default function AllOurPartners() {
   return (
     <div className='lg:p-5 p-3'>
       <div className="relative overflow-x-auto">
-        <Link to="/our-partners/add-our-partners">
+        <Link to="/admin/our-partners/add-our-partners">
           <button className="m-2 px-3 py-2 bg-green-400 text-white font-bold cursor-pointer rounded-lg hover:scale-105 hover:shadow-xl transition-all">Add New Partner</button>
         </Link>
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">

@@ -28,8 +28,7 @@ function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
         <GrNext
-            className="text-6xl absolute right-0 top-1/2 cursor-pointer text-secondary-500 opacity-30 hover:opacity-100 bg-secondary-500 -translate-y-[100%] border p-2 rounded-full translate-x-[70%] shadow"
-            style={{ ...style, display: "block" }}
+            className="hidden md:block text-6xl absolute right-0 top-1/2 cursor-pointer text-secondary-500 opacity-30 hover:opacity-100 bg-secondary-500 -translate-y-[100%] border p-2 rounded-full translate-x-[70%] shadow"
             onClick={onClick}
         />
     );
@@ -39,8 +38,7 @@ function SamplePrevArrow(props) {
     const { className, style, onClick } = props;
     return (
         <GrPrevious
-            className="z-2 text-6xl absolute left-0 top-1/2 cursor-pointer text-secondary-500 opacity-30 hover:opacity-100 bg-secondary-500 -translate-y-[100%] border p-2 rounded-full -translate-x-[70%] shadow"
-            style={{ ...style, display: "block", }}
+            className="hidden md:block z-2 text-6xl absolute left-0 top-1/2 cursor-pointer text-secondary-500 opacity-30 hover:opacity-100 bg-secondary-500 -translate-y-[100%] border p-2 rounded-full -translate-x-[70%] shadow"
             onClick={onClick}
         />
     );

@@ -28,8 +28,7 @@ function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
         <GrNext
-            className="text-6xl absolute right-0 top-1/2 cursor-pointer text-secondary-500 opacity-30 hover:opacity-100 bg-secondary-500 -translate-y-[100%] border p-2 rounded-full translate-x-[30%] shadow"
-            style={{ ...style, display: "block" }}
+            className="hidden md:block text-6xl absolute right-0 top-1/2 cursor-pointer text-secondary-500 opacity-30 hover:opacity-100 bg-secondary-500 -translate-y-[100%] border p-2 rounded-full translate-x-[30%] shadow"
             onClick={onClick}
         />
     );
@@ -39,8 +38,7 @@ function SamplePrevArrow(props) {
     const { className, style, onClick } = props;
     return (
         <GrPrevious
-            className="z-10 text-6xl absolute left-0 top-1/2 cursor-pointer text-secondary-500 opacity-30 hover:opacity-100 bg-secondary-500 -translate-y-[100%] border p-2 rounded-full -translate-x-[30%] shadow"
-            style={{ ...style, display: "block", }}
+            className="hidden md:block z-10 text-6xl absolute left-0 top-1/2 cursor-pointer text-secondary-500 opacity-30 hover:opacity-100 bg-secondary-500 -translate-y-[100%] border p-2 rounded-full -translate-x-[30%] shadow"
             onClick={onClick}
         />
     );
@@ -91,9 +89,11 @@ export const SingleSlide = (props) => {
     return (
         <div className="mx-5 mb-20 rounded-lg p-5 bg-white flex items-center flex-col shadow-xl cursor-pointer hover:border hover:border-primary-400 hover:scale-x-105 transition-all">
             <img src={`${import.meta.env.REACT_APP_SERVER_PATH}/${props.image}`} alt="" className=" w-2/5 aspect-square rounded-full" />
-            <h3 className="mt-2 text-xl font-bold text-gray-400">{props.name}</h3>
+            <a href={props.link}>
+                <h3 className="mt-2 text-xl font-bold text-gray-400">{props.name}</h3>
+            </a>
             <p className="font-bold text-secondary-400">{props.title}</p>
-            <p className="text-gray-300 ">{props.email}</p>
+            <p className="text-gray-300 ">Dotpot iT</p>
         </div>
     )
 }

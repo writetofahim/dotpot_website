@@ -131,10 +131,11 @@ const AddOurPartners = () => {
           >
             Website URL
           </label>
-          <textarea
+          <input
             className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
             placeholder="Enter company url"
-            rows="3"
+            type="text"
+            required
             value={websiteUrl}
             onChange={(e) => setWebsiteUrl(e.target.value)}
           />

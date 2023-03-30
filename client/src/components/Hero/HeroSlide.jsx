@@ -20,8 +20,7 @@ function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
     <GrNext
-      className="text-6xl absolute right-0 top-1/2 cursor-pointer text-secondary-500 opacity-30 bg-secondary-500 hover:opacity-100 hover:bg-secondary-500 -translate-y-[100%] border p-2 rounded-full translate-x-[20%] shadow"
-      style={{ ...style, display: "block" }}
+      className=" hidden md:block text-6xl absolute right-0 top-1/2 cursor-pointer text-secondary-500 opacity-30 bg-secondary-500 hover:opacity-100 hover:bg-secondary-500 -translate-y-[100%] border p-2 rounded-full translate-x-[20%] shadow"
       onClick={onClick}
     />
   );
@@ -31,8 +30,7 @@ function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
   return (
     <GrPrevious
-      className="z-2 text-6xl absolute left-0 top-1/2 cursor-pointer text-secondary-500 opacity-30 bg-secondary-500 hover:opacity-100 hover:bg-secondary-500 -translate-y-[100%] border p-2 rounded-full -translate-x-[20%] shadow"
-      style={{ ...style, display: "block", }}
+      className="hidden md:block z-2 text-6xl absolute left-0 top-1/2 cursor-pointer text-secondary-500 opacity-30 bg-secondary-500 hover:opacity-100 hover:bg-secondary-500 -translate-y-[100%] border p-2 rounded-full -translate-x-[20%] shadow"
       onClick={onClick}
     />
   );
@@ -56,10 +54,10 @@ export const SingleSlide = (props) => {
     <div className="w-full h-full flex items-center justify-center">
       <div className="md:max-w-[1200px] lg:container container flex flex-col-reverse md:flex-row justify-between items-center">
         <div className="left flex-1 h-full flex flex-col justify-center">
-          <h1 className="text-6xl text-primary-500 font-bold mb-2">
+          <h1 className="text-4xl md:text-6xl text-primary-500 font-bold mb-2">
             {props.title}
           </h1>
-          <p className='mb-5 text-gray-300 text-3xl font-bold'>{props.subtitle}</p>
+          <p className='mb-5 text-gray-300 text-2xl md:text-3xl font-bold'>{props.subtitle}</p>
           <div className="flex gap-5 items-center mb-5">
             {/* <div className="pr-5 border-r border-gray-300">
                   <h1 className="text-4xl text-secondary-500 font-bold">

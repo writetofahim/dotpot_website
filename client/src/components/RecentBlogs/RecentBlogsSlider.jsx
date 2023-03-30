@@ -26,8 +26,7 @@ function SampleNextArrow(props) {
     const { className, style, onClick } = props;
         return (
         <GrNext
-            className="text-6xl absolute right-0 top-1/2 cursor-pointer text-secondary-500 opacity-30 hover:opacity-100 bg-secondary-500 -translate-y-[100%] border p-2 rounded-full translate-x-[30%] shadow"
-            style={{ ...style, display: "block"}}
+            className="hidden md:block text-6xl absolute right-0 top-1/2 cursor-pointer text-secondary-500 opacity-30 hover:opacity-100 bg-secondary-500 -translate-y-[100%] border p-2 rounded-full translate-x-[30%] shadow"
             onClick={onClick}
         />
         );
@@ -37,8 +36,7 @@ function SampleNextArrow(props) {
         const { className, style, onClick } = props;
         return (
         <GrPrevious
-            className="z-10 text-6xl absolute left-0 top-1/2 cursor-pointer text-secondary-500 opacity-30 hover:opacity-100 bg-secondary-500 -translate-y-[100%] border p-2 rounded-full -translate-x-[30%] shadow"
-            style={{ ...style, display: "block", }}
+            className="hidden md:block z-10 text-6xl absolute left-0 top-1/2 cursor-pointer text-secondary-500 opacity-30 hover:opacity-100 bg-secondary-500 -translate-y-[100%] border p-2 rounded-full -translate-x-[30%] shadow"
             onClick={onClick}
         />
         );
@@ -89,7 +87,7 @@ export const SingleSlide = (props) => {
     
     return (
         <div className="mx-5 mb-20 rounded-lg shadow-xl ">
-            <img src={`${import.meta.env.REACT_APP_SERVER_PATH}/${props.image}`} alt="" className="rounded-tl-xl rounded-tr-xl w-full aspect-video object-contain" />
+            <img src={`${import.meta.env.REACT_APP_SERVER_PATH}/${props.image}`} alt="" className="rounded-tl-xl rounded-tr-xl w-full aspect-video object-cover" />
             <div className=" bg-white rounded-bl-xl rounded-br-xl shadow p-5 flex flex-col">
                 <Stack direction="row" className="flex flex-wrap gap-1">
                     {
@@ -99,7 +97,7 @@ export const SingleSlide = (props) => {
                     }
                 </Stack>
                 <p className="mt-2 text-gray-400">{props.date}</p>
-                <h3 className="text-xl font-bold text-gray-400 my-2">{props.title}</h3>
+                <h3 className="text-xl font-bold text-gray-400 my-2 h-[80px]">{props.title}</h3>
                 <Link to={`/blog/${props._id}`} className="hover:text-secondary-500 flex items-center gap-2">Read More <BsArrowRight /></Link> 
             </div>
         </div>

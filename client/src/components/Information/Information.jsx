@@ -13,9 +13,11 @@ The video is responsive and maintains its aspect ratio on different screen sizes
 import React, { useEffect, useState } from 'react'
 import axios from '../../utils/axiosInstance'
 import Card from './Card'
+import {BsChevronDoubleDown} from 'react-icons/bs'
 
 const Information = () => {
     const [data, setData] = useState(null);
+    const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
         axios.get('/info')
@@ -26,14 +28,23 @@ const Information = () => {
 
     // const videoUrl = 'https://www.youtube.com/embed/A23jUjVatn4?autoplay=1&loop=1';
     return (
-        <div className='md:p-5 bg-white w-full flex justify-center items-center'>
-            <div className="w-full md:max-w[1400px] lg:max-w-[1400px] p-10 md:px-5 lg:px-0 flex flex-col items-center justify-between md:flex-col lg:flex-row gap-5">
+        <div className='py-10 md:p-5 bg-white w-full flex justify-center items-center'>
+            <div className="w-full md:max-w[1400px] lg:max-w-[1400px] p-3 md:p-10 md:px-5 lg:px-0 flex flex-col items-center justify-between md:flex-col lg:flex-row gap-5">
                 <div className="left flex-[2] h-full">
-                    <h1 className="text-6xl text-primary-500 font-bold mb-5 ">{data && data.name}</h1>
+                    <h1 className="text-4xl md:text-6xl text-primary-500 font-bold mb-5 ">{data && data.name}</h1>
                     <p className="mb-5 text-2xl text-gray-300 font-bold">{data && data.slogan}</p>
-                    <p className="text-justify text-xl text-gray-300">
-                        {data && data.about}
+                    <p className="text-justify text-md md:text-xl text-gray-300">
+                        {
+                            isOpen ? data?.about
+                            : data?.about.slice(0, 200)
+                        }{!isOpen&&"..."}
                     </p>
+                    {
+                        !isOpen ? 
+                            <button onClick={()=>setIsOpen(!isOpen)} className="mt-2 flex items-center gap-2 font-bold text-secondary-300 hover:text-secondary-500 cursor-pointer">Ream More <BsChevronDoubleDown /></button> 
+                        : 
+                            <button onClick={()=>setIsOpen(!isOpen)} className="mt-2 flex items-center gap-2 font-bold text-secondary-300 hover:text-secondary-500 cursor-pointer">Ream Less <BsChevronDoubleDown className='rotate-180' /></button>
+                    }
                 </div>
                 <div className="right flex-[3] w-full flex items-center justify-center lg:justify-end md:p-10  ">
 

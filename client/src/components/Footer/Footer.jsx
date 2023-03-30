@@ -66,19 +66,19 @@ const Footer = () => {
             {/* Three columns */}
             <div className="md:grid grid-cols-1 md:grid-cols-5 lg:grid-cols-4 gap-4 hidden">
 
-            <div className="md:col-span-2 lg:col-span-1 w-[200px]">
+            <div className="md:col-span-2 lg:col-span-1 w-full">
                 <Link to="/">
-                    <img src={logo} alt="" />
+                    <img src={logo} alt="" className='w-[250px]' />
                 </Link>
-                <p>
+                <p className='mb-3 ml-3'>
                     Help Business Successful Online
                 </p>
-                <p>
+                <p className='text-gray-200'>
                 Dotpot iT, House-1, Road-3, Block-A, Mirpur-10, Dhaka, Bangladesh
                 </p>
                 <br />
-                <p><strong>Phone:</strong> +880 1817 176 192</p>
-                <p><strong>Email:</strong> help@dotpotit.com</p>
+                <p className='text-gray-200'><strong>Phone:</strong> +880 1817 176 192</p>
+                <p className='text-gray-200'><strong>Email:</strong> help@dotpotit.com</p>
             </div>
 
             {/* Columns */}
@@ -90,7 +90,7 @@ const Footer = () => {
                             <ul className="space-y-2">
                                 {
                                     item.links.map((link, index)=>(
-                                        <li key={index} className="hover:text-secondary-500">
+                                        <li key={index} className="hover:text-secondary-500 text-gray-200">
                                             <Link to={link.link}>
                                                 {link.title}
                                             </Link>
@@ -104,9 +104,9 @@ const Footer = () => {
             </div>
 
             {/* Mobile accordion */}
-            <div className="md:hidden block w-[200px] ">
+            <div className="md:hidden block w-full ">
                 <Link to="/">
-                    <img src={logo} alt="" />
+                    <img src={logo} alt="" className='w-4/5' />
                 </Link>
                 <p>
                     Make your Business Success Online

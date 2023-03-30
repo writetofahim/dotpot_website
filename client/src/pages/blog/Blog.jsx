@@ -63,13 +63,32 @@ const BlogCard = (props) => {
 
 const Blog = () => {
     const [data, setData] = useState(null);
+    const [page, setPage] = React.useState(1);
+    const [totalPages, setTotalPages] = React.useState(1);
 
-    // Data Fetching
-    useEffect(() => {
-        axios.get('/blog')
-            .then(response => setData(response.data.blogs))
-            .catch(error => console.error(error));
-    }, []); 
+    const fetchData = async (page) => {
+    try {
+        const response = await axios.get(`/blog?page=${page}`);
+        console.log(response.data);
+        setData(response.data.blogs);
+        setTotalPages(response.data.totalPages);
+    } catch (error) {
+        console.error(error);
+    }
+    };
+
+    React.useEffect(() => {
+    fetchData(page);
+    }, [page]);
+
+    const handlePrevPage = () => {
+    setPage(page - 1);
+    };
+
+    const handleNextPage = () => {
+    setPage(page + 1);
+    };
+
 
 
     return (
@@ -87,7 +106,46 @@ const Blog = () => {
                             ))
                         }
                     </div>
-                    <Pagination count={10} variant="outlined" shape="rounded" className='my-10' />
+                    
+                    {/* Pagination Start */}
+                    <div className='flex justify-center mt-5 mb-5'>
+                        <nav aria-label="Page navigation example ">
+                        <ul className="inline-flex -space-x-px">
+                            <li>
+                            <button
+                                onClick={handlePrevPage}
+                                disabled={page === 1}
+                                className="px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 "
+                            >
+                                Previous
+                            </button>
+                            </li>
+                            {Array.from({ length: totalPages }, (_, index) => (
+                            <li key={index}>
+                                <button
+                                onClick={() => setPage(index + 1)}
+                                className={`px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700  ${index + 1 === page ? 'text-blue-600 border-blue-600 bg-blue-50' : ''
+                                    }`}
+                                >
+                                {index + 1}
+                                </button>
+                            </li>
+                            ))}
+                            <li>
+                            <button
+                                onClick={handleNextPage}
+                                disabled={page === totalPages}
+                                className="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 "
+                            >
+                                Next
+                            </button>
+                            </li>
+                        </ul>
+                        </nav>
+                    </div>
+                    {/* Pagination Start */}
+
+
                 </div>
 
                 <ChatPopup />
