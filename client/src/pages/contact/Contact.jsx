@@ -19,9 +19,12 @@ import GoogleMap from '../../components/GoogleMap/GoogleMap'
 import ChatPopup from '../../components/ChatPopup/ChatPopup'
 
 import Particle from '../../components/Hero/Particle'
+import { useScrollToTop } from '../../hooks/useScrollToTop'
 
 
 const Contact = () => {
+    useScrollToTop()
+
     return (
         <>
             <Navbar />

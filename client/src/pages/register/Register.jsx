@@ -6,9 +6,11 @@ import { RxPerson } from "react-icons/rx";
 import Particle from '../../components/Hero/Particle';
 import { FaSpinner } from "react-icons/fa";
 import { AuthContext } from '../../contexts/AuthContext';
+import { useScrollToTop } from '../../hooks/useScrollToTop';
 
 
 const Register = () => {
+  useScrollToTop()
   const [isLoading, setIsLoading] = useState(false);
   const { user, registration, error, googleLogin } = useContext(AuthContext);
   const navigate = useNavigate()

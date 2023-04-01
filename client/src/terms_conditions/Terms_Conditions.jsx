@@ -2,8 +2,10 @@ import React from 'react'
 import Footer from '../components/Footer/Footer'
 import Navbar from '../components/Navbar/Navbar'
 import terms from "../assets/pdfs/terms.pdf"
+import { useScrollToTop } from '../hooks/useScrollToTop'
 
 const Terms_Conditions = () => {
+  useScrollToTop()
   return (
     <div className="w-full">
       <Navbar />

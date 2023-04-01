@@ -16,9 +16,11 @@ import SocialMedia from '../../components/SocialMedia/SocialMedia'
 import ChatPopup from '../../components/ChatPopup/ChatPopup'
 import CustomizeService from '../../components/CustomizeService/CustomizeService'
 import Particle from '../../components/Hero/Particle'
+import { useScrollToTop } from '../../hooks/useScrollToTop'
 
 
 const Services = () => {
+    useScrollToTop()
     return (
         <div className="full">
             <Navbar />

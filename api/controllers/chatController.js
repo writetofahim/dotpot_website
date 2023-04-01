@@ -71,6 +71,7 @@ const replayToChat = async (req, res) => {
     const message = {
         conversation_id: req.params.conversationId,
         text: req.body.text,
+        attachment: req?.body?.attachment,
         sender: "admin",
         receiver: "visitor",
         isAdminSeen: true

@@ -2,8 +2,10 @@ import React from 'react'
 import Navbar from '../../components/Navbar/Navbar'
 import privacy from '../../assets/pdfs/privacy.pdf'
 import Footer from '../../components/Footer/Footer'
+import { useScrollToTop } from '../../hooks/useScrollToTop'
 
 const PrivacyPolicy = () => {
+  useScrollToTop()
   return (
     <div className="w-full">
       <Navbar />

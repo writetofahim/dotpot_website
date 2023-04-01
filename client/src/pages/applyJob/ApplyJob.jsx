@@ -10,6 +10,7 @@ import NavbarJob from '../../components/NavbarJob/NavbarJob'
 import JobSearchbar from '../../components/JobSearchbar/JobSearchbar'
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
 import axios from '../../utils/axiosInstance'
+import { useScrollToTop } from '../../hooks/useScrollToTop'
 
 export const JobCard = (props) => {
     const [love, setLove] = useState(false)
@@ -117,6 +118,7 @@ export const JobCard = (props) => {
 }
 
 const ApplyJob = () => {
+    useScrollToTop()
     const [id, setId] = useState(null);
     const [data, setData] = useState(null);
     const [activeJob, setActiveJob] = useState(null);

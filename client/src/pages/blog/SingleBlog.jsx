@@ -19,8 +19,10 @@ import { blogData } from '../../data'
 import parse from 'react-html-parser';
 import ChatPopup from '../../components/ChatPopup/ChatPopup'
 import axios from '../../utils/axiosInstance'
+import { useScrollToTop } from '../../hooks/useScrollToTop'
 
 const SingleBlog = () => {
+    useScrollToTop()
 
     const { id } = useParams();
     const [data, setData] = useState(null);

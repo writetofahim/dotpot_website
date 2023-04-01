@@ -5,6 +5,7 @@ import Navbar from '../../components/Navbar/Navbar'
 import Particle from '../../components/Hero/Particle'
 import { AuthContext } from '../../contexts/AuthContext'
 import { FaSpinner } from "react-icons/fa";
+import { useScrollToTop } from '../../hooks/useScrollToTop'
 
 
 const Login = () => {
@@ -13,9 +14,11 @@ const Login = () => {
   const { user, login, error, googleLogin } = useContext(AuthContext);
   // use the useContext hook to get the user, login, and error values from the AuthContext
   const navigate = useNavigate();
+  useScrollToTop();
   // use the useNavigate hook to get the navigate function
 
   useEffect(() => {
+    window. scrollTo(0, 0)
     // use the useEffect hook to check if user exists
     if (user) {
       // if user exists

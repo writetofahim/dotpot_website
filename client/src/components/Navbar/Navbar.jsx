@@ -14,7 +14,7 @@ To apply custom styles, modify the with tailwind css classes and the background 
 import React, { useContext, useEffect, useState } from "react";
 import { HiMenuAlt4 } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/img/logo.png"
 import { AuthContext } from "../../contexts/AuthContext";
 
@@ -36,27 +36,39 @@ const Navbar = () => {
                     {/* {["home", "about us", "Services", "Contact"].map((item, index) => (
                         <NavBarItem key={item + index} title={item} />
                     ))} */}
-                    <Link to="/">
-                        <li className="mx-4 cursor-pointer uppercase text-white font-bold lg:text-gray-400 text-lg hover:scale-110 hover:text-primary-400" onClick={() => setToggleMenu(false)}>Home</li>
-                    </Link>
-                    <Link to="/about">
-                        <li className="mx-4 cursor-pointer uppercase text-white font-bold lg:text-gray-400 text-lg hover:scale-110 hover:text-primary-400" onClick={() => setToggleMenu(false)}>About Us</li>
-                    </Link>
-                    <Link to="/services">
-                        <li className="mx-4 cursor-pointer uppercase text-white font-bold lg:text-gray-400 text-lg hover:scale-110 hover:text-primary-400" onClick={() => setToggleMenu(false)}>Services</li>
-                    </Link>
-                    <Link to="/contact">
-                        <li className="mx-4 cursor-pointer uppercase text-white font-bold lg:text-gray-400 text-lg hover:scale-110 hover:text-primary-400" onClick={() => setToggleMenu(false)}>Contact</li>
-                    </Link>
-                    <Link to="/blog">
-                        <li className="mx-4 cursor-pointer uppercase text-white font-bold lg:text-gray-400 text-lg hover:scale-110 hover:text-primary-400" onClick={() => setToggleMenu(false)}>Blog</li>
-                    </Link>
+                    <NavLink to="/">
+                    {({ isActive }) => (
+                        <li className={`${isActive ? "lg:text-primary-400 text-white" : "lg:text-gray-400 "} mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-primary-400`}>Home</li>
+                    )}              
+                    </NavLink>
+                    <NavLink to="/about">
+                    {({ isActive }) => (
+                        <li className={`${isActive ? "lg:text-primary-400 text-white" : "lg:text-gray-400 "} mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-primary-400`}>About Us</li>
+                    )}  
+                    </NavLink>
+                    <NavLink to="/services">
+                    {({ isActive }) => (
+                        <li className={`${isActive ? "lg:text-primary-400 text-white" : "lg:text-gray-400 "} mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-primary-400`}>Services</li>
+                    )}  
+                    
+                    </NavLink>
+                    <NavLink to="/contact">
+                    {({ isActive }) => (
+                        <li className={`${isActive ? "lg:text-primary-400 text-white" : "lg:text-gray-400 "} mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-primary-400`} onClick={() => setToggleMenu(false)}>Contact</li>
+                    )}  
+                    </NavLink>
+                    <NavLink to="/blog">
+                    {({ isActive }) => (
+                    <li className={`${isActive ? "lg:text-primary-400 text-white" : "lg:text-gray-400 "} mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-primary-400`} onClick={() => setToggleMenu(false)}>Blog</li>
+                    )} 
+                    </NavLink>
 
                     {
                         !user ? (
-                            <Link to="/login">
-                                <li className="mx-4 cursor-pointer uppercase text-white font-bold lg:text-gray-400 text-lg hover:scale-110 hover:text-primary-400">Login</li>
-                            </Link>
+                            <NavLink to="/login">
+                            {({ isActive }) => (
+                                <li className={`${isActive ? "lg:text-primary-400 text-white" : "lg:text-gray-400 "} mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-primary-400`}  onClick={() => setToggleMenu(false)}>Login</li>  )} 
+                            </NavLink>
                         ) : (
                             <li className="mx-4 cursor-pointer uppercase text-white font-bold lg:text-gray-400 text-lg hover:scale-110 hover:text-primary-400" onClick={() => logout()}>Logout</li>
                         )

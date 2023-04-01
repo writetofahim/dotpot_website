@@ -22,6 +22,7 @@ import { AiOutlineDoubleRight } from "react-icons/ai"
 import axios from '../../utils/axiosInstance'
 
 import Particle from '../../components/Hero/Particle'
+import { useScrollToTop } from '../../hooks/useScrollToTop'
 
 const BlogCard = (props) => {
     const id = props._id
@@ -62,6 +63,7 @@ const BlogCard = (props) => {
 }
 
 const Blog = () => {
+    useScrollToTop()
     const [data, setData] = useState(null);
     const [page, setPage] = React.useState(1);
     const [totalPages, setTotalPages] = React.useState(1);

@@ -22,9 +22,9 @@ const MessageBody = ({ message }) => {
                 )}
                 {message?.attachment && (
                     <img
-                        src={message?.attachment}
+                        src={`${import.meta.env.REACT_APP_SERVER_PATH}/${message?.attachment}`}
                         alt="attachment"
-                        className="w-48 mt-2"
+                        className="w-48 mt-2"   
                     />
                 )}
                 <p className="text-xs text-gray-500 mt-1">{new Date(message?.createdAt).toLocaleString()}</p>

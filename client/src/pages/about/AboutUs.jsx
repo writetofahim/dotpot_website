@@ -21,8 +21,11 @@ import WhoWeWorkWith from '../../components/WhoWeWorkWith/WhoWeWorkWith'
 import { aboutPageContent, PartnershipModelsData } from '../../data'
 
 import Particle from '../../components/Hero/Particle'
+import { useScrollToTop } from '../../hooks/useScrollToTop'
 
 const AboutUs = () => {
+    useScrollToTop()
+
     const heroImg = "https://www.hyperlinkinfosystem.com/assets/uploads/banner/1634022694.png"
     const button = { title: "Contact Us", link: "/contact" }
     return (

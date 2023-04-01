@@ -5,9 +5,11 @@ import { FiSend, FiPaperclip } from "react-icons/fi";
 import { useParams } from 'react-router';
 import axios from "../../utils/axiosInstance"
 import { FaSpinner } from "react-icons/fa";
-import {io} from "socket.io-client";
+import io from "socket.io-client";
 
-const socket = io.connect(import.meta.env.REACT_APP_SOCKET_PATH);
+console.log("io path", import.meta.env.REACT_APP_SOCKET_PATH+"/api")
+const socket = io.connect(import.meta.env.REACT_APP_SOCKET_PATH+"/api");
+console.log("socket", socket)
 
 const ChatBody = () => {
     const [messages, setMessages] = useState([]);
@@ -32,6 +34,10 @@ const ChatBody = () => {
                 messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
             }
         })
+
+        socket.on("connection", (socket) => {
+            console.log("connection")
+          });
         return () => {
             socket.disconnect();
         };
@@ -63,6 +69,7 @@ const ChatBody = () => {
                     formData.append('files[]', file);
                 });
                 const { data: resFiles } = await axios.post("/upload", formData)
+                console.log("resFiles", resFiles[0].filename)
                 attachment = resFiles[0].filename;
                 setFiles(null)
             }
@@ -120,7 +127,7 @@ const ChatBody = () => {
                         {files && (
                             <div className="mt-2">
                                 <span className="text-gray-600">Selected file:</span>{" "}
-                                {files.name}
+                                {files[0].name}
                             </div>
                         )}
                     </div>

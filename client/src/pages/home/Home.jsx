@@ -43,8 +43,10 @@ import Service from '../../components/Services/Service'
 import SocialMedia from '../../components/SocialMedia/SocialMedia'
 import WhatOurClientSay from '../../components/WhatOurClientsSay/WhatOurClientsSay'
 import WhoWeWorkWith from '../../components/WhoWeWorkWith/WhoWeWorkWith'
+import { useScrollToTop } from '../../hooks/useScrollToTop'
 
 const Home = () => {
+  useScrollToTop()
   return (
     <>
       <Navbar />
