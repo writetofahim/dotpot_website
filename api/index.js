@@ -5,6 +5,8 @@ const dotenv = require("dotenv");
 const http = require("http");
 const { Server } = require("socket.io");
 const cors = require("cors")
+const morgan = require('morgan');
+const winston = require('./config/winston');
 
 const authRouter = require("./routes/authRoutes")
 const blogRoutes = require("./routes/blogRoutes")
@@ -39,8 +41,26 @@ mongoose
     });
 
 app.use(express.json());
+app.use(morgan('combined', { stream: winston.stream }));
+
+
+// error handler
+app.use(function(err, req, res, next) {
+    // set locals, only providing error in development
+    res.send({message:err.message, error:req.app.get('env') === 'development' ? err : {}});
+  
+    // include winston logging
+    winston.error(
+      `${err.status || 500} - ${err.message} - ${req.originalUrl} - ${req.method} - ${req.ip}`
+    );
+  
+    // render the error page
+    res.status(err.status || 500);
+    res.render('error');
+  });
+
 app.use(cors({
-    origin: ["http://localhost:5173", "http://localhost:5174", "http://dotpotit.com","http://dotpotit.com/admin", "https://dotpotit.com", "https://dotpotit.com/admin"]
+    origin: ["http://localhost:5173", "http://localhost:5174", "http://dotpotit.com","http://dotpotit.com/admin", "https://dotpotit.com", "https://dotpotit.com/admin", "https://dotpot-admin.vercel.app"]
   }));
 app.use('/uploads/conversation', express.static(__dirname + '/uploads/conversation'));
 app.use('/uploads', express.static(__dirname + '/uploads'));
@@ -51,7 +71,7 @@ app.use('/uploads/response', express.static(__dirname + '/uploads/response'));
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: ["http://localhost:5173", "http://localhost:5174", "http://dotpotit.com","http://dotpotit.com/admin", "https://dotpotit.com", "https://dotpotit.com/admin"],
+        origin: ["http://localhost:5173", "http://localhost:5174", "http://dotpotit.com","http://dotpotit.com/admin", "https://dotpotit.com", "https://dotpotit.com/admin","https://dotpot-admin.vercel.app"],
         methods: ["GET", "POST"],
     },
 });
