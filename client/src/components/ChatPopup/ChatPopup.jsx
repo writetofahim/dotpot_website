@@ -127,7 +127,7 @@ const ChatPopup = () => {
         <div className="fixed bottom-[10vh] right-2 bg-white border-t border-gray-300 w-80 max-h-100 rounded-xl overflow-hidden shadow-xl transition-all">
 
           <div className="flex justify-between px-4 py-1.5 border-b bg-primary-400 text-white">
-            <h2 className="text-lg font-medium">DotpotiT</h2>
+            <h2 className="text-lg font-medium">Dotpot iT</h2>
             <button className="text-white text-3xl" onClick={handleClose}>
               <AiOutlineCloseCircle />
             </button>
@@ -139,7 +139,7 @@ const ChatPopup = () => {
                 className={`p-2 rounded-lg my-2 ${message.sender === "visitor" ? "bg-primary-200 text-white self-end" : "bg-gray-200"
                   }`}
               >
-                <p className="font-medium">{message.sender === "visitor" ? "You" : 'DotpotiT'}</p>
+                <p className="font-medium">{message.sender === "visitor" ? "You" : 'Dotpot iT'}</p>
                 {message.text && <p>{message.text}</p>}
                 {(message.attachment && message.attachment?.includes(".pdf"))
                   ? <a className="flex items-center gap-2" href={`${import.meta.env.REACT_APP_SERVER_PATH}/${message.attachment}`} download>

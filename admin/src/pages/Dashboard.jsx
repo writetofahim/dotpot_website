@@ -15,7 +15,7 @@ const Card = ({title,link}) => {
 function Dashboard() {
   return (
     <div className="w-full">
-      <h1 className="text-6xl font-bold text-center">Welcome To DotpotiT Dashbord</h1>
+      <h1 className="text-6xl font-bold text-center">Welcome To Dotpot iT Dashbord</h1>
       <div className="w-full flex p-5 flex-wrap gap-5 justify-center mt-10">
         {
           data.map((item,index)=>(

@@ -29,7 +29,7 @@ const AddTeam = () => {
                     setName(name);
                     setTitle(title);
                     setEmail(email);
-                    setEmail(link);
+                    setLink(link);
                     setPhone(phone);
                     const preview = document.getElementById("preview");
                     const imageDiv = document.getElementById("imageDiv");

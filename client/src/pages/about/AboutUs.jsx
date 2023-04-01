@@ -32,7 +32,7 @@ const AboutUs = () => {
         <div className="w-full">
             <Particle />
             <Navbar />
-            <AboutHero heading="About DotpotiT" text="A fast growing IT complay" heroImg={heroImg} button={button} />
+            <AboutHero heading="About Dotpot iT" text="A fast growing IT complay" heroImg={heroImg} button={button} />
             <OurPartnersSlider />
 
             <ContactInfo />

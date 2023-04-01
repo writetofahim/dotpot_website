@@ -128,7 +128,7 @@ const Footer = () => {
             {/* Bottom row */}
             <div className="mt-8">
             <p className="text-sm text-secondary-500">
-                © 2023 DotpotiT, Inc. All rights reserved.
+                © 2023 Dotpot iT, Inc. All rights reserved.
             </p>
             </div>
         </div>
