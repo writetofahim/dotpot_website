@@ -112,6 +112,6 @@ const data = [
   },
   {
     title: "Edit Industry We Serve",
-    link: "/admin/industry-we-serve/all-industry-we-serve"
+    link: "/admin/industry-we-serve/add-industry-we-serve"
   },
 ]

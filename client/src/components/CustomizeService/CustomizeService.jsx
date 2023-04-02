@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { customizeYourServiceData } from "../../data"
 import { BiCircle } from "react-icons/bi"
-import { TiTick } from "react-icons/ti"
+import { BsCheckCircleFill } from "react-icons/bs"
 import { CiCircleInfo } from "react-icons/ci"
 import { AiOutlineDoubleRight } from "react-icons/ai"
 import { GrFormClose } from "react-icons/gr"
@@ -54,13 +54,13 @@ const ServicesCard = (props) => {
       onClick={() => props.setOpenService(serviceObject)}
     >
       <img src={props.icon} alt={props.title} className='w-7 lg:w-10 h-7 lg:h-10' />
-      <p className="text-center text-sm text-gray-500 font-bold lg:text-left">{props.title}</p>
+      <p className="text-center text-[10px] md:text-sm text-gray-500 font-bold lg:text-left">{props.title}</p>
       {
         // Show the 'add' icon if the service is not already selected, otherwise show the 'remove' icon
         !isExist ?
           <BiCircle className='absolute top-1 right-1 text-gray-400 cursor-pointer hover:scale-110' onClick={() => addService()} />
           :
-          <TiTick className='absolute top-1 right-1 text-gray-400 cursor-pointer hover:scale-110' onClick={() => removeService()} />
+          <BsCheckCircleFill className='absolute top-1 right-1 text-gray-400 cursor-pointer hover:scale-110' onClick={() => removeService()} />
       }
     </div>
   );
@@ -123,7 +123,7 @@ const TechnologyCard = (props) => {
       {!isSelect ? (
         <BiCircle className="absolute top-1 right-1 text-gray-400 cursor-pointer hover:scale-110" onClick={() => addTechnologie()} />
       ) : (
-        <TiTick className="absolute top-1 right-1 text-gray-400 cursor-pointer hover:scale-110" onClick={() => removeTechnologie()} />
+        <BsCheckCircleFill className="absolute top-1 right-1 text-gray-400 cursor-pointer hover:scale-110" onClick={() => removeTechnologie()} />
       )}
 
       <abbr
@@ -197,7 +197,7 @@ const AddonsCard = (props) => {
           onClick={() => addAddons()}
         />
       ) : (
-        <TiTick
+        <BsCheckCircleFill
           className="absolute top-1 right-1 text-gray-400 cursor-pointer hover:scale-110"
           onClick={() => removeAddons(props._id)}
         />
@@ -310,8 +310,12 @@ const CustomizeService = () => {
         </Alert>
       </Snackbar>}
       {/* success snackbar end*/}
+
       <div className="container">
-        <h1 className='text-4xl md:text-6xl text-primary-500 font-bold' >Customize Your Services</h1>
+        <h1 className='text-4xl md:text-6xl text-center text-primary-500 font-bold' >Customize Your Services</h1>
+        <p className="text-center text-lg font-bold my-5">
+        Use our tool to select your desired product and services and receive an estimated quote.
+        </p>
 
         {/* Main Container */}
         <div className="mt-5 flex flex-col lg:flex-row justify-between gap-5 border shadow-xl p-5 rounded-xl md:min-h-[70vh] bg-white">
@@ -340,7 +344,7 @@ const CustomizeService = () => {
 
 
           {/* Right container */}
-          <div className="p-2 border rounded-xl flex-[0.8] min-h-[40vh] pb-10 shadow-xl relative">
+          <div className="pt-10 md:pt-2 p-2 border rounded-xl flex-[0.8] min-h-[40vh] pb-10 shadow-xl relative">
 
             {/* Top Section */}
             <div className="">
@@ -350,7 +354,7 @@ const CustomizeService = () => {
                   <div key={index} className="flex items-center gap-2">
                     <img src={item.icon} alt="" className="w-7 h-7 mt-2" />
                     <p className="">:</p>
-                    <div className="border-r-gray-500 flex items-center gap-2 cursor-pointer">
+                    <div className="border-r-gray-500 flex flex-wrap items-center gap-2 cursor-pointer">
                       {
                         item.technologies.map((tech, index) => (
                           <div key={index}
@@ -375,7 +379,7 @@ const CustomizeService = () => {
             </div>
 
             <div className="absolute top-1 right-1 flex flex-col items-center">
-              <p className="text-sm text-gray-300">Total Cost</p>
+              <p className="text-sm text-gray-300">Estimated Cost</p>
               <p className="text-3xl text-secondary-400 font-bold">{price}$</p>
             </div>
             {/* End of Top Section */}

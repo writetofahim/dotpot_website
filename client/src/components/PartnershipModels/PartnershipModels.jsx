@@ -13,21 +13,29 @@ The component uses Tailwind css for styling
 import React, { useEffect, useState } from 'react'
 import { PartnershipModelsData } from "../../data"
 import axios from "../../utils/axiosInstance"
+import { AiOutlineDoubleRight } from 'react-icons/ai'
+import { Link } from 'react-router-dom'
 
 
 export const Card = (props) => {
     return (
-        <div className="md:mx-5 p-4 md:p-5 rounded-lg shadow-lg flex-1 hover:scale-110 transition-all md:min-h-[450px] glassmorphism">
-            <div className="text-6xl">
-                <img className="img-fluid" src={props.icon} alt={props.title} />
+        <Link to={props.link} className='md:mx-5 p-4 md:p-5 bg-white rounded-lg shadow-xl flex-1 hover:scale-110 transition-all cursor-pointer '>
+            <div className="">
+                <div className="text-6xl">
+                    <img className="img-fluid" src={props.icon} alt={props.title} />
+                </div>
+                <h2 className="text-2xl font-bold my-5">
+                    {props.title}
+                </h2>
+                <p className="text-justify inline">
+                    {
+                        props.description?.slice(0,100)
+                    }
+                    ...
+                </p>
+                <span className="inline-flex items-center ml-2 text-secondary-300 hover:text-secondary-500" >Know More <AiOutlineDoubleRight/></span>
             </div>
-            <h2 className="text-2xl font-bold my-5">
-                {props.title}
-            </h2>
-            <p className="text-justify">
-                {props.description}
-            </p>
-        </div>
+        </Link>
     )
 }
 
@@ -44,8 +52,8 @@ const PartnershipModels = () => {
     return (
         <div className='w-full overflow-hidden pt-10 pb-20 md:flex md:flex-col md:justify-center flex-wrap '>
             <div className="p-3 md:p-5 mt-5 w-full md:max-w-[1400px] self-center">
-                <h1 className="mt-10 text-4xl md:text-6xl font-bold w-full text-primary-500 mb-5 ">Partnership Models</h1>
-                <p className="text-md text-gray-400 text-justify">Dotpot iT offers partnership models to build long-term relationships with clients.</p>
+                <h1 className="mt-10 text-4xl md:text-6xl text-center font-bold w-full text-primary-500 mb-5 ">Partnership Models</h1>
+                <p className="text-md text-center text-gray-400">Dotpot iT offers partnership models to build long-term relationships with clients.</p>
             </div>
             <div className="p-3 md:p-5 mt-5 w-full md:max-w-[1400px] self-center flex flex-col lg:flex-row gap-5 flex-wrap items-center justify-center">
                 {

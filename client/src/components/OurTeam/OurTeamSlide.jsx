@@ -10,16 +10,8 @@ The blogData array contains objects that represent each blog post's data, includ
 The component includes a SingleSlide function that creates a single slide for the slider based on the data provided through its props. 
 Finally, the RecentWorksSlider function maps over the blogData array to create a slider with multiple SingleSlide components.
  */
-
-
-import { Chip } from "@mui/material";
-import { Stack } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
-import { blogData } from "../../data"
-import { ourTeamData } from "../../data"
-import { Link } from "react-router-dom";
-import { BsArrowRight } from "react-icons/bs";
 import { GrNext, GrPrevious } from "react-icons/gr"
 import axios from "../../utils/axiosInstance";
 
@@ -28,7 +20,7 @@ function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
         <GrNext
-            className="hidden md:block text-6xl absolute right-0 top-1/2 cursor-pointer text-secondary-500 opacity-30 hover:opacity-100 bg-secondary-500 -translate-y-[100%] border p-2 rounded-full translate-x-[30%] shadow"
+            className="hidden md:block text-6xl absolute right-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 hover:bg-secondary-500 transition-all -translate-y-[100%] p-2 rounded-full translate-x-[30%]"
             onClick={onClick}
         />
     );
@@ -38,7 +30,7 @@ function SamplePrevArrow(props) {
     const { className, style, onClick } = props;
     return (
         <GrPrevious
-            className="hidden md:block z-10 text-6xl absolute left-0 top-1/2 cursor-pointer text-secondary-500 opacity-30 hover:opacity-100 bg-secondary-500 -translate-y-[100%] border p-2 rounded-full -translate-x-[30%] shadow"
+            className="hidden md:block z-10 text-6xl absolute left-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 hover:bg-secondary-500 transition-all -translate-y-[100%] p-2 rounded-full -translate-x-[30%]"
             onClick={onClick}
         />
     );
@@ -53,7 +45,7 @@ var settings = {
     slidesToScroll: 1,
     initialSlide: 0,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 5000,
     cssEase: "linear",
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
@@ -86,7 +78,7 @@ var settings = {
 };
 
 export const SingleSlide = (props) => {
-    console.log(props)
+    // console.log(props)
     return (
         <a href={props.link} target="_blank">
             <div className="mx-5 mb-20 rounded-lg p-5 bg-white flex items-center flex-col shadow-xl cursor-pointer hover:border hover:border-primary-400 hover:scale-x-105 transition-all">

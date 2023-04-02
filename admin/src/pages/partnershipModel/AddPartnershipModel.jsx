@@ -9,6 +9,7 @@ const AddPartnershipModel = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [icon, setIcon] = useState("");
+  const [link, setLink] = useState("");
 
   const [message, setMessage] = useState("");
   const [snackbar, setSnackbar] = useState(false);
@@ -24,6 +25,7 @@ const AddPartnershipModel = () => {
           setTitle(res.data.title);
           setDescription(res.data.description);
           setIcon(res.data.icon);
+          setLink(res.data.link);
         })
         .catch((err) => {
           console.log(err);
@@ -40,6 +42,7 @@ const AddPartnershipModel = () => {
           title,
           description,
           icon,
+          link
         });
         setMessage("Update Successful!");
         setSnackbar(true);
@@ -48,6 +51,7 @@ const AddPartnershipModel = () => {
           title,
           description,
           icon,
+          link
         });
         setMessage("Add Successful!");
         setSnackbar(true);
@@ -110,6 +114,19 @@ const AddPartnershipModel = () => {
             placeholder="Enter icon"
             value={icon}
             onChange={(e) => setIcon(e.target.value)}
+            required
+          />
+        </div>
+        <div className="mb-4">
+          <label className="block text-gray-700 font-bold mb-2" htmlFor="link">
+            Link
+          </label>
+          <input
+            className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+            type="text"
+            placeholder="Enter Link"
+            value={link}
+            onChange={(e) => setLink(e.target.value)}
             required
           />
         </div>

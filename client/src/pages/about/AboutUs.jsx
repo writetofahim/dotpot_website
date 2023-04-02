@@ -42,7 +42,7 @@ const AboutUs = () => {
             <PartnershipModels />
             <WhoWeWorkWith />
             <RecentWorks />
-            <SocialMedia />
+            {/* <SocialMedia /> */}
             <GoogleMap />
             <ChatPopup />
             <Footer />
