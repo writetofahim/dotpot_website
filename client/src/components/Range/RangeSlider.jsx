@@ -7,8 +7,8 @@ It accepts a minimum and maximum value of 0 and 10,000 respectively, and has a d
 
 import React, { useState } from 'react';
 
-function RangeSlider() {
-  const [sliderValue, setSliderValue] = useState(1000);
+function RangeSlider({ sliderValue, setSliderValue }) {
+  // const [sliderValue, setSliderValue] = useState(1000);
 
   const handleSliderChange = (event) => {
     setSliderValue(event.target.value);

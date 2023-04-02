@@ -16,7 +16,7 @@ import axios from '../../utils/axiosInstance'
 import ResponseSuccessModal from './ResponseSuccessModal'
 
 const ContactFormLarge = () => {
-    const [selectedBudget, setSelectedBudget] = useState("")
+    const [selectedBudget, setSelectedBudget] = useState(1000)
     const [files, setFiles] = useState(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [error, setError] = useState("");
@@ -108,12 +108,12 @@ const ContactFormLarge = () => {
                 <div className="border-b w-full flex items-center mt-5 ">
                     <div className='w-full lg:flex gap-3 items-center mb-2'>
                         <AiFillDollarCircle className='text-primary-500 lg:text-2xl text-2xl inline-block lg:mr-0 mr-2' />
-                        <span className='inline-block'>Project Budget:</span>
-                        <div className='flex flex-wrap lg:text-base text-xs gap-3 mt-2'>
+                        {/* <div className='flex flex-wrap lg:text-base text-xs gap-3 mt-2'>
                             {["<1000", "2000", "3000", "5000", "7500", "10000", ">10000"].map((budget, i) => <div onClick={() => handleChangeBudget(budget)} key={i} className={`border rounded-full px-2 py-1 cursor-pointer hover:bg-primary-400 hover:border-primary-400 hover:text-white hover:scale-105 transition-all hover:shadow-md ${budget === selectedBudget && "bg-primary-400 border-primary-400 text-white hover:shadow-md"}`}>
                                 {budget}$
                             </div>)}
-                        </div>
+                        </div> */}
+                        <RangeSlider sliderValue={selectedBudget} setSliderValue={setSelectedBudget} />
                     </div>
                 </div>
                 <div className="border-b w-full flex items-start mt-5 mb-10">
