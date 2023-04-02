@@ -51,7 +51,7 @@ var settings = {
 function OurPartnersSlider() {
 
     const [data, setData] = useState(null);
-    console.log("our parterner", data)
+    // console.log("our parterner", data)
 
     // Data Fetching
     useEffect(() => {

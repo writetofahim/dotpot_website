@@ -17,7 +17,7 @@ const ContactInfo = () => {
 
   return (
     <section className="text-gray-600 body-font ">
-      <h1 className="text-4xl md:text-6xl text-center font-extrabold pt-10 block text-primary-500">Contact Us On</h1>
+      <h1 className="text-4xl md:text-6xl text-center font-extrabold pt-10 block text-primary-500">Reach us On</h1>
       <div className="container px-5 py-24 mx-auto flex flex-col-reverse md:flex-row flex-wrap gap-10 md:gap-0">
         <div className="lg:w-1/2 w-full mb-10 lg:mb-0 rounded-lg overflow-hidden">
           <iframe
@@ -31,7 +31,7 @@ const ContactInfo = () => {
         {
           data && (
           <div className="flex flex-col justify-center items-center flex-wrap lg:py-6 -mb-10 lg:w-1/2 lg:pl-12 lg:text-left text-center ">
-          <div className="flex flex-col mb-10 lg:items-start items-center w-4/5 p-5 border rounded-xl shadow-xl glassmorphism">
+          <div className="flex flex-col mb-10 lg:items-start items-center w-4/5 p-5 border rounded-xl shadow-xl bg-white">
             <div className="w-12 h-12 inline-flex items-center justify-center rounded-full bg-secondary-100 hover:bg-secondary-300 hover:scale-110 transition-all text-xl hover:text-white">
               <BsTelephone />
             </div>
@@ -44,7 +44,7 @@ const ContactInfo = () => {
               }
             </div>
           </div>
-          <div className="flex flex-col mb-10 lg:items-start items-center w-4/5 p-5 border rounded-xl shadow-xl glassmorphism">
+          <div className="flex flex-col mb-10 lg:items-start items-center w-4/5 p-5 border rounded-xl shadow-xl bg-white">
             <div className="w-12 h-12 inline-flex items-center justify-center rounded-full bg-secondary-100 hover:bg-secondary-300 hover:scale-110 transition-all text-xl hover:text-white">
               <CiMail />
             </div>
@@ -57,7 +57,7 @@ const ContactInfo = () => {
               }
             </div>
           </div>
-          <div className="flex flex-col mb-10 lg:items-start items-center w-4/5 p-5 border rounded-xl shadow-xl glassmorphism">
+          <div className="flex flex-col mb-10 lg:items-start items-center w-4/5 p-5 border rounded-xl shadow-xl bg-white">
             <div className="w-12 h-12 inline-flex items-center justify-center rounded-full bg-secondary-100 hover:bg-secondary-300 hover:scale-110 transition-all text-xl hover:text-white">
               <CiLocationOn />
             </div>

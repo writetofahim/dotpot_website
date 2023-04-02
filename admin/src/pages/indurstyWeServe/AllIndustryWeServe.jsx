@@ -10,8 +10,8 @@ export default function AllIndustryWeServe() {
 
   const fetchData = async (page) => {
     try {
-      const response = await axios.get(`/industry_we_serve?page=${page}`);
-      console.log(response.data);
+      const response = await axios.get(`/industry_we_serve?page=${page}&limit=13`);
+      console.log("Bla bla bla",response.data);
       setData(response.data.industryWeServe);
       setTotalPages(response.data.totalPages);
     } catch (error) {

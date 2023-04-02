@@ -64,7 +64,7 @@ const Home = () => {
       <WhoWeWorkWith />
       <WhatOurClientSay />
       <RecentBlogs />
-      <SocialMedia />
+      {/* <SocialMedia /> */}
       <OurTeam />
       <OurPartnersSlider />
       <GoogleMap />

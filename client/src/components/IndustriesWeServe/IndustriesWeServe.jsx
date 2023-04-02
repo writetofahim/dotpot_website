@@ -31,16 +31,17 @@ const IndustriesWeServe = () => {
 
     // Data Fetching
     useEffect(() => {
-        axios.get('/industry_we_serve?page=1')
+        axios.get('/industry_we_serve?page=1&limit=13')
             .then(response => setData(response.data.industryWeServe))
             .catch(error => console.error(error));
     }, []);
 
+    console.log(data)
 
     return (
         <div className='industriesWeServe w-full overflow-hidden py-10 md:flex md:flex-col md:justify-center bg-primary-100'>
             <div className="p-5 mt-5 w-full md:max-w-[1400px] self-center flex gap-5 flex-wrap items-center justify-center">
-                <h1 className="mt-10 text-4xl md:text-6xl text-primary-500 font-bold w-full mb-5 ">Industries We Serve</h1>
+                <h1 className="mt-10 text-4xl md:text-6xl text-center text-primary-500 font-bold w-full mb-5 ">Industries We Serve</h1>
                 {
                     data && data.map((item, index) => {
                         return (

@@ -80,8 +80,8 @@ const IndustryForm = () => {
           setOpen={setSnackbar}
         />
       )}
-      <h1 className="text-center my-3">{partnershipModelId ? "Update":"Add"} industry we serve!</h1>
-      <form onSubmit={handleSubmit}>
+      <h1 className="text-center my-3">{industryWeServeId ? "Update":"Add"} industry we serve!</h1>
+      <form onSubmit={handleSubmit} className="p-2">
         <div className="mb-4">
           <label className="block text-gray-700 font-bold mb-2" htmlFor="title">
             Title

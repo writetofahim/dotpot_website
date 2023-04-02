@@ -33,7 +33,7 @@ const Services = () => {
                 <RecentWorks />
                 <WhoWeWorkWith />
                 <RecentBlogs />
-                <SocialMedia />
+                {/* <SocialMedia /> */}
                 <ChatPopup />
             </div>
             <Footer />

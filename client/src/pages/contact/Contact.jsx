@@ -48,7 +48,7 @@ const Contact = () => {
                 <ContactInfo />
                 <WhoWeWorkWith />
                 <RecentWorks />
-                <SocialMedia />
+                {/* <SocialMedia /> */}
                 <GoogleMap />
                 <ChatPopup />
             </div>
