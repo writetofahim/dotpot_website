@@ -10,7 +10,9 @@ import axios from "../../utils/axiosInstance"
 import { io } from "socket.io-client";
 import moment from "moment/moment";
 
-const socket = io(import.meta.env.REACT_APP_SOCKET_PATH)
+const socket = io(import.meta.env.REACT_APP_SOCKET_PATH + "/api")
+// const socket = io("http://localhost:8800")
+console.log(socket)
 
 // const data = [
 //   { name: "DotpotiT", message: "Hi there!", timestamp: "11:30 AM" },
@@ -37,7 +39,7 @@ const ChatPopup = () => {
   useEffect(() => {
     // listen event for new message
     socket.on("newMessage", data => {
-      console.log("newMessage event fire on client side",data)
+      console.log("newMessage event fire on client side", data)
       const conversationId = localStorage.getItem("conversation_id")
       if (conversationId === data.conversation_id && data.sender === "admin") {
         setMessages(prev => ([...prev, data]))
@@ -132,21 +134,36 @@ const ChatPopup = () => {
               <AiOutlineCloseCircle />
             </button>
           </div>
-          <div className="flex flex-col p-4 h-64 overflow-y-auto " >
+          <div className="flex flex-col p-4 h-80 overflow-y-auto " >
+            <div className="">
+              <img className="w-10 mx-auto" src={"https://cdn-icons-png.flaticon.com/512/2706/2706962.png"} alt="" />
+              <p className="text-sm text-center mb-2">Dotpot iT Customer Support</p>
+              <div className="border-t my-2"></div>
+            </div>
             {messages.map((message, index) => (
               <div
                 key={index}
-                className={`p-2 rounded-lg my-2 ${message.sender === "visitor" ? "bg-primary-200 text-white self-end" : "bg-gray-200"
-                  }`}
+                className={`flex gap-2 ${message.sender === "admin" ? "" : "justify-end"}`}
               >
-                <p className="font-medium">{message.sender === "visitor" ? "You" : 'Dotpot iT'}</p>
-                {message.text && <p>{message.text}</p>}
-                {(message.attachment && message.attachment?.includes(".pdf"))
-                  ? <a className="flex items-center gap-2" href={`${import.meta.env.REACT_APP_SERVER_PATH}/${message.attachment}`} download>
-                    <HiOutlineDownload />
-                    {message.attachment?.slice(0, 20)}...</a>
-                  : message.attachment && <img onClick={() => handleModalOpen(`${import.meta.env.REACT_APP_SERVER_PATH}/${message.attachment}`)} className="w-40 cursor-pointer" src={`${import.meta.env.REACT_APP_SERVER_PATH}/${message.attachment}`} alt="" />}
-                <p className="text-xs text-gray-500 mt-1">{moment(new Date(message.createdAt)).fromNow()}</p>
+                <div className="mt-3">
+                  <img className="w-4 " src={message.sender === "admin" ? "https://cdn-icons-png.flaticon.com/512/2706/2706962.png" : "https://cdn-icons-png.flaticon.com/512/1077/1077012.png"} alt="" />
+                </div>
+                <div className={`flex flex-col my-2`}>
+                  <div className="flex gap-2 text-xs items-center mb-1">
+                    <p className="font-medium">{message.sender === "admin" ? "Dotpot iT" : 'You'}</p>
+                    <p className=" text-gray-500 ">{moment(new Date(message.createdAt)).format('LT')}</p>
+                  </div>
+                  <div className={`p-2 rounded-md ${message.sender === "admin" ? "bg-gray-200 w-full" : "bg-primary-200 text-white min-w-[100px]"}`}>
+                    {message.text && <p className="text-sm">{message.text}</p>}
+                    {(message.attachment && message.attachment?.includes(".pdf"))
+                      ? <a className="flex items-center gap-2" href={`${import.meta.env.REACT_APP_SERVER_PATH}/${message.attachment}`} download>
+                        <HiOutlineDownload />
+                        {message.attachment?.slice(0, 20)}...</a>
+                      : message.attachment && <img onClick={() => handleModalOpen(`${import.meta.env.REACT_APP_SERVER_PATH}/${message.attachment}`)} className="w-40 cursor-pointer" src={`${import.meta.env.REACT_APP_SERVER_PATH}/${message.attachment}`} alt="" />}
+                    {/* <p className="text-xs text-gray-500 mt-1">{moment(new Date(message.createdAt)).fromNow()}</p> */}
+
+                  </div>
+                </div>
               </div>
             ))}
             {error && <p className="text-red-500 text-sm">{error}</p>}
