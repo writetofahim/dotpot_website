@@ -29,6 +29,14 @@ import MobileApp from "./pages/contactCenterservices/MobileApp";
 import FixedPrice from "./pages/partnershipModels/FixedPrice";
 import HireDedicatedModel from "./pages/partnershipModels/HireDedicatedModel";
 import OnSiteDevelopment from "./pages/partnershipModels/OnSiteDevelopment";
+import AiDevelopment from "./pages/keyFeatures/AiDevelopment";
+import ItSupport from "./pages/keyFeatures/ItSupport";
+import BlockchainDevelopment from "./pages/keyFeatures/BlockchainDevelopment";
+import MobileAppDevelopment from "./pages/keyFeatures/MobileAppDevelopment";
+import WebsiteDevelopment from "./pages/keyFeatures/WebsiteDevelopment";
+import DedicatedTeam from "./pages/keyFeatures/DedicatedTeam";
+import ContactCenterSupport from "./pages/keyFeatures/ContactCenterSupport";
+
 
 function App() {
 
@@ -70,6 +78,14 @@ function App() {
         <Route path="/partnership_model/hire-dedicated-model" element={<HireDedicatedModel />} />
         <Route path="/partnership_model/on-site-development-model" element={<OnSiteDevelopment />} />
 
+        {/* Key features */}
+        <Route path="/key-features/ai-development" element={<AiDevelopment />} />
+        <Route path="/key-features/it-support" element={<ItSupport />} />
+        <Route path="/key-features/blockchain-development" element={<BlockchainDevelopment />} />
+        <Route path="/key-features/mobile-app-development" element={<MobileAppDevelopment />} />
+        <Route path="/key-features/website-development" element={<WebsiteDevelopment />} />
+        <Route path="/key-features/dedicated-team" element={<DedicatedTeam />} />
+        <Route path="/key-features/contact-center-support" element={<ContactCenterSupport />} />
 
       </Routes>
     </>

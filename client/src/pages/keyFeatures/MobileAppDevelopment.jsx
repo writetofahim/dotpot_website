@@ -2,24 +2,25 @@ import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import coverImg from "../../assets/img/mobileAppDev.png";
-import {BsArrowRightCircleFill} from 'react-icons/bs'
+import { BsArrowRightCircleFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const MobileAppDevelopment = () => {
   return (
-    <div>
+    <div className="px-3">
       <Navbar />
       <div className="pt-[15vh] min-h-screen">
-        <h1 className="text-4xl md:text-6xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center px-5">
+        <h1 className="text-4xl md:text-6xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
           Mobile App Development
         </h1>
         <p className="text-md text-gray-400 text-center mb-10">
           Get Top-notch, Extensively, Innovative Mobile App Solution By Us.
         </p>
         <div className="border-b container mx-auto">
-          <img className="md:w-1/2 mx-auto px-3" src={coverImg} alt="" />
+          <img className="md:w-1/2 mx-auto " src={coverImg} alt="" />
         </div>
         <div className="container  mx-auto flex flex-col mb-10 my-10">
-          <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5 px-3 block text-primary-500">
+          <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">
             Overview
           </h3>
           {/* Overview */}
@@ -72,22 +73,41 @@ const MobileAppDevelopment = () => {
               your expectations and enhances your business's success.
             </p>
           </div>
-          <div className="border-b h-52 w-1/2 mx-auto my-5 rounded-xl bg-purple-500">
-            <div className="">
-                <h3 className="text-center text-white text-xl">Want to Know How Much Exactly Your Mobile App Idea Will Cost?</h3>
-                <h3 className="text-center text-white">"The Experts Are Just A Click Away. Get A Quote."</h3>
-                <div className="w-32 h-10 bg-secondary-500 ">
-                    <label htmlFor="">
-                        <a href="">Share your Idea </a>
-                        <BsArrowRightCircleFill/>
 
-                    </label>
-                </div>
+          {/*card for redirect to service quote */}
+          <div className=" border-b h-52 w-full md:w-4/5 mx-auto my-5  rounded-xl border flex justify-center items-center shadow-md overflow-hidden relative">
+            {/* blobs */}
+            <div className=" flex justify-center items-center">
+              <div className="w-96 absolute">
+                <div class="absolute top-0 -left-4 w-52 h-52  bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+                <div class="absolute top-0 -right-4 w-52 h-52  bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+                <div class="absolute -bottom-8 left-20 w-52 h-52  bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+              </div>
+
+              <div className="flex flex-col gap-5">
+                <h3 className="text-center text-purple-500 font-bold text-xl ">
+                  Want to Know How Much Exactly Your Mobile App Idea Will Cost?
+                </h3>
+                <h3 className="text-center text-purple-500 font-semibold">
+                  "The Experts Are Just A Click Away. Get A Quote."
+                </h3>
+                
+                  <Link to="/services" className="  w-52 h-10 flex items-center justify-center rounded-md bg-secondary-500 mx-auto hover:scale-105 transition-all shadow-sm">
+                    <div className="flex justify-center items-center gap-3">
+                      <p className="text-white font-semibold">
+                        Share your Idea
+                      </p>
+                      <BsArrowRightCircleFill className="text-white hover:cursor-pointer" />
+                    </div>
+                  </Link>
+                
+              </div>
             </div>
           </div>
+
           {/* paragraph */}
           <div className="my-3">
-            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1 px-3 block text-gray-400 ">
+            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-gray-400 ">
               What Is Mobile App Development?
             </h2>
             <div className="text-gray-400 flex flex-col gap-5 p-5">
@@ -125,7 +145,7 @@ const MobileAppDevelopment = () => {
           </div>
 
           <div className="my-3">
-            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1 px-3 block text-gray-400 ">
+            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-gray-400 ">
               Why Mobile App Development Is Important For Businesses?
             </h2>
             <div className="text-gray-400 flex flex-col gap-5 p-5">
@@ -145,7 +165,7 @@ const MobileAppDevelopment = () => {
           </div>
 
           <div className="my-3">
-            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1 px-3 block text-gray-400 ">
+            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1 block text-gray-400 ">
               Importance Of App Development In Different Industries
             </h2>
             <div className="text-gray-400 flex flex-col gap-5 p-5">
@@ -166,6 +186,18 @@ const MobileAppDevelopment = () => {
               </p>
             </div>
           </div>
+          
+          <div className="my-3">
+            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1 block text-gray-400 ">
+            Types Of Mobile App Development
+            </h2>
+            <div className="text-gray-400 flex flex-col gap-5 p-5">
+              <p>
+              When it comes to mobile app development, there are four main types that businesses can choose from. These include native apps, hybrid apps, web apps, and progressive web apps. Each of these types has its own set of advantages and disadvantages, and businesses need to choose the one that best suits their needs and goals. Native apps are designed specifically for a particular platform, such as iOS or Android. Hybrid apps are a combination of native and web apps, while web apps are accessed through a browser and don't need to be downloaded. Progressive web apps are web apps that can work offline and offer a similar experience to native apps. It's important for businesses to understand the differences between these types of mobile apps and choose the one that aligns with their requirements and objectives.
+              </p>
+            </div>
+          </div>
+
         </div>
       </div>
       <div className="">
