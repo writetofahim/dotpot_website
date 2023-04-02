@@ -33,7 +33,7 @@ export default function AllIndustryWeServe() {
 
   return (
     <div className="lg:p-5 p-3">
-      <Link to="/industry-we-serve/add-industry-we-serve">
+      <Link to="/admin/industry-we-serve/add-industry-we-serve">
         <button className="m-2 px-3 py-2 bg-green-400 text-white font-bold cursor-pointer rounded-lg hover:scale-105 hover:shadow-xl transition-all">
           Add New{" "}
         </button>

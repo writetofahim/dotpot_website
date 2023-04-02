@@ -34,7 +34,7 @@ export default function AllClientsReview() {
   return (
     <div className='lg:p-5 p-3'>
       <div className="relative overflow-x-auto">
-        <Link to="/partnership-model/add-partnership-model">
+        <Link to="/admin/partnership-model/add-partnership-model">
           <button className="m-2 px-3 py-2 bg-green-400 text-white font-bold cursor-pointer rounded-lg hover:scale-105 hover:shadow-xl transition-all">Add New Partnership Model</button>
         </Link>
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">

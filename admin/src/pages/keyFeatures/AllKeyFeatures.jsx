@@ -35,7 +35,7 @@ export default function AllKeyFeatures() {
     <div className='lg:p-5 p-3'>
 
       <div className="relative overflow-x-auto">
-        <Link to="/key-features/add-key-feature">
+        <Link to="/admin/key-features/add-key-feature">
           <button className="m-2 px-3 py-2 bg-green-400 text-white font-bold cursor-pointer rounded-lg hover:scale-105 hover:shadow-xl transition-all">Add New Review</button>
         </Link>
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">

@@ -52,7 +52,7 @@ function App() {
 
 
 
-
+        {/* Contact Center Service Pages */}
         <Route path="/contact_center_services/cti" element={<Cti />} />
         <Route path="/contact_center_services/email-marketing" element={<EmailMarketing />} />
         <Route path="/contact_center_services/chat" element={<ChatContact />} />
@@ -65,7 +65,7 @@ function App() {
 
 
 
-
+        {/* Partnership Model Pages */}
         <Route path="/partnership_model/fixed-price-model" element={<FixedPrice />} />
         <Route path="/partnership_model/hire-dedicated-model" element={<HireDedicatedModel />} />
         <Route path="/partnership_model/on-site-development-model" element={<OnSiteDevelopment />} />
