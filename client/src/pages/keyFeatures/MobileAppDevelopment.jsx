@@ -1,9 +1,9 @@
 import React from "react";
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
-import coverImg from "../../assets/img/mobileAppDev.png";
 import { BsArrowRightCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import coverImg from "../../assets/img/mobileAppDev.png";
+import Footer from "../../components/Footer/Footer";
+import Navbar from "../../components/Navbar/Navbar";
 
 const MobileAppDevelopment = () => {
   return (
@@ -213,39 +213,44 @@ const MobileAppDevelopment = () => {
                 <li className="text-xl md:text-2xl  mb-2 md:mb-1  list-disc text-gray-400 ">
                   Native App Development
                 </li>
-                <p className="xt-gray-400">Native app development is the creation of mobile apps that are tailored for specific mobile devices or operating systems such as iOS or Android. As the apps are designed specifically for a particular platform, they only work on the devices they are intended for. This may lead you to wonder why a business would choose a native mobile app, given that it only represents a specific operating system. However, the benefits of native mobile apps include better performance, access to device-specific features, and a more polished user experience.</p>
+                <p className="xt-gray-400">
+                  Native app development is the creation of mobile apps that are
+                  tailored for specific mobile devices or operating systems such
+                  as iOS or Android. As the apps are designed specifically for a
+                  particular platform, they only work on the devices they are
+                  intended for. This may lead you to wonder why a business would
+                  choose a native mobile app, given that it only represents a
+                  specific operating system. However, the benefits of native
+                  mobile apps include better performance, access to
+                  device-specific features, and a more polished user experience.
+                </p>
 
                 <h3 className="text-xl md:text-2xl  my-2 md:mb-1  text-gray-400 ">
-                Example of Native Mobile Application
+                  Example of Native Mobile Application
                 </h3>
-                <li className=" ml-5 list-disc text-gray-400 ">
-                Scan To Go
-                </li>
-                <li className=" ml-5 list-disc text-gray-400 ">
-                WhatsApp
-                </li>
-                <li className=" ml-5 list-disc text-gray-400 ">
-                Spotify
-                </li>
+                <li className=" ml-5 list-disc text-gray-400 ">Scan To Go</li>
+                <li className=" ml-5 list-disc text-gray-400 ">WhatsApp</li>
+                <li className=" ml-5 list-disc text-gray-400 ">Spotify</li>
               </ul>
               <ul className="ml-5 my-3">
                 <li className="text-xl md:text-2xl  mb-2 md:mb-1  list-disc text-gray-400 ">
-                Hybrid App Development
+                  Hybrid App Development
                 </li>
-                <p className="xt-gray-400">Hybrid apps are a combination of web apps and native app development, offering the best of both worlds. The advantage of Hybrid apps is that they can work on multiple devices and operating systems, unlike native apps that are specific to a particular platform. This feature can save businesses time and money in Hybrid</p>
+                <p className="xt-gray-400">
+                  Hybrid apps are a combination of web apps and native app
+                  development, offering the best of both worlds. The advantage
+                  of Hybrid apps is that they can work on multiple devices and
+                  operating systems, unlike native apps that are specific to a
+                  particular platform. This feature can save businesses time and
+                  money in Hybrid
+                </p>
 
                 <h3 className="text-xl md:text-2xl  my-2 md:mb-1  text-gray-400 ">
-                Example of Hybrid Mobile Application
+                  Example of Hybrid Mobile Application
                 </h3>
-                <li className=" ml-5 list-disc text-gray-400 ">
-                Gmail
-                </li>
-                <li className=" ml-5 list-disc text-gray-400 ">
-                Evernote
-                </li>
-                <li className=" ml-5 list-disc text-gray-400 ">
-                Twitter
-                </li>
+                <li className=" ml-5 list-disc text-gray-400 ">Gmail</li>
+                <li className=" ml-5 list-disc text-gray-400 ">Evernote</li>
+                <li className=" ml-5 list-disc text-gray-400 ">Twitter</li>
               </ul>
             </div>
           </div>
@@ -262,10 +267,11 @@ const MobileAppDevelopment = () => {
 
               <div className="flex flex-col gap-5">
                 <h3 className="text-center text-purple-500 font-bold text-xl ">
-                We Are The Innovators In The Part Of Top Mobile App Developers
+                  We Are The Innovators In The Part Of Top Mobile App Developers
                 </h3>
                 <h3 className="text-center text-purple-500 font-semibold">
-                "Just share your idea with us and we will craft your dream app just the way you want"
+                  "Just share your idea with us and we will craft your dream app
+                  just the way you want"
                 </h3>
 
                 <Link
