@@ -26,6 +26,8 @@ import Slider from "react-slick";
 import { ourKeyFeatures } from "../../data"
 import { GrNext, GrPrevious } from 'react-icons/gr'
 import axios from "../../utils/axiosInstance";
+import { Link } from "react-router-dom";
+import {AiOutlineDoubleRight} from 'react-icons/ai'
 
 
 
@@ -33,7 +35,7 @@ function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
         <GrNext
-            className=" hidden md:block text-6xl absolute right-0 top-1/2 cursor-pointer text-secondary-500 opacity-30 bg-secondary-500 hover:opacity-100 hover:bg-secondary-500 border p-2 rounded-full -translate-x-[30%] shadow"
+            className=" hidden md:block text-6xl absolute right-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 hover:bg-secondary-500 transition-all p-2 rounded-full -translate-x-[30%]"
             onClick={onClick}
         />
     );
@@ -43,7 +45,7 @@ function SamplePrevArrow(props) {
     const { className, style, onClick } = props;
     return (
         <GrPrevious
-            className="hidden md:block z-10 text-6xl absolute left-0 top-1/2 cursor-pointer text-secondary-500 opacity-30 bg-secondary-500 hover:opacity-100 hover:bg-secondary-500 border p-2 rounded-full translate-x-[30%] shadow"
+            className="hidden md:block z-10 text-6xl absolute left-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 hover:bg-secondary-500 transition-all p-2 rounded-full translate-x-[30%]"
             onClick={onClick}
         />
     );
@@ -57,7 +59,7 @@ var settings = {
     slidesToScroll: 1,
     initialSlide: 0,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 5000,
     arrows: true,
     cssEase: "linear",
     nextArrow: <SampleNextArrow />,
@@ -92,17 +94,20 @@ var settings = {
 
 export const SingleSlide = (props) => {
     return (
-        <div className="w-300px h-[300px] bg-white mx-5 p-5 rounded-lg shadow-lg text-gray-400">
-            <div className="text-6xl border p-3 max-w-max rounded-full hover:bg-primary-100 hover:border-black cursor-pointer">
-                <img src={props.icon} alt="" className="w-[40px] h-[40px]" />
+        <Link to={props.link}>
+            <div className="w-300px h-[300px] bg-white mx-5 p-5 rounded-lg shadow-lg text-gray-400 cursor-pointer relative">
+                <div className="mb-3">
+                    <img src={props.icon} alt="" className="w-[80px] h-[80px]" />
+                </div>
+                <h2 className="text-2xl font-bold mb-5">
+                    {props.title}
+                </h2>
+                <p className="">
+                    {props.description}
+                </p>
+                <span className="absolute bottom-2 left-5 text-secondary-300 hover:text-secondary-500 flex items-center" >Know More <AiOutlineDoubleRight/></span>
             </div>
-            <h2 className="text-2xl font-bold mb-5">
-                {props.title}
-            </h2>
-            <p className="">
-                {props.description}
-            </p>
-        </div>
+        </Link>
     )
 }
 
@@ -118,7 +123,7 @@ function KeyFeatureSlider() {
 
 
     return (
-        <div className="w-full overflow-x-hidden my-10 py-10">
+        <div className="w-full overflow-x-hidden mb-10 py-10">
             <Slider {...settings} className="py-2">
                 {
                     data && data.map((feature, index) => (

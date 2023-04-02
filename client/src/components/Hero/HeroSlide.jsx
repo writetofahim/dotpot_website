@@ -20,7 +20,7 @@ function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
     <GrNext
-      className=" hidden md:block text-6xl absolute right-0 top-1/2 cursor-pointe opacity-30 hover:opacity-100 hover:bg-secondary-300 -translate-y-[100%]  p-2 rounded-full translate-x-[20%]"
+      className=" hidden md:block text-6xl absolute right-0 top-1/2 cursor-pointe opacity-30 hover:opacity-100 hover:bg-secondary-300 cursor-pointer transition-all -translate-y-[100%]  p-2 rounded-full translate-x-[20%]"
       onClick={onClick}
     />
   );
@@ -30,7 +30,7 @@ function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
   return (
     <GrPrevious
-      className="hidden md:block z-10 text-6xl absolute left-0 top-1/2 cursor-pointe opacity-30 hover:opacity-100 hover:bg-secondary-300 -translate-y-[100%]  p-2 rounded-full -translate-x-[20%]"
+      className="hidden md:block z-10 text-6xl absolute left-0 top-1/2 cursor-pointe opacity-30 hover:opacity-100 hover:bg-secondary-300 cursor-pointer transition-all -translate-y-[100%]  p-2 rounded-full -translate-x-[20%]"
       onClick={onClick}
     />
   );
@@ -43,7 +43,7 @@ var settings = {
   slidesToScroll: 1,
   initialSlide: 0,
   autoplay: true,
-  autoplaySpeed: 3000,
+  autoplaySpeed: 5000,
   cssEase: "linear",
   nextArrow: <SampleNextArrow />,
   prevArrow: <SamplePrevArrow />,
