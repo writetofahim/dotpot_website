@@ -4,8 +4,9 @@ import Footer from '../../components/Footer/Footer'
 
 const OnSiteDevelopment = () => {
   return (
-    <div className="container mx-auto">
+    <div>
       <Navbar />
+      <div className="container mx-auto">
         <div className="flex flex-col pt-6 lg:text-justify">
           <div className="w-full h-full flex justify-center items-center">
             <img className="max-w-full max-h-full" src="https://alcor-bpo.com/wp-content/uploads/2021/04/12-1.png" alt="Product image" />
@@ -43,6 +44,7 @@ const OnSiteDevelopment = () => {
             </p>
           </div>
         </div>
+      </div>
       <Footer />
     </div>
   )

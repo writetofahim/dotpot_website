@@ -6,6 +6,7 @@ const FixedPrice = () => {
   return (
     <div className="container mx-auto">
       <Navbar />
+      <div>
       <div className="flex flex-col pt-12 lg:text-justify">
         <div className="w-full h-full flex justify-center items-center">
           <img className="max-w-full max-h-full" src="https://www.peerbits.com/static/7abac9dc2f6184ceab3cf6dec7c3dcce/189bc/fixed-time-and-material-fixed-price.jpg" alt="Product image" />
@@ -42,6 +43,7 @@ const FixedPrice = () => {
             In summary, the Fixed Price Partnership Model is a collaborative approach that allows Dotpot iT to provide customized IT solutions that meet the specific needs of the client, with a clear understanding of the project's scope, timeline, and cost. It facilitates certainty of cost, reduced risk, clear project requirements, predictable timeline, and higher quality output.
           </p>
         </div>
+      </div>
       </div>
       <Footer />
     </div>
