@@ -91,16 +91,16 @@ const MobileAppDevelopment = () => {
                 <h3 className="text-center text-purple-500 font-semibold">
                   "The Experts Are Just A Click Away. Get A Quote."
                 </h3>
-                
-                  <Link to="/services" className="  w-52 h-10 flex items-center justify-center rounded-md bg-secondary-500 mx-auto hover:scale-105 transition-all shadow-sm">
-                    <div className="flex justify-center items-center gap-3">
-                      <p className="text-white font-semibold">
-                        Share your Idea
-                      </p>
-                      <BsArrowRightCircleFill className="text-white hover:cursor-pointer" />
-                    </div>
-                  </Link>
-                
+
+                <Link
+                  to="/services"
+                  className="  w-52 h-10 flex items-center justify-center rounded-md bg-secondary-500 mx-auto hover:scale-105 transition-all shadow-sm"
+                >
+                  <div className="flex justify-center items-center gap-3">
+                    <p className="text-white font-semibold">Share your Idea</p>
+                    <BsArrowRightCircleFill className="text-white hover:cursor-pointer" />
+                  </div>
+                </Link>
               </div>
             </div>
           </div>
@@ -186,18 +186,100 @@ const MobileAppDevelopment = () => {
               </p>
             </div>
           </div>
-          
+
+          {/* mobile app dev */}
           <div className="my-3">
             <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1 block text-gray-400 ">
-            Types Of Mobile App Development
+              Types Of Mobile App Development
             </h2>
             <div className="text-gray-400 flex flex-col gap-5 p-5">
               <p>
-              When it comes to mobile app development, there are four main types that businesses can choose from. These include native apps, hybrid apps, web apps, and progressive web apps. Each of these types has its own set of advantages and disadvantages, and businesses need to choose the one that best suits their needs and goals. Native apps are designed specifically for a particular platform, such as iOS or Android. Hybrid apps are a combination of native and web apps, while web apps are accessed through a browser and don't need to be downloaded. Progressive web apps are web apps that can work offline and offer a similar experience to native apps. It's important for businesses to understand the differences between these types of mobile apps and choose the one that aligns with their requirements and objectives.
+                When it comes to mobile app development, there are four main
+                types that businesses can choose from. These include native
+                apps, hybrid apps, web apps, and progressive web apps. Each of
+                these types has its own set of advantages and disadvantages, and
+                businesses need to choose the one that best suits their needs
+                and goals. Native apps are designed specifically for a
+                particular platform, such as iOS or Android. Hybrid apps are a
+                combination of native and web apps, while web apps are accessed
+                through a browser and don't need to be downloaded. Progressive
+                web apps are web apps that can work offline and offer a similar
+                experience to native apps. It's important for businesses to
+                understand the differences between these types of mobile apps
+                and choose the one that aligns with their requirements and
+                objectives.
               </p>
+              <ul className="ml-5">
+                <li className="text-xl md:text-2xl  mb-2 md:mb-1  list-disc text-gray-400 ">
+                  Native App Development
+                </li>
+                <p className="xt-gray-400">Native app development is the creation of mobile apps that are tailored for specific mobile devices or operating systems such as iOS or Android. As the apps are designed specifically for a particular platform, they only work on the devices they are intended for. This may lead you to wonder why a business would choose a native mobile app, given that it only represents a specific operating system. However, the benefits of native mobile apps include better performance, access to device-specific features, and a more polished user experience.</p>
+
+                <h3 className="text-xl md:text-2xl  my-2 md:mb-1  text-gray-400 ">
+                Example of Native Mobile Application
+                </h3>
+                <li className=" ml-5 list-disc text-gray-400 ">
+                Scan To Go
+                </li>
+                <li className=" ml-5 list-disc text-gray-400 ">
+                WhatsApp
+                </li>
+                <li className=" ml-5 list-disc text-gray-400 ">
+                Spotify
+                </li>
+              </ul>
+              <ul className="ml-5 my-3">
+                <li className="text-xl md:text-2xl  mb-2 md:mb-1  list-disc text-gray-400 ">
+                Hybrid App Development
+                </li>
+                <p className="xt-gray-400">Hybrid apps are a combination of web apps and native app development, offering the best of both worlds. The advantage of Hybrid apps is that they can work on multiple devices and operating systems, unlike native apps that are specific to a particular platform. This feature can save businesses time and money in Hybrid</p>
+
+                <h3 className="text-xl md:text-2xl  my-2 md:mb-1  text-gray-400 ">
+                Example of Hybrid Mobile Application
+                </h3>
+                <li className=" ml-5 list-disc text-gray-400 ">
+                Gmail
+                </li>
+                <li className=" ml-5 list-disc text-gray-400 ">
+                Evernote
+                </li>
+                <li className=" ml-5 list-disc text-gray-400 ">
+                Twitter
+                </li>
+              </ul>
             </div>
           </div>
 
+          {/*card for redirect to service quote */}
+          <div className=" border-b h-52 w-full md:w-4/5 mx-auto my-5  rounded-xl border flex justify-center items-center shadow-md overflow-hidden relative">
+            {/* blobs */}
+            <div className=" flex justify-center items-center">
+              <div className="w-96 absolute">
+                <div class="absolute top-0 -left-4 w-52 h-52  bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+                <div class="absolute top-0 -right-4 w-52 h-52  bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+                <div class="absolute -bottom-8 left-20 w-52 h-52  bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+              </div>
+
+              <div className="flex flex-col gap-5">
+                <h3 className="text-center text-purple-500 font-bold text-xl ">
+                We Are The Innovators In The Part Of Top Mobile App Developers
+                </h3>
+                <h3 className="text-center text-purple-500 font-semibold">
+                "Just share your idea with us and we will craft your dream app just the way you want"
+                </h3>
+
+                <Link
+                  to="/services"
+                  className="  w-52 h-10 flex items-center justify-center rounded-md bg-secondary-500 mx-auto hover:scale-105 transition-all shadow-sm"
+                >
+                  <div className="flex justify-center items-center gap-3">
+                    <p className="text-white font-semibold">Share your Idea</p>
+                    <BsArrowRightCircleFill className="text-white hover:cursor-pointer" />
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div className="">
