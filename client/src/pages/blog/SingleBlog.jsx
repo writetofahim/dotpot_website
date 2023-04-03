@@ -22,17 +22,21 @@ import axios from '../../utils/axiosInstance'
 import { useScrollToTop } from '../../hooks/useScrollToTop'
 
 const SingleBlog = () => {
-    useScrollToTop()
+    
 
     const { id } = useParams();
     const [data, setData] = useState(null);
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [id])
 
     // Data Fetching
     useEffect(() => {
         axios.get(`/blog/${id}`)
             .then(response => setData(response.data))
             .catch(error => console.error(error));
-    }, []); 
+    }, [id]); 
 
 
     return (
@@ -43,13 +47,13 @@ const SingleBlog = () => {
                     data && (
                         <div className='full flex items-center justify-center'>
                             <div className="container flex flex-col items-center p-3 md:p-10 text-justify">
-                                <img src={`${import.meta.env.REACT_APP_SERVER_PATH}/${data.image}`} alt="" />
+                                <img className='w-full' src={`${import.meta.env.REACT_APP_SERVER_PATH}/${data.image}`} alt="" />
                                 <div className="md:w-5/5">
                                     <h3 className="my-5 text-3xl font-bold text-left">{data.title}</h3>
                                     <p className="text-gray-400">{data.date}</p>
                                     {
                                         data?.tags.map((item, index) => (
-                                            <p className="inline px-3 py-1 border rounded-full mr-2 text-gray-400 hover:text-secondary-500 transition-all">{item}, </p>
+                                            <p key={index} className="inline px-3 py-1 border rounded-full mr-2 text-gray-400 hover:text-secondary-500 transition-all">{item}, </p>
                                         ))
                                     }
                                     <div className="mt-5">
@@ -60,10 +64,9 @@ const SingleBlog = () => {
                         </div>
                     )
                 }
-
-                <RecentBlogs />
-                <ChatPopup />
             </div>
+            <RecentBlogs />
+            <ChatPopup />
             <Footer />
         </>
     )
