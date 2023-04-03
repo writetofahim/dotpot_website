@@ -91,6 +91,10 @@ const Footer = () => {
                         <br />
                         <p className='text-gray-200'><strong>Phone:</strong> +880 1817 176 192</p>
                         <p className='text-gray-200'><strong>Email:</strong> help@dotpotit.com</p>
+                        <p className='text-gray-200'><strong></strong> hr@dotpotit.com</p>
+                        <p className='text-gray-200'><strong></strong> sales@dotpotit.com</p>
+                        <p className='text-gray-200'><strong></strong> marketing@dotpotit.com</p>
+                        <p className='text-gray-200'><strong></strong> career@dotpotit.com</p>
                         <div className='flex gap-4 mt-5 items-center'>
                             {socialLinks.map((link, i) => <a key={i} href={link.url} target='_blank' className='text-white hover:text-primary-400 cursor-pointer duration-300 text-xl'>{socialIcons[i]}</a>)}
                         </div>

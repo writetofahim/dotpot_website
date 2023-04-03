@@ -29,7 +29,7 @@ const Contact = () => {
         <>
             <Navbar />
             <Particle />
-            <div className="w-full pt-[15vh] p-2">
+            <div className="w-full pt-[15vh] overflow-hidden">
 
                 <ContactInfo />
                 <OurPartnersSlider />
