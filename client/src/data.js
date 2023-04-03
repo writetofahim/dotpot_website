@@ -819,7 +819,7 @@ export const blogData = [
 
 export const whoDoWeWorkData = {
     title: "Who We Work With",
-    desc: "As a leading mobile app development company in USA and India, we worked with 2000+ businesses either it is a start-up or enterprise and delivers the best solution in the industry. At Hyperlink InfoSystem, we offer a broad range of app development services based on business requirements.",
+    desc: "At Dotpot it, we offer IT and contact center support services to businesses of all types and sizes.",
     blocks: [
         {
             id: 1,

@@ -15,15 +15,18 @@ Tailwind css is used for styling
 import React, { useEffect, useState } from 'react'
 import { whoDoWeWorkData } from '../../data'
 import axios from "../../utils/axiosInstance"
+import { Link } from 'react-router-dom'
 
 
 
 export const Card = (props) => {
     return (
-        <div className="bg-white w-1/3 flex flex-col items-center justify-center p-5 rounded-xl hover:scale-110 transition-all">
-            <img src={props.icon} alt="" className='w-[50px] h-[50px] mb-3' />
-            <h3 className='text-gray-400 text-l font-bold'>{props.title}</h3>
-        </div>
+        <Link to={props.link} className="bg-white w-1/3 rounded-xl hover:scale-110 transition-all">
+            <div className='w-full flex flex-col items-center justify-center p-5'>
+                <img src={props.icon} alt="" className='w-[50px] h-[50px] mb-3' />
+                <h3 className='text-gray-400 text-l font-bold'>{props.title}</h3>
+            </div>
+        </Link>
     )
 }
 
@@ -44,7 +47,7 @@ const WhoWeWorkWith = () => {
         <div className='whoWeWorWith w-full min-h-[60vh] overflow-hidden py-10 md:flex md:flex-col md:justify-center md:items-center bg-primary-500 text-white'>
             <div className="mt-5 w-full md:max-w-[1400px]  flex flex-col lg:flex-row md:flex-row gap-5 items-center">
                 <div className="left w-1/1 md:w-1/3 lg:2/3 h-max p-5 text-left">
-                    <h1 className="text-4xl md:text-6xl font-bold mb-5">{whoDoWeWorkData.title}</h1>
+                    <h1 className="text-3xl md:text-5xl font-bold mb-5">{whoDoWeWorkData.title}</h1>
                     <p className="text-justify text-md md:text-lg">
                         {whoDoWeWorkData.desc}
                     </p>

@@ -32,9 +32,9 @@ export const JobCard = (props) => {
                                 :
                                 <AiOutlineHeart className="text-secondary-500 text-2xl" onClick={() => setLove(!love)} />
                         }
-                        <div className="cursor-pointer p-5 rounded-full hover:bg-primary-100">
+                        {/* <div className="cursor-pointer p-5 rounded-full hover:bg-primary-100">
                             <SlOptionsVertical />
-                        </div>
+                        </div> */}
                     </div>
                 </div>
                 <div className="flex items-center">

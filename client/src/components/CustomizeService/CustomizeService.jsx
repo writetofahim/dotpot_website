@@ -312,7 +312,7 @@ const CustomizeService = () => {
       {/* success snackbar end*/}
 
       <div className="container">
-        <h1 className='text-4xl md:text-6xl text-center text-primary-500 font-bold' >Customize Your Services</h1>
+        <h1 className='text-3xl md:text-5xl text-center text-primary-500 font-bold' >Customize Your Services</h1>
         <p className="text-center text-lg font-bold my-5">
         Use our tool to select your desired product and services and receive an estimated quote.
         </p>

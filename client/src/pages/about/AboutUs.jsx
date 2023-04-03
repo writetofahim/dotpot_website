@@ -33,7 +33,7 @@ const AboutUs = () => {
             <Particle />
             <Navbar />
             <AboutHero heading="About Dotpot iT" text="A fast growing IT complay" heroImg={heroImg} button={button} />
-            <OurPartnersSlider />
+            {/* <OurPartnersSlider /> */}
 
             <ContactInfo />
 

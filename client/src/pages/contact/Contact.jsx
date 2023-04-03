@@ -31,6 +31,8 @@ const Contact = () => {
             <Particle />
             <div className="w-full pt-[15vh] p-2">
 
+                <ContactInfo />
+                <OurPartnersSlider />
                 {/* Contact Form Section */}
                 <div className="full flex flex-col items-center justify-center mb-10">
                     <h3 className='mt-10 mb-5 text-5xl text-primary-500 font-bold'>Contact Us</h3>
@@ -44,8 +46,6 @@ const Contact = () => {
                     </div>
                 </div>
 
-                <OurPartnersSlider />
-                <ContactInfo />
                 <WhoWeWorkWith />
                 <RecentWorks />
                 {/* <SocialMedia /> */}

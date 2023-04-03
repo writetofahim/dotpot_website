@@ -35,11 +35,11 @@ const NavbarJob = () => {
                 <Link to="/apply">
                     <li className="mx-4 cursor-pointer uppercase text-white md:text-gray-400 text-xl hover:text-primary-400" onClick={() => setToggleMenu(false)}>All Jobs</li>
                 </Link>
-                <Link to='/login' target="_blank">
+                {/* <Link to='/login' target="_blank">
                     <li className="bg-primary-500 py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-primary-400 text-white">
                         Login
                     </li>
-                </Link>
+                </Link> */}
             </ul>
             <div className="flex relative md:hidden">
                 {!toggleMenu && (

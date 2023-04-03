@@ -12,7 +12,7 @@ const KeyFeatures = () => {
     return (
         <div className='md:p-5 bg-primary-400 w-full flex flex-col items-center text-white KeyFeartures'>
             <div className="w-full mt-10 md:max-w[1400px] lg:max-w-[1400px] p-3 md:p-10 md:px-5 lg:px-0">
-                <h1 className="text-4xl md:text-6xl font-extrabold block text-center">Our Key Features</h1>
+                <h1 className="text-3xl md:text-5xl font-extrabold block text-center">Our Key Features</h1>
             </div>
             <div className="w-full">
                 <KeyFeatureSlider />

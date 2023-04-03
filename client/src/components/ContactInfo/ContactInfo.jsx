@@ -17,7 +17,7 @@ const ContactInfo = () => {
 
   return (
     <section className="text-gray-600 body-font ">
-      <h1 className="text-4xl md:text-6xl text-center font-extrabold pt-10 block text-primary-500">Reach us On</h1>
+      <h1 className="text-3xl md:text-5xl text-center font-extrabold pt-10 block text-primary-500">Reach us On</h1>
       <div className="container px-5 py-24 mx-auto flex flex-col-reverse md:flex-row flex-wrap gap-10 md:gap-0">
         <div className="lg:w-1/2 w-full mb-10 lg:mb-0 rounded-lg overflow-hidden">
           <iframe

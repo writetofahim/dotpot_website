@@ -52,27 +52,32 @@ var settings = {
 export const SingleSlide = (props) => {
   return (
     <div className="w-full h-full flex items-center justify-center">
-      <div className="md:max-w-[1200px] lg:container container flex flex-col-reverse md:flex-row justify-between items-center">
+      <div className="md:max-w-[1200px] lg:container flex flex-col-reverse md:flex-row justify-evenly items-center">
         <div className="left flex-1 h-full flex flex-col justify-center">
-          <h1 className="text-4xl md:text-6xl text-primary-500 font-bold mb-2">
+          <h1 className="text-3xl md:text-5xl text-primary-500 font-bold mb-2">
             {props.title}
           </h1>
-          <p className='mb-5 text-gray-300 text-2xl md:text-3xl font-bold'>{props.subtitle}</p>
+          <p className='mb-5 text-gray-300 text-
+          xl md:text-2xl font-bold'>{props.subtitle}</p>
           <div className="flex gap-5 items-center mb-5">
             {/* <div className="pr-5 border-r border-gray-300">
                   <h1 className="text-4xl text-secondary-500 font-bold">
                     #1
                   </h1>
                 </div> */}
-            <p className="md:w-2/3 w-4/5 text-xl">
+            <p className="md:w-2/3 w-4/5 text-sm md:text-xl">
               {props.description}
             </p>
           </div>
-          <Link to={props.button_link}>
-            <button className='bg-secondary-400 hover:bg-secondary-300 px-10 py-3 text-white rounded-sm hover:scale-110 transition-all font-bold mt-2 flex items-center gap-3'>
-              {props.button_text} <BsArrowRight />
-            </button>
-          </Link>
+          {
+            props.button_link && (
+              <Link to={props.button_link}>
+                <button className='bg-secondary-400 hover:bg-secondary-300 px-10 py-3 text-white rounded-sm hover:scale-110 transition-all font-bold mt-2 flex items-center gap-3'>
+                  {props.button_text} <BsArrowRight />
+                </button>
+              </Link>
+            )
+          }
         </div>
         <div className="right flex-1 flex items-end justify-center ">
           <img src={`${import.meta.env.REACT_APP_SERVER_PATH}/${props.image}`} alt={props.title} className="max-h-[50vh]" />
