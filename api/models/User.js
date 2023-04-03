@@ -12,7 +12,9 @@ const UserSchema = new mongoose.Schema(
         phoneNumber: { type: String },
         address: {
             type: String
-        }
+        },
+        resetToken:{type: String},
+        resetTokenExpiration:{type: Date},
     },
     { timestamps: true }
 );

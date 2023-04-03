@@ -2,6 +2,8 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 const { OAuth2Client } = require("google-auth-library");
+const crypto = require('crypto')
+const nodemailer = require('nodemailer')
 require('dotenv').config();
 
 // generate token 
@@ -178,3 +180,66 @@ exports.googleSignup = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+
+exports.resetPassword = async (req, res) => {
+  try {
+    const user = await User.findOne({ email: req.body.email });
+    if (!user) {
+      return res.status(404).json({ success:false, message: 'User not found' });
+    }
+    // Generate reset token and save it in the database
+    const resetToken = crypto.randomBytes(20).toString('hex');
+    user.resetToken = resetToken;
+    user.resetTokenExpiration = Date.now() + 3600000; // Expires in 1 hour
+    await user.save();
+
+    // Send reset password email to the user
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: process.env.EMAIL,
+        pass: process.env.PASSWORD,
+      },
+    });
+
+    const mailOptions = {
+      from: process.env.EMAIL,
+      to: user.email,
+      subject: 'Password Reset Request',
+      html: `<p>You requested a password reset. Click <a href="${process.env.CLIENT_URL}/reset-password/${resetToken}">here</a> to reset your password.</p>`,
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.log(error);
+        return res.status(500).json({ success:false, message: 'Email not sent' });
+      }
+      console.log('Email sent: ' + info.response);
+      res.json({success:true, message: 'Email sent, please check your mail!' });
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({success:false, message: 'Something went wrong' });
+  }
+}
+
+exports.verifyResetPassword = async (req, res) => {
+  try {
+    const user = await User.findOne({
+      resetToken: req.params.resetToken,
+      resetTokenExpiration: { $gt: Date.now() },
+    });
+    if (!user) {
+      return res.status(404).json({ success:false, message: 'Invalid or expired reset token' });
+    }
+    // Update user password
+    user.password = await bcrypt.hash(req.body.password, 10);
+    user.resetToken = undefined;
+    user.resetTokenExpiration = undefined;
+    await user.save();
+    res.json({success:true, message: 'Password reset successfully' });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({success:false, message: 'Something went wrong' });
+  }
+}

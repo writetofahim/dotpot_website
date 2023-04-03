@@ -44,6 +44,7 @@ import SmallToMediumBusiness from "./pages/whoWeWorksWith/SmallToMediumBusiness"
 import StartupBusiness from "./pages/whoWeWorksWith/StartupBusiness";
 import AcceptCookiesPopup from "./components/AcceptCookiesPopup/AcceptCookiesPopup";
 import WebsiteDesign from "./pages/keyFeatures/WebsiteDesign";
+import ResetPassword from "./pages/ResetPassword/ResetPassword";
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/reset-password/:resetToken" element={<ResetPassword />} />
         <Route path="/register" element={<Register />} />
         <Route path="/apply" element={<ApplyJob />} />
         <Route path="/apply/:id" element={<Apply />} />

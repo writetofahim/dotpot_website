@@ -105,7 +105,7 @@ const Blog = () => {
             <div className="w-full pt-[15vh]">
                 <div className="w-full flex flex-col items-center justify-center">
                     <h1 className="text-6xl mt-10 mb-2 font-bold text-primary-500">Blogs</h1>
-                    <p className="text-lg mb-10">Follow our blog to get all the latest tech news</p>
+                    <p className="text-lg mb-10 px-4">Follow our blog to get all the latest tech news</p>
                     {/* <div className="container flex gap-5 md:gap-10 justify-center p-5 flex-wrap">
                         {
                             data && data.map((item, index) => (
@@ -113,7 +113,7 @@ const Blog = () => {
                             ))
                         }
                     </div> */}
-                    <div className="container grid lg:grid-cols-3 grid-cols-1 gap-5 md:gap-10 justify-center p-5 flex-wrap">
+                    <div className="container lg:grid lg:grid-cols-3 grid-cols-1 gap-5 lg:space-y-0 space-y-5 md:gap-10 justify-center lg:p-5 p-3 flex-wrap">
                         {
                             data && data.map((item, index) => (
                                 <BlogCard2 key={item._id+index} {...item} index={index} />
@@ -176,7 +176,7 @@ const BlogCard2 = ({title, body ,image, _id, tags, createdAt, index})=>{
     
     return <div onClick={()=> navigate(`/blog/${_id}`)} className={`${index===0 ? "col-span-3" : ""} p-3 bg-white rounded-xl shadow-lg cursor-pointer group`}>
         <div className="">
-            <img className={`${index===0 ? "h-[350px]" : "h-[250px]"} w-full object-cover`} src={`${import.meta.env.REACT_APP_SERVER_PATH}/${image}`} alt="" />
+            <img className={`${index===0 ? "lg:h-[450px]" : "lg:h-[250px]"} h-[250px] w-full object-cover`} src={`${import.meta.env.REACT_APP_SERVER_PATH}/${image}`} alt="" />
         </div>
         <div className='flex flex-wrap gap-2 mt-3'>
             {tags.map((tag, i) =><div key={i} className={`text-sm rounded-full px-2 py-1 bg-gradient-to-r from-cyan-500 to-blue-500 text-white`} >{tag}</div>)}

@@ -110,9 +110,9 @@ const Register = () => {
                 <span className="mx-2">Sign up with Google</span>
               </button>
 
-              <div className="mt-6 text-center text-secondary-500">
+              <div className="mt-6 text-center text-gray-500 font-bold">
                 <Link to="/login" className="text-sm hover:underline">
-                  Already Have an account? Sign in
+                  Already Have an account? <span className='text-primary-500'>Sign in</span>
                 </Link>
               </div>
             </div>

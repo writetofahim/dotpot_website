@@ -6,10 +6,18 @@ import Particle from '../../components/Hero/Particle'
 import { AuthContext } from '../../contexts/AuthContext'
 import { FaSpinner } from "react-icons/fa";
 import { useScrollToTop } from '../../hooks/useScrollToTop'
+import axios from '../../utils/axiosInstance'
+import CommonSnackbar from '../../components/CommonSnackbar/CommonSnackbar'
 
 
 const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const [message,setMessage] = useState("");
+  const [open, setOpen] = useState(false)
+  const [email,setEmail] = useState("");
+  const [sendingMail, setSendingMail] = useState(false);
+
+  const [requestError,setRequestError] = useState("");
   // create a isLoading state and setIsLoading setter using the useState hook, initialize to false
   const { user, login, error, googleLogin } = useContext(AuthContext);
   // use the useContext hook to get the user, login, and error values from the AuthContext
@@ -50,10 +58,33 @@ const Login = () => {
     }
 
   }
+
+  const handleForgotPassword = async() => {
+    
+    setRequestError("")
+    setMessage("")
+    if(!email) return setRequestError("Please enter your email address")
+    setSendingMail(true)
+    try {
+      const res = await axios.post('/auth/reset-password', { email });
+      setMessage(res?.data?.message);
+      setOpen(true)
+    } catch (error) {
+      if(error?.response?.data?.message){
+        setRequestError(error?.response?.data?.message);
+        return 
+      }
+      setRequestError(error.message);
+    } finally{
+      setSendingMail(false);
+    }
+  }
+  
   return (
     <>
       <Navbar />
       <Particle />
+      {open && <CommonSnackbar message={message} open={open} setOpen={setOpen} />}
       <section className="pt-[10vh] flex items-center justify-center">
         <div className="container min-h-[100vh] flex items-center justify-center p-5">
           <form onSubmit={handleSubmit} className="w-full max-w-md p-5 border rounded-xl shadow-xl glassmorphism">
@@ -68,7 +99,7 @@ const Login = () => {
                 </svg>
               </span>
 
-              <input type="email" name='email' className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300" placeholder="Email address" />
+              <input type="email" name='email' value={email} onChange={(e)=>setEmail(e.target.value)} className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300" placeholder="Email address" />
             </div>
 
             <div className="relative flex items-center mt-4">
@@ -83,10 +114,15 @@ const Login = () => {
 
             <div className="mt-6">
               {error && <p className='text-red-500 mb-3'>{error}</p>}
+              {requestError && <p className='text-red-500 mb-3'>{requestError}</p>}
+              
               <button className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize bg-primary-500 rounded-lg hover:bg-primary-400 hover:shadow-xl hover:scale-105 transition-all">
                 <span className='w-[max-content] mx-auto flex items-center gap-2'> Sign in {isLoading && <FaSpinner className="animate-spin" />}</span>
               </button>
 
+             <div className='flex justify-end text-primary-600 font-bold'>
+              <button disabled={sendingMail} onClick={handleForgotPassword} type='button' className='mt-2 text-center hover:underline flex items-center gap-2 disabled:text-primary-300'>{sendingMail && <FaSpinner className="animate-spin" />} Forgot password?</button>
+             </div>
               <p className="mt-4 text-center text-gray-600 dark:text-gray-400">or sign in with</p>
 
               <button onClick={googleLogin} className="w-full flex items-center justify-center px-6 py-3 mt-4 text-gray-600 border rounded-xl hover:bg-primary-100 hover:shadow-xl hover:scale-105 transition-all">
@@ -100,9 +136,9 @@ const Login = () => {
                 <span className="mx-2">Sign in with Google</span>
               </button>
 
-              <div className="mt-6 text-center text-secondary-500">
+              <div className="mt-6 text-center text-gray-500 font-bold">
                 <Link to="/register" className="text-sm hover:underline">
-                  Don’t have an account yet? Sign up
+                  Don’t have an account yet? <span className='text-primary-500'>Sign up</span>
                 </Link>
               </div>
             </div>
