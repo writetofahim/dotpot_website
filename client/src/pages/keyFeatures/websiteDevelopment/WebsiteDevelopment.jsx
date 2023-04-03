@@ -5,8 +5,10 @@ import coverImg from "../../../assets/img/webDevelopment.jpg";
 import Footer from "../../../components/Footer/Footer";
 import Navbar from "../../../components/Navbar/Navbar";
 import WebDevNav from "./WebDevNav";
+import { useScrollToTop } from '../../../hooks/useScrollToTop'
 
 const WebsiteDevelopment = () => {
+  useScrollToTop()
   return (
     <div className="px-3">
       <Navbar />
