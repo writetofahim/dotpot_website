@@ -27,10 +27,12 @@ const TableRow = ({data,setData}) => {
       </td>
       <td className="px-6 max-w-2/5">
           {
-              <div className="">
-                {data.socialMediaUrls.linkedin && (<><Link to={data.socialMediaUrls.linkedin}>LinkedInt</Link><br /></>)}
-                {data.socialMediaUrls.twitter && (<><Link to={data.socialMediaUrls.twitter}>Twitter</Link><br /></>)}
-              </div>
+              data.education
+          }
+      </td>
+      <td className="px-6 max-w-2/5">
+          {
+              data.experience
           }
       </td>
       <td className="px-6 max-w-2/5">
@@ -95,7 +97,10 @@ const AllJobApplications = (props) => {
                 CV
               </th>
               <th scope="col" className="px-6 py-3">
-                Social Links
+                Education
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Experience
               </th>
               <th scope="col" className="px-6 py-3">
                 Email

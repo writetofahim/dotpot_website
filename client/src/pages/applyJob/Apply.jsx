@@ -96,6 +96,26 @@ const Apply = () => {
                             ))
                         }
                         <div className="mt-1 text-gray-400">
+                            <label htmlFor="education">Educational Qualification: </label> <br />
+                            <select className='p-2 rounded border w-full outline-none' type="text" name="education" id="education" placeholder='Educational Qualification' required>
+                                <option value="HSC">Higher Secondary School Certificate</option>
+                                <option value="BSC">Bachelor of Science</option>
+                                <option value="MSC">Master of Science</option>
+                            </select>
+                        </div>
+                        <div className="mt-1 text-gray-400">
+                            <label htmlFor="experience">Experience : </label> <br />
+                            <select className='p-2 rounded border w-full outline-none' type="text" name="experience" id="experience" placeholder='Educational Qualification' required>
+                                <option value="Fresher">Fresher</option>
+                                <option value="Less Than 1 year">Less Than 1 year</option>
+                                <option value="2 years">2 years</option>
+                                <option value="4 years">3 years</option>
+                                <option value="4 years">4 years</option>
+                                <option value="5 years">5 years</option>
+                                <option value="More Than 5 years">More Than 5 years</option>
+                            </select>
+                        </div>
+                        <div className="mt-1 text-gray-400">
                             <label htmlFor="cover">Cover Latter: </label> <br />
                             <textarea name="coverLetter" id="cover" rows="5" className='p-2 border w-full outline-none'></textarea>
                         </div>

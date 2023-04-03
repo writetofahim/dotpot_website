@@ -1152,26 +1152,26 @@ export const inputFields = [
         required: true
     },
     {
-        title: "Equcationl Qualification",
-        placeholder: "Enter your educational qualification",
-        type: "text",
-        name: "education",
-        required: true
-    },
-    {
-        title: "Experience",
-        placeholder: "Number of Years Experience",
-        type: "number",
-        name: "experience",
-        required: true
-    },
-    {
         title: "Your CV",
         placeholder: "",
         type: "file",
         name: "cv",
         required: true
     },
+    // {
+    //     title: "Equcationl Qualification",
+    //     placeholder: "Enter your educational qualification",
+    //     type: "text",
+    //     name: "education",
+    //     required: true
+    // },
+    // {
+    //     title: "Experience",
+    //     placeholder: "Number of Years Experience",
+    //     type: "number",
+    //     name: "experience",
+    //     required: true
+    // },
 ]
 
 
