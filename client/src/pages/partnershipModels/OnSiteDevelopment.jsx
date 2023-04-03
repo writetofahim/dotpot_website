@@ -1,8 +1,10 @@
 import React from 'react'
+import { useScrollToTop } from '../../hooks/useScrollToTop'
 import Navbar from '../../components/Navbar/Navbar'
 import Footer from '../../components/Footer/Footer'
 
 const OnSiteDevelopment = () => {
+  useScrollToTop()
   return (
     <div>
       <Navbar />
