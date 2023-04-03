@@ -8,6 +8,7 @@ const AddContactCenterService = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [title, setTitle] = useState("");
   const [icon, setIcon] = useState("");
+  const [link, setLink] = useState("");
   const [message, setMessage] = useState("");
   const [snackbar, setSnackbar] = useState(false);
   const [searchParams] = useSearchParams();
@@ -21,6 +22,7 @@ const AddContactCenterService = () => {
         .then((res) => {
           setTitle(res.data.title);
           setIcon(res.data.icon);
+          setLink(res.data.link);
         })
         .catch((err) => {
           console.log(err);
@@ -37,6 +39,7 @@ const AddContactCenterService = () => {
         await axios.put(`/contact_center_service/${industryWeServeId}`, {
           title,
           icon,
+          link
         });
         setMessage("Update Successful!");
         setSnackbar(true);
@@ -44,11 +47,13 @@ const AddContactCenterService = () => {
         await axios.post("/contact_center_service", {
           title,
           icon,
+          link
         });
         setMessage("Add Successful!");
         setSnackbar(true);
         setTitle("");
         setIcon("");
+        setLink("")
       }
     } catch (err) {
       alert("Error creating industry.");
@@ -94,6 +99,21 @@ const AddContactCenterService = () => {
             placeholder="Enter icon"
             value={icon}
             onChange={(e) => setIcon(e.target.value)}
+            required
+          />
+        </div>
+        
+        
+        <div className="mb-4">
+          <label className="block text-gray-700 font-bold mb-2" htmlFor="link">
+            Link
+          </label>
+          <input
+            className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+            type="text"
+            placeholder="Enter The Link"
+            value={link}
+            onChange={(e) => setLink(e.target.value)}
             required
           />
         </div>

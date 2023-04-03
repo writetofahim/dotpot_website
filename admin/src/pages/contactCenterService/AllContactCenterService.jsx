@@ -59,6 +59,9 @@ const AllContactCenterService = () => {
               Title
             </th>
             <th scope="col" className="px-6 py-3">
+              Link
+            </th>
+            <th scope="col" className="px-6 py-3">
               Action
             </th>
           </tr>
@@ -73,6 +76,7 @@ const AllContactCenterService = () => {
                 <img className="w-24" src={service.icon} alt="" />
               </td>
               <td className="px-6 py-4">{service.title}</td>
+              <td className="px-6 py-4">{service.link}</td>
               <td className="px-6 py-2 ">
                 <div className="flex gap-3">
                   <AiOutlineEdit

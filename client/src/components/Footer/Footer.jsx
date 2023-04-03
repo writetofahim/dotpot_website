@@ -67,7 +67,7 @@ const Footer = () => {
         const fetchLinks = async () => {
             const { data } = await axios.get('/socialmedia')
             setSocialLinks(data)
-            console.log("social Links", data)
+            // console.log("social Links", data)
         }
         fetchLinks();
     }, [])

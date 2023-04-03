@@ -3,3 +3,5 @@
 {"level":"info","message":"::1 - - [01/Apr/2023:04:34:11 +0000] \"GET /api/hero HTTP/1.1\" 200 2050 \"-\" \"PostmanRuntime/7.31.3\"\n","timestamp":"2023-04-01T04:34:11.685Z"}
 {"level":"info","message":"::1 - - [01/Apr/2023:05:09:36 +0000] \"GET /api/hero HTTP/1.1\" 200 2050 \"-\" \"PostmanRuntime/7.31.3\"\n","timestamp":"2023-04-01T05:09:36.755Z"}
 {"level":"info","message":"::1 - - [03/Apr/2023:06:05:01 +0000] \"GET /contactCenterservices HTTP/1.1\" 404 160 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36\"\n","timestamp":"2023-04-03T06:05:01.627Z"}
+{"level":"info","message":"::1 - - [03/Apr/2023:09:56:04 +0000] \"GET /api/blog?page=1 HTTP/1.1\" 200 11208 \"-\" \"PostmanRuntime/7.31.3\"\n","timestamp":"2023-04-03T09:56:04.022Z"}
+{"level":"info","message":"::1 - - [03/Apr/2023:09:58:06 +0000] \"GET /api/blog?page=1 HTTP/1.1\" 200 11208 \"-\" \"PostmanRuntime/7.31.3\"\n","timestamp":"2023-04-03T09:58:06.013Z"}

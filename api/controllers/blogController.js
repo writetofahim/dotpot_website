@@ -21,7 +21,7 @@ const getAllBlogs = async (req, res) => {
         const endIndex = page * limit;
 
         // Retrieve the blogs from the database based on the pagination parameters
-        const blogs = await Blog.find({}).skip(startIndex).limit(limit);
+        const blogs = await Blog.find({}).sort({ createdAt: -1 }).skip(startIndex).limit(limit);
         // Send the blogs as a response along with metadata about the pagination
         res.json({
             totalBlogs,

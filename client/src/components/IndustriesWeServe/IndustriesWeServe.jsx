@@ -39,7 +39,7 @@ const IndustriesWeServe = () => {
             .catch(error => console.error(error));
     }, []);
 
-    console.log(data)
+    // console.log(data)
 
     return (
         <div className='industriesWeServe w-full overflow-hidden py-10 md:flex md:flex-col md:justify-center bg-primary-100'>
