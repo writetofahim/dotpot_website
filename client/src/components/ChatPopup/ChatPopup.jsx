@@ -10,9 +10,9 @@ import axios from "../../utils/axiosInstance"
 import { io } from "socket.io-client";
 import moment from "moment/moment";
 
-const socket = io(import.meta.env.REACT_APP_SOCKET_PATH + "/api")
+const socket = io(import.meta.env.REACT_APP_SOCKET_PATH)
 // const socket = io("http://localhost:8800")
-console.log(socket)
+console.log("socket", socket)
 
 // const data = [
 //   { name: "DotpotiT", message: "Hi there!", timestamp: "11:30 AM" },
@@ -134,7 +134,7 @@ const ChatPopup = () => {
               <AiOutlineCloseCircle />
             </button>
           </div>
-          <div className="flex flex-col p-4 h-80 overflow-y-auto " >
+          <div className="flex flex-col p-4 h-80 overflow-y-auto changeThumb" >
             <div className="">
               <img className="w-10 mx-auto" src={"https://cdn-icons-png.flaticon.com/512/2706/2706962.png"} alt="" />
               <p className="text-sm text-center mb-2">Dotpot iT Customer Support</p>
@@ -143,12 +143,12 @@ const ChatPopup = () => {
             {messages.map((message, index) => (
               <div
                 key={index}
-                className={`flex gap-2 ${message.sender === "admin" ? "" : "justify-end"}`}
+                className={`flex gap-2 ${message.sender === "admin" ? "" : "justify-end"} items-start`}
               >
-                <div className="mt-3">
-                  <img className="w-4 " src={message.sender === "admin" ? "https://cdn-icons-png.flaticon.com/512/2706/2706962.png" : "https://cdn-icons-png.flaticon.com/512/1077/1077012.png"} alt="" />
+                <div className="mt-3 w-max ">
+                  <img className="w-4" src={message.sender === "admin" ? "https://cdn-icons-png.flaticon.com/512/2706/2706962.png" : "https://cdn-icons-png.flaticon.com/512/1077/1077012.png"} alt="" />
                 </div>
-                <div className={`flex flex-col my-2`}>
+                <div className={`w-[75%] flex flex-col my-2`}>
                   <div className="flex gap-2 text-xs items-center mb-1">
                     <p className="font-medium">{message.sender === "admin" ? "Dotpot iT" : 'You'}</p>
                     <p className=" text-gray-500 ">{moment(new Date(message.createdAt)).format('LT')}</p>
@@ -161,7 +161,6 @@ const ChatPopup = () => {
                         {message.attachment?.slice(0, 20)}...</a>
                       : message.attachment && <img onClick={() => handleModalOpen(`${import.meta.env.REACT_APP_SERVER_PATH}/${message.attachment}`)} className="w-40 cursor-pointer" src={`${import.meta.env.REACT_APP_SERVER_PATH}/${message.attachment}`} alt="" />}
                     {/* <p className="text-xs text-gray-500 mt-1">{moment(new Date(message.createdAt)).fromNow()}</p> */}
-
                   </div>
                 </div>
               </div>
@@ -170,16 +169,16 @@ const ChatPopup = () => {
             <div ref={messagesEndRef} />
           </div>
 
-          <div className="p-4 flex items-center justify-between gap-1">
+          <form className="p-4 flex items-center justify-between gap-1">
             <label htmlFor="attachment">
               <GrAttachment />
             </label>
             <input disabled={isSending} onChange={(e) => { setFiles(e.target.files) }} className="hidden" type="file" name="attachment" id="attachment" />
-            <textarea
+            <input
               className="flex-[0.9] p-1 border border-gray-300 rounded-lg h-[38px] outline-none"
               value={newMessage}
               onChange={(e) => setNewMessage(e.target.value)}
-            ></textarea>
+            ></input>
             <button
               disabled={isSending}
               className="flex-[0.1] bg-primary-500 text-white text-2xl p-2 rounded-lg h-[38px] flex items-center justify-center"
@@ -187,7 +186,7 @@ const ChatPopup = () => {
             >
               {isSending ? <FaSpinner className="animate-spin" /> : <AiOutlineSend />}
             </button>
-          </div>
+          </form>
         </div>
       )}
     </>

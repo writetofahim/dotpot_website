@@ -55,7 +55,7 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    navigate("/admin");
+    navigate(location?.pathname==="/" ? "/admin" : location?.pathname);
   }, [])
   
   useEffect(() => {

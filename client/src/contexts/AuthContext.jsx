@@ -39,8 +39,8 @@ export const AuthContextProvider = ({ children }) => {
     // useEffect hook to run some code after the component is mounted
     // Check if there is a user object in localStorage and if it has been there for more than 5 days
     const currentUser = localStorage.getItem("user");
-    if (currentUser && new Date().getTime() - currentUser?.timestamp > 432000000) {
-      // If it has been there for more than 5 days, remove it along with the access token
+    if (currentUser && new Date().getTime() - currentUser?.timestamp > 259200000) {
+      // If it has been there for more than 3 days, remove it along with the access token
       localStorage.removeItem('user');
       localStorage.removeItem('accessToken');
     }
