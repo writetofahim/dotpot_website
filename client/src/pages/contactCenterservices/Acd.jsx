@@ -14,7 +14,7 @@ const Acd = () => {
           <h1 className="text-4xl md:text-6xl font-extrabold mb-2 md:mb-5 block text-primary-400 text-center">
           Automatic Call Distribution (ACD)
           </h1>
-          <p className="mt-2">Use our CTI services to grow your business.</p>
+          <p className="mt-2">Use our ACD services to grow your business.</p>
           <Link to="/contact">
             <button className="rounded-none bg-primary-300 text-4xl text-white mt-3 px-4 py-2">Contact Us</button>
           </Link>
