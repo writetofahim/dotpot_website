@@ -318,10 +318,10 @@ const CustomizeService = () => {
         </p>
 
         {/* Main Container */}
-        <div className="mt-5 flex flex-col lg:flex-row justify-between gap-5 border shadow-xl p-5 rounded-xl md:min-h-[70vh] bg-white">
+        <div className="mt-5 flex flex-col lg:flex-row justify-between gap-5 rounded-xl md:min-h-[70vh] ">
 
           {/* Left container */}
-          <div className="p-3 border rounded-xl flex-[0.2] shadow-xl">
+          <div className="p-3 border rounded-xl flex-[0.2] shadow-xl bg-white">
             <h3 className="text-gray-400 text-xl">Services</h3>
             <hr />
             <div className="w-full flex gap-1 flex-wrap justify-center lg:block">
@@ -344,7 +344,7 @@ const CustomizeService = () => {
 
 
           {/* Right container */}
-          <div className="pt-10 md:pt-2 p-2 border rounded-xl flex-[0.8] min-h-[40vh] pb-10 shadow-xl relative">
+          <div className="pt-10 md:pt-2 p-2 border rounded-xl flex-[0.8] min-h-[40vh] pb-10 shadow-xl relative bg-white">
 
             {/* Top Section */}
             <div className="">

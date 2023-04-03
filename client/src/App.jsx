@@ -43,6 +43,7 @@ import EnterpriseBusiness from "./pages/whoWeWorksWith/EnterpriseBusiness";
 import SmallToMediumBusiness from "./pages/whoWeWorksWith/SmallToMediumBusiness";
 import StartupBusiness from "./pages/whoWeWorksWith/StartupBusiness";
 import AcceptCookiesPopup from "./components/AcceptCookiesPopup/AcceptCookiesPopup";
+import WebsiteDesign from "./pages/keyFeatures/WebsiteDesign";
 
 function App() {
   return (
@@ -118,6 +119,10 @@ function App() {
           element={<BlockchainDevelopment />}
         />
         <Route
+          path="/key-features/website-design"
+          element={<WebsiteDesign />}
+        />
+        <Route
           path="/key-features/mobile-app-development"
           element={<MobileAppDevelopment />}
         />
@@ -151,7 +156,7 @@ function App() {
           element={<SmallToMediumBusiness />}
         />
         <Route
-          path="/who-we-works-with/Enterprise-business"
+          path="/who-we-works-with/enterprise-business"
           element={<EnterpriseBusiness />}
         />
         <Route

@@ -21,7 +21,7 @@ const AboutHero = (props) => {
             <div className='container flex flex-col-reverse md:flex-row items-center justify-center gap-5'>
 
                 {/* Left Side */}
-                <div className="left flex-1 h-full flex flex-col justify-center p-5">
+                <div className="left flex-2 h-full flex flex-col justify-center p-5">
                     <h1 className="text-3xl md:text-5xl text-primary-500 font-bold mb-2">
                         {props.heading}
                     </h1>

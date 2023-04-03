@@ -34,6 +34,8 @@ import AddOurPartners from "./pages/ourPartners/AddOurPartners";
 import AllOurPartners from "./pages/ourPartners/AllOurPartners";
 import AddPartnershipModel from "./pages/partnershipModel/AddPartnershipModel";
 import AllPartnershipModel from "./pages/partnershipModel/AllPartnershipModel";
+import AddWhoWeWorksWith from "./pages/whoWeWorkWith/AddWhoWeWorksWith";
+import All from "./pages/whoWeWorkWith/AllWhoWeWorksWith";
 import CompanyInfo from "./pages/sections/CompanyInfo";
 import Hero from "./pages/sections/Hero";
 import AddService from "./pages/services/AddServices";
@@ -44,6 +46,7 @@ import AddUsers from "./pages/users/AddUsers";
 import AllUsers from "./pages/users/AllUsers";
 import AddWorks from "./pages/works/AddWorks";
 import AllWorks from "./pages/works/AllWorks";
+import AllWhoWeWorksWith from "./pages/whoWeWorkWith/AllWhoWeWorksWith";
 // import AddClientsReview from "./pages/clientsReview/AddClientsReview";
 
 function App() {
@@ -153,6 +156,16 @@ function App() {
             path="/admin/partnership-model/add-partnership-model"
             element={<AddPartnershipModel />}
           />
+
+          <Route
+            path="/admin/who-we-works-with/all-who-we-works-with"
+            element={<AllWhoWeWorksWith />}
+          />
+          <Route
+            path="/admin/who-we-works-with/add-who-we-works-with"
+            element={<AddWhoWeWorksWith />}
+          />
+
           <Route path="/admin/hero" element={<Hero />} />
           <Route path="/admin/company-info" element={<CompanyInfo />} />
         </Route>

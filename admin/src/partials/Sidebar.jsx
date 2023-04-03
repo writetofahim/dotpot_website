@@ -918,6 +918,25 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                           <li className="mb-1 last:mb-0">
                             <NavLink
                               end
+                              to="/admin/who-we-works-with/all-who-we-works-with"
+                              className={({ isActive }) =>
+                                "block transition duration-150 truncate " +
+                                (isActive
+                                  ? "text-white bg-fuchsia-900 py-1 px-3"
+                                  : "text-slate-400 hover:text-slate-200")
+                              }
+                            >
+                              <div className="flex items-center gap-3">
+                                <SiHandshake />
+                                <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                                  Who We Works With
+                                </span>
+                              </div>
+                            </NavLink>
+                          </li>
+                          <li className="mb-1 last:mb-0">
+                            <NavLink
+                              end
                               to="/admin/partnership-model/all-partnership-model"
                               className={({ isActive }) =>
                                 "block transition duration-150 truncate " +
