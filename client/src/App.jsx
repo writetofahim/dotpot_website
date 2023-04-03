@@ -38,6 +38,10 @@ import PrivacyPolicy from "./pages/privacyPolicy/PrivacyPolicy";
 import Register from "./pages/register/Register";
 import Services from "./pages/services/Services";
 import Terms_Conditions from "./terms_conditions/Terms_Conditions";
+import AgenciesBusiness from "./pages/whoWeWorksWith/AgenciesBusiness";
+import EnterpriseBusiness from "./pages/whoWeWorksWith/EnterpriseBusiness";
+import SmallToMediumBusiness from "./pages/whoWeWorksWith/SmallToMediumBusiness";
+import StartupBusiness from "./pages/whoWeWorksWith/StartupBusiness";
 
 function App() {
   return (
@@ -56,6 +60,8 @@ function App() {
         <Route path="/blog/:id" element={<SingleBlog />} />
         <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
         <Route path="/terms_conditions" element={<Terms_Conditions />} />
+
+
 
         {/* Contact Center Service Pages */}
         <Route path="/contact_center_services/cti" element={<Cti />} />
@@ -80,6 +86,9 @@ function App() {
         <Route path="/contact_center_services/ivr" element={<Ivr />} />
         <Route path="/contact_center_services/acd" element={<Acd />} />
 
+
+
+
         {/* Partnership Model Pages */}
         <Route
           path="/partnership_model/fixed-price-model"
@@ -93,6 +102,8 @@ function App() {
           path="/partnership_model/on-site-development-model"
           element={<OnSiteDevelopment />}
         />
+
+
 
         {/* Key features */}
         <Route
@@ -125,6 +136,25 @@ function App() {
         <Route
           path="/key-features/contact-center-support"
           element={<ContactCenterSupport />}
+        />
+
+
+        {/* Who We Works With Pages */}
+        <Route
+          path="/who-we-works-with/startup-business"
+          element={<StartupBusiness />}
+        />
+        <Route
+          path="/who-we-works-with/small-and-medium-business"
+          element={<SmallToMediumBusiness />}
+        />
+        <Route
+          path="/who-we-works-with/Enterprise-business"
+          element={<EnterpriseBusiness />}
+        />
+        <Route
+          path="/who-we-works-with/agencies-business"
+          element={<AgenciesBusiness />}
         />
       </Routes>
     </>
