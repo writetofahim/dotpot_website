@@ -42,10 +42,12 @@ import AgenciesBusiness from "./pages/whoWeWorksWith/AgenciesBusiness";
 import EnterpriseBusiness from "./pages/whoWeWorksWith/EnterpriseBusiness";
 import SmallToMediumBusiness from "./pages/whoWeWorksWith/SmallToMediumBusiness";
 import StartupBusiness from "./pages/whoWeWorksWith/StartupBusiness";
+import AcceptCookiesPopup from "./components/AcceptCookiesPopup/AcceptCookiesPopup";
 
 function App() {
   return (
-    <>
+    <div className="relative">
+      <AcceptCookiesPopup />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
@@ -157,7 +159,7 @@ function App() {
           element={<AgenciesBusiness />}
         />
       </Routes>
-    </>
+    </div>
   );
 }
 

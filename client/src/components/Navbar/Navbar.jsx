@@ -62,7 +62,7 @@ const Navbar = () => {
     ]
 
     return (
-        <div className="w-full flex items-center justify-center fixed z-10 bg-white">
+        <div className="w-full flex items-center justify-center fixed z-50 bg-white">
             <nav className="container flex justify-between items-center p-4 z-999" id="nav">
                 <div className="lg:flex-[0.5] flex-initial justify-center items-center">
                     <Link to='/'>
@@ -88,9 +88,9 @@ const Navbar = () => {
                         {({ isActive }) => (
                             <>
                                 <li className={`${isActive ? "lg:text-primary-400 text-white" : "lg:text-gray-400 "} mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-primary-400 flex gap-2 items-center`}>Services <IoIosArrowDown /></li>
-                                <div className="absolute hidden group-hover:flex top-6 left-0  flex-col gap-3 py-5 bg-white px-5 rounded-md shadow-2xl">
-                                    {services.map(service => <Link to={service.to} className="flex gap-2 items-center w-max hover:scale-105 duration-100"><img width={20} src={service.icon} alt="" /><span key={service._id} className="w-full hover:text-primary-400 font-[600]">{service.title}</span></Link>)}
-                                </div>
+                                <span className="absolute hidden group-hover:flex top-6 left-0  flex-col gap-3 py-5 bg-white px-5 rounded-md shadow-2xl">
+                                    {services.map((service, i) => <Link key={i} to={service.to} className="flex gap-2 items-center w-max hover:scale-105 duration-100"><img width={20} src={service.icon} alt="" /><span key={service._id} className="w-full hover:text-primary-400 font-[600]">{service.title}</span></Link>)}
+                                </span>
                             </>
                         )}
 
