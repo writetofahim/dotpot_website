@@ -10,7 +10,7 @@ const ContactCenterSupport = () => {
     <div className="px-3">
       <Navbar />
       <div className="pt-[15vh] min-h-screen">
-        <h1 className="text-4xl md:text-6xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
+        <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
           Contact Center Support
         </h1>
         <p className="text-md text-gray-400 text-center mb-10">

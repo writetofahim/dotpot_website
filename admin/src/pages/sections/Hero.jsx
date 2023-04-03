@@ -92,15 +92,16 @@ const Hero = () => {
     }
   };
 
-  // const handleFileInputChange = (event) => {
-  //   const file = event.target.files[0];
-  //   setImage(URL.createObjectURL(file));
-  //   // const newImage = (formData.image = image);
-  //   setFormData(newImage);
-  // };
+  const handleFileInputChange = (event) => {
+    const file = event.target.files[0];
+    setImage(URL.createObjectURL(file));
+    // const newImage = (formData.image = image);
+    setFormData(newImage);
+  };
 
   // Handle form submission
   const handleSubmit = async (event) => {
+    
     event.preventDefault();
     // form submission logic
     if (formButton == "Save") {
@@ -127,6 +128,7 @@ const Hero = () => {
           title: document.getElementById("title").value,
           subtitle: document.getElementById("subtitle").value,
           description: document.getElementById("description").value,
+          // image: document.getElementById("image").value,
           image: image,
           button_link: document.getElementById("button_link").value,
           button_text: document.getElementById("button_text").value,
@@ -141,7 +143,8 @@ const Hero = () => {
         button_link: "",
         button_text: "",
       });
-      document.getElementById("Form").classList.add("hidden");
+      console.log(formData);
+      // document.getElementById("Form").classList.add("hidden");
     } else {
       // update hero
       let attachment;
@@ -191,7 +194,10 @@ const Hero = () => {
       <h1 className="text-center font-bold text-4xl text-primary-400 shadow">
         Edit Hero Section
       </h1>
+
+      {/* hero sections */}
       <div className="container w-full flex justify-center">
+        {/* heros */}
         <div className="flex flex-wrap justify-center overflow-hidden border-b h-52">
           {heroData.map((hero, index) => (
             <div
@@ -217,6 +223,7 @@ const Hero = () => {
             </div>
           ))}
         </div>
+        {/* btn add */}
         <div className="py-3">
           <button
             onClick={handleAdd}
@@ -226,6 +233,7 @@ const Hero = () => {
           </button>
         </div>
       </div>
+
       <form
         onSubmit={handleSubmit}
         className="max-w-md mx-auto my-10 hidden"
@@ -278,6 +286,7 @@ const Hero = () => {
             className="h-28 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           ></textarea>
         </div>
+
         <div className="mb-4">
           <label htmlFor="image" className="block text-gray-700 font-bold mb-2">
             Image URL
@@ -293,6 +302,7 @@ const Hero = () => {
         </div>
 
         <div className="mt-4"></div>
+        {/* img div */}
         <div id="imageDiv" className=" border">
           <div className="rounded-md flex items-center justify-center gap-3 mx-auto  m-5">
             <div
@@ -310,6 +320,8 @@ const Hero = () => {
             </div>
           </div>
         </div>
+        
+        {/* img input */}
         <input
           type="file"
           name="pic"
@@ -318,12 +330,6 @@ const Hero = () => {
           onChange={handleChangeImage}
           className="shadow my-5 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         />
-        {/* <div id="imageDiv" className="flex mt-4">
-          <div className="" id="preview">
-            Image
-          </div>
-          <img className="w-1/2 mx-auto border" src={formData.image} alt="" />
-        </div> */}
 
         <div className="mb-4">
           <label
