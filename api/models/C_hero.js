@@ -15,11 +15,9 @@ const HeroSchema = new mongoose.Schema({
     },
     button_text: {
         type: String,
-        required: true,
     },
     button_link: {
         type: String,
-        required: true,
     },
     image: {
         type: String,
