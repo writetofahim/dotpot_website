@@ -84,23 +84,40 @@ var settings = {
     ]
 };
 
+// export const SingleSlide = (props) => {
+//     return (
+//         <div className="mx-5 mb-20 rounded-lg relative shadow-xl bg-white">
+//             <img src={`${import.meta.env.REACT_APP_SERVER_PATH}/${props.image}`} alt="" className=" rounded-xl aspect-[1.4] object-cover" />
+//             <div className="absolute b-0 left-1/2 transform -translate-x-1/2 translate-y-[-50%] bg-white w-[80%] rounded-xl shadow p-5 flex flex-col items-center">
+//                 <h3 className="text-xl font-bold text-gray-400 mb-2">{props.title}</h3>
+//                 <Stack direction="row" spacing={1} className="flex flex-wrap">
+//                     {
+//                         props.technologies && props.technologies.map((tech, index) => (
+//                             <Chip label={tech} key={index} variant="outlined" className="mb-1" />
+//                         ))
+//                     }
+//                 </Stack>
+//             </div>
+//         </div>
+//     )
+// }
+
 export const SingleSlide = (props) => {
     return (
-        <div className="mx-5 mb-20 rounded-lg relative shadow-xl bg-white">
-            <img src={`${import.meta.env.REACT_APP_SERVER_PATH}/${props.image}`} alt="" className=" rounded-xl aspect-[1.4] object-cover" />
-            <div className="absolute b-0 left-1/2 transform -translate-x-1/2 translate-y-[-50%] bg-white w-[80%] rounded-xl shadow p-5 flex flex-col items-center">
-                <h3 className="text-xl font-bold text-gray-400 mb-2">{props.title}</h3>
-                <Stack direction="row" spacing={1} className="flex flex-wrap">
-                    {
-                        props.technologies && props.technologies.map((tech, index) => (
-                            <Chip label={tech} key={index} variant="outlined" className="mb-1" />
-                        ))
-                    }
-                </Stack>
+        <div className="mx-5 mb-14 rounded-lg relative shadow-xl hover:shadow-lg bg-gray-50 px-5 pt-5 group hover:bg-white overflow-hidden duration-200">
+            <h3 className="text-2xl font-bold text-gray-400 mb-2 text-center hover:underline cursor-pointer">{props.title}</h3>
+            <div className="flex gap-2 flex-wrap items-center justify-center mb-5">
+                {props.technologies && props.technologies.map((tech, index) => (
+                        <div key={index} className={`text-sm rounded-full px-2 py-1 bg-gradient-to-r from-cyan-500 to-blue-500 text-white`} >{tech}</div>
+                ))}
+            </div>
+            <div className="mt-0 group-hover:translate-y-3 lg:translate-y-14 translate-y-10 duration-300 custom-shadow lg:h-[250px] ">
+                <img src={`${import.meta.env.REACT_APP_SERVER_PATH}/${props.image}`} alt="" className="rounded-tl-xl rounded-tr-xl aspect-[1.4] object-cover " />
             </div>
         </div>
     )
 }
+
 
 function RecentWorksSlider() {
     const [data, setData] = useState(null);
