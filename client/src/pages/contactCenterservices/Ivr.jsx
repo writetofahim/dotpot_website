@@ -1,44 +1,50 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
-import OurPartnersSlider from '../../components/OurPartnersSlider/OurPartnersSlider'
+import ivr from "../../assets/img/ivr.png";
 
 const Ivr = () => {
   return (
     <div>
       <Navbar />
-      <div className="pt-[15vh] min-h-screen">
-        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-        <div className="flex flex-col justify-between items-center">
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-2 md:mb-5 block text-primary-400 text-center">
-          Interactive Voice Response (IVR)
-          </h1>
-          <p className="mt-2">Use Interactive Voice Response services to grow your business.</p>
-          <Link to="/contact">
-            <button className="rounded-none bg-primary-300 text-4xl text-white mt-3 px-4 py-2">Contact Us</button>
-          </Link>
+  <div className='px-3 min-h-screen pt-[15vh]'>
+    <div className='container mx-auto'>
+      <h1 className='text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center'>Interactive Voice Response (IVR)</h1>
+      <div className='text-gray-400 flex flex-col gap-5 p-5'>
+        <p className='text-justify'>
+        Interactive Voice Response (IVR) is a technology that enables automated voice-based interactions between computers and humans. With IVR, callers can use their voice or keypad inputs to complete various steps and reach their desired destination without the need for human assistance. IVR is particularly valuable in situations where call volumes are high or when live agents are not available to handle calls.
+        </p>
+      </div>
+      <div className="border-b container mx-auto">
+        <img className="md:w-1/2 mx-auto mb-5" src={ivr} alt="IVR Image" />
+      </div>
+      <div className='md:my-6 block md:flex gap-10 sm:my-5'>
+        <div
+          class="bg-white rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
+          <h2 class="text-lg font-bold mb-2">Easy Edit and Upload</h2>
+          <p class="text-gray-700 text-justify">With the flexible IVR module of Dotpot IT, you have the ability to create and modify voice menus for call routing at any given time. The Multiple IVR feature lets you offer multiple services to your callers. Plus, various tools within the Dotpot IT administrative panel are available to assist you in creating your IVR menu.</p>
         </div>
-        
-          <img className="w-1/2" src="https://gplex.com/demo/slide/ivr.jpg" alt="ivr-img"/>
-        
+        <div
+          class="bg-white rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
+          <h2 class="text-lg font-bold mb-2">Design Own IVR</h2>
+          <p class="text-gray-700 text-justify">Dotpot IT system provides you with the ability to create an IVR system that is customized to your business requirements. The process is straightforward and user-friendly, allowing you to design your IVR with ease.</p>
         </div>
-        <OurPartnersSlider />
-
-        
-        <div className="container mx-auto">
-        <h3 className="text-2xl md:text-4xl font-extrabold mb-2 md:mb-5 block text-primary-400 text-left mt-3">Why you should use our IVR service?</h3>
-          <p className="pt-10 text-md text-gray-400">
-          Interactive Voice Response (IVR) is a feature that allows computers to interact with humans through voice commands and key inputs. An IVR system gives callers a self-service option to complete steps on their own to reach their desired call recipients. IVR is especially important when call volumes are high or when agents are unable to answer/handle calls. <br/>
-          The IVR system helps reduce your cost per call by letting customers choose the type of help they want such as self-service or speaking to an agent. Not only will our IVR software free up your agents to handle more complex cases, but customers can quickly self-solve basic issues like bill pay, account inquiries, and more. Flexible IVR module allows creating and editing voice menu for call routing at any time. Multiple IVR allows you to provide multiple services. Several tools in your DotpotiT administrative panel help you to create IVR menu. IVR systems are increasingly being used to place outbound calls for tasks such as delivering or gathering information for appointments, past due bills, and other time critical events and activities.
-          </p>
+        <div
+          class="bg-white rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
+          <h2 class="text-lg font-bold mb-2">Responsive IVR</h2>
+          <p class="text-gray-700 text-justify">IVR systems are now commonly employed for making outbound calls to perform various time-sensitive tasks, such as providing or collecting information regarding appointments, overdue bills, and other important events or activities.</p>
         </div>
       </div>
-      <div>
-        <Footer />
+      <div className='text-gray-400 flex flex-col gap-5 p-5 mb-5'>
+        <p className='text-justify'>
+        By offering customers the option to choose between self-service and agent-assisted support, an IVR system can significantly lower your cost per call. With our IVR software, your agents can concentrate on handling more intricate cases while customers can easily resolve simple issues like account inquiries or bill payments on their own. This dual benefit not only frees up your agents but also provides a more efficient and satisfying customer experience.
+        </p>
       </div>
     </div>
-  );
-};
+  </div>
+  <Footer />
+    </div>
+  )
+}
 
-export default Ivr;
+export default Ivr

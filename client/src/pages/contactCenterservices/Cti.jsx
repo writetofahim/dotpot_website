@@ -1,53 +1,77 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
-import OurPartnersSlider from '../../components/OurPartnersSlider/OurPartnersSlider'
+import cti from "../../assets/img/cti.png";
+
 
 const Cti = () => {
-  return (
-    <div>
-      <Navbar />
-      <div className="pt-[15vh] min-h-screen">
-        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-        <div className="flex flex-col justify-between items-center">
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-2 md:mb-5 block text-primary-400 text-center">
-            Computer Telephony Integration (CTI)
-          </h1>
-          <p className="mt-2">Use our CTI services to grow your business.</p>
-          <Link to="/contact">
-            <button className="rounded-none bg-primary-300 text-4xl text-white mt-3 px-4 py-2">Contact Us</button>
-          </Link>
-        </div>
-        
-          <img className="w-1/2" src="https://www.revenue.io/wp-content/uploads/2014/01/05-cti-scaled.jpg" alt="cti-img"/>
-        
-        </div>
-        <OurPartnersSlider />
+return (
+<div>
+  <Navbar />
+  <div className='px-3 min-h-screen pt-[15vh]'>
+    <div className='container mx-auto'>
+      <h1 className='text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center'>Computer
+        Telephony Integration (CTI)</h1>
+      <div className='text-gray-400 flex flex-col gap-5 p-5'>
+        <p className='text-justify'>
+          Dotpot IT integrates with various CRMs and offers CTI screen popups to agents, providing them with caller
+          information, such as name and phone number, before connecting to the call. This helps agents personalize calls
+          and improve customer experience.
+        </p>
 
-        
-        <div className="container mx-auto">
-        <h3 className="text-2xl md:text-4xl font-extrabold mb-2 md:mb-5 block text-primary-400 text-left mt-3">Why you should use our CTI service</h3>
-          <p className="pt-10 text-md text-gray-400">
-            DotpotiT CRM integration helps agents personalize calls using CTI
-            screen popups and more. Identify callers by unique attributes like
-            phone number, display relevant information such as the caller’s name
-            on the agent’s screen before the call connects. DotpotiT integrates
-            with most custom CRMs. CTI can also authenticate a call, screening
-            its number against a database. These prospect and numbers are often
-            stored in external CRM tool e.g. Salesforce. <br />
-            CTI tools may be used to route incoming calls to the right agent.
-            Calls can be routed based on a variety of factors including
-            time-of-day, agent’s skills, and even based on which marketing
-            promotion or search keyword triggered a call in the first place.
-          </p>
+      </div>
+      <div className="border-b container mx-auto">
+        <img className="md:w-1/2 mx-auto " src={cti} alt="Customer service" />
+      </div>
+      <div className='md:my-6 block md:flex gap-10 sm:my-5'>
+        <div
+          class="bg-white rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
+          <h2 class="text-lg font-bold mb-2">Integrated CRM</h2>
+          <p class="text-gray-700 text-justify">Pop up contacts from CRM or built-in address book with Dotpot IT.</p>
+        </div>
+        <div
+          class="bg-white rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
+          <h2 class="text-lg font-bold mb-2">Collaborative Screen Pops</h2>
+          <p class="text-gray-700 text-justify">Popup contacts from your others contacts.</p>
+        </div>
+        <div
+          class="bg-white rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
+          <h2 class="text-lg font-bold mb-2">Call Whisper</h2>
+          <p class="text-gray-700 text-justify">Hear who is calling you, and even decide to take the call or not.</p>
         </div>
       </div>
-      <div>
-        <Footer />
+      <p className="text-gray-700 flex flex-col gap-2 px-5 font-bold">Application of CTI:</p>
+      <div className="px-5">
+        <ul className="list-disc p-5 mb-5">
+          <li>Screen popups can give agents access to contextual details about callers the moment the phone rings.</li>
+          <li>CTI can also authenticate a call, screening its number against a database. These prospect and numbers are
+            often stored in external CRM tool e.g. Salesforce.</li>
+          <li>CTI tools may be used to route incoming calls to the right agent. Calls can be routed based on a variety
+            of factors including time-of-day, agent’s skills, and even based on which marketing promotion or search
+            keyword triggered a call in the first place.
+          </li>
+          <li>It can provide interactive voice response (IVR) to inbound callers, enabling them to provide input
+            information on self-service basis.
+          </li>
+          <li>CTIs can log and record calls in third party CRM tools.
+          </li>
+          <li>It can handle call forwarding and call transferring functions.
+          </li>
+          <li>It can display waiting live calls in a queue.
+          </li>
+          <li>CTIs can help outbound reps/sales development reps dial more prospects using features like autodialing,
+            click-to-call, predictive dialing and more.
+          </li>
+          <li>It can also be used to trigger various applications based on inbound calls. This can be used to assist
+            agents and help them sell more or provide better customer service based on callers’ intent.
+          </li>
+        </ul>
       </div>
     </div>
-  );
+  </div>
+  <Footer />
+</div>
+);
 };
 
 export default Cti;

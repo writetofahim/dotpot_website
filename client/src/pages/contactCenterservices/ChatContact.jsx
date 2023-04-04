@@ -1,65 +1,67 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
-import OurPartnersSlider from "../../components/OurPartnersSlider/OurPartnersSlider";
+import cc from "../../assets/img/cc.webp";
 
 const ChatContact = () => {
-  return (
-    <div>
-      <Navbar />
-      <div className="pt-[15vh] min-h-screen">
-        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-          <div className="flex flex-col justify-between items-center">
-            <h1 className="text-4xl md:text-6xl font-extrabold mb-2 md:mb-5 block text-primary-400 text-center">
-              Chat Contact (CC)
-            </h1>
-            <p className="mt-2">
-              Use our CC services to develop your business.
-            </p>
-            <Link to="/contact">
-              <button className="rounded-none bg-primary-300 text-4xl text-white mt-3 px-4 py-2">
-                Contact Us
-              </button>
-            </Link>
-          </div>
-
-          <img
-            className="w-1/2"
-            src="https://gplex.com/demo/slide/chat.jpg"
-            alt="chat-img"
-          />
+return (
+<div>
+  <Navbar />
+  <div className='px-3 min-h-screen pt-[15vh]'>
+    <div className='container mx-auto'>
+      <h1 className='text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center'>Chat Contact
+      </h1>
+      <div className='text-gray-400 flex flex-col gap-5 p-5'>
+        <p className='text-justify'>
+          The Dotpot IT contact center system features a robust web chat module that meets the evolving needs of
+          customers. By integrating this module with the contact center solution, businesses can achieve a healthy
+          return on investment. The Dotpot IT Chat module enables businesses to offer more than just basic call center
+          services to their online visitors, providing a seamless customer experience across multiple channels. With the
+          Dotpot IT contact center system, businesses can stay ahead of the curve and deliver exceptional customer
+          service, no matter how customers choose to engage.
+        </p>
+        <p className='text-justify'>
+          The rise of digital consumers has fueled demand for real-time online interaction channels. The Dotpot IT Chat
+          module delivers a sophisticated interaction platform that meets the needs of today's online customers,
+          enabling businesses to deliver exceptional customer experiences in real-time. With the Dotpot IT Chat module,
+          businesses can stay ahead of the curve and meet the evolving demands of their customers, no matter how they
+          choose to engage.
+        </p>
+      </div>
+      <div className="border-b container mx-auto">
+        <img className="md:w-1/2 mx-auto " src={cc} alt="Customer service" />
+      </div>
+      <div className='md:my-6 block md:flex gap-10 sm:my-5'>
+        <div
+          class="bg-white rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
+          <h2 class="text-lg font-bold mb-2">Improve customer experience</h2>
+          <p class="text-gray-700 text-justify">The Dotpot IT Chat module enables personalized chat experiences by
+            providing access to multichannel customer interactions.</p>
         </div>
-        <OurPartnersSlider />
-
-        <div className="container mx-auto">
-          <h3 className="text-2xl md:text-4xl font-extrabold mb-2 md:mb-5 block text-primary-400 text-left mt-3">
-            Why you should use our Chat Contact service
-          </h3>
-          <p className="pt-10 text-md text-gray-400">
-            DotpotiT CC system has a web chat module that meets customers need
-            today and in the future. Integration of this module with the CC
-            solution helps customers reap healthy return on investment. DotpotiT
-            Chat module enables its users the ability to offer more than basic
-            call center service to their online visitors. The era of digital
-            consumers is driving demand for real-time online interaction
-            channels. DotpotiT Chat module provides online customers with such
-            sophisticated interaction platform.
-            <br />
-            The integrated Web Chat module uses the same Automatic Call
-            Distribution (ACD) system of the DotpotiT CC solution to route chat
-            sessions. DotpotiT system treats a chat session as a call and
-            distribute the same to the agents as per CC admin policy. Thus it is
-            very easy to monitor chat session progress and analyze relevant
-            reports.
-          </p>
+        <div
+          class="bg-white rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
+          <h2 class="text-lg font-bold mb-2">Increase revenue</h2>
+          <p class="text-gray-700 text-justify">Just-in-time online engagement with the Dotpot IT Chat module can
+            increase sales and reduce non-sale calls.</p>
+        </div>
+        <div
+          class="bg-white rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
+          <h2 class="text-lg font-bold mb-2">Deliver fast and accurate</h2>
+          <p class="text-gray-700 text-justify">Ensure chat sessions are delivered to the right agent with
+            queue-specific and skill-based routing using the Dotpot IT Chat module.</p>
         </div>
       </div>
-      <div>
-        <Footer />
+      <div className='text-gray-400 flex flex-col gap-5 p-5'>
+        <p className="text-gray-700 font-bold">ACD Based Web Chat Routing</p>
+        <p className="text-gray-700 text-justify">Dotpot IT CC's Web Chat module uses the same ACD system as the CC
+          solution for routing chat sessions. Chat sessions are treated as calls and distributed to agents based on
+          admin policy, making monitoring and analysis simple.</p>
       </div>
     </div>
-  );
+  </div>
+  <Footer />
+</div>
+);
 };
 
 export default ChatContact;

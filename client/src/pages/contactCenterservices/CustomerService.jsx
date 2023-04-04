@@ -1,41 +1,39 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
-import OurPartnersSlider from '../../components/OurPartnersSlider/OurPartnersSlider'
+import cs from "../../assets/img/cs.jpeg";
 
 const CustomerService = () => {
   return (
     <div>
       <Navbar />
-      <div className="pt-[15vh] min-h-screen">
-        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-        <div className="flex flex-col justify-between items-center">
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-2 md:mb-5 block text-primary-400 text-center">
-            Customer Service
-          </h1>
-          <p className="mt-2">Use our Customer Services to grow your business.</p>
-          <Link to="/contact">
-            <button className="rounded-none bg-primary-300 text-4xl text-white mt-3 px-4 py-2">Contact Us</button>
-          </Link>
-        </div>
-        
-          <img className="w-1/2" src="https://gplex.com/demo/slide/care.png" alt="cs-img"/>
-        
-        </div>
-        <OurPartnersSlider />
-
-        
-        <div className="container mx-auto">
-        <h3 className="text-2xl md:text-4xl font-extrabold mb-2 md:mb-5 block text-primary-400 text-left mt-3">Why you should use our Customer services</h3>
-          <p className="pt-10 text-md text-gray-400">
-          Well delivered customer service is the most important thing one can do to improve relationships with own customers? No matter how great the product is or how talented the staffs are, one of the things that customers are most likely to remember is their experience of direct interaction they had with the company. DotpotiT CC customers will surely experience high quality support services they deserve. In today's highly competitive business environment, it's more important than ever for companies to focus on providing exceptional customer service. No matter how great a product or service may be, customers are likely to remember their interactions with a company more than anything else. By offering high-quality support services, businesses can not only improve their relationships with their customers, but also differentiate themselves from their competitors. This is where DotpotiT comes in - with its advanced contact center solutions, including Automatic Call Distribution (ACD) technology, businesses can ensure that their customers are connected with the right agent who has the necessary skills to meet their needs..
-          </p>
-        </div>
+      <div className='px-3 min-h-screen pt-[15vh]'>
+      <div className='container mx-auto'>
+      <div className="border-b container mx-auto">
+      <h1 className='text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center'>Customer Service</h1>
+        <img className="md:w-1/2 md:h-[70vh] mx-auto " src={cs} alt="Customer service" />
       </div>
-      <div>
-        <Footer />
+      
+      <div className='text-gray-400 flex flex-col gap-5 p-5'>
+        <p className='text-justify'>
+        Providing excellent customer service is crucial for building and enhancing relationships with customers. Regardless of the quality of the product or the skills of the staff, customers tend to recall their direct interactions with the company the most. At Dotpot IT CC, we prioritize delivering top-notch support services to ensure our customers receive the exceptional experience they deserve.
+        </p>
       </div>
+      <p className="text-gray-700 flex flex-col gap-2 px-5">Major Features:</p>
+      <div className="px-5">
+      <ul className="list-disc p-5 mb-5">
+        <li>Multiple channels support mechanism (voice, email, chat)</li>
+        <li>Virtual queuing</li>
+        <li>Recording of support calls</li>
+        <li>CRM integration and flexible IVR configuration</li>
+        <li>And many more features</li>
+      </ul>
+      </div>
+      
+      
+      </div>
+      </div>
+      <Footer />
     </div>
   );
 };

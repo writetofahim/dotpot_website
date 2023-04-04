@@ -1,62 +1,51 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
-import OurPartnersSlider from "../../components/OurPartnersSlider/OurPartnersSlider";
+import collections from "../../assets/img/collections.jpg";
 
 const Collections = () => {
-  return (
-    <div>
-      <Navbar />
-      <div className="pt-[15vh] min-h-screen">
-        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-          <div className="flex flex-col justify-between items-center">
-            <h1 className="text-4xl md:text-6xl font-extrabold mb-2 md:mb-5 block text-primary-400 text-center">
-              Collections
-            </h1>
-            <p className="mt-2">
-              Use our automated collections to grow your business.
-            </p>
-            <Link to="/contact">
-              <button className="rounded-none bg-primary-300 text-4xl text-white mt-3 px-4 py-2">
-                Contact Us
-              </button>
-            </Link>
-          </div>
-
-          <img
-            className="w-1/2"
-            src="https://gplex.com/demo/slide/collection.jpg"
-            alt="collections-img"
-          />
-        </div>
-        <OurPartnersSlider />
-
-        <div className="container mx-auto">
-        <h3 className="text-2xl md:text-4xl font-extrabold mb-2 md:mb-5 block text-primary-400 text-left mt-3">Why you should use our Collections service</h3>
-          <p className="pt-10 text-md text-gray-400">
-            With DotpotiT automated dialing options, your agents will only
-            receive calls that are connected to debtors, allowing you to contact
-            more debtors each day. In addition, our real-time and historical
-            reporting enables you to identify optimal times to reach debtors and
-            maximizes your chances of debt recovery. If your agents are manually
-            calling debtors, you're losing valuable time and money as they
-            frequently reach voicemail and rarely connect to a live person.
-            Using gPlex, you can eliminate these unnecessary costs and allow
-            your agents to focus on making the most out of the live connections
-            they make. <br />
-            DotpotiT telemarketing module for businesses and call centers of all
-            sizes — bringing incredible speed and efficiency to telemarketing
-            companies, by radically improving speed-to-contact, daily call
-            volume, agents productivity, and customer satisfaction. <br />
-          </p>
-        </div>
+return (
+<div>
+  <Navbar />
+  <div className='px-3 min-h-screen pt-[15vh]'>
+    <div className='container mx-auto'>
+      <h1 className='text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center'>Collections
+      </h1>
+      <div className='text-gray-400 flex flex-col gap-5 p-5'>
+        <p className='text-justify'>
+          Dotpot IT offers automated dialing solutions that ensure your agents only receive calls that are answered by
+          debtors. This feature enables you to contact a larger number of debtors each day. With our real-time and
+          historical reporting, you can identify the best times to reach out to debtors and increase your chances of
+          recovering debts. Manually calling debtors can waste your agents' time and resources, as they often end up
+          leaving voicemails and rarely get connected to live individuals. By utilizing Dotpot IT, you can eliminate
+          these unnecessary costs and allow your agents to focus on maximizing the effectiveness of their live
+          connections.
+        </p>
       </div>
-      <div>
-        <Footer />
+      <div className="border-b container mx-auto">
+        <img className="md:w-1/2 mx-auto " src={collections} alt="Customer service" />
+      </div>
+      <div className='text-gray-400 flex flex-col gap-5 p-5'>
+        <p className='text-justify'>
+          We offers a telemarketing module that is suitable for businesses and call centers of all sizes. Our module is
+          designed to enhance the speed and efficiency of telemarketing companies by drastically improving
+          speed-to-contact, daily call volume, agents' productivity, and customer satisfaction. With our solution, your
+          business can achieve incredible results and make the most out of your telemarketing efforts.
+        </p>
+      </div>
+      <p className="text-gray-700 flex flex-col gap-2 px-5">Overview:</p>
+      <div className="px-5">
+        <ul className="list-disc p-5 mb-5">
+          <li>Quickly implement new collections programs.</li>
+          <li>Automated messaging with live agent connect.</li>
+          <li>Keep costs in-line with collection opportunities.</li>
+        </ul>
       </div>
     </div>
-  );
+  </div>
+  <Footer />
+</div>
+);
 };
 
 export default Collections;
