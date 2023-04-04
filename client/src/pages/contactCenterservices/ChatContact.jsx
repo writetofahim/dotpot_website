@@ -2,8 +2,10 @@ import React from "react";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import cc from "../../assets/img/cc.webp";
+import { useScrollToTop } from '../../hooks/useScrollToTop'
 
 const ChatContact = () => {
+useScrollToTop()
 return (
 <div>
   <Navbar />

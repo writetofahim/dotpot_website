@@ -2,8 +2,10 @@ import React from "react";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import collections from "../../assets/img/collections.jpg";
+import { useScrollToTop } from '../../hooks/useScrollToTop'
 
 const Collections = () => {
+useScrollToTop()
 return (
 <div>
   <Navbar />

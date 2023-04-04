@@ -2,9 +2,11 @@ import React from "react";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import cti from "../../assets/img/cti.png";
+import { useScrollToTop } from '../../hooks/useScrollToTop'
 
 
 const Cti = () => {
+useScrollToTop()
 return (
 <div>
   <Navbar />
@@ -18,7 +20,6 @@ return (
           information, such as name and phone number, before connecting to the call. This helps agents personalize calls
           and improve customer experience.
         </p>
-
       </div>
       <div className="border-b container mx-auto">
         <img className="md:w-1/2 mx-auto " src={cti} alt="Customer service" />

@@ -2,9 +2,11 @@ import React from "react";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import ma from "../../assets/img/ma.png";
+import { useScrollToTop } from '../../hooks/useScrollToTop'
 
 
 const MobileApp = () => {
+useScrollToTop()
 return (
 <div>
   <Navbar />
@@ -43,7 +45,14 @@ return (
       </div>
       <div className='text-gray-400 flex flex-col gap-5 p-5'>
         <p className='text-justify mb-5'>
-        The banking industry has been rapidly evolving with the help of technology, and several services have been introduced to facilitate customer convenience. With the increasing need for secure and easy access to banking services, user authentication through TPIN has become a popular method of verification. Customers can also check the balances of their multiple accounts, set up auto-debit instructions, request for lost or replacement cards, and transfer funds effortlessly. Additionally, they can request e-statements, cheque books, stop cheques, and easily locate nearby branches and ATMs. The utility bill payment feature has also made it easy for customers to pay their bills from the comfort of their homes. With the ability to provide more customized features, the banking industry is making it easier for customers to manage their finances with ease.
+          The banking industry has been rapidly evolving with the help of technology, and several services have been
+          introduced to facilitate customer convenience. With the increasing need for secure and easy access to banking
+          services, user authentication through TPIN has become a popular method of verification. Customers can also
+          check the balances of their multiple accounts, set up auto-debit instructions, request for lost or replacement
+          cards, and transfer funds effortlessly. Additionally, they can request e-statements, cheque books, stop
+          cheques, and easily locate nearby branches and ATMs. The utility bill payment feature has also made it easy
+          for customers to pay their bills from the comfort of their homes. With the ability to provide more customized
+          features, the banking industry is making it easier for customers to manage their finances with ease.
         </p>
       </div>
     </div>
