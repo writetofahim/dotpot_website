@@ -20,11 +20,11 @@ import { Link } from 'react-router-dom'
 export const Card = (props) => {
     return (
         <Link to={props.link} className='md:mx-5 p-4 md:p-5 bg-white rounded-lg shadow-xl flex-1 hover:scale-110 transition-all cursor-pointer '>
-            <div className="h-[250px] flex flex-col justify-between">
+            <div className="h-[250px] flex flex-col justify-between items-center">
                 <div className="">
-                    <img className="img-fluid" src={props.icon} alt={props.title} />
+                    <img className="w-[70px] border rounded-full p-2" src={props.icon} alt={props.title} />
                 </div>
-                <h2 className="text-2xl font-bold">
+                <h2 className="text-2xl text-center font-bold">
                     {props.title}
                 </h2>
                 <p className="text-justify inline">
@@ -33,7 +33,7 @@ export const Card = (props) => {
                     }
                     ...
                 </p>
-                <span className="inline-flex items-center text-secondary-300 hover:text-secondary-500" >Know More <AiOutlineDoubleRight/></span>
+                <span className="inline-flex items-center hover:text-primary-500" >Read More <AiOutlineDoubleRight/></span>
             </div>
         </Link>
     )

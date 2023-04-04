@@ -1,4 +1,5 @@
 const Hero = require('../models/C_hero');
+const { removeFile } = require('../utilities/removeFile');
 
 // Create a new hero
 exports.createHero = async (req, res) => {

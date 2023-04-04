@@ -176,7 +176,7 @@ const BlogCard2 = ({title, body ,image, _id, tags, createdAt, index})=>{
     
     return <div onClick={()=> navigate(`/blog/${_id}`)} className={`${index===0 ? "col-span-3" : ""} p-3 bg-white rounded-xl shadow-lg cursor-pointer group`}>
         <div className="">
-            <img className={`${index===0 ? "lg:h-[450px]" : "lg:h-[250px]"} h-[250px] w-full object-cover`} src={`${import.meta.env.REACT_APP_SERVER_PATH}/${image}`} alt="" />
+            <img className={`${index===0 ? "lg:h-[450px]" : "lg:h-[250px]"} h-[250px] w-full object-cover object-top`} src={`${import.meta.env.REACT_APP_SERVER_PATH}/${image}`} alt="" />
         </div>
         <div className='flex flex-wrap gap-2 mt-3'>
             {tags.map((tag, i) =><div key={i} className={`text-sm rounded-full px-2 py-1 bg-gradient-to-r from-cyan-500 to-blue-500 text-white`} >{tag}</div>)}

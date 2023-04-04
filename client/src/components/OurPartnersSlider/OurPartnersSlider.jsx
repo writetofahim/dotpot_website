@@ -12,12 +12,12 @@ import axios from "../../utils/axiosInstance"
 var settings = {
     // dots: true,
     infinite: true,
-    speed: 500,
+    speed: 2000,
     slidesToShow: 6,
     slidesToScroll: 1,
     initialSlide: 0,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: -200,
     cssEase: "linear",
     responsive: [
         {

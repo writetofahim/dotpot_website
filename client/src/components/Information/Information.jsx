@@ -41,9 +41,9 @@ const Information = () => {
                     </p>
                     {
                         !isOpen ? 
-                            <button onClick={()=>setIsOpen(!isOpen)} className="mt-2 flex items-center gap-2 font-bold text-secondary-300 hover:text-secondary-500 cursor-pointer">Read More <BsChevronDoubleDown /></button> 
+                            <button onClick={()=>setIsOpen(!isOpen)} className="mt-2 flex items-center gap-2 font-bold text-gray-400 hover:text-secondary-500 cursor-pointer">Read More <BsChevronDoubleDown /></button> 
                         : 
-                            <button onClick={()=>setIsOpen(!isOpen)} className="mt-2 flex items-center gap-2 font-bold text-secondary-300 hover:text-secondary-500 cursor-pointer">Read Less <BsChevronDoubleDown className='rotate-180' /></button>
+                            <button onClick={()=>setIsOpen(!isOpen)} className="mt-2 flex items-center gap-2 font-bold text-gray-400 hover:text-secondary-500 cursor-pointer">Read Less <BsChevronDoubleDown className='rotate-180' /></button>
                     }
                 </div>
                 <div className="right flex-[3] w-full flex items-center justify-center lg:justify-end md:p-10  ">

@@ -183,7 +183,7 @@ function App() {
 
         {/* Industries We Serve Pages */}
         <Route
-          path="/industries-we-serve/retain-ecommerce"
+          path="/industries-we-serve/retail-ecommerce"
           element={<Retail />}
         />
         <Route

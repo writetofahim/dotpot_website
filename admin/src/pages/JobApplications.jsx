@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 const TableRow = ({data,setData}) => {
   const handelDelete = async (id) => {
+    console.log(id)
     const response = await axios.delete(`/job_application/${id}`);
     if (response.status === 200) {
         setData(existing => existing.filter(d => d._id !== id));

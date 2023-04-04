@@ -1,4 +1,5 @@
 const Work = require('../models/Work');
+const { removeFile } = require('../utilities/removeFile');
 
 // Create a work
 exports.createWork = async (req, res) => {

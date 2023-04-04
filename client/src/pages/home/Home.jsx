@@ -44,6 +44,7 @@ import SocialMedia from '../../components/SocialMedia/SocialMedia'
 import WhatOurClientSay from '../../components/WhatOurClientsSay/WhatOurClientsSay'
 import WhoWeWorkWith from '../../components/WhoWeWorkWith/WhoWeWorkWith'
 import { useScrollToTop } from '../../hooks/useScrollToTop'
+import GetAQuote from '../../components/GetAQuote/GetAQuote'
 
 const Home = () => {
   useScrollToTop()
@@ -51,6 +52,7 @@ const Home = () => {
     <>
       <Navbar />
       <Hero />
+      <GetAQuote />
       <Information />
       <KeyFeatures />
       {/* <Service /> */}

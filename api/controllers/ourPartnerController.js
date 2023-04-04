@@ -1,4 +1,5 @@
 const OurPartner = require('../models/OurPartner');
+const { removeFile } = require('../utilities/removeFile');
 
 exports.createPartner = async (req, res) => {
   try {

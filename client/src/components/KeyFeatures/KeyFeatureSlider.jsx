@@ -108,7 +108,7 @@ export const SingleSlide = (props) => {
                     }
                     ...
                 </p>
-                <span className="absolute bottom-2 text-secondary-300 hover:text-secondary-500 flex items-center" >Know More <AiOutlineDoubleRight/></span>
+                <span className="absolute bottom-2 text-gray-400 hover:text-secondary-500 flex items-center" >Know More <AiOutlineDoubleRight/></span>
             </div>
         </Link>
     )

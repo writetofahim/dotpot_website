@@ -56,10 +56,10 @@ const Particle = () => {
         },
         particles: {
           color: {
-            value: "#a574fc",
+            value: "#a674fca7",
           },
           links: {
-            color: "#a574fc",
+            color: "#a674fc0",
             distance: 150,
             enable: true,
             opacity: 1,
@@ -92,7 +92,7 @@ const Particle = () => {
             type: "circle",
           },
           size: {
-            value: { min: 0.5, max: 2 },
+            value: { min: 2, max: 7 },
           },
         },
         detectRetina: true,
