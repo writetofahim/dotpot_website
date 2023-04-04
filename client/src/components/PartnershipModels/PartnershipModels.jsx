@@ -33,7 +33,7 @@ export const Card = (props) => {
                     }
                     ...
                 </p>
-                <span className="inline-flex items-center hover:text-primary-500" >Read More <AiOutlineDoubleRight/></span>
+                <span className="inline-flex items-center text-primary-400 hover:text-primary-500" >Read More <AiOutlineDoubleRight/></span>
             </div>
         </Link>
     )

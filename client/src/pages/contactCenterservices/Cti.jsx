@@ -26,19 +26,19 @@ return (
       </div>
       <div className='md:my-6 block md:flex gap-10 sm:my-5'>
         <div
-          class="bg-white rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
-          <h2 class="text-lg font-bold mb-2">Integrated CRM</h2>
-          <p class="text-gray-700 text-justify">Pop up contacts from CRM or built-in address book with Dotpot IT.</p>
+          className="bg-white rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
+          <h2 className="text-lg font-bold mb-2">Integrated CRM</h2>
+          <p className="text-gray-700 text-justify">Pop up contacts from CRM or built-in address book with Dotpot IT.</p>
         </div>
         <div
-          class="bg-white rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
-          <h2 class="text-lg font-bold mb-2">Collaborative Screen Pops</h2>
-          <p class="text-gray-700 text-justify">Popup contacts from your others contacts.</p>
+          className="bg-white rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
+          <h2 className="text-lg font-bold mb-2">Collaborative Screen Pops</h2>
+          <p className="text-gray-700 text-justify">Popup contacts from your others contacts.</p>
         </div>
         <div
-          class="bg-white rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
-          <h2 class="text-lg font-bold mb-2">Call Whisper</h2>
-          <p class="text-gray-700 text-justify">Hear who is calling you, and even decide to take the call or not.</p>
+          className="bg-white rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
+          <h2 className="text-lg font-bold mb-2">Call Whisper</h2>
+          <p className="text-gray-700 text-justify">Hear who is calling you, and even decide to take the call or not.</p>
         </div>
       </div>
       <p className="text-gray-700 flex flex-col gap-2 px-5 font-bold">Application of CTI:</p>

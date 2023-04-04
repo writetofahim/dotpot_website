@@ -35,21 +35,21 @@ return (
       </div>
       <div className='md:my-6 block md:flex gap-10 sm:my-5'>
         <div
-          class="bg-white rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
-          <h2 class="text-lg font-bold mb-2">Improve customer experience</h2>
-          <p class="text-gray-700 text-justify">The Dotpot IT Chat module enables personalized chat experiences by
+          className="bg-white rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
+          <h2 className="text-lg font-bold mb-2">Improve customer experience</h2>
+          <p className="text-gray-700 text-justify">The Dotpot IT Chat module enables personalized chat experiences by
             providing access to multichannel customer interactions.</p>
         </div>
         <div
-          class="bg-white rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
-          <h2 class="text-lg font-bold mb-2">Increase revenue</h2>
-          <p class="text-gray-700 text-justify">Just-in-time online engagement with the Dotpot IT Chat module can
+          className="bg-white rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
+          <h2 className="text-lg font-bold mb-2">Increase revenue</h2>
+          <p className="text-gray-700 text-justify">Just-in-time online engagement with the Dotpot IT Chat module can
             increase sales and reduce non-sale calls.</p>
         </div>
         <div
-          class="bg-white rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
-          <h2 class="text-lg font-bold mb-2">Deliver fast and accurate</h2>
-          <p class="text-gray-700 text-justify">Ensure chat sessions are delivered to the right agent with
+          className="bg-white rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
+          <h2 className="text-lg font-bold mb-2">Deliver fast and accurate</h2>
+          <p className="text-gray-700 text-justify">Ensure chat sessions are delivered to the right agent with
             queue-specific and skill-based routing using the Dotpot IT Chat module.</p>
         </div>
       </div>

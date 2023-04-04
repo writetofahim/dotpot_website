@@ -26,24 +26,24 @@ return (
       </div>
       <div className='md:my-6 block md:flex gap-10 sm:my-5'>
         <div
-          class="bg-white rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
-          <h2 class="text-lg font-bold mb-2">Easy Edit and Upload</h2>
-          <p class="text-gray-700 text-justify">With the flexible IVR module of Dotpot IT, you have the ability to
+          className="bg-white rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
+          <h2 className="text-lg font-bold mb-2">Easy Edit and Upload</h2>
+          <p className="text-gray-700 text-justify">With the flexible IVR module of Dotpot IT, you have the ability to
             create and modify voice menus for call routing at any given time. The Multiple IVR feature lets you offer
             multiple services to your callers. Plus, various tools within the Dotpot IT administrative panel are
             available to assist you in creating your IVR menu.</p>
         </div>
         <div
-          class="bg-white rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
-          <h2 class="text-lg font-bold mb-2">Design Own IVR</h2>
-          <p class="text-gray-700 text-justify">Dotpot IT system provides you with the ability to create an IVR system
+          className="bg-white rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
+          <h2 className="text-lg font-bold mb-2">Design Own IVR</h2>
+          <p className="text-gray-700 text-justify">Dotpot IT system provides you with the ability to create an IVR system
             that is customized to your business requirements. The process is straightforward and user-friendly, allowing
             you to design your IVR with ease.</p>
         </div>
         <div
-          class="bg-white rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
-          <h2 class="text-lg font-bold mb-2">Responsive IVR</h2>
-          <p class="text-gray-700 text-justify">IVR systems are now commonly employed for making outbound calls to
+          className="bg-white rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
+          <h2 className="text-lg font-bold mb-2">Responsive IVR</h2>
+          <p className="text-gray-700 text-justify">IVR systems are now commonly employed for making outbound calls to
             perform various time-sensitive tasks, such as providing or collecting information regarding appointments,
             overdue bills, and other important events or activities.</p>
         </div>
