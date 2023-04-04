@@ -12,7 +12,7 @@ const GetAQuote = () => {
             </div>
             <div className="right w-full flex items-center justify-end">
                 <Link to="/services">
-                    <button className="flex items-center gap-3 bg-primary-500 text-white text-xl px-3 py-2 rounded-full cursor-pointer hover:bg-secondary-500 scale-105 transition-all">Get Quote <AiOutlineDoubleRight /></button>
+                    <button className="flex items-center gap-3 bg-primary-500 text-white text-xl px-3 py-2 rounded-full cursor-pointer hover:bg-secondary-500 hover:scale-105 transition-all">Get Quote <AiOutlineDoubleRight /></button>
                 </Link>
             </div>
         </div>

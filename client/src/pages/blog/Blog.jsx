@@ -104,7 +104,7 @@ const Blog = () => {
             <Particle />
             <div className="w-full pt-[15vh]">
                 <div className="w-full flex flex-col items-center justify-center">
-                    <h1 className="text-6xl mt-10 mb-2 font-bold text-primary-500">Blogs</h1>
+                    <h1 className="text-6xl mt-10 mb-2 font-bold ">Blogs</h1>
                     <p className="text-lg mb-10 px-4">Follow our blog to get all the latest tech news</p>
                     {/* <div className="container flex gap-5 md:gap-10 justify-center p-5 flex-wrap">
                         {

@@ -97,9 +97,9 @@ export const SingleSlide = (props) => {
         <Link to={props.link}>
             <div className="h-[300px] flex flex-col items-center bg-white mx-5 p-5 rounded-lg shadow-lg text-gray-400 cursor-pointer relative">
                 <div className="mb-3">
-                    <img src={props.icon} alt="" className="w-[50px] h-[50px]" />
+                    <img src={props.icon} alt="" className="w-[70px] h-[70px]" />
                 </div>
-                <h2 className="text-2xl h-[80px] text-center font-bold">
+                <h2 className="text-2xl h-[70px] text-center font-bold">
                     {props.title}
                 </h2>
                 <p className="text-center">

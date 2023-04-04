@@ -83,9 +83,9 @@ var settings = {
 export const SingleSlide = (props) => {
     return (
         <Link to={props.link}>
-            <div className="z-2 bg-white md:w-[1/8] mx-2 h-[150px] p-3 rounded-xl shadow flex flex-col items-center justify-center hover:border hover:border-primary-500 transition-all">
+            <div className="z-2 bg-white md:w-[1/8] mx-2 h-[200px] p-3 rounded-xl shadow flex flex-col items-center justify-center hover:border hover:border-primary-500 transition-all">
             {/* <h3 className="text-3xl font-bold italic text-primary-500">{props.title}</h3> */}
-            <img src={props.icon} alt={props.title} className="w-[30%]" />
+            <img src={props.icon} alt={props.title} className="w-[50%]" />
             <p className="mt-5 text-center text-primary-500 text-xl font-bold">{props.title}</p>
         </div>
         </Link>

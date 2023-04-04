@@ -58,8 +58,7 @@ export const SingleSlide = (props) => {
           <h1 className="text-3xl md:text-5xl text-center md:text-left font-bold mb-2">
             {props.title}
           </h1>
-          <p className='mb-5 text-gray-300 text-
-          xl md:text-2xl font-bold'>{props.subtitle}</p>
+          <p className='mb-5 text-gray-300 text-xl text-center md:text-left md:text-2xl font-bold'>{props.subtitle}</p>
           <div className="flex justify-center md:justify-start gap-5 items-center mb-5">
             {/* <div className="pr-5 border-r border-gray-300">
                   <h1 className="text-4xl text-secondary-500 font-bold">
