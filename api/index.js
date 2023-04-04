@@ -59,9 +59,10 @@ app.use(function(err, req, res, next) {
     res.render('error');
   });
 
-app.use(cors({
-    origin: ["http://localhost:5173", "http://localhost:5174", "http://dotpotit.com","http://dotpotit.com/admin", "https://dotpotit.com", "https://dotpotit.com/admin", "https://dotpot-admin.vercel.app"]
-  }));
+// app.use(cors({
+//     origin: ["http://localhost:5173", "http://localhost:5174", "http://dotpotit.com","http://dotpotit.com/admin", "https://dotpotit.com", "https://dotpotit.com/admin", "https://dotpot-admin.vercel.app"]
+//   }));
+app.use(cors())
 app.use('/uploads/conversation', express.static(__dirname + '/uploads/conversation'));
 app.use('/uploads', express.static(__dirname + '/uploads'));
 app.use('/uploads/blogs', express.static(__dirname + '/uploads/blogs'));

@@ -45,6 +45,19 @@ import StartupBusiness from "./pages/whoWeWorksWith/StartupBusiness";
 import AcceptCookiesPopup from "./components/AcceptCookiesPopup/AcceptCookiesPopup";
 import WebsiteDesign from "./pages/keyFeatures/WebsiteDesign";
 import ResetPassword from "./pages/ResetPassword/ResetPassword";
+import Ai from "./pages/industriesWeServe/Ai"
+import Education from "./pages/industriesWeServe/Education"
+import FoodAndRestaurant from "./pages/industriesWeServe/FoodAndRestaurant"
+import Gaming from "./pages/industriesWeServe/Gaming"
+import Healthcare from "./pages/industriesWeServe/Healthcare"
+import Logistics from "./pages/industriesWeServe/Logistics"
+import Manufacturing from "./pages/industriesWeServe/Manufacturing"
+import OnDemand from "./pages/industriesWeServe/OnDemand"
+import RealEstate from "./pages/industriesWeServe/RealEstate"
+import Retail from "./pages/industriesWeServe/Retail"
+import SocialNetworking from "./pages/industriesWeServe/SocialNetworking"
+import Travel from "./pages/industriesWeServe/Travel"
+import Web3 from "./pages/industriesWeServe/Web3"
 
 function App() {
   return (
@@ -165,6 +178,63 @@ function App() {
           path="/who-we-works-with/agencies-business"
           element={<AgenciesBusiness />}
         />
+
+
+
+        {/* Industries We Serve Pages */}
+        <Route
+          path="/industries-we-serve/retain-ecommerce"
+          element={<Retail />}
+        />
+        <Route
+          path="/industries-we-serve/education"
+          element={<Education />}
+        />
+        <Route
+          path="/industries-we-serve/healthcare"
+          element={<Healthcare />}
+        />
+        <Route
+          path="/industries-we-serve/logistics"
+          element={<Logistics />}
+        />
+        <Route
+          path="/industries-we-serve/social-networking"
+          element={<SocialNetworking />}
+        />
+        <Route
+          path="/industries-we-serve/real-estate"
+          element={<RealEstate />}
+        />
+        <Route
+          path="/industries-we-serve/travel"
+          element={<Travel />}
+        />
+        <Route
+          path="/industries-we-serve/food-and-restaurant"
+          element={<FoodAndRestaurant />}
+        />
+        <Route
+          path="/industries-we-serve/on-demand-solution"
+          element={<OnDemand />}
+        />
+        <Route
+          path="/industries-we-serve/gaming"
+          element={<Gaming />}
+        />
+        <Route
+          path="/industries-we-serve/ai"
+          element={<Ai />}
+        />
+        <Route
+          path="/industries-we-serve/web3"
+          element={<Web3 />}
+        />
+        <Route
+          path="/industries-we-serve/manufacturing"
+          element={<Manufacturing />}
+        />
+
       </Routes>
     </div>
   );
