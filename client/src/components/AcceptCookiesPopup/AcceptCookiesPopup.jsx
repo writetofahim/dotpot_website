@@ -19,7 +19,7 @@ const AcceptCookies = () => {
     
     return (
         <div className={`${isCookieAccept ? "hidden" : "block" } fixed lg:bottom-5 bottom-0 lg:left-5 left-0 lg:w-[500px] w-screen z-50 lg:p-5 p-3 shadow-lg `}>
-            <div className='bg-[#12243b] rounded lg:p-5 p-3 text-white'>
+            <div className='bg-[#12243b] rounded lg:p-5 p-3 text-white shadow-lg '>
                 <h1 className='lg:text-base text-sm '>
                 By clicking “Accept All Cookies”, you agree to the storing of cookies on your device to enhance site navigation, analyze site usage, and assist in our marketing efforts.
                 View our <Link to={"/privacyPolicy"} className='underline'>Privacy Policy</Link> for more information.

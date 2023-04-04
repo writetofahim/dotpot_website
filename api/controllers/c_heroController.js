@@ -37,6 +37,12 @@ exports.getHeroById = async (req, res) => {
 // Update a hero by id
 exports.updateHeroById = async (req, res) => {
   try {
+    if(req.body.image){
+      const selected = await Hero.findById(req.params.id);
+      if(selected){
+          await removeFile(selected.image);
+      }
+    }
     const hero = await Hero.findByIdAndUpdate(req.params.id, req.body, { new: true });
     if (!hero) {
       return res.status(404).json({ message: 'Hero not found' });
@@ -50,6 +56,10 @@ exports.updateHeroById = async (req, res) => {
 // Delete a hero by id
 exports.deleteHeroById = async (req, res) => {
   try {
+    const selected = await Hero.findById(req.params.id);
+    if(selected){
+        await removeFile(selected.image);
+    }
     const hero = await Hero.findByIdAndDelete(req.params.id);
     if (!hero) {
       return res.status(404).json({ message: 'Hero not found' });

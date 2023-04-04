@@ -70,6 +70,12 @@ exports.getWorkById = async (req, res) => {
 // Update a work by ID
 exports.updateWorkById = async (req, res) => {
   try {
+    if(req.body.image){
+      const selected = await Work.findById(req.params.id);
+      if(selected){
+          await removeFile(selected.image);
+      }
+    }
     const work = await Work.findByIdAndUpdate(req.params.id, req.body, { new: true });
     if (!work) {
       return res.status(404).json({ message: 'Work not found' });
@@ -84,6 +90,10 @@ exports.updateWorkById = async (req, res) => {
 // Delete a work by ID
 exports.deleteWorkById = async (req, res) => {
   try {
+    const selected = await Work.findById(req.params.id);
+    if(selected){
+        await removeFile(selected.image);
+    }
     const work = await Work.findByIdAndDelete(req.params.id);
     if (!work) {
       return res.status(404).json({ message: 'Work not found' });

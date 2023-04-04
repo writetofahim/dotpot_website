@@ -81,6 +81,11 @@ const updateJobApplicationById = async (req, res) => {
 
 const deleteJobApplicationById = async (req, res) => {
   try {
+    const selected = await JobApplication.findById(req.params.id);
+    if(selected){
+        await removeFile(selected.resume);
+    }
+    
     const jobApplication = await JobApplication.findByIdAndDelete(req.params.id);
 
     if (!jobApplication) {

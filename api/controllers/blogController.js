@@ -1,4 +1,5 @@
 const Blog = require('../models/Blog');
+const { removeFile } = require('../utilities/removeFile');
 /**
  * Controller function to retrieve a paginated list of all blogs
  * @param {object} req - The Express request object
@@ -62,6 +63,10 @@ const createBlog = async (req, res) => {
 };
 
 const updateBlog = async (req, res) => {
+    if(req.body.image){
+        const selected = await Blog.findById(req.params.id);
+        await removeFile(selected.image);
+    }
     try {
         const blog = await Blog.findByIdAndUpdate(req.params.id, req.body, {
             new: true,
@@ -79,6 +84,10 @@ const updateBlog = async (req, res) => {
 
 const deleteBlog = async (req, res) => {
     try {
+        const selected = await Blog.findById(req.params.id);
+        if(selected){
+            await removeFile(selected.image);
+        }
         const blog = await Blog.findByIdAndDelete(req.params.id);
         if (!blog) {
             return res.status(404).send('Blog post not found');

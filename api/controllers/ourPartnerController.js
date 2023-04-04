@@ -52,6 +52,10 @@ exports.getPartnerById = async (req, res) => {
 
 exports.updatePartnerById = async (req, res) => {
   try {
+    if(req.body.logo){
+      const selected = await OurPartner.findById(req.params.id);
+      await removeFile(selected.logo);
+    }
     const partner = await OurPartner.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
       runValidators: true,
@@ -67,6 +71,10 @@ exports.updatePartnerById = async (req, res) => {
 
 exports.deletePartnerById = async (req, res) => {
   try {
+    const selected = await OurPartner.findById(req.params.id);
+    if(selected){
+        await removeFile(selected.logo);
+    }
     const partner = await OurPartner.findByIdAndDelete(req.params.id);
     if (!partner) {
       return res.status(404).json({ success: false, message: 'Partner not found' });

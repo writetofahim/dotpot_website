@@ -78,6 +78,10 @@ exports.update = async (req, res) => {
 
 exports.delete = async (req, res) => {
   try {
+    const selected = await C_clientResponse.findById(req.params.id);
+    if(selected){
+      await removeFile(selected.attachment);
+    }
     const c_clientResponse = await C_clientResponse.findByIdAndDelete(req.params.id);
     if (!c_clientResponse) {
       return res.status(404).json({ message: 'C_clientResponse not found' });
