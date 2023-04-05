@@ -98,7 +98,7 @@ export const SingleSlide = (props) => {
                 </Stack>
                 <p className="mt-2 text-gray-400">{props.date}</p>
                 <h3 className="text-xl font-bold text-gray-400 my-2 h-[80px]">{props.title}</h3>
-                <Link to={`/blog/${props._id}`} className="text-primary-400 hover:text-secondary-500 flex items-center gap-2">Read More <BsArrowRight /></Link> 
+                <Link to={`/blog/${props._id}`} className="text-primary-400 font-bold hover:text-secondary-500 flex items-center gap-2">Read More <BsArrowRight /></Link> 
             </div>
         </div>
     )

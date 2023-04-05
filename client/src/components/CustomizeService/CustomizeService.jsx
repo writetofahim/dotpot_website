@@ -118,7 +118,7 @@ const TechnologyCard = (props) => {
 
   return (
     <div className="w-[30%] md:w-[100px] h-[70px] lg:h-[100px] p-1 lg:p-2 border rounded-xl flex flex-col items-center justify-evenly hover:scale-105 hover:shadow-xl transition-all relative overflow-hidden">
-      <img src={props.icon} alt={props.title} className="w-2/5 lg:w-3/5 aspect-square" />
+      <img src={props.icon} alt={props.title} className="w-2/5 lg:w-3/5 aspect-square object-contain" />
 
       {!isSelect ? (
         <BiCircle className="absolute top-1 right-1 text-gray-400 cursor-pointer hover:scale-110" onClick={() => addTechnologie()} />

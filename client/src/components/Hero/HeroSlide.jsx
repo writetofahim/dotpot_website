@@ -63,7 +63,7 @@ export const SingleSlide = (props) => {
           <Typed 
             className="text-3xl md:text-5xl text-center md:text-left font-bold mb-2"
             strings={[props.title]}
-            typeSpeed={80}
+            typeSpeed={100}
             backSpeed={50}
             loop
           />

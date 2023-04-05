@@ -35,7 +35,7 @@ const SocialMedia = () => {
                             return (
                                 <Link to={item.url} key={index} target="_blank">
                                     <div key={index} className="md:w-[100px] md:h-[100px] p-2 rounded-full md:rounded-lg shadow flex items-center justify-center hover:border hover: border-purple-500 hover:scale-110 hover:shadow-xl transition-all glassmorphism">
-                                        <img src={item.icon} alt="" className="h-[50px] w-[50px]" />
+                                        <img src={item.icon} alt="" className="h-[70px] w-[70px] object-contain" />
                                     </div>
                                 </Link>
                             )

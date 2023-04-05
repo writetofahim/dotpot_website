@@ -97,10 +97,12 @@ function OurTeamSlide() {
 
     // Data Fetching
     useEffect(() => {
-        axios.get('/team_member')
+        axios.get('/team_member?limit=15')
             .then(response => setData(response.data.teamMembers))
             .catch(error => console.error(error));
     }, []);
+
+    // console.log(data)
 
 
     return (
