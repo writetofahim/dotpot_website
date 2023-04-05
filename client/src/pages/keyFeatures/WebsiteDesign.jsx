@@ -6,8 +6,121 @@ import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 
 import { useScrollToTop } from '../../hooks/useScrollToTop'
+import TechnologiesTab from "../../components/technologiesTab/TechnologiesTab";
+
+
+import html from "../../assets/img/icon/webFrontend/html.png";
+import css from "../../assets/img/icon/webFrontend/css.png";
+import bootstrap from "../../assets/img/icon/webFrontend/bootstrap.png";
+import tailwind from "../../assets/img/icon/webFrontend/Tailwind_CSS_Logo.png";
+import js from "../../assets/img/icon/webFrontend/js-file.png";
+import typeScript from "../../assets/img/icon/webFrontend/typescript.png";
+import nextJS from "../../assets/img/icon/webFrontend/nextJS.webp";
+import react from "../../assets/img/icon/webFrontend/react.png";
+
+import nodeJS from "../../assets/img/icon/webBackend/nodejs.png";
+import express from "../../assets/img/icon/webBackend/expressJs.png";
+import laravel from "../../assets/img/icon/webBackend/laravel.png";
+import dj from "../../assets/img/icon/webBackend/dj.jpg";
+import aspNet from "../../assets/img/icon/webBackend/aspNet.png";
+
+import wordpress from '../../assets/img/icon/cms/wordpress.png'
+import drupal from '../../assets/img/icon/cms/drupal.png'
+import joomla from '../../assets/img/icon/cms/joomla.png'
+import shopify from '../../assets/img/icon/cms/shopify.png'
+import wix from '../../assets/img/icon/cms/wix.png'
 
 const WebsiteDesign = () => {
+  const data = [
+    {
+      title: "Frontend",
+      isActive: true,
+      technologies: [
+        {
+          img: html,
+          name: "HTML",
+        },
+        {
+          img: css,
+          name: "CSS",
+        },
+        {
+          img: bootstrap,
+          name: "Bootstrap",
+        },
+        {
+          img: tailwind,
+          name: "Tailwind CSS",
+        },
+        {
+          img: js,
+          name: "JavaScript",
+        },
+        {
+          img: typeScript,
+          name: "TypeScript",
+        },
+        {
+          img: nextJS,
+          name: "Next JS",
+        },
+        {
+          img: react,
+          name: "React",
+        },
+      ],
+    },
+    {
+      title: "Backend",
+      technologies: [
+        {
+          img: nodeJS,
+          name: "Node JS",
+        },
+        {
+          img: express,
+          name: "Express JS",
+        },
+        {
+          img: laravel,
+          name: "Laravel",
+        },
+        {
+          img: dj,
+          name: "Django",
+        },
+        {
+          img: aspNet,
+          name: "ASP.Net",
+        },
+      ],
+    },
+    {
+      title: "CMS",
+      technologies: [
+        {
+          img: wordpress,
+          name: "WordPress",
+        },
+        {
+          img: drupal,
+          name: "Drupal",
+        },
+        {
+          img: joomla,
+          name: "Joomla",
+        },
+        {
+          img: shopify,
+          name: "Shopify",
+        },
+        {
+          img: wix,
+          name: "WIX",
+        },
+      ],
+    },
+  ];
     useScrollToTop()
     return (
         <div className="px-3">
@@ -81,6 +194,8 @@ const WebsiteDesign = () => {
                 </div>
               </div>
             </div>
+
+            <TechnologiesTab title="Technologies We Work On" data={data}/>
   
             {/* process we follow */}
             <div className="my-3">

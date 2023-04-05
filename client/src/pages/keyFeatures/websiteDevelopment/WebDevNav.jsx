@@ -10,16 +10,7 @@ const WebDevNav = () => {
         </h2>
         <div>
           <ul className="box-border border-b mt-5  flex justify-center gap-3">
-            <li className="box-border px-1 py-2 flex justify-center items-center rounded-t hover:border-t hover:border-x">
-              <NavLink
-                to="/key-features/website-development/mobile"
-                className={({ isActive }) =>
-                  isActive ? "text-primary-300 border-b-4" : "text-gray-400"
-                }
-              >
-                Mobile
-              </NavLink>
-            </li>
+
             <li className="box-border px-1 py-2 flex justify-center items-center rounded-t hover:border-t hover:border-x  ">
               <NavLink
                 to="/key-features/website-development/frontend"

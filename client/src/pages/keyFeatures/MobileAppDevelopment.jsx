@@ -4,10 +4,63 @@ import { Link } from "react-router-dom";
 import coverImg from "../../assets/img/mobileAppDev.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
-import { useScrollToTop } from '../../hooks/useScrollToTop'
+import { useScrollToTop } from "../../hooks/useScrollToTop";
+import TechnologiesTab from "../../components/technologiesTab/TechnologiesTab";
+
+import android from "../../assets/img/icon/moblieAPP_icons/andriod/android.png";
+import java from "../../assets/img/icon/moblieAPP_icons/andriod/java.png";
+import kotlin from "../../assets/img/icon/moblieAPP_icons/andriod/programming-language.png";
+
+import swift from "../../assets/img/icon/moblieAPP_icons/ios/swift.png";
+
+import flutter from "../../assets/img/icon/moblieAPP_icons/hybrid/flutter.png";
+import react_native from "../../assets/img/icon/moblieAPP_icons/hybrid/react_native.webp";
+
 
 const MobileAppDevelopment = () => {
-  useScrollToTop()
+  const data = [
+    {
+      title: "Android App",
+      
+      technologies: [
+        {
+          img: android,
+          name: "Android",
+        },
+        {
+          img: java,
+          name: "Java",
+        },
+        {
+          img: kotlin,
+          name: "Kotlin",
+        },
+      ],
+    },
+    {
+      title: "iOS App",
+      technologies: [
+        {
+          img: swift,
+          name: "Swift",
+        },
+      ],
+    },
+    {
+      title: "Hybrid App",
+      technologies: [
+        {
+          img: flutter,
+          name: "Flutter",
+        },
+        {
+          img: react_native,
+          name: "React Native",
+        },
+      ],
+    },
+  ];
+  useScrollToTop();
   return (
     <div className="px-3">
       <Navbar />
@@ -106,6 +159,10 @@ const MobileAppDevelopment = () => {
               </div>
             </div>
           </div>
+
+          {/* technologies  */}
+
+          <TechnologiesTab title="Technologies We Work on " data={data} />
 
           {/* paragraph */}
           <div className="my-3">

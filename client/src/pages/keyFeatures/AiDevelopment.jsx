@@ -5,8 +5,81 @@ import coverImg from "../../assets/img/aiDev.jpeg";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import TechnologiesTab from "../../components/technologiesTab/TechnologiesTab";
+
+import tensorFlow from '../../assets/img/icon/ai/tensorFlow.png'
+import numPy from '../../assets/img/icon/ai/numPy.png'
+import keras from '../../assets/img/icon/ai/keras.png'
+import pandas from '../../assets/img/icon/ai/pandas.jpg'
 
 const AiDevelopment = () => {
+  const data = [
+    {
+      title: "Machine Learning",
+      isActive:true,
+      technologies: [
+        {
+          img: tensorFlow,
+          name: "TensorFlow",
+        },
+        {
+          img: numPy,
+          name: "NumPy",
+        },
+        {
+          img: keras,
+          name: "Keras",
+        },
+        {
+          img: pandas,
+          name: "Pandas",
+        },
+      ],
+    },
+    {
+      title: "Machine Learning",
+      technologies: [
+        {
+          img: tensorFlow,
+          name: "TensorFlow",
+        },
+        {
+          img: numPy,
+          name: "NumPy",
+        },
+        {
+          img: keras,
+          name: "Keras",
+        },
+        {
+          img: pandas,
+          name: "Pandas",
+        },
+      ],
+    },
+    {
+      title: "Neural Networks ",
+      technologies: [
+
+        {
+          img: tensorFlow,
+          name: "TensorFlow",
+        },
+        {
+          img: numPy,
+          name: "NumPy",
+        },
+        {
+          img: keras,
+          name: "Keras",
+        },
+        {
+          img: pandas,
+          name: "Pandas",
+        },
+      ],
+    },
+];
   useScrollToTop();
   return (
     <div className="px-3">
@@ -75,6 +148,8 @@ const AiDevelopment = () => {
               </div>
             </div>
           </div>
+
+          <TechnologiesTab title="Technologies We Work On" data={data} />
 
           {/* paragraph */}
           <div className="my-3">
@@ -211,6 +286,8 @@ const AiDevelopment = () => {
           </div>
         </div>
       </div>
+      
+
       <div className="">
         <Footer />
       </div>
@@ -219,3 +296,6 @@ const AiDevelopment = () => {
 };
 
 export default AiDevelopment;
+
+
+

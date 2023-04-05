@@ -5,8 +5,43 @@ import coverImg from "../../assets/img/blockchainDev.jpg";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import TechnologiesTab from "../../components/technologiesTab/TechnologiesTab";
+import ethereum from '../../assets/img/icon/blockchain/crypto.png'
+import stellar from '../../assets/img/icon/blockchain/stellar.png'
+import solidity from '../../assets/img/icon/blockchain/solidity.png'
+import kotlin from '../../assets/img/icon/blockchain/kotlin.webp'
 
 const BlockchainDevelopment = () => {
+
+  const data = [
+    {
+      title: "Platforms",
+      technologies: [
+        {
+          img: ethereum,
+          name: "Ethereum",
+        },
+        {
+          img: stellar,
+          name: "Stellar",
+        },
+      ],
+    },
+    {
+      title: "Languages",
+      technologies: [
+        {
+          img: solidity,
+          name: "Solidity",
+        },
+        {
+          img: kotlin,
+          name: "Kotlin",
+        },
+      ],
+    },
+];
+
   useScrollToTop();
   return (
     <div className="px-3">
@@ -110,6 +145,8 @@ const BlockchainDevelopment = () => {
             <li className=" ml-5 list-disc text-gray-400 ">Flexibility</li>
           </ul>
         </div>
+
+        <TechnologiesTab title='Platforms and technologies we use' data={data}/>
       </div>
       <div className="">
         <Footer />

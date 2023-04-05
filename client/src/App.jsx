@@ -151,10 +151,10 @@ function App() {
           path="/key-features/website-development"
           element={<WebsiteDevelopment />}
         >
-          <Route path="mobile" element={<Mobile />} />
+          {/* <Route path="mobile" element={<Mobile />} />
           <Route path="frontend" element={<Frontend />} />
           <Route path="backend" element={<Backend />} />
-          <Route path="cms" element={<Cms />} />
+          <Route path="cms" element={<Cms />} /> */}
         </Route>
         <Route
           path="/key-features/dedicated-team"
