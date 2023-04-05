@@ -13,7 +13,7 @@ const ContactInfo = () => {
           .catch(error => console.error(error));
   }, []);
 
-  console.log(data)
+  // console.log(data)
 
   return (
     <section className="text-gray-600 body-font mt-10">

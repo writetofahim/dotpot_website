@@ -32,7 +32,10 @@ const AboutUs = () => {
         <div className="w-full">
             <Particle />
             <Navbar />
-            <AboutHero heading="About Dotpot iT" text="A fast growing IT complay" heroImg={heroImg} button={button} />
+
+            <AboutSection />
+
+            {/* <AboutHero heading="About Dotpot iT" text="A fast growing IT complay" heroImg={heroImg} button={button} /> */}
             {/* <OurPartnersSlider /> */}
 
             <ContactInfo />
@@ -51,3 +54,16 @@ const AboutUs = () => {
 }
 
 export default AboutUs
+
+const AboutSection = () => {
+    return(
+        <div className="pt-[15vh] w-full flex items-center justify-center">
+            <div className="container p-3 md:p-5 flex flex-col items-center gap-5">
+                <h1 className="text-center text-gray-600 text-3xl md:text-5xl font-bold">Who We Are ? </h1>
+                <p className="w-full md:w-2/3 text-center text-gray-400 text-lg font-semibold">
+                Dotpot iT is a leading IT company that offers a wide range of IT products and services. From app development and web development to game development, AI development, and blockchain development, we provide solutions that meet the unique needs of our clients. We also offer contact center support and tech support to help businesses optimize their operations and achieve their goals. With our expertise and commitment to excellence, Dotpot iT is the ideal partner for businesses looking to stay ahead in the rapidly-evolving world of technology.
+                </p>
+            </div>
+        </div>
+    )
+}
