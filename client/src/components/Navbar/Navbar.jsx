@@ -26,6 +26,23 @@ const Navbar = () => {
     const { user, login, error, logout } = useContext(AuthContext);
     const [isSubmenuOpen, setIsSubmenuOpen]=useState(false)
     const [selectedSubmenu, setSelectedSubmenu]=useState(null)
+    const serviceButtonRef = useRef(null)
+
+    useEffect(() => {
+        function handleDocumentClick(event) {
+            // Check if the clicked element is inside the submenu or not
+            if (isSubmenuOpen && !serviceButtonRef.current.contains(event.target)) {
+                setIsSubmenuOpen(false);
+            }
+        }
+        // Add event listener for mousedown event
+        document.addEventListener('mousedown', handleDocumentClick);
+
+        // Remove event listener on component unmount
+        return () => {
+            document.removeEventListener('mousedown', handleDocumentClick);
+        };
+    }, [isSubmenuOpen]);
 
     const services = [
         {
@@ -153,13 +170,13 @@ const Navbar = () => {
                         )}
                     </NavLink>
                     <div className={"relative w-max"}>
-                        <li className={` mx-4 cursor-pointer uppercase font-bold text-lg hover:scale-110 hover:text-primary-400 flex gap-2 items-center`} onClick={() => setIsSubmenuOpen(p => !p)}>Services <IoIosArrowDown /></li>
+                        <li ref={serviceButtonRef} className={` mx-4 cursor-pointer uppercase font-bold text-lg hover:scale-110 hover:text-primary-400 flex gap-2 items-center`} onClick={() => setIsSubmenuOpen(p => !p)}>Services <IoIosArrowDown /></li>
                         <div className={`absolute ${isSubmenuOpen ? "flex" : "hidden"} top-6 left-0 w-max flex-col gap-3 py-5 bg-white rounded-md shadow-2xl`}>
                             {services.map((service, i) => <div key={i} className="px-5 flex group/item gap-2 items-center w-full hover:scale-105 duration-100 cursor-pointer relative">
                                 <img className="" width={20} src={service.icon} alt="" />
                                 <div key={service._id} className="w-full hover:text-primary-400 font-[600] flex items-center gap-2">{service.title} <IoIosArrowForward />
                                 </div>
-                                <div className="group-hover/item:flex duration-500 h-0 transition-all group-hover/item:h-max flex-col gap-2 hidden absolute -top-2 lg:left-[275px] bg-white p-3 rounded-md shadow-xl">
+                                <div className="group-hover/item:flex duration-500 h-0 transition-all group-hover/item:h-max flex-col gap-2 hidden absolute -top-2 lg:left-[285px] bg-white p-3 rounded-md shadow-xl">
                                     {service?.submenu?.map((item, i) => <Link key={i} to={item.to} className="w-[200px] hover:text-primary-400" >{item.title}</Link>)}
                                 </div>
                             </div>)}

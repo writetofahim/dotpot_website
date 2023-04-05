@@ -57,8 +57,18 @@ const ChatPopup = () => {
   const handleOpen = async () => {
     const conversationId = localStorage.getItem("conversation_id")
     if (conversationId && messages.length === 0) {
-      const { data } = await axios.get(`/chats/${conversationId}/messages`)
-      setMessages(data)
+     try {
+       const response = await axios.get(`/chats/${conversationId}/messages`)
+       setMessages(response?.data)
+     } catch (error) {
+      console.log(error)
+       if (error.response.status !== 200) {
+         const { data } = await axios.post("/chats")
+         localStorage.setItem("conversation_id", data.conversation_id)
+         setMessages(prev => [...prev, data])
+         return
+       }
+     }
     } if (!conversationId) {
       const { data } = await axios.post("/chats")
       localStorage.setItem("conversation_id", data.conversation_id)

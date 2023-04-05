@@ -4,7 +4,9 @@ const {
     createChat,
     addMessageToAChat,
     getMessagesById,
-    replayToChat
+    replayToChat,
+    getMessagesByIdForAdmin,
+    getTotalAdminUnseen
 } = require("../controllers/chatController");
 const Message = require("../models/Message");
 const adminMiddleware = require('../middlewares/adminMiddleware');
@@ -19,6 +21,8 @@ router.post("/", createChat);
 
 // GET //:id - get a chat by ID
 router.get("/:conversationId/messages", getMessages, getMessagesById);
+router.get("/:conversationId/messages/admin", getMessages, getMessagesByIdForAdmin);
+router.get("/totalAdminUnseen", getTotalAdminUnseen);
 
 // POST //:id/messages - add a new message to a chat
 // requset body example 

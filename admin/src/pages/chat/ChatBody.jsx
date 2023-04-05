@@ -5,11 +5,7 @@ import { FiSend, FiPaperclip } from "react-icons/fi";
 import { useParams } from 'react-router';
 import axios from "../../utils/axiosInstance"
 import { FaSpinner } from "react-icons/fa";
-import io from "socket.io-client";
-
-console.log("io path", import.meta.env.REACT_APP_SOCKET_PATH+"/api")
-const socket = io.connect(import.meta.env.REACT_APP_SOCKET_PATH+"/api");
-console.log("socket", socket)
+import socket from '../../socket';
 
 const ChatBody = () => {
     const [messages, setMessages] = useState([]);
@@ -44,7 +40,7 @@ const ChatBody = () => {
     }, []);
 
     useEffect(() => {
-        axios.get(`/chats/${conversationId}/messages`).then((response) => {
+        axios.get(`/chats/${conversationId}/messages/admin`).then((response) => {
             console.log("messages", response.data);
             setMessages(response.data);
         })

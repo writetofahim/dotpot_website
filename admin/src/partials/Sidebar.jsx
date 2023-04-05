@@ -15,10 +15,12 @@ import { SiHandshake } from "react-icons/si";
 import { TfiDashboard, TfiLayoutSlider } from "react-icons/tfi";
 import { TiDocumentText } from "react-icons/ti";
 import logo from "../images/logo1.png";
+import axios from "../utils/axiosInstance"
 
 import { NavLink, useLocation } from "react-router-dom";
 
 import SidebarLinkGroup from "./SidebarLinkGroup";
+import socket from "../socket";
 
 function Sidebar({ sidebarOpen, setSidebarOpen }) {
   const location = useLocation();
@@ -26,12 +28,29 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
 
   const trigger = useRef(null);
   const sidebar = useRef(null);
+  const [unseenMessages, setUnseenMessages] = useState(0)
 
   const storedSidebarExpanded = localStorage.getItem("sidebar-expanded");
   const [sidebarExpanded, setSidebarExpanded] = useState(
     storedSidebarExpanded === null ? false : storedSidebarExpanded === "true"
   );
 
+
+  const getUnseenCount = ()=>{
+    axios.get('/api/chats/totalAdminUnseen').then((response) => {
+      setUnseenMessages(response.data?.count);
+    })
+  }
+
+  useEffect(() => {
+    socket.on("newMessage", data => {
+      getUnseenCount();
+    })
+  }, []);
+
+   useEffect(()=>{
+     getUnseenCount()
+   },[])
   // close on click outside
   useEffect(() => {
     const clickHandler = ({ target }) => {
@@ -187,9 +206,9 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                     </div>
                     {/* Badge */}
                     <div className="flex flex-shrink-0 ml-2">
-                      {/* <span className="inline-flex items-center justify-center h-5 text-xs font-medium text-white bg-indigo-500 px-2 rounded">
-                        4
-                      </span> */}
+                      <span className="inline-flex items-center justify-center h-5 text-xs font-medium text-white bg-indigo-500 px-2 rounded">
+                        {unseenMessages}
+                      </span>
                     </div>
                   </div>
                 </NavLink>

@@ -1,22 +1,44 @@
 const Conversation = require("../models/Conversation");
 const Message = require("../models/Message");
 
+/**
+ * Retrieves a paginated list of all chats with last messages and admin unseen message count
+ *
+ * @param {object} req - The Express request object
+ * @param {object} res - The Express response object
+ * @returns {object} The paginated list of chats with last messages and admin unseen message count, as well as the total count and current page number
+ * @throws {object} The error message and status code
+ */
 const getAllChats = async (req, res) => {
     const pageSize = 10;
     const page = parseInt(req.query.page) || 1;
     try {
-        const chats = await Conversation.find().sort({ createdAt: -1 })
-            .skip((page - 1) * pageSize)
-            .limit(pageSize)
+        const totalChatsCount = await Conversation.countDocuments();
+        const chats = await Conversation.find().sort({ updatedAt: -1 })
+            .limit(pageSize * page)
         const chatsWithLastMessage = await Promise.all(chats.map(async chat => {
             const lastMessage = await Message.findOne({ conversation_id: chat._id }).sort({ createdAt: -1 });
-            return { ...chat._doc, lastMessage };
+            const adminUnseenCount = await Message.countDocuments({
+                conversation_id: chat._id,
+                isAdminSeen: false,
+            });
+            return { ...chat._doc, lastMessage, adminUnseenCount };
         }));
-        res.json(chatsWithLastMessage);
+        res.json({
+            chats: chatsWithLastMessage,
+            totalChatsCount,
+            currentPage: page
+        });
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
 }
+
+/**
+ * Controller function to create a new chat conversation between a visitor and an admin
+ * @param {object} req - The Express request object
+ * @param {object} res - The Express response object
+ */
 
 const createChat = async (req, res) => {
 
@@ -43,7 +65,31 @@ const createChat = async (req, res) => {
     }
 }
 
-const getMessagesById = (req, res) => {
+// Controller function to get all messages of a conversation by conversation id
+const getMessagesById = async (req, res) => {
+    const conversationId = req.params.conversationId
+    await Message.updateMany({ conversation_id: conversationId }, { $set: { isVisitorSeen: true } });
+    res.json(res.chat);
+}
+
+/**
+ * Controller function to get the total count of messages where isAdminSeen is false.
+ * @param {object} req - The Express request object
+ * @param {object} res - The Express response object
+ */
+
+const getTotalAdminUnseen = async (req, res) => {
+    try {
+        const count = await Message.countDocuments({ isAdminSeen: false });
+        res.json({ count });
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+}
+
+const getMessagesByIdForAdmin =async (req, res) => {
+    const conversationId = req.params.conversationId
+    await Message.updateMany({ conversation_id: conversationId }, { $set: { isAdminSeen: true } });
     res.json(res.chat);
 }
 
@@ -58,7 +104,12 @@ const addMessageToAChat = async (req, res) => {
     };
     try {
         const newMessage = new Message(message);
-        const msg = await newMessage.save()
+        const msg = await newMessage.save();
+        await Conversation.findOneAndUpdate(
+            { _id: req.params.conversationId },
+            { $set: { updatedAt: new Date() } },
+            { new: true }
+        );
 
         io.emit('newMessage', msg);
         res.status(201).json(msg);
@@ -79,6 +130,11 @@ const replayToChat = async (req, res) => {
     try {
         const newMessage = new Message(message);
         const msg = await newMessage.save()
+        await Conversation.findOneAndUpdate(
+            { _id: req.params.conversationId },
+            { $set: { updatedAt: new Date() } },
+            { new: true }
+        );
 
         io.emit('newMessage', msg);
         res.status(201).json(msg);
@@ -92,5 +148,7 @@ module.exports = {
     createChat,
     getMessagesById,
     addMessageToAChat,
-    replayToChat
+    replayToChat,
+    getMessagesByIdForAdmin,
+    getTotalAdminUnseen
 }
