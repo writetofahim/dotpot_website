@@ -13,6 +13,8 @@ import { GrNext, GrPrevious } from 'react-icons/gr'
 import { BsArrowRight } from 'react-icons/bs'
 import { sliderData } from '../../data'
 import { Link } from "react-router-dom";
+import Typed from 'react-typed';
+
 
 
 
@@ -55,9 +57,16 @@ export const SingleSlide = (props) => {
       <div className="md:max-w-[1200px] lg:container flex flex-col-reverse md:flex-row justify-evenly items-center">
 
         <div className="left mt-5 md:mt-0 flex-1 h-full flex flex-col items-center md:items-start justify-center pl-0 md:pl-10">
-          <h1 className="text-3xl md:text-5xl text-center md:text-left font-bold mb-2">
+          {/* <h1 className="text-3xl md:text-5xl text-center md:text-left font-bold mb-2">
             {props.title}
-          </h1>
+          </h1> */}
+          <Typed 
+            className="text-3xl md:text-5xl text-center md:text-left font-bold mb-2"
+            strings={[props.title]}
+            typeSpeed={80}
+            backSpeed={50}
+            loop
+          />
           <p className='mb-5 text-gray-300 text-xl text-center md:text-left md:text-2xl font-bold'>{props.subtitle}</p>
           <div className="flex justify-center md:justify-start gap-5 items-center mb-5">
             {/* <div className="pr-5 border-r border-gray-300">

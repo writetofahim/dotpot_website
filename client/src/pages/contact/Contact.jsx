@@ -35,8 +35,8 @@ const Contact = () => {
                 <OurPartnersSlider />
                 {/* Contact Form Section */}
                 <div className="full flex flex-col items-center justify-center mb-10">
-                    <h3 className='mt-10 mb-5 text-5xl text-primary-500 font-bold'>Contact Us</h3>
-                    <p className="mb-5 text-center">We would be happy to hear from you, please fill in the form below or mail us your requirements on <br />
+                    <h3 className='mt-10 mb-5 text-5xl font-bold'>Contact Us</h3>
+                    <p className="mb-5 text-center font-semibold">We would be happy to hear from you, please fill in the form below or mail us your requirements on <br />
                         <Link to="mailto: help@dotpotit.com" className='text-secondary-500'>
                             help@dotpotit.com
                         </Link>

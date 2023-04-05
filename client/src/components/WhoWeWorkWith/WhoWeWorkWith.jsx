@@ -24,7 +24,7 @@ export const Card = (props) => {
         <Link to={props.link} className="bg-white w-1/3 rounded-xl hover:scale-110 transition-all">
             <div className='w-full flex flex-col items-center justify-center p-5'>
                 <img src={props.icon} alt="" className='w-[50px] h-[50px] mb-3' />
-                <h3 className='text-gray-400 text-l font-bold'>{props.title}</h3>
+                <h3 className='text-gray-400 text-lg text-center font-bold'>{props.title}</h3>
             </div>
         </Link>
     )
