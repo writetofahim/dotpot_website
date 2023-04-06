@@ -16,6 +16,7 @@ const BlockchainDevelopment = () => {
   const data = [
     {
       title: "Platforms",
+      id:1,
       technologies: [
         {
           img: ethereum,
@@ -29,6 +30,7 @@ const BlockchainDevelopment = () => {
     },
     {
       title: "Languages",
+      id:2,
       technologies: [
         {
           img: solidity,

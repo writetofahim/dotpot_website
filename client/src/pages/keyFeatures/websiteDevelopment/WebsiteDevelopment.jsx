@@ -33,7 +33,7 @@ const WebsiteDevelopment = () => {
   const data = [
     {
       title: "Frontend",
-      isActive: true,
+      id:1,
       technologies: [
         {
           img: html,
@@ -71,6 +71,7 @@ const WebsiteDevelopment = () => {
     },
     {
       title: "Backend",
+      id:2,
       technologies: [
         {
           img: nodeJS,
@@ -96,6 +97,7 @@ const WebsiteDevelopment = () => {
     },
     {
       title: "CMS",
+      id:3,
       technologies: [
         {
           img: wordpress,
@@ -198,6 +200,8 @@ const WebsiteDevelopment = () => {
                 </div>
               </div>
             </div>
+
+            <TechnologiesTab title="Technologies We Work on " data={data} />
 
             {/* process we follow */}
             <div className="my-3">
@@ -302,10 +306,10 @@ const WebsiteDevelopment = () => {
                 </p>
               </div>
             </div>
-            <TechnologiesTab title="Technologies We Work on " data={data} />
+            
             <div>
               {/* <WebDevNav /> */}
-              <Outlet />
+              {/* <Outlet /> */}
             </div>
           </div>
         </div>

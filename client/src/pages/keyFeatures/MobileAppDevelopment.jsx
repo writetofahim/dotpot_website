@@ -21,6 +21,7 @@ const MobileAppDevelopment = () => {
   const data = [
     {
       title: "Android App",
+      id:1,
       
       technologies: [
         {
@@ -39,6 +40,7 @@ const MobileAppDevelopment = () => {
     },
     {
       title: "iOS App",
+      id:2,
       technologies: [
         {
           img: swift,
@@ -48,6 +50,7 @@ const MobileAppDevelopment = () => {
     },
     {
       title: "Hybrid App",
+      id:3,
       technologies: [
         {
           img: flutter,

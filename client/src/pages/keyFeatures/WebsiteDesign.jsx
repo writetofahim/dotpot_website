@@ -34,7 +34,7 @@ const WebsiteDesign = () => {
   const data = [
     {
       title: "Frontend",
-      isActive: true,
+      id:1,
       technologies: [
         {
           img: html,
@@ -72,6 +72,7 @@ const WebsiteDesign = () => {
     },
     {
       title: "Backend",
+      id:2,
       technologies: [
         {
           img: nodeJS,
@@ -97,6 +98,7 @@ const WebsiteDesign = () => {
     },
     {
       title: "CMS",
+      id:3,
       technologies: [
         {
           img: wordpress,

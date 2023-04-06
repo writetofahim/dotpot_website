@@ -16,7 +16,7 @@ const AiDevelopment = () => {
   const data = [
     {
       title: "Machine Learning",
-      isActive:true,
+      id:1,
       technologies: [
         {
           img: tensorFlow,
@@ -38,6 +38,7 @@ const AiDevelopment = () => {
     },
     {
       title: "Machine Learning",
+      id:2,
       technologies: [
         {
           img: tensorFlow,
@@ -59,6 +60,7 @@ const AiDevelopment = () => {
     },
     {
       title: "Neural Networks ",
+      id:3,
       technologies: [
 
         {
