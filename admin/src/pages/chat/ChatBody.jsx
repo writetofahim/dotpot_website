@@ -25,14 +25,14 @@ const ChatBody = () => {
         socket.on("newMessage", (data) => {
             console.log("newMessage event fire", data);
             console.log("data.conversation_id === conversationId", data.conversation_id === conversationId);
-            if (data.conversation_id === conversationId) {
+            if (data.conversation_id === conversationId && data.sender !== "admin") {
                 setMessages(prev => [...prev, data]);
                 messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
             }
         })
 
         socket.on("connection", (socket) => {
-            console.log("connection")
+            console.log("connection socket", socket);
           });
         return () => {
             socket.disconnect();
@@ -70,7 +70,7 @@ const ChatBody = () => {
                 setFiles(null)
             }
             if (newMessage !== "" || attachment !== null) {
-                const { data } = await axios.post(`/chats/${conversationId}/replay`, { text: newMessage, attachment: attachment })
+                const { data } = await axios.post(`/chats/${conversationId}/reply`, { text: newMessage, attachment: attachment })
                 console.log(data)
                 setMessages([...messages, data]);
                 setNewMessage("");

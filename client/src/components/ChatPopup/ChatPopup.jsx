@@ -59,6 +59,7 @@ const ChatPopup = () => {
     if (conversationId && messages.length === 0) {
      try {
        const response = await axios.get(`/chats/${conversationId}/messages`)
+       console.log("response will help", response)
        setMessages(response?.data)
      } catch (error) {
       console.log(error)

@@ -5,16 +5,22 @@ import axios from "../../utils/axiosInstance"
 import "./chat.css"
 import { Outlet } from "react-router";
 import socket from "../../socket";
+import {useLocation} from "react-router-dom"
 
 const Chat = () => {
   const [chatList, setChatList] = useState([]);
   const [page, setPage] = useState(1);
+  const [isLoading, setIsLoading] = useState(true);
+  const [totalChats, setTotalChats] = useState(true);
+  const location =useLocation()
 
   const getChatList = async()=>{
+    setIsLoading(true)
     axios.get(`/chats?page=${page}`).then(({ data }) => {
       console.log(data);
       setChatList([...data.chats]);
-    })
+      setTotalChats(data.totalChatsCount);
+    }).finally(() => setIsLoading(false))
   }
 
   
@@ -34,7 +40,8 @@ const Chat = () => {
 
   return (
     <div className="flex ">
-      <ChatList chatList={chatList} handleLoadMore={handleLoadMore}/>
+      <ChatList chatList={chatList} handleLoadMore={handleLoadMore} isLoading={isLoading} totalChats={totalChats} getChatList={getChatList}/>
+      {location.pathname === "/admin/chat" && <div className="mt-5 text-xl">Select a conversation!</div>}
       <Outlet />
     </div>
   );

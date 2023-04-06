@@ -1,4 +1,6 @@
-const express = require("express");
+const express = require('express');
+const router = express.Router();
+
 const {
     getAllChats,
     createChat,
@@ -6,50 +8,54 @@ const {
     getMessagesById,
     replayToChat,
     getMessagesByIdForAdmin,
-    getTotalAdminUnseen
-} = require("../controllers/chatController");
-const Message = require("../models/Message");
+    getTotalAdminUnseen,
+    deleteConversation
+} = require('../controllers/chatController');
+
+const Message = require('../models/Message');
 const adminMiddleware = require('../middlewares/adminMiddleware');
 
-const router = express.Router();
+// Route to get all chats
+router.get('/', adminMiddleware, getAllChats);
 
-// GET /chats - get all chats
-router.get("/", adminMiddleware, getAllChats);
+// Route to create a new chat
+router.post('/', createChat);
 
-// POST / - create a new chat
-router.post("/", createChat);
+// Route to get messages for a chat by ID
+// Request Example: GET /chats/:conversationId/messages
+// Response Example: { messages: [...] }
+router.get('/:conversationId/messages', getMessages, getMessagesById);
 
-// GET //:id - get a chat by ID
-router.get("/:conversationId/messages", getMessages, getMessagesById);
-router.get("/:conversationId/messages/admin", getMessages, getMessagesByIdForAdmin);
-router.get("/totalAdminUnseen", getTotalAdminUnseen);
+// Route to get messages for a chat by ID (for admin)
+// Request Example: GET /chats/:conversationId/messages/admin
+// Response Example: { messages: [...] }
+router.get('/:conversationId/messages/admin', adminMiddleware, getMessages, getMessagesByIdForAdmin);
 
-// POST //:id/messages - add a new message to a chat
-// requset body example 
-/**
- {
-    "text":"Hello, I need help"
-}
- */
-router.post("/:conversationId/messages", addMessageToAChat);
+// Route to add a new message to a chat
+// Request Example: POST /chats/:conversationId/messages
+// Request Body Example: { text: "Hello, I need help" }
+router.post('/:conversationId/messages', addMessageToAChat);
 
-router.post("/:conversationId/replay", replayToChat);
+// Route to reply to a chat
+// Request Example: POST /chats/:conversationId/reply
+// Request Body Example: { text: "Hello, I need help" }
+router.post('/:conversationId/reply', adminMiddleware, replayToChat);
 
-// middleware function to get a chat by ID
+// Route to delete a conversation with messages and attachments
+router.delete('/:conversationId', adminMiddleware, deleteConversation);
+
+// Middleware function to get messages for a chat by ID
 async function getMessages(req, res, next) {
-    let chat;
-
     try {
-        chat = await Message.find({ conversation_id: req.params.conversationId });
-        if (chat == null) {
-            return res.status(404).json({ message: "Messages not found" });
+        const chat = await Message.find({ conversation_id: req.params.conversationId });
+        if (!chat) {
+            return res.status(404).json({ message: 'Messages not found' });
         }
+        res.chat = chat;
+        next();
     } catch (err) {
         return res.status(500).json({ message: err.message });
     }
-
-    res.chat = chat;
-    next();
 }
 
 module.exports = router;

@@ -1,6 +1,6 @@
 const Conversation = require("../models/Conversation");
 const Message = require("../models/Message");
-
+const { removeFile } = require('../utilities/removeFile');
 /**
  * Retrieves a paginated list of all chats with last messages and admin unseen message count
  *
@@ -143,6 +143,36 @@ const replayToChat = async (req, res) => {
     }
 }
 
+/**
+ * Delete conversation and all messages in it
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ * @param {string} req.params.conversationId - ID of conversation to delete
+ */
+const deleteConversation = async (req, res) => {
+    try {
+        const conversationId = req.params.conversationId;
+
+        // Delete all messages in the conversation and their attachments
+        const messages = await Message.find({ conversation_id: conversationId });
+        for (const message of messages) {
+            if (message.attachment) {
+                await removeFile(message.attachment);
+            }
+        }
+
+        await Message.deleteMany({ conversation_id: conversationId });
+        // Delete the conversation
+        const result = await Conversation.findByIdAndDelete(conversationId);
+        console.log(result)
+
+        res.json({ message: 'Conversation and messages deleted successfully' });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Something went wrong' });
+    }
+};
+
 module.exports = {
     getAllChats,
     createChat,
@@ -150,5 +180,6 @@ module.exports = {
     addMessageToAChat,
     replayToChat,
     getMessagesByIdForAdmin,
-    getTotalAdminUnseen
+    getTotalAdminUnseen,
+    deleteConversation
 }

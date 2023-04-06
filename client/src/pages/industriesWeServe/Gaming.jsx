@@ -6,8 +6,10 @@ import gameHero from "../../assets/img/gameHero.jpg";
 import Footer from "../../components/Footer/Footer";
 import { useState } from "react";
 import GameSlider from "./GameSlider";
+import { useScrollToTop } from "../../hooks/useScrollToTop";
 
 const Gaming = () => {
+  useScrollToTop()
   const gameData = [
     { image: gameSoft, title: "game soft" },
     { image: eaGame, title: "ea" },

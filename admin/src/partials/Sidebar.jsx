@@ -37,13 +37,14 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
 
 
   const getUnseenCount = ()=>{
-    axios.get('/api/chats/totalAdminUnseen').then((response) => {
+    axios.get('/chats/totalAdminUnseen').then((response) => {
       setUnseenMessages(response.data?.count);
     })
   }
 
   useEffect(() => {
-    socket.on("newMessage", data => {
+    socket.on("newMessage", (data) => {
+      console.log("New message received in sidebar")
       getUnseenCount();
     })
   }, []);

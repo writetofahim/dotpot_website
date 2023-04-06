@@ -5,7 +5,7 @@ const removeFile = (filePath) => {
       fs.unlink(filePath, (error) => {
         if (error) {
             console.log(error)
-          reject(error);
+          resolve()
         } else {
           resolve();
         }

@@ -15,23 +15,28 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import { HiMenuAlt4 } from "react-icons/hi";
 import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io"
 import { AiOutlineClose } from "react-icons/ai";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/img/logo.png"
 import { AuthContext } from "../../contexts/AuthContext";
 
 
 const Navbar = () => {
+    const { user, login, error, logout } = useContext(AuthContext);
+    
     const [toggleMenu, setToggleMenu] = useState(false);
     const [isDropDownOpen, setIsDropDownOpen] = useState(false);
-    const { user, login, error, logout } = useContext(AuthContext);
     const [isSubmenuOpen, setIsSubmenuOpen]=useState(false)
     const [selectedSubmenu, setSelectedSubmenu]=useState(null)
+
     const serviceButtonRef = useRef(null)
+    const serviceSubmenuDiv = useRef(null)
+
+    const navigate = useNavigate()
 
     useEffect(() => {
         function handleDocumentClick(event) {
             // Check if the clicked element is inside the submenu or not
-            if (isSubmenuOpen && !serviceButtonRef.current.contains(event.target)) {
+            if (isSubmenuOpen && !serviceButtonRef.current.contains(event.target) && !serviceSubmenuDiv.current.contains(event.target)) {
                 setIsSubmenuOpen(false);
             }
         }
@@ -48,6 +53,7 @@ const Navbar = () => {
         {
             _id: 1,
             title: "App Development",
+            to:"/key-features/mobile-app-development",
             icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",
             submenu:[
                 {to: "/key-features/mobile-app-development", title: "Android App", icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",},
@@ -61,62 +67,67 @@ const Navbar = () => {
         {
             _id:2,
             title: "Web Development",
+            to: "/key-features/website-development",
             icon: "https://cdn-icons-png.flaticon.com/512/1927/1927656.png",
             submenu:[
-                {to: "/", title: "React JS", icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",},
-                {to: "/", title: "Next JS", icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",},
-                {to: "/", title: "PHP", icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",},
-                {to: "/", title: "Wordpress", icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",},
-                {to: "/", title: "Drupal", icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",},
-                {to: "/", title: "Django", icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",},
+                {to: "/key-features/website-development", title: "React JS", icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",},
+                {to: "/key-features/website-development", title: "Next JS", icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",},
+                {to: "/key-features/website-development", title: "PHP", icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",},
+                {to: "/key-features/website-development", title: "Wordpress", icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",},
+                {to: "/key-features/website-development", title: "Drupal", icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",},
+                {to: "/key-features/website-development", title: "Django", icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",},
             ]
 
         },
         {
             _id:3,
             title: "Blockchain Development",
+            to: "/key-features/blockchain-development",
             icon: "https://cdn-icons-png.flaticon.com/512/2152/2152349.png",
             submenu:[
-                {to: "/", title: "Wallet"},
-                {to: "/", title: "Exchange"},
-                {to: "/", title: "Ethereum"},
-                {to: "/", title: "Smart Contacts"},
-                {to: "/", title: "Private Blockchain"},
-                {to: "/", title: "NFT Marketplace"},
+                {to: "/key-features/blockchain-development", title: "Wallet"},
+                {to: "/key-features/blockchain-development", title: "Exchange"},
+                {to: "/key-features/blockchain-development", title: "Ethereum"},
+                {to: "/key-features/blockchain-development", title: "Smart Contacts"},
+                {to: "/key-features/blockchain-development", title: "Private Blockchain"},
+                {to: "/key-features/blockchain-development", title: "NFT Marketplace"},
             ]
 
         },
         {
             _id: 4,
             title: "AI & ML",
+            to:"/key-features/ai-development",
             icon: "https://cdn-icons-png.flaticon.com/512/1693/1693746.png",
             submenu: [
-                { to: "/", title: "Object Recognition" },
-                { to: "/", title: "Text to speech" },
-                { to: "/", title: "Business Intelligence" },
-                { to: "/", title: "Data Forecasting" },
-                { to: "/", title: "Natural Language Processing" },
-                { to: "/", title: "Data Analytics" },
-                { to: "/", title: "Recommendation Engine" },
+                { to: "/key-features/ai-development", title: "Object Recognition" },
+                { to: "/key-features/ai-development", title: "Text to speech" },
+                { to: "/key-features/ai-development", title: "Business Intelligence" },
+                { to: "/key-features/ai-development", title: "Data Forecasting" },
+                { to: "/key-features/ai-development", title: "Natural Language Processing" },
+                { to: "/key-features/ai-development", title: "Data Analytics" },
+                { to: "/key-features/ai-development", title: "Recommendation Engine" },
             ]
         },
         {
             _id: 5,
             title: "iT Support",
+            to:"/key-features/it-support",
             icon: "https://cdn-icons-png.flaticon.com/512/2058/2058768.png",
             submenu: [
-                { to: "/", title: "Cloud Computing" },
-                { to: "/", title: "Database Administration" },
-                { to: "/", title: "Cybersecurity " },
-                { to: "/", title: "IT Consulting" },
-                { to: "/", title: "Project Management" },
-                { to: "/", title: "Technical Support" },
+                { to: "/key-features/it-support", title: "Cloud Computing" },
+                { to: "/key-features/it-support", title: "Database Administration" },
+                { to: "/key-features/it-support", title: "Cybersecurity " },
+                { to: "/key-features/it-support", title: "IT Consulting" },
+                { to: "/key-features/it-support", title: "Project Management" },
+                { to: "/key-features/it-support", title: "Technical Support" },
 
             ]
         },
         {
             _id: 6,
             title: "Contact Center",
+            to:"/key-features/contact-center-support",
             icon: "https://cdn-icons-png.flaticon.com/512/1687/1687136.png",
             submenu: [
                 { to: "/contact_center_services/cti", title: "CTI" },
@@ -134,13 +145,14 @@ const Navbar = () => {
         {
             _id: 7,
             title: "Game Development",
+            to:"/industries-we-serve/gaming",
             icon: "https://cdn-icons-png.flaticon.com/512/6581/6581049.png",
             submenu:[
-                {to: "/", title: "Unity 3D", },
-                {to: "/", title: "Metaverse"},
-                {to: "/", title: "Unreal Engine"},
-                {to: "/", title: "Augmented Reality"},
-                {to: "/", title: "Casual Games"},
+                {to: "/industries-we-serve/gaming", title: "Unity 3D", },
+                {to: "/industries-we-serve/gaming", title: "Metaverse"},
+                {to: "/industries-we-serve/gaming", title: "Unreal Engine"},
+                {to: "/industries-we-serve/gaming", title: "Augmented Reality"},
+                {to: "/industries-we-serve/gaming", title: "Casual Games"},
             ]
         }
     ]
@@ -171,10 +183,10 @@ const Navbar = () => {
                     </NavLink>
                     <div className={"relative w-max"}>
                         <li ref={serviceButtonRef} className={` mx-4 cursor-pointer uppercase font-bold text-lg hover:scale-110 hover:text-secondary-400 flex gap-2 items-center`} onClick={() => setIsSubmenuOpen(p => !p)}>Services <IoIosArrowDown /></li>
-                        <div className={`absolute ${isSubmenuOpen ? "flex" : "hidden"} top-6 left-0 w-max flex-col gap-3 py-5 bg-white rounded-md shadow-2xl`}>
+                        <div ref={serviceSubmenuDiv} className={`absolute ${isSubmenuOpen ? "flex" : "hidden"} top-6 left-0 w-max flex-col gap-3 py-5 bg-white rounded-md shadow-2xl`}>
                             {services.map((service, i) => <div key={i} className="px-5 flex group/item gap-2 items-center w-full hover:scale-105 duration-100 cursor-pointer relative">
                                 <img className="" width={20} src={service.icon} alt="" />
-                                <div key={service._id} className="w-full hover:text-secondary-400 font-[600] flex items-center gap-2">{service.title} <IoIosArrowForward />
+                                <div onClick={() => { navigate(service.to) }} className="w-full hover:text-secondary-400 font-[600] flex items-center gap-2">{service.title} <IoIosArrowForward />
                                 </div>
                                 <div className="group-hover/item:flex duration-500 h-0 transition-all group-hover/item:h-max flex-col gap-2 hidden absolute -top-2 lg:left-[285px] bg-white p-3 rounded-md shadow-xl">
                                     {service?.submenu?.map((item, i) => <Link key={i} to={item.to} className="w-[200px] hover:text-secondary-400" >{item.title}</Link>)}
