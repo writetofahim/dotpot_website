@@ -22,7 +22,7 @@ const GetAQuote = () => {
             </div>
             <div className="right w-full flex items-center justify-center md:justify-start">
                 <Link to="/services">
-                    <button className="flex items-center justify-between gap-3 bg-primary-500 text-white text-xl px-3 py-2 rounded-full cursor-pointer hover:bg-secondary-500 hover:scale-105 transition-all">
+                    <button className="flex items-center justify-between gap-3 bg-secondary-400 text-white text-xl px-3 py-2 rounded-full cursor-pointer hover:bg-secondary-500 hover:scale-105 transition-all">
                         Get a Quote
                         <AiOutlineDoubleRight />
                     </button>

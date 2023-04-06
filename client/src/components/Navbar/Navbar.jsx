@@ -50,12 +50,12 @@ const Navbar = () => {
             title: "App Development",
             icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",
             submenu:[
-                {to: "/", title: "Android App", icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",},
-                {to: "/", title: "iPhone App", icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",},
-                {to: "/", title: "Flutter App", icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",},
-                {to: "/", title: "Kotlin", icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",},
-                {to: "/", title: "Iconic", icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",},
-                {to: "/", title: "Swift", icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",},
+                {to: "/key-features/mobile-app-development", title: "Android App", icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",},
+                {to: "/key-features/mobile-app-development", title: "iPhone App", icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",},
+                {to: "/key-features/mobile-app-development", title: "Flutter App", icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",},
+                {to: "/key-features/mobile-app-development", title: "Kotlin", icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",},
+                {to: "/key-features/mobile-app-development", title: "Iconic", icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",},
+                {to: "/key-features/mobile-app-development", title: "Swift", icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",},
             ]
         },
         {
@@ -89,7 +89,7 @@ const Navbar = () => {
         {
             _id: 4,
             title: "AI & ML",
-            icon: "https://cdn-icons-png.flaticon.com/512/2152/2152349.png",
+            icon: "https://cdn-icons-png.flaticon.com/512/1693/1693746.png",
             submenu: [
                 { to: "/", title: "Object Recognition" },
                 { to: "/", title: "Text to speech" },
@@ -153,7 +153,7 @@ const Navbar = () => {
                     <Link to='/'>
                         <img src={logo} alt="" className="w-60" />
                     </Link>
-                    <p className="text-gray-500 hover:text-primary-400 hidden lg:hidden lg:block italic">We make your Business Successful</p>
+                    <p className="text-gray-500 hover:text-secondary-400 hidden lg:hidden lg:block italic">We make your Business Successful</p>
                 </div>
                 <div className="lg:flex hidden list-none flex-row justify-between items-center flex-initial">
                     {/* {["home", "about us", "Services", "Contact"].map((item, index) => (
@@ -161,35 +161,35 @@ const Navbar = () => {
                     ))} */}
                     <NavLink to="/">
                         {({ isActive }) => (
-                            <span className={`${isActive ? "lg:text-primary-400 text-white" : "lg:text-gray-400 "} mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-primary-400`}>Home</span>
+                            <span className={`${isActive ? "lg:text-secondary-400 text-white" : "lg:text-gray-400 "} mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-secondary-400`}>Home</span>
                         )}
                     </NavLink>
                     <NavLink to="/about">
                         {({ isActive }) => (
-                            <li className={`${isActive ? "lg:text-primary-400 text-white" : "lg:text-gray-400 "} mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-primary-400`}>About Us</li>
+                            <li className={`${isActive ? "lg:text-secondary-400 text-white" : "lg:text-gray-400 "} mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-secondary-400`}>About Us</li>
                         )}
                     </NavLink>
                     <div className={"relative w-max"}>
-                        <li ref={serviceButtonRef} className={` mx-4 cursor-pointer uppercase font-bold text-lg hover:scale-110 hover:text-primary-400 flex gap-2 items-center`} onClick={() => setIsSubmenuOpen(p => !p)}>Services <IoIosArrowDown /></li>
+                        <li ref={serviceButtonRef} className={` mx-4 cursor-pointer uppercase font-bold text-lg hover:scale-110 hover:text-secondary-400 flex gap-2 items-center`} onClick={() => setIsSubmenuOpen(p => !p)}>Services <IoIosArrowDown /></li>
                         <div className={`absolute ${isSubmenuOpen ? "flex" : "hidden"} top-6 left-0 w-max flex-col gap-3 py-5 bg-white rounded-md shadow-2xl`}>
                             {services.map((service, i) => <div key={i} className="px-5 flex group/item gap-2 items-center w-full hover:scale-105 duration-100 cursor-pointer relative">
                                 <img className="" width={20} src={service.icon} alt="" />
-                                <div key={service._id} className="w-full hover:text-primary-400 font-[600] flex items-center gap-2">{service.title} <IoIosArrowForward />
+                                <div key={service._id} className="w-full hover:text-secondary-400 font-[600] flex items-center gap-2">{service.title} <IoIosArrowForward />
                                 </div>
                                 <div className="group-hover/item:flex duration-500 h-0 transition-all group-hover/item:h-max flex-col gap-2 hidden absolute -top-2 lg:left-[285px] bg-white p-3 rounded-md shadow-xl">
-                                    {service?.submenu?.map((item, i) => <Link key={i} to={item.to} className="w-[200px] hover:text-primary-400" >{item.title}</Link>)}
+                                    {service?.submenu?.map((item, i) => <Link key={i} to={item.to} className="w-[200px] hover:text-secondary-400" >{item.title}</Link>)}
                                 </div>
                             </div>)}
                         </div>
                     </div>
                     <NavLink to="/contact">
                         {({ isActive }) => (
-                            <li className={`${isActive ? "lg:text-primary-400 text-white" : "lg:text-gray-400 "} mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-primary-400`} onClick={() => setToggleMenu(false)}>Contact</li>
+                            <li className={`${isActive ? "lg:text-secondary-400 text-white" : "lg:text-gray-400 "} mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-secondary-400`} onClick={() => setToggleMenu(false)}>Contact</li>
                         )}
                     </NavLink>
                     <NavLink to="/blog">
                         {({ isActive }) => (
-                            <li className={`${isActive ? "lg:text-primary-400 text-white" : "lg:text-gray-400 "} mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-primary-400`} onClick={() => setToggleMenu(false)}>Blog</li>
+                            <li className={`${isActive ? "lg:text-secondary-400 text-white" : "lg:text-gray-400 "} mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-secondary-400`} onClick={() => setToggleMenu(false)}>Blog</li>
                         )}
                     </NavLink>
 
@@ -197,15 +197,15 @@ const Navbar = () => {
                         !user ? (
                             <NavLink to="/login">
                                 {({ isActive }) => (
-                                    <li className={`${isActive ? "lg:text-primary-400 text-white" : "lg:text-gray-400 "} mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-primary-400`} onClick={() => setToggleMenu(false)}>Login</li>)}
+                                    <li className={`${isActive ? "lg:text-secondary-400 text-white" : "lg:text-gray-400 "} mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-secondary-400`} onClick={() => setToggleMenu(false)}>Login</li>)}
                             </NavLink>
                         ) : (
-                            <li className="mx-4 cursor-pointer uppercase text-white font-bold lg:text-gray-400 text-lg hover:scale-110 hover:text-primary-400" onClick={() => logout()}>Logout</li>
+                            <li className="mx-4 cursor-pointer uppercase text-white font-bold lg:text-gray-400 text-lg hover:scale-110 hover:text-secondary-400" onClick={() => logout()}>Logout</li>
                         )
                     }
 
                     <Link to='/apply' target="_blank">
-                        <li className="bg-primary-500 py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-primary-400 text-white">
+                        <li className="bg-secondary-400 py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-secondary-500 text-white">
                             Apply For Jobs
                         </li>
                     </Link>

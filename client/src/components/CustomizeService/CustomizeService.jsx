@@ -60,7 +60,7 @@ const ServicesCard = (props) => {
         !isExist ?
           <BiCircle className='absolute top-1 right-1 text-gray-400 cursor-pointer hover:scale-110' onClick={() => addService()} />
           :
-          <BsCheckCircleFill className='absolute top-1 right-1 text-gray-400 cursor-pointer hover:scale-110' onClick={() => removeService()} />
+          <BsCheckCircleFill className='absolute top-1 right-1 text-primary-500 cursor-pointer hover:scale-110' onClick={() => removeService()} />
       }
     </div>
   );
@@ -123,7 +123,7 @@ const TechnologyCard = (props) => {
       {!isSelect ? (
         <BiCircle className="absolute top-1 right-1 text-gray-400 cursor-pointer hover:scale-110" onClick={() => addTechnologie()} />
       ) : (
-        <BsCheckCircleFill className="absolute top-1 right-1 text-gray-400 cursor-pointer hover:scale-110" onClick={() => removeTechnologie()} />
+        <BsCheckCircleFill className="absolute top-1 right-1 text-primary-500 cursor-pointer hover:scale-110" onClick={() => removeTechnologie()} />
       )}
 
       <abbr
@@ -198,7 +198,7 @@ const AddonsCard = (props) => {
         />
       ) : (
         <BsCheckCircleFill
-          className="absolute top-1 right-1 text-gray-400 cursor-pointer hover:scale-110"
+          className="absolute top-1 right-1 text-primary-500 cursor-pointer hover:scale-110"
           onClick={() => removeAddons(props._id)}
         />
       )}
