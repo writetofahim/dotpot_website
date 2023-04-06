@@ -18,7 +18,7 @@ import nextJS from "../../../assets/img/icon/webFrontend/nextJS.webp";
 import react from "../../../assets/img/icon/webFrontend/react.png";
 
 import nodeJS from "../../../assets/img/icon/webBackend/nodejs.png";
-import express from "../../../assets/img/icon/webBackend/expressJs.png";
+import express from "../../../assets/img/icon/webBackend/nodejs.png";
 import laravel from "../../../assets/img/icon/webBackend/laravel.png";
 import dj from "../../../assets/img/icon/webBackend/dj.jpg";
 import aspNet from "../../../assets/img/icon/webBackend/aspNet.png";
