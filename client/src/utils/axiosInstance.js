@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: 'https://dotpotit.com/api',
+  baseURL: import.meta.env.REACT_APP_SERVER_PATH,
 });
 
 export default instance;

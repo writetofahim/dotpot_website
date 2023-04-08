@@ -9,6 +9,8 @@ import axios from '../../utils/axiosInstance';
 import React, { useEffect, useState } from 'react'
 import HeroSlide from './HeroSlide'
 import Particle from './Particle'
+import postLogger from '../../utils/postLogger';
+// import winston from "winston";
 
 const Hero = () => {
     const [heroData, setHeroData] = useState(null);
@@ -18,6 +20,7 @@ const Hero = () => {
             try {
                 const response = await axios.get('/hero');
                 setHeroData(response.data);
+                postLogger({level:"info", message:response})
             } catch (error) {
                 console.error(error);
             }

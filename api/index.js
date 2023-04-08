@@ -30,6 +30,7 @@ const c_keyFeatureRouters = require("./routes/c_keyFeatureRouters")
 const c_partnershipModelRoutes = require("./routes/c_partnershipModelRoutes")
 const c_whoWeWorkWithRoutes = require("./routes/c_whoWeWorkWithRoutes")
 const chatRoutes = require("./routes/chatRoutes");
+const loggerRoutes = require("./routes/loggerRoutes");
 
 dotenv.config();
 
@@ -72,7 +73,7 @@ app.use('/uploads/response', express.static(__dirname + '/uploads/response'));
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: ["http://localhost:5173", "http://localhost:5174", "http://dotpotit.com","http://dotpotit.com/admin", "https://dotpotit.com", "https://dotpotit.com/admin","https://dotpot-admin.vercel.app"],
+        origin: ["http://localhost:5173", "http://localhost:5174", "http://dotpotit. ","http://dotpotit.com/admin", "https://dotpotit.com", "https://dotpotit.com/admin","https://dotpot-admin.vercel.app"],
         methods: ["GET", "POST"],
     },
 });
@@ -116,6 +117,9 @@ app.use("/api/info", c_infoRoutes)
 app.use("/api/key_feature", c_keyFeatureRouters)
 app.use("/api/partnership_model", c_partnershipModelRoutes)
 app.use("/api/who_we_work_with", c_whoWeWorkWithRoutes)
+
+// Logger
+app.use("/api/logger", loggerRoutes)
 
 const port = 8800
 

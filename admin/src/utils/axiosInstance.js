@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const token = localStorage.getItem("accessToken");
 const instance = axios.create({
-  baseURL: 'https://dotpotit.com/api',
+  baseURL: import.meta.env.REACT_APP_SERVER_PATH,
   headers:{'Authorization': `Bearer ${JSON.parse(token)}`},
 });
 
