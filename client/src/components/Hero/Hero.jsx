@@ -23,6 +23,7 @@ const Hero = () => {
                 postLogger({level:"info", message:response})
             } catch (error) {
                 console.error(error);
+                postLogger({level:"error", message:error})
             }
         }
         fetchHeroData();

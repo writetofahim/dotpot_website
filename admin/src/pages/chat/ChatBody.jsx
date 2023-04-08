@@ -6,6 +6,7 @@ import { useParams } from 'react-router';
 import axios from "../../utils/axiosInstance"
 import { FaSpinner } from "react-icons/fa";
 import socket from '../../socket';
+import postLogger from '../../utils/postLogger';
 
 const ChatBody = () => {
     const [messages, setMessages] = useState([]);
@@ -43,6 +44,7 @@ const ChatBody = () => {
         axios.get(`/chats/${conversationId}/messages/admin`).then((response) => {
             console.log("messages", response.data);
             setMessages(response.data);
+            postLogger({level:"info", message:response})
         })
     }, [conversationId])
 
@@ -68,6 +70,7 @@ const ChatBody = () => {
                 console.log("resFiles", resFiles[0].filename)
                 attachment = resFiles[0].filename;
                 setFiles(null)
+                postLogger({level:"info", message:resFiles[0].filename})
             }
             if (newMessage !== "" || attachment !== null) {
                 const { data } = await axios.post(`/chats/${conversationId}/reply`, { text: newMessage, attachment: attachment })
@@ -79,6 +82,7 @@ const ChatBody = () => {
            
         } catch (error) {
             console.log("error.response", error)
+            postLogger({level:"error", message:error})
             if (error.response?.data?.errors?.msg) {
                 setError(error.response.data.errors.msg)
             } else {

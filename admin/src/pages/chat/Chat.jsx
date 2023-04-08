@@ -6,6 +6,7 @@ import "./chat.css"
 import { Outlet } from "react-router";
 import socket from "../../socket";
 import {useLocation} from "react-router-dom"
+import postLogger from "../../utils/postLogger";
 
 const Chat = () => {
   const [chatList, setChatList] = useState([]);
@@ -17,6 +18,7 @@ const Chat = () => {
   const getChatList = async()=>{
     setIsLoading(true)
     axios.get(`/chats?page=${page}`).then(({ data }) => {
+      postLogger({level:"info", message:data})
       console.log(data);
       setChatList([...data.chats]);
       setTotalChats(data.totalChatsCount);

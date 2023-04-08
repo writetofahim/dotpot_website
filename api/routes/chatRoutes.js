@@ -48,7 +48,7 @@ router.delete('/:conversationId', adminMiddleware, deleteConversation);
 async function getMessages(req, res, next) {
     try {
         const chat = await Message.find({ conversation_id: req.params.conversationId });
-        if (!chat) {
+        if (!chat || chat.length === 0) {
             return res.status(404).json({ message: 'Messages not found' });
         }
         res.chat = chat;

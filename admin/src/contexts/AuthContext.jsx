@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react"
 import axios from "../utils/axiosInstance";
+import postLogger from "../utils/postLogger";
 
 export const AuthContext = createContext(); // create a new context object
 
@@ -38,9 +39,11 @@ export const AuthContextProvider = ({ children }) => {
       localStorage.setItem("user", JSON.stringify({ ...data.user, timestamp: new Date().getTime() }));
       // Set the user object as the current user
       setUser(data.user);
+      postLogger({level:"info", message:data})
     } catch (error) {
       setError(error.message) // set the error state with the error message
       console.log(error);
+      postLogger({level:"error", message:error})
     }
   }
 
@@ -55,6 +58,7 @@ export const AuthContextProvider = ({ children }) => {
       localStorage.setItem("user", JSON.stringify(data.user));
       // Set the user object as the current user
       setUser(data.user);
+      postLogger({level:"info", message:data})
 
     } catch (error) {
       console.log(error);
@@ -66,6 +70,7 @@ export const AuthContextProvider = ({ children }) => {
         setError(error.message);
         // set the error state with the default error message
       }
+      postLogger({level:"error", message:error})
     }
   }
 

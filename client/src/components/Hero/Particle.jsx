@@ -71,7 +71,7 @@ const Particle = () => {
         straight: false,
       },
       number: {
-        value: 200,
+        value: 100,
       },
       opacity: {
         value: 1,
