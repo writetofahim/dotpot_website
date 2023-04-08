@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { customizeYourServiceData } from "../../data"
 import { BiCircle } from "react-icons/bi"
 import { BsCheckCircleFill } from "react-icons/bs"
-import { CiCircleInfo } from "react-icons/ci"
+import { BsCircle } from "react-icons/bs"
 import { AiOutlineDoubleRight } from "react-icons/ai"
 import { GrFormClose } from "react-icons/gr"
 import axios from "../../utils/axiosInstance"
@@ -13,6 +13,8 @@ import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthContext';
 import postLogger from '../../utils/postLogger';
+import customizeServiceBg from "../../assets/img/customizeService.svg"
+import Typed from 'react-typed';
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -118,7 +120,7 @@ const TechnologyCard = (props) => {
   };
 
   return (
-    <div className="w-[30%] md:w-[100px] h-[70px] lg:h-[100px] p-1 lg:p-2 border rounded-xl flex flex-col items-center justify-evenly hover:scale-105 hover:shadow-xl transition-all relative overflow-hidden">
+    <div className="w-[30%] md:w-[120px] h-[90px] lg:h-[100px] p-1 lg:p-2 border rounded-xl flex flex-col items-center justify-evenly hover:scale-105 hover:shadow-xl transition-all relative overflow-hidden bg-white">
       <img src={props.icon} alt={props.title} className="w-2/5 lg:w-3/5 aspect-square object-contain" />
 
       {!isSelect ? (
@@ -131,7 +133,7 @@ const TechnologyCard = (props) => {
         title={`${props.sdes} Starting from ${props.cost}`}
         className="absolute top-1 left-1 text-gray-400 cursor-pointer hover:scale-110"
       >
-        <CiCircleInfo />
+        <BsCircle />
       </abbr>
 
       <h3 className="text-center text-gray-300 text-sm">{props.title}</h3>
@@ -190,7 +192,7 @@ const AddonsCard = (props) => {
   };
 
   return (
-    <div className="w-[30%] md:w-[100px] h-[70px] lg:h-[100px] p-1 lg:p-2 border rounded-xl flex flex-col items-center justify-evenly hover:scale-105 hover:shadow-xl transition-all relative overflow-hidden">
+    <div className="w-[30%] md:w-[100px] h-[90px] lg:h-[100px] p-1 lg:p-2 border rounded-xl flex flex-col items-center justify-evenly hover:scale-105 hover:shadow-xl transition-all relative overflow-hidden bg-white">
       <img src={props.icon} alt={props.title} className="w-2/5 lg:w-3/5 aspect-square" />
       {!isSelect ? (
         <BiCircle
@@ -207,7 +209,7 @@ const AddonsCard = (props) => {
         title={`${props.sdes} Starting from ${props.cost}`}
         className="absolute top-1 left-1 text-gray-400 cursor-pointer hover:scale-110"
       >
-        <CiCircleInfo />
+        <BsCircle />
       </abbr>
       <h3 className="text-center text-gray-300 text-sm">{props.title}</h3>
     </div>
@@ -233,6 +235,7 @@ const CustomizeService = () => {
   useEffect(() => {
     axios.get("/service").then(data => {
       setCustomizeYourService(data.data.services)
+      setOpenService(data.data.services[0])
       postLogger({ level: "info", message: data })
     })
   }, [])
@@ -275,6 +278,7 @@ const CustomizeService = () => {
     if (price === 0) return
     const clientId = JSON.parse(localStorage.getItem("user"))?._id
     console.log("clientId", clientId);
+    
     if (!clientId) return navigate("/login");
 
     setIsSubmitting(true);
@@ -322,12 +326,13 @@ const CustomizeService = () => {
         </p>
 
         {/* Main Container */}
-        <div className="mt-5 flex flex-col lg:flex-row justify-between gap-5 rounded-xl md:min-h-[70vh] ">
+        <div className="mt-5 flex flex-col lg:flex-row justify-between gap-5 rounded-xl md:min-h-[70vh] " style={
+              {background:`url(${customizeServiceBg})`, backgroundSize:"cover"}
+            }>
 
           {/* Left container */}
-          <div className="p-3 border rounded-xl flex-[0.2] shadow-xl bg-white">
-            <h3 className="text-gray-400 text-xl">Services</h3>
-            <hr />
+          <div className="p-3 md:px-3 md:py-5 border rounded-xl flex-[0.2] shadow-xl  customizeServiceLeft">
+            <h3 className="text-gray-400 text-xl uppercase font-bold">Services</h3>
             <div className="w-full flex gap-1 flex-wrap justify-center lg:block">
               {
                 customizeYourService.map((item, index) => (
@@ -348,7 +353,7 @@ const CustomizeService = () => {
 
 
           {/* Right container */}
-          <div className="pt-10 md:pt-2 p-2 border rounded-xl flex-[0.8] min-h-[40vh] pb-10 shadow-xl relative bg-white">
+          <div className="pt-10 p-3 md:p-5 border rounded-xl flex-[0.8] min-h-[40vh] pb-10 shadow-xl relative  customizeServiceRight ">
 
             {/* Top Section */}
             <div className="">
@@ -383,8 +388,8 @@ const CustomizeService = () => {
             </div>
 
             <div className="absolute top-1 right-1 flex flex-col items-center">
-              <p className="text-sm text-gray-300">Estimated Cost</p>
-              <p className="text-3xl text-secondary-400 font-bold">{price}$</p>
+              <p className="text-sm text-gray-300 md:text-white">Estimated Cost</p>
+              <p className="text-3xl text-secondary-400 font-bold md:text-white">{price}$</p>
             </div>
             {/* End of Top Section */}
 
@@ -406,7 +411,6 @@ const CustomizeService = () => {
                       ))
                     }
                   </div>
-                  <hr />
                 </div>
               )
             }
@@ -434,10 +438,25 @@ const CustomizeService = () => {
               )
             }
             {/* End of Show Addons section */}
-            <button disabled={isSubmitting} onClick={handlePlaceOrder} className={`flex items-center gap-2 absolute bottom-2 right-2 px-3 py-2 rounded-full hover:shadow text-white bg-secondary-400 hover:bg-secondary-300 hover:scale-105 hover:font-bold transition-all disabled:secondary-100 ${isSubmitting && "cursor-not-allowed"}`}>
+            {
+              user ? (<button disabled={isSubmitting} onClick={handlePlaceOrder} className={`flex items-center gap-2 absolute bottom-2 right-2 px-3 py-2 rounded-full hover:shadow text-white bg-secondary-400 hover:bg-secondary-300 hover:scale-105 hover:font-bold transition-all disabled:secondary-100 ${isSubmitting && "cursor-not-allowed"}`}>
               Confirm
               {isSubmitting ? <FaSpinner className="animate-spin" /> : <AiOutlineDoubleRight />}
+            </button>):(
+              <button disabled={isSubmitting} onClick={()=>navigate("/login")} className={`flex items-center gap-2 absolute bottom-2 right-2 px-3 py-2 rounded-full hover:shadow text-white bg-secondary-400 hover:bg-secondary-300 hover:scale-105 hover:font-bold transition-all disabled:secondary-100 ${isSubmitting && "cursor-not-allowed"}`}>
+              Login To Confirm
+              {isSubmitting ? <FaSpinner className="animate-spin" /> : <AiOutlineDoubleRight />}
             </button>
+            )
+            }
+
+            <Typed 
+                className="text-xl md:text-2xl text-center md:text-lef absolute bottom-3 hidden md:block"
+                strings={["Create you own Packages", "Customize Service to Serve Your Need","Get Quote on Your Desire Services ", "Make Business Success Online"]}
+                typeSpeed={50}
+                backSpeed={50}
+                loop
+              />
           </div>
           {/* End of Right container */}
 

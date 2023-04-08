@@ -13,7 +13,7 @@ const ChatList = ({ chatList, handleLoadMore, isLoading, totalChats, getChatList
                     <ChatItem key={chat._id} chat={chat} getChatList={getChatList} />
                 ))}
                 {(chatList.length === 0 && !isLoading)&& <p className='ml-3'>No chats available!</p>}
-                {(chatList.length !== 0 || totalChats !== chatList.length) && <div className='w-full py-3 flex justify-center '>
+                {(totalChats > 10 || totalChats !== chatList.length) && <div className='w-full py-3 flex justify-center '>
                     <button disabled={isLoading} onClick={handleLoadMore} className="text-center px-3 py-1 bg-blue-600 text-white rounded-lg flex items-center gap-2 disabled:bg-blue-300">Load More {isLoading && <FaSpinner className="animate-spin" />}</button>
                 </div>}
             </div>   
