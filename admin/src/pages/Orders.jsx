@@ -1,5 +1,6 @@
 import axios from "../utils/axiosInstance";
 import React, { useEffect, useState } from "react";
+import postLogger from "../utils/postLogger";
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
@@ -11,12 +12,14 @@ const Orders = () => {
       const ordersWithUsersData = await Promise.all(ordersData.map(async (order) => {
         const userResponse = await axios.get(`/api/user/${order.client_id}`);
         const userData = userResponse.data;
+        postLogger({level:"info", message:userResponse})
         return {
           ...order,
           user: userData,
         };
       }));
       setOrders(ordersWithUsersData);
+      postLogger({level:"info", message:orders})
     }
 
     fetchData();

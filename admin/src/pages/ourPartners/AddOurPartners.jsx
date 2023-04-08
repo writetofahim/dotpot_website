@@ -3,6 +3,7 @@ import { FaSpinner } from "react-icons/fa";
 import { useSearchParams } from "react-router-dom";
 import CommonSnackbar from "../../components/ComonSnackbar";
 import axios from "../../utils/axiosInstance";
+import postLogger from "../../utils/postLogger";
 
 const AddOurPartners = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -33,9 +34,11 @@ const AddOurPartners = () => {
           imageDiv.classList.remove("hidden");
           preview.innerHTML = "";
           preview.appendChild(image);
+          postLogger({level:"info", message:res})
         })
         .catch((err) => {
           console.log(err);
+          postLogger({level:"error", message:err})
         });
     }
   }, [ourPartnerId]);
@@ -73,14 +76,17 @@ const AddOurPartners = () => {
         const { data: resFiles } = await axios.post("/upload/blogs", formData);
         newCompany.logo = resFiles[0].filename;
         setFile(null);
+        postLogger({level:"info", message:resFiles})
       }
       if (ourPartnerId) {
         await axios.put(`/our_partner/${ourPartnerId}`, newCompany);
         setMessage("Update Successful!");
         setSnackbar(true);
+        postLogger({level:"info", message:"Our Partner has been updated!"})
       } else {
         await axios.post("/our_partner", newCompany);
         setMessage("Add Successful!");
+        postLogger({level:"info", message:"Our Partner has Added Successfully!"})
         setSnackbar(true);
         setCompanyName("");
         setWebsiteUrl("");
@@ -92,6 +98,7 @@ const AddOurPartners = () => {
       } else{
         setError(err.message);
       }
+      postLogger({level:"error", message:err})
       
     } finally{
       setIsLoading(false);

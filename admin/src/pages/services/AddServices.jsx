@@ -4,6 +4,7 @@ import { useSearchParams } from 'react-router-dom';
 import axios from '../../utils/axiosInstance';
 import { RxCross1 } from "react-icons/rx";
 import {FaSpinner} from "react-icons/fa"
+import postLogger from '../../utils/postLogger';
 
 const AddService = () => {
   const [title, setTitle] = useState('');
@@ -33,6 +34,7 @@ const AddService = () => {
         setIcon(data.service.icon);
         setTechnologies(data.service.technologies);
         setAddons(data.service.addons)
+        postLogger({level:"info", message:data})
       })
     }
   
@@ -75,6 +77,7 @@ const AddService = () => {
     setIcon('');
     setTechnologies([]);
     setAddons([]);
+    postLogger({level:"info", message:newService})
   };
 
   const handleRemoveAddOn = (item) => {

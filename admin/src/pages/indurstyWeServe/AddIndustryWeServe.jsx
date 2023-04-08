@@ -3,6 +3,7 @@ import { FaSpinner } from "react-icons/fa";
 import { useSearchParams } from "react-router-dom";
 import CommonSnackbar from "../../components/ComonSnackbar";
 import axios from "../../utils/axiosInstance";
+import postLogger from "../../utils/postLogger";
 
 const IndustryForm = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -28,9 +29,11 @@ const IndustryForm = () => {
           setIcon(res.data.icon);
           setSubtitle(res.data.subtitle);
           setLink(res.data.link);
+          postLogger({level:"info", message:res})
         })
         .catch((err) => {
           console.log(err);
+          postLogger({level:"error", message:err})
         });
     }
   }, [industryWeServeId]);
@@ -49,6 +52,7 @@ const IndustryForm = () => {
         });
         setMessage("Update Successful!");
         setSnackbar(true);
+        postLogger({level:"info", message:"Update Successful!"})
       } else {
         await axios.post("/industry_we_serve", {
           title,
@@ -64,9 +68,11 @@ const IndustryForm = () => {
         setIcon("");
         setSubtitle("");
         setLink("");
+        postLogger({level:"info", message:"Add Successful"})
       }
     } catch (err) {
       alert("Error creating industry.");
+      postLogger({level:"error", message:err})
     }
     setIsLoading(false);
   };

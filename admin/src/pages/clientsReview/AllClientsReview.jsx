@@ -2,6 +2,7 @@ import axios from '../../utils/axiosInstance';
 import * as React from 'react';
 import ClientsReviewTableRow from './ClientsReviewTableRow';
 import { Link } from 'react-router-dom';
+import postLogger from "../../utils/postLogger";
 
 export default function AllClientsReview() {
   const [data, setData] = React.useState([]);
@@ -14,8 +15,10 @@ export default function AllClientsReview() {
       setData(response.data.ClientReviews);
       setTotalPages(response.data.totalPages);
       console.log(data);
+      postLogger({level:"info", message:response})
     } catch (error) {
       console.error(error);
+      postLogger({level:"error", message:error})
     }
   };
 

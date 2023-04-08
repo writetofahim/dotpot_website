@@ -4,6 +4,7 @@ import { AiOutlineEdit } from 'react-icons/ai';
 import axios from "../../utils/axiosInstance"
 import DeleteModal from '../../components/DeleteModal';
 import { useNavigate } from 'react-router-dom';
+import postLogger from '../../utils/postLogger';
 
 const IndustryWeServeTableRow = ({ industry, setData, data }) => {
     const { title, icon, description, link, _id } = industry;
@@ -15,6 +16,7 @@ const IndustryWeServeTableRow = ({ industry, setData, data }) => {
         if (response.status === 200) {
             setData(existing => existing.filter(d => d._id !== id));
         }
+        postLogger({level:"info", message:response})
     }
 
     return (

@@ -2,6 +2,7 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 import axios from "../../utils/axiosInstance";
 import IndustryWeServeTableRow from "./IndustryWeServeTableRow";
+import postLogger from "../../utils/postLogger";
 
 export default function AllIndustryWeServe() {
   const [data, setData] = React.useState([]);
@@ -14,8 +15,10 @@ export default function AllIndustryWeServe() {
       console.log("Bla bla bla",response.data);
       setData(response.data.industryWeServe);
       setTotalPages(response.data.totalPages);
+      postLogger({level:"info", message:response})
     } catch (error) {
       console.error(error);
+      postLogger({level:"error", message:error})
     }
   };
 

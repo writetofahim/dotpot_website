@@ -1,6 +1,7 @@
 import axios from '../../utils/axiosInstance';
 import * as React from 'react';
 import BlogTableRow from './BlogTableRow';
+import postLogger from '../../utils/postLogger';
 
 export default function AllBlogs() {
   const [data, setData] = React.useState([]);
@@ -13,8 +14,10 @@ export default function AllBlogs() {
       console.log(response.data);
       setData(response.data.blogs);
       setTotalPages(response.data.totalPages);
+      postLogger({level:"info", message:response})
     } catch (error) {
       console.error(error);
+      postLogger({level:"error", message:error})
     }
   };
 

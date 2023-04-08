@@ -1,6 +1,7 @@
 import axios from '../../utils/axiosInstance';
 import * as React from 'react';
 import UsersTableRow from './UsersTableRow';
+import postLogger from '../../utils/postLogger';
 
 export default function AllUsers() {
   const [data, setData] = React.useState([]);
@@ -14,8 +15,10 @@ export default function AllUsers() {
       console.log(response.data);
       setData(response.data.users);
       setTotalPages(response.data.totalPages);
+      postLogger({level:"info", message:response})
     } catch (error) {
       console.error(error);
+      postLogger({level:"error", message:error})
     }
   };
 
@@ -53,9 +56,9 @@ export default function AllUsers() {
               <th scope="col" className="px-6 py-3">
                 Role
               </th>
-              <th scope="col" className="px-6 py-3">
+              {/* <th scope="col" className="px-6 py-3">
                 Action
-              </th>
+              </th> */}
             </tr>
           </thead>
           <tbody>

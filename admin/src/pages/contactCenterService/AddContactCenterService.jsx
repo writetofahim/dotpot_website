@@ -3,6 +3,7 @@ import { FaSpinner } from "react-icons/fa";
 import { useSearchParams } from "react-router-dom";
 import CommonSnackbar from "../../components/ComonSnackbar";
 import axios from "../../utils/axiosInstance";
+import postLogger from "../../utils/postLogger";
 
 const AddContactCenterService = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -23,9 +24,11 @@ const AddContactCenterService = () => {
           setTitle(res.data.title);
           setIcon(res.data.icon);
           setLink(res.data.link);
+          postLogger({level:"info", message:response})
         })
         .catch((err) => {
           console.log(err);
+          postLogger({level:"error", message:err})
         });
     }
   }, [industryWeServeId]);

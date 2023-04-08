@@ -3,6 +3,7 @@ import { FaSpinner } from "react-icons/fa";
 import { useSearchParams } from "react-router-dom";
 import CommonSnackbar from "../../components/ComonSnackbar";
 import axios from "../../utils/axiosInstance";
+import postLogger from "../../utils/postLogger";
 
 const AddWhoWeWorksWith = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -24,9 +25,11 @@ const AddWhoWeWorksWith = () => {
           setTitle(res.data.data.title);
           setIcon(res.data.data.icon);
           setLink(res.data.data.link);
+          postLogger({level:"info", message:res})
         })
         .catch((err) => {
           console.log(err);
+          postLogger({level:"error", message:err})
         });
     }
   }, [whoWeWorksWithId]);
@@ -42,21 +45,23 @@ const AddWhoWeWorksWith = () => {
           link
         });
         setMessage("Update Successful!");
+        postLogger({level:"info", message:"Who We Work With Updated Successful from Admin!"})
         setSnackbar(true);
       } else {
         await axios.post("/who_we_work_with", {
           title,
-          description,
           icon,
           link
         });
         setMessage("Add Successful!");
+        postLogger({level:"info", message:"Who We Work With added Successfully from Admin!"})
         setSnackbar(true);
         setTitle("");
         setIcon("");
       }
     } catch (err) {
       alert("Error creating industry.");
+      postLogger({level:"error", message:err})
     }
     setIsLoading(false);
   };

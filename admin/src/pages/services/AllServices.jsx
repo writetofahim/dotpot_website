@@ -1,6 +1,7 @@
 import axios from '../../utils/axiosInstance';
 import * as React from 'react';
 import ServiceTableRow from './ServiceTableRow';
+import postLogger from '../../utils/postLogger';
 
 export default function AllClientsReview() {
   const [data, setData] = React.useState([]);
@@ -13,8 +14,10 @@ export default function AllClientsReview() {
       setData(response.data.services);
       setTotalPages(response.data.totalPages);
       console.log(data);
+      postLogger({level:"info", message:response})
     } catch (error) {
       console.error(error);
+      postLogger({level:"error", message:error})
     }
   };
 

@@ -3,6 +3,7 @@ import axios from "../../utils/axiosInstance";
 import { FaSpinner } from "react-icons/fa"
 import { useSearchParams } from "react-router-dom";
 import CommonSnackbar from "../../components/ComonSnackbar";
+import postLogger from "../../utils/postLogger";
 
 const AddTeam = () => {
     const [name, setName] = useState("");
@@ -38,9 +39,11 @@ const AddTeam = () => {
                     imageDiv.classList.remove("hidden");
                     preview.innerHTML = "";
                     preview.appendChild(image);
+                    postLogger({level:"info", message:res})
                 })
                 .catch(err => {
                     console.log(err);
+                    postLogger({level:"error", message:err})
                 })
         }
     }, [])

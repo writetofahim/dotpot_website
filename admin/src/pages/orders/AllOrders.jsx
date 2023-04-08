@@ -2,6 +2,7 @@ import axios from '../../utils/axiosInstance';
 import * as React from 'react';
 import OrdersTableRow from './OrdersTableRow';
 import { Link } from 'react-router-dom';
+import postLogger from '../../utils/postLogger';
 
 export default function AllOrders() {
   const [data, setData] = React.useState([]);
@@ -13,8 +14,10 @@ export default function AllOrders() {
       const response = await axios.get(`/order?page=${page}`);
       setData(response.data.orders);
       setTotalPages(response.data.totalPages);
+      postLogger({level:"info", message:response})
     } catch (error) {
       console.error(error);
+      postLogger({level:"error", message:err})
     }
   };
 

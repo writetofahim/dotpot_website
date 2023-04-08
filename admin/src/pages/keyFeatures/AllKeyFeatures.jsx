@@ -2,6 +2,7 @@ import axios from '../../utils/axiosInstance';
 import * as React from 'react';
 import KeyFeatureTableRow from './KeyFeatureTableRow';
 import { Link } from 'react-router-dom';
+import postLogger from '../../utils/postLogger';
 
 export default function AllKeyFeatures() {
   const [data, setData] = React.useState([]);
@@ -13,9 +14,11 @@ export default function AllKeyFeatures() {
       const response = await axios.get(`/key_feature?page=${page}`);
       setData(response.data.KeyFeatures);
       setTotalPages(response.data.totalPages);
+      postLogger({level:"info", message:response})
       console.log(data);
     } catch (error) {
       console.error(error);
+      postLogger({level:"error", message:error})
     }
   };
 

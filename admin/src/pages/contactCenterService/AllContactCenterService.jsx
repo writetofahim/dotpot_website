@@ -4,6 +4,7 @@ import { RiDeleteBinLine } from "react-icons/ri";
 import { Link, useNavigate } from "react-router-dom";
 import DeleteModal from "../../components/DeleteModal";
 import axios from "../../utils/axiosInstance";
+import postLogger from "../../utils/postLogger";
 
 const AllContactCenterService = () => {
   const [data, setData] = React.useState([]);
@@ -17,8 +18,10 @@ const AllContactCenterService = () => {
       const response = await axios.get("/contact_center_service");
       setData(response.data);
       console.log(response.data);
+      postLogger({level:"info", message:response})
     } catch (error) {
       console.error(error);
+      postLogger({level:"error", message:error})
     }
   };
 
@@ -29,6 +32,7 @@ const AllContactCenterService = () => {
     const response = await axios.delete(`/contact_center_service/${id}`);
     if (response.status === 200) {
       setData((existing) => existing.filter((d) => d._id !== id));
+      postLogger({level:"info", message:response})
     }
   };
   const deleteService = (id) => {
@@ -44,7 +48,7 @@ const AllContactCenterService = () => {
           setOpen={setIsModalOpen}
         />
       )}
-      <Link to="/contact-center-service/add-contact-center-service">
+      <Link to="/admin/contact-center-service/add-contact-center-service">
         <button className="m-5 px-3 py-2 bg-green-400 text-white font-bold cursor-pointer rounded-lg hover:scale-105 hover:shadow-xl transition-all">
           Add New
         </button>

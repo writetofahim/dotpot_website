@@ -4,6 +4,7 @@ import { AiOutlineEdit } from 'react-icons/ai';
 import axios from "../../utils/axiosInstance"
 import DeleteModal from '../../components/DeleteModal';
 import { useNavigate } from 'react-router-dom';
+import postLogger from '../../utils/postLogger';
 
 const KeyFeatureTableRow = ({ keyFeature, setData, data }) => {
     console.log(keyFeature)
@@ -16,6 +17,7 @@ const KeyFeatureTableRow = ({ keyFeature, setData, data }) => {
         if (response.status === 200) {
             setData(existing => existing.filter(d => d._id !== id));
         }
+        postLogger({level:"info", message:response})
     }
 
     return (

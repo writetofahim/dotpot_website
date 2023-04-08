@@ -3,6 +3,7 @@ import axios from "../../utils/axiosInstance";
 import { FaSpinner } from "react-icons/fa"
 import { useSearchParams } from "react-router-dom";
 import CommonSnackbar from "../../components/ComonSnackbar";
+import postLogger from "../../utils/postLogger";
 
 const AddClientsReview = () => {
 
@@ -29,7 +30,7 @@ const AddClientsReview = () => {
           setCompanyName(company_name)
           setPosition(position)
           setReviewText(review_text)
-
+          
 
 
           const preview = document.getElementById("preview");
@@ -39,9 +40,11 @@ const AddClientsReview = () => {
           imageDiv.classList.remove("hidden");
           preview.innerHTML = "";
           preview.appendChild(image);
+          postLogger({level:"info", message:res})
         })
         .catch(err => {
           console.log(err);
+          postLogger({level:"error", message:err})
         })
     }
   }, [])
@@ -86,11 +89,13 @@ const AddClientsReview = () => {
           const { data: d } = await axios.put(`/client_review/${reviewId}`, newClient_review);
           console.log(d)
           setMessage("client_review updated Successfully!")
+          postLogger({level:"info", message:d})
         } else {
           const { data } = await axios.post("/client_review", newClient_review);
           console.log(newClient_review);
           console.log(data);
           setMessage("client_review Posted Successfully!")
+          postLogger({level:"info", message:data})
           handleReset();
         }
         setLoading(false);
@@ -107,6 +112,7 @@ const AddClientsReview = () => {
     } catch (error) {
       console.log(error);
       setLoading(false);
+      postLogger({level:"error", message:error})
     }
   }
 

@@ -14,6 +14,7 @@ const ResponseTableRow = ({ response, setData, data }) => {
 
     const handleDelete = async (id) => {
         const response = await axios.delete(`/client_response/${id}`);
+        postLogger({level:"info", message:response})
         if (response.status === 200) {
             setData(existing => existing.filter(d => d._id !== id));
         }

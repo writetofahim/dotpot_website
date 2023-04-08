@@ -7,6 +7,7 @@ import { AuthContext } from "../../contexts/AuthContext";
 import { FaSpinner } from "react-icons/fa"
 import { useSearchParams } from "react-router-dom";
 import CommonSnackbar from "../../components/ComonSnackbar";
+import postLogger from "../../utils/postLogger";
 
 const AddBlogs = () => {
   const [content, setContent] = useState("");
@@ -36,9 +37,11 @@ const AddBlogs = () => {
           imageDiv.classList.remove("hidden");
           preview.innerHTML = "";
           preview.appendChild(image);
+          postLogger({level:"info", message:res})
         })
         .catch(err => {
           console.log(err);
+          postLogger({level:"error", message:err})
         })
     }
   }, [])

@@ -5,6 +5,7 @@ import axios from "../../utils/axiosInstance"
 import DeleteModal from '../../components/DeleteModal';
 import { useNavigate } from 'react-router-dom';
 import moment from 'moment'
+import postLogger from '../../utils/postLogger';
 
 const OrdersTableRow = ({ order, setData, data , refetch}) => {
     const { client_id, createdAt, _id, total_cost, selected_items, status } = order;
@@ -17,14 +18,16 @@ const OrdersTableRow = ({ order, setData, data , refetch}) => {
         if (response.status === 200) {
             setData(existing => existing.filter(d => d._id !== id));
         }
+        postLogger({level:"info", message:response})
     }
 
     const handleStatusChange =async (e) => {
-      if(!e.target.value) return
-      const response = await axios.put(`/order/${_id}`, {status:e.target.value})
-      if (response.status === 200) {
-        refetch();
-     }
+        if(!e.target.value) return
+        const response = await axios.put(`/order/${_id}`, {status:e.target.value})
+        if (response.status === 200) {
+            refetch();
+            }
+        postLogger({level:"info", message:response})
     }
     
 

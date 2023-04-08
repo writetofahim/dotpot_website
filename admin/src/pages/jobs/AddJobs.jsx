@@ -3,6 +3,7 @@ import { FaSpinner } from 'react-icons/fa';
 import { useSearchParams } from 'react-router-dom';
 import CommonSnackbar from '../../components/ComonSnackbar';
 import axios from "../../utils/axiosInstance";
+import postLogger from '../../utils/postLogger';
 
 function JobPostingForm() {
   const [title, setTitle] = useState('');
@@ -50,6 +51,7 @@ function JobPostingForm() {
           } = res.data;
 
           console.log(res.data)
+          postLogger({level:"info", message:res})
 
           setTitle(title);
           setCompany(company);
@@ -68,6 +70,7 @@ function JobPostingForm() {
         })
         .catch(err => {
           console.log(err);
+          postLogger({level:"error", message:err})
         })
     }
   }, [jobId]);
@@ -105,6 +108,7 @@ function JobPostingForm() {
         resetForm();
       }
       setLoading(false)
+      postLogger({level:"info", message:response})
     } else {
       console.log(formData)
       const response = await axios.post('/job', formData);
@@ -114,6 +118,7 @@ function JobPostingForm() {
         resetForm();
       }
       setLoading(false);
+      postLogger({level:"info", message:response})
     }
 
   };

@@ -2,6 +2,7 @@ import axios from "../utils/axiosInstance";
 import React, { useEffect, useState } from "react";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import postLogger from "../utils/postLogger";
 
 
 const TableRow = ({data,setData}) => {
@@ -11,9 +12,10 @@ const TableRow = ({data,setData}) => {
     if (response.status === 200) {
         setData(existing => existing.filter(d => d._id !== id));
     }
+    postLogger({level:"info", message:response})
 }
   return(
-    <>
+    <tr className="w-full mb-5 border border-gray-400">
       <td className="px-6 py-4">
           {data.jobTitle}
       </td>
@@ -47,7 +49,7 @@ const TableRow = ({data,setData}) => {
               <RiDeleteBinLine onClick={()=>handelDelete(data._id)} className='text-red-500 cursor-pointer' />
           </div>
       </td>
-    </>
+    </tr>
   )
 }
 
@@ -61,9 +63,11 @@ const AllJobApplications = (props) => {
       const response = await axios.get(`/job_application?page=${page}`);
       setData(response.data.JobApplications);
       setTotalPages(response.data.totalPages);
+      postLogger({level:"info", message:response})
       console.log(data);
     } catch (error) {
       console.error(error);
+      postLogger({level:"error", message:error})
     }
   };
 
@@ -115,9 +119,9 @@ const AllJobApplications = (props) => {
             </tr>
           </thead>
           <tbody>
-            {data.map((data, index) => <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+            {data.map((data, index) =>
               <TableRow key={index} data={data} setData={props.setData} />
-            </tr>)}
+              )}
           </tbody>
         </table>
       </div>
@@ -170,8 +174,14 @@ const JobApplications = () => {
     // Data Fetching
     useEffect(() => {
         axios.get('/job_application')
-            .then(response => setData(response.data.JobApplications))
-            .catch(error => console.error(error));
+            .then(response => {
+              setData(response.data.JobApplications)
+              postLogger({level:"info", message:response})
+            })
+            .catch(error => {
+              console.error(error)
+              postLogger({level:"error", message:error})
+            });
     }, []);
 
     console.log(data)

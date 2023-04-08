@@ -1,6 +1,7 @@
 import axios from '../../utils/axiosInstance';
 import * as React from 'react';
 import TeamTableRow from './TeamTableRow';
+import postLogger from '../../utils/postLogger';
 
 export default function AllTeam() {
   const [data, setData] = React.useState([]);
@@ -13,8 +14,10 @@ export default function AllTeam() {
       console.log("response.data", response.data);
       setData(response.data.teamMembers);
       setTotalPages(response.data.totalPages);
+      postLogger({level:"info", message:response})
     } catch (error) {
       console.error(error);
+      postLogger({level:"error", message:error})
     }
   };
 

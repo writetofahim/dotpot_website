@@ -3,6 +3,7 @@ import { FaSpinner } from "react-icons/fa";
 import { useSearchParams } from "react-router-dom";
 import CommonSnackbar from "../../components/ComonSnackbar";
 import axios from "../../utils/axiosInstance";
+import postLogger from "../../utils/postLogger";
 
 const AddPartnershipModel = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -26,9 +27,11 @@ const AddPartnershipModel = () => {
           setDescription(res.data.description);
           setIcon(res.data.icon);
           setLink(res.data.link);
+          postLogger({level:"info", message:res})
         })
         .catch((err) => {
           console.log(err);
+          postLogger({level:"error", message:err})
         });
     }
   }, [partnershipModelId]);
@@ -46,6 +49,7 @@ const AddPartnershipModel = () => {
         });
         setMessage("Update Successful!");
         setSnackbar(true);
+        postLogger({level:"info", message:"Partnership model updated successfully from admin panel"})
       } else {
         await axios.post("/partnership_model", {
           title,
@@ -58,9 +62,11 @@ const AddPartnershipModel = () => {
         setTitle("");
         setDescription("");
         setIcon("");
+        postLogger({level:"info", message:"Partnership model added successfully from admin panel"})
       }
     } catch (err) {
       alert("Error creating industry.");
+      postLogger({level:"error", message:err})
     }
     setIsLoading(false);
   };

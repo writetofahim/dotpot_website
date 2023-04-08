@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "../../utils/axiosInstance";
+import postLogger from "../../utils/postLogger";
 
 const CompanyInfo = () => {
   const [data, setData] = useState(null);
@@ -9,9 +10,16 @@ const CompanyInfo = () => {
   useEffect(() => {
     axios
       .get("/info")
-      .then((response) => setData(response.data[0]))
-      .catch((error) => console.error(error));
+      .then((response) => {
+        setData(response.data[0])
+        postLogger({level:"info", message:response})
+      })
+      .catch((error) => {
+        console.error(error)
+        postLogger({level:"error", message:error})
+      });
     // console.log(data[0]);
+
   }, []);
 
   // console.log(data);
@@ -24,8 +32,14 @@ const CompanyInfo = () => {
     // const formData = new FormData(event.target);
     axios
       .put(`/info/${data._id}`, formData)
-      .then((response) => console.log(response))
-      .catch((error) => console.error(error));
+      .then((response) => {
+        console.log(response)
+        postLogger({level:"info", message:response})
+      })
+      .catch((error) => {
+        console.error(error)
+        postLogger({level:"error", message:error})
+      });
   };
 
   return (

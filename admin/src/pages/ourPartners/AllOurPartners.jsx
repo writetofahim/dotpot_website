@@ -2,6 +2,7 @@ import axios from '../../utils/axiosInstance';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import OurPartnersTableRow from './OurPartnersTableRow';
+import postLogger from '../../utils/postLogger';
 
 export default function AllOurPartners() {
   const [data, setData] = React.useState([]);
@@ -14,8 +15,10 @@ export default function AllOurPartners() {
       setData(response.data.ourPartners);
       setTotalPages(response.data.totalPages);
       // console.log(data);
+      postLogger({level:"info", message:response})
     } catch (error) {
       console.error(error);
+      postLogger({level:"error", message:error})
     }
   };
 

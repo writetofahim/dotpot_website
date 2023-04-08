@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FaEdit } from "react-icons/fa";
 import { MdDeleteForever } from "react-icons/md";
 import axios from "../../utils/axiosInstance";
+import postLogger from "../../utils/postLogger";
 
 const Hero = () => {
   const [file, setFile] = useState(null);
@@ -22,9 +23,15 @@ const Hero = () => {
   useEffect(() => {
     axios
       .get("/hero")
-      .then((response) => setHeroData(response.data))
-      .catch((error) => console.error(error));
-  }, [heroData]);
+      .then((response) => {
+        setHeroData(response.data)
+        postLogger({level:"info", message:response})
+      })
+      .catch((error) => {
+        console.error(error)
+        postLogger({level:"error", message:error})
+      });
+  }, []);
 
   // Update form data when input values change
   const handleChange = (event) => {
@@ -86,8 +93,10 @@ const Hero = () => {
           const newArray = heroData.filter((obj) => obj._id !== hero._id);
           setHeroData(newArray);
         }
+        postLogger({level:"info", message:response})
       } catch (error) {
         console.log(error);
+        postLogger({level:"error", message:error})
       }
     }
   };
@@ -121,8 +130,11 @@ const Hero = () => {
           attachment = resFiles[0].filename;
           setFile(null);
           image = attachment;
+          postLogger({level:"info", message:resFiles})
         }
-      } catch {}
+      } catch(err) {
+        postLogger({level:"error", message:err})
+      }
       axios
         .post(`/hero`, {
           title: document.getElementById("title").value,
@@ -133,8 +145,14 @@ const Hero = () => {
           button_link: document.getElementById("button_link").value,
           button_text: document.getElementById("button_text").value,
         })
-        .then((response) => console.log(response))
-        .catch((error) => console.error(error));
+        .then((response) => {
+          console.log(response)
+          postLogger({level:"info", message:response})
+        })
+        .catch((error) => {
+          console.error(error)
+          postLogger({level:"error", message:error})
+        });
       setFormData({
         title: "",
         subtitle: "",
@@ -158,11 +176,13 @@ const Hero = () => {
             "/upload/blogs",
             formData
           );
-
+          
+          
           attachment = resFiles[0].filename;
           setFile(null);
           image = attachment;
           console.log("uploaded image", image);
+          postLogger({level:"info", message:resFiles})
         }
       } catch {}
       axios
@@ -175,8 +195,14 @@ const Hero = () => {
           button_link: document.getElementById("button_link").value,
           button_text: document.getElementById("button_text").value,
         })
-        .then((response) => console.log(response))
-        .catch((error) => console.error(error));
+        .then((response) => {
+          console.log(response)
+          postLogger({level:"info", message:response})
+        })
+        .catch((error) => {
+          console.error(error)
+          postLogger({level:"error", message:error})
+        });
       setFormData({
         title: "",
         subtitle: "",
