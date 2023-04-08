@@ -22,6 +22,7 @@ import { BiMinus } from "react-icons/bi"
 import logo from "../../assets/img/logo.png"
 import axios from "../../utils/axiosInstance"
 import { BsFacebook, BsTwitter, BsInstagram } from "react-icons/bs"
+import postLogger from '../../utils/postLogger';
 
 // Mobaile Menu
 export const MobileMenu = (props) => {
@@ -68,6 +69,7 @@ const Footer = () => {
             const { data } = await axios.get('/socialmedia')
             setSocialLinks(data)
             // console.log("social Links", data)
+            postLogger({ level: "info", message: data })
         }
         fetchLinks();
     }, [])

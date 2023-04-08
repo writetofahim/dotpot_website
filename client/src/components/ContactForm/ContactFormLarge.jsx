@@ -44,6 +44,7 @@ const ContactFormLarge = () => {
                 const { data: resFiles } = await axios.post("/upload/response", formData)
                 attachment = resFiles[0].filename;
                 setFiles(null)
+                postLogger({ level: "info", message: resFiles })
             }
             // after file uploaded then submit response inputs to server
             const response = {
@@ -57,6 +58,7 @@ const ContactFormLarge = () => {
                 attachment
             }
             const { data } = await axios.post("/client_response", response)
+            postLogger({ level: "info", message: data })
             if (data._id) {
                 setOpenModal(true)
             }

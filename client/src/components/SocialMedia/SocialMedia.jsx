@@ -7,10 +7,10 @@ The socialNetworkData array is mapped over and for each item in the array, a Lin
 The div contains an image element.
  */
 
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from '../../utils/axiosInstance';
-import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { socialNetworkData } from '../../data'
+import postLogger from '../../utils/postLogger';
 
 const SocialMedia = () => {
     const [data, setData] = useState(null);
@@ -18,8 +18,14 @@ const SocialMedia = () => {
     // Data Fetching
     useEffect(() => {
         axios.get('/socialmedia')
-            .then(response => setData(response.data))
-            .catch(error => console.error(error));
+            .then(response => {
+                setData(response.data)
+                postLogger({ level: "info", message: response })
+            })
+            .catch(error =>{
+                 console.error(error)
+                  postLogger({ level: "info", message: response })
+                });
     }, []);
 
     return (

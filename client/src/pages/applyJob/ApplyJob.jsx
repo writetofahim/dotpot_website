@@ -1,16 +1,14 @@
 import { Chip, Divider } from '@mui/material'
 import React, { useEffect, useState } from 'react'
-import { jobPageData } from '../../data'
-import { SlOptionsVertical } from "react-icons/sl"
-import { AiFillStar } from "react-icons/ai"
-import { TfiLocationPin } from "react-icons/tfi"
+import { AiFillHeart, AiFillStar, AiOutlineHeart } from "react-icons/ai"
 import { BsArrowRight } from "react-icons/bs"
+import { SlOptionsVertical } from "react-icons/sl"
+import { TfiLocationPin } from "react-icons/tfi"
 import { Link } from 'react-router-dom'
 import NavbarJob from '../../components/NavbarJob/NavbarJob'
-import JobSearchbar from '../../components/JobSearchbar/JobSearchbar'
-import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
-import axios from '../../utils/axiosInstance'
 import { useScrollToTop } from '../../hooks/useScrollToTop'
+import axios from '../../utils/axiosInstance'
+import postLogger from '../../utils/postLogger'
 
 export const JobCard = (props) => {
     const [love, setLove] = useState(false)
@@ -126,8 +124,14 @@ const ApplyJob = () => {
     // Data Fetching
     useEffect(() => {
         axios.get('/job')
-            .then(response => setData(response.data.jobs))
-            .catch(error => console.error(error));
+            .then(response => {
+                setData(response.data.jobs)
+                postLogger({ level: "info", message: response })
+            })
+            .catch(error => {
+                console.error(error)
+                postLogger({ level: "error", message: error })
+            });
     }, []); 
 
 

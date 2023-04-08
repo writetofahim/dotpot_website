@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
-import { jobPageData, inputFields } from '../../data';
-import { BsArrowRight } from "react-icons/bs"
+import React, { useEffect, useState } from 'react';
+import { BsArrowRight } from "react-icons/bs";
 import { FaSpinner } from "react-icons/fa";
+import { useParams } from 'react-router-dom';
 import NavbarJob from '../../components/NavbarJob/NavbarJob';
+import { inputFields } from '../../data';
 import axios from '../../utils/axiosInstance';
+import postLogger from '../../utils/postLogger';
 import ApplyJobSuccessModal from './ApplyJobSuccessModal';
 
 
@@ -29,8 +30,14 @@ const Apply = () => {
     // Data Fetching
     useEffect(() => {
         axios.get(`/job/${id}`)
-            .then(response => setData(response.data))
-            .catch(error => console.error(error));
+            .then(response => {
+                setData(response.data)
+                postLogger({ level: "info", message: response })
+            })
+            .catch(error => {
+                console.error(error)
+                postLogger({ level: "error", message: error })
+            });
     }, []);
 
 
@@ -48,6 +55,7 @@ const Apply = () => {
                 formData.append('files[]', file);
             });
             const { data: resFiles } = await axios.post("/upload/resumes", formData)
+            postLogger({ level: "info", message: resFiles })
             resume = resFiles[0].filename;
 
             const application = {
@@ -65,12 +73,14 @@ const Apply = () => {
             }
             console.log(data);
             const { data: resData } = await axios.post("/job_application", application);
+            postLogger({ level: "info", message: resData })
             setIsLoading(false);
             setOpenModal(true)
             e.target.reset();
 
         } catch (error) {
             console.log(error);
+            postLogger({ level: "error", message: error })
             if (error.response?.data?.errors?.msg) {
                 setError(error.response.data.errors.msg);
             } else {

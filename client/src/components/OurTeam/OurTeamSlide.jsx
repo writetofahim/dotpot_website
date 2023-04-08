@@ -14,6 +14,7 @@ import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import { GrNext, GrPrevious } from "react-icons/gr"
 import axios from "../../utils/axiosInstance";
+import postLogger from "../../utils/postLogger";
 
 
 function SampleNextArrow(props) {
@@ -98,8 +99,14 @@ function OurTeamSlide() {
     // Data Fetching
     useEffect(() => {
         axios.get('/team_member?limit=15')
-            .then(response => setData(response.data.teamMembers))
-            .catch(error => console.error(error));
+            .then(response => {
+                setData(response.data.teamMembers)
+                postLogger({ level: "info", message: response })
+            })
+            .catch(error => {
+                console.error(error)
+                postLogger({ level: "error", message: error })
+            });
     }, []);
 
     // console.log(data)

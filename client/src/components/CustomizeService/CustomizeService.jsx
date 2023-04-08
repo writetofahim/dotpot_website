@@ -12,6 +12,7 @@ import MuiAlert from '@mui/material/Alert';
 import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthContext';
+import postLogger from '../../utils/postLogger';
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -232,6 +233,7 @@ const CustomizeService = () => {
   useEffect(() => {
     axios.get("/service").then(data => {
       setCustomizeYourService(data.data.services)
+      postLogger({ level: "info", message: data })
     })
   }, [])
   useEffect(() => {
@@ -285,6 +287,7 @@ const CustomizeService = () => {
     try {
       const { data } = await axios.post("/order", newOrder)
       console.log(data);
+      postLogger({ level: "info", message: data })
       setIsSubmitting(false);
       setIsSuccess(true)
       setOrder([])
@@ -292,6 +295,7 @@ const CustomizeService = () => {
       setIsSubmitting(false);
       setIsError(true)
       console.log(error);
+      postLogger({ level: "error", message: error })
     }
 
   }

@@ -21,6 +21,8 @@ router.get('/', adminMiddleware, getAllChats);
 // Route to create a new chat
 router.post('/', createChat);
 
+// get total unread messages for admin
+router.get('/totalAdminUnseen', adminMiddleware, getTotalAdminUnseen)
 // Route to get messages for a chat by ID
 // Request Example: GET /chats/:conversationId/messages
 // Response Example: { messages: [...] }

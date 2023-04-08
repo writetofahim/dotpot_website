@@ -14,6 +14,7 @@ import { IndustriesWeServeData } from "../../data"
 import React, { useEffect, useState } from "react";
 import axios from "../../utils/axiosInstance"
 import { Link } from "react-router-dom";
+import postLogger from "../../utils/postLogger";
 
 export const ProcessCard = (props) => {
 
@@ -35,8 +36,14 @@ const IndustriesWeServe = () => {
     // Data Fetching
     useEffect(() => {
         axios.get('/industry_we_serve?page=1&limit=13')
-            .then(response => setData(response.data.industryWeServe))
-            .catch(error => console.error(error));
+            .then(response => {
+                setData(response.data.industryWeServe)
+                postLogger({ level: "info", message: response })
+            })
+            .catch(error => {
+                console.error(error)
+                postLogger({ level: "error", message: error })
+            });
     }, []);
 
     // console.log(data)

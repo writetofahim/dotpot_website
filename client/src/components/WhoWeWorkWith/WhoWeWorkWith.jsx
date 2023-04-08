@@ -13,9 +13,10 @@ Tailwind css is used for styling
  */
 
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { whoDoWeWorkData } from '../../data'
 import axios from "../../utils/axiosInstance"
-import { Link } from 'react-router-dom'
+import postLogger from '../../utils/postLogger'
 
 
 
@@ -38,8 +39,14 @@ const WhoWeWorkWith = () => {
     // Data Fetching
     useEffect(() => {
         axios.get('/who_we_work_with')
-            .then(response => setData(response.data.data))
-            .catch(error => console.error(error));
+            .then(response => {
+                setData(response.data.data)
+                postLogger({ level: "info", message: response })
+            })
+            .catch(error => {
+                console.error(error)
+                postLogger({ level: "error", message: error })
+            });
     }, []);
 
 

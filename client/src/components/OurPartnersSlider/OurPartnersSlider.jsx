@@ -7,6 +7,7 @@ import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import { ourPartnersSliderData } from "../../data"
 import axios from "../../utils/axiosInstance"
+import postLogger from "../../utils/postLogger";
 
 
 var settings = {
@@ -56,8 +57,14 @@ function OurPartnersSlider() {
     // Data Fetching
     useEffect(() => {
         axios.get('/our_partner')
-            .then(response => setData(response.data.ourPartners))
-            .catch(error => console.error(error));
+            .then(response => {
+                setData(response.data.ourPartners)
+                postLogger({ level: "info", message: response })
+            })
+            .catch(error =>{ 
+                console.error(error)
+                postLogger({ level: "error", message: error })
+            });
     }, []); 
 
 

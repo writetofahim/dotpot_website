@@ -14,13 +14,11 @@ Finally, the RecentWorksSlider component wraps the slider component and the indi
  */
 
 
-import { Chip } from "@mui/material";
-import { Stack } from "@mui/system";
 import React, { useEffect, useState } from "react";
+import { GrNext, GrPrevious } from 'react-icons/gr';
 import Slider from "react-slick";
-import { recentWorksData } from "../../data"
-import { GrNext, GrPrevious } from 'react-icons/gr'
-import axios from "../../utils/axiosInstance"
+import axios from "../../utils/axiosInstance";
+import postLogger from "../../utils/postLogger";
 
 
 
@@ -125,8 +123,14 @@ function RecentWorksSlider() {
     // Data Fetching
     useEffect(() => {
         axios.get('/work')
-            .then(response => setData(response.data.works))
-            .catch(error => console.error(error));
+            .then(response => {
+                setData(response.data.works)
+                postLogger({ level: "info", message: response })
+            })
+            .catch(error =>{ 
+                console.error(error)
+                 postLogger({ level: "error", message: error })
+            });
     }, []);
 
     return (

@@ -9,26 +9,20 @@ The Blog component renders a title, a description, a container for the list of B
 Tailwind css is used for styling 
  */
 
-import React, { useEffect, useState } from 'react'
-import Navbar from '../../components/Navbar/Navbar'
-import Footer from '../../components/Footer/Footer'
-import { blogData } from '../../data'
-import { Stack } from '@mui/system'
+import React, { useState } from 'react'
+import { AiOutlineArrowRight, AiOutlineDoubleRight, AiOutlineFieldTime } from "react-icons/ai"
 import { Link, useNavigate } from 'react-router-dom'
-import { BsArrowRight } from 'react-icons/bs'
-import { Chip, Pagination } from '@mui/material'
 import ChatPopup from '../../components/ChatPopup/ChatPopup'
-import { AiOutlineDoubleRight } from "react-icons/ai"
+import Footer from '../../components/Footer/Footer'
+import Navbar from '../../components/Navbar/Navbar'
 import axios from '../../utils/axiosInstance'
-import parse from 'react-html-parser';
-import {AiOutlineArrowRight} from 'react-icons/ai'
-import {AiOutlineFieldTime} from 'react-icons/ai'
 
 
 
+import moment from 'moment'
 import Particle from '../../components/Hero/Particle'
 import { useScrollToTop } from '../../hooks/useScrollToTop'
-import moment from 'moment'
+import postLogger from '../../utils/postLogger'
 
 const BlogCard = (props) => {
     const id = props._id
@@ -77,24 +71,26 @@ const Blog = () => {
     const fetchData = async (page) => {
     try {
         const response = await axios.get(`/blog?page=${page}`);
+        postLogger({ level: "info", message: response })
         console.log("blog data", response.data);
         setData(response.data.blogs);
         setTotalPages(response.data.totalPages);
     } catch (error) {
         console.error(error);
+        postLogger({ level: "error", message: error })
     }
     };
 
     React.useEffect(() => {
-    fetchData(page);
+        fetchData(page);
     }, [page]);
 
     const handlePrevPage = () => {
-    setPage(page - 1);
+        setPage(page - 1);
     };
 
     const handleNextPage = () => {
-    setPage(page + 1);
+        setPage(page + 1);
     };
 
 

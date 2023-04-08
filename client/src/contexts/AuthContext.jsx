@@ -1,6 +1,7 @@
-import { createContext, useEffect, useState } from "react"
 import { useGoogleLogin } from "@react-oauth/google";
+import { createContext, useEffect, useState } from "react";
 import axios from "../utils/axiosInstance";
+import postLogger from "../utils/postLogger";
 
 export const AuthContext = createContext(); // create a new context object
 
@@ -57,11 +58,13 @@ export const AuthContextProvider = ({ children }) => {
       // Send a POST request to the login API endpoint with email and password
       const { data } = await axios.post("/auth/login", { email, password });
       // Save the access token and user object in localStorage
+      postLogger({ level: "info", message: data })
       localStorage.setItem("accessToken", JSON.stringify(data.token));
       localStorage.setItem("user", JSON.stringify({ ...data.user, timestamp: new Date().getTime() }));
       // Set the user object as the current user
       setUser(data.user);
     } catch (error) {
+      postLogger({ level: "error", message: error })
       if (error?.response?.data?.message) {
         return setError(error.response.data.message)
       } {
@@ -78,6 +81,7 @@ export const AuthContextProvider = ({ children }) => {
       // Send a POST request to the register API endpoint with the user object
       const { data } = await axios.post("/auth/register", user);
       // Save the access token and user object in localStorage
+      postLogger({ level: "info", message: data })
       localStorage.setItem("accessToken", JSON.stringify(data.token));
       localStorage.setItem("user", JSON.stringify(data.user));
       // Set the user object as the current user
@@ -85,6 +89,7 @@ export const AuthContextProvider = ({ children }) => {
 
     } catch (error) {
       console.log(error);
+      postLogger({ level: "error", message: error })
       if (error?.response?.data?.msg) {
         // check if there is a custom error message in the response
         setError(error.response.data.msg)

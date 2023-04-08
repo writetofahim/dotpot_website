@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { CiLocationOn, CiMail } from 'react-icons/ci'
 import { BsTelephone } from 'react-icons/bs'
 import axios from '../../utils/axiosInstance'
+import postLogger from '../../utils/postLogger'
 
 const ContactInfo = () => {
   const [data, setData] = useState(null);
@@ -9,8 +10,14 @@ const ContactInfo = () => {
   // Data Fetching
   useEffect(() => {
       axios.get('/info')
-          .then(response => setData(response.data[0]))
-          .catch(error => console.error(error));
+          .then(response => {
+            setData(response.data[0])
+            postLogger({level:"info", message:response})
+          })
+          .catch(error => {
+            console.error(error)
+            postLogger({level: "error", message: error})
+          });
   }, []);
 
   // console.log(data)

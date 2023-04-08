@@ -1,13 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react'
+import { FaSpinner } from "react-icons/fa"
 import { Link, useNavigate } from 'react-router-dom'
+import CommonSnackbar from '../../components/CommonSnackbar/CommonSnackbar'
 import Footer from '../../components/Footer/Footer'
-import Navbar from '../../components/Navbar/Navbar'
 import Particle from '../../components/Hero/Particle'
+import Navbar from '../../components/Navbar/Navbar'
 import { AuthContext } from '../../contexts/AuthContext'
-import { FaSpinner } from "react-icons/fa";
 import { useScrollToTop } from '../../hooks/useScrollToTop'
 import axios from '../../utils/axiosInstance'
-import CommonSnackbar from '../../components/CommonSnackbar/CommonSnackbar'
+import postLogger from '../../utils/postLogger'
 
 
 const Login = () => {
@@ -67,6 +68,7 @@ const Login = () => {
     setSendingMail(true)
     try {
       const res = await axios.post('/auth/reset-password', { email });
+      postLogger({ level: "info", message: res })
       setMessage(res?.data?.message);
       setOpen(true)
     } catch (error) {
@@ -75,6 +77,7 @@ const Login = () => {
         return 
       }
       setRequestError(error.message);
+      postLogger({ level: "error", message: error })
     } finally{
       setSendingMail(false);
     }

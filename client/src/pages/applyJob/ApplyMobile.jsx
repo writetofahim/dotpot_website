@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react'
-import NavbarJob from '../../components/NavbarJob/NavbarJob'
-import Footer from '../../components/Footer/Footer'
-import { jobPageData } from '../../data';
-import { AiFillStar } from 'react-icons/ai'
-import { TfiLocationPin } from 'react-icons/tfi'
-import { BsArrowRight } from 'react-icons/bs'
 import { Chip, Divider } from '@mui/material';
+import React, { useEffect, useState } from 'react';
+import { AiFillStar } from 'react-icons/ai';
+import { BsArrowRight } from 'react-icons/bs';
+import { TfiLocationPin } from 'react-icons/tfi';
 import { Link, useParams } from 'react-router-dom';
+import Footer from '../../components/Footer/Footer';
+import NavbarJob from '../../components/NavbarJob/NavbarJob';
 import axios from '../../utils/axiosInstance';
+import postLogger from '../../utils/postLogger';
 
 
 const ApplyMobile = () => {
@@ -18,8 +18,14 @@ const ApplyMobile = () => {
   // Data Fetching
   useEffect(() => {
     axios.get(`/job/${id}`)
-      .then(response => setJob(response.data))
-      .catch(error => console.error(error));
+      .then(response => {
+        setJob(response.data)
+        postLogger({ level: "info", message: response })
+      })
+      .catch(error => {
+        console.error(error)
+        postLogger({ level: "error", message: error })
+      });
   }, []);
 
 

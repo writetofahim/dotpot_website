@@ -7,11 +7,11 @@ The SingleSlide component is a child component that renders each individual test
  */
 
 import React, { useEffect, useState } from "react";
+import { GrNext, GrPrevious } from 'react-icons/gr';
+import { ImQuotesLeft, ImQuotesRight } from 'react-icons/im';
 import Slider from "react-slick";
-import { WhatOurClientSayData } from "../../data"
-import { GrNext, GrPrevious } from 'react-icons/gr'
-import { ImQuotesRight, ImQuotesLeft } from 'react-icons/im'
 import axios from '../../utils/axiosInstance';
+import postLogger from "../../utils/postLogger";
 
 
 
@@ -103,8 +103,14 @@ function WhatOurClientsSaySlider() {
     // Data Fetching
     useEffect(() => {
         axios.get('/client_review')
-            .then(response => setData(response.data.ClientReviews))
-            .catch(error => console.error(error));
+            .then(response => {
+                setData(response.data.ClientReviews)
+                postLogger({ level: "info", message: response })
+            })
+            .catch(error => {
+                console.error(error)
+                postLogger({ level: "error", message: error })
+            });
     }, []);
 
     // console.log(data)

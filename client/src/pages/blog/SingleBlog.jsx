@@ -11,15 +11,14 @@ This component also renders Navbar, RecentBlogs, and Footer.
  */
 
 import React, { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import parse from 'react-html-parser'
+import { useParams } from 'react-router-dom'
+import ChatPopup from '../../components/ChatPopup/ChatPopup'
 import Footer from '../../components/Footer/Footer'
 import Navbar from '../../components/Navbar/Navbar'
 import RecentBlogs from '../../components/RecentBlogs/RecentBlogs'
-import { blogData } from '../../data'
-import parse from 'react-html-parser';
-import ChatPopup from '../../components/ChatPopup/ChatPopup'
 import axios from '../../utils/axiosInstance'
-import { useScrollToTop } from '../../hooks/useScrollToTop'
+import postLogger from '../../utils/postLogger'
 
 const SingleBlog = () => {
     
@@ -34,8 +33,14 @@ const SingleBlog = () => {
     // Data Fetching
     useEffect(() => {
         axios.get(`/blog/${id}`)
-            .then(response => setData(response.data))
-            .catch(error => console.error(error));
+            .then(response => {
+                setData(response.data)
+                postLogger({ level: "info", message: resFiles })
+            })
+            .catch(error =>{
+                console.error(error)
+                postLogger({ level: "error", message: error })
+            });
     }, [id]); 
 
 

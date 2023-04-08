@@ -9,6 +9,7 @@ import ImageViewModal from "./ImageViewModal"
 import axios from "../../utils/axiosInstance"
 import { io } from "socket.io-client";
 import moment from "moment/moment";
+import postLogger from "../../utils/postLogger";
 
 const socket = io(import.meta.env.REACT_APP_SOCKET_PATH)
 // const socket = io("http://localhost:8800")
@@ -98,18 +99,20 @@ const ChatPopup = () => {
         });
         const { data: resFiles } = await axios.post("/upload", formData)
         attachment = resFiles[0].filename;
+        postLogger({ level: "info", message: resFiles })
         setFiles(null)
-
       }
       if (newMessage !== "" || attachment !== null) {
         const { data } = await axios.post(`/chats/${conversationId}/messages`, { text: newMessage, attachment: attachment })
         console.log(data)
+        postLogger({ level: "info", message: data })
         setMessages([...messages, data])
         setNewMessage("");
       }
       setIsSending(false)
     } catch (error) {
       console.log("error.response", error.response)
+      postLogger({ level: "error", message: error })
       if (error.response?.data?.errors?.msg) {
         setError(error.response.data.errors.msg)
       } else {

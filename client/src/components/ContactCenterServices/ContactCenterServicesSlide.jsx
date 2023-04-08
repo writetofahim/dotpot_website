@@ -17,6 +17,7 @@ import Slider from "react-slick";
 import { contactCenterServicesData } from "../../data"
 import { GrNext, GrPrevious } from "react-icons/gr"
 import {Link} from 'react-router-dom'
+import postLogger from "../../utils/postLogger";
 
 
 function SampleNextArrow(props) {
@@ -98,8 +99,14 @@ function ContactCenterServicesSlide() {
     // Data Fetching
     useEffect(() => {
         axios.get('/contact_center_service')
-            .then(response => setData(response.data))
-            .catch(error => console.error(error));
+            .then(response => {
+                setData(response.data)
+                postLogger({ level: "info", message: response })
+            })
+            .catch(error => {
+                console.error(error)
+                postLogger({ level: "error", message: error })
+            });
     }, []);
 
 

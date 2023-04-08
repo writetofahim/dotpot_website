@@ -15,6 +15,7 @@ import { PartnershipModelsData } from "../../data"
 import axios from "../../utils/axiosInstance"
 import { AiOutlineDoubleRight } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
+import postLogger from '../../utils/postLogger'
 
 
 export const Card = (props) => {
@@ -45,8 +46,14 @@ const PartnershipModels = () => {
     // Data Fetching
     useEffect(() => {
         axios.get('/partnership_model')
-            .then(response => setData(response.data.partnershipModels))
-            .catch(error => console.error(error));
+            .then(response =>{
+                setData(response.data.partnershipModels)
+                postLogger({ level: "info", message: response })
+            })
+            .catch(error => {
+                console.error(error)
+                postLogger({ level: "error", message: error })
+            });
     }, []);
 
     return (

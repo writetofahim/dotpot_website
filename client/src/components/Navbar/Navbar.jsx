@@ -12,11 +12,11 @@ To apply custom styles, modify the with tailwind css classes and the background 
  */
 
 import React, { useContext, useEffect, useRef, useState } from "react";
-import { HiMenuAlt4 } from "react-icons/hi";
-import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io"
 import { AiOutlineClose } from "react-icons/ai";
+import { HiMenuAlt4 } from "react-icons/hi";
+import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import logo from "../../assets/img/logo.png"
+import logo from "../../assets/img/logo.png";
 import { AuthContext } from "../../contexts/AuthContext";
 
 
@@ -247,7 +247,7 @@ const Navbar = () => {
                                     <div key={i} className={`mx-4 cursor-pointer uppercase text-gray lg:text-gray-400 text-base font-bold mt-3 relative` }>
                                         <span onClick={() => setSelectedSubmenu(service._id)} className={`${selectedSubmenu === service._id ? "text-blue-700" : ""} flex gap-2 items-center justify-center`}>{service.title} <IoIosArrowDown /></span>
                                         <div className={`${selectedSubmenu === service._id ? `h-max` : "max-h-0"} flex flex-col gap-2 overflow-hidden transition-max-h duration-500`}>
-                                            <div className="h-full" >
+                                            <div className="h-full flex flex-col gap-2" >
                                                 {service?.submenu?.map((item, index) => <Link key={i+index} to={item.to} className={`w-max mx-auto hover:text-primary-400 text-sm`} >{item.title}</Link>
                                                 )}
                                             </div>

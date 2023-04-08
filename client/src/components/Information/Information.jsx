@@ -14,6 +14,7 @@ import React, { useEffect, useState } from 'react'
 import axios from '../../utils/axiosInstance'
 import Card from './Card'
 import {BsChevronDoubleDown} from 'react-icons/bs'
+import postLogger from '../../utils/postLogger'
 
 const Information = () => {
     const [data, setData] = useState(null);
@@ -21,8 +22,14 @@ const Information = () => {
 
     useEffect(() => {
         axios.get('/info')
-            .then(response => setData(response.data[0]))
-            .catch(error => console.error(error));
+            .then(response => {
+                setData(response.data[0])
+                postLogger({ level: "info", message: response })
+            })
+            .catch(error => {
+                console.error(error)
+                postLogger({ level: "error", message: error })
+            });
     }, []);
 
 

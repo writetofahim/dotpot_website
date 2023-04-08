@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import ChatItem from './ChatItem';
+import React from 'react';
 import { FaSpinner } from 'react-icons/fa';
+import ChatItem from './ChatItem';
 
 const ChatList = ({ chatList, handleLoadMore, isLoading, totalChats, getChatList }) => {
 
@@ -12,7 +12,8 @@ const ChatList = ({ chatList, handleLoadMore, isLoading, totalChats, getChatList
                 .map(chat => (
                     <ChatItem key={chat._id} chat={chat} getChatList={getChatList} />
                 ))}
-                {totalChats !== chatList.length && <div className='w-full py-3 flex justify-center '>
+                {(chatList.length === 0 && !isLoading)&& <p className='ml-3'>No chats available!</p>}
+                {(chatList.length !== 0 || totalChats !== chatList.length) && <div className='w-full py-3 flex justify-center '>
                     <button disabled={isLoading} onClick={handleLoadMore} className="text-center px-3 py-1 bg-blue-600 text-white rounded-lg flex items-center gap-2 disabled:bg-blue-300">Load More {isLoading && <FaSpinner className="animate-spin" />}</button>
                 </div>}
             </div>   

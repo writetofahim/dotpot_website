@@ -1,10 +1,11 @@
 import { useState } from 'react';
+import { FaSpinner } from 'react-icons/fa';
+import { useParams } from 'react-router-dom';
+import CommonSnackbar from '../../components/CommonSnackbar/CommonSnackbar';
 import Footer from '../../components/Footer/Footer';
 import Navbar from '../../components/Navbar/Navbar';
-import CommonSnackbar from '../../components/CommonSnackbar/CommonSnackbar';
-import { useParams } from 'react-router-dom';
-import { FaSpinner } from 'react-icons/fa';
 import axios from '../../utils/axiosInstance';
+import postLogger from '../../utils/postLogger';
 
 const ResetPassword = () => {
   const [password, setPassword] = useState('');
@@ -27,7 +28,8 @@ const ResetPassword = () => {
     }
     setLoading(true);
     try {
-      await axios.post(`/auth/reset-password/${resetToken}`, { password });
+      const response = await axios.post(`/auth/reset-password/${resetToken}`, { password });
+      postLogger({ level: "info", message: response })
       setSuccess('Password has been reset successfully');
       setOpen(true);
       event.target.reset()
@@ -37,6 +39,7 @@ const ResetPassword = () => {
             return
         }
         setError(error.message)
+        postLogger({ level: "error", message: error })
     }finally{
         setLoading(false)
     }

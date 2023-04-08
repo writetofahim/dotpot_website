@@ -20,6 +20,7 @@ import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 import {GrNext,GrPrevious} from "react-icons/gr"
 import axios from "../../utils/axiosInstance";
+import postLogger from "../../utils/postLogger";
 
 
 function SampleNextArrow(props) {
@@ -111,8 +112,15 @@ function RecentBlogsSlider() {
     // Data Fetching
     useEffect(() => {
         axios.get('/blog')
-            .then(response => setData(response.data.blogs))
-            .catch(error => console.error(error));
+            .then(response =>{ 
+                setData(response.data.blogs)
+                postLogger({ level: "info", message: response })
+            }
+            )
+            .catch(error => {
+                console.error(error)
+                postLogger({ level: "error", message: error })
+            });
     }, []);
 
 

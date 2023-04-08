@@ -28,6 +28,7 @@ import { GrNext, GrPrevious } from 'react-icons/gr'
 import axios from "../../utils/axiosInstance";
 import { Link } from "react-router-dom";
 import {AiOutlineDoubleRight} from 'react-icons/ai'
+import postLogger from "../../utils/postLogger";
 
 
 
@@ -120,8 +121,14 @@ function KeyFeatureSlider() {
     // Data Fetching
     useEffect(() => {
         axios.get('/key_feature')
-            .then(response => setData(response.data.KeyFeatures))
-            .catch(error => console.error(error));
+            .then(response => {
+                setData(response.data.KeyFeatures)
+                postLogger({ level: "info", message: response })
+            })
+            .catch(error => {
+                console.error(error)
+                 postLogger({ level: "error", message: error })
+            });
     }, []);
 
 
