@@ -56,12 +56,12 @@ const Navbar = () => {
             to:"/key-features/mobile-app-development",
             icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",
             submenu:[
-                {to: "/key-features/mobile-app-development", title: "Android App", icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",},
-                {to: "/key-features/mobile-app-development", title: "iPhone App", icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",},
-                {to: "/key-features/mobile-app-development", title: "Flutter App", icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",},
-                {to: "/key-features/mobile-app-development", title: "Kotlin", icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",},
-                {to: "/key-features/mobile-app-development", title: "Iconic", icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",},
-                {to: "/key-features/mobile-app-development", title: "Swift", icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",},
+                {to: "/key-features/mobile-app-development", title: "Android App", icon: "https://cdn-icons-png.flaticon.com/512/160/160138.png",},
+                {to: "/key-features/mobile-app-development", title: "iPhone App", icon: "https://cdn-icons-png.flaticon.com/512/7344/7344131.png",},
+                {to: "/key-features/mobile-app-development", title: "Flutter App", icon: "https://img.icons8.com/ios/256/flutter.png",},
+                {to: "/key-features/mobile-app-development", title: "Kotlin", icon: "https://img.icons8.com/ios/256/kotlin.png",},
+                {to: "/key-features/mobile-app-development", title: "Iconic", icon: "https://www.shareicon.net/download/2015/08/23/89513_ionic_512x512.png",},
+                {to: "/key-features/mobile-app-development", title: "Swift", icon: "https://img.icons8.com/ios/256/swift.png",},
             ]
         },
         {
@@ -70,12 +70,12 @@ const Navbar = () => {
             to: "/key-features/website-development",
             icon: "https://cdn-icons-png.flaticon.com/512/1927/1927656.png",
             submenu:[
-                {to: "/key-features/website-development", title: "React JS", icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",},
-                {to: "/key-features/website-development", title: "Next JS", icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",},
-                {to: "/key-features/website-development", title: "PHP", icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",},
-                {to: "/key-features/website-development", title: "Wordpress", icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",},
-                {to: "/key-features/website-development", title: "Drupal", icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",},
-                {to: "/key-features/website-development", title: "Django", icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",},
+                {to: "/key-features/website-development", title: "React JS", icon: "https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/256/external-react-social-media-tanah-basah-glyph-tanah-basah.png",},
+                {to: "/key-features/website-development", title: "Next JS", icon: "https://cdn.cdnlogo.com/logos/n/80/next-js.svg   ",},
+                {to: "/key-features/website-development", title: "PHP", icon: "https://cdn-icons-png.flaticon.com/512/569/569797.png",},
+                {to: "/key-features/website-development", title: "Wordpress", icon: "https://cdn-icons-png.flaticon.com/512/2111/2111777.png",},
+                {to: "/key-features/website-development", title: "Drupal", icon: "https://img.icons8.com/ios/256/drupal.png",},
+                {to: "/key-features/website-development", title: "Django", icon: "https://img.icons8.com/material-outlined/256/django.png",},
             ]
 
         },
@@ -85,12 +85,12 @@ const Navbar = () => {
             to: "/key-features/blockchain-development",
             icon: "https://cdn-icons-png.flaticon.com/512/2152/2152349.png",
             submenu:[
-                {to: "/key-features/blockchain-development", title: "Wallet"},
-                {to: "/key-features/blockchain-development", title: "Exchange"},
-                {to: "/key-features/blockchain-development", title: "Ethereum"},
-                {to: "/key-features/blockchain-development", title: "Smart Contacts"},
-                {to: "/key-features/blockchain-development", title: "Private Blockchain"},
-                {to: "/key-features/blockchain-development", title: "NFT Marketplace"},
+                {to: "/key-features/blockchain-development", title: "Wallet", icon: "https://cdn-icons-png.flaticon.com/512/482/482541.png"},
+                {to: "/key-features/blockchain-development", title: "Exchange", icon: "https://cdn-icons-png.flaticon.com/512/152/152371.png"},
+                {to: "/key-features/blockchain-development", title: "Ethereum", icon: "https://cdn-icons-png.flaticon.com/512/7825/7825880.png"},
+                {to: "/key-features/blockchain-development", title: "Smart Contacts", icon: "https://cdn-icons-png.flaticon.com/512/7267/7267609.png"},
+                {to: "/key-features/blockchain-development", title: "Private Blockchain", icon: "https://cdn-icons-png.flaticon.com/512/7020/7020079.png"},
+                {to: "/key-features/blockchain-development", title: "NFT Marketplace", icon: "https://cdn-icons-png.flaticon.com/512/6615/6615937.png"},
             ]
 
         },
@@ -100,13 +100,13 @@ const Navbar = () => {
             to:"/key-features/ai-development",
             icon: "https://cdn-icons-png.flaticon.com/512/1693/1693746.png",
             submenu: [
-                { to: "/key-features/ai-development", title: "Object Recognition" },
-                { to: "/key-features/ai-development", title: "Text to speech" },
-                { to: "/key-features/ai-development", title: "Business Intelligence" },
-                { to: "/key-features/ai-development", title: "Data Forecasting" },
-                { to: "/key-features/ai-development", title: "Natural Language Processing" },
-                { to: "/key-features/ai-development", title: "Data Analytics" },
-                { to: "/key-features/ai-development", title: "Recommendation Engine" },
+                { to: "/key-features/ai-development", title: "Object Recognition" , icon: "https://cdn-icons-png.flaticon.com/512/8654/8654854.png"},
+                { to: "/key-features/ai-development", title: "Text to speech" , icon: "https://cdn-icons-png.flaticon.com/512/6805/6805674.png"},
+                { to: "/key-features/ai-development", title: "Business Intelligence", icon: "https://cdn-icons-png.flaticon.com/512/7458/7458531.png" },
+                { to: "/key-features/ai-development", title: "Data Forecasting" , icon: "https://cdn-icons-png.flaticon.com/512/9299/9299890.png"},
+                { to: "/key-features/ai-development", title: "Natural Language Processing" , icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png"},
+                { to: "/key-features/ai-development", title: "Data Analytics", icon: "https://cdn-icons-png.flaticon.com/512/2782/2782058.png" },
+                { to: "/key-features/ai-development", title: "Recommendation Engine", icon: "https://cdn-icons-png.flaticon.com/512/7766/7766894.png" },
             ]
         },
         {
@@ -115,13 +115,12 @@ const Navbar = () => {
             to:"/key-features/it-support",
             icon: "https://cdn-icons-png.flaticon.com/512/2058/2058768.png",
             submenu: [
-                { to: "/key-features/it-support", title: "Cloud Computing" },
-                { to: "/key-features/it-support", title: "Database Administration" },
-                { to: "/key-features/it-support", title: "Cybersecurity " },
-                { to: "/key-features/it-support", title: "IT Consulting" },
-                { to: "/key-features/it-support", title: "Project Management" },
-                { to: "/key-features/it-support", title: "Technical Support" },
-
+                { to: "/key-features/it-support", title: "Cloud Computing" , icon: "https://cdn-icons-png.flaticon.com/512/2318/2318786.png"},
+                { to: "/key-features/it-support", title: "Database Administration" , icon: "https://cdn-icons-png.flaticon.com/512/3025/3025358.png"},
+                { to: "/key-features/it-support", title: "Cybersecurity " , icon: "https://cdn-icons-png.flaticon.com/512/2273/2273136.png"},
+                { to: "/key-features/it-support", title: "IT Consulting" , icon: "https://cdn-icons-png.flaticon.com/512/5689/5689422.png"},
+                { to: "/key-features/it-support", title: "Project Management" , icon: "https://cdn-icons-png.flaticon.com/512/5956/5956597.png"},
+                { to: "/key-features/it-support", title: "Technical Support", icon: "https://cdn-icons-png.flaticon.com/512/4233/4233839.png" },
             ]
         },
         {
@@ -130,15 +129,15 @@ const Navbar = () => {
             to:"/key-features/contact-center-support",
             icon: "https://cdn-icons-png.flaticon.com/512/1687/1687136.png",
             submenu: [
-                { to: "/contact_center_services/cti", title: "CTI" },
-                { to: "/contact_center_services/email-marketing", title: "Email Marketing" },
-                { to: "/contact_center_services/chat", title: "Chat" },
-                { to: "/contact_center_services/pd", title: "Predictive Dialer" },
-                { to: "/contact_center_services/mobile-app", title: "Mobile App Module" },
-                { to: "/contact_center_services/collection", title: "Collection" },
-                { to: "/contact_center_services/customer-service", title: "Customer Service" },
-                { to: "/contact_center_services/ivr", title: "IVR" },
-                { to: "/contact_center_services/acd", title: "ACD" },
+                { to: "/contact_center_services/cti", title: "CTI" , icon: "https://cdn-icons-png.flaticon.com/512/2991/2991793.png"},
+                { to: "/contact_center_services/email-marketing", title: "Email Marketing" , icon: "https://cdn-icons-png.flaticon.com/512/10244/10244391.png"},
+                { to: "/contact_center_services/chat", title: "Chat" , icon: "https://cdn-icons-png.flaticon.com/512/589/589708.png"},
+                { to: "/contact_center_services/pd", title: "Predictive Dialer", icon: "https://img.icons8.com/windows/256/phone-contact.png" },
+                { to: "/contact_center_services/mobile-app", title: "Mobile App Module", icon: "https://img.icons8.com/ios-glyphs/256/medical-mobile-app.png" },
+                { to: "/contact_center_services/collection", title: "Collection", icon: "https://cdn-icons-png.flaticon.com/512/2103/2103533.png" },
+                { to: "/contact_center_services/customer-service", title: "Customer Service", icon: "https://cdn-icons-png.flaticon.com/512/950/950299.png" },
+                { to: "/contact_center_services/ivr", title: "IVR", icon: "https://cdn-icons-png.flaticon.com/512/1998/1998178.png" },
+                { to: "/contact_center_services/acd", title: "ACD" , icon: "https://img.icons8.com/external-tal-revivo-regular-tal-revivo/256/external-acd-file-extension-is-a-file-format-associated-to-a-sony-music-editing-software-audio-regular-tal-revivo.png"},
             ]
 
         },
@@ -148,16 +147,15 @@ const Navbar = () => {
             to:"/industries-we-serve/gaming",
             icon: "https://cdn-icons-png.flaticon.com/512/6581/6581049.png",
             submenu:[
-                {to: "/industries-we-serve/gaming", title: "Unity 3D", },
-                {to: "/industries-we-serve/gaming", title: "Metaverse"},
-                {to: "/industries-we-serve/gaming", title: "Unreal Engine"},
-                {to: "/industries-we-serve/gaming", title: "Augmented Reality"},
-                {to: "/industries-we-serve/gaming", title: "Casual Games"},
-            ]
+                {to: "/industries-we-serve/gaming", title: "Unity 3D" , icon: "https://img.icons8.com/ios/256/unity.png"},
+                {to: "/industries-we-serve/gaming", title: "Metaverse", icon: "https://img.icons8.com/external-ddara-lineal-ddara/256/external-metaverse-metaverse-ddara-lineal-ddara-3.png"},
+                {to: "/industries-we-serve/gaming", title: "Unreal Engine", icon: "https://img.icons8.com/ios-filled/256/unreal-engine.png"},
+                {to: "/industries-we-serve/gaming", title: "Augmented Reality", icon: "https://img.icons8.com/cotton/256/augmented-reality-1-1.png"},
+                {to: "/industries-we-serve/gaming", title: "Casual Games", icon: "https://img.icons8.com/wired/256/games-folder.png"},
+            ],
         }
     ]
     
-
     return (
         <div className="w-full flex items-center justify-center fixed z-50 bg-white">
             <nav className="container flex justify-between items-center p-4 z-999" id="nav">
@@ -189,7 +187,7 @@ const Navbar = () => {
                                 <div onClick={() => { navigate(service.to) }} className="w-full hover:text-secondary-400 font-[600] flex items-center gap-2">{service.title} <IoIosArrowForward />
                                 </div>
                                 <div className="group-hover/item:flex duration-500 h-0 transition-all group-hover/item:h-max flex-col gap-2 hidden absolute -top-2 lg:left-[285px] bg-white p-3 rounded-md shadow-xl">
-                                    {service?.submenu?.map((item, i) => <Link key={i} to={item.to} className="w-[200px] hover:text-secondary-400" >{item.title}</Link>)}
+                                    {service?.submenu?.map((item, i) => <Link key={i} to={item.to} className="w-[200px] hover:text-secondary-400 flex gap-2 items-center" > <img className="w-4" src={item.icon} alt="" /> {item.title}</Link>)}
                                 </div>
                             </div>)}
                         </div>
