@@ -125,7 +125,7 @@ const WebsiteDesign = () => {
   ];
     useScrollToTop()
     return (
-        <div className="px-3">
+        <div className="">
         <Navbar />
         <div className="pt-[15vh] min-h-screen">
           <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">

@@ -44,6 +44,7 @@ import SmallToMediumBusiness from "./pages/whoWeWorksWith/SmallToMediumBusiness"
 import StartupBusiness from "./pages/whoWeWorksWith/StartupBusiness";
 import AcceptCookiesPopup from "./components/AcceptCookiesPopup/AcceptCookiesPopup";
 import WebsiteDesign from "./pages/keyFeatures/WebsiteDesign";
+import CyberSecurity from "./pages/keyFeatures/CyberSecurity";
 import ResetPassword from "./pages/ResetPassword/ResetPassword";
 import Ai from "./pages/industriesWeServe/Ai"
 import Education from "./pages/industriesWeServe/Education"
@@ -145,6 +146,10 @@ function App() {
         <Route
           path="/key-features/mobile-app-development"
           element={<MobileAppDevelopment />}
+        />
+        <Route
+          path="/key-features/cyber-security"
+          element={<CyberSecurity />}
         />
 
         <Route

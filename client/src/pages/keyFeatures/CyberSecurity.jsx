@@ -1,3 +1,7 @@
+/* This is a component thats render CyberSecurity page
+*/
+
+
 import React from "react";
 import { BsArrowRightCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
@@ -11,8 +15,9 @@ import tensorFlow from '../../assets/img/icon/ai/tensorFlow.png'
 import numPy from '../../assets/img/icon/ai/numPy.png'
 import keras from '../../assets/img/icon/ai/keras.png'
 import pandas from '../../assets/img/icon/ai/pandas.jpg'
+import cyberSecurity from "../../assets/img/cyberSecurity.png"
 
-const AiDevelopment = () => {
+const CyberSecurity = () => {
   const data = [
     {
       title: "Machine Learning",
@@ -85,17 +90,17 @@ const AiDevelopment = () => {
   useScrollToTop();
   return (
     <div className="">
+        {/* Navbar */}
       <Navbar />
-      <div className="pt-[15vh] min-h-screen">
+      <div className="min-h-screen px-3 lg:px-5 pt-[15vh]">
         <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
-          AI Development
+          Cyber Security
         </h1>
         <p className="text-md text-gray-400 text-center mb-10">
-          Our AI solutions transform businesses with automation and
-          intelligence.
+          Our Cyber Security provides the state of the earth security services for our customer's data.
         </p>
         <div className="border-b container mx-auto">
-          <img className="md:w-1/2 mx-auto " src={coverImg} alt="" />
+          <img className="md:w-1/2 mx-auto " src={cyberSecurity} alt="" />
         </div>
         <div className="container  mx-auto flex flex-col mb-10 my-10">
           <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">
@@ -104,19 +109,11 @@ const AiDevelopment = () => {
           {/* Overview */}
           <div className="text-gray-400 flex flex-col gap-5 p-5">
             <p>
-              AI development involves the use of machine learning algorithms to
-              create intelligent computer systems that can perform tasks without
-              human intervention. It has revolutionized the way businesses
-              operate and has found applications in various industries, such as
-              healthcare, finance, and transportation. The development of AI
-              requires a thorough understanding of programming, data analysis,
-              and statistical modeling. The advancements in hardware, software,
-              and cloud computing have facilitated the growth of AI. The
-              development of deep learning algorithms, neural networks, and
-              natural language processing has enabled machines to perform
-              complex tasks, such as recognizing images, translating languages,
-              and even driving cars. AI development is an exciting field with
-              endless possibilities for innovation and growth.
+            In today’s digital age, cybersecurity threats are becoming more frequent and sophisticated, making it crucial for businesses to ensure they are protected from cyber attacks. Cybersecurity is not just a technical issue, it is a business issue, and ignoring it can result in devastating consequences such as data breaches, financial losses, and reputational damage.
+
+At our cybersecurity service, we offer comprehensive solutions to help protect your business from cyber threats. Our team of experienced cybersecurity professionals have the expertise and tools needed to identify, prevent, and respond to security breaches.
+
+Here are some of the key benefits of our cybersecurity service:
             </p>
           </div>
 
@@ -132,7 +129,7 @@ const AiDevelopment = () => {
 
               <div className="flex flex-col gap-5">
                 <h3 className="text-center text-purple-500 font-bold text-xl ">
-                  Want to Know How Much Exactly Your AI development Will Cost?
+                  Want to Know How Much Your Cyber Security Will Cost?
                 </h3>
                 <h3 className="text-center text-purple-500 font-semibold">
                   "The Experts Are Just A Click Away. Get A Quote."
@@ -151,40 +148,16 @@ const AiDevelopment = () => {
             </div>
           </div>
 
-          <TechnologiesTab title="Technologies We Work On" data={data} />
+          {/* <TechnologiesTab title="Technologies We Work On" data={data} /> */}
 
           {/* paragraph */}
           <div className="my-3">
             <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-gray-400 ">
-              What Is AI Development?
+            Threat Intelligence:
             </h2>
             <div className="text-gray-400 flex flex-col gap-5 p-5">
               <p>
-                Artificial Intelligence (AI) development involves creating
-                intelligent machines that can perform tasks that typically
-                require human intelligence, such as visual perception, speech
-                recognition, decision-making, and language translation. AI
-                development is based on the principle of machine learning, where
-                machines learn from data, identify patterns, and make decisions
-                without human intervention.
-              </p>
-              <p>
-                The three main types of AI development include narrow or weak
-                AI, general or strong AI, and super AI. Narrow AI is programmed
-                to perform specific tasks such as recognizing speech or driving
-                a car. General AI, on the other hand, has the ability to perform
-                any intellectual task that a human can do. Super AI is the most
-                advanced form of AI and has the ability to surpass human
-                intelligence and capabilities.
-              </p>
-              <p>
-                AI development has various applications across industries,
-                including healthcare, finance, manufacturing, and
-                transportation. AI-powered technologies can improve efficiency,
-                accuracy, and speed of operations, leading to cost savings and
-                increased productivity. However, ethical concerns related to AI
-                development, such as bias and job displacement, need to be
-                addressed.
+              Our service offers real-time threat intelligence, which involves monitoring and analyzing threats to your systems and networks. This enables us to identify vulnerabilities and proactively address them before they can be exploited by attackers.
               </p>
             </div>
           </div>
@@ -297,7 +270,7 @@ const AiDevelopment = () => {
   );
 };
 
-export default AiDevelopment;
+export default CyberSecurity;
 
 
 
