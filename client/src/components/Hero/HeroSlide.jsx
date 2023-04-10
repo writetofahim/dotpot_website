@@ -56,7 +56,7 @@ export const SingleSlide = (props) => {
     <div className="w-full h-full flex items-center justify-center">
       <div className="md:max-w-[1200px] lg:container flex flex-col-reverse md:flex-row justify-evenly items-center">
 
-        <div className="left mt-5 md:mt-0 flex-1 h-full flex flex-col items-center md:items-start justify-center pl-0 md:pl-10">
+        <div className="left mt-5 md:mt-0 flex-1 h-full flex flex-col items-center md:items-start justify-center pl-0 md:pl-10 backdrop-blur-sm">
           {/* <h1 className="text-3xl md:text-5xl text-center md:text-left font-bold mb-2">
             {props.title}
           </h1> */}

@@ -58,7 +58,7 @@ const Particle = () => {
         value: "#a674fca7",
       },
       collisions: {
-        enable: true,
+        enable: false,
       },
       move: {
         directions: "none",
@@ -83,7 +83,7 @@ const Particle = () => {
         value: { min: 2, max: 7 },
       },
     },
-    detectRetina: true,
+    detectRetina: false,
   }}
 />
 
