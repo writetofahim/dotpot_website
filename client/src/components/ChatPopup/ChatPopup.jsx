@@ -1,15 +1,14 @@
-import { useEffect, useRef, useState } from "react";
-import * as React from 'react';
-import { FaComments } from "react-icons/fa";
-import { HiOutlineDownload } from "react-icons/hi";
-import { GrAttachment } from "react-icons/gr";
-import { AiOutlineCloseCircle, AiOutlineSend } from "react-icons/ai";
-import { FaSpinner } from "react-icons/fa";
-import ImageViewModal from "./ImageViewModal"
-import axios from "../../utils/axiosInstance"
-import { io } from "socket.io-client";
 import moment from "moment/moment";
+import * as React from 'react';
+import { useEffect, useRef, useState } from "react";
+import { AiOutlineCloseCircle, AiOutlineSend } from "react-icons/ai";
+import { FaComments, FaSpinner } from "react-icons/fa";
+import { GrAttachment } from "react-icons/gr";
+import { HiOutlineDownload } from "react-icons/hi";
+import { io } from "socket.io-client";
+import axios from "../../utils/axiosInstance";
 import postLogger from "../../utils/postLogger";
+import ImageViewModal from "./ImageViewModal";
 
 const socket = io(import.meta.env.REACT_APP_SOCKET_PATH)
 // const socket = io("http://localhost:8800")
@@ -150,7 +149,7 @@ const ChatPopup = () => {
           </div>
           <div className="flex flex-col p-4 h-80 overflow-y-auto changeThumb" >
             <div className="">
-              <img className="w-10 mx-auto" src={"https://cdn-icons-png.flaticon.com/512/2706/2706962.png"} alt="" />
+              <img className="w-24 mx-auto" src={"https://myadhp.aadharhousing.com/csr_portal/public/images/crm-main.gif"} alt="" />
               <p className="text-sm text-center mb-2">Dotpot iT Customer Support</p>
               <div className="border-t my-2"></div>
             </div>

@@ -6,36 +6,33 @@ import "./css/style.css";
 import "./charts/ChartjsConfig";
 
 // Import pages
+import DashboardLayout from "./Layouts/DashboardLayout";
 import RequireAdmin from "./components/RequireAdmin";
 import { AuthContext } from "./contexts/AuthContext";
-import DashboardLayout from "./Layouts/DashboardLayout";
+import Dashboard from "./pages/Dashboard";
+import JobApplications from "./pages/JobApplications";
+import Login from "./pages/Login";
+import Orders from "./pages/Orders";
 import AddBlogs from "./pages/blogs/AddBlogs";
 import AllBlogs from "./pages/blogs/AllBlogs";
 import Chat from "./pages/chat/Chat";
-import ChatBody from "./pages/chat/ChatBody";
 import AddResponse from "./pages/client-response/AddResponse";
 import AllResponse from "./pages/client-response/AllResponse";
 import AddClientsReview from "./pages/clientsReview/AddClientsReview";
 import AllClientsReview from "./pages/clientsReview/AllClientsReview";
 import AddContactCenterService from "./pages/contactCenterService/AddContactCenterService";
 import AllContactCenterService from "./pages/contactCenterService/AllContactCenterService";
-import Dashboard from "./pages/Dashboard";
 import AddIndustryWeServe from "./pages/indurstyWeServe/AddIndustryWeServe";
 import AllIndustryWeServe from "./pages/indurstyWeServe/AllIndustryWeServe";
-import JobApplications from "./pages/JobApplications";
 import AddJobs from "./pages/jobs/AddJobs";
 import AllJobs from "./pages/jobs/AllJobs";
 import AddKeyFeatures from "./pages/keyFeatures/AddKeyFeatures";
 import AllKeyFeatures from "./pages/keyFeatures/AllKeyFeatures";
-import Login from "./pages/Login";
-import Orders from "./pages/Orders";
 import AllOrders from "./pages/orders/AllOrders";
 import AddOurPartners from "./pages/ourPartners/AddOurPartners";
 import AllOurPartners from "./pages/ourPartners/AllOurPartners";
 import AddPartnershipModel from "./pages/partnershipModel/AddPartnershipModel";
 import AllPartnershipModel from "./pages/partnershipModel/AllPartnershipModel";
-import AddWhoWeWorksWith from "./pages/whoWeWorkWith/AddWhoWeWorksWith";
-import All from "./pages/whoWeWorkWith/AllWhoWeWorksWith";
 import CompanyInfo from "./pages/sections/CompanyInfo";
 import Hero from "./pages/sections/Hero";
 import AddService from "./pages/services/AddServices";
@@ -44,9 +41,10 @@ import AddTeam from "./pages/team/AddTeam";
 import AllTeam from "./pages/team/AllTeam";
 import AddUsers from "./pages/users/AddUsers";
 import AllUsers from "./pages/users/AllUsers";
+import AddWhoWeWorksWith from "./pages/whoWeWorkWith/AddWhoWeWorksWith";
+import AllWhoWeWorksWith from "./pages/whoWeWorkWith/AllWhoWeWorksWith";
 import AddWorks from "./pages/works/AddWorks";
 import AllWorks from "./pages/works/AllWorks";
-import AllWhoWeWorksWith from "./pages/whoWeWorkWith/AllWhoWeWorksWith";
 // import AddClientsReview from "./pages/clientsReview/AddClientsReview";
 
 function App() {
@@ -82,9 +80,7 @@ function App() {
           }
         >
           <Route path="/admin/" element={<Dashboard />} />
-          <Route path="/admin/chat" element={<Chat />}>
-            <Route path="/admin/chat/:id" element={<ChatBody />} />
-          </Route>
+          <Route path="/admin/chat" element={<Chat />}/>
           <Route path="/admin/job-applications" element={<JobApplications />} />
           <Route path="/admin/orders" element={<Orders />} />
           <Route

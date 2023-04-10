@@ -15,12 +15,12 @@ import { SiHandshake } from "react-icons/si";
 import { TfiDashboard, TfiLayoutSlider } from "react-icons/tfi";
 import { TiDocumentText } from "react-icons/ti";
 import logo from "../images/logo1.png";
-import axios from "../utils/axiosInstance"
+import axios from "../utils/axiosInstance";
 
 import { NavLink, useLocation } from "react-router-dom";
 
-import SidebarLinkGroup from "./SidebarLinkGroup";
 import socket from "../socket";
+import SidebarLinkGroup from "./SidebarLinkGroup";
 
 function Sidebar({ sidebarOpen, setSidebarOpen }) {
   const location = useLocation();
@@ -28,30 +28,32 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
 
   const trigger = useRef(null);
   const sidebar = useRef(null);
-  const [unseenMessages, setUnseenMessages] = useState(0)
+  const [unseenMessages, setUnseenMessages] = useState(0);
 
   const storedSidebarExpanded = localStorage.getItem("sidebar-expanded");
   const [sidebarExpanded, setSidebarExpanded] = useState(
     storedSidebarExpanded === null ? false : storedSidebarExpanded === "true"
   );
 
-
-  const getUnseenCount = ()=>{
-    axios.get('/chats/totalAdminUnseen').then((response) => {
+  const getUnseenCount = () => {
+    axios.get("/chats/totalAdminUnseen").then((response) => {
       setUnseenMessages(response.data?.count);
-    })
-  }
+    });
+  };
 
   useEffect(() => {
     socket.on("newMessage", (data) => {
-      console.log("New message received in sidebar")
+      console.log("New message received in sidebar");
       getUnseenCount();
-    })
+    });
+    socket.on("adminSeen", (data) => {
+      getUnseenCount();
+    });
   }, []);
 
-   useEffect(()=>{
-     getUnseenCount()
-   },[])
+  useEffect(() => {
+    getUnseenCount();
+  }, []);
   // close on click outside
   useEffect(() => {
     const clickHandler = ({ target }) => {
