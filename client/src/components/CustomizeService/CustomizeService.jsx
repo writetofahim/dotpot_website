@@ -5,6 +5,7 @@ import { BsCheckCircleFill } from "react-icons/bs"
 import { BsCircle } from "react-icons/bs"
 import { AiOutlineDoubleRight } from "react-icons/ai"
 import { GrFormClose } from "react-icons/gr"
+import { FiInfo } from "react-icons/fi"
 import axios from "../../utils/axiosInstance"
 import { FaSpinner } from "react-icons/fa";
 import Snackbar from '@mui/material/Snackbar';
@@ -133,7 +134,7 @@ const TechnologyCard = (props) => {
         title={`${props.sdes} Starting from ${props.cost}`}
         className="absolute top-1 left-1 text-gray-400 cursor-pointer hover:scale-110"
       >
-        <BsCircle />
+        <FiInfo />
       </abbr>
 
       <h3 className="text-center text-gray-300 text-sm">{props.title}</h3>
@@ -209,7 +210,7 @@ const AddonsCard = (props) => {
         title={`${props.sdes} Starting from ${props.cost}`}
         className="absolute top-1 left-1 text-gray-400 cursor-pointer hover:scale-110"
       >
-        <BsCircle />
+        <FiInfo />
       </abbr>
       <h3 className="text-center text-gray-300 text-sm">{props.title}</h3>
     </div>
