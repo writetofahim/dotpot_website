@@ -22,127 +22,123 @@ responsive: an array of breakpoint objects that specify how many slides to displ
 @returns JSX element
 */
 import React, { useEffect, useState } from "react";
-import Slider from "react-slick";
-import { ourKeyFeatures } from "../../data"
-import { GrNext, GrPrevious } from 'react-icons/gr'
-import axios from "../../utils/axiosInstance";
+import { AiOutlineDoubleRight } from "react-icons/ai";
+import { GrNext, GrPrevious } from "react-icons/gr";
 import { Link } from "react-router-dom";
-import {AiOutlineDoubleRight} from 'react-icons/ai'
+import Slider from "react-slick";
+import axios from "../../utils/axiosInstance";
 import postLogger from "../../utils/postLogger";
 
-
-
 function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-        <GrNext
-            className=" hidden md:block text-6xl absolute right-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 hover:bg-secondary-500 transition-all p-2 rounded-full -translate-x-[30%]"
-            onClick={onClick}
-        />
-    );
+  const { className, style, onClick } = props;
+  return (
+    <GrNext
+      className=" hidden md:block text-6xl absolute right-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 hover:bg-secondary-500 transition-all p-2 rounded-full -translate-x-[30%]"
+      onClick={onClick}
+    />
+  );
 }
 
 function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-        <GrPrevious
-            className="hidden md:block z-10 text-6xl absolute left-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 hover:bg-secondary-500 transition-all p-2 rounded-full translate-x-[30%]"
-            onClick={onClick}
-        />
-    );
+  const { className, style, onClick } = props;
+  return (
+    <GrPrevious
+      className="hidden md:block z-10 text-6xl absolute left-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 hover:bg-secondary-500 transition-all p-2 rounded-full translate-x-[30%]"
+      onClick={onClick}
+    />
+  );
 }
 
 var settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    initialSlide: 0,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    arrows: true,
-    cssEase: "linear",
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
-    responsive: [
-        {
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1,
-                infinite: true,
-                dots: true
-            }
-        },
-        {
-            breakpoint: 600,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2,
-                initialSlide: 2
-            }
-        },
-        {
-            breakpoint: 480,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-            }
-        }
-    ]
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  initialSlide: 0,
+  autoplay: true,
+  autoplaySpeed: 5000,
+  arrows: true,
+  cssEase: "linear",
+  nextArrow: <SampleNextArrow />,
+  prevArrow: <SamplePrevArrow />,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: true,
+      },
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        initialSlide: 2,
+      },
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
 };
 
 export const SingleSlide = (props) => {
-    return (
-        <Link to={props.link}>
-            <div className="h-[300px] my-5 flex flex-col items-center border bg-white mx-5 p-5 rounded-lg shadow-lg text-gray-400 cursor-pointer relative">
-                <div className="mb-3">
-                    <img src={props.icon} alt="" className="w-[70px] h-[70px]" />
-                </div>
-                <h2 className="text-2xl h-[70px] text-center font-bold">
-                    {props.title}
-                </h2>
-                <p className="text-center">
-                    {
-                        props.description?.slice(0,100)
-                    }
-                    ...
-                </p>
-                <span className="absolute bottom-2 left-2 font-bold text-primary-300 hover:text-secondary-500 flex items-center" >Read More <AiOutlineDoubleRight/></span>
-            </div>
-        </Link>
-    )
-}
+  return (
+    <Link to={props.link}>
+      <div className="h-[300px] my-5 flex flex-col items-center border bg-white mx-2 p-5 rounded-lg shadow-lg text-gray-400 cursor-pointer relative">
+        <div className="mb-3">
+          <img src={props.icon} alt="" className="w-[70px] h-[70px]" />
+        </div>
+        <h2 className="text-2xl h-[70px] text-center font-bold">
+          {props.title}
+        </h2>
+        <p className="text-left">
+          {props.description?.slice(0, 80)}
+          ...
+        </p>
+        <span className="absolute bottom-3 left-3 font-bold hover:text-secondary-500 flex items-center">
+          Read More <AiOutlineDoubleRight />
+        </span>
+      </div>
+    </Link>
+  );
+};
 
 function KeyFeatureSlider() {
-    const [data, setData] = useState(null);
+  const [data, setData] = useState(null);
 
-    // Data Fetching
-    useEffect(() => {
-        axios.get('/key_feature')
-            .then(response => {
-                setData(response.data.KeyFeatures)
-                postLogger({ level: "info", message: response })
-            })
-            .catch(error => {
-                console.error(error)
-                 postLogger({ level: "error", message: error })
-            });
-    }, []);
+  // Data Fetching
+  useEffect(() => {
+    axios
+      .get("/key_feature")
+      .then((response) => {
+        setData(response.data.KeyFeatures);
+        postLogger({ level: "info", message: response });
+      })
+      .catch((error) => {
+        console.error(error);
+        postLogger({ level: "error", message: error });
+      });
+  }, []);
 
-
-    return (
-        <div className="w-full overflow-x-hidden mb-10 py-10">
-            <Slider {...settings} className="py-2">
-                {
-                    data && data.map((feature, index) => (
-                        <SingleSlide key={index} {...feature} />
-                    ))
-                }
-            </Slider>
-        </div>
-    );
+  return (
+    <div className="w-full overflow-x-hidden mb-10 py-10">
+      <Slider {...settings} className="py-2 px-10">
+        {data &&
+          data.map((feature, index) => (
+            <SingleSlide key={index} {...feature} />
+          ))}
+      </Slider>
+    </div>
+  );
 }
 
 export default KeyFeatureSlider;

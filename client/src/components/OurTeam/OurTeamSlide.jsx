@@ -11,118 +11,116 @@ The component includes a SingleSlide function that creates a single slide for th
 Finally, the RecentWorksSlider function maps over the blogData array to create a slider with multiple SingleSlide components.
  */
 import React, { useEffect, useState } from "react";
+import { GrNext, GrPrevious } from "react-icons/gr";
 import Slider from "react-slick";
-import { GrNext, GrPrevious } from "react-icons/gr"
 import axios from "../../utils/axiosInstance";
 import postLogger from "../../utils/postLogger";
 
-
 function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-        <GrNext
-            className="hidden md:block text-6xl absolute right-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 hover:bg-secondary-500 transition-all -translate-y-[100%] p-2 rounded-full translate-x-[30%]"
-            onClick={onClick}
-        />
-    );
+  const { className, style, onClick } = props;
+  return (
+    <GrNext
+      className="hidden md:block text-6xl absolute right-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 hover:bg-secondary-500 transition-all -translate-y-[100%] p-2 rounded-full translate-x-[30%]"
+      onClick={onClick}
+    />
+  );
 }
 
 function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-        <GrPrevious
-            className="hidden md:block z-10 text-6xl absolute left-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 hover:bg-secondary-500 transition-all -translate-y-[100%] p-2 rounded-full -translate-x-[30%]"
-            onClick={onClick}
-        />
-    );
+  const { className, style, onClick } = props;
+  return (
+    <GrPrevious
+      className="hidden md:block z-10 text-6xl absolute left-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 hover:bg-secondary-500 transition-all -translate-y-[100%] p-2 rounded-full -translate-x-[30%]"
+      onClick={onClick}
+    />
+  );
 }
 
-
 var settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    initialSlide: 0,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    cssEase: "linear",
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
-    responsive: [
-        {
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                infinite: true,
-                dots: true
-            }
-        },
-        {
-            breakpoint: 600,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1,
-                initialSlide: 2
-            }
-        },
-        {
-            breakpoint: 480,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-            }
-        }
-    ]
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  initialSlide: 0,
+  autoplay: true,
+  autoplaySpeed: 5000,
+  cssEase: "linear",
+  nextArrow: <SampleNextArrow />,
+  prevArrow: <SamplePrevArrow />,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: true,
+      },
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        initialSlide: 2,
+      },
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
 };
 
 export const SingleSlide = (props) => {
-    // console.log(props)
-    return (
-        <a href={props.link} target="_blank">
-            <div className="mx-5 mb-20 rounded-lg p-5 bg-white flex items-center flex-col shadow-xl cursor-pointer hover:border hover:border-primary-400 hover:scale-x-105 transition-all">
-                <img src={`${import.meta.env.REACT_APP_SERVER_PATH}/${props.image}`} alt="" className=" w-2/5 aspect-square object-contain rounded-full" />
-                
-                    <h3 className="mt-2 text-xl font-bold text-gray-400">{props.name}</h3>
-                <p className="font-bold text-secondary-400">{props.title}</p>
-            </div>
-        </a>
-    )
-}
+  // console.log(props)
+  return (
+    <a href={props.link} target="_blank">
+      <div className="mx-5 mb-20 rounded-lg p-5 bg-white flex items-center flex-col shadow-xl cursor-pointer hover:border hover:border-primary-400 hover:scale-x-105 transition-all">
+        <img
+          src={`${import.meta.env.REACT_APP_SERVER_PATH}/${props.image}`}
+          alt=""
+          className=" w-2/5 aspect-square object-contain rounded-full"
+        />
+
+        <h3 className="mt-2 text-xl font-bold text-gray-400">{props.name}</h3>
+        <p className="font-bold text-secondary-400">{props.title}</p>
+      </div>
+    </a>
+  );
+};
 
 function OurTeamSlide() {
+  const [data, setData] = useState(null);
 
-    const [data, setData] = useState(null);
+  // Data Fetching
+  useEffect(() => {
+    axios
+      .get("/team_member?limit=20")
+      .then((response) => {
+        setData(response.data.teamMembers);
+        postLogger({ level: "info", message: response });
+      })
+      .catch((error) => {
+        console.error(error);
+        postLogger({ level: "error", message: error });
+      });
+  }, []);
 
-    // Data Fetching
-    useEffect(() => {
-        axios.get('/team_member?limit=15')
-            .then(response => {
-                setData(response.data.teamMembers)
-                postLogger({ level: "info", message: response })
-            })
-            .catch(error => {
-                console.error(error)
-                postLogger({ level: "error", message: error })
-            });
-    }, []);
+  // console.log(data)
 
-    // console.log(data)
-
-
-    return (
-        <div className="w-full my-2">
-            <Slider {...settings} className="py-2">
-                {
-                    data && data.map((item, index) => (
-                        <SingleSlide key={index} {...item} />
-                    ))
-                }
-            </Slider>
-        </div>
-    );
+  return (
+    <div className="w-full my-2">
+      <Slider {...settings} className="py-2">
+        {data &&
+          data.map((item, index) => <SingleSlide key={index} {...item} />)}
+      </Slider>
+    </div>
+  );
 }
 
 export default OurTeamSlide;

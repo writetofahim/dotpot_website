@@ -1,15 +1,14 @@
 import React from "react";
-import Navbar from "../../components/Navbar/Navbar";
-import gameSoft from "../../assets/img/gameSoft.jpg";
 import eaGame from "../../assets/img/eaGame.png";
 import gameHero from "../../assets/img/gameHero.jpg";
+import gameSoft from "../../assets/img/gameSoft.jpg";
 import Footer from "../../components/Footer/Footer";
-import { useState } from "react";
-import GameSlider from "./GameSlider";
+import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import GameSlider from "./GameSlider";
 
 const Gaming = () => {
-  useScrollToTop()
+  useScrollToTop();
   const gameData = [
     { image: gameSoft, title: "game soft" },
     { image: eaGame, title: "ea" },
@@ -48,90 +47,122 @@ const Gaming = () => {
               </div>
 
               <div className="md:w-2/5 h-82 mx-auto rounded-lg  mt-10 p-5 flex flex-col justify-center items-center">
-              <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-gray-400">
-                  Our Game Development <span className="text-primary-500">Service</span>
+                <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-gray-400">
+                  Our Game Development{" "}
+                  <span className="text-primary-500">Service</span>
                 </h3>
                 <p className="text-center">
-                Dotpot provides game development services, handling everything from game design to programming and testing. They focus on user engagement and offer ongoing support.
+                  Dotpot provides game development services, handling everything
+                  from game design to programming and testing. They focus on
+                  user engagement and offer ongoing support.
                 </p>
               </div>
             </div>
 
             <div className="mt-5 md:flex gap-5 px-5 w-full flex-row-reverse justify-evenly">
               <div>
-              <img className="w-[450px] mx-auto mb-5 rounded-md" src={gameHero} alt="" />
+                <img
+                  className="w-[450px] mx-auto mb-5 rounded-md"
+                  src="https://teambuilding.com/wp-content/uploads/2021/09/team-building-games.jpg"
+                  alt=""
+                />
               </div>
               <div className="rounded-lg w-full md:w-[590px] border p-5 flex flex-col justify-center items-center">
-              <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-gray-400">
-              Experienced <span className="text-primary-500">team</span>
+                <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-gray-400">
+                  Experienced <span className="text-primary-500">team</span>
                 </h3>
-                <p className="text-center">Our team consists of skilled game developers and designers with vast experience.</p>
+                <p className="text-center">
+                  Our team consists of skilled game developers and designers
+                  with vast experience.
+                </p>
               </div>
             </div>
 
             <div className="mt-5 md:flex gap-5 px-5 w-full  justify-evenly">
               <div>
-              <img className="w-[450px] mx-auto mb-5 rounded-md" src={gameHero} alt="" />
+                <img
+                  className="w-[450px] mx-auto mb-5 rounded-md"
+                  src="https://eu-images.contentstack.com/v3/assets/blt95b381df7c12c15d/bltc120b614a2dd690a/624c7f957c2d1d030cd47ff4/placeholder-social.png"
+                  alt=""
+                />
               </div>
               <div className="rounded-lg w-full md:w-[590px] border p-5 flex flex-col justify-center items-center">
-              <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-gray-400">
-              Cutting-edge game <span className="text-primary-500">development </span>
+                <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-gray-400">
+                  Cutting-edge game{" "}
+                  <span className="text-primary-500">development </span>
                 </h3>
-                <p className="text-center">We use innovative technologies and tools for advanced game development.</p>
+                <p className="text-center">
+                  We use innovative technologies and tools for advanced game
+                  development.
+                </p>
               </div>
             </div>
 
             <div className="mt-5 md:flex gap-5 px-5 w-full flex-row-reverse justify-evenly">
               <div>
-              <img className="w-[450px] mx-auto mb-5 rounded-md" src={gameHero} alt="" />
+                <img
+                  className="w-[450px] mx-auto mb-5 rounded-md"
+                  src={
+                    "https://www.xfire.com/wp-content/uploads/2021/10/Netflix-Twitter-Facebook-Outage-Squid-Game-Meme-Guns.jpg"
+                  }
+                  alt=""
+                />
               </div>
               <div className="rounded-lg w-full md:w-[590px] border p-5 flex flex-col justify-center items-center">
-              <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-gray-400">
-              Across different  <span className="text-primary-500">platforms</span>
+                <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-gray-400">
+                  Across different{" "}
+                  <span className="text-primary-500">platforms</span>
                 </h3>
-                <p className="text-center">We develop games for mobile, PC, and consoles, across multiple platforms.</p>
+                <p className="text-center">
+                  We develop games for mobile, PC, and consoles, across multiple
+                  platforms.
+                </p>
               </div>
             </div>
 
             <div className="my-5 md:flex gap-5 px-5 w-full  justify-evenly">
               <div>
-              <img className="w-[450px] mx-auto mb-5 rounded-md" src={gameHero} alt="" />
+                <img
+                  className="w-[450px] mx-auto mb-5 rounded-md"
+                  src={gameHero}
+                  alt=""
+                />
               </div>
               <div className="rounded-lg w-full md:w-[590px] border p-5 flex flex-col justify-center items-center">
-              <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-gray-400">
-                  Customized game  <span className="text-primary-500">design</span>
+                <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-gray-400">
+                  Customized game{" "}
+                  <span className="text-primary-500">design</span>
                 </h3>
-                <p className="text-center">Tailored games to fit client requirements with personalized design and development.</p>
+                <p className="text-center">
+                  Tailored games to fit client requirements with personalized
+                  design and development.
+                </p>
               </div>
             </div>
 
-                    
-
-
             <div className="w-96 absolute top-32">
-                <div class="absolute top-0 -left-4 w-52 h-52  bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-                <div class="absolute top-0 -right-4 w-52 h-52  bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-                <div class="absolute -bottom-8 left-20 w-52 h-52  bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-              </div>
+              <div class="absolute top-0 -left-4 w-52 h-52  bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+              <div class="absolute top-0 -right-4 w-52 h-52  bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+              <div class="absolute -bottom-8 left-20 w-52 h-52  bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+            </div>
 
             <div className="w-96 absolute right-0 top-32">
-                <div class="absolute top-0 -left-4 w-52 h-52  bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-                <div class="absolute top-0 -right-4 w-52 h-52  bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-                <div class="absolute -bottom-8 left-20 w-52 h-52  bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-              </div>
+              <div class="absolute top-0 -left-4 w-52 h-52  bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+              <div class="absolute top-0 -right-4 w-52 h-52  bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+              <div class="absolute -bottom-8 left-20 w-52 h-52  bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+            </div>
 
             <div className="w-96 absolute right-0 bottom-32">
-                <div class="absolute top-0 -left-4 w-52 h-52  bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-                <div class="absolute top-0 -right-4 w-52 h-52  bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-                <div class="absolute -bottom-8 left-20 w-52 h-52  bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-              </div>
+              <div class="absolute top-0 -left-4 w-52 h-52  bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+              <div class="absolute top-0 -right-4 w-52 h-52  bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+              <div class="absolute -bottom-8 left-20 w-52 h-52  bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+            </div>
 
             <div className="w-96 absolute ">
-                <div class="absolute top-0 -left-4 w-52 h-52  bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-                <div class="absolute top-0 -right-4 w-52 h-52  bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-                <div class="absolute -bottom-8 left-20 w-52 h-52  bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-              </div>
-
+              <div class="absolute top-0 -left-4 w-52 h-52  bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+              <div class="absolute top-0 -right-4 w-52 h-52  bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+              <div class="absolute -bottom-8 left-20 w-52 h-52  bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+            </div>
           </div>
         </section>
       </div>
