@@ -101,8 +101,9 @@ const Footer = () => {
             <p className="text-gray-200">Mirpur-10, Dhaka, Bangladesh</p>
             <br />
             <p className="text-gray-200">
-              <strong>Phone:</strong> +880 1817 176 192
+              <strong>Phone:</strong>
             </p>
+            <p className="text-gray-200">+880 1817 176 192</p>
             <p className="text-gray-200">
               <strong>Email:</strong>{" "}
             </p>
