@@ -1,5 +1,5 @@
 import moment from "moment/moment";
-import * as React from 'react';
+import * as React from "react";
 import { useEffect, useRef, useState } from "react";
 import { AiOutlineCloseCircle, AiOutlineSend } from "react-icons/ai";
 import { FaComments, FaSpinner } from "react-icons/fa";
@@ -10,9 +10,9 @@ import axios from "../../utils/axiosInstance";
 import postLogger from "../../utils/postLogger";
 import ImageViewModal from "./ImageViewModal";
 
-const socket = io(import.meta.env.REACT_APP_SOCKET_PATH)
+const socket = io(import.meta.env.REACT_APP_SOCKET_PATH);
 // const socket = io("http://localhost:8800")
-console.log("socket", socket)
+console.log("socket", socket);
 
 // const data = [
 //   { name: "DotpotiT", message: "Hi there!", timestamp: "11:30 AM" },
@@ -27,10 +27,10 @@ const ChatPopup = () => {
   const [newMessage, setNewMessage] = useState("");
   const [files, setFiles] = useState(null);
   const messagesEndRef = useRef(null);
-  const [error, setError] = useState("")
-  const [selectedImage, setSelectedImage] = useState(null)
-  const [openModal, setOpenModal] = useState(null)
-  const [isSending, setIsSending] = useState(false)
+  const [error, setError] = useState("");
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [openModal, setOpenModal] = useState(null);
+  const [isSending, setIsSending] = useState(false);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView();
@@ -38,42 +38,43 @@ const ChatPopup = () => {
 
   useEffect(() => {
     // listen event for new message
-    socket.on("newMessage", data => {
-      console.log("newMessage event fire on client side", data)
-      const conversationId = localStorage.getItem("conversation_id")
+    socket.on("newMessage", (data) => {
+      console.log("newMessage event fire on client side", data);
+      const conversationId = localStorage.getItem("conversation_id");
       if (conversationId === data.conversation_id && data.sender === "admin") {
-        setMessages(prev => ([...prev, data]))
+        setMessages((prev) => [...prev, data]);
       }
       messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-    })
-  }, [])
+    });
+  }, []);
 
   useEffect(() => {
     if (files !== null) {
-      handleSendMessage()
+      handleSendMessage();
     }
   }, [files]);
 
   const handleOpen = async () => {
-    const conversationId = localStorage.getItem("conversation_id")
+    const conversationId = localStorage.getItem("conversation_id");
     if (conversationId && messages.length === 0) {
-     try {
-       const response = await axios.get(`/chats/${conversationId}/messages`)
-       console.log("response will help", response)
-       setMessages(response?.data)
-     } catch (error) {
-      console.log(error)
-       if (error.response.status !== 200) {
-         const { data } = await axios.post("/chats")
-         localStorage.setItem("conversation_id", data.conversation_id)
-         setMessages(prev => [...prev, data])
-         return
-       }
-     }
-    } if (!conversationId) {
-      const { data } = await axios.post("/chats")
-      localStorage.setItem("conversation_id", data.conversation_id)
-      setMessages(prev => [...prev, data])
+      try {
+        const response = await axios.get(`/chats/${conversationId}/messages`);
+        console.log("response will help", response);
+        setMessages(response?.data);
+      } catch (error) {
+        console.log(error);
+        if (error.response.status !== 200) {
+          const { data } = await axios.post("/chats");
+          localStorage.setItem("conversation_id", data.conversation_id);
+          setMessages((prev) => [...prev, data]);
+          return;
+        }
+      }
+    }
+    if (!conversationId) {
+      const { data } = await axios.post("/chats");
+      localStorage.setItem("conversation_id", data.conversation_id);
+      setMessages((prev) => [...prev, data]);
     }
     setIsOpen(!isOpen);
   };
@@ -83,9 +84,9 @@ const ChatPopup = () => {
   };
 
   const handleSendMessage = async () => {
-    setError("")
-    setIsSending(true)
-    const conversationId = localStorage.getItem("conversation_id")
+    setError("");
+    setIsSending(true);
+    const conversationId = localStorage.getItem("conversation_id");
     let attachment = null;
 
     try {
@@ -93,86 +94,150 @@ const ChatPopup = () => {
         // if files selected then upload file to server and get file name
         const filesArray = Array.from(files);
         const formData = new FormData();
-        filesArray.forEach(file => {
-          formData.append('files[]', file);
+        filesArray.forEach((file) => {
+          formData.append("files[]", file);
         });
-        const { data: resFiles } = await axios.post("/upload", formData)
+        const { data: resFiles } = await axios.post("/upload", formData);
         attachment = resFiles[0].filename;
-        postLogger({ level: "info", message: resFiles })
-        setFiles(null)
+        postLogger({ level: "info", message: resFiles });
+        setFiles(null);
       }
       if (newMessage !== "" || attachment !== null) {
-        const { data } = await axios.post(`/chats/${conversationId}/messages`, { text: newMessage, attachment: attachment })
-        console.log(data)
-        postLogger({ level: "info", message: data })
-        setMessages([...messages, data])
+        const { data } = await axios.post(`/chats/${conversationId}/messages`, {
+          text: newMessage,
+          attachment: attachment,
+        });
+        console.log(data);
+        postLogger({ level: "info", message: data });
+        setMessages([...messages, data]);
         setNewMessage("");
       }
-      setIsSending(false)
+      setIsSending(false);
     } catch (error) {
-      console.log("error.response", error.response)
-      postLogger({ level: "error", message: error })
+      console.log("error.response", error.response);
+      postLogger({ level: "error", message: error });
       if (error.response?.data?.errors?.msg) {
-        setError(error.response.data.errors.msg)
+        setError(error.response.data.errors.msg);
       } else {
-        setError(error.message)
+        setError(error.message);
       }
-      setIsSending(false)
+      setIsSending(false);
     }
   };
 
   const handleModalOpen = (image) => {
     setSelectedImage(image);
-    setOpenModal(true)
-  }
+    setOpenModal(true);
+  };
 
   return (
     <>
-      {selectedImage && <ImageViewModal selectedImage={selectedImage} openModal={openModal} setOpenModal={setOpenModal} />}
+      {selectedImage && (
+        <ImageViewModal
+          selectedImage={selectedImage}
+          openModal={openModal}
+          setOpenModal={setOpenModal}
+        />
+      )}
 
       <button
         className="group fixed z-1 bottom-4 right-4 bg-primary-500 text-white p-4 rounded-full border border-white hover:scale-110 transition-all"
         onClick={handleOpen}
       >
         <FaComments size={24} />
-        <span className="absolute top-2 right-16 group-hover:block w-[max-content] px-3 py-2 bg-primary-500 text-white hidden rounded border">Chat with us</span>
+        <span className="absolute top-2 right-16 group-hover:block w-[max-content] px-3 py-2 bg-primary-500 text-white hidden rounded border">
+          Chat with us
+        </span>
       </button>
 
       {isOpen && (
         <div className="fixed bottom-[10vh] right-2 bg-white border-t border-gray-300 w-80 max-h-100 rounded-xl overflow-hidden shadow-xl transition-all">
-
           <div className="flex justify-between px-4 py-1.5 border-b bg-primary-400 text-white">
             <h2 className="text-lg font-medium">Dotpot iT</h2>
             <button className="text-white text-3xl" onClick={handleClose}>
               <AiOutlineCloseCircle />
             </button>
           </div>
-          <div className="flex flex-col p-4 h-80 overflow-y-auto changeThumb" >
+          <div className="flex flex-col p-4 h-80 overflow-y-auto changeThumb">
             <div className="">
-              <img className="w-24 mx-auto" src={"https://myadhp.aadharhousing.com/csr_portal/public/images/crm-main.gif"} alt="" />
-              <p className="text-sm text-center mb-2">Dotpot iT Customer Support</p>
+              <img
+                className="w-24 mx-auto"
+                src={
+                  "https://myadhp.aadharhousing.com/csr_portal/public/images/crm-main.gif"
+                }
+                alt=""
+              />
+              <p className="text-sm text-center mb-2">
+                Dotpot iT Customer Support
+              </p>
               <div className="border-t my-2"></div>
             </div>
             {messages.map((message, index) => (
               <div
                 key={index}
-                className={`flex gap-2 ${message.sender === "admin" ? "" : "justify-end"} items-start`}
+                className={`flex gap-2 ${
+                  message.sender === "admin" ? "" : "justify-end"
+                } items-start`}
               >
                 <div className="mt-3 w-max ">
-                  <img className="w-4" src={message.sender === "admin" ? "https://cdn-icons-png.flaticon.com/512/2706/2706962.png" : "https://cdn-icons-png.flaticon.com/512/1077/1077012.png"} alt="" />
+                  <img
+                    className="w-4"
+                    src={
+                      message.sender === "admin"
+                        ? "https://cdn-icons-png.flaticon.com/512/2706/2706962.png"
+                        : "https://cdn-icons-png.flaticon.com/512/1077/1077012.png"
+                    }
+                    alt=""
+                  />
                 </div>
                 <div className={`w-[75%] flex flex-col my-2`}>
                   <div className="flex gap-2 text-xs items-center mb-1">
-                    <p className="font-medium">{message.sender === "admin" ? "Dotpot iT" : 'You'}</p>
-                    <p className=" text-gray-500 ">{moment(new Date(message.createdAt)).format('LT')}</p>
+                    <p className="font-medium">
+                      {message.sender === "admin" ? "Dotpot iT" : "You"}
+                    </p>
+                    <p className=" text-gray-500 ">
+                      {moment(new Date(message.createdAt)).format("LT")} (
+                      {moment(new Date(message.createdAt)).format("L")})
+                    </p>
                   </div>
-                  <div className={`p-2 rounded-md ${message.sender === "admin" ? "bg-gray-200 w-full" : "bg-primary-200 text-white min-w-[100px]"}`}>
+                  <div
+                    className={`p-2 rounded-md ${
+                      message.sender === "admin"
+                        ? "bg-gray-200 w-full"
+                        : "bg-primary-200 text-white min-w-[100px]"
+                    }`}
+                  >
                     {message.text && <p className="text-sm">{message.text}</p>}
-                    {(message.attachment && message.attachment?.includes(".pdf"))
-                      ? <a className="flex items-center gap-2" href={`${import.meta.env.REACT_APP_SERVER_PATH}/${message.attachment}`} download>
+                    {message.attachment &&
+                    message.attachment?.includes(".pdf") ? (
+                      <a
+                        className="flex items-center gap-2"
+                        href={`${import.meta.env.REACT_APP_SERVER_PATH}/${
+                          message.attachment
+                        }`}
+                        download
+                      >
                         <HiOutlineDownload />
-                        {message.attachment?.slice(0, 20)}...</a>
-                      : message.attachment && <img onClick={() => handleModalOpen(`${import.meta.env.REACT_APP_SERVER_PATH}/${message.attachment}`)} className="w-40 cursor-pointer" src={`${import.meta.env.REACT_APP_SERVER_PATH}/${message.attachment}`} alt="" />}
+                        {message.attachment?.slice(0, 20)}...
+                      </a>
+                    ) : (
+                      message.attachment && (
+                        <img
+                          onClick={() =>
+                            handleModalOpen(
+                              `${import.meta.env.REACT_APP_SERVER_PATH}/${
+                                message.attachment
+                              }`
+                            )
+                          }
+                          className="w-40 cursor-pointer"
+                          src={`${import.meta.env.REACT_APP_SERVER_PATH}/${
+                            message.attachment
+                          }`}
+                          alt=""
+                        />
+                      )
+                    )}
                     {/* <p className="text-xs text-gray-500 mt-1">{moment(new Date(message.createdAt)).fromNow()}</p> */}
                   </div>
                 </div>
@@ -182,13 +247,25 @@ const ChatPopup = () => {
             <div ref={messagesEndRef} />
           </div>
 
-          <form className="p-4 flex items-center justify-between gap-1">
+          <form
+            onSubmit={(e) => e.preventDefault()}
+            className="p-4 flex items-center justify-between gap-1 w-full"
+          >
             <label htmlFor="attachment">
               <GrAttachment />
             </label>
-            <input disabled={isSending} onChange={(e) => { setFiles(e.target.files) }} className="hidden" type="file" name="attachment" id="attachment" />
             <input
-              className="flex-[0.9] p-1 border border-gray-300 rounded-lg h-[38px] outline-none"
+              disabled={isSending}
+              onChange={(e) => {
+                setFiles(e.target.files);
+              }}
+              className="hidden"
+              type="file"
+              name="attachment"
+              id="attachment"
+            />
+            <input
+              className="flex-[0.9] p-1 border border-gray-300 rounded-lg h-[38px] outline-none w-full"
               value={newMessage}
               onChange={(e) => setNewMessage(e.target.value)}
             ></input>
@@ -197,7 +274,11 @@ const ChatPopup = () => {
               className="flex-[0.1] bg-primary-500 text-white text-2xl p-2 rounded-lg h-[38px] flex items-center justify-center"
               onClick={handleSendMessage}
             >
-              {isSending ? <FaSpinner className="animate-spin" /> : <AiOutlineSend />}
+              {isSending ? (
+                <FaSpinner className="animate-spin" />
+              ) : (
+                <AiOutlineSend />
+              )}
             </button>
           </form>
         </div>
