@@ -59,7 +59,7 @@ import StartupBusiness from "./pages/whoWeWorksWith/StartupBusiness";
 import Terms_Conditions from "./terms_conditions/Terms_Conditions";
 
 function App() {
-  const [loading, isLoading] = useState(true);
+  const [loading, isLoading] = useState(false);
   useEffect(() => {
     window.onload = () => {
       // Page has finished loading, do something here
