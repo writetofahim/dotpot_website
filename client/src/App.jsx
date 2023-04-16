@@ -59,14 +59,15 @@ import StartupBusiness from "./pages/whoWeWorksWith/StartupBusiness";
 import Terms_Conditions from "./terms_conditions/Terms_Conditions";
 
 function App() {
-  const [loading, isLoading] = useState(false);
+  const [loading, isLoading] = useState(true);
   useEffect(() => {
-    window.onload = () => {
-      // Page has finished loading, do something here
-      console.log("Page has finished loading.");
+    const timer = setTimeout(() => {
+      console.log("This will run after 1 second!");
       isLoading(false);
-    };
+    }, 3000);
+    return () => clearTimeout(timer);
   }, []);
+
   console.log(loading);
   return (
     <div className={`relative ${loading && "h-screen overflow-hidden"}`}>

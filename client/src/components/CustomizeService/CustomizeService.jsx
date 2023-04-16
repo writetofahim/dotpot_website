@@ -184,7 +184,7 @@ const TechnologyCard = (props) => {
 
       <abbr
         title={`${props.sdes} Starting from ${props.cost}`}
-        className="absolute top-1 left-1 text-gray-400 cursor-pointer hover:scale-110"
+        className="absolute top-1 left-1 text-primary-500 cursor-pointer hover:scale-110"
       >
         <FiInfo />
       </abbr>
@@ -278,7 +278,7 @@ const AddonsCard = (props) => {
       )}
       <abbr
         title={`${props.sdes} Starting from ${props.cost}`}
-        className="absolute top-1 left-1 text-gray-400 cursor-pointer hover:scale-110"
+        className="absolute top-1 left-1 text-primary-500 cursor-pointer hover:scale-110"
       >
         <FiInfo />
       </abbr>

@@ -11,12 +11,8 @@ const Loading = () => {
       />
       <Typed
         className="text-3xl md:text-5xl text-center md:text-left font-bold mb-2  text-gradient bg-gradient-to-r from-[#6e3aff] via-[#26f8ff] to-[#4366ff]"
-        strings={[
-          "Loading, Please wait ",
-          "Dotpot iT, A Leading it Company",
-          "We Provide All kinds of it services and products",
-        ]}
-        typeSpeed={100}
+        strings={["Welcome to Dotpot iT"]}
+        typeSpeed={50}
         backSpeed={20}
         loop
       />
