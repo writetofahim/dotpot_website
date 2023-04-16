@@ -18,6 +18,7 @@ import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/img/logo.png";
 import { AuthContext } from "../../contexts/AuthContext";
+import CommonModal from "../CommonModal/CommonModal";
 
 const Navbar = () => {
   const { user, login, error, logout } = useContext(AuthContext);
@@ -26,6 +27,8 @@ const Navbar = () => {
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
   const [selectedSubmenu, setSelectedSubmenu] = useState(null);
+
+  const [open, setOpen] = useState(false);
 
   const serviceButtonRef = useRef(null);
   const serviceSubmenuDiv = useRef(null);
@@ -337,125 +340,106 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="w-full flex items-center justify-center fixed z-50 bg-white">
-      <nav
-        className="container flex justify-between items-center p-4 z-999"
-        id="nav"
-      >
-        <div className="lg:flex-[0.5] flex-initial justify-center items-center">
-          <Link to="/">
-            <img src={logo} alt="" className="w-60" />
-          </Link>
-          <p className="text-gray-500 hover:text-secondary-400 hidden lg:hidden lg:block italic">
-            We make your Business Successful
-          </p>
-        </div>
-        <div className="lg:flex hidden list-none flex-row justify-between items-center flex-initial">
-          {/* {["home", "about us", "Services", "Contact"].map((item, index) => (
+    <>
+      {open && (
+        <CommonModal
+          message={"Are you sure to logout!"}
+          open={open}
+          setOpen={setOpen}
+          handler={logout}
+          buttonTitle="Logout"
+          title={"Confirm logout"}
+        />
+      )}
+      <div className="w-full flex items-center justify-center fixed z-50 bg-white">
+        <nav
+          className="container flex justify-between items-center p-4 z-999"
+          id="nav"
+        >
+          <div className="lg:flex-[0.5] flex-initial justify-center items-center">
+            <Link to="/">
+              <img src={logo} alt="" className="w-60" />
+            </Link>
+            <p className="text-gray-500 hover:text-secondary-400 hidden lg:hidden lg:block italic">
+              We make your Business Successful
+            </p>
+          </div>
+          <div className="lg:flex hidden list-none flex-row justify-between items-center flex-initial">
+            {/* {["home", "about us", "Services", "Contact"].map((item, index) => (
                         <NavBarItem key={item + index} title={item} />
                     ))} */}
-          <NavLink to="/">
-            {({ isActive }) => (
-              <span
-                className={`${
-                  isActive
-                    ? "lg:text-secondary-400 text-white"
-                    : "lg:text-gray-400 "
-                } mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-secondary-400`}
-              >
-                Home
-              </span>
-            )}
-          </NavLink>
-          <NavLink to="/about">
-            {({ isActive }) => (
-              <li
-                className={`${
-                  isActive
-                    ? "lg:text-secondary-400 text-white"
-                    : "lg:text-gray-400 "
-                } mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-secondary-400`}
-              >
-                About Us
-              </li>
-            )}
-          </NavLink>
-          <div className={"relative w-max"}>
-            <li
-              ref={serviceButtonRef}
-              className={` mx-4 cursor-pointer uppercase font-bold text-lg hover:scale-110 hover:text-secondary-400 flex gap-2 items-center`}
-              onClick={() => setIsSubmenuOpen((p) => !p)}
-            >
-              Services <IoIosArrowDown />
-            </li>
-            <div
-              ref={serviceSubmenuDiv}
-              className={`absolute ${
-                isSubmenuOpen ? "flex" : "hidden"
-              } top-6 left-0 w-max flex-col gap-3 py-5 bg-white rounded-md shadow-2xl`}
-            >
-              {services.map((service, i) => (
-                <div
-                  key={i}
-                  className="px-5 flex group/item gap-2 items-center w-full hover:scale-105 duration-100 cursor-pointer relative"
+            <NavLink to="/">
+              {({ isActive }) => (
+                <span
+                  className={`${
+                    isActive
+                      ? "lg:text-secondary-400 text-white"
+                      : "lg:text-gray-400 "
+                  } mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-secondary-400`}
                 >
-                  <img className="" width={20} src={service.icon} alt="" />
+                  Home
+                </span>
+              )}
+            </NavLink>
+            <NavLink to="/about">
+              {({ isActive }) => (
+                <li
+                  className={`${
+                    isActive
+                      ? "lg:text-secondary-400 text-white"
+                      : "lg:text-gray-400 "
+                  } mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-secondary-400`}
+                >
+                  About Us
+                </li>
+              )}
+            </NavLink>
+            <div className={"relative w-max"}>
+              <li
+                ref={serviceButtonRef}
+                className={` mx-4 cursor-pointer uppercase font-bold text-lg hover:scale-110 hover:text-secondary-400 flex gap-2 items-center`}
+                onClick={() => setIsSubmenuOpen((p) => !p)}
+              >
+                Services <IoIosArrowDown />
+              </li>
+              <div
+                ref={serviceSubmenuDiv}
+                className={`absolute ${
+                  isSubmenuOpen ? "flex" : "hidden"
+                } top-6 left-0 w-max flex-col gap-3 py-5 bg-white rounded-md shadow-2xl`}
+              >
+                {services.map((service, i) => (
                   <div
-                    onClick={() => {
-                      navigate(service.to);
-                    }}
-                    className="w-full hover:text-secondary-400 font-[600] flex items-center gap-2"
+                    key={i}
+                    className="px-5 flex group/item gap-2 items-center w-full hover:scale-105 duration-100 cursor-pointer relative"
                   >
-                    {service.title} <IoIosArrowForward />
+                    <img className="" width={20} src={service.icon} alt="" />
+                    <div
+                      onClick={() => {
+                        navigate(service.to);
+                      }}
+                      className="w-full hover:text-secondary-400 font-[600] flex items-center gap-2"
+                    >
+                      {service.title} <IoIosArrowForward />
+                    </div>
+                    <div className="group-hover/item:flex duration-500 h-0 transition-all group-hover/item:h-max flex-col gap-2 hidden absolute -top-2 lg:left-[285px] bg-white p-3 rounded-md shadow-xl">
+                      {service?.submenu?.map((item, i) => (
+                        <Link
+                          key={i}
+                          to={item.to}
+                          className="w-[200px] hover:text-secondary-400 flex gap-2 items-center"
+                        >
+                          {" "}
+                          <img className="w-4" src={item.icon} alt="" />{" "}
+                          {item.title}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
-                  <div className="group-hover/item:flex duration-500 h-0 transition-all group-hover/item:h-max flex-col gap-2 hidden absolute -top-2 lg:left-[285px] bg-white p-3 rounded-md shadow-xl">
-                    {service?.submenu?.map((item, i) => (
-                      <Link
-                        key={i}
-                        to={item.to}
-                        className="w-[200px] hover:text-secondary-400 flex gap-2 items-center"
-                      >
-                        {" "}
-                        <img className="w-4" src={item.icon} alt="" />{" "}
-                        {item.title}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-          <NavLink to="/contact">
-            {({ isActive }) => (
-              <li
-                className={`${
-                  isActive
-                    ? "lg:text-secondary-400 text-white"
-                    : "lg:text-gray-400 "
-                } mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-secondary-400`}
-                onClick={() => setToggleMenu(false)}
-              >
-                Contact
-              </li>
-            )}
-          </NavLink>
-          <NavLink to="/blog">
-            {({ isActive }) => (
-              <li
-                className={`${
-                  isActive
-                    ? "lg:text-secondary-400 text-white"
-                    : "lg:text-gray-400 "
-                } mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-secondary-400`}
-                onClick={() => setToggleMenu(false)}
-              >
-                Blog
-              </li>
-            )}
-          </NavLink>
-
-          {!user ? (
-            <NavLink to="/login">
+            <NavLink to="/contact">
               {({ isActive }) => (
                 <li
                   className={`${
@@ -465,154 +449,189 @@ const Navbar = () => {
                   } mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-secondary-400`}
                   onClick={() => setToggleMenu(false)}
                 >
-                  Login
+                  Contact
                 </li>
               )}
             </NavLink>
-          ) : (
-            <li
-              className="mx-4 cursor-pointer uppercase text-white font-bold lg:text-gray-400 text-lg hover:scale-110 hover:text-secondary-400"
-              onClick={() => logout()}
-            >
-              Logout
-            </li>
-          )}
-
-          <Link to="/apply" target="_blank">
-            <li className="bg-secondary-400 py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-secondary-500 text-white">
-              Apply For Jobs
-            </li>
-          </Link>
-        </div>
-        <div className="flex relative lg:hidden">
-          {!toggleMenu && (
-            <HiMenuAlt4
-              fontSize={28}
-              className="text-gray-500  lg:hidden cursor-pointer"
-              onClick={() => setToggleMenu(true)}
-            />
-          )}
-
-          {toggleMenu && (
-            <ul
-              className="z-10 fixed -top-0 -right-2 p-3 w-[70vw] h-screen shadow-2xl lg:hidden list-none
-                    flex flex-col justify-start items-center rounded-lg glassmorphism text-gray-500 animate-slide-in"
-            >
-              <li className="text-xl w-full my-2">
-                <AiOutlineClose onClick={() => setToggleMenu(false)} />
-              </li>
-              <Link to="/">
+            <NavLink to="/blog">
+              {({ isActive }) => (
                 <li
-                  className="mx-4 cursor-pointer uppercase text-gray lg:text-gray-400 text-xl font-bold mt-3"
-                  onClick={() => setToggleMenu(false)}
-                >
-                  Home
-                </li>
-              </Link>
-              <Link to="/about">
-                <li
-                  className="mx-4 cursor-pointer uppercase text-gray lg:text-gray-400 text-xl font-bold mt-3"
-                  onClick={() => setToggleMenu(false)}
-                >
-                  About Us
-                </li>
-              </Link>
-              <Link to="/services">
-                <li
-                  className="mx-4 cursor-pointer uppercase text-gray lg:text-gray-400 text-xl font-bold mt-3 flex gap-2 items-center"
-                  onClick={() => setIsDropDownOpen((p) => !p)}
-                >
-                  Services <IoIosArrowDown />
-                </li>
-              </Link>
-              <div
-                className={`relative overflow-hidden ${
-                  !isDropDownOpen ? "h-0" : "h-max"
-                } duration-500 transition-all text-center`}
-              >
-                {services.map((service, i) => (
-                  <div key={i}>
-                    <div
-                      key={i}
-                      className={`mx-4 cursor-pointer uppercase text-gray lg:text-gray-400 text-base font-bold mt-3 relative`}
-                    >
-                      <span
-                        onClick={() => setSelectedSubmenu(service._id)}
-                        className={`${
-                          selectedSubmenu === service._id ? "text-blue-700" : ""
-                        } flex gap-2 items-center justify-center`}
-                      >
-                        {service.title} <IoIosArrowDown />
-                      </span>
-                      <div
-                        className={`${
-                          selectedSubmenu === service._id ? `h-max` : "max-h-0"
-                        } flex flex-col gap-2 overflow-hidden transition-max-h duration-500`}
-                      >
-                        <div className="h-full flex flex-col gap-2">
-                          {service?.submenu?.map((item, index) => (
-                            <Link
-                              key={i + index}
-                              to={item.to}
-                              className={`w-max mx-auto hover:text-primary-400 text-sm`}
-                            >
-                              {item.title}
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-                <Link to="/services">
-                  <li
-                    className="mx-4 cursor-pointer uppercase text-gray lg:text-gray-400 text-lg font-bold mt-3"
-                    onClick={() => setToggleMenu(false)}
-                  >
-                    Get A Quote{" "}
-                  </li>
-                </Link>
-              </div>
-              <Link to="/contact">
-                <li
-                  className="mx-4 cursor-pointer uppercase text-gray lg:text-gray-400 text-xl font-bold mt-3"
-                  onClick={() => setToggleMenu(false)}
-                >
-                  Contact
-                </li>
-              </Link>
-              <Link to="/blog">
-                <li
-                  className="mx-4 cursor-pointer uppercase text-gray lg:text-gray-400 text-xl font-bold mt-3"
+                  className={`${
+                    isActive
+                      ? "lg:text-secondary-400 text-white"
+                      : "lg:text-gray-400 "
+                  } mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-secondary-400`}
                   onClick={() => setToggleMenu(false)}
                 >
                   Blog
                 </li>
-              </Link>
-              {!user ? (
-                <Link to="/login">
-                  <li className="mx-4 cursor-pointer uppercase lg:text-gray-400 text-lg font-bold hover:scale-110 mt-2">
+              )}
+            </NavLink>
+
+            {!user ? (
+              <NavLink to="/login">
+                {({ isActive }) => (
+                  <li
+                    className={`${
+                      isActive
+                        ? "lg:text-secondary-400 text-white"
+                        : "lg:text-gray-400 "
+                    } mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-secondary-400`}
+                    onClick={() => setToggleMenu(false)}
+                  >
                     Login
                   </li>
+                )}
+              </NavLink>
+            ) : (
+              <li
+                className="mx-4 cursor-pointer uppercase text-white font-bold lg:text-gray-400 text-lg hover:scale-110 hover:text-secondary-400"
+                onClick={() => setOpen(true)}
+              >
+                Logout
+              </li>
+            )}
+
+            <Link to="/apply" target="_blank">
+              <li className="bg-secondary-400 py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-secondary-500 text-white">
+                Apply For Jobs
+              </li>
+            </Link>
+          </div>
+          <div className="flex relative lg:hidden">
+            {!toggleMenu && (
+              <HiMenuAlt4
+                fontSize={28}
+                className="text-gray-500  lg:hidden cursor-pointer"
+                onClick={() => setToggleMenu(true)}
+              />
+            )}
+
+            {toggleMenu && (
+              <ul
+                className="z-10 fixed -top-0 -right-2 p-3 w-[70vw] h-screen shadow-2xl lg:hidden list-none
+                    flex flex-col justify-start items-center rounded-lg backdrop-blur-md bg-[#ffffff79] text-gray-500 animate-slide-in"
+              >
+                <li className="text-xl w-full my-2">
+                  <AiOutlineClose onClick={() => setToggleMenu(false)} />
+                </li>
+                <Link to="/">
+                  <li
+                    className="mx-4 cursor-pointer uppercase text-gray lg:text-gray-400 text-xl font-bold mt-3"
+                    onClick={() => setToggleMenu(false)}
+                  >
+                    Home
+                  </li>
                 </Link>
-              ) : (
-                <li
-                  className="mx-4 cursor-pointer uppercase text-white lg:text-gray-400 text-lg hover:scale-110 "
-                  onClick={() => logout()}
+                <Link to="/about">
+                  <li
+                    className="mx-4 cursor-pointer uppercase text-gray lg:text-gray-400 text-xl font-bold mt-3"
+                    onClick={() => setToggleMenu(false)}
+                  >
+                    About Us
+                  </li>
+                </Link>
+                <Link to="/services">
+                  <li
+                    className="mx-4 cursor-pointer uppercase text-gray lg:text-gray-400 text-xl font-bold mt-3 flex gap-2 items-center"
+                    onClick={() => setIsDropDownOpen((p) => !p)}
+                  >
+                    Services <IoIosArrowDown />
+                  </li>
+                </Link>
+                <div
+                  className={`relative overflow-hidden ${
+                    !isDropDownOpen ? "h-0" : "h-max"
+                  } duration-500 transition-all text-center`}
                 >
-                  Logout
-                </li>
-              )}
-              <Link to="/apply" target="_blank">
-                <li className="bg-primary-500 py-2 px-7 mx-4 mt-5 rounded-full cursor-pointer text-white">
-                  Apply For Jobs
-                </li>
-              </Link>
-            </ul>
-          )}
-        </div>
-      </nav>
-    </div>
+                  {services.map((service, i) => (
+                    <div key={i}>
+                      <div
+                        key={i}
+                        className={`mx-4 cursor-pointer uppercase text-gray lg:text-gray-400 text-base font-bold mt-3 relative`}
+                      >
+                        <span
+                          onClick={() => setSelectedSubmenu(service._id)}
+                          className={`${
+                            selectedSubmenu === service._id
+                              ? "text-blue-700"
+                              : ""
+                          } flex gap-2 items-center justify-center`}
+                        >
+                          {service.title} <IoIosArrowDown />
+                        </span>
+                        <div
+                          className={`${
+                            selectedSubmenu === service._id
+                              ? `h-max`
+                              : "max-h-0"
+                          } flex flex-col gap-2 overflow-hidden transition-max-h duration-500`}
+                        >
+                          <div className="h-full flex flex-col gap-2">
+                            {service?.submenu?.map((item, index) => (
+                              <Link
+                                key={i + index}
+                                to={item.to}
+                                className={`w-max mx-auto hover:text-primary-400 text-sm`}
+                              >
+                                {item.title}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                  <Link to="/services">
+                    <li
+                      className="mx-4 cursor-pointer uppercase text-gray lg:text-gray-400 text-lg font-bold mt-3"
+                      onClick={() => setToggleMenu(false)}
+                    >
+                      Get A Quote{" "}
+                    </li>
+                  </Link>
+                </div>
+                <Link to="/contact">
+                  <li
+                    className="mx-4 cursor-pointer uppercase text-gray lg:text-gray-400 text-xl font-bold mt-3"
+                    onClick={() => setToggleMenu(false)}
+                  >
+                    Contact
+                  </li>
+                </Link>
+                <Link to="/blog">
+                  <li
+                    className="mx-4 cursor-pointer uppercase text-gray lg:text-gray-400 text-xl font-bold mt-3"
+                    onClick={() => setToggleMenu(false)}
+                  >
+                    Blog
+                  </li>
+                </Link>
+                {!user ? (
+                  <Link to="/login">
+                    <li className="mx-4 cursor-pointer uppercase lg:text-gray-400 text-lg font-bold hover:scale-110 mt-2">
+                      Login
+                    </li>
+                  </Link>
+                ) : (
+                  <li
+                    className="mx-4 cursor-pointer uppercase font-bold lg:text-gray-400 text-lg hover:scale-110 "
+                    onClick={() => setOpen(true)}
+                  >
+                    Logout
+                  </li>
+                )}
+                <Link to="/apply" target="_blank">
+                  <li className="bg-primary-500 py-2 px-7 mx-4 mt-5 rounded-full cursor-pointer text-white">
+                    Apply For Jobs
+                  </li>
+                </Link>
+              </ul>
+            )}
+          </div>
+        </nav>
+      </div>
+    </>
   );
 };
 

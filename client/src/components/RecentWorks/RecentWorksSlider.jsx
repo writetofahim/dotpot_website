@@ -13,73 +13,70 @@ Each slide displays an image, title, and a stack of Chip components representing
 Finally, the RecentWorksSlider component wraps the slider component and the individual slides to render the complete slider.
  */
 
-
 import React, { useEffect, useState } from "react";
-import { GrNext, GrPrevious } from 'react-icons/gr';
+import { GrNext, GrPrevious } from "react-icons/gr";
 import Slider from "react-slick";
 import axios from "../../utils/axiosInstance";
 import postLogger from "../../utils/postLogger";
 
-
-
 function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-        <GrNext
-            className="hidden md:block text-6xl absolute right-0 top-1/2 cursor-pointer  opacity-30 hover:opacity-100 hover:bg-secondary-500 transition-all -translate-y-[100%] p-2 rounded-full translate-x-[70%]"
-            onClick={onClick}
-        />
-    );
+  const { className, style, onClick } = props;
+  return (
+    <GrNext
+      className="md:block text-4xl md:text-6xl absolute right-0 top-1/2 cursor-pointer  opacity-30 hover:opacity-100 hover:bg-secondary-500 transition-all -translate-y-[100%] p-2 rounded-full translate-x-[30%] md:translate-x-[70%]"
+      onClick={onClick}
+    />
+  );
 }
 
 function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-        <GrPrevious
-            className="hidden md:block z-2 text-6xl absolute left-0 top-1/2 cursor-pointer  opacity-30 hover:opacity-100 hover:bg-secondary-500 transition-all -translate-y-[100%] p-2 rounded-full -translate-x-[70%]"
-            onClick={onClick}
-        />
-    );
+  const { className, style, onClick } = props;
+  return (
+    <GrPrevious
+      className="md:block z-10 text-4xl md:text-6xl absolute left-0 top-1/2 cursor-pointer  opacity-30 hover:opacity-100 hover:bg-secondary-500 transition-all -translate-y-[100%] p-2 rounded-full -translate-x-[30%] md:-translate-x-[70%]"
+      onClick={onClick}
+    />
+  );
 }
 
 var settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    initialSlide: 0,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    cssEase: "linear",
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
-    responsive: [
-        {
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1,
-                infinite: true,
-                dots: true
-            }
-        },
-        {
-            breakpoint: 600,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1,
-                initialSlide: 2
-            }
-        },
-        {
-            breakpoint: 480,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-            }
-        }
-    ]
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  initialSlide: 0,
+  autoplay: true,
+  autoplaySpeed: 5000,
+  cssEase: "linear",
+  nextArrow: <SampleNextArrow />,
+  prevArrow: <SamplePrevArrow />,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: true,
+      },
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        initialSlide: 2,
+      },
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
 };
 
 // export const SingleSlide = (props) => {
@@ -101,49 +98,58 @@ var settings = {
 // }
 
 export const SingleSlide = (props) => {
-    return (
-        <div className="mx-5 mb-14 rounded-lg relative shadow-xl hover:shadow-lg bg-gray-50 px-5 pt-5 group hover:bg-white overflow-hidden duration-200">
-            <h3 className="text-2xl font-bold text-gray-400 mb-2 text-center hover:underline cursor-pointer">{props.title}</h3>
-            <div className="flex gap-2 flex-wrap items-center justify-center mb-5">
-                {props.technologies && props.technologies.map((tech, index) => (
-                        <div key={index} className={`text-sm rounded-full px-2 py-1 bg-gradient-to-r from-cyan-500 to-blue-500 text-white`} >{tech}</div>
-                ))}
+  return (
+    <div className="mx-5 mb-14 rounded-lg relative shadow-xl hover:shadow-lg bg-gray-50 px-5 pt-5 group hover:bg-white overflow-hidden duration-200">
+      <h3 className="text-2xl font-bold text-gray-400 mb-2 text-center hover:underline cursor-pointer">
+        {props.title}
+      </h3>
+      <div className="flex gap-2 flex-wrap items-center justify-center mb-5">
+        {props.technologies &&
+          props.technologies.map((tech, index) => (
+            <div
+              key={index}
+              className={`text-sm rounded-full px-2 py-1 bg-gradient-to-r from-cyan-500 to-blue-500 text-white`}
+            >
+              {tech}
             </div>
-            <div className="mt-0 group-hover:translate-y-3 lg:translate-y-14 translate-y-10 duration-300 custom-shadow lg:h-[250px] ">
-                <img src={`${import.meta.env.REACT_APP_SERVER_PATH}/${props.image}`} alt="" className="rounded-tl-xl rounded-tr-xl aspect-[1.4] object-cover " />
-            </div>
-        </div>
-    )
-}
-
+          ))}
+      </div>
+      <div className="mt-0 group-hover:translate-y-3 lg:translate-y-14 translate-y-10 duration-300 custom-shadow lg:h-[250px] ">
+        <img
+          src={`${import.meta.env.REACT_APP_SERVER_PATH}/${props.image}`}
+          alt=""
+          className="rounded-tl-xl rounded-tr-xl aspect-[1.4] object-cover "
+        />
+      </div>
+    </div>
+  );
+};
 
 function RecentWorksSlider() {
-    const [data, setData] = useState(null);
+  const [data, setData] = useState(null);
 
-    // Data Fetching
-    useEffect(() => {
-        axios.get('/work')
-            .then(response => {
-                setData(response.data.works)
-                postLogger({ level: "info", message: response })
-            })
-            .catch(error =>{ 
-                console.error(error)
-                 postLogger({ level: "error", message: error })
-            });
-    }, []);
+  // Data Fetching
+  useEffect(() => {
+    axios
+      .get("/work")
+      .then((response) => {
+        setData(response.data.works);
+        postLogger({ level: "info", message: response });
+      })
+      .catch((error) => {
+        console.error(error);
+        postLogger({ level: "error", message: error });
+      });
+  }, []);
 
-    return (
-        <div className="w-full my-10">
-            <Slider {...settings} className="py-2">
-                {
-                    data && data.map((item, index) => (
-                        <SingleSlide key={index} {...item} />
-                    ))
-                }
-            </Slider>
-        </div>
-    );
+  return (
+    <div className="w-full my-10">
+      <Slider {...settings} className="py-2">
+        {data &&
+          data.map((item, index) => <SingleSlide key={index} {...item} />)}
+      </Slider>
+    </div>
+  );
 }
 
 export default RecentWorksSlider;

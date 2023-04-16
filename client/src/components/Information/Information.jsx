@@ -50,14 +50,14 @@ const Information = () => {
           {!isOpen ? (
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="mt-2 flex items-center gap-2 font-bold text-secondary-400 hover:text-secondary-500 cursor-pointer"
+              className="mt-2 flex items-center gap-2 font-bold hover:text-secondary-500 cursor-pointer"
             >
               Read More <BsChevronDoubleDown />
             </button>
           ) : (
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="mt-2 flex items-center gap-2 font-bold text-secondary-400 hover:text-secondary-500 cursor-pointer"
+              className="mt-2 flex items-center gap-2 font-bold hover:text-secondary-500 cursor-pointer"
             >
               Read Less <BsChevronDoubleDown className="rotate-180" />
             </button>

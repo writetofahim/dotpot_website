@@ -1,7 +1,11 @@
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
+import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
+import AcceptCookiesPopup from "./components/AcceptCookiesPopup/AcceptCookiesPopup";
+import Loading from "./components/Loading/Loading";
+import ResetPassword from "./pages/ResetPassword/ResetPassword";
 import AboutUs from "./pages/about/AboutUs";
 import Apply from "./pages/applyJob/Apply";
 import ApplyJob from "./pages/applyJob/ApplyJob";
@@ -19,17 +23,28 @@ import Ivr from "./pages/contactCenterservices/Ivr";
 import MobileApp from "./pages/contactCenterservices/MobileApp";
 import Pd from "./pages/contactCenterservices/Pd";
 import Home from "./pages/home/Home";
+import Ai from "./pages/industriesWeServe/Ai";
+import Education from "./pages/industriesWeServe/Education";
+import FoodAndRestaurant from "./pages/industriesWeServe/FoodAndRestaurant";
+import Gaming from "./pages/industriesWeServe/Gaming";
+import Healthcare from "./pages/industriesWeServe/Healthcare";
+import Logistics from "./pages/industriesWeServe/Logistics";
+import Manufacturing from "./pages/industriesWeServe/Manufacturing";
+import OnDemand from "./pages/industriesWeServe/OnDemand";
+import RealEstate from "./pages/industriesWeServe/RealEstate";
+import Retail from "./pages/industriesWeServe/Retail";
+import SocialNetworking from "./pages/industriesWeServe/SocialNetworking";
+import Travel from "./pages/industriesWeServe/Travel";
+import Web3 from "./pages/industriesWeServe/Web3";
 import AiDevelopment from "./pages/keyFeatures/AiDevelopment";
 import BlockchainDevelopment from "./pages/keyFeatures/BlockchainDevelopment";
 import ContactCenterSupport from "./pages/keyFeatures/ContactCenterSupport";
+import CyberSecurity from "./pages/keyFeatures/CyberSecurity";
 import DedicatedTeam from "./pages/keyFeatures/DedicatedTeam";
 import ItSupport from "./pages/keyFeatures/ItSupport";
 import MobileAppDevelopment from "./pages/keyFeatures/MobileAppDevelopment";
+import WebsiteDesign from "./pages/keyFeatures/WebsiteDesign";
 import WebsiteDevelopment from "./pages/keyFeatures/websiteDevelopment/WebsiteDevelopment";
-import Backend from "./pages/keyFeatures/websiteDevelopment/technologiesWeWorkOn/Backend";
-import Cms from "./pages/keyFeatures/websiteDevelopment/technologiesWeWorkOn/Cms";
-import Frontend from "./pages/keyFeatures/websiteDevelopment/technologiesWeWorkOn/Frontend";
-import Mobile from "./pages/keyFeatures/websiteDevelopment/technologiesWeWorkOn/Mobile";
 import Login from "./pages/lgoin/Login";
 import FixedPrice from "./pages/partnershipModels/FixedPrice";
 import HireDedicatedModel from "./pages/partnershipModels/HireDedicatedModel";
@@ -37,32 +52,25 @@ import OnSiteDevelopment from "./pages/partnershipModels/OnSiteDevelopment";
 import PrivacyPolicy from "./pages/privacyPolicy/PrivacyPolicy";
 import Register from "./pages/register/Register";
 import Services from "./pages/services/Services";
-import Terms_Conditions from "./terms_conditions/Terms_Conditions";
 import AgenciesBusiness from "./pages/whoWeWorksWith/AgenciesBusiness";
 import EnterpriseBusiness from "./pages/whoWeWorksWith/EnterpriseBusiness";
 import SmallToMediumBusiness from "./pages/whoWeWorksWith/SmallToMediumBusiness";
 import StartupBusiness from "./pages/whoWeWorksWith/StartupBusiness";
-import AcceptCookiesPopup from "./components/AcceptCookiesPopup/AcceptCookiesPopup";
-import WebsiteDesign from "./pages/keyFeatures/WebsiteDesign";
-import CyberSecurity from "./pages/keyFeatures/CyberSecurity";
-import ResetPassword from "./pages/ResetPassword/ResetPassword";
-import Ai from "./pages/industriesWeServe/Ai"
-import Education from "./pages/industriesWeServe/Education"
-import FoodAndRestaurant from "./pages/industriesWeServe/FoodAndRestaurant"
-import Gaming from "./pages/industriesWeServe/Gaming"
-import Healthcare from "./pages/industriesWeServe/Healthcare"
-import Logistics from "./pages/industriesWeServe/Logistics"
-import Manufacturing from "./pages/industriesWeServe/Manufacturing"
-import OnDemand from "./pages/industriesWeServe/OnDemand"
-import RealEstate from "./pages/industriesWeServe/RealEstate"
-import Retail from "./pages/industriesWeServe/Retail"
-import SocialNetworking from "./pages/industriesWeServe/SocialNetworking"
-import Travel from "./pages/industriesWeServe/Travel"
-import Web3 from "./pages/industriesWeServe/Web3"
+import Terms_Conditions from "./terms_conditions/Terms_Conditions";
 
 function App() {
+  const [loading, isLoading] = useState(true);
+  useEffect(() => {
+    window.onload = () => {
+      // Page has finished loading, do something here
+      console.log("Page has finished loading.");
+      isLoading(false);
+    };
+  }, []);
+  console.log(loading);
   return (
-    <div className="relative">
+    <div className={`relative ${loading && "h-screen overflow-hidden"}`}>
+      {loading && <Loading />}
       <AcceptCookiesPopup />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -80,12 +88,7 @@ function App() {
         <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
         <Route path="/terms_conditions" element={<Terms_Conditions />} />
 
-
-
-
         {/* Services Pages */}
-
-
 
         {/* Contact Center Service Pages */}
         <Route path="/contact_center_services/cti" element={<Cti />} />
@@ -110,9 +113,6 @@ function App() {
         <Route path="/contact_center_services/ivr" element={<Ivr />} />
         <Route path="/contact_center_services/acd" element={<Acd />} />
 
-
-
-
         {/* Partnership Model Pages */}
         <Route
           path="/partnership_model/fixed-price-model"
@@ -126,8 +126,6 @@ function App() {
           path="/partnership_model/on-site-development-model"
           element={<OnSiteDevelopment />}
         />
-
-
 
         {/* Key features */}
         <Route
@@ -170,7 +168,6 @@ function App() {
           element={<ContactCenterSupport />}
         />
 
-
         {/* Who We Works With Pages */}
         <Route
           path="/who-we-works-with/startup-business"
@@ -189,25 +186,17 @@ function App() {
           element={<AgenciesBusiness />}
         />
 
-
-
         {/* Industries We Serve Pages */}
         <Route
           path="/industries-we-serve/retail-ecommerce"
           element={<Retail />}
         />
-        <Route
-          path="/industries-we-serve/education"
-          element={<Education />}
-        />
+        <Route path="/industries-we-serve/education" element={<Education />} />
         <Route
           path="/industries-we-serve/healthcare"
           element={<Healthcare />}
         />
-        <Route
-          path="/industries-we-serve/logistics"
-          element={<Logistics />}
-        />
+        <Route path="/industries-we-serve/logistics" element={<Logistics />} />
         <Route
           path="/industries-we-serve/social-networking"
           element={<SocialNetworking />}
@@ -216,10 +205,7 @@ function App() {
           path="/industries-we-serve/real-estate"
           element={<RealEstate />}
         />
-        <Route
-          path="/industries-we-serve/travel"
-          element={<Travel />}
-        />
+        <Route path="/industries-we-serve/travel" element={<Travel />} />
         <Route
           path="/industries-we-serve/food-and-restaurant"
           element={<FoodAndRestaurant />}
@@ -228,23 +214,13 @@ function App() {
           path="/industries-we-serve/on-demand-solution"
           element={<OnDemand />}
         />
-        <Route
-          path="/industries-we-serve/gaming"
-          element={<Gaming />}
-        />
-        <Route
-          path="/industries-we-serve/ai"
-          element={<Ai />}
-        />
-        <Route
-          path="/industries-we-serve/web3"
-          element={<Web3 />}
-        />
+        <Route path="/industries-we-serve/gaming" element={<Gaming />} />
+        <Route path="/industries-we-serve/ai" element={<Ai />} />
+        <Route path="/industries-we-serve/web3" element={<Web3 />} />
         <Route
           path="/industries-we-serve/manufacturing"
           element={<Manufacturing />}
         />
-
       </Routes>
     </div>
   );

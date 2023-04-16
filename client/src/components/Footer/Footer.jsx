@@ -105,7 +105,7 @@ const Footer = () => {
             </p>
             <p className="text-gray-200">+880 1817 176 192</p>
             <p className="text-gray-200">
-              <strong>Email:</strong>{" "}
+              <strong>Emails:</strong>{" "}
             </p>
             <p className="text-gray-200">help@dotpotit.com</p>
             <p className="text-gray-200"> hr@dotpotit.com</p>
@@ -150,17 +150,25 @@ const Footer = () => {
           <Link to="/">
             <img src={logo} alt="" className="w-4/5" />
           </Link>
-          <p>Make your Business Success Online</p>
+          {/* <p>Make your Business Success Online</p> */}
+          <br />
+          <p className="text-gray-200">Dotpot iT</p>
+          <p className="text-gray-200">House-1, Road-3, Block-A</p>
+          <p className="text-gray-200">Mirpur-10, Dhaka, Bangladesh</p>
           <br />
           <p>
-            Dotpot iT, House-1, Road-3, Block-A, Mirpur-10, Dhaka, Bangladesh
+            <strong>Phone:</strong>
           </p>
-          <p>
-            <strong>Phone:</strong> +880 1817 176 192
+          <p> +880 1817 176 192</p>
+          <br />
+          <p className="">
+            <strong>Emails:</strong>{" "}
           </p>
-          <p>
-            <strong>Email:</strong> help@dotpotit.com
-          </p>
+          <p className="">help@dotpotit.com</p>
+          <p className=""> hr@dotpotit.com</p>
+          {/* <p className=""> sales@dotpotit.com</p> */}
+          <p className=""> marketing@dotpotit.com</p>
+          {/* <p className=""> career@dotpotit.com</p> */}
           <div className="flex gap-4 mt-5 items-center">
             {socialLinks.map((link, i) => (
               <a

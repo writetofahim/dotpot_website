@@ -10,21 +10,20 @@ It uses Link to create a link to the blog page and RecentBlogsSlider to display 
 The RecentBlogsSlider component is responsible for displaying the recent blog posts.
  */
 
-import React from 'react'
-import { Link } from 'react-router-dom'
-import OurTeamSlide from './OurTeamSlide'
-
-
+import React from "react";
+import OurTeamSlide from "./OurTeamSlide";
 
 const OurTeam = () => {
-    return (
-        <div className='w-full overflow-hidden py-10 md:flex md:flex-col md:justify-center'>
-            <div className="p-3 md:p-5 mt-5 w-full md:max-w-[1400px] self-center flex gap-10 flex-wrap items-center justify-center">
-                <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-2 block">Our Team</h1>
-                <OurTeamSlide />
-            </div>
-        </div>
-    )
-}
+  return (
+    <div className="w-full overflow-hidden py-10 md:flex md:flex-col md:justify-center">
+      <div className="p-3 md:p-5 mt-5 w-full md:max-w-[1400px] self-center flex gap-10 flex-wrap items-center justify-center">
+        <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-2 block backdrop-blur-sm p-3 rounded-xl">
+          Our Team
+        </h1>
+        <OurTeamSlide />
+      </div>
+    </div>
+  );
+};
 
-export default OurTeam
+export default OurTeam;

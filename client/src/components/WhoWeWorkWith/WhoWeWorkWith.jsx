@@ -23,11 +23,15 @@ export const Card = (props) => {
   return (
     <Link
       to={props.link}
-      className="bg-white w-1/3 rounded-xl h-[150px] hover:scale-110 transition-all flex flex-col items-center justify-center"
+      className="bg-white rounded-lg flex flex-col items-stretch justify-between md:justify-center p-3 md:p-10 shadow h-[150px] md:h-[200px] w-[45%] md:w-[40%] md:min-w-[200px] hover:scale-110 transition-all cursor-pointer"
     >
-      <div className="w-full flex flex-col items-center justify-center p-5">
-        <img src={props.icon} alt="" className="w-[50px] h-[50px] mb-3" />
-        <h3 className="text-gray-400 text-lg text-center font-bold">
+      <div className="flex flex-col gap-5 items-center justify-center">
+        <img
+          src={props.icon}
+          alt=""
+          className="w-[50px] md:w-[80px] md:h-[80px] h-[50px] object-contain"
+        />
+        <h3 className="text-md md:text-xl font-bold text-center text-gray-400">
           {props.title}
         </h3>
       </div>
@@ -56,7 +60,7 @@ const WhoWeWorkWith = () => {
     <div className="whoWeWorWith w-full min-h-[60vh] overflow-hidden py-10 md:flex md:flex-col md:justify-center md:items-center bg-primary-100 ">
       <div className="mt-5 w-full md:max-w-[1400px]  flex flex-col lg:flex-row md:flex-row gap-5 items-center">
         <div className="left w-1/1 md:w-1/3 lg:2/3 h-max p-5 text-left">
-          <h1 className="text-3xl md:text-5xl font-bold mb-5">
+          <h1 className="text-3xl md:text-5xl text-center md:text-left font-bold mb-5">
             <Typed
               className="text-3xl md:text-4xl text-center md:text-left font-bold mb-2"
               strings={[whoDoWeWorkData.title]}

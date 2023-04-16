@@ -20,7 +20,7 @@ function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
     <GrNext
-      className="hidden md:block text-6xl absolute right-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 hover:bg-secondary-500 transition-all -translate-y-[100%] p-2 rounded-full translate-x-[30%]"
+      className="md:block text-4xl md:text-6xl absolute right-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 hover:bg-secondary-500 transition-all -translate-y-[100%] p-2 rounded-full translate-x-[30%]"
       onClick={onClick}
     />
   );
@@ -30,7 +30,7 @@ function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
   return (
     <GrPrevious
-      className="hidden md:block z-10 text-6xl absolute left-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 hover:bg-secondary-500 transition-all -translate-y-[100%] p-2 rounded-full -translate-x-[30%]"
+      className="md:block z-10 text-4xl md:text-6xl absolute left-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 hover:bg-secondary-500 transition-all -translate-y-[100%] p-2 rounded-full -translate-x-[30%]"
       onClick={onClick}
     />
   );
@@ -87,8 +87,12 @@ export const SingleSlide = (props) => {
           className=" w-2/5 aspect-square object-contain rounded-full"
         />
 
-        <h3 className="mt-2 text-xl font-bold text-gray-400">{props.name}</h3>
-        <p className="font-bold text-secondary-400">{props.title}</p>
+        <h3 className="mt-2 text-xl text-center font-bold text-gray-400">
+          {props.name}
+        </h3>
+        <p className="font-bold text-center text-secondary-400">
+          {props.title}
+        </p>
       </div>
     </a>
   );

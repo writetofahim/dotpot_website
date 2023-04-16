@@ -1,39 +1,38 @@
 import React from "react";
 import { BsArrowRightCircleFill } from "react-icons/bs";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 import coverImg from "../../../assets/img/webDevelopment.jpg";
 import Footer from "../../../components/Footer/Footer";
 import Navbar from "../../../components/Navbar/Navbar";
-import WebDevNav from "./WebDevNav";
-import { useScrollToTop } from "../../../hooks/useScrollToTop";
 import TechnologiesTab from "../../../components/technologiesTab/TechnologiesTab";
+import { useScrollToTop } from "../../../hooks/useScrollToTop";
 
-import html from "../../../assets/img/icon/webFrontend/html.png";
-import css from "../../../assets/img/icon/webFrontend/css.png";
-import bootstrap from "../../../assets/img/icon/webFrontend/bootstrap.png";
 import tailwind from "../../../assets/img/icon/webFrontend/Tailwind_CSS_Logo.png";
+import bootstrap from "../../../assets/img/icon/webFrontend/bootstrap.png";
+import css from "../../../assets/img/icon/webFrontend/css.png";
+import html from "../../../assets/img/icon/webFrontend/html.png";
 import js from "../../../assets/img/icon/webFrontend/js-file.png";
-import typeScript from "../../../assets/img/icon/webFrontend/typescript.png";
 import nextJS from "../../../assets/img/icon/webFrontend/nextJS.webp";
 import react from "../../../assets/img/icon/webFrontend/react.png";
+import typeScript from "../../../assets/img/icon/webFrontend/typescript.png";
 
-import nodeJS from "../../../assets/img/icon/webBackend/nodejs.png";
-import express from "../../../assets/img/icon/webBackend/nodejs.png";
-import laravel from "../../../assets/img/icon/webBackend/laravel.png";
-import dj from "../../../assets/img/icon/webBackend/dj.jpg";
 import aspNet from "../../../assets/img/icon/webBackend/aspNet.png";
+import dj from "../../../assets/img/icon/webBackend/dj.jpg";
+import express from "../../../assets/img/icon/webBackend/expressJS.png";
+import laravel from "../../../assets/img/icon/webBackend/laravel.png";
+import nodeJS from "../../../assets/img/icon/webBackend/nodejs.png";
 
-import wordpress from '../../../assets/img/icon/cms/wordpress.png'
-import drupal from '../../../assets/img/icon/cms/drupal.png'
-import joomla from '../../../assets/img/icon/cms/joomla.png'
-import shopify from '../../../assets/img/icon/cms/shopify.png'
-import wix from '../../../assets/img/icon/cms/wix.png'
+import drupal from "../../../assets/img/icon/cms/drupal.png";
+import joomla from "../../../assets/img/icon/cms/joomla.png";
+import shopify from "../../../assets/img/icon/cms/shopify.png";
+import wix from "../../../assets/img/icon/cms/wix.png";
+import wordpress from "../../../assets/img/icon/cms/wordpress.png";
 
 const WebsiteDevelopment = () => {
   const data = [
     {
       title: "Frontend",
-      id:1,
+      id: 1,
       technologies: [
         {
           img: html,
@@ -71,7 +70,7 @@ const WebsiteDevelopment = () => {
     },
     {
       title: "Backend",
-      id:2,
+      id: 2,
       technologies: [
         {
           img: nodeJS,
@@ -97,7 +96,7 @@ const WebsiteDevelopment = () => {
     },
     {
       title: "CMS",
-      id:3,
+      id: 3,
       technologies: [
         {
           img: wordpress,
@@ -306,16 +305,14 @@ const WebsiteDevelopment = () => {
                 </p>
               </div>
             </div>
-            
+
             <div>
               {/* <WebDevNav /> */}
               {/* <Outlet /> */}
             </div>
           </div>
         </div>
-        <div className="">
-          
-        </div>
+        <div className=""></div>
       </div>
       <Footer />
     </>

@@ -25,7 +25,7 @@ function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
     <GrNext
-      className="hidden md:block text-6xl absolute right-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 hover:bg-secondary-500 transition-all -translate-y-[100%] p-2 rounded-full translate-x-[30%]"
+      className="md:block text-4xl md:text-6xl absolute right-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 hover:bg-secondary-500 transition-all -translate-y-[100%] p-2 rounded-full translate-x-[30%]"
       onClick={onClick}
     />
   );
@@ -35,7 +35,7 @@ function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
   return (
     <GrPrevious
-      className="hidden md:block z-10 text-6xl absolute left-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 hover:bg-secondary-500 transition-all -translate-y-[100%] p-2 rounded-full -translate-x-[30%]"
+      className="md:block z-10 text-4xl md:text-6xl absolute left-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 hover:bg-secondary-500 transition-all -translate-y-[100%] p-2 rounded-full -translate-x-[30%]"
       onClick={onClick}
     />
   );
@@ -102,7 +102,7 @@ export const SingleSlide = (props) => {
         </Stack>
         <p className="mt-2 text-gray-400">{props.date}</p>
         <h3 className="text-xl font-bold text-gray-400 my-2 h-[80px]">
-          {props.title}
+          {props.title.slice(0, 45)}...
         </h3>
         <Link
           to={`/blog/${props._id}`}

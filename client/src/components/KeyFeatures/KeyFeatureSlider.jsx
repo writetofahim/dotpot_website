@@ -33,7 +33,7 @@ function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
     <GrNext
-      className=" hidden md:block text-6xl absolute right-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 hover:bg-secondary-500 transition-all p-2 rounded-full -translate-x-[30%]"
+      className="  md:block text-4xl md:text-6xl absolute right-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 hover:bg-secondary-500 transition-all p-2 rounded-full -translate-x-[0%]"
       onClick={onClick}
     />
   );
@@ -43,7 +43,7 @@ function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
   return (
     <GrPrevious
-      className="hidden md:block z-10 text-6xl absolute left-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 hover:bg-secondary-500 transition-all p-2 rounded-full translate-x-[30%]"
+      className=" md:block z-10 text-4xl md:text-6xl absolute left-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 hover:bg-secondary-500 transition-all p-2 rounded-full translate-x-[0%]"
       onClick={onClick}
     />
   );
@@ -75,8 +75,8 @@ var settings = {
     {
       breakpoint: 600,
       settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
+        slidesToShow: 1,
+        slidesToScroll: 1,
         initialSlide: 2,
       },
     },
@@ -101,10 +101,10 @@ export const SingleSlide = (props) => {
           {props.title}
         </h2>
         <p className="text-left">
-          {props.description?.slice(0, 80)}
+          {props.description?.slice(0, 65)}
           ...
         </p>
-        <span className="absolute bottom-3 left-3 font-bold hover:text-secondary-500 flex items-center">
+        <span className="absolute bottom-3 left-5 font-bold hover:text-secondary-500 flex items-center">
           Read More <AiOutlineDoubleRight />
         </span>
       </div>
