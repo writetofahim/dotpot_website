@@ -14,11 +14,12 @@ To apply custom styles, modify the with tailwind css classes and the background 
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { HiMenuAlt4 } from "react-icons/hi";
-import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowDown } from "react-icons/io";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/img/logo.png";
 import { AuthContext } from "../../contexts/AuthContext";
 import CommonModal from "../CommonModal/CommonModal";
+import Submenu from "./Submenu";
 
 const Navbar = () => {
   const { user, login, error, logout } = useContext(AuthContext);
@@ -399,11 +400,16 @@ const Navbar = () => {
                 ref={serviceButtonRef}
                 className={` mx-4 cursor-pointer uppercase font-bold text-lg hover:scale-110 hover:text-secondary-400 flex gap-2 items-center`}
                 onClick={() => setIsSubmenuOpen((p) => !p)}
+                onMouseEnter={() => setIsSubmenuOpen((p) => !p)}
               >
                 Services <IoIosArrowDown />
               </li>
               <div
                 ref={serviceSubmenuDiv}
+                onMouseLeave={() => {
+                  setIsSubmenuOpen((p) => !p);
+                  setSelectedSubmenu(null);
+                }}
                 className={`absolute ${
                   isSubmenuOpen ? "flex" : "hidden"
                 } top-6 left-0 w-max flex-col gap-3 py-5 bg-white rounded-md shadow-2xl`}
@@ -414,27 +420,33 @@ const Navbar = () => {
                     className="px-5 flex group/item gap-2 items-center w-full hover:scale-105 duration-100 cursor-pointer relative"
                   >
                     <img className="" width={20} src={service.icon} alt="" />
-                    <div
-                      onClick={() => {
-                        navigate(service.to);
-                      }}
-                      className="w-full hover:text-secondary-400 font-[600] flex items-center gap-2"
-                    >
-                      {service.title} <IoIosArrowForward />
-                    </div>
-                    <div className="group-hover/item:flex duration-500 h-0 transition-all group-hover/item:h-max flex-col gap-2 hidden absolute -top-2 lg:left-[285px] bg-white p-3 rounded-md shadow-xl">
-                      {service?.submenu?.map((item, i) => (
-                        <Link
-                          key={i}
-                          to={item.to}
-                          className="w-[200px] hover:text-secondary-400 flex gap-2 items-center"
-                        >
-                          {" "}
-                          <img className="w-4" src={item.icon} alt="" />{" "}
-                          {item.title}
-                        </Link>
-                      ))}
-                    </div>
+                    <Submenu
+                      service={service}
+                      selectedSubmenu={selectedSubmenu}
+                      setSelectedSubmenu={setSelectedSubmenu}
+                      setIsSubmenuOpen={setIsSubmenuOpen}
+                    />
+                    {/* <div
+                    onClick={() => {
+                      navigate(service.to);
+                    }}
+                    className="w-full hover:text-secondary-400 font-[600] flex items-center gap-2"
+                  >
+                    {service.title} <IoIosArrowForward />
+                  </div>
+                  <div className="group-hover/item:flex duration-500 h-0 transition-all group-hover/item:h-max flex-col gap-2 hidden absolute -top-2 lg:left-[285px] bg-white p-3 rounded-md shadow-xl">
+                    {service?.submenu?.map((item, i) => (
+                      <Link
+                        key={i}
+                        to={item.to}
+                        className="w-[200px] hover:text-secondary-400 flex gap-2 items-center"
+                      >
+                        {" "}
+                        <img className="w-4" src={item.icon} alt="" />{" "}
+                        {item.title}
+                      </Link>
+                    ))}
+                  </div> */}
                   </div>
                 ))}
               </div>

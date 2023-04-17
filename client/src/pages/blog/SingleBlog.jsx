@@ -33,7 +33,7 @@ const SingleBlog = () => {
       .get(`/blog/${id}`)
       .then((response) => {
         setData(response.data);
-        postLogger({ level: "info", message: resFiles });
+        postLogger({ level: "info", message: response.data });
       })
       .catch((error) => {
         console.error(error);

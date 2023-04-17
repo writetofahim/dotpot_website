@@ -52,7 +52,10 @@ export const MobileMenu = (props) => {
         <div className="mt-4">
           <ul className="space-y-2">
             {props.links.map((item, index) => (
-              <li className="hover:text-secondary-500">
+              <li
+                onClick={() => window.scrollTo(0, 0)}
+                className="hover:text-secondary-500"
+              >
                 <Link to={item.link}>{item.title}</Link>
               </li>
             ))}
@@ -135,6 +138,7 @@ const Footer = () => {
                 {item.links.map((link, index) => (
                   <li
                     key={index}
+                    onClick={() => window.scrollTo(0, 0)}
                     className="hover:text-secondary-500 text-gray-200"
                   >
                     <Link to={link.link}>{link.title}</Link>
