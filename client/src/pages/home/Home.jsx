@@ -22,7 +22,6 @@ Footer
  */
 
 import React from "react";
-import ChatPopup from "../../components/ChatPopup/ChatPopup";
 import ContactCenterServices from "../../components/ContactCenterServices/ContactCenterServices";
 import CustomizeService from "../../components/CustomizeService/CustomizeService";
 import Footer from "../../components/Footer/Footer";
@@ -67,7 +66,7 @@ const Home = () => {
       <SocialMedia />
       <OurPartnersSlider />
       {/* <GoogleMap /> */}
-      <ChatPopup />
+      {/* <ChatPopup /> */}
       <Footer />
     </>
   );

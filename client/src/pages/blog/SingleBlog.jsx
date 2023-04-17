@@ -10,71 +10,73 @@ The desc property of the blog object is parsed using parse to render any HTML ta
 This component also renders Navbar, RecentBlogs, and Footer.
  */
 
-import React, { useEffect, useState } from 'react'
-import parse from 'react-html-parser'
-import { useParams } from 'react-router-dom'
-import ChatPopup from '../../components/ChatPopup/ChatPopup'
-import Footer from '../../components/Footer/Footer'
-import Navbar from '../../components/Navbar/Navbar'
-import RecentBlogs from '../../components/RecentBlogs/RecentBlogs'
-import axios from '../../utils/axiosInstance'
-import postLogger from '../../utils/postLogger'
+import React, { useEffect, useState } from "react";
+import parse from "react-html-parser";
+import { useParams } from "react-router-dom";
+import Footer from "../../components/Footer/Footer";
+import Navbar from "../../components/Navbar/Navbar";
+import RecentBlogs from "../../components/RecentBlogs/RecentBlogs";
+import axios from "../../utils/axiosInstance";
+import postLogger from "../../utils/postLogger";
 
 const SingleBlog = () => {
-    
+  const { id } = useParams();
+  const [data, setData] = useState(null);
 
-    const { id } = useParams();
-    const [data, setData] = useState(null);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
 
-    useEffect(() => {
-        window.scrollTo(0, 0)
-      }, [id])
+  // Data Fetching
+  useEffect(() => {
+    axios
+      .get(`/blog/${id}`)
+      .then((response) => {
+        setData(response.data);
+        postLogger({ level: "info", message: resFiles });
+      })
+      .catch((error) => {
+        console.error(error);
+        postLogger({ level: "error", message: error });
+      });
+  }, [id]);
 
-    // Data Fetching
-    useEffect(() => {
-        axios.get(`/blog/${id}`)
-            .then(response => {
-                setData(response.data)
-                postLogger({ level: "info", message: resFiles })
-            })
-            .catch(error =>{
-                console.error(error)
-                postLogger({ level: "error", message: error })
-            });
-    }, [id]); 
-
-
-    return (
-        <>
-            <Navbar />
-            <div className="w-full md:p-[15vh] pt-[15vh]">
-                {
-                    data && (
-                        <div className='full flex items-center justify-center'>
-                            <div className="container flex flex-col items-center p-3 md:p-10 text-justify">
-                                <img className='w-full' src={`${import.meta.env.REACT_APP_SERVER_PATH}/${data.image}`} alt="" />
-                                <div className="md:w-5/5">
-                                    <h3 className="my-5 text-3xl font-bold text-left">{data.title}</h3>
-                                    <p className="text-gray-400">{data.date}</p>
-                                    {
-                                        data?.tags.map((item, index) => (
-                                            <p key={index} className="inline px-3 py-1 border rounded-full mr-2 text-gray-400 hover:text-secondary-500 transition-all">{item}, </p>
-                                        ))
-                                    }
-                                    <div className="mt-5">
-                                    {parse(data.body)}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    )
-                }
+  return (
+    <>
+      <Navbar />
+      <div className="w-full md:p-[15vh] pt-[15vh]">
+        {data && (
+          <div className="full flex items-center justify-center">
+            <div className="container flex flex-col items-center p-3 md:p-10 text-justify">
+              <img
+                className="w-full"
+                src={`${import.meta.env.REACT_APP_SERVER_PATH}/${data.image}`}
+                alt=""
+              />
+              <div className="md:w-5/5">
+                <h3 className="my-5 text-3xl font-bold text-left">
+                  {data.title}
+                </h3>
+                <p className="text-gray-400">{data.date}</p>
+                {data?.tags.map((item, index) => (
+                  <p
+                    key={index}
+                    className="inline px-3 py-1 border rounded-full mr-2 text-gray-400 hover:text-secondary-500 transition-all"
+                  >
+                    {item},{" "}
+                  </p>
+                ))}
+                <div className="mt-5">{parse(data.body)}</div>
+              </div>
             </div>
-            <RecentBlogs />
-            <ChatPopup />
-            <Footer />
-        </>
-    )
-}
+          </div>
+        )}
+      </div>
+      <RecentBlogs />
+      {/* <ChatPopup /> */}
+      <Footer />
+    </>
+  );
+};
 
-export default SingleBlog
+export default SingleBlog;

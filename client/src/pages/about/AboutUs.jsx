@@ -7,7 +7,6 @@
 
 import React from "react";
 import Typed from "react-typed";
-import ChatPopup from "../../components/ChatPopup/ChatPopup";
 import ContactInfo from "../../components/ContactInfo/ContactInfo";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
@@ -44,7 +43,7 @@ const AboutUs = () => {
       <RecentWorks />
       <SocialMedia />
       {/* <GoogleMap /> */}
-      <ChatPopup />
+      {/* <ChatPopup /> */}
       <Footer />
     </div>
   );

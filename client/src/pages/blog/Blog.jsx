@@ -16,7 +16,6 @@ import {
   AiOutlineFieldTime,
 } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
-import ChatPopup from "../../components/ChatPopup/ChatPopup";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import axios from "../../utils/axiosInstance";
@@ -164,7 +163,7 @@ const Blog = () => {
           {/* Pagination Start */}
         </div>
 
-        <ChatPopup />
+        {/* <ChatPopup /> */}
       </div>
       <Footer />
     </>

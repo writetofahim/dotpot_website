@@ -65,7 +65,7 @@ const ContactInfo = () => {
               </div>
               <div className="flex-grow">
                 <h2 className="text-gray-900 text-lg title-font font-medium mb-3">
-                  Send Mail
+                  Send Email
                 </h2>
                 {data &&
                   data.email.map((item, index) => (
@@ -83,7 +83,10 @@ const ContactInfo = () => {
                 <h2 className="text-gray-900 text-lg title-font font-medium mb-3">
                   Visit Our Office
                 </h2>
-                <p className="leading-relaxed text-base">{data.address}</p>
+                {/* <p className="leading-relaxed text-base">{data.address}</p> */}
+                <p>Dotpot iT</p>
+                <p>House-1, Road-3, Block-A</p>
+                <p>Mirpur-10, Dhaka, Bangladesh</p>
               </div>
             </div>
           </div>

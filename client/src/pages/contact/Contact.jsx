@@ -7,7 +7,6 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import ChatPopup from "../../components/ChatPopup/ChatPopup";
 import ContactFormLarge from "../../components/ContactForm/ContactFormLarge";
 import ContactInfo from "../../components/ContactInfo/ContactInfo";
 import Footer from "../../components/Footer/Footer";
@@ -49,7 +48,7 @@ const Contact = () => {
         <RecentWorks />
         <SocialMedia />
         {/* <GoogleMap /> */}
-        <ChatPopup />
+        {/* <ChatPopup /> */}
       </div>
       <Footer />
     </>

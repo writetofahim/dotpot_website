@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import AcceptCookiesPopup from "./components/AcceptCookiesPopup/AcceptCookiesPopup";
+import ChatPopup from "./components/ChatPopup/ChatPopup";
 import Loading from "./components/Loading/Loading";
 import ResetPassword from "./pages/ResetPassword/ResetPassword";
 import AboutUs from "./pages/about/AboutUs";
@@ -73,6 +74,7 @@ function App() {
     <div className={`relative ${loading && "h-screen overflow-hidden"}`}>
       {loading && <Loading />}
       <AcceptCookiesPopup />
+      <ChatPopup />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
