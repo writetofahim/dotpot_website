@@ -2,8 +2,10 @@ import React from "react";
 import aiImg from "../../assets/img/heroAI.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
+import { useScrollToTop } from "../../hooks/useScrollToTop";
 
 const Ai = () => {
+  useScrollToTop();
   return (
     <div>
       <div className="">

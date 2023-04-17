@@ -63,13 +63,13 @@ function App() {
   const [loading, isLoading] = useState(true);
   useEffect(() => {
     const timer = setTimeout(() => {
-      console.log("This will run after 1 second!");
+      // console.log("This will run after 1 second!");
       isLoading(false);
     }, 3000);
     return () => clearTimeout(timer);
   }, []);
 
-  console.log(loading);
+  // console.log(loading);
   return (
     <div className={`relative ${loading && "h-screen overflow-hidden"}`}>
       {loading && <Loading />}

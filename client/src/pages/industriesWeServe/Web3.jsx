@@ -1,10 +1,12 @@
 import React from "react";
 import gameHero from "../../assets/img/gameHero.jpg";
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
 import web3Cover from "../../assets/img/web3Cover.webp";
+import Footer from "../../components/Footer/Footer";
+import Navbar from "../../components/Navbar/Navbar";
+import { useScrollToTop } from "../../hooks/useScrollToTop";
 
 const Web3 = () => {
+  useScrollToTop();
   return (
     <div>
       <div className="">
@@ -33,7 +35,7 @@ const Web3 = () => {
                   AI Development
                 </h1>
                 <p className="text-gray-400 flex flex-col gap-5 p-5 text-center">
-                At DotpotIT, we offer innovative web3 solutions for businesses
+                  At DotpotIT, we offer innovative web3 solutions for businesses
                   using blockchain and decentralized technologies.
                 </p>
               </div>
@@ -49,11 +51,12 @@ const Web3 = () => {
                   </div>
                   <div className="rounded-lg w-full md:w-[590px] border p-5 flex flex-col justify-center items-center">
                     <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-gray-400">
-                    Customized web3 
+                      Customized web3
                       <span className="text-primary-500"> solutions</span>
                     </h3>
                     <p className="text-center">
-                    Customized web3 solutions to meet the specific needs of each client.
+                      Customized web3 solutions to meet the specific needs of
+                      each client.
                     </p>
                   </div>
                 </div>
@@ -68,11 +71,12 @@ const Web3 = () => {
                   </div>
                   <div className="rounded-lg w-full md:w-[590px] border p-5 flex flex-col justify-center items-center">
                     <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-gray-400">
-                    Blockchain for Security and 
+                      Blockchain for Security and
                       <span className="text-primary-500"> Transparency </span>
                     </h3>
                     <p className="text-center">
-                    Use of blockchain technology to enhance security and transparency
+                      Use of blockchain technology to enhance security and
+                      transparency
                     </p>
                   </div>
                 </div>
@@ -87,11 +91,12 @@ const Web3 = () => {
                   </div>
                   <div className="rounded-lg w-full md:w-[590px] border p-5 flex flex-col justify-center items-center">
                     <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-gray-400">
-                    Efficient dApps and Smart 
+                      Efficient dApps and Smart
                       <span className="text-primary-500"> Contracts</span>
                     </h3>
                     <p className="text-center">
-                    Development of dApps and smart contracts for automation and efficiency.
+                      Development of dApps and smart contracts for automation
+                      and efficiency.
                     </p>
                   </div>
                 </div>
@@ -106,11 +111,12 @@ const Web3 = () => {
                   </div>
                   <div className="rounded-lg w-full md:w-[590px] border p-5 flex flex-col justify-center items-center">
                     <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-gray-400">
-                    NFT 
+                      NFT
                       <span className="text-primary-500"> Integration</span>
                     </h3>
                     <p className="text-center">
-                    Integration of NFTs for digital art, collectibles, and gaming.
+                      Integration of NFTs for digital art, collectibles, and
+                      gaming.
                     </p>
                   </div>
                 </div>
