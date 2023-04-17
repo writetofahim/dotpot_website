@@ -61,7 +61,7 @@ const AboutSection = () => {
           typeSpeed={100}
         />
         {/* <h1 className="text-center text-gray-600 text-3xl md:text-5xl font-bold">Who We Are ? </h1> */}
-        <p className="w-full md:w-2/3 text-center text-lg md:text-xl font-bold">
+        <p className="w-full md:w-2/3 text-center text-lg md:text-xl">
           Dotpot iT is a leading IT company that offers a wide range of IT
           products and services. From app development and web development to
           game development, AI development, and blockchain development, we

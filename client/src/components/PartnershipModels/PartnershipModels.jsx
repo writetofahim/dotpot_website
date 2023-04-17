@@ -28,7 +28,7 @@ export const Card = (props) => {
         </div>
         <h2 className="text-2xl text-center font-bold">{props.title}</h2>
         <p className="text-center inline">
-          {props.description?.slice(0, 100)}
+          {props.description?.slice(0, 70)}
           ...
         </p>
         <span className="inline-flex items-center font-bold hover:text-secondary-500">
@@ -59,7 +59,7 @@ const PartnershipModels = () => {
   return (
     <div className="w-full overflow-hidden pt-10 pb-20 md:flex md:flex-col md:justify-center flex-wrap ">
       <div className="p-3 md:p-5 mt-5 w-full md:max-w-[1400px] self-center backdrop-blur-sm">
-        <h1 className="mt-10 text-4xl md:text-5xl text-center font-bold w-full  ">
+        <h1 className="mt-10 text-3xl md:text-5xl text-center font-bold w-full  ">
           Partnership Models
         </h1>
         <p className="text-md text-center text-gray-400 font-bold mt-2">

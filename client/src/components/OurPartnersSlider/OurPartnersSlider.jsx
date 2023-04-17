@@ -5,83 +5,84 @@ The OurPartnersSlider function returns the slider component with the settings ap
  */
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
-import { ourPartnersSliderData } from "../../data"
-import axios from "../../utils/axiosInstance"
+import axios from "../../utils/axiosInstance";
 import postLogger from "../../utils/postLogger";
 
-
 var settings = {
-    // dots: true,
-    infinite: true,
-    speed: 2000,
-    slidesToShow: 6,
-    slidesToScroll: 1,
-    initialSlide: 0,
-    autoplay: true,
-    autoplaySpeed: -200,
-    cssEase: "linear",
-    responsive: [
-        {
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 6,
-                slidesToScroll: 1,
-                infinite: true,
-                dots: true
-            }
-        },
-        {
-            breakpoint: 600,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                initialSlide: 2
-            }
-        },
-        {
-            breakpoint: 480,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1
-            }
-        }
-    ]
+  // dots: true,
+  infinite: true,
+  speed: 3000,
+  slidesToShow: 6,
+  slidesToScroll: 1,
+  initialSlide: 0,
+  autoplay: true,
+  autoplaySpeed: -200,
+  cssEase: "linear",
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: true,
+      },
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        initialSlide: 2,
+      },
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+      },
+    },
+  ],
 };
 
-
 function OurPartnersSlider() {
+  const [data, setData] = useState(null);
+  // console.log("our parterner", data)
 
-    const [data, setData] = useState(null);
-    // console.log("our parterner", data)
+  // Data Fetching
+  useEffect(() => {
+    axios
+      .get("/our_partner")
+      .then((response) => {
+        setData(response.data.ourPartners);
+        postLogger({ level: "info", message: response });
+      })
+      .catch((error) => {
+        console.error(error);
+        postLogger({ level: "error", message: error });
+      });
+  }, []);
 
-    // Data Fetching
-    useEffect(() => {
-        axios.get('/our_partner')
-            .then(response => {
-                setData(response.data.ourPartners)
-                postLogger({ level: "info", message: response })
-            })
-            .catch(error =>{ 
-                console.error(error)
-                postLogger({ level: "error", message: error })
-            });
-    }, []); 
-
-
-
-    return (
-        <div className="w-full overflow-x-hidden bg-white">
-            <Slider {...settings} className="py-2">
-                {
-                    data && data.map((item, index) => (
-                        <div className="mx-5 p-5 rounded-lg flex items-center justify-center hover:scale-110 transition-all" key={index}>
-                            <img src={`${import.meta.env.REACT_APP_SERVER_PATH}/${item.logo}`} alt={item.title} className="h-[100px] max-w-[200px] object-contain" />
-                        </div>
-                    ))
-                }
-            </Slider>
-        </div>
-    );
+  return (
+    <div className="w-full overflow-x-hidden bg-white">
+      <Slider {...settings} className="py-2">
+        {data &&
+          data.map((item, index) => (
+            <div
+              className="mx-5 p-5 rounded-lg flex items-center justify-center hover:scale-110 transition-all"
+              key={index}
+            >
+              <img
+                src={`${import.meta.env.REACT_APP_SERVER_PATH}/${item.logo}`}
+                alt={item.title}
+                className="h-[100px] max-w-[130px] object-contain"
+              />
+            </div>
+          ))}
+      </Slider>
+    </div>
+  );
 }
 
 export default OurPartnersSlider;

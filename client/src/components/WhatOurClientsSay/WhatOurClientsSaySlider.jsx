@@ -49,18 +49,26 @@ var settings = {
     {
       breakpoint: 1024,
       settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
+        slidesToShow: 2,
+        slidesToScroll: 2,
         infinite: true,
         dots: true,
       },
     },
     {
-      breakpoint: 600,
+      breakpoint: 720,
       settings: {
         slidesToShow: 2,
         slidesToScroll: 2,
         initialSlide: 2,
+      },
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        initialSlide: 1,
       },
     },
     {
@@ -75,7 +83,7 @@ var settings = {
 
 export const SingleSlide = (props) => {
   return (
-    <div className="mx-5 mb-20 p-2 md:p-0 rounded-2xl flex flex-col justify-between items-center bg-white shadow-xl lg:h-[300px]">
+    <div className="mx-5 mb-20 p-2 md:p-0 rounded-2xl flex flex-col justify-between items-center bg-white shadow-xl lg:h-[300px] overflow-hidden">
       <div className="flex flex-col md:grid md:grid-cols-3 md:gap-10 ">
         <div className=" col-span-1 h-full">
           <img
@@ -83,18 +91,18 @@ export const SingleSlide = (props) => {
               props.client_image
             }`}
             alt=""
-            className="md:rounded-tl-xl md:rounded-bl-xl aspect-square object-cover lg:h-[300px] "
+            className="md:rounded-tl-xl md:rounded-bl-xl aspect-square object-cover md:h-full "
           />
         </div>
 
         <div className="col-span-2 p-5 flex flex-col justify-between">
-          <p className="h-[200px] md:h-max">
+          <p className="h-[190px] overflow-hidden">
             {" "}
             <ImQuotesLeft className="text-primary-500  font-bold text-xl inline-block mr-2" />{" "}
             {props.review_text}{" "}
             <ImQuotesRight className="text-primary-500   text-xl inline-block ml-2" />
           </p>
-          <div>
+          <div className="">
             <h2 className="font-bold text-xl text-secondary-500 mt-3 text-center md:text-left ">
               {props.client_name}
             </h2>

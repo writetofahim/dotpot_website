@@ -100,7 +100,7 @@ export const SingleSlide = (props) => {
         <h2 className="text-2xl h-[70px] text-center font-bold">
           {props.title}
         </h2>
-        <p className="text-left">
+        <p className="text-left ">
           {props.description?.slice(0, 65)}
           ...
         </p>

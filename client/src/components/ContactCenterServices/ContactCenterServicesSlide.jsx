@@ -45,7 +45,7 @@ var settings = {
   slidesToScroll: 1,
   initialSlide: 0,
   autoplay: true,
-  autoplaySpeed: 1500,
+  autoplaySpeed: 1800,
   cssEase: "linear",
   nextArrow: <SampleNextArrow />,
   prevArrow: <SamplePrevArrow />,

@@ -456,8 +456,8 @@ const CustomizeService = () => {
             <div className="">
               <p className="text-sm text-gray-300">Selected items: </p>
               {order.map((item, index) => (
-                <div key={index} className="flex items-center gap-2">
-                  <img src={item.icon} alt="" className="w-7 h-7 mt-2" />
+                <div key={index} className="flex items-center gap-2 mt-1">
+                  <img src={item.icon} alt="" className="w-7 h-7" />
                   <p className="">:</p>
                   <div className="border-r-gray-500 flex flex-wrap items-center gap-2 cursor-pointer">
                     {item.technologies.map((tech, index) => (
@@ -499,13 +499,9 @@ const CustomizeService = () => {
               ))}
             </div>
 
-            <div className="absolute top-1 right-1 flex flex-col items-center">
-              <p className="text-sm text-gray-300 md:text-white">
-                Estimated Cost
-              </p>
-              <p className="text-3xl text-secondary-400 font-bold md:text-white">
-                {price}$
-              </p>
+            <div className="absolute top-1 right-1 flex flex-col items-center text-gradient bg-gradient-to-r from-[#6e3aff] via-[#26f8ff] to-[#4366ff]">
+              <p className="text-sm lg:text-white">Estimated Cost</p>
+              <p className="text-3xl  font-bold lg:text-white">{price}$</p>
             </div>
             {/* End of Top Section */}
 
@@ -579,7 +575,7 @@ const CustomizeService = () => {
             )}
 
             <Typed
-              className="text-xl md:text-2xl text-center md:text-lef absolute bottom-3 hidden md:block"
+              className="text-xl md:text-2xl text-center md:text-lef absolute bottom-1 hidden md:block"
               strings={[
                 "Create you own Packages",
                 "Customize Service to Serve Your Need",

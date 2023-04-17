@@ -64,9 +64,9 @@ var settings = {
     {
       breakpoint: 600,
       settings: {
-        slidesToShow: 2,
+        slidesToShow: 1,
         slidesToScroll: 1,
-        initialSlide: 2,
+        initialSlide: 1,
       },
     },
     {
@@ -100,19 +100,21 @@ var settings = {
 export const SingleSlide = (props) => {
   return (
     <div className="mx-5 mb-14 rounded-lg relative shadow-xl hover:shadow-lg bg-gray-50 px-5 pt-5 group hover:bg-white overflow-hidden duration-200">
-      <h3 className="text-2xl font-bold text-gray-400 mb-2 text-center hover:underline cursor-pointer">
-        {props.title}
-      </h3>
-      <div className="flex gap-2 flex-wrap items-center justify-center mb-5">
-        {props.technologies &&
-          props.technologies.map((tech, index) => (
-            <div
-              key={index}
-              className={`text-sm rounded-full px-2 py-1 bg-gradient-to-r from-cyan-500 to-blue-500 text-white`}
-            >
-              {tech}
-            </div>
-          ))}
+      <div className="h-[100px]">
+        <h3 className="text-2xl font-bold text-gray-400 mb-2 text-center hover:underline cursor-pointer">
+          {props.title}
+        </h3>
+        <div className="flex gap-2 flex-wrap items-center justify-center mb-5">
+          {props.technologies &&
+            props.technologies.map((tech, index) => (
+              <div
+                key={index}
+                className={`text-sm rounded-full px-2 py-1 bg-gradient-to-r from-cyan-500 to-blue-500 text-white`}
+              >
+                {tech}
+              </div>
+            ))}
+        </div>
       </div>
       <div className="mt-0 group-hover:translate-y-3 lg:translate-y-14 translate-y-10 duration-300 custom-shadow lg:h-[250px] ">
         <img
