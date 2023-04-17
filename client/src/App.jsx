@@ -53,6 +53,11 @@ import OnSiteDevelopment from "./pages/partnershipModels/OnSiteDevelopment";
 import PrivacyPolicy from "./pages/privacyPolicy/PrivacyPolicy";
 import Register from "./pages/register/Register";
 import Services from "./pages/services/Services";
+import BlogDevelopment from "./pages/webDevelopment/BlogDevelopment";
+import CustomDevelopment from "./pages/webDevelopment/CustomDevelopment";
+import EcommerceDevelopment from "./pages/webDevelopment/EcommerceDevelopment";
+import LandingPageDevelopment from "./pages/webDevelopment/LandingPageDevelopment";
+import PortfolioDevelopment from "./pages/webDevelopment/PortfolioDevelopment";
 import AgenciesBusiness from "./pages/whoWeWorksWith/AgenciesBusiness";
 import EnterpriseBusiness from "./pages/whoWeWorksWith/EnterpriseBusiness";
 import SmallToMediumBusiness from "./pages/whoWeWorksWith/SmallToMediumBusiness";
@@ -223,6 +228,28 @@ function App() {
         <Route
           path="/industries-we-serve/manufacturing"
           element={<Manufacturing />}
+        />
+
+        {/* Web Development Service Pages */}
+        <Route
+          path="/web-development/landing-page"
+          element={<LandingPageDevelopment />}
+        />
+        <Route
+          path="/web-development/portfolio-website"
+          element={<PortfolioDevelopment />}
+        />
+        <Route
+          path="/web-development/blog-website"
+          element={<BlogDevelopment />}
+        />
+        <Route
+          path="/web-development/e-commerce-website"
+          element={<EcommerceDevelopment />}
+        />
+        <Route
+          path="/web-development/custom-website"
+          element={<CustomDevelopment />}
         />
       </Routes>
     </div>
