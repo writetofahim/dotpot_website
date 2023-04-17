@@ -1,5 +1,8 @@
 import React from "react";
-import gameHero from "../../assets/img/gameHero.jpg";
+import customWeb from "../../assets/img/customWeb.png";
+import blockchainSecurity from "../../assets/img/blockchainSecurity.jpg";
+import smart_Contracts from "../../assets/img/smart_Contracts.png";
+import nft from "../../assets/img/nft.webp";
 import web3Cover from "../../assets/img/web3Cover.webp";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
@@ -45,7 +48,7 @@ const Web3 = () => {
                   <div>
                     <img
                       className="w-4/5 md:w-[450px] mx-auto mb-5 rounded-md"
-                      src={gameHero}
+                      src={customWeb}
                       alt=""
                     />
                   </div>
@@ -65,7 +68,7 @@ const Web3 = () => {
                   <div>
                     <img
                       className="w-4/5 md:w-[450px] mx-auto mb-5 rounded-md"
-                      src={gameHero}
+                      src={blockchainSecurity}
                       alt=""
                     />
                   </div>
@@ -85,7 +88,7 @@ const Web3 = () => {
                   <div>
                     <img
                       className="w-4/5 md:w-[450px] mx-auto mb-5 rounded-md"
-                      src={gameHero}
+                      src={smart_Contracts}
                       alt=""
                     />
                   </div>
@@ -105,7 +108,7 @@ const Web3 = () => {
                   <div>
                     <img
                       className="w-4/5 md:w-[450px] mx-auto mb-5 rounded-md"
-                      src={gameHero}
+                      src={nft}
                       alt=""
                     />
                   </div>
