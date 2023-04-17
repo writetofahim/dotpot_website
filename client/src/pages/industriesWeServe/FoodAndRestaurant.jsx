@@ -4,19 +4,19 @@ import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import OurPartnersSlider from '../../components/OurPartnersSlider/OurPartnersSlider'
 
 const FoodAndRestaurant = () => {
   useScrollToTop();
   return (
-    <div className="px-3">
+    <div className="">
       <Navbar />
-      <div className="pt-[15vh] min-h-screen">
+      <div className="pt-[15vh] pb-10 container mx-auto">
         <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
           Food & Restaurants
         </h1>
         <p className="text-lg text-secondary-500 text-center mb-10">
-        Satisfy your cravings with our innovative Food & Restaurant solutions, crafted with passion and precision.
+          Satisfy your cravings with our innovative Food & Restaurant solutions,
+          crafted with passion and precision.
         </p>
         <div className="border-b container mx-auto">
           <img
@@ -201,7 +201,7 @@ const FoodAndRestaurant = () => {
           </ul>
         </div>
       </div>
-      <OurPartnersSlider />
+      {/* <OurPartnersSlider /> */}
       <div className="">
         <Footer />
       </div>

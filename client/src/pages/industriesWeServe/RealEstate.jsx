@@ -4,14 +4,13 @@ import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import OurPartnersSlider from '../../components/OurPartnersSlider/OurPartnersSlider'
 
 const RealEstate = () => {
   useScrollToTop();
   return (
-    <div className="px-3">
+    <div className="">
       <Navbar />
-      <div className="pt-[15vh] min-h-screen">
+      <div className="pt-[15vh] container mx-auto min-h-screen">
         <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
           Real Estate
         </h1>
@@ -72,8 +71,8 @@ const RealEstate = () => {
 
               <div className="flex flex-col gap-5">
                 <h3 className="text-center text-purple-500 font-bold text-xl ">
-                  Want to Know How Much Exactly Your Real estate
-                  application Will Cost?
+                  Want to Know How Much Exactly Your Real estate application
+                  Will Cost?
                 </h3>
                 <h3 className="text-center text-purple-500 font-semibold">
                   "The Experts Are Just A Click Away. Get A Quote."
@@ -99,16 +98,39 @@ const RealEstate = () => {
             </h2>
             <div className="text-gray-400 flex flex-col gap-5 p-5">
               <p>
-              At DotpotiT, we believe that transparency and collaboration are key to creating successful real estate projects. We work closely with our clients to understand their needs and goals, and to ensure that every project is tailored to their specific requirements. Our team of experienced real estate professionals has a deep understanding of the market, and we leverage this expertise to deliver innovative and effective solutions for our clients.
+                At DotpotiT, we believe that transparency and collaboration are
+                key to creating successful real estate projects. We work closely
+                with our clients to understand their needs and goals, and to
+                ensure that every project is tailored to their specific
+                requirements. Our team of experienced real estate professionals
+                has a deep understanding of the market, and we leverage this
+                expertise to deliver innovative and effective solutions for our
+                clients.
               </p>
               <p>
-              Our process begins with a comprehensive consultation, during which we take the time to fully understand our client's vision and objectives. From there, we work closely with our team of architects, designers, and contractors to develop a detailed project plan that encompasses every aspect of the project, from site selection to design and construction.
+                Our process begins with a comprehensive consultation, during
+                which we take the time to fully understand our client's vision
+                and objectives. From there, we work closely with our team of
+                architects, designers, and contractors to develop a detailed
+                project plan that encompasses every aspect of the project, from
+                site selection to design and construction.
               </p>
               <p>
-              Throughout the project lifecycle, we maintain a high level of communication with our clients, providing regular updates and progress reports to ensure that they are fully informed every step of the way. We pride ourselves on our attention to detail and our ability to navigate complex regulatory environments, and we work tirelessly to ensure that every project is completed on time, on budget, and to the highest possible standard.
+                Throughout the project lifecycle, we maintain a high level of
+                communication with our clients, providing regular updates and
+                progress reports to ensure that they are fully informed every
+                step of the way. We pride ourselves on our attention to detail
+                and our ability to navigate complex regulatory environments, and
+                we work tirelessly to ensure that every project is completed on
+                time, on budget, and to the highest possible standard.
               </p>
               <p>
-              At DotpotiT, we are committed to delivering exceptional results for our clients, and we approach every project with the same level of dedication and attention to detail. Whether you are looking to develop a new commercial property, a residential development, or a mixed-use project, we have the experience, expertise, and resources to help you achieve your goals.
+                At DotpotiT, we are committed to delivering exceptional results
+                for our clients, and we approach every project with the same
+                level of dedication and attention to detail. Whether you are
+                looking to develop a new commercial property, a residential
+                development, or a mixed-use project, we have the experience,
+                expertise, and resources to help you achieve your goals.
               </p>
             </div>
           </div>
@@ -118,25 +140,43 @@ const RealEstate = () => {
               Why you should choose us!
             </h3>
             <li className=" ml-5 list-disc text-gray-400 ">
-            Our team of experienced professionals has extensive knowledge and expertise in the real estate industry. We stay up to date with the latest market trends and changes to ensure that we provide you with the best advice and service possible.
+              Our team of experienced professionals has extensive knowledge and
+              expertise in the real estate industry. We stay up to date with the
+              latest market trends and changes to ensure that we provide you
+              with the best advice and service possible.
             </li>
             <li className=" ml-5 list-disc text-gray-400 ">
-            Our top priority is always our clients. We take the time to understand your unique needs and work closely with you to provide customized solutions that meet your specific goals and objectives.
+              Our top priority is always our clients. We take the time to
+              understand your unique needs and work closely with you to provide
+              customized solutions that meet your specific goals and objectives.
             </li>
             <li className=" ml-5 list-disc text-gray-400 ">
-            At DotpotiT, we believe in being transparent and honest with our clients at all times. We keep you informed throughout the entire process, providing regular updates and communicating clearly and openly.
+              At DotpotiT, we believe in being transparent and honest with our
+              clients at all times. We keep you informed throughout the entire
+              process, providing regular updates and communicating clearly and
+              openly.
             </li>
             <li className=" ml-5 list-disc text-gray-400 ">
-            We are committed to upholding the highest standards of integrity and professionalism in everything we do. You can trust that we will always act in your best interests, with honesty, fairness, and respect.
+              We are committed to upholding the highest standards of integrity
+              and professionalism in everything we do. You can trust that we
+              will always act in your best interests, with honesty, fairness,
+              and respect.
             </li>
             <li className=" ml-5 list-disc text-gray-400 ">
-            We offer competitive pricing for all of our real estate services. We work hard to ensure that you get the best value for your money, without compromising on the quality of our service.
+              We offer competitive pricing for all of our real estate services.
+              We work hard to ensure that you get the best value for your money,
+              without compromising on the quality of our service.
             </li>
-            <li className=" ml-5 list-disc text-gray-400 ">We are always looking for new and innovative ways to help our clients achieve their goals. We use the latest technologies and tools to provide efficient and effective solutions that are tailored to your specific needs.</li>
+            <li className=" ml-5 list-disc text-gray-400 ">
+              We are always looking for new and innovative ways to help our
+              clients achieve their goals. We use the latest technologies and
+              tools to provide efficient and effective solutions that are
+              tailored to your specific needs.
+            </li>
           </ul>
         </div>
       </div>
-      <OurPartnersSlider />
+      {/* <OurPartnersSlider /> */}
       <div className="">
         <Footer />
       </div>

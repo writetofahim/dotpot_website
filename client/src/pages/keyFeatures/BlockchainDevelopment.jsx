@@ -2,21 +2,20 @@ import React from "react";
 import { BsArrowRightCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import coverImg from "../../assets/img/blockchainDev.jpg";
+import ethereum from "../../assets/img/icon/blockchain/crypto.png";
+import kotlin from "../../assets/img/icon/blockchain/kotlin.webp";
+import solidity from "../../assets/img/icon/blockchain/solidity.png";
+import stellar from "../../assets/img/icon/blockchain/stellar.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
-import { useScrollToTop } from "../../hooks/useScrollToTop";
 import TechnologiesTab from "../../components/technologiesTab/TechnologiesTab";
-import ethereum from '../../assets/img/icon/blockchain/crypto.png'
-import stellar from '../../assets/img/icon/blockchain/stellar.png'
-import solidity from '../../assets/img/icon/blockchain/solidity.png'
-import kotlin from '../../assets/img/icon/blockchain/kotlin.webp'
+import { useScrollToTop } from "../../hooks/useScrollToTop";
 
 const BlockchainDevelopment = () => {
-
   const data = [
     {
       title: "Platforms",
-      id:1,
+      id: 1,
       technologies: [
         {
           img: ethereum,
@@ -30,7 +29,7 @@ const BlockchainDevelopment = () => {
     },
     {
       title: "Languages",
-      id:2,
+      id: 2,
       technologies: [
         {
           img: solidity,
@@ -42,20 +41,20 @@ const BlockchainDevelopment = () => {
         },
       ],
     },
-];
+  ];
 
   useScrollToTop();
   return (
     <div className="">
       <Navbar />
-      <div className="pt-[15vh] min-h-screen">
+      <div className="pt-[15vh] container mx-auto pb-10 min-h-screen">
         <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
           Blockchain Development
         </h1>
         <p className="text-md text-gray-400 text-center mb-10">
           Hire The Expert Development Team of Blockchain Technology!
         </p>
-        <div className="border-b container mx-auto">
+        <div className="mb-5 container mx-auto">
           <img className="md:w-1/2 mx-auto " src={coverImg} alt="" />
         </div>
         <div className="container  mx-auto flex flex-col mb-10 my-10">
@@ -92,7 +91,8 @@ const BlockchainDevelopment = () => {
 
               <div className="flex flex-col gap-5">
                 <h3 className="text-center text-purple-500 font-bold text-xl ">
-                  Want to Know How Much Exactly Your Blockchain development Will Cost?
+                  Want to Know How Much Exactly Your Blockchain development Will
+                  Cost?
                 </h3>
                 <h3 className="text-center text-purple-500 font-semibold">
                   "The Experts Are Just A Click Away. Get A Quote."
@@ -148,7 +148,10 @@ const BlockchainDevelopment = () => {
           </ul>
         </div>
 
-        <TechnologiesTab title='Platforms and technologies we use' data={data}/>
+        <TechnologiesTab
+          title="Platforms and technologies we use"
+          data={data}
+        />
       </div>
       <div className="">
         <Footer />

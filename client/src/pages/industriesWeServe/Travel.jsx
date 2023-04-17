@@ -4,14 +4,13 @@ import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import OurPartnersSlider from "../../components/OurPartnersSlider/OurPartnersSlider";
 
 const Travel = () => {
   useScrollToTop();
   return (
-    <div className="px-3">
+    <div className="">
       <Navbar />
-      <div className="pt-[15vh] min-h-screen">
+      <div className="pt-[15vh] pb-10 container mx-auto">
         <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
           Travel
         </h1>
@@ -173,7 +172,7 @@ const Travel = () => {
             </li>
             <li className=" ml-5 list-disc text-gray-400 ">
               <strong>Quality and Scalability: </strong>
-               Our solutions are designed to be of the highest quality and are
+              Our solutions are designed to be of the highest quality and are
               built with scalability in mind. This ensures that our clients'
               businesses can grow and adapt to changing market conditions.
             </li>
@@ -209,7 +208,7 @@ const Travel = () => {
           </ul>
         </div>
       </div>
-      <OurPartnersSlider />
+      {/* <OurPartnersSlider /> */}
       <div className="">
         <Footer />
       </div>

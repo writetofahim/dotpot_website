@@ -1,7 +1,7 @@
 import React from "react";
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
 import coverImg from "../../assets/img/contact-center-support.webp";
+import Footer from "../../components/Footer/Footer";
+import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 
 const ContactCenterSupport = () => {
@@ -9,7 +9,7 @@ const ContactCenterSupport = () => {
   return (
     <div className="">
       <Navbar />
-      <div className="pt-[15vh] min-h-screen">
+      <div className="pt-[15vh] pb-10 container mx-auto min-h-screen">
         <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
           Contact Center Support
         </h1>
@@ -17,7 +17,7 @@ const ContactCenterSupport = () => {
           We're a top provider of Contact Center Solutions. Optimize your
           Productivity with us.
         </p>
-        <div className="border-b container mx-auto">
+        <div className="mb-5 container mx-auto">
           <img className="md:w-1/2 mx-auto " src={coverImg} alt="" />
         </div>
         <div className="container  mx-auto flex flex-col mb-10 my-10">

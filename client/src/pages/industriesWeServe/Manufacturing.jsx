@@ -1,8 +1,7 @@
 import React from "react";
-import gameHero from "../../assets/img/gameHero.jpg";
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
 import manufacturingCover from "../../assets/img/manufacturing.webp";
+import Footer from "../../components/Footer/Footer";
+import Navbar from "../../components/Navbar/Navbar";
 
 const Manufacturing = () => {
   return (
@@ -33,7 +32,8 @@ const Manufacturing = () => {
                   Manufacturing
                 </h1>
                 <p className="text-gray-400 flex flex-col gap-5 p-5 text-center">
-                DotpotIT offers custom software solutions for manufacturing to optimize processes, improve productivity, and reduce costs.
+                  DotpotIT offers custom software solutions for manufacturing to
+                  optimize processes, improve productivity, and reduce costs.
                 </p>
               </div>
               {/* points */}
@@ -42,17 +42,18 @@ const Manufacturing = () => {
                   <div>
                     <img
                       className="w-4/5 md:w-[450px] mx-auto mb-5 rounded-md"
-                      src={gameHero}
+                      src="https://bambooagile.eu/insights/wp-content/uploads/2021/09/1-10.png"
                       alt=""
                     />
                   </div>
                   <div className="rounded-lg w-full md:w-[590px] border p-5 flex flex-col justify-center items-center">
                     <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-gray-400">
-                    Tailored Software 
+                      Tailored Software
                       <span className="text-primary-500"> Solutions</span>
                     </h3>
                     <p className="text-center">
-                    Customized software solutions designed to meet the specific needs of each client.
+                      Customized software solutions designed to meet the
+                      specific needs of each client.
                     </p>
                   </div>
                 </div>
@@ -61,17 +62,18 @@ const Manufacturing = () => {
                   <div>
                     <img
                       className="w-4/5 md:w-[450px] mx-auto mb-5 rounded-md"
-                      src={gameHero}
+                      src="https://www.openaccessgovernment.org/wp-content/uploads/2021/03/dreamstime_s_126377515.jpg"
                       alt=""
                     />
                   </div>
                   <div className="rounded-lg w-full md:w-[590px] border p-5 flex flex-col justify-center items-center">
                     <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-gray-400">
-                    Automation for Efficiency and  
+                      Automation for Efficiency and
                       <span className="text-primary-500"> Accuracy </span>
                     </h3>
                     <p className="text-center">
-                    Implementation of automation to reduce labor costs and improve accuracy.
+                      Implementation of automation to reduce labor costs and
+                      improve accuracy.
                     </p>
                   </div>
                 </div>
@@ -80,17 +82,18 @@ const Manufacturing = () => {
                   <div>
                     <img
                       className="w-4/5 md:w-[450px] mx-auto mb-5 rounded-md"
-                      src={gameHero}
+                      src="https://www.twi-global.com/image-library/hero/manufacturing-istock-973143870.jpg"
                       alt=""
                     />
                   </div>
                   <div className="rounded-lg w-full md:w-[590px] border p-5 flex flex-col justify-center items-center">
                     <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-gray-400">
-                    Manufacturing Operations 
+                      Manufacturing Operations
                       <span className="text-primary-500"> Expertise</span>
                     </h3>
                     <p className="text-center">
-                    Expertise in supply chain management, inventory control, and production scheduling.
+                      Expertise in supply chain management, inventory control,
+                      and production scheduling.
                     </p>
                   </div>
                 </div>
@@ -99,17 +102,18 @@ const Manufacturing = () => {
                   <div>
                     <img
                       className="w-4/5 md:w-[450px] mx-auto mb-5 rounded-md"
-                      src={gameHero}
+                      src="https://successive.cloud/wp-content/uploads/2022/04/Data-Analytics-Benefits-768x403.png"
                       alt=""
                     />
                   </div>
                   <div className="rounded-lg w-full md:w-[590px] border p-5 flex flex-col justify-center items-center">
                     <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-gray-400">
-                    Data Analytics for Better 
+                      Data Analytics for Better
                       <span className="text-primary-500"> Decisions</span>
                     </h3>
                     <p className="text-center">
-                    Integration of data analytics to provide insights for better decision-making.
+                      Integration of data analytics to provide insights for
+                      better decision-making.
                     </p>
                   </div>
                 </div>

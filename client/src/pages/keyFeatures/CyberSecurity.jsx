@@ -1,27 +1,24 @@
 /* This is a component thats render CyberSecurity page
-*/
-
+ */
 
 import React from "react";
 import { BsArrowRightCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import coverImg from "../../assets/img/aiDev.jpeg";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import TechnologiesTab from "../../components/technologiesTab/TechnologiesTab";
 
-import tensorFlow from '../../assets/img/icon/ai/tensorFlow.png'
-import numPy from '../../assets/img/icon/ai/numPy.png'
-import keras from '../../assets/img/icon/ai/keras.png'
-import pandas from '../../assets/img/icon/ai/pandas.jpg'
-import cyberSecurity from "../../assets/img/cyberSecurity.png"
+import cyberSecurity from "../../assets/img/cyberSecurity.png";
+import keras from "../../assets/img/icon/ai/keras.png";
+import numPy from "../../assets/img/icon/ai/numPy.png";
+import pandas from "../../assets/img/icon/ai/pandas.jpg";
+import tensorFlow from "../../assets/img/icon/ai/tensorFlow.png";
 
 const CyberSecurity = () => {
   const data = [
     {
       title: "Machine Learning",
-      id:1,
+      id: 1,
       technologies: [
         {
           img: tensorFlow,
@@ -43,7 +40,7 @@ const CyberSecurity = () => {
     },
     {
       title: "Machine Learning",
-      id:2,
+      id: 2,
       technologies: [
         {
           img: tensorFlow,
@@ -65,9 +62,8 @@ const CyberSecurity = () => {
     },
     {
       title: "Neural Networks ",
-      id:3,
+      id: 3,
       technologies: [
-
         {
           img: tensorFlow,
           name: "TensorFlow",
@@ -86,20 +82,21 @@ const CyberSecurity = () => {
         },
       ],
     },
-];
+  ];
   useScrollToTop();
   return (
     <div className="">
-        {/* Navbar */}
+      {/* Navbar */}
       <Navbar />
-      <div className="min-h-screen px-3 lg:px-5 pt-[15vh]">
+      <div className="min-h-screen container mx-auto px-3 lg:px-5 pt-[15vh] pb-10">
         <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
           Cyber Security
         </h1>
         <p className="text-md text-gray-400 text-center mb-10">
-          Our Cyber Security provides the state of the earth security services for our customer's data.
+          Our Cyber Security provides the state of the earth security services
+          for our customer's data.
         </p>
-        <div className="border-b container mx-auto">
+        <div className="mb-5 container mx-auto">
           <img className="md:w-1/2 mx-auto " src={cyberSecurity} alt="" />
         </div>
         <div className="container  mx-auto flex flex-col mb-10 my-10">
@@ -109,11 +106,17 @@ const CyberSecurity = () => {
           {/* Overview */}
           <div className="text-gray-400 flex flex-col gap-5 p-5">
             <p>
-            In today’s digital age, cybersecurity threats are becoming more frequent and sophisticated, making it crucial for businesses to ensure they are protected from cyber attacks. Cybersecurity is not just a technical issue, it is a business issue, and ignoring it can result in devastating consequences such as data breaches, financial losses, and reputational damage.
-
-At our cybersecurity service, we offer comprehensive solutions to help protect your business from cyber threats. Our team of experienced cybersecurity professionals have the expertise and tools needed to identify, prevent, and respond to security breaches.
-
-Here are some of the key benefits of our cybersecurity service:
+              In today’s digital age, cybersecurity threats are becoming more
+              frequent and sophisticated, making it crucial for businesses to
+              ensure they are protected from cyber attacks. Cybersecurity is not
+              just a technical issue, it is a business issue, and ignoring it
+              can result in devastating consequences such as data breaches,
+              financial losses, and reputational damage. At our cybersecurity
+              service, we offer comprehensive solutions to help protect your
+              business from cyber threats. Our team of experienced cybersecurity
+              professionals have the expertise and tools needed to identify,
+              prevent, and respond to security breaches. Here are some of the
+              key benefits of our cybersecurity service:
             </p>
           </div>
 
@@ -153,11 +156,14 @@ Here are some of the key benefits of our cybersecurity service:
           {/* paragraph */}
           <div className="my-3">
             <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-gray-400 ">
-            Threat Intelligence:
+              Threat Intelligence:
             </h2>
             <div className="text-gray-400 flex flex-col gap-5 p-5">
               <p>
-              Our service offers real-time threat intelligence, which involves monitoring and analyzing threats to your systems and networks. This enables us to identify vulnerabilities and proactively address them before they can be exploited by attackers.
+                Our service offers real-time threat intelligence, which involves
+                monitoring and analyzing threats to your systems and networks.
+                This enables us to identify vulnerabilities and proactively
+                address them before they can be exploited by attackers.
               </p>
             </div>
           </div>
@@ -228,7 +234,6 @@ Here are some of the key benefits of our cybersecurity service:
             </div>
           </div>
 
-
           {/*card for redirect to service quote */}
           <div className=" border-b h-52 w-full md:w-4/5 mx-auto my-5  rounded-xl border flex justify-center items-center shadow-md overflow-hidden relative">
             {/* blobs */}
@@ -261,7 +266,6 @@ Here are some of the key benefits of our cybersecurity service:
           </div>
         </div>
       </div>
-      
 
       <div className="">
         <Footer />
@@ -271,6 +275,3 @@ Here are some of the key benefits of our cybersecurity service:
 };
 
 export default CyberSecurity;
-
-
-

@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import coverImg from "../../assets/img/mobileAppDev.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
-import { useScrollToTop } from "../../hooks/useScrollToTop";
 import TechnologiesTab from "../../components/technologiesTab/TechnologiesTab";
+import { useScrollToTop } from "../../hooks/useScrollToTop";
 
 import android from "../../assets/img/icon/moblieAPP_icons/andriod/android.png";
 import java from "../../assets/img/icon/moblieAPP_icons/andriod/java.png";
@@ -16,13 +16,12 @@ import swift from "../../assets/img/icon/moblieAPP_icons/ios/swift.png";
 import flutter from "../../assets/img/icon/moblieAPP_icons/hybrid/flutter.png";
 import react_native from "../../assets/img/icon/moblieAPP_icons/hybrid/react_native.webp";
 
-
 const MobileAppDevelopment = () => {
   const data = [
     {
       title: "Android App",
-      id:1,
-      
+      id: 1,
+
       technologies: [
         {
           img: android,
@@ -40,7 +39,7 @@ const MobileAppDevelopment = () => {
     },
     {
       title: "iOS App",
-      id:2,
+      id: 2,
       technologies: [
         {
           img: swift,
@@ -50,7 +49,7 @@ const MobileAppDevelopment = () => {
     },
     {
       title: "Hybrid App",
-      id:3,
+      id: 3,
       technologies: [
         {
           img: flutter,
@@ -67,14 +66,14 @@ const MobileAppDevelopment = () => {
   return (
     <div className="">
       <Navbar />
-      <div className="pt-[15vh] min-h-screen">
+      <div className="pt-[15vh] container mx-auto min-h-screen">
         <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
           Mobile App Development
         </h1>
         <p className="text-md text-gray-400 text-center mb-10">
           Get Top-notch, Extensively, Innovative Mobile App Solution By Us.
         </p>
-        <div className="border-b container mx-auto">
+        <div className="mb-5 container mx-auto">
           <img className="md:w-1/2 mx-auto " src={coverImg} alt="" />
         </div>
         <div className="container  mx-auto flex flex-col mb-10 my-10">

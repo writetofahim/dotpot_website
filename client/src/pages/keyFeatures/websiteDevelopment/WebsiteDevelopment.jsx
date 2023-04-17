@@ -127,7 +127,7 @@ const WebsiteDevelopment = () => {
     <>
       <Navbar />
       <div className="px-3">
-        <div className="pt-[15vh] min-h-screen">
+        <div className="pt-[15vh] pb-10 container mx-auto min-h-screen">
           <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
             Website Development
           </h1>
@@ -135,7 +135,7 @@ const WebsiteDevelopment = () => {
             This roadmap outlines the emerging trends and effective strategies
             for web and CMS development.
           </p>
-          <div className="border-b container mx-auto">
+          <div className="mb-5 container mx-auto">
             <img className="md:w-1/2 mx-auto " src={coverImg} alt="" />
           </div>
           <div className="container  mx-auto flex flex-col mb-10 my-10">

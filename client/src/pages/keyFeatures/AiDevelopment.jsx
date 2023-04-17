@@ -4,41 +4,19 @@ import { Link } from "react-router-dom";
 import coverImg from "../../assets/img/aiDev.jpeg";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
-import { useScrollToTop } from "../../hooks/useScrollToTop";
 import TechnologiesTab from "../../components/technologiesTab/TechnologiesTab";
+import { useScrollToTop } from "../../hooks/useScrollToTop";
 
-import tensorFlow from '../../assets/img/icon/ai/tensorFlow.png'
-import numPy from '../../assets/img/icon/ai/numPy.png'
-import keras from '../../assets/img/icon/ai/keras.png'
-import pandas from '../../assets/img/icon/ai/pandas.jpg'
+import keras from "../../assets/img/icon/ai/keras.png";
+import numPy from "../../assets/img/icon/ai/numPy.png";
+import pandas from "../../assets/img/icon/ai/pandas.jpg";
+import tensorFlow from "../../assets/img/icon/ai/tensorFlow.png";
 
 const AiDevelopment = () => {
   const data = [
     {
       title: "Machine Learning",
-      id:1,
-      technologies: [
-        {
-          img: tensorFlow,
-          name: "TensorFlow",
-        },
-        {
-          img: numPy,
-          name: "NumPy",
-        },
-        {
-          img: keras,
-          name: "Keras",
-        },
-        {
-          img: pandas,
-          name: "Pandas",
-        },
-      ],
-    },
-    {
-      title: "Machine Learning",
-      id:2,
+      id: 1,
       technologies: [
         {
           img: tensorFlow,
@@ -60,9 +38,8 @@ const AiDevelopment = () => {
     },
     {
       title: "Neural Networks ",
-      id:3,
+      id: 2,
       technologies: [
-
         {
           img: tensorFlow,
           name: "TensorFlow",
@@ -81,12 +58,12 @@ const AiDevelopment = () => {
         },
       ],
     },
-];
+  ];
   useScrollToTop();
   return (
     <div className="">
       <Navbar />
-      <div className="pt-[15vh] min-h-screen">
+      <div className="pt-[15vh] pb-10 container mx-auto min-h-screen">
         <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
           AI Development
         </h1>
@@ -94,7 +71,7 @@ const AiDevelopment = () => {
           Our AI solutions transform businesses with automation and
           intelligence.
         </p>
-        <div className="border-b container mx-auto">
+        <div className="mb-5 container mx-auto">
           <img className="md:w-1/2 mx-auto " src={coverImg} alt="" />
         </div>
         <div className="container  mx-auto flex flex-col mb-10 my-10">
@@ -255,7 +232,6 @@ const AiDevelopment = () => {
             </div>
           </div>
 
-
           {/*card for redirect to service quote */}
           <div className=" border-b h-52 w-full md:w-4/5 mx-auto my-5  rounded-xl border flex justify-center items-center shadow-md overflow-hidden relative">
             {/* blobs */}
@@ -288,7 +264,6 @@ const AiDevelopment = () => {
           </div>
         </div>
       </div>
-      
 
       <div className="">
         <Footer />
@@ -298,6 +273,3 @@ const AiDevelopment = () => {
 };
 
 export default AiDevelopment;
-
-
-

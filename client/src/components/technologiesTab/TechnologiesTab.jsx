@@ -14,7 +14,7 @@ const TechnologiesTab = (props) => {
       <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-gray-400 text-center">
         {props.title}
       </h2>
-      <div className="flex gap-5 justify-center text-center border-b mt-5">
+      <div className="flex gap-5 justify-center text-center border-b mt-5 cursor-pointer">
         {props.data?.map((option, index) => (
           <div
             onClick={() => {
@@ -40,7 +40,7 @@ const TechnologiesTab = (props) => {
           .technologies.map((obj, index) => (
             <div
               key={index}
-              className="mt-10 md:w-[100px] md:h-[100px] p-2 rounded-full md:rounded-lg shadow flex items-center justify-center hover:border hover:border-purple-500 hover:scale-110 hover:shadow-xl transition-all glassmorphism"
+              className="cursor-pointer mt-10 md:w-[100px] md:h-[100px] p-2 rounded-full md:rounded-lg shadow flex items-center justify-center hover:border hover:border-purple-500 hover:scale-110 hover:shadow-xl transition-all glassmorphism"
             >
               <img
                 src={obj.img}
