@@ -21,9 +21,12 @@ import Navbar from "../../components/Navbar/Navbar";
 import axios from "../../utils/axiosInstance";
 
 import moment from "moment";
-import Particle from "../../components/Hero/Particle";
+import ReactHtmlParser from "react-html-parser";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 import postLogger from "../../utils/postLogger";
+
+import { renderToString } from "react-dom/server";
+import stripTags from "striptags";
 
 const BlogCard = (props) => {
   const id = props._id;
@@ -66,6 +69,110 @@ const BlogCard = (props) => {
   );
 };
 
+// const Blog = () => {
+//   useScrollToTop();
+//   const [data, setData] = useState(null);
+//   const [page, setPage] = React.useState(1);
+//   const [totalPages, setTotalPages] = React.useState(1);
+
+//   const fetchData = async (page) => {
+//     try {
+//       const response = await axios.get(`/blog?page=${page}`);
+//       postLogger({ level: "info", message: response });
+//       console.log("blog data", response.data);
+//       setData(response.data.blogs);
+//       setTotalPages(response.data.totalPages);
+//     } catch (error) {
+//       console.error(error);
+//       postLogger({ level: "error", message: error });
+//     }
+//   };
+
+//   React.useEffect(() => {
+//     fetchData(page);
+//   }, [page]);
+
+//   const handlePrevPage = () => {
+//     setPage(page - 1);
+//   };
+
+//   const handleNextPage = () => {
+//     setPage(page + 1);
+//   };
+
+//   return (
+//     <>
+//       <Navbar />
+//       <Particle />
+//       <div className="w-full pt-[15vh]">
+//         <div className="w-full flex flex-col items-center justify-center">
+//           <h1 className="text-6xl mt-10 mb-2 font-bold ">Blogs</h1>
+//           <p className="text-lg mb-10 px-4">
+//             Follow our blog to get all the latest tech news
+//           </p>
+//           {/* <div className="container flex gap-5 md:gap-10 justify-center p-5 flex-wrap">
+//                         {
+//                             data && data.map((item, index) => (
+//                                 <BlogCard2 key={index} {...item} />
+//                             ))
+//                         }
+//                     </div> */}
+//           <div className="container lg:grid lg:grid-cols-3 grid-cols-1 gap-5 lg:space-y-0 space-y-5 md:gap-10 justify-center lg:p-5 p-3 flex-wrap">
+//             {data &&
+//               data.map((item, index) => (
+//                 <BlogCard2 key={item._id + index} {...item} index={index} />
+//               ))}
+//           </div>
+
+//           {/* Pagination Start */}
+//           <div className="flex justify-center mt-5 mb-5">
+//             <nav aria-label="Page navigation example ">
+//               <ul className="inline-flex -space-x-px">
+//                 <li>
+//                   <button
+//                     onClick={handlePrevPage}
+//                     disabled={page === 1}
+//                     className="px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 "
+//                   >
+//                     <AiOutlineArrowRight className="rotate-180" />
+//                   </button>
+//                 </li>
+//                 {Array.from({ length: totalPages }, (_, index) => (
+//                   <li key={index}>
+//                     <button
+//                       onClick={() => setPage(index + 1)}
+//                       className={`px-3 py-1.5 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700  ${
+//                         index + 1 === page
+//                           ? "text-blue-600 border-blue-600 bg-blue-50"
+//                           : ""
+//                       }`}
+//                     >
+//                       {index + 1}
+//                     </button>
+//                   </li>
+//                 ))}
+//                 <li>
+//                   <button
+//                     onClick={handleNextPage}
+//                     disabled={page === totalPages}
+//                     className="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 "
+//                   >
+//                     <AiOutlineArrowRight />
+//                   </button>
+//                 </li>
+//               </ul>
+//             </nav>
+//           </div>
+//           {/* Pagination Start */}
+//         </div>
+
+//         {/* <ChatPopup /> */}
+//       </div>
+//       <Footer />
+//     </>
+//   );
+// };
+
 const Blog = () => {
   useScrollToTop();
   const [data, setData] = useState(null);
@@ -100,7 +207,7 @@ const Blog = () => {
   return (
     <>
       <Navbar />
-      <Particle />
+      {/* <Particle /> */}
       <div className="w-full pt-[15vh]">
         <div className="w-full flex flex-col items-center justify-center">
           <h1 className="text-6xl mt-10 mb-2 font-bold ">Blogs</h1>
@@ -114,11 +221,14 @@ const Blog = () => {
                             ))
                         }
                     </div> */}
-          <div className="container lg:grid lg:grid-cols-3 grid-cols-1 gap-5 lg:space-y-0 space-y-5 md:gap-10 justify-center lg:p-5 p-3 flex-wrap">
+          <div className="container lg:grid lg:grid-cols-2 grid-cols-1 gap-5 lg:space-y-0 space-y-5 md:gap-10 justify-center lg:p-5 p-3 flex-wrap">
+            {data && <FirstBlog {...data[0]} />}
             {data &&
-              data.map((item, index) => (
-                <BlogCard2 key={item._id + index} {...item} index={index} />
-              ))}
+              data
+                .slice(1)
+                .map((item, index) => (
+                  <BlogCard3 key={item._id + index} {...item} index={index} />
+                ))}
           </div>
 
           {/* Pagination Start */}
@@ -172,6 +282,47 @@ const Blog = () => {
 
 export default Blog;
 
+const FirstBlog = ({ title, body, image, _id, tags, createdAt, index }) => {
+  const parsedArray = ReactHtmlParser(body);
+  const parsedString = renderToString(parsedArray); // convert array to string of HTML
+  const slicedString = stripTags(parsedString).slice(0, 600);
+  const navigate = useNavigate();
+  return (
+    <div className="col-span-2 md:flex items-center gap-4">
+      <div className="md:w-[45%] w-full relative">
+        <div className="absolute top-0 left-0 w-[150px] h-[150px] rounded-xl bg-gradient-to-r from-[#fc5c53] to-[#ff406a]"></div>
+
+        <div className="p-5">
+          <img
+            onClick={() => navigate(`/blog/${_id}`)}
+            className="w-full object-cover h-[400px] relative z-10 rounded-xl cursor-pointer"
+            src={`${import.meta.env.REACT_APP_SERVER_PATH}/${image}`}
+            alt=""
+          />
+        </div>
+
+        <div className="absolute bottom-0 right-0 w-[250px] h-[250px] rounded-md bg-gradient-to-r from-[#f8a541] to-[#f8ae3f] "></div>
+      </div>
+      <div className="md:w-[55%] w-full p-4">
+        <h1
+          onClick={() => navigate(`/blog/${_id}`)}
+          className="text-xl font-bold hover:underline cursor-pointer"
+        >
+          {title}
+        </h1>
+        <p className="my-3 text-slate-500">
+          {moment(new Date(createdAt)).format("MMM Do YY")}
+        </p>
+        <p className="my-3 text-slate-500">{slicedString}...</p>
+        <div className="flex items-center gap-2">
+          <img className="w-4 " src="./src/assets/img/icon.png" alt="" />
+          <p className="font-bold">Dotpot iT</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const BlogCard2 = ({ title, body, image, _id, tags, createdAt, index }) => {
   const navigate = useNavigate();
 
@@ -212,6 +363,52 @@ const BlogCard2 = ({ title, body, image, _id, tags, createdAt, index }) => {
       <button className="bg-gradient-to-r from-primary-200 to-primary-500 px-3 py-1.5 rounded text-white hover:scale-105 transition-all">
         Read More
       </button>
+    </div>
+  );
+};
+
+const BlogCard3 = ({ title, body, image, _id, tags, createdAt, index }) => {
+  const navigate = useNavigate();
+
+  const parsedArray = ReactHtmlParser(body);
+  const parsedString = renderToString(parsedArray); // convert array to string of HTML
+  const slicedString = stripTags(parsedString).slice(0, 100);
+  return (
+    <div className="md:flex items-center gap-4">
+      <div className="md:w-[45%] w-full relative">
+        <div
+          className={`absolute top-0 left-0 w-[calc(100%_-_30px)] h-[200px] rounded-xl bg-gradient-to-r ${
+            index % 2 === 0
+              ? "from-[#4289ff] to-[#01fdd6]"
+              : "from-[#f9a242] to-[#fe4f5f] "
+          }  `}
+        ></div>
+
+        <div className="p-4">
+          <img
+            onClick={() => navigate(`/blog/${_id}`)}
+            className="md:w-[300px] w-full object-cover h-[200px] relative z-10 rounded-xl cursor-pointer"
+            src={`${import.meta.env.REACT_APP_SERVER_PATH}/${image}`}
+            alt=""
+          />
+        </div>
+      </div>
+      <div className="md:w-[55%] w-full p-4">
+        <h1
+          onClick={() => navigate(`/blog/${_id}`)}
+          className="text-lg font-bold hover:underline cursor-pointer"
+        >
+          {title}
+        </h1>
+        <p className="my-3 text-slate-500">
+          {moment(new Date(createdAt)).format("MMM Do YY")}
+        </p>
+        <p className="my-3 text-slate-500">{slicedString}...</p>
+        <div className="flex items-center gap-2">
+          <img className="w-4 " src="./src/assets/img/icon.png" alt="" />
+          <p className="font-bold">Dotpot iT</p>
+        </div>
+      </div>
     </div>
   );
 };
