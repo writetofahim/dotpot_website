@@ -164,7 +164,7 @@ const TechnologyCard = (props) => {
 
   return (
     <div
-      className="w-[30%] md:w-[120px] h-[90px] lg:h-[100px] p-1 lg:p-2 border rounded-xl flex flex-col items-center justify-evenly hover:scale-105 hover:shadow-xl transition-all relative overflow-hidden bg-white cursor-pointer"
+      className="w-[30%] md:w-[120px] h-[90px] lg:h-[100px] p-1 lg:p-2 border rounded-xl flex flex-col items-center justify-evenly hover:scale-105 hover:shadow-xl transition-all relative overflow-hidden bg-white"
       onClick={() => {
         !isSelect ? addTechnologie() : removeTechnologie();
       }}
@@ -266,9 +266,9 @@ const AddonsCard = (props) => {
 
   return (
     <div
-      className="w-[30%] md:w-[100px] h-[90px] lg:h-[100px] p-1 lg:p-2 border rounded-xl flex flex-col items-center justify-evenly hover:scale-105 hover:shadow-xl transition-all relative overflow-hidden bg-white cursor-pointer"
+      className="w-[30%] md:w-[100px] h-[90px] lg:h-[100px] p-1 lg:p-2 border rounded-xl flex flex-col items-center justify-evenly hover:scale-105 hover:shadow-xl transition-all relative overflow-hidden bg-white"
       onClick={() => {
-        !isSelect ? addAddons() : removeAddons(props._id);
+        !isSelect ? addAddons() : removeAddons();
       }}
     >
       <img
