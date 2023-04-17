@@ -163,11 +163,16 @@ const TechnologyCard = (props) => {
   };
 
   return (
-    <div className="w-[30%] md:w-[120px] h-[90px] lg:h-[100px] p-1 lg:p-2 border rounded-xl flex flex-col items-center justify-evenly hover:scale-105 hover:shadow-xl transition-all relative overflow-hidden bg-white">
+    <div
+      className="w-[30%] md:w-[120px] h-[90px] lg:h-[100px] p-1 lg:p-2 border rounded-xl flex flex-col items-center justify-evenly hover:scale-105 hover:shadow-xl transition-all relative overflow-hidden bg-white"
+      onClick={() => {
+        !isSelect ? addTechnologie() : removeTechnologie();
+      }}
+    >
       <img
         src={props.icon}
         alt={props.title}
-        className="w-2/5 lg:w-3/5 aspect-square object-contain"
+        className="w-[25px] h-[25px] object-contain"
       />
 
       {!isSelect ? (
@@ -190,6 +195,7 @@ const TechnologyCard = (props) => {
       </abbr>
 
       <h3 className="text-center text-gray-300 text-sm">{props.title}</h3>
+      <h3 className="text-center text-gray-300 text-sm">${props.cost}</h3>
     </div>
   );
 };
@@ -259,11 +265,16 @@ const AddonsCard = (props) => {
   };
 
   return (
-    <div className="w-[30%] md:w-[100px] h-[90px] lg:h-[100px] p-1 lg:p-2 border rounded-xl flex flex-col items-center justify-evenly hover:scale-105 hover:shadow-xl transition-all relative overflow-hidden bg-white">
+    <div
+      className="w-[30%] md:w-[100px] h-[90px] lg:h-[100px] p-1 lg:p-2 border rounded-xl flex flex-col items-center justify-evenly hover:scale-105 hover:shadow-xl transition-all relative overflow-hidden bg-white"
+      onClick={() => {
+        !isSelect ? addAddons() : removeAddons(props._id);
+      }}
+    >
       <img
         src={props.icon}
         alt={props.title}
-        className="w-2/5 lg:w-3/5 aspect-square"
+        className="w-[25px] h-[25px] object-contain"
       />
       {!isSelect ? (
         <BiCircle
@@ -283,6 +294,7 @@ const AddonsCard = (props) => {
         <FiInfo />
       </abbr>
       <h3 className="text-center text-gray-300 text-sm">{props.title}</h3>
+      <h3 className="text-center text-gray-300 text-sm">${props.cost}</h3>
     </div>
   );
 };
@@ -471,6 +483,7 @@ const CustomizeService = () => {
                           alt={tech.title}
                           className="h-5 w-5"
                         />
+                        <p>{tech.cost}$</p>
                         <GrFormClose
                           className="hover:text-secondary-400"
                           onClick={() => removeTechnology(item._id, tech._id)}
@@ -488,6 +501,7 @@ const CustomizeService = () => {
                           alt={addon.title}
                           className="h-5 w-5"
                         />
+                        <p>{addon.cost}$</p>
                         <GrFormClose
                           className="hover:text-secondary-400"
                           onClick={() => removeAddons(item._id, addon._id)}
