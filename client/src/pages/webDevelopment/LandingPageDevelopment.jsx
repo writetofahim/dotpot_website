@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { BsArrowRightCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
@@ -9,6 +10,33 @@ const LandingPageDevelopment = () => {
   useScrollToTop();
   return (
     <div>
+      <Helmet>
+        <title>Landing Page Development | Dotpot iT</title>
+        <meta
+          name="description"
+          content="Learn about Landing Page Development Dotpot iT, a leading IT company providing innovative solutions for businesses."
+        />
+        <meta property="og:title" content="Landing Page Development | Dotpot iT" />
+        <meta
+          property="og:description"
+          content="Learn about Landing Page Development Dotpot iT, a leading IT company providing innovative solutions for businesses."
+        />
+        <meta
+          property="og:image"
+          content="	https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+        <meta property="og:url" content="https://www.dotpotit.com/web-development/landing-page" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Fixed Price Partnership Model | Dotpot iT" />
+        <meta
+          name="twitter:description"
+          content="Learn about Landing Page Development Dotpot iT, a leading IT company providing innovative solutions for businesses."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+      </Helmet>
       <Navbar />
       <div className="pt-[15vh] pb-10 container mx-auto">
         <div>

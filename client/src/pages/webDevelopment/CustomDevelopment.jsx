@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { BsArrowRightCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
@@ -10,6 +11,33 @@ const CustomDevelopment = () => {
   useScrollToTop();
   return (
     <div>
+      <Helmet>
+        <title>Coustom Development | Dotpot iT</title>
+        <meta
+          name="description"
+          content="Learn about Coustom DevelopmentDotpot iT, a leading IT company providing innovative solutions for businesses."
+        />
+        <meta property="og:title" content="Coustom Development| Dotpot iT" />
+        <meta
+          property="og:description"
+          content="Learn about Coustom Development Dotpot iT, a leading IT company providing innovative solutions for businesses."
+        />
+        <meta
+          property="og:image"
+          content="	https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+        <meta property="og:url" content="https://www.dotpotit.com/web-development/custom-website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Fixed Price Partnership Model | Dotpot iT" />
+        <meta
+          name="twitter:description"
+          content="Learn about Coustom Development Dotpot iT, a leading IT company providing innovative solutions for businesses."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+      </Helmet>
       <Navbar />
       <div className="pt-[15vh] pb-10 container mx-auto">
         <div>
@@ -17,7 +45,7 @@ const CustomDevelopment = () => {
             Coustom Development
           </h1>
           <p className="text-lg text-gray-400 text-center mb-10">
-          custom web design and development service 
+            custom web design and development service
           </p>
         </div>
         <div className="max-w-4xl mx-auto p-4">
@@ -30,14 +58,14 @@ const CustomDevelopment = () => {
           <h2 className="lg:text-2xl text-xl font-bold mb-4">Overview</h2>
           <div className="text-gray-400 flex flex-col gap-5 py-2 lg:px-5 text-justify">
             <p>
-            Custom web development involves the creation of unique, bespoke websites and web applications that are specifically designed to meet the needs and requirements of a particular business or organization. This is in contrast to off-the-shelf website templates or platforms that are designed to be used by a wide range of businesses.
+              Custom web development involves the creation of unique, bespoke websites and web applications that are specifically designed to meet the needs and requirements of a particular business or organization. This is in contrast to off-the-shelf website templates or platforms that are designed to be used by a wide range of businesses.
             </p>
 
             <p>
-            One of the primary benefits of custom web development is that it allows businesses to create a website that is tailored to their specific needs and requirements. This can help businesses achieve their goals more effectively and differentiate themselves from their competitors.
+              One of the primary benefits of custom web development is that it allows businesses to create a website that is tailored to their specific needs and requirements. This can help businesses achieve their goals more effectively and differentiate themselves from their competitors.
             </p>
 
-            
+
           </div>
           <div className="pt-6">
             <h2 className="lg:text-2xl text-xl font-bold mb-4 ">
@@ -51,59 +79,59 @@ const CustomDevelopment = () => {
               support, and increased business growth.
             </p>
             <ul className="list-disc list-inside">
-            <li className="text-gray-400 mb-2 lg:px-10 px-3">
+              <li className="text-gray-400 mb-2 lg:px-10 px-3">
                 <strong className="font-semibold">
-                Tailored to business needs:
+                  Tailored to business needs:
                 </strong>
                 <br />
                 <p className="px-2">
-                 One of the biggest advantages of custom web design and development is that the website is designed and developed specifically to meet the unique needs and requirements of the business. This ensures that the website is optimized for the business's goals and objectives, and can help to differentiate the business from its competitors.
+                  One of the biggest advantages of custom web design and development is that the website is designed and developed specifically to meet the unique needs and requirements of the business. This ensures that the website is optimized for the business's goals and objectives, and can help to differentiate the business from its competitors.
                 </p>
               </li>
               <li className="text-gray-400 mb-2 lg:px-10 px-3">
                 <strong className="font-semibold">
-                Unique design:
+                  Unique design:
                 </strong>
                 <br />
                 <p className="px-2">
-                Custom web design allows businesses to create a unique and memorable online presence that reflects their branding and values. This can help to establish the business's identity and build brand recognition, which can be critical in today's crowded digital landscape.
+                  Custom web design allows businesses to create a unique and memorable online presence that reflects their branding and values. This can help to establish the business's identity and build brand recognition, which can be critical in today's crowded digital landscape.
                 </p>
               </li>
               <li className="text-gray-400 mb-2 lg:px-10 px-3">
                 <strong className="font-semibold">
-                Responsive design: 
+                  Responsive design:
                 </strong>
                 <br />
                 <p className="px-2">
-               Custom web development allows businesses to create websites that are optimized for all devices, including desktops, laptops, tablets, and smartphones. This ensures that the website looks and functions well across all devices, providing a seamless user experience for visitors.
+                  Custom web development allows businesses to create websites that are optimized for all devices, including desktops, laptops, tablets, and smartphones. This ensures that the website looks and functions well across all devices, providing a seamless user experience for visitors.
                 </p>
               </li>
               <li className="text-gray-400 mb-2 lg:px-10 px-3">
                 <strong className="font-semibold">
-                Scalability:{" "}
+                  Scalability:{" "}
                 </strong>
                 <br />
                 <p className="px-2">
-                Custom web development allows businesses to create websites that can easily scale as their needs grow and evolve. This can help to future-proof the website and ensure that it remains effective in the long term.
+                  Custom web development allows businesses to create websites that can easily scale as their needs grow and evolve. This can help to future-proof the website and ensure that it remains effective in the long term.
                 </p>
               </li>
               <li className="text-gray-400 mb-2 lg:px-10 px-3">
                 <strong className="font-semibold"> Search engine optimization (SEO):</strong>
                 <br />
                 <p className="px-2">
-                Custom web development can include optimized content and design elements that help to improve search engine rankings. This can help to increase visibility and drive more traffic to the website, which can ultimately result in more leads and conversions.
+                  Custom web development can include optimized content and design elements that help to improve search engine rankings. This can help to increase visibility and drive more traffic to the website, which can ultimately result in more leads and conversions.
                 </p>
               </li>
               <li className="text-gray-400 mb-2 lg:px-10 px-3">
                 <strong className="font-semibold">
-                Security:
+                  Security:
                 </strong>
                 <br />
                 <p className="px-2">
-                 Custom web development allows businesses to implement robust security measures that protect against cyber threats and safeguard sensitive information. This is especially important for businesses that collect and store customer data, such as ecommerce businesses.
+                  Custom web development allows businesses to implement robust security measures that protect against cyber threats and safeguard sensitive information. This is especially important for businesses that collect and store customer data, such as ecommerce businesses.
                 </p>
               </li>
-              
+
               <li className="text-gray-400 mb-2 lg:px-10 px-3">
                 <strong className="font-semibold">Expert support: </strong>
                 <br />
@@ -113,7 +141,7 @@ const CustomDevelopment = () => {
                   up-to-date, secure, and fully functional.
                 </p>
               </li>
-              
+
             </ul>
           </div>
           <div className="pt-6 flex flex-col gap-5">
@@ -130,7 +158,7 @@ const CustomDevelopment = () => {
               are optimized for search engines. We also offer e-commerce website
               development services that help businesses in this industry sell
               their products and services online. Our web design and Development websites/application are
-              secure, easy to use 
+              secure, easy to use
             </p>
             <p className="text-gray-400 lg:px-5 text-justify">
               What sets Dotpot IT apart is its commitment to providing
@@ -145,10 +173,10 @@ const CustomDevelopment = () => {
               growth and revenue.
             </p>
             <p className="text-gray-400 lg:px-5 text-justify">
-            custom software development can provide a range of benefits for businesses, helping them to improve their efficiency, productivity, and competitive advantage. Choosing the right custom software development services provider can ensure that you achieve your business goals and objectives effectively and efficiently.
+              custom software development can provide a range of benefits for businesses, helping them to improve their efficiency, productivity, and competitive advantage. Choosing the right custom software development services provider can ensure that you achieve your business goals and objectives effectively and efficiently.
             </p>
           </div>
-          
+
           <div className=" border-b h-52 w-full md:w-4/5 mx-auto my-5  rounded-xl border flex justify-center items-center shadow-md overflow-hidden relative">
             <div className=" flex justify-center items-center">
               <div className="w-96 absolute">
