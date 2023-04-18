@@ -11,6 +11,7 @@ This component also renders Navbar, RecentBlogs, and Footer.
  */
 
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import parse from "react-html-parser";
 import { useParams } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
@@ -43,6 +44,36 @@ const SingleBlog = () => {
 
   return (
     <>
+      <Helmet>
+        <title>{data?.title} || Dotpot iT - Blog</title>
+        <meta
+          name="description"
+          content="Read the latest articles and news from Dotpot iT's blog."
+        />
+        <meta name="keywords" content="Dotpot iT, blog, articles, news" />
+        <link rel="canonical" href="https://dotpotit.com/blog" />
+        <meta property="og:title" content="Dotpot iT - Blog" />
+        <meta
+          property="og:description"
+          content="Read the latest articles and news from Dotpot iT's blog."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://dotpotit.com/blog" />
+        <meta
+          property="og:image"
+          content="https://dotpotit.com/assets/logo-492dab11.png"
+        />
+        <meta name="twitter:title" content="Dotpot iT - Blog" />
+        <meta
+          name="twitter:description"
+          content="Read the latest articles and news from Dotpot iT's blog."
+        />
+        <meta
+          name="twitter:image"
+          content="https://dotpotit.com/assets/logo-492dab11.png"
+        />
+      </Helmet>
+
       <Navbar />
       <div className="w-full md:p-[15vh] pt-[15vh]">
         {data && (

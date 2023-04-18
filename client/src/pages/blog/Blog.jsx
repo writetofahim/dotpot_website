@@ -26,6 +26,7 @@ import { useScrollToTop } from "../../hooks/useScrollToTop";
 import postLogger from "../../utils/postLogger";
 
 import { renderToString } from "react-dom/server";
+import { Helmet } from "react-helmet";
 import stripTags from "striptags";
 
 const BlogCard = (props) => {
@@ -206,6 +207,35 @@ const Blog = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Dotpot iT - Blog</title>
+        <meta
+          name="description"
+          content="Read the latest articles and news from Dotpot iT's blog."
+        />
+        <meta name="keywords" content="Dotpot iT, blog, articles, news" />
+        <link rel="canonical" href="https://dotpotit.com/blog" />
+        <meta property="og:title" content="Dotpot iT - Blog" />
+        <meta
+          property="og:description"
+          content="Read the latest articles and news from Dotpot iT's blog."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://dotpotit.com/blog" />
+        <meta
+          property="og:image"
+          content="https://dotpotit.com/assets/logo-492dab11.png"
+        />
+        <meta name="twitter:title" content="Dotpot iT - Blog" />
+        <meta
+          name="twitter:description"
+          content="Read the latest articles and news from Dotpot iT's blog."
+        />
+        <meta
+          name="twitter:image"
+          content="https://dotpotit.com/assets/logo-492dab11.png"
+        />
+      </Helmet>
       <Navbar />
       {/* <Particle /> */}
       <div className="w-full pt-[15vh]">

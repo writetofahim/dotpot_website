@@ -16,6 +16,7 @@ import RecentWorks from "../../components/RecentWorks/RecentWorks";
 import SocialMedia from "../../components/SocialMedia/SocialMedia";
 import WhoWeWorkWith from "../../components/WhoWeWorkWith/WhoWeWorkWith";
 
+import { Helmet } from "react-helmet";
 import Particle from "../../components/Hero/Particle";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 
@@ -24,6 +25,33 @@ const Contact = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Contact Us | Dotpot iT</title>
+        <meta
+          name="description"
+          content="Get in touch with us for your IT needs. Contact us for website development, mobile app development, and more."
+        />
+        <meta property="og:title" content="Contact Us | Dotpot iT" />
+        <meta
+          property="og:description"
+          content="Get in touch with us for your IT needs. Contact us for website development, mobile app development, and more."
+        />
+        <meta
+          property="og:image"
+          content="https://dotpotit.com/assets/logo-492dab11.png"
+        />
+        <meta property="og:url" content="https://dotpotit.com/contact" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact Us | Dotpot iT" />
+        <meta
+          name="twitter:description"
+          content="Get in touch with us for your IT needs. Contact us for website development, mobile app development, and more."
+        />
+        <meta
+          name="twitter:image"
+          content="https://dotpotit.com/assets/logo-492dab11.png"
+        />
+      </Helmet>
       <Navbar />
       <Particle />
       <div className="w-full pt-[15vh] overflow-hidden">

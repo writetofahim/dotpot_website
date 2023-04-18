@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import cc from "../../assets/img/cc.webp";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
@@ -8,11 +9,41 @@ const ChatContact = () => {
   useScrollToTop();
   return (
     <div>
+      <Helmet>
+        <title>Web Chat Support | Dotpot iT</title>
+        <meta
+          name="description"
+          content="Get in touch with us for your IT needs. Web Chat Support for website, mobile app, and more."
+        />
+        <meta property="og:title" content="Web Chat Support | Dotpot iT" />
+        <meta
+          property="og:description"
+          content="Get in touch with us for your IT needs. Web Chat Support for website, mobile app, and more."
+        />
+        <meta
+          property="og:image"
+          content="https://dotpotit.com/images/contact.png"
+        />
+        <meta
+          property="og:url"
+          content="https://dotpotit.com/contact_center_services/chat"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Web Chat Support | Dotpot iT" />
+        <meta
+          name="twitter:description"
+          content="Get in touch with us for your IT needs. Web Chat Support for website, mobile app, and more."
+        />
+        <meta
+          name="twitter:image"
+          content="https://dotpotit.com/images/contact.png"
+        />
+      </Helmet>
       <Navbar />
       <div className="px-3 min-h-screen pt-[15vh] pb-10">
         <div className="container mx-auto">
           <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
-            Chat Contact
+            Web Chat Support
           </h1>
           <div className="text-gray-400 flex flex-col gap-5 p-5">
             <p className="text-justify">
