@@ -123,6 +123,18 @@ const addMessageToAChat = async (req, res) => {
       { $set: { updatedAt: new Date() } },
       { new: true }
     );
+    if (req.body.isOrder) {
+      const adminMsg = {
+        conversation_id: req.params.conversationId,
+        text: "Thanks for your order we will contact you soon",
+        sender: "admin",
+        receiver: "visitor",
+        isAdminSeen: true,
+        isVisitorSeen: false,
+      };
+      const newAdminMsg = new Message(adminMsg);
+      const AdminMsg = await newAdminMsg.save();
+    }
 
     io.emit("newMessage", msg);
     res.status(201).json(msg);

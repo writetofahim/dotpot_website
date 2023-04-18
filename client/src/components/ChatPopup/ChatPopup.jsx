@@ -6,6 +6,7 @@ import { FaComments, FaSpinner } from "react-icons/fa";
 import { GrAttachment } from "react-icons/gr";
 import { HiOutlineDownload } from "react-icons/hi";
 import { io } from "socket.io-client";
+import { AuthContext } from "../../contexts/AuthContext";
 import axios from "../../utils/axiosInstance";
 import postLogger from "../../utils/postLogger";
 import ImageViewModal from "./ImageViewModal";
@@ -22,7 +23,9 @@ console.log("socket", socket);
 // ];
 
 const ChatPopup = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const { isChatPopupOpen, setIsChatPopupOpen } = React.useContext(AuthContext);
+
+  // const [isChatPopupOpen, setIsChatPopupOpen] = useState(false);
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
   const [files, setFiles] = useState(null);
@@ -34,12 +37,23 @@ const ChatPopup = () => {
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView();
-  }, [messages, isOpen]);
+  }, [messages, isChatPopupOpen]);
+
+  useEffect(() => {
+    const conversationId = localStorage.getItem("conversation_id");
+    const createNewChat = async () => {
+      if (!conversationId) {
+        const { data } = await axios.post("/chats");
+        localStorage.setItem("conversation_id", data.conversation_id);
+        setMessages((prev) => [...prev, data]);
+      }
+    };
+    createNewChat();
+  }, []);
 
   useEffect(() => {
     // listen event for new message
     socket.on("newMessage", (data) => {
-      console.log("newMessage event fire on client side", data);
       const conversationId = localStorage.getItem("conversation_id");
       if (conversationId === data.conversation_id && data.sender === "admin") {
         setMessages((prev) => [...prev, data]);
@@ -54,12 +68,26 @@ const ChatPopup = () => {
     }
   }, [files]);
 
-  const handleOpen = async () => {
+  useEffect(() => {
     const conversationId = localStorage.getItem("conversation_id");
-    if (conversationId && messages.length === 0) {
+    const loadMessages = async () => {
       try {
         const response = await axios.get(`/chats/${conversationId}/messages`);
-        console.log("response will help", response);
+        setMessages(response?.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    if (conversationId && setIsChatPopupOpen) {
+      loadMessages();
+    }
+  }, [setIsChatPopupOpen]);
+
+  const handleOpen = async () => {
+    const conversationId = localStorage.getItem("conversation_id");
+    if (conversationId) {
+      try {
+        const response = await axios.get(`/chats/${conversationId}/messages`);
         setMessages(response?.data);
       } catch (error) {
         console.log(error);
@@ -76,11 +104,11 @@ const ChatPopup = () => {
       localStorage.setItem("conversation_id", data.conversation_id);
       setMessages((prev) => [...prev, data]);
     }
-    setIsOpen(!isOpen);
+    setIsChatPopupOpen(!isChatPopupOpen);
   };
 
   const handleClose = () => {
-    setIsOpen(false);
+    setIsChatPopupOpen(false);
   };
 
   const handleSendMessage = async () => {
@@ -150,7 +178,7 @@ const ChatPopup = () => {
         </span>
       </button>
 
-      {isOpen && (
+      {isChatPopupOpen && (
         <div className="z-[800] fixed bottom-[10vh] right-2 bg-white border-t border-gray-300 w-80 max-h-100 rounded-xl overflow-hidden shadow-xl transition-all">
           <div className="flex justify-between px-4 py-1.5 border-b bg-primary-400 text-white">
             <h2 className="text-lg font-medium">Dotpot iT</h2>

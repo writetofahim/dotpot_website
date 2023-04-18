@@ -306,7 +306,7 @@ const AddonsCard = (props) => {
 // End of Addons Card
 
 const CustomizeService = () => {
-  const { user } = useContext(AuthContext);
+  const { user, setIsChatPopupOpen } = useContext(AuthContext);
   const [openService, setOpenService] = useState(null);
   const [selectedServices, setSelectedServices] = useState({});
   const [order, setOrder] = useState([]);
@@ -364,7 +364,6 @@ const CustomizeService = () => {
   const handlePlaceOrder = async () => {
     if (price === 0) return;
     const clientId = JSON.parse(localStorage.getItem("user"))?._id;
-    console.log("clientId", clientId);
 
     if (!clientId) return navigate("/login");
 
@@ -377,8 +376,33 @@ const CustomizeService = () => {
     };
     try {
       const { data } = await axios.post("/order", newOrder);
-      console.log(data);
+
       postLogger({ level: "info", message: data });
+
+      const conversationId = localStorage.getItem("conversation_id");
+
+      let orderMessage = "I need ";
+      order.forEach((item) => {
+        orderMessage += item.title + " with ";
+        const techTitles = item.technologies.map((tech) => tech.title);
+        orderMessage += techTitles.join(", ");
+        const addonTitles = item.addons.map((addon) => addon.title);
+        addonTitles
+          ? (orderMessage += "\n and addon " + addonTitles.join(", "))
+          : null;
+        orderMessage += "\n";
+      });
+      orderMessage += "Total price is: " + price;
+      console.log(orderMessage);
+
+      const msgResponse = await axios.post(
+        `/chats/${conversationId}/messages`,
+        {
+          text: orderMessage,
+          isOrder: true,
+        }
+      );
+      setIsChatPopupOpen(true);
       setIsSubmitting(false);
       setIsSuccess(true);
       setOrder([]);
