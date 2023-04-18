@@ -19,7 +19,7 @@ export const JobCard = (props) => {
     return (
         <>
             {/* For Large screen */}
-            <div className="job-card w-full p-5 border rounded-xl hover:border-primary-500 text-gray-400 gap-1 hidden md:block md:hover:scale-105 md:hover:shadow-xl transition-all" onClick={() => handelChick(props._id)}>
+            <div className="cursor-pointer job-card w-full p-5 border rounded-xl hover:border-primary-500 text-gray-400 gap-1 hidden md:block md:hover:scale-105 md:hover:shadow-xl transition-all" onClick={() => handelChick(props._id)}>
                 <div className="flex justify-between items-center">
                     <h3 className="font-bold hover:underline cursor-pointer text-xl">{props.title}</h3>
 
