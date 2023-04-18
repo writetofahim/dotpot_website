@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import ivr from "../../assets/img/ivr.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
@@ -8,6 +9,43 @@ const Ivr = () => {
   useScrollToTop();
   return (
     <div>
+      <Helmet>
+        <title>Interactive Voice Response (IVR) | Dotpot iT</title>
+        <meta
+          name="description"
+          content="Get in touch with us for your IT needs. Interactive Voice Response (IVR) support your business, mobile app, and more."
+        />
+        <meta
+          property="og:title"
+          content="Interactive Voice Response (IVR) support | Dotpot iT"
+        />
+        <meta
+          property="og:description"
+          content="Get in touch with us for your IT needs. Interactive Voice Response (IVR) support your business, mobile app, and more."
+        />
+        <meta
+          property="og:image"
+          content="https://dotpotit.com/assets/logo-492dab11.png"
+        />
+        <meta
+          property="og:url"
+          content="http://localhost:5173/contact_center_services/ivr"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Interactive Voice Response (IVR) support | Dotpot iT"
+        />
+        <meta
+          name="twitter:description"
+          content="Get in touch with us for your IT needs. Interactive Voice Response (IVR) support your business, mobile app, and more."
+        />
+        <meta
+          name="twitter:image"
+          content="https://dotpotit.com/assets/logo-492dab11.png"
+        />
+      </Helmet>
+
       <Navbar />
       <div className="px-3 min-h-screen pt-[15vh] pb-10">
         <div className="container mx-auto">

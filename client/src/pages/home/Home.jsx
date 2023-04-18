@@ -22,6 +22,7 @@ Footer
  */
 
 import React from "react";
+import { Helmet } from "react-helmet";
 import ContactCenterServices from "../../components/ContactCenterServices/ContactCenterServices";
 import CustomizeService from "../../components/CustomizeService/CustomizeService";
 import Footer from "../../components/Footer/Footer";
@@ -46,6 +47,39 @@ const Home = () => {
   useScrollToTop();
   return (
     <>
+      <Helmet>
+        <title>Dotpot iT || Help Business Successful Online</title>
+        <meta
+          name="description"
+          content="Learn about Dotpot iT, a leading IT company providing innovative solutions for businesses."
+        />
+        <meta
+          property="og:title"
+          content="Dotpot iT || Help Business Successful Online"
+        />
+        <meta
+          property="og:description"
+          content="Learn about Dotpot iT, a leading IT company providing innovative solutions for businesses."
+        />
+        <meta
+          property="og:image"
+          content="https://i.ibb.co/CncFVCL/dotpot.gif"
+        />
+        <meta property="og:url" content="https://dotpotit.com/about" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Dotpot iT || Help Business Successful Online"
+        />
+        <meta
+          name="twitter:description"
+          content="Learn about Dotpot iT, a leading IT company providing innovative solutions for businesses."
+        />
+        <meta
+          name="twitter:image"
+          content="https://i.ibb.co/CncFVCL/dotpot.gif"
+        />
+      </Helmet>
       <Navbar />
       <Hero />
       <GetAQuote />

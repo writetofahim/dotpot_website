@@ -22,7 +22,7 @@ const CustomerService = () => {
         />
         <meta
           property="og:image"
-          content="https://dotpotit.com/images/contact.png"
+          content="https://dotpotit.com/assets/logo-492dab11.png"
         />
         <meta
           property="og:url"
@@ -36,7 +36,7 @@ const CustomerService = () => {
         />
         <meta
           name="twitter:image"
-          content="https://dotpotit.com/images/contact.png"
+          content="https://dotpotit.com/assets/logo-492dab11.png"
         />
       </Helmet>
       <Navbar />
