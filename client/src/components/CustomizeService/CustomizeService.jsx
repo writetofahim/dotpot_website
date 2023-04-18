@@ -176,15 +176,17 @@ const TechnologyCard = (props) => {
       />
 
       {!isSelect ? (
-        <BiCircle
-          className="absolute top-1 right-1 text-gray-400 cursor-pointer hover:scale-110"
-          onClick={() => addTechnologie()}
-        />
+        <BiCircle className="absolute top-1 right-1 text-gray-400 cursor-pointer hover:scale-110" />
       ) : (
-        <BsCheckCircleFill
-          className="absolute top-1 right-1 text-primary-500 cursor-pointer hover:scale-110"
-          onClick={() => removeTechnologie()}
-        />
+        // <BiCircle
+        //   className="absolute top-1 right-1 text-gray-400 cursor-pointer hover:scale-110"
+        //   onClick={() => addTechnologie()}
+        // />
+        <BsCheckCircleFill className="absolute top-1 right-1 text-primary-500 cursor-pointer hover:scale-110" />
+        // <BsCheckCircleFill
+        //   className="absolute top-1 right-1 text-primary-500 cursor-pointer hover:scale-110"
+        //   onClick={() => removeTechnologie()}
+        // />
       )}
 
       <abbr
@@ -268,7 +270,7 @@ const AddonsCard = (props) => {
     <div
       className="w-[30%] md:w-[100px] h-[90px] lg:h-[100px] p-1 lg:p-2 border rounded-xl flex flex-col items-center justify-evenly hover:scale-105 hover:shadow-xl transition-all relative overflow-hidden bg-white"
       onClick={() => {
-        !isSelect ? addAddons() : removeAddons();
+        !isSelect ? addAddons() : removeAddons(props._id);
       }}
     >
       <img
@@ -277,15 +279,17 @@ const AddonsCard = (props) => {
         className="w-[25px] h-[25px] object-contain"
       />
       {!isSelect ? (
-        <BiCircle
-          className="absolute top-1 right-1 text-gray-400 cursor-pointer hover:scale-110"
-          onClick={() => addAddons()}
-        />
+        <BiCircle className="absolute top-1 right-1 text-gray-400 cursor-pointer hover:scale-110" />
       ) : (
-        <BsCheckCircleFill
-          className="absolute top-1 right-1 text-primary-500 cursor-pointer hover:scale-110"
-          onClick={() => removeAddons(props._id)}
-        />
+        // <BiCircle
+        //   className="absolute top-1 right-1 text-gray-400 cursor-pointer hover:scale-110"
+        //   onClick={() => addAddons()}
+        // />
+        <BsCheckCircleFill className="absolute top-1 right-1 text-primary-500 cursor-pointer hover:scale-110" />
+        // <BsCheckCircleFill
+        //   className="absolute top-1 right-1 text-primary-500 cursor-pointer hover:scale-110"
+        //   onClick={() => removeAddons(props._id)}
+        // />
       )}
       <abbr
         title={`${props.sdes} Starting from ${props.cost}`}
