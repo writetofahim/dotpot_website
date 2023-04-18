@@ -1,5 +1,5 @@
 import React from "react";
-import coverImg from "../../assets/img/contact-center-support.webp";
+import coverImg from "../../assets/img/contact-center-support.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";

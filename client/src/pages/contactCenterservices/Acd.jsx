@@ -1,6 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import acd from "../../assets/img/acd.webp";
+import acd from "../../assets/img/acd.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
