@@ -14,7 +14,7 @@ const PortfolioDevelopment = () => {
         <title>Portfolio Development| Dotpot iT</title>
         <meta
           name="description"
-          content="Learn about Portfolio Development iT, a leading IT company providing innovative solutions for businesses."
+          content="Learn about Portfolio Development iT, a leading IT company providing innovative solutions for businesses.visit website for details"
         />
         <meta property="og:title" content="Portfolio Development | Dotpot iT" />
         <meta

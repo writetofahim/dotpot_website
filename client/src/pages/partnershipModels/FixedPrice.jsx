@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
@@ -7,6 +8,33 @@ const FixedPrice = () => {
   useScrollToTop();
   return (
     <div>
+      <Helmet>
+        <title>Fixed Price Partnership Model | Dotpot iT</title>
+        <meta
+          name="description"
+          content="Learn about Fixed Price Partnership Model Dotpot iT, a leading IT company providing innovative solutions for businesses."
+        />
+        <meta property="og:title" content="Fixed Price Partnership Model | Dotpot iT" />
+        <meta
+          property="og:description"
+          content="Learn about Fixed Price Partnership Model Dotpot iT, a leading IT company providing innovative solutions for businesses."
+        />
+        <meta
+          property="og:image"
+          content="	https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+        <meta property="og:url" content="https://www.dotpotit.com/partnership_model/fixed-price-model" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Fixed Price Partnership Model | Dotpot iT" />
+        <meta
+          name="twitter:description"
+          content="Learn about Fixed Price Partnership Model Dotpot iT, a leading IT company providing innovative solutions for businesses."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+      </Helmet>
       <Navbar />
       <div className="container mx-auto pt-[15vh] pb-10">
         <div className="flex flex-col pt-12 lg:text-justify">

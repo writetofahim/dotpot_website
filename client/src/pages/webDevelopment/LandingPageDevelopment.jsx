@@ -14,7 +14,7 @@ const LandingPageDevelopment = () => {
         <title>Landing Page Development | Dotpot iT</title>
         <meta
           name="description"
-          content="Learn about Landing Page Development Dotpot iT, a leading IT company providing innovative solutions for businesses."
+          content="Learn about Landing Page Development Dotpot iT, a leading IT company providing innovative solutions for businesses.visit website for details"
         />
         <meta property="og:title" content="Landing Page Development | Dotpot iT" />
         <meta

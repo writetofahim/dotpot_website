@@ -15,7 +15,7 @@ const CustomDevelopment = () => {
         <title>Coustom Development | Dotpot iT</title>
         <meta
           name="description"
-          content="Learn about Coustom DevelopmentDotpot iT, a leading IT company providing innovative solutions for businesses."
+          content="Learn about Coustom DevelopmentDotpot iT, a leading IT company providing innovative solutions for businesses.visit website for details"
         />
         <meta property="og:title" content="Coustom Development| Dotpot iT" />
         <meta

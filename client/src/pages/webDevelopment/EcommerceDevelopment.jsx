@@ -15,7 +15,7 @@ const EcommerceDevelopment = () => {
         <title>E-Commerce website Development | Dotpot iT</title>
         <meta
           name="description"
-          content="Learn about E-Commerce website Development iT, a leading IT company providing innovative solutions for businesses."
+          content="Learn about E-Commerce website Development iT, a leading IT company providing innovative solutions for businesses.visit website for details"
         />
         <meta property="og:title" content="E-Commerce website Development | Dotpot iT" />
         <meta

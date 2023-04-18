@@ -15,7 +15,7 @@ const BlogDevelopment = () => {
         <title>Blog Site Development | Dotpot iT</title>
         <meta
           name="description"
-          content="Learn about Blog Site Development Dotpot iT, a leading IT company providing innovative solutions for businesses."
+          content="Learn about Blog Site Development Dotpot iT, a leading IT company providing innovative solutions for businesses.visit website for details"
         />
         <meta property="og:title" content="Blog Site Development| Dotpot iT" />
         <meta

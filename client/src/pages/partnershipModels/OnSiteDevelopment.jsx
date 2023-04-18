@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
@@ -7,6 +8,33 @@ const OnSiteDevelopment = () => {
   useScrollToTop();
   return (
     <div>
+      <Helmet>
+        <title>on-site-development-model | Dotpot iT</title>
+        <meta
+          name="description"
+          content="Learn about hire-dedicated-model Dotpot iT, a leading IT company providing innovative solutions for businesses."
+        />
+        <meta property="og:title" content="on-site-development-model | Dotpot iT" />
+        <meta
+          property="og:description"
+          content="Learn about hire-dedicated-model Dotpot iT, a leading IT company providing innovative solutions for businesses."
+        />
+        <meta
+          property="og:image"
+          content="	https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+        <meta property="og:url" content="https://www.dotpotit.com/partnership_model/on-site-development-model" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Fixed Price Partnership Model | Dotpot iT" />
+        <meta
+          name="twitter:description"
+          content="Learn about hire-dedicated-model Dotpot iT, a leading IT company providing innovative solutions for businesses."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+      </Helmet>
       <Navbar />
       <div className="container mx-auto py-[5vh] pb-10">
         <div className="flex flex-col pt-6 lg:text-justify">

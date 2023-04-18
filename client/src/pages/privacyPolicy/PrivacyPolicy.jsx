@@ -13,7 +13,7 @@ const PrivacyPolicy = () => {
         <title>privacyPolicy | Dotpot iT</title>
         <meta
           name="description"
-          content="Learn about privacyPolicy Dotpot iT, a leading IT company providing innovative solutions for businesses."
+          content="Learn about privacyPolicy Dotpot iT, a leading IT company providing innovative solutions for businesses.visit website for details"
         />
         <meta property="og:title" content="privacyPolicy  | Dotpot iT" />
         <meta
