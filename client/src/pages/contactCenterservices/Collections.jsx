@@ -78,7 +78,9 @@ const Collections = () => {
               your telemarketing efforts.
             </p>
           </div>
-          <p className="text-gray-700 flex flex-col gap-2 px-5">Overview:</p>
+          <p className="text-gray-700 flex flex-col gap-2 px-5 3xl md:5xl font-bold">
+            Overview:
+          </p>
           <div className="px-5">
             <ul className="list-disc p-5 mb-5">
               <li>Quickly implement new collections programs.</li>

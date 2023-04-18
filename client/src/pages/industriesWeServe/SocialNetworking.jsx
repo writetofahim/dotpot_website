@@ -1,11 +1,11 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { BsArrowRightCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
+import OurPartnersSlider from "../../components/OurPartnersSlider/OurPartnersSlider";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import OurPartnersSlider from '../../components/OurPartnersSlider/OurPartnersSlider'
-import { Helmet } from "react-helmet";
 
 const SocialNetworking = () => {
   useScrollToTop();
@@ -26,7 +26,10 @@ const SocialNetworking = () => {
           property="og:image"
           content="https://www.dotpotit.com/assets/logo-492dab11.png"
         />
-        <meta property="og:url" content="https://www.dotpotit.com/industries-we-serve/social-networking" />
+        <meta
+          property="og:url"
+          content="https://www.dotpotit.com/industries-we-serve/social-networking"
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Social Networking | Dotpot iT" />
         <meta
@@ -43,7 +46,7 @@ const SocialNetworking = () => {
         <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
           Social Networking
         </h1>
-        <p className="text-lg text-secondary-500 text-center mb-10">
+        <p className="text-lg  text-center mb-10">
           Connect with your audience like never before - with DotpotiT's social
           networking solutions.
         </p>
@@ -55,7 +58,7 @@ const SocialNetworking = () => {
           />
         </div>
         <div className="container  mx-auto flex flex-col mb-10 my-10">
-          <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">
+          <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block ">
             Overview
           </h3>
           {/* Overview */}
@@ -166,11 +169,28 @@ const SocialNetworking = () => {
             <h3 className="text-xl md:text-2xl  my-2 md:mb-1  text-purple-500 ">
               Why you should choose us!
             </h3>
-            <li className=" ml-5 list-disc text-gray-400 ">Highly experienced team of developers who are passionate about building innovative solutions.</li>
-            <li className=" ml-5 list-disc text-gray-400 ">Proven track record of delivering high-quality projects on time and within budget.</li>
-            <li className=" ml-5 list-disc text-gray-400 ">Commitment to providing exceptional customer service and support throughout the entire development process and beyond.</li>
-            <li className=" ml-5 list-disc text-gray-400 ">We prioritize communication and transparency throughout the development process, providing regular updates and involving our clients in key decision-making processes.</li>
-            <li className=" ml-5 list-disc text-gray-400 ">Our team stays up-to-date with the latest industry trends and technologies, ensuring that our clients receive cutting-edge solutions.</li>
+            <li className=" ml-5 list-disc text-gray-400 ">
+              Highly experienced team of developers who are passionate about
+              building innovative solutions.
+            </li>
+            <li className=" ml-5 list-disc text-gray-400 ">
+              Proven track record of delivering high-quality projects on time
+              and within budget.
+            </li>
+            <li className=" ml-5 list-disc text-gray-400 ">
+              Commitment to providing exceptional customer service and support
+              throughout the entire development process and beyond.
+            </li>
+            <li className=" ml-5 list-disc text-gray-400 ">
+              We prioritize communication and transparency throughout the
+              development process, providing regular updates and involving our
+              clients in key decision-making processes.
+            </li>
+            <li className=" ml-5 list-disc text-gray-400 ">
+              Our team stays up-to-date with the latest industry trends and
+              technologies, ensuring that our clients receive cutting-edge
+              solutions.
+            </li>
           </ul>
         </div>
       </div>

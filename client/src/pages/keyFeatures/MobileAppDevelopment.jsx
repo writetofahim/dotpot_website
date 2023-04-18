@@ -13,9 +13,9 @@ import kotlin from "../../assets/img/icon/moblieAPP_icons/andriod/programming-la
 
 import swift from "../../assets/img/icon/moblieAPP_icons/ios/swift.png";
 
+import { Helmet } from "react-helmet";
 import flutter from "../../assets/img/icon/moblieAPP_icons/hybrid/flutter.png";
 import react_native from "../../assets/img/icon/moblieAPP_icons/hybrid/react_native.webp";
-import { Helmet } from "react-helmet";
 
 const MobileAppDevelopment = () => {
   const data = [
@@ -72,7 +72,10 @@ const MobileAppDevelopment = () => {
           name="description"
           content="Get Top-notch, Extensively, Innovative Mobile App Solution By Us"
         />
-        <meta property="og:title" content="Mobile App Development | Dotpot iT" />
+        <meta
+          property="og:title"
+          content="Mobile App Development | Dotpot iT"
+        />
         <meta
           property="og:description"
           content="Get Top-notch, Extensively, Innovative Mobile App Solution By Us"
@@ -81,9 +84,15 @@ const MobileAppDevelopment = () => {
           property="og:image"
           content="https://www.dotpotit.com/assets/logo-492dab11.png"
         />
-        <meta property="og:url" content="https://www.dotpotit.com/key-features/mobile-app-development" />
+        <meta
+          property="og:url"
+          content="https://www.dotpotit.com/key-features/mobile-app-development"
+        />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Mobile App Development | Dotpot iT" />
+        <meta
+          name="twitter:title"
+          content="Mobile App Development | Dotpot iT"
+        />
         <meta
           name="twitter:description"
           content="Get Top-notch, Extensively, Innovative Mobile App Solution By Us"
@@ -94,7 +103,7 @@ const MobileAppDevelopment = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="pt-[15vh] container mx-auto min-h-screen">
+      <div className="pt-[15vh] container mx-auto min-h-screen px-3">
         <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
           Mobile App Development
         </h1>
@@ -105,12 +114,12 @@ const MobileAppDevelopment = () => {
           <img className="md:w-1/2 mx-auto " src={coverImg} alt="" />
         </div>
         <div className="container  mx-auto flex flex-col mb-10 my-10">
-          <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">
+          <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block ">
             Overview
           </h3>
           {/* Overview */}
           <div className="text-gray-400 flex flex-col gap-5 p-5">
-            <p>
+            <p className="text-justify">
               Our company provides a top-notch, extensive, and innovative mobile
               app solution that is tailored to meet your specific needs. We have
               a team of skilled professionals who are passionate about
@@ -118,7 +127,7 @@ const MobileAppDevelopment = () => {
               but also user-friendly and aesthetically pleasing.
             </p>
 
-            <p>
+            <p className="text-justify">
               Our mobile app solution is designed to offer comprehensive and
               innovative features that are easy to use and enhance the user
               experience. We work with you closely to understand your business
@@ -126,14 +135,14 @@ const MobileAppDevelopment = () => {
               meets your specific requirements.
             </p>
 
-            <p>
+            <p className="text-justify">
               Our team of developers is well-versed in the latest mobile app
               development technologies, frameworks, and platforms, ensuring that
               we deliver cutting-edge solutions that are optimized for
               performance, scalability, and security.
             </p>
 
-            <p>
+            <p className="text-justify">
               We understand that every business has unique needs, which is why
               we offer an extensive mobile app solution that is designed to
               cater to a wide range of industries, from healthcare to finance,
@@ -142,7 +151,7 @@ const MobileAppDevelopment = () => {
               high-quality solution that exceeds your expectations.
             </p>
 
-            <p>
+            <p className="text-justify">
               We pride ourselves on delivering innovative mobile app solutions
               that are not only functional but also visually appealing and
               user-friendly. Our development process is streamlined and
@@ -150,7 +159,7 @@ const MobileAppDevelopment = () => {
               within budget.
             </p>
 
-            <p>
+            <p className="text-justify">
               In summary, if you need a top-notch, extensive, and innovative
               mobile app solution that is customized to meet your specific
               business needs, our team of skilled professionals is here to help.
@@ -200,27 +209,27 @@ const MobileAppDevelopment = () => {
               What Is Mobile App Development?
             </h2>
             <div className="text-gray-400 flex flex-col gap-5 p-5">
-              <p>
+              <p className="text-justify">
                 Mobile app development is the process of creating software that
                 runs on mobile devices such as smartphones, tablets, and iPads.
                 These applications can be pre-installed on the device, or users
                 can download them from the app store or mobile browsers.
               </p>
-              <p>
+              <p className="text-justify">
                 You may wonder why businesses need mobile applications. Mobile
                 applications can offer several benefits that can make your
                 business stand out. For instance, a mobile app can enhance your
                 brand's visibility, allowing you to connect with your customers
                 anytime, anywhere.
               </p>
-              <p>
+              <p className="text-justify">
                 With a mobile app, you can offer your customers a seamless user
                 experience, enabling them to access your services and products
                 effortlessly. Mobile apps also offer a range of features such as
                 push notifications, in-app purchases, and location-based
                 services that can increase user engagement and drive sales.
               </p>
-              <p>
+              <p className="text-justify">
                 Additionally, mobile apps can collect valuable data about user
                 behavior and preferences, allowing you to tailor your services
                 and products to their needs and preferences. In summary, mobile
@@ -234,11 +243,11 @@ const MobileAppDevelopment = () => {
           </div>
 
           <div className="my-3">
-            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-gray-400 ">
+            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block ">
               Why Mobile App Development Is Important For Businesses?
             </h2>
             <div className="text-gray-400 flex flex-col gap-5 p-5">
-              <p>
+              <p className="text-justify">
                 Mobile applications may seem insignificant, but they can have a
                 profound impact on businesses. They enable businesses to send
                 compelling messages to their target user base and generate more
@@ -254,11 +263,11 @@ const MobileAppDevelopment = () => {
           </div>
 
           <div className="my-3">
-            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1 block text-gray-400 ">
+            <h2 className="text-xl md:text-2xl  mb-2 md:mb-1 block font-bold">
               Importance Of App Development In Different Industries
             </h2>
             <div className="text-gray-400 flex flex-col gap-5 p-5">
-              <p>
+              <p className="text-justify">
                 It's common knowledge that businesses operate in different
                 industries, each with its own unique set of challenges and
                 requirements. However, one thing that is becoming increasingly
@@ -278,11 +287,11 @@ const MobileAppDevelopment = () => {
 
           {/* mobile app dev */}
           <div className="my-3">
-            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1 block text-gray-400 ">
+            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1 block  ">
               Types Of Mobile App Development
             </h2>
             <div className="text-gray-400 flex flex-col gap-5 p-5">
-              <p>
+              <p className="text-justify">
                 When it comes to mobile app development, there are four main
                 types that businesses can choose from. These include native
                 apps, hybrid apps, web apps, and progressive web apps. Each of
@@ -299,10 +308,10 @@ const MobileAppDevelopment = () => {
                 objectives.
               </p>
               <ul className="ml-5">
-                <li className="text-xl md:text-2xl  mb-2 md:mb-1  list-disc text-gray-400 ">
+                <li className="text-xl md:text-2xl  mb-2 md:mb-1  list-disc font-bold">
                   Native App Development
                 </li>
-                <p className="xt-gray-400">
+                <p className="xt-gray-400 text-justify">
                   Native app development is the creation of mobile apps that are
                   tailored for specific mobile devices or operating systems such
                   as iOS or Android. As the apps are designed specifically for a
@@ -314,7 +323,7 @@ const MobileAppDevelopment = () => {
                   device-specific features, and a more polished user experience.
                 </p>
 
-                <h3 className="text-xl md:text-2xl  my-2 md:mb-1  text-gray-400 ">
+                <h3 className="text-xl md:text-2xl  my-2 md:mb-1  text-gray-400 font-bold">
                   Example of Native Mobile Application
                 </h3>
                 <li className=" ml-5 list-disc text-gray-400 ">Scan To Go</li>
@@ -322,10 +331,10 @@ const MobileAppDevelopment = () => {
                 <li className=" ml-5 list-disc text-gray-400 ">Spotify</li>
               </ul>
               <ul className="ml-5 my-3">
-                <li className="text-xl md:text-2xl  mb-2 md:mb-1  list-disc text-gray-400 ">
+                <li className="text-xl md:text-2xl  mb-2 md:mb-1  list-disc font-bold ">
                   Hybrid App Development
                 </li>
-                <p className="xt-gray-400">
+                <p className="xt-gray-400 text-justify">
                   Hybrid apps are a combination of web apps and native app
                   development, offering the best of both worlds. The advantage
                   of Hybrid apps is that they can work on multiple devices and
@@ -334,7 +343,7 @@ const MobileAppDevelopment = () => {
                   money in Hybrid
                 </p>
 
-                <h3 className="text-xl md:text-2xl  my-2 md:mb-1  text-gray-400 ">
+                <h3 className="text-xl md:text-2xl  my-2 md:mb-1  font-bold ">
                   Example of Hybrid Mobile Application
                 </h3>
                 <li className=" ml-5 list-disc text-gray-400 ">Gmail</li>

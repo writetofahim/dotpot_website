@@ -1,9 +1,9 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import coverImg from "../../assets/img/dedicated-team.jpg";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import { Helmet } from "react-helmet";
 
 const DedicatedTeam = () => {
   useScrollToTop();
@@ -24,7 +24,10 @@ const DedicatedTeam = () => {
           property="og:image"
           content="https://www.dotpotit.com/assets/logo-492dab11.png"
         />
-        <meta property="og:url" content="https://www.dotpotit.com/key-features/dedicated-team" />
+        <meta
+          property="og:url"
+          content="https://www.dotpotit.com/key-features/dedicated-team"
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Dedicated Team | Dotpot iT" />
         <meta
@@ -37,7 +40,7 @@ const DedicatedTeam = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="pt-[15vh] pb-10 container mx-auto min-h-screen">
+      <div className="pt-[15vh] pb-10 container mx-auto min-h-screen px-3">
         <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
           Dedicated Team
         </h1>

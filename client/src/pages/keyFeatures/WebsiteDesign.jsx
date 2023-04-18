@@ -23,12 +23,12 @@ import express from "../../assets/img/icon/webBackend/expressJS.png";
 import laravel from "../../assets/img/icon/webBackend/laravel.png";
 import nodeJS from "../../assets/img/icon/webBackend/nodejs.png";
 
+import { Helmet } from "react-helmet";
 import drupal from "../../assets/img/icon/cms/drupal.png";
 import joomla from "../../assets/img/icon/cms/joomla.png";
 import shopify from "../../assets/img/icon/cms/shopify.png";
 import wix from "../../assets/img/icon/cms/wix.png";
 import wordpress from "../../assets/img/icon/cms/wordpress.png";
-import { Helmet } from "react-helmet";
 
 const WebsiteDesign = () => {
   const data = [
@@ -141,7 +141,10 @@ const WebsiteDesign = () => {
           property="og:image"
           content="https://www.dotpotit.com/assets/logo-492dab11.png"
         />
-        <meta property="og:url" content="https://www.dotpotit.com/key-features/website-design" />
+        <meta
+          property="og:url"
+          content="https://www.dotpotit.com/key-features/website-design"
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Website Design | Dotpot iT" />
         <meta
@@ -154,7 +157,7 @@ const WebsiteDesign = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="pt-[15vh] container mx-auto min-h-screen">
+      <div className="pt-[15vh] container mx-auto min-h-screen px-3">
         <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
           Website Design
         </h1>

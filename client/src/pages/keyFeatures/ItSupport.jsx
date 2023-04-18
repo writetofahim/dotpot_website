@@ -1,9 +1,9 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import coverImg from "../../assets/img/IT-Support-.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import { Helmet } from "react-helmet";
 
 const ItSupport = () => {
   useScrollToTop();
@@ -24,7 +24,10 @@ const ItSupport = () => {
           property="og:image"
           content="https://www.dotpotit.com/assets/logo-492dab11.png"
         />
-        <meta property="og:url" content="https://www.dotpotit.com/key-features/it-support" />
+        <meta
+          property="og:url"
+          content="https://www.dotpotit.com/key-features/it-support"
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="It Support | Dotpot iT" />
         <meta
@@ -37,7 +40,7 @@ const ItSupport = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="pt-[15vh] container mx-auto mb-10 min-h-screen">
+      <div className="pt-[15vh] container mx-auto mb-10 min-h-screen p-3">
         <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
           It Support
         </h1>
@@ -49,11 +52,11 @@ const ItSupport = () => {
           <img className="md:w-1/2 mx-auto " src={coverImg} alt="" />
         </div>
         <div className="container  mx-auto flex flex-col mb-10 my-10">
-          <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">
+          <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block">
             Overview
           </h3>
           {/* Overview */}
-          <div className="text-gray-400 flex flex-col gap-5 p-5">
+          <div className="text-gray-400 flex flex-col gap-5 p-5 text-justify">
             <p>
               Information Technology (IT) is the backbone of modern businesses,
               and reliable IT support is essential for maximizing efficiency and

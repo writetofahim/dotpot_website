@@ -7,11 +7,11 @@ import Navbar from "../../components/Navbar/Navbar";
 import TechnologiesTab from "../../components/technologiesTab/TechnologiesTab";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 
+import { Helmet } from "react-helmet";
 import keras from "../../assets/img/icon/ai/keras.png";
 import numPy from "../../assets/img/icon/ai/numPy.png";
 import pandas from "../../assets/img/icon/ai/pandas.jpg";
 import tensorFlow from "../../assets/img/icon/ai/tensorFlow.png";
-import { Helmet } from 'react-helmet';
 
 const AiDevelopment = () => {
   const data = [
@@ -78,7 +78,10 @@ const AiDevelopment = () => {
           property="og:image"
           content="https://www.dotpotit.com/assets/logo-492dab11.png"
         />
-        <meta property="og:url" content="https://www.dotpotit.com/key-features/ai-development" />
+        <meta
+          property="og:url"
+          content="https://www.dotpotit.com/key-features/ai-development"
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="AI Development | Dotpot iT" />
         <meta
@@ -91,7 +94,7 @@ const AiDevelopment = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="pt-[15vh] pb-10 container mx-auto min-h-screen">
+      <div className="pt-[15vh] pb-10 container mx-auto min-h-screen px-3">
         <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
           AI Development
         </h1>
@@ -103,11 +106,11 @@ const AiDevelopment = () => {
           <img className="md:w-1/2 mx-auto " src={coverImg} alt="" />
         </div>
         <div className="container  mx-auto flex flex-col mb-10 my-10">
-          <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">
+          <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block ">
             Overview
           </h3>
           {/* Overview */}
-          <div className="text-gray-400 flex flex-col gap-5 p-5">
+          <div className="text-gray-400 flex flex-col gap-5 p-5 text-justify">
             <p>
               AI development involves the use of machine learning algorithms to
               create intelligent computer systems that can perform tasks without
@@ -164,7 +167,7 @@ const AiDevelopment = () => {
               What Is AI Development?
             </h2>
             <div className="text-gray-400 flex flex-col gap-5 p-5">
-              <p>
+              <p className="text-justify">
                 Artificial Intelligence (AI) development involves creating
                 intelligent machines that can perform tasks that typically
                 require human intelligence, such as visual perception, speech
@@ -173,7 +176,7 @@ const AiDevelopment = () => {
                 machines learn from data, identify patterns, and make decisions
                 without human intervention.
               </p>
-              <p>
+              <p className="text-justify">
                 The three main types of AI development include narrow or weak
                 AI, general or strong AI, and super AI. Narrow AI is programmed
                 to perform specific tasks such as recognizing speech or driving
@@ -182,7 +185,7 @@ const AiDevelopment = () => {
                 advanced form of AI and has the ability to surpass human
                 intelligence and capabilities.
               </p>
-              <p>
+              <p className="text-justify">
                 AI development has various applications across industries,
                 including healthcare, finance, manufacturing, and
                 transportation. AI-powered technologies can improve efficiency,
@@ -205,7 +208,7 @@ const AiDevelopment = () => {
                 1) Improvised Technologies
               </h2>
               <div className="text-gray-400 flex flex-col gap-5 p-5">
-                <p>
+                <p className="text-justify">
                   AI and Machine Learning are cutting-edge technologies that
                   have found their way into businesses worldwide. At our
                   company, we offer the latest and most advanced technologies to
@@ -221,7 +224,7 @@ const AiDevelopment = () => {
                 2) Dynamic Solution
               </h2>
               <div className="text-gray-400 flex flex-col gap-5 p-5">
-                <p>
+                <p className="text-justify">
                   DotpotiT provides top-notch Artificial Intelligence and
                   Machine Learning technology, backed by 10+ years of
                   experience. Our ML and AI data solutions offer a wide range of
@@ -235,7 +238,7 @@ const AiDevelopment = () => {
                 3) Enhance Productivity
               </h2>
               <div className="text-gray-400 flex flex-col gap-5 p-5">
-                <p>
+                <p className="text-justify">
                   Our AI and ML technology improves business productivity, and
                   our professionals develop effective strategies to meet client
                   needs.
@@ -248,7 +251,7 @@ const AiDevelopment = () => {
                 4) Deep Insights
               </h2>
               <div className="text-gray-400 flex flex-col gap-5 p-5">
-                <p>
+                <p className="text-justify">
                   We ensure transparent communication with clients when
                   providing AI and ML insights to help their businesses grow.
                   Our team is open about our process, models, and decisions, and

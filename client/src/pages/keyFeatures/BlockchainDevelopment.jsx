@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { BsArrowRightCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import coverImg from "../../assets/img/blockchainDev.jpg";
@@ -10,7 +11,6 @@ import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import TechnologiesTab from "../../components/technologiesTab/TechnologiesTab";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import { Helmet } from "react-helmet";
 
 const BlockchainDevelopment = () => {
   const data = [
@@ -53,7 +53,10 @@ const BlockchainDevelopment = () => {
           name="description"
           content="Hire The Expert Development Team of Blockchain Technology"
         />
-        <meta property="og:title" content="Blockchain Development | Dotpot iT" />
+        <meta
+          property="og:title"
+          content="Blockchain Development | Dotpot iT"
+        />
         <meta
           property="og:description"
           content="Hire The Expert Development Team of Blockchain Technology"
@@ -62,9 +65,15 @@ const BlockchainDevelopment = () => {
           property="og:image"
           content="https://www.dotpotit.com/assets/logo-492dab11.png"
         />
-        <meta property="og:url" content="https://www.dotpotit.com/key-features/blockchain-development" />
+        <meta
+          property="og:url"
+          content="https://www.dotpotit.com/key-features/blockchain-development"
+        />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Blockchain Development | Dotpot iT" />
+        <meta
+          name="twitter:title"
+          content="Blockchain Development | Dotpot iT"
+        />
         <meta
           name="twitter:description"
           content="Hire The Expert Development Team of Blockchain Technology"
@@ -75,7 +84,7 @@ const BlockchainDevelopment = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="pt-[15vh] container mx-auto pb-10 min-h-screen">
+      <div className="pt-[15vh] container mx-auto pb-10 min-h-screen p-3">
         <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
           Blockchain Development
         </h1>
@@ -86,12 +95,12 @@ const BlockchainDevelopment = () => {
           <img className="md:w-1/2 mx-auto " src={coverImg} alt="" />
         </div>
         <div className="container  mx-auto flex flex-col mb-10 my-10">
-          <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">
+          <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block">
             Overview
           </h3>
           {/* Overview */}
           <div className="text-gray-400 flex flex-col gap-5 p-5">
-            <p>
+            <p className="text-justify">
               Blockchain technology has become a hot topic among businesses,
               particularly in the IT industry. It has paved the way for secure
               payment gateways and is an excellent form of database storage.
@@ -145,14 +154,14 @@ const BlockchainDevelopment = () => {
               What is Blockchain?
             </h2>
             <div className="text-gray-400 flex flex-col gap-5 p-5">
-              <p>
+              <p className="text-justify">
                 Blockchain is a distributed digital ledger that securely stores
                 data and ensures its integrity through cryptography. It is not
                 limited to currency transactions but extends to any domain where
                 valuable assets are transacted, including contracts, personal
                 information, health records, and business data.
               </p>
-              <p>
+              <p className="text-justify">
                 With its unique features, such as decentralization,
                 transparency, and immutability, blockchain technology offers
                 many benefits to businesses, including increased security,
@@ -166,13 +175,13 @@ const BlockchainDevelopment = () => {
           </div>
           {/* Advantages of Blockchain Technology */}
           <ul className="ml-5">
-            <h3 className="text-xl md:text-2xl  my-2 md:mb-1  text-gray-400 ">
+            <h3 className="text-xl md:text-2xl  my-2 md:mb-1  text-gray-400 font-bold">
               Advantages of Blockchain Technology
             </h3>
-            <li className=" ml-5 list-disc text-gray-400 ">Efficiency</li>
-            <li className=" ml-5 list-disc text-gray-400 ">Transparency</li>
-            <li className=" ml-5 list-disc text-gray-400 ">Trust</li>
-            <li className=" ml-5 list-disc text-gray-400 ">Flexibility</li>
+            <li className=" ml-5 list-disc text-gray-400 pl-2">Efficiency</li>
+            <li className=" ml-5 list-disc text-gray-400 pl-2">Transparency</li>
+            <li className=" ml-5 list-disc text-gray-400 pl-2">Trust</li>
+            <li className=" ml-5 list-disc text-gray-400 pl-2">Flexibility</li>
           </ul>
         </div>
 

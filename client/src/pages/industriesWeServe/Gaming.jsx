@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import eaGame from "../../assets/img/eaGame.png";
 import gameHero from "../../assets/img/gameHero.jpg";
 import gameSoft from "../../assets/img/gameSoft.jpg";
@@ -6,7 +7,6 @@ import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 import GameSlider from "./GameSlider";
-import { Helmet } from "react-helmet";
 
 const Gaming = () => {
   useScrollToTop();
@@ -32,7 +32,10 @@ const Gaming = () => {
           property="og:image"
           content="https://www.dotpotit.com/assets/logo-492dab11.png"
         />
-        <meta property="og:url" content="https://www.dotpotit.com/industries-we-serve/gaming" />
+        <meta
+          property="og:url"
+          content="https://www.dotpotit.com/industries-we-serve/gaming"
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Gaming | Dotpot iT" />
         <meta
@@ -66,8 +69,11 @@ const Gaming = () => {
           {/* main container */}
           <div className="container mt-8  min-h-screen  mx-auto">
             <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center ">
-              Gaming
+              Game Development
             </h1>
+            <p className="text-center">
+              Revolutionizing Gaming Experience: The Development of DotPot IT
+            </p>
             {/* slider */}
             <div className="md:flex gap-5  justify-center border-b pb-5">
               <div className=" w-full md:w-2/5 h-82 mx-auto m-10">

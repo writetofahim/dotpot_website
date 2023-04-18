@@ -47,7 +47,7 @@ const EmailMarketing = () => {
             Email Marketing
           </h1>
           <div className="text-gray-400 flex flex-col gap-5 p-5">
-            <p className="text-justify">
+            <p className="text-center">
               Dotpot IT CC's email routing module enables incoming emails to be
               efficiently distributed to the appropriate agents based on the CC
               admin's policies.

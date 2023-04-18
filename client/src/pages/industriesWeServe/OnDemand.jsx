@@ -1,10 +1,10 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { BsArrowRightCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import { Helmet } from "react-helmet";
 
 const OnDemand = () => {
   useScrollToTop();
@@ -25,7 +25,10 @@ const OnDemand = () => {
           property="og:image"
           content="https://www.dotpotit.com/assets/logo-492dab11.png"
         />
-        <meta property="og:url" content="https://www.dotpotit.com/industries-we-serve/on-demand-solution" />
+        <meta
+          property="og:url"
+          content="https://www.dotpotit.com/industries-we-serve/on-demand-solution"
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="On Demand Solutions | Dotpot iT" />
         <meta
@@ -42,7 +45,7 @@ const OnDemand = () => {
         <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
           On Demand Solutions
         </h1>
-        <p className="text-lg text-secondary-500 text-center mb-10">
+        <p className="text-lg text-center mb-10">
           Instant solutions at your fingertips with On Demand Solutions.
         </p>
         <div className="border-b container mx-auto">
@@ -237,9 +240,7 @@ const OnDemand = () => {
         </div>
       </div>
       {/* <OurPartnersSlider /> */}
-      <div className="">
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 };

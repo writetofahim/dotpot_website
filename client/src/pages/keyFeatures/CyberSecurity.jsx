@@ -8,12 +8,12 @@ import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 
+import { Helmet } from "react-helmet";
 import cyberSecurity from "../../assets/img/cyberSecurity.png";
 import keras from "../../assets/img/icon/ai/keras.png";
 import numPy from "../../assets/img/icon/ai/numPy.png";
 import pandas from "../../assets/img/icon/ai/pandas.jpg";
 import tensorFlow from "../../assets/img/icon/ai/tensorFlow.png";
-import { Helmet } from "react-helmet";
 
 const CyberSecurity = () => {
   const data = [
@@ -102,7 +102,10 @@ const CyberSecurity = () => {
           property="og:image"
           content="https://www.dotpotit.com/assets/logo-492dab11.png"
         />
-        <meta property="og:url" content="https://www.dotpotit.com/key-features/cyber-security" />
+        <meta
+          property="og:url"
+          content="https://www.dotpotit.com/key-features/cyber-security"
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Cyber Security | Dotpot iT" />
         <meta

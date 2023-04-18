@@ -66,7 +66,7 @@ const Ivr = () => {
           <div className="mb-5 container mx-auto">
             <img className="md:w-1/2 mx-auto mb-5" src={ivr} alt="IVR Image" />
           </div>
-          <div className="md:my-6 block md:flex gap-10 sm:my-5">
+          <div className="md:my-6 block md:flex gap-1 sm:my-5">
             <div className="bg-white rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
               <h2 className="text-lg font-bold mb-2">Easy Edit and Upload</h2>
               <p className="text-gray-700 text-justify">

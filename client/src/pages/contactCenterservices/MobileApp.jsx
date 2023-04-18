@@ -68,18 +68,18 @@ const MobileApp = () => {
           </p>
           <div className="px-5">
             <ul className="list-disc p-5 ">
-              <li>User authentication through TPIN</li>
-              <li>Multiple accounts balance enquiry</li>
-              <li>Auto Debit instruction</li>
-              <li>Lost/Replace card request</li>
-              <li>Fund transfer</li>
-              <li>E-Statement request</li>
-              <li>Cheque book request</li>
-              <li>Stop cheque</li>
-              <li>Direct dial to contact center</li>
-              <li>Branch/ATM locator</li>
-              <li>Utility bill payment</li>
-              <li>More customized features</li>
+              <li className="ml-2">User authentication through TPIN</li>
+              <li className="ml-2">Multiple accounts balance enquiry</li>
+              <li className="ml-2">Auto Debit instruction</li>
+              <li className="ml-2">Lost/Replace card request</li>
+              <li className="ml-2">Fund transfer</li>
+              <li className="ml-2">E-Statement request</li>
+              <li className="ml-2">Cheque book request</li>
+              <li className="ml-2">Stop cheque</li>
+              <li className="ml-2">Direct dial to contact center</li>
+              <li className="ml-2">Branch/ATM locator</li>
+              <li className="ml-2">Utility bill payment</li>
+              <li className="ml-2">More customized features</li>
             </ul>
           </div>
           <div className="text-gray-400 flex flex-col gap-5 p-5">
