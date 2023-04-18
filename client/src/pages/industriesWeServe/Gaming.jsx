@@ -6,6 +6,7 @@ import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 import GameSlider from "./GameSlider";
+import { Helmet } from "react-helmet";
 
 const Gaming = () => {
   useScrollToTop();
@@ -16,6 +17,33 @@ const Gaming = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Gaming | Dotpot iT</title>
+        <meta
+          name="description"
+          content="Revolutionizing Gaming Experience: The Development of DotPot IT"
+        />
+        <meta property="og:title" content="Gaming | Dotpot iT" />
+        <meta
+          property="og:description"
+          content="Revolutionizing Gaming Experience: The Development of DotPot IT"
+        />
+        <meta
+          property="og:image"
+          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+        <meta property="og:url" content="https://www.dotpotit.com/industries-we-serve/gaming" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Gaming | Dotpot iT" />
+        <meta
+          name="twitter:description"
+          content="Revolutionizing Gaming Experience: The Development of DotPot IT"
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+      </Helmet>
       <Navbar />
 
       {/* <div>

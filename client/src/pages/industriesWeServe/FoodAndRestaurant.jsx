@@ -4,11 +4,39 @@ import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import { Helmet } from "react-helmet";
 
 const FoodAndRestaurant = () => {
   useScrollToTop();
   return (
     <div className="">
+      <Helmet>
+        <title>Food & Restaurants | Dotpot iT</title>
+        <meta
+          name="description"
+          content="Satisfy your cravings with our innovative Food & Restaurant solutions, crafted with passion and precision"
+        />
+        <meta property="og:title" content="Food & Restaurants | Dotpot iT" />
+        <meta
+          property="og:description"
+          content="Satisfy your cravings with our innovative Food & Restaurant solutions, crafted with passion and precision"
+        />
+        <meta
+          property="og:image"
+          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+        <meta property="og:url" content="https://www.dotpotit.com/industries-we-serve/food-and-restaurant" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Food & Restaurants | Dotpot iT" />
+        <meta
+          name="twitter:description"
+          content="Satisfy your cravings with our innovative Food & Restaurant solutions, crafted with passion and precision"
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+      </Helmet>
       <Navbar />
       <div className="pt-[15vh] pb-10 container mx-auto">
         <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">

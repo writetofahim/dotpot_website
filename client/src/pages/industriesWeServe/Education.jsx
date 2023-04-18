@@ -4,11 +4,39 @@ import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import { Helmet } from "react-helmet";
 
 const education = () => {
   useScrollToTop();
   return (
     <div>
+      <Helmet>
+        <title>Education & E-Learning | Dotpot iT</title>
+        <meta
+          name="description"
+          content="Revolutionize Online Learning with Expert Web Solutions by Dotpot IT"
+        />
+        <meta property="og:title" content="Education & E-Learning | Dotpot iT" />
+        <meta
+          property="og:description"
+          content="Revolutionize Online Learning with Expert Web Solutions by Dotpot IT"
+        />
+        <meta
+          property="og:image"
+          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+        <meta property="og:url" content="https://www.dotpotit.com/industries-we-serve/education" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Education & E-Learning | Dotpot iT" />
+        <meta
+          name="twitter:description"
+          content="Revolutionize Online Learning with Expert Web Solutions by Dotpot IT"
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+      </Helmet>
       <Navbar />
       <div className="pt-[15vh] pb-10 container mx-auto">
         <div>

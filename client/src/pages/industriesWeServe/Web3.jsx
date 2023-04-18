@@ -7,12 +7,40 @@ import web3Cover from "../../assets/img/web3Cover.webp";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import { Helmet } from "react-helmet";
 
 const Web3 = () => {
   useScrollToTop();
   return (
     <div>
       <div className="">
+      <Helmet>
+        <title>Web3 Development | Dotpot iT</title>
+        <meta
+          name="description"
+          content="At DotpotIT, we offer innovative web3 solutions for businesses using blockchain and decentralized technologies"
+        />
+        <meta property="og:title" content="Web3 Development | Dotpot iT" />
+        <meta
+          property="og:description"
+          content="At DotpotIT, we offer innovative web3 solutions for businesses using blockchain and decentralized technologies"
+        />
+        <meta
+          property="og:image"
+          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+        <meta property="og:url" content="https://www.dotpotit.com/industries-we-serve/web3" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Web3 Development | Dotpot iT" />
+        <meta
+          name="twitter:description"
+          content="At DotpotIT, we offer innovative web3 solutions for businesses using blockchain and decentralized technologies"
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+      </Helmet>
         <Navbar />
         <div className="">
           <section className="pt-[15vh]    relative w-full overflow-hidden overflow-x-clip bg-slate-50 bg-gradient-to-t from-slate-50 to-slate-100 dark1:bg-[#0B1120] dark1:bg-none">

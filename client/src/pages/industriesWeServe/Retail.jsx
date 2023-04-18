@@ -4,11 +4,39 @@ import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import { Helmet } from "react-helmet";
 
 const Retail = () => {
   useScrollToTop();
   return (
     <div>
+      <Helmet>
+        <title>Retail, Ecommerce | Dotpot iT</title>
+        <meta
+          name="description"
+          content="Empowering Retail & E-Commerce through Dynamic Web Development Solutions"
+        />
+        <meta property="og:title" content="Retail, Ecommerce | Dotpot iT" />
+        <meta
+          property="og:description"
+          content="Empowering Retail & E-Commerce through Dynamic Web Development Solutions"
+        />
+        <meta
+          property="og:image"
+          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+        <meta property="og:url" content="https://www.dotpotit.com/industries-we-serve/retail-ecommerce" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Retail, Ecommerce | Dotpot iT" />
+        <meta
+          name="twitter:description"
+          content="Empowering Retail & E-Commerce through Dynamic Web Development Solutions"
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+      </Helmet>
       <Navbar />
       <div className="pt-[15vh] pb-10 container mx-auto">
         <div>

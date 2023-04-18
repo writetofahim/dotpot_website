@@ -5,11 +5,39 @@ import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 import OurPartnersSlider from '../../components/OurPartnersSlider/OurPartnersSlider'
+import { Helmet } from "react-helmet";
 
 const SocialNetworking = () => {
   useScrollToTop();
   return (
     <div className="px-3">
+      <Helmet>
+        <title>Social Networking | Dotpot iT</title>
+        <meta
+          name="description"
+          content="Connect with your audience like never before - with DotpotiT's social networking solutions"
+        />
+        <meta property="og:title" content="Social Networking | Dotpot iT" />
+        <meta
+          property="og:description"
+          content="Connect with your audience like never before - with DotpotiT's social networking solutions"
+        />
+        <meta
+          property="og:image"
+          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+        <meta property="og:url" content="https://www.dotpotit.com/industries-we-serve/social-networking" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Social Networking | Dotpot iT" />
+        <meta
+          name="twitter:description"
+          content="Connect with your audience like never before - with DotpotiT's social networking solutions"
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+      </Helmet>
       <Navbar />
       <div className="pt-[15vh] min-h-screen">
         <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">

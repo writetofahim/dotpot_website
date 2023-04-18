@@ -3,12 +3,40 @@ import manufacturingCover from "../../assets/img/manufacturing.webp";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import { Helmet } from "react-helmet";
 
 const Manufacturing = () => {
   useScrollToTop();
   return (
     <div>
       <div className="">
+      <Helmet>
+        <title>Manufacturing | Dotpot iT</title>
+        <meta
+          name="description"
+          content="DotpotIT offers custom software solutions for manufacturing to optimize processes, improve productivity, and reduce costs"
+        />
+        <meta property="og:title" content="Manufacturing | Dotpot iT" />
+        <meta
+          property="og:description"
+          content="DotpotIT offers custom software solutions for manufacturing to optimize processes, improve productivity, and reduce costs"
+        />
+        <meta
+          property="og:image"
+          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+        <meta property="og:url" content="https://www.dotpotit.com/industries-we-serve/manufacturing" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Manufacturing | Dotpot iT" />
+        <meta
+          name="twitter:description"
+          content="DotpotIT offers custom software solutions for manufacturing to optimize processes, improve productivity, and reduce costs"
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+      </Helmet>
         <Navbar />
         <div className="">
           <section className="pt-[15vh]    relative w-full overflow-hidden overflow-x-clip bg-slate-50 bg-gradient-to-t from-slate-50 to-slate-100 dark1:bg-[#0B1120] dark1:bg-none">

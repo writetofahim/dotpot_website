@@ -4,11 +4,39 @@ import Navbar from '../../components/Navbar/Navbar'
 import Footer from '../../components/Footer/Footer'
 import { Link } from "react-router-dom"
 import { BsArrowRightCircleFill } from "react-icons/bs"
+import { Helmet } from 'react-helmet'
 
 const Healthcare = () => {
   useScrollToTop()
   return (
     <div>
+      <Helmet>
+        <title>Healthcare & Fitness | Dotpot iT</title>
+        <meta
+          name="description"
+          content="Revolutionize Your Healthcare and Fitness Business with Dotpot IT's Web Development Services"
+        />
+        <meta property="og:title" content="Healthcare & Fitness | Dotpot iT" />
+        <meta
+          property="og:description"
+          content="Revolutionize Your Healthcare and Fitness Business with Dotpot IT's Web Development Services"
+        />
+        <meta
+          property="og:image"
+          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+        <meta property="og:url" content="https://www.dotpotit.com/industries-we-serve/healthcare" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Healthcare & Fitness | Dotpot iT" />
+        <meta
+          name="twitter:description"
+          content="Revolutionize Your Healthcare and Fitness Business with Dotpot IT's Web Development Services"
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+      </Helmet>
       <Navbar />
       <div className="pt-24 container mx-auto">
         <div>

@@ -3,12 +3,40 @@ import aiImg from "../../assets/img/heroAI.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import { Helmet } from "react-helmet";
 
 const Ai = () => {
   useScrollToTop();
   return (
     <div>
       <div className="">
+      <Helmet>
+        <title>AI Development | Dotpot iT</title>
+        <meta
+          name="description"
+          content="DotpotIT offers AI solutions to automate operations, analyze data, and drive business growth with chatbots, virtual assistants, and more"
+        />
+        <meta property="og:title" content="AI Development | Dotpot iT" />
+        <meta
+          property="og:description"
+          content="DotpotIT offers AI solutions to automate operations, analyze data, and drive business growth with chatbots, virtual assistants, and more"
+        />
+        <meta
+          property="og:image"
+          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+        <meta property="og:url" content="https://www.dotpotit.com/industries-we-serve/ai" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="AI Development | Dotpot iT" />
+        <meta
+          name="twitter:description"
+          content="DotpotIT offers AI solutions to automate operations, analyze data, and drive business growth with chatbots, virtual assistants, and more"
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+      </Helmet>
         <Navbar />
         <div className="">
           <section className="pt-[9vh]    relative w-full overflow-hidden overflow-x-clip bg-slate-50 bg-gradient-to-t from-slate-50 to-slate-100 dark1:bg-[#0B1120] dark1:bg-none">

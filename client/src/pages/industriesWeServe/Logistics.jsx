@@ -4,11 +4,39 @@ import Navbar from '../../components/Navbar/Navbar'
 import Footer from '../../components/Footer/Footer'
 import { Link } from "react-router-dom"
 import { BsArrowRightCircleFill } from "react-icons/bs"
+import { Helmet } from 'react-helmet'
 
 const Logistics = () => {
   useScrollToTop()
   return (
     <div>
+      <Helmet>
+        <title>Logistics & Distribution | Dotpot iT</title>
+        <meta
+          name="description"
+          content="Revolutionize Your Logistics & Distribution Business with Customized Web Solutions from Dotpot IT"
+        />
+        <meta property="og:title" content="Logistics & Distribution | Dotpot iT" />
+        <meta
+          property="og:description"
+          content="Revolutionize Your Logistics & Distribution Business with Customized Web Solutions from Dotpot IT"
+        />
+        <meta
+          property="og:image"
+          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+        <meta property="og:url" content="https://www.dotpotit.com/industries-we-serve/logistics" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Logistics & Distribution | Dotpot iT" />
+        <meta
+          name="twitter:description"
+          content="Revolutionize Your Logistics & Distribution Business with Customized Web Solutions from Dotpot IT"
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+      </Helmet>
       <Navbar />
       <div className="pt-24 container mx-auto">
         <div>
