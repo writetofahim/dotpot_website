@@ -1,5 +1,5 @@
 import React from "react";
-import manufacturingCover from "../../assets/img/manufacturing.webp";
+import manufacturingCover from "../../assets/img/manufacturing.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
