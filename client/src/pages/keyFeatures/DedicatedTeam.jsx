@@ -20,12 +20,12 @@ const DedicatedTeam = () => {
           <img className="md:w-1/2 mx-auto " src={coverImg} alt="" />
         </div>
         <div className="container  mx-auto flex flex-col mb-10 my-10">
-          <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">
+          <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block">
             Overview
           </h3>
           {/* Overview */}
           <div className="text-gray-400 flex flex-col gap-5 p-5">
-            <p>
+            <p className="text-justify">
               At our company, we have a dedicated team of professionals who are
               committed to empowering your business. Our team consists of
               experts with diverse backgrounds and skillsets, enabling us to
@@ -35,7 +35,7 @@ const DedicatedTeam = () => {
               take your business to the next level.
             </p>
 
-            <p>
+            <p className="text-justify">
               We believe that the success of your business is our success, which
               is why we prioritize collaboration and communication with our
               clients. By working closely with you, we gain a deep understanding
@@ -43,7 +43,7 @@ const DedicatedTeam = () => {
               specific needs. Our goal is to empower your business with the
               tools and technologies you need to thrive in a competitive market.
             </p>
-            <p>
+            <p className="text-justify">
               Our team is committed to delivering exceptional service and
               support, ensuring that you have everything you need to succeed.
               With our dedicated team by your side, you can trust that your

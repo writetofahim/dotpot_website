@@ -21,12 +21,12 @@ const ContactCenterSupport = () => {
           <img className="md:w-1/2 mx-auto " src={coverImg} alt="" />
         </div>
         <div className="container  mx-auto flex flex-col mb-10 my-10">
-          <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">
+          <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block">
             Overview
           </h3>
           {/* Overview */}
           <div className="text-gray-400 flex flex-col gap-5 p-5">
-            <p>
+            <p className="text-justify">
               Our company specializes in offering top-notch Contact Center
               Solutions designed to help businesses optimize their productivity.
               We understand that effective communication with customers is
@@ -34,7 +34,7 @@ const ContactCenterSupport = () => {
               range of solutions to help our clients achieve their goals.
             </p>
 
-            <p>
+            <p className="text-justify">
               Our team of experts works closely with clients to identify their
               unique needs and develop customized solutions that deliver
               measurable results. From advanced call routing and intelligent IVR
@@ -42,7 +42,7 @@ const ContactCenterSupport = () => {
               comprehensive suite of services that enable businesses to
               streamline their operations and enhance customer satisfaction.
             </p>
-            <p>
+            <p className="text-justify">
               With years of experience and a deep understanding of the latest
               technologies, we are well-equipped to help businesses of all sizes
               achieve their goals. Whether you're looking to enhance your

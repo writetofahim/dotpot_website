@@ -144,7 +144,7 @@ const WebsiteDevelopment = () => {
             </h3>
             {/* Overview */}
             <div className="text-gray-400 flex flex-col gap-5 p-5">
-              <p>
+              <p className="text-justify">
                 In today's world, a website is a crucial aspect of any business.
                 It serves as a platform to showcase products, skills, and
                 talents. At DotpotIt, we understand the importance of websites
@@ -153,7 +153,7 @@ const WebsiteDevelopment = () => {
                 tailored services to clients worldwide.
               </p>
 
-              <p>
+              <p className="text-justify">
                 Our team of talented developers possesses excellent skills and
                 expertise in the latest technology and trends. We have
                 collaborated with renowned companies to turn their ideas into
@@ -208,7 +208,9 @@ const WebsiteDevelopment = () => {
                 Process We Follow:
               </h2>
               <div className="text-gray-400 flex flex-col gap-5 p-5">
-                <p>How Our Experts Handle The Project Efficiently,</p>
+                <p className="text-justify">
+                  How Our Experts Handle The Project Efficiently,
+                </p>
               </div>
             </div>
             {/* 1) Planning */}
@@ -217,7 +219,7 @@ const WebsiteDevelopment = () => {
                 1) Planning
               </h2>
               <div className="text-gray-400 flex flex-col gap-5 p-5">
-                <p>
+                <p className="text-justify">
                   Gather all the information and plan the project, craft the
                   idea for the website and CMS development.
                 </p>
@@ -229,7 +231,7 @@ const WebsiteDevelopment = () => {
                 2) Web Designing
               </h2>
               <div className="text-gray-400 flex flex-col gap-5 p-5">
-                <p>
+                <p className="text-justify">
                   Our team of front-end designers will create a visually
                   appealing and responsive website using wireframes and UI/UX
                   design, ultimately resulting in a well-crafted prototype.
@@ -242,7 +244,7 @@ const WebsiteDevelopment = () => {
                 3) Define Content
               </h2>
               <div className="text-gray-400 flex flex-col gap-5 p-5">
-                <p>
+                <p className="text-justify">
                   Content is an essential aspect of a website, and we understand
                   its significance. Our team will provide informative and
                   engaging content for your website, ensuring that it is
@@ -256,7 +258,7 @@ const WebsiteDevelopment = () => {
                 4) Development
               </h2>
               <div className="text-gray-400 flex flex-col gap-5 p-5">
-                <p>
+                <p className="text-justify">
                   Once the website's objectives are established, the development
                   process begins, which is a critical pre-final stage of the
                   website creation.
@@ -269,7 +271,7 @@ const WebsiteDevelopment = () => {
                 5) Testing
               </h2>
               <div className="text-gray-400 flex flex-col gap-5 p-5">
-                <p>
+                <p className="text-justify">
                   Before launching the website, testing plays a crucial role in
                   identifying any bugs or errors that might affect the user
                   experience. It ensures that the website is functioning
@@ -283,7 +285,7 @@ const WebsiteDevelopment = () => {
                 6) Deployment
               </h2>
               <div className="text-gray-400 flex flex-col gap-5 p-5">
-                <p>
+                <p className="text-justify">
                   Once all the aspects of website development are complete,
                   including design, development, testing, and bug fixing, the
                   website is ready for launch. It is time to make the website
@@ -298,7 +300,7 @@ const WebsiteDevelopment = () => {
                 7) Post Deployment & Maintenance
               </h2>
               <div className="text-gray-400 flex flex-col gap-5 p-5">
-                <p>
+                <p className="text-justify">
                   Post-launch, we offer comprehensive support to ensure that the
                   website functions smoothly, and we address any concerns or
                   queries that may arise after deployment

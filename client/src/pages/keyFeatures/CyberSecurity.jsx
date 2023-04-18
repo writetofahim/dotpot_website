@@ -100,12 +100,12 @@ const CyberSecurity = () => {
           <img className="md:w-1/2 mx-auto " src={cyberSecurity} alt="" />
         </div>
         <div className="container  mx-auto flex flex-col mb-10 my-10">
-          <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">
+          <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block">
             Overview
           </h3>
           {/* Overview */}
           <div className="text-gray-400 flex flex-col gap-5 p-5">
-            <p>
+            <p className="text-justify">
               In today’s digital age, cybersecurity threats are becoming more
               frequent and sophisticated, making it crucial for businesses to
               ensure they are protected from cyber attacks. Cybersecurity is not
@@ -159,7 +159,7 @@ const CyberSecurity = () => {
               Threat Intelligence:
             </h2>
             <div className="text-gray-400 flex flex-col gap-5 p-5">
-              <p>
+              <p className="text-justify">
                 Our service offers real-time threat intelligence, which involves
                 monitoring and analyzing threats to your systems and networks.
                 This enables us to identify vulnerabilities and proactively
@@ -179,7 +179,7 @@ const CyberSecurity = () => {
                 1) Improvised Technologies
               </h2>
               <div className="text-gray-400 flex flex-col gap-5 p-5">
-                <p>
+                <p className="text-justify">
                   AI and Machine Learning are cutting-edge technologies that
                   have found their way into businesses worldwide. At our
                   company, we offer the latest and most advanced technologies to
@@ -195,7 +195,7 @@ const CyberSecurity = () => {
                 2) Dynamic Solution
               </h2>
               <div className="text-gray-400 flex flex-col gap-5 p-5">
-                <p>
+                <p className="text-justify">
                   DotpotiT provides top-notch Artificial Intelligence and
                   Machine Learning technology, backed by 10+ years of
                   experience. Our ML and AI data solutions offer a wide range of
@@ -209,7 +209,7 @@ const CyberSecurity = () => {
                 3) Enhance Productivity
               </h2>
               <div className="text-gray-400 flex flex-col gap-5 p-5">
-                <p>
+                <p className="text-justify">
                   Our AI and ML technology improves business productivity, and
                   our professionals develop effective strategies to meet client
                   needs.
