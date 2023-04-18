@@ -27,6 +27,7 @@ import joomla from "../../../assets/img/icon/cms/joomla.png";
 import shopify from "../../../assets/img/icon/cms/shopify.png";
 import wix from "../../../assets/img/icon/cms/wix.png";
 import wordpress from "../../../assets/img/icon/cms/wordpress.png";
+import { Helmet } from "react-helmet";
 
 const WebsiteDevelopment = () => {
   const data = [
@@ -125,6 +126,33 @@ const WebsiteDevelopment = () => {
   useScrollToTop();
   return (
     <>
+      <Helmet>
+        <title>Website Development | Dotpot iT</title>
+        <meta
+          name="description"
+          content="This roadmap outlines the emerging trends and effective strategies for web and CMS development"
+        />
+        <meta property="og:title" content="Website Development | Dotpot iT" />
+        <meta
+          property="og:description"
+          content="This roadmap outlines the emerging trends and effective strategies for web and CMS development"
+        />
+        <meta
+          property="og:image"
+          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+        <meta property="og:url" content="https://www.dotpotit.com/key-features/website-development" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Website Development | Dotpot iT" />
+        <meta
+          name="twitter:description"
+          content="This roadmap outlines the emerging trends and effective strategies for web and CMS development"
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+      </Helmet>
       <Navbar />
       <div className="px-3">
         <div className="pt-[15vh] pb-10 container mx-auto min-h-screen">

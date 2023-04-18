@@ -11,6 +11,7 @@ import keras from "../../assets/img/icon/ai/keras.png";
 import numPy from "../../assets/img/icon/ai/numPy.png";
 import pandas from "../../assets/img/icon/ai/pandas.jpg";
 import tensorFlow from "../../assets/img/icon/ai/tensorFlow.png";
+import { Helmet } from 'react-helmet';
 
 const AiDevelopment = () => {
   const data = [
@@ -62,6 +63,33 @@ const AiDevelopment = () => {
   useScrollToTop();
   return (
     <div className="">
+      <Helmet>
+        <title>AI Development | Dotpot iT</title>
+        <meta
+          name="description"
+          content="Our AI solutions transform businesses with automation and intelligence"
+        />
+        <meta property="og:title" content="AI Development | Dotpot iT" />
+        <meta
+          property="og:description"
+          content="Our AI solutions transform businesses with automation and intelligence"
+        />
+        <meta
+          property="og:image"
+          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+        <meta property="og:url" content="https://www.dotpotit.com/key-features/ai-development" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="AI Development | Dotpot iT" />
+        <meta
+          name="twitter:description"
+          content="Our AI solutions transform businesses with automation and intelligence"
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+      </Helmet>
       <Navbar />
       <div className="pt-[15vh] pb-10 container mx-auto min-h-screen">
         <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">

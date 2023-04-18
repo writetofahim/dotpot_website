@@ -3,11 +3,39 @@ import coverImg from "../../assets/img/IT-Support-.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import { Helmet } from "react-helmet";
 
 const ItSupport = () => {
   useScrollToTop();
   return (
     <div className="">
+      <Helmet>
+        <title>It Support | Dotpot iT</title>
+        <meta
+          name="description"
+          content="IT support for businesses, maximizing efficiency and ensuring smooth operations"
+        />
+        <meta property="og:title" content="It Support | Dotpot iT" />
+        <meta
+          property="og:description"
+          content="IT support for businesses, maximizing efficiency and ensuring smooth operations"
+        />
+        <meta
+          property="og:image"
+          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+        <meta property="og:url" content="https://www.dotpotit.com/key-features/it-support" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="It Support | Dotpot iT" />
+        <meta
+          name="twitter:description"
+          content="IT support for businesses, maximizing efficiency and ensuring smooth operations"
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+      </Helmet>
       <Navbar />
       <div className="pt-[15vh] container mx-auto mb-10 min-h-screen">
         <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">

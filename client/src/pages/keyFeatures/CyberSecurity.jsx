@@ -13,6 +13,7 @@ import keras from "../../assets/img/icon/ai/keras.png";
 import numPy from "../../assets/img/icon/ai/numPy.png";
 import pandas from "../../assets/img/icon/ai/pandas.jpg";
 import tensorFlow from "../../assets/img/icon/ai/tensorFlow.png";
+import { Helmet } from "react-helmet";
 
 const CyberSecurity = () => {
   const data = [
@@ -86,6 +87,33 @@ const CyberSecurity = () => {
   useScrollToTop();
   return (
     <div className="">
+      <Helmet>
+        <title>Cyber Security | Dotpot iT</title>
+        <meta
+          name="description"
+          content="Our Cyber Security provides the state of the earth security services for our customer's data"
+        />
+        <meta property="og:title" content="Cyber Security | Dotpot iT" />
+        <meta
+          property="og:description"
+          content="Our Cyber Security provides the state of the earth security services for our customer's data"
+        />
+        <meta
+          property="og:image"
+          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+        <meta property="og:url" content="https://www.dotpotit.com/key-features/cyber-security" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Cyber Security | Dotpot iT" />
+        <meta
+          name="twitter:description"
+          content="Our Cyber Security provides the state of the earth security services for our customer's data"
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+      </Helmet>
       {/* Navbar */}
       <Navbar />
       <div className="min-h-screen container mx-auto px-3 lg:px-5 pt-[15vh] pb-10">

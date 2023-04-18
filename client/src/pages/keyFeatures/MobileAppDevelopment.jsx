@@ -15,6 +15,7 @@ import swift from "../../assets/img/icon/moblieAPP_icons/ios/swift.png";
 
 import flutter from "../../assets/img/icon/moblieAPP_icons/hybrid/flutter.png";
 import react_native from "../../assets/img/icon/moblieAPP_icons/hybrid/react_native.webp";
+import { Helmet } from "react-helmet";
 
 const MobileAppDevelopment = () => {
   const data = [
@@ -65,13 +66,40 @@ const MobileAppDevelopment = () => {
   useScrollToTop();
   return (
     <div className="">
+      <Helmet>
+        <title>Mobile App Development | Dotpot iT</title>
+        <meta
+          name="description"
+          content="Get Top-notch, Extensively, Innovative Mobile App Solution By Us"
+        />
+        <meta property="og:title" content="Mobile App Development | Dotpot iT" />
+        <meta
+          property="og:description"
+          content="Get Top-notch, Extensively, Innovative Mobile App Solution By Us"
+        />
+        <meta
+          property="og:image"
+          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+        <meta property="og:url" content="https://www.dotpotit.com/key-features/mobile-app-development" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Mobile App Development | Dotpot iT" />
+        <meta
+          name="twitter:description"
+          content="Get Top-notch, Extensively, Innovative Mobile App Solution By Us"
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+      </Helmet>
       <Navbar />
       <div className="pt-[15vh] container mx-auto min-h-screen">
         <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
           Mobile App Development
         </h1>
         <p className="text-md text-gray-400 text-center mb-10">
-          Get Top-notch, Extensively, Innovative Mobile App Solution By Us.
+          Get Top-notch, Extensively, Innovative Mobile App Solution By Us
         </p>
         <div className="mb-5 container mx-auto">
           <img className="md:w-1/2 mx-auto " src={coverImg} alt="" />
