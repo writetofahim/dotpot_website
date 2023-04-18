@@ -356,7 +356,7 @@ const Navbar = () => {
             <Link to="/">
               <img src={logo} alt="" className="w-60" />
             </Link>
-            <p className="text-gray-500 hover:text-secondary-400 hidden lg:hidden lg:block italic">
+            <p className="text-gray-500 hover:text-secondary-400 hidden lg:block italic">
               We make your Business Successful
             </p>
           </div>
