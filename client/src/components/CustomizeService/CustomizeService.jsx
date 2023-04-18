@@ -471,50 +471,56 @@ const CustomizeService = () => {
             {/* Top Section */}
             <div className="">
               <p className="text-sm text-gray-300">Selected items: </p>
-              {order.map((item, index) => (
-                <div key={index} className="flex items-center gap-2 mt-1">
-                  <img src={item.icon} alt="" className="w-7 h-7" />
-                  <p className="">:</p>
-                  <div className="border-r-gray-500 flex flex-wrap items-center gap-2 cursor-pointer">
-                    {item.technologies.map((tech, index) => (
-                      <div
-                        key={index}
-                        className="flex text-sm text-gray-400 items-center gap-1 px-2 py-1 border rounded-full hover:scale-110  transition-all bg-secondary-100"
-                      >
-                        <img
-                          key={index}
-                          src={tech.icon}
-                          alt={tech.title}
-                          className="h-5 w-5"
-                        />
-                        <p>{tech.cost}$</p>
-                        <GrFormClose
-                          className="hover:text-secondary-400"
-                          onClick={() => removeTechnology(item._id, tech._id)}
-                        />
+              {order.map(
+                (item, index) =>
+                  (item?.technologies?.length > 0 ||
+                    item?.addons?.length > 0) && (
+                    <div key={index} className="flex items-center gap-2 mt-1">
+                      <img src={item.icon} alt="" className="w-7 h-7" />
+                      <p className="">:</p>
+                      <div className="border-r-gray-500 flex flex-wrap items-center gap-2 cursor-pointer">
+                        {item.technologies.map((tech, index) => (
+                          <div
+                            key={index}
+                            className="flex text-sm text-gray-400 items-center gap-1 px-2 py-1 border rounded-full hover:scale-110  transition-all bg-secondary-100"
+                          >
+                            <img
+                              key={index}
+                              src={tech.icon}
+                              alt={tech.title}
+                              className="h-5 w-5"
+                            />
+                            <p>{tech.cost}$</p>
+                            <GrFormClose
+                              className="hover:text-secondary-400"
+                              onClick={() =>
+                                removeTechnology(item._id, tech._id)
+                              }
+                            />
+                          </div>
+                        ))}
+                        {item.addons.map((addon, index) => (
+                          <div
+                            key={index}
+                            className="flex text-sm text-gray-400 items-center gap-1 px-2 py-1 border rounded-full hover:scale-110  transition-all bg-secondary-100"
+                          >
+                            <img
+                              key={index}
+                              src={addon.icon}
+                              alt={addon.title}
+                              className="h-5 w-5"
+                            />
+                            <p>{addon.cost}$</p>
+                            <GrFormClose
+                              className="hover:text-secondary-400"
+                              onClick={() => removeAddons(item._id, addon._id)}
+                            />
+                          </div>
+                        ))}
                       </div>
-                    ))}
-                    {item.addons.map((addon, index) => (
-                      <div
-                        key={index}
-                        className="flex text-sm text-gray-400 items-center gap-1 px-2 py-1 border rounded-full hover:scale-110  transition-all bg-secondary-100"
-                      >
-                        <img
-                          key={index}
-                          src={addon.icon}
-                          alt={addon.title}
-                          className="h-5 w-5"
-                        />
-                        <p>{addon.cost}$</p>
-                        <GrFormClose
-                          className="hover:text-secondary-400"
-                          onClick={() => removeAddons(item._id, addon._id)}
-                        />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
+                    </div>
+                  )
+              )}
             </div>
 
             <div className="absolute top-1 right-1 flex flex-col items-center text-gradient bg-gradient-to-r from-[#6e3aff] via-[#26f8ff] to-[#4366ff]">
