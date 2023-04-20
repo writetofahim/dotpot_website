@@ -393,7 +393,7 @@ const CustomizeService = () => {
           : null;
         orderMessage += "\n";
       });
-      orderMessage += "Total price is: $" + price;
+      orderMessage += "Total estimated price is: $" + price;
       console.log(orderMessage);
 
       const msgResponse = await axios.post(
@@ -495,7 +495,7 @@ const CustomizeService = () => {
           {/* Right container */}
           <div className="pt-10 p-3 md:p-5 border rounded-xl flex-[0.8] min-h-[40vh] pb-10 shadow-xl relative  customizeServiceRight ">
             {/* Top Section */}
-            <div className="mt-5">
+            <div className="mt-10">
               <p className=" text-gray-300 ">Selected items: </p>
               {order.map(
                 (item, index) =>

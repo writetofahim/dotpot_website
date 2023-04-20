@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 const NavigatorComponent = ({ navigationData }) => {
   console.log(navigationData);
   return (
-    <div className="w-full mx-auto p-5 flex items-center justify-center ">
-      <div className="container mx-auto flex text-xl">
+    <div className="container mx-auto pb-5 md:px-5 px-1 flex items-center ">
+      <div className="w-max flex text-xl backdrop-blur-lg">
         <Link
           to="/"
           className="ml-2 hover:text-secondary-400 md:text-base text-xs"

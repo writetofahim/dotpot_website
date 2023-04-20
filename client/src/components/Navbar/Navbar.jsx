@@ -519,8 +519,11 @@ const Navbar = () => {
                 className="z-10 fixed -top-0 -right-2 p-3 w-[70vw] h-screen shadow-2xl lg:hidden list-none
                     flex flex-col justify-start items-center rounded-lg backdrop-blur-md bg-[#ffffff79] text-gray-500 animate-slide-in"
               >
-                <li className="text-xl w-full my-2 flex justify-end">
-                  <AiOutlineClose onClick={() => setToggleMenu(false)} />
+                <li className="text-xl w-full my-7 flex justify-end relative">
+                  <AiOutlineClose
+                    className="absolute top-0 right-4"
+                    onClick={() => setToggleMenu(false)}
+                  />
                 </li>
                 <Link to="/">
                   <li
