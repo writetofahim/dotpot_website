@@ -51,8 +51,8 @@ const SocialNetworking = () => {
           Connect with your audience like never before - with DotpotiT's social
           networking solutions.
         </p>
-        <div className="border-b container mx-auto">
-          <img className="md:w-1/2 mx-auto " src={sn} alt="" />
+        <div className="container mx-auto">
+          <img className="md:w-1/2 mx-auto mb-10" src={sn} alt="" />
         </div>
         <div className="container  mx-auto flex flex-col mb-10 my-10">
           <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block ">

@@ -50,8 +50,8 @@ const RealEstate = () => {
           Expertise you can rely on - Real estate solutions tailored to your
           needs.
         </p>
-        <div className="border-b container mx-auto">
-          <img className="md:w-1/2 mx-auto " src={re} alt="" />
+        <div className="container mx-auto">
+          <img className="md:w-1/2 mx-auto mb-10 " src={re} alt="" />
         </div>
         <div className="container  mx-auto flex flex-col mb-10 my-10">
           <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">

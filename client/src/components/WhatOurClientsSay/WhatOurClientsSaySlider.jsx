@@ -96,7 +96,7 @@ export const SingleSlide = (props) => {
         </div>
 
         <div className="col-span-2 p-5 flex flex-col justify-between">
-          <p className="h-[190px] overflow-hidden">
+          <p className="h-[180px] overflow-hidden">
             {" "}
             <ImQuotesLeft className="text-primary-500  font-bold text-xl inline-block mr-2" />{" "}
             {props.review_text}{" "}

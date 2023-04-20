@@ -46,7 +46,7 @@ const OnSiteDevelopment = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="container mx-auto py-[5vh] pb-10">
+      <div className="container mx-auto pt-[15vh] pb-10">
         <div className="flex flex-col pt-6 lg:text-justify">
           <div className="w-full h-full flex justify-center items-center">
             <img
