@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import hdm from "../../assets/img/hdm.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
+import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 
 const HireDedicatedModel = () => {
@@ -44,6 +45,8 @@ const HireDedicatedModel = () => {
       </Helmet>
       <Navbar />
       <div className="container mx-auto pt-[10vh] pb-10">
+        <NavigatorComponent navigationData={navigationData} />
+
         <div className="flex flex-col pt-12 lg:text-justify">
           <div className="w-full h-full flex justify-center items-center">
             <img
@@ -134,3 +137,11 @@ const HireDedicatedModel = () => {
 };
 
 export default HireDedicatedModel;
+
+const navigationData = [
+  { title: "Services", link: "/services" },
+  {
+    title: "Hire Dedicated Partnership Model",
+    link: "/partnership_model/hire-dedicated-model",
+  },
+];

@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import onsite_dev from "../../assets/img/onsite_dev.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
+import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 
 const OnSiteDevelopment = () => {
@@ -47,6 +48,8 @@ const OnSiteDevelopment = () => {
       </Helmet>
       <Navbar />
       <div className="container mx-auto pt-[15vh] pb-10">
+        <NavigatorComponent navigationData={navigationData} />
+
         <div className="flex flex-col pt-6 lg:text-justify">
           <div className="w-full h-full flex justify-center items-center">
             <img
@@ -138,3 +141,11 @@ const OnSiteDevelopment = () => {
 };
 
 export default OnSiteDevelopment;
+
+const navigationData = [
+  { title: "Services", link: "/services" },
+  {
+    title: "On site development",
+    link: "/partnership_model/on-site-development-model",
+  },
+];

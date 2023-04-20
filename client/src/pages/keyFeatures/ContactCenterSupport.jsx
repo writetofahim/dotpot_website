@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import coverImg from "../../assets/img/contact-center-support.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
+import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 
 const ContactCenterSupport = () => {
@@ -47,6 +48,7 @@ const ContactCenterSupport = () => {
       </Helmet>
       <Navbar />
       <div className="pt-[15vh] pb-10 container mx-auto min-h-screen px-3">
+        <NavigatorComponent navigationData={navigationData} />
         <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
           Contact Center Support
         </h1>
@@ -98,3 +100,11 @@ const ContactCenterSupport = () => {
 };
 
 export default ContactCenterSupport;
+
+const navigationData = [
+  { title: "Services", link: "/services" },
+  {
+    title: "Contact Center Support",
+    link: "/key-features/contact-center-support",
+  },
+];

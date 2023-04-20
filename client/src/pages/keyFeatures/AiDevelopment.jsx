@@ -1,6 +1,4 @@
 import React from "react";
-import { BsArrowRightCircleFill } from "react-icons/bs";
-import { Link } from "react-router-dom";
 import coverImg from "../../assets/img/aiDev.jpeg";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
@@ -12,6 +10,7 @@ import keras from "../../assets/img/icon/ai/keras.png";
 import numPy from "../../assets/img/icon/ai/numPy.png";
 import pandas from "../../assets/img/icon/ai/pandas.jpg";
 import tensorFlow from "../../assets/img/icon/ai/tensorFlow.png";
+import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 
 const AiDevelopment = () => {
   const data = [
@@ -95,6 +94,7 @@ const AiDevelopment = () => {
       </Helmet>
       <Navbar />
       <div className="pt-[15vh] pb-10 container mx-auto min-h-screen px-3">
+        <NavigatorComponent navigationData={navigationData} />
         <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
           AI Development
         </h1>
@@ -304,3 +304,11 @@ const AiDevelopment = () => {
 };
 
 export default AiDevelopment;
+
+const navigationData = [
+  { title: "Services", link: "/services" },
+  {
+    title: "Ai Development",
+    link: "/key-features/ai-development",
+  },
+];

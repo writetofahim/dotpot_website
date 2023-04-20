@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import ma from "../../assets/img/ma.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
+import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 
 const MobileApp = () => {
@@ -42,6 +43,7 @@ const MobileApp = () => {
 
       <Navbar />
       <div className="px-3 min-h-screen pt-[15vh] pb-10">
+        <NavigatorComponent navigationData={navigationData} />
         <div className="container mx-auto">
           <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
             Mobile App Module
@@ -108,3 +110,8 @@ const MobileApp = () => {
 };
 
 export default MobileApp;
+
+const navigationData = [
+  { title: "Services", link: "/services" },
+  { title: "Mobile App Development", link: "/contact_center_services/cti" },
+];

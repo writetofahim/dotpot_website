@@ -2,7 +2,16 @@ import React from "react";
 import agency_bus from "../../assets/img/agency_Bus.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
+import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+
+const navigationData = [
+  { title: "Services", link: "/services" },
+  {
+    title: "Agencies Business",
+    link: "/who-we-works-with/agencies-business",
+  },
+];
 
 const AgenciesBusiness = () => {
   useScrollToTop();
@@ -10,6 +19,7 @@ const AgenciesBusiness = () => {
     <div>
       <Navbar />
       <div className="pt-[15vh] pb-10 container mx-auto">
+        <NavigatorComponent navigationData={navigationData} />
         <div>
           <h1 className="text-3xl md:text-5xl font-extrabold mb-2 text-primary-500 text-center">
             Agencies Business

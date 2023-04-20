@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import fixed_price from "../../assets/img/fixed_price.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
+import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 
 const FixedPrice = () => {
@@ -47,6 +48,8 @@ const FixedPrice = () => {
       </Helmet>
       <Navbar />
       <div className="container mx-auto pt-[15vh] pb-10">
+        <NavigatorComponent navigationData={navigationData} />
+
         <div className="flex flex-col pt-12 lg:text-justify">
           <div className="w-full h-full flex justify-center items-center">
             <img
@@ -132,3 +135,11 @@ const FixedPrice = () => {
 };
 
 export default FixedPrice;
+
+const navigationData = [
+  { title: "Services", link: "/services" },
+  {
+    title: "Fixed Price",
+    link: "/partnership_model/fixed-price-model",
+  },
+];

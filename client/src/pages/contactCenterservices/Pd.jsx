@@ -251,3 +251,11 @@ const Pd = () => {
 };
 
 export default Pd;
+
+const navigationData = [
+  { title: "Services", link: "/services" },
+  {
+    title: "Predictive Dialer",
+    link: "/contact_center_services/pd",
+  },
+];

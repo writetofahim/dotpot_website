@@ -1,6 +1,4 @@
 import React from "react";
-import { BsArrowRightCircleFill } from "react-icons/bs";
-import { Link } from "react-router-dom";
 import coverImg from "../../assets/img/websiteDesign.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
@@ -29,6 +27,7 @@ import joomla from "../../assets/img/icon/cms/joomla.png";
 import shopify from "../../assets/img/icon/cms/shopify.png";
 import wix from "../../assets/img/icon/cms/wix.png";
 import wordpress from "../../assets/img/icon/cms/wordpress.png";
+import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 
 const WebsiteDesign = () => {
   const data = [
@@ -158,6 +157,8 @@ const WebsiteDesign = () => {
       </Helmet>
       <Navbar />
       <div className="pt-[15vh] container mx-auto min-h-screen px-3">
+        <NavigatorComponent navigationData={navigationData} />
+
         <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
           Website Design
         </h1>
@@ -345,3 +346,11 @@ const WebsiteDesign = () => {
 };
 
 export default WebsiteDesign;
+
+const navigationData = [
+  { title: "Services", link: "/services" },
+  {
+    title: "Website Design",
+    link: "/key-features/website-design",
+  },
+];

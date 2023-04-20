@@ -2,8 +2,6 @@
  */
 
 import React from "react";
-import { BsArrowRightCircleFill } from "react-icons/bs";
-import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
@@ -14,6 +12,7 @@ import keras from "../../assets/img/icon/ai/keras.png";
 import numPy from "../../assets/img/icon/ai/numPy.png";
 import pandas from "../../assets/img/icon/ai/pandas.jpg";
 import tensorFlow from "../../assets/img/icon/ai/tensorFlow.png";
+import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 
 const CyberSecurity = () => {
   const data = [
@@ -120,6 +119,7 @@ const CyberSecurity = () => {
       {/* Navbar */}
       <Navbar />
       <div className="min-h-screen container mx-auto px-3 lg:px-5 pt-[15vh] pb-10">
+        <NavigatorComponent navigationData={navigationData} />
         <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
           Cyber Security
         </h1>
@@ -306,3 +306,11 @@ const CyberSecurity = () => {
 };
 
 export default CyberSecurity;
+
+const navigationData = [
+  { title: "Services", link: "/services" },
+  {
+    title: "Cyber Security",
+    link: "/key-features/cyber-security",
+  },
+];

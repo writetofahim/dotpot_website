@@ -1,7 +1,5 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import { BsArrowRightCircleFill } from "react-icons/bs";
-import { Link } from "react-router-dom";
 import coverImg from "../../assets/img/blockchainDev.jpg";
 import ethereum from "../../assets/img/icon/blockchain/crypto.png";
 import kotlin from "../../assets/img/icon/blockchain/kotlin.webp";
@@ -9,6 +7,7 @@ import solidity from "../../assets/img/icon/blockchain/solidity.png";
 import stellar from "../../assets/img/icon/blockchain/stellar.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
+import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import TechnologiesTab from "../../components/technologiesTab/TechnologiesTab";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 
@@ -85,6 +84,8 @@ const BlockchainDevelopment = () => {
       </Helmet>
       <Navbar />
       <div className="pt-[15vh] container mx-auto pb-10 min-h-screen p-3">
+        <NavigatorComponent navigationData={navigationData} />
+
         <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
           Blockchain Development
         </h1>
@@ -198,3 +199,11 @@ const BlockchainDevelopment = () => {
 };
 
 export default BlockchainDevelopment;
+
+const navigationData = [
+  { title: "Services", link: "/services" },
+  {
+    title: "Blockchain Development",
+    link: "/key-features/blockchain-development",
+  },
+];

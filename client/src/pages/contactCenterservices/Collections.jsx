@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import collections from "../../assets/img/collections.jpg";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
+import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 
 const Collections = () => {
@@ -41,6 +42,8 @@ const Collections = () => {
       </Helmet>
       <Navbar />
       <div className="px-3 min-h-screen pt-[15vh] pb-10">
+        <NavigatorComponent navigationData={navigationData} />
+
         <div className="container mx-auto">
           <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
             Collections
@@ -96,3 +99,11 @@ const Collections = () => {
 };
 
 export default Collections;
+
+const navigationData = [
+  { title: "Services", link: "/services" },
+  {
+    title: "Collections",
+    link: "/contact_center_services/collection",
+  },
+];

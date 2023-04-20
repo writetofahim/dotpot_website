@@ -21,7 +21,7 @@ function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
     <GrNext
-      className="md:block text-4xl md:text-5xl absolute right-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 hover:bg-primary-300 transition-all -translate-y-[50%]  p-2 rounded-full translate-x-[50%] "
+      className="md:block text-4xl md:text-5xl absolute right-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 hover:bg-primary-300 transition-all -translate-y-[50%]  p-2 rounded-full translate-x-[30%] "
       onClick={onClick}
     />
   );
@@ -31,7 +31,7 @@ function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
   return (
     <GrPrevious
-      className="md:block z-10 text-4xl md:text-5xl absolute left-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 hover:bg-primary-300 transition-all -translate-y-[50%]  p-2 rounded-full -translate-x-[50%] "
+      className="md:block z-10 text-4xl md:text-5xl absolute left-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 hover:bg-primary-300 transition-all -translate-y-[50%]  p-2 rounded-full -translate-x-[30%] "
       onClick={onClick}
     />
   );
@@ -110,7 +110,7 @@ function ContactCenterServicesSlide() {
 
   return (
     <div className="w-full my-2">
-      <Slider {...settings} className="py-2 px-5">
+      <Slider {...settings} className="py-2 lg:px-10 px-5">
         {data &&
           data.map((item, index) => <SingleSlide key={index} {...item} />)}
       </Slider>

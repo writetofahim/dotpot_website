@@ -1,6 +1,4 @@
 import React from "react";
-import { BsArrowRightCircleFill } from "react-icons/bs";
-import { Link } from "react-router-dom";
 import coverImg from "../../../assets/img/webDevelopment.jpg";
 import Footer from "../../../components/Footer/Footer";
 import Navbar from "../../../components/Navbar/Navbar";
@@ -22,12 +20,13 @@ import express from "../../../assets/img/icon/webBackend/expressJS.png";
 import laravel from "../../../assets/img/icon/webBackend/laravel.png";
 import nodeJS from "../../../assets/img/icon/webBackend/nodejs.png";
 
+import { Helmet } from "react-helmet";
 import drupal from "../../../assets/img/icon/cms/drupal.png";
 import joomla from "../../../assets/img/icon/cms/joomla.png";
 import shopify from "../../../assets/img/icon/cms/shopify.png";
 import wix from "../../../assets/img/icon/cms/wix.png";
 import wordpress from "../../../assets/img/icon/cms/wordpress.png";
-import { Helmet } from "react-helmet";
+import NavigatorComponent from "../../../components/NavigatorComponent/NavigatorComponent";
 
 const WebsiteDevelopment = () => {
   const data = [
@@ -141,7 +140,10 @@ const WebsiteDevelopment = () => {
           property="og:image"
           content="https://www.dotpotit.com/assets/logo-492dab11.png"
         />
-        <meta property="og:url" content="https://www.dotpotit.com/key-features/website-development" />
+        <meta
+          property="og:url"
+          content="https://www.dotpotit.com/key-features/website-development"
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Website Development | Dotpot iT" />
         <meta
@@ -156,6 +158,7 @@ const WebsiteDevelopment = () => {
       <Navbar />
       <div className="px-3">
         <div className="pt-[15vh] pb-10 container mx-auto min-h-screen">
+          <NavigatorComponent navigationData={navigationData} />
           <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
             Website Development
           </h1>
@@ -350,3 +353,11 @@ const WebsiteDevelopment = () => {
 };
 
 export default WebsiteDevelopment;
+
+const navigationData = [
+  { title: "Services", link: "/services" },
+  {
+    title: "Website Development",
+    link: "/key-features/website-development",
+  },
+];

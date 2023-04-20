@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import acd from "../../assets/img/acd.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
+import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 
 const Acd = () => {
@@ -41,6 +42,7 @@ const Acd = () => {
       </Helmet>
       <Navbar />
       <div className="px-3 min-h-screen pt-[15vh] pb-10">
+        <NavigatorComponent navigationData={navigationData} />
         <div className="container mx-auto">
           <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
             Automatic Call Distribution (ACD)
@@ -135,3 +137,11 @@ const Acd = () => {
 };
 
 export default Acd;
+
+const navigationData = [
+  { title: "Services", link: "/services" },
+  {
+    title: "ACD",
+    link: "/contact_center_services/acd",
+  },
+];

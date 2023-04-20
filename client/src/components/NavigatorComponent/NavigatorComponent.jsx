@@ -6,16 +6,19 @@ const NavigatorComponent = ({ navigationData }) => {
   return (
     <div className="w-full mx-auto p-5 flex items-center justify-center ">
       <div className="container mx-auto flex text-xl">
-        <Link to="/" className="ml-2 hover:text-secondary-400">
+        <Link
+          to="/"
+          className="ml-2 hover:text-secondary-400 md:text-base text-xs"
+        >
           Home
         </Link>
         {navigationData?.map((item, index) => (
-          <div className="cursor-pointer ml-1">
+          <div key={index} className="cursor-pointer ml-1 md:text-base text-xs">
             &gt;&gt;
             <Link
               to={item.link}
               key={index}
-              className="ml-2 hover:text-secondary-400"
+              className="ml-2 hover:text-secondary-400 "
             >
               {item.title}
             </Link>{" "}

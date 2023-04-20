@@ -16,6 +16,7 @@ import swift from "../../assets/img/icon/moblieAPP_icons/ios/swift.png";
 import { Helmet } from "react-helmet";
 import flutter from "../../assets/img/icon/moblieAPP_icons/hybrid/flutter.png";
 import react_native from "../../assets/img/icon/moblieAPP_icons/hybrid/react_native.webp";
+import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 
 const MobileAppDevelopment = () => {
   const data = [
@@ -104,6 +105,7 @@ const MobileAppDevelopment = () => {
       </Helmet>
       <Navbar />
       <div className="pt-[15vh] container mx-auto min-h-screen px-3">
+        <NavigatorComponent navigationData={navigationData} />
         <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
           Mobile App Development
         </h1>
@@ -394,3 +396,11 @@ const MobileAppDevelopment = () => {
 };
 
 export default MobileAppDevelopment;
+
+const navigationData = [
+  { title: "Services", link: "/services" },
+  {
+    title: "Mobile App Development",
+    link: "/key-features/mobile-app-development",
+  },
+];

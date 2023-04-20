@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import em from "../../assets/img/em.jpg";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
+import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 
 const EmailMarketing = () => {
@@ -42,6 +43,7 @@ const EmailMarketing = () => {
 
       <Navbar />
       <div className="px-3 min-h-screen pt-[15vh]">
+        <NavigatorComponent navigationData={navigationData} />
         <div className="container mx-auto">
           <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
             Email Marketing
@@ -95,3 +97,11 @@ const EmailMarketing = () => {
 };
 
 export default EmailMarketing;
+
+const navigationData = [
+  { title: "Services", link: "/services" },
+  {
+    title: "Email Marketing",
+    link: "/contact_center_services/email-marketing",
+  },
+];
