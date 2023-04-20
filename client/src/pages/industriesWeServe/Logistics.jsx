@@ -1,10 +1,9 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import { BsArrowRightCircleFill } from "react-icons/bs";
-import { Link } from "react-router-dom";
 import logistic from "../../assets/img/logistic.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
+import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 
 const Logistics = () => {
@@ -49,6 +48,7 @@ const Logistics = () => {
       </Helmet>
       <Navbar />
       <div className="pt-[15vh] container mx-auto">
+        <NavigatorComponent navigationData={navigationData} />
         <div>
           <h1 className="text-3xl md:text-5xl font-extrabold mb-2 text-primary-500 text-center">
             Logistics & Distribution
@@ -306,3 +306,10 @@ const Logistics = () => {
 };
 
 export default Logistics;
+const navigationData = [
+  { title: "Services", link: "/services" },
+  {
+    title: "Logistics",
+    link: "/industries-we-serve/logistics",
+  },
+];

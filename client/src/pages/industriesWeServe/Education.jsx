@@ -1,10 +1,9 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import { BsArrowRightCircleFill } from "react-icons/bs";
-import { Link } from "react-router-dom";
 import edu from "../../assets/img/edu.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
+import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 
 const education = () => {
@@ -49,6 +48,7 @@ const education = () => {
       </Helmet>
       <Navbar />
       <div className="pt-[15vh] pb-10 container mx-auto">
+        <NavigatorComponent navigationData={navigationData} />
         <div>
           <h1 className="text-3xl md:text-5xl font-extrabold mb-2 text-primary-500 text-center">
             Education & E-Learning
@@ -301,3 +301,10 @@ const education = () => {
 };
 
 export default education;
+const navigationData = [
+  { title: "Services", link: "/services" },
+  {
+    title: "Education",
+    link: "/industries-we-serve/education",
+  },
+];

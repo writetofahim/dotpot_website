@@ -1,46 +1,50 @@
 import React from "react";
-import customWeb from "../../assets/img/customWeb.png";
+import { Helmet } from "react-helmet";
 import blockchainSecurity from "../../assets/img/blockchainSecurity.jpg";
-import smart_Contracts from "../../assets/img/smart_Contracts.png";
+import customWeb from "../../assets/img/customWeb.png";
 import nft from "../../assets/img/nft.png";
+import smart_Contracts from "../../assets/img/smart_Contracts.png";
 import web3Cover from "../../assets/img/web3Cover.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
+import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import { Helmet } from "react-helmet";
 
 const Web3 = () => {
   useScrollToTop();
   return (
     <div>
       <div className="">
-      <Helmet>
-        <title>Web3 Development | Dotpot iT</title>
-        <meta
-          name="description"
-          content="At DotpotIT, we offer innovative web3 solutions for businesses using blockchain and decentralized technologies"
-        />
-        <meta property="og:title" content="Web3 Development | Dotpot iT" />
-        <meta
-          property="og:description"
-          content="At DotpotIT, we offer innovative web3 solutions for businesses using blockchain and decentralized technologies"
-        />
-        <meta
-          property="og:image"
-          content="https://www.dotpotit.com/assets/logo-492dab11.png"
-        />
-        <meta property="og:url" content="https://www.dotpotit.com/industries-we-serve/web3" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Web3 Development | Dotpot iT" />
-        <meta
-          name="twitter:description"
-          content="At DotpotIT, we offer innovative web3 solutions for businesses using blockchain and decentralized technologies"
-        />
-        <meta
-          name="twitter:image"
-          content="https://www.dotpotit.com/assets/logo-492dab11.png"
-        />
-      </Helmet>
+        <Helmet>
+          <title>Web3 Development | Dotpot iT</title>
+          <meta
+            name="description"
+            content="At DotpotIT, we offer innovative web3 solutions for businesses using blockchain and decentralized technologies"
+          />
+          <meta property="og:title" content="Web3 Development | Dotpot iT" />
+          <meta
+            property="og:description"
+            content="At DotpotIT, we offer innovative web3 solutions for businesses using blockchain and decentralized technologies"
+          />
+          <meta
+            property="og:image"
+            content="https://www.dotpotit.com/assets/logo-492dab11.png"
+          />
+          <meta
+            property="og:url"
+            content="https://www.dotpotit.com/industries-we-serve/web3"
+          />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="Web3 Development | Dotpot iT" />
+          <meta
+            name="twitter:description"
+            content="At DotpotIT, we offer innovative web3 solutions for businesses using blockchain and decentralized technologies"
+          />
+          <meta
+            name="twitter:image"
+            content="https://www.dotpotit.com/assets/logo-492dab11.png"
+          />
+        </Helmet>
         <Navbar />
         <div className="">
           <section className="pt-[15vh]    relative w-full overflow-hidden overflow-x-clip bg-slate-50 bg-gradient-to-t from-slate-50 to-slate-100 dark1:bg-[#0B1120] dark1:bg-none">
@@ -51,7 +55,7 @@ const Web3 = () => {
             <div className="absolute h-14 w-[600px] rotate-[-40deg] rounded-3xl bg-purple-400 opacity-30 blur-2xl filter dark1:hidden lg:bottom-20 lg:-left-28 lg:h-10 lg:w-[600px] lg:opacity-20 lg:blur-xl xl:-left-40 xl:h-2 xl:w-[800px] xl:opacity-100"></div>
             <div className="absolute hidden h-16 w-[600px] rotate-[-40deg] rounded-3xl bg-sky-400 opacity-10 blur-2xl filter dark1:hidden lg:top-24 lg:-right-28 lg:block lg:h-12 lg:w-[600px] lg:opacity-30 lg:blur-2xl xl:-right-40 xl:h-4 xl:w-[700px] xl:opacity-100"></div>
             <div className="absolute hidden h-14 w-[600px] rotate-[-40deg] rounded-3xl bg-purple-400 opacity-30 blur-2xl filter dark1:hidden lg:top-20 lg:-right-28 lg:block lg:h-10 lg:w-[600px] lg:opacity-20 lg:blur-xl xl:-right-40 xl:h-2 xl:w-[800px] xl:opacity-100"></div>
-
+            <NavigatorComponent navigationData={navigationData} />
             <div className="container mx-auto">
               <div className="my-5">
                 <img
@@ -162,3 +166,10 @@ const Web3 = () => {
 };
 
 export default Web3;
+const navigationData = [
+  { title: "Services", link: "/services" },
+  {
+    title: "Web 3",
+    link: "/industries-we-serve/web3",
+  },
+];

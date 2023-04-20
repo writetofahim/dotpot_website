@@ -1,10 +1,9 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import { BsArrowRightCircleFill } from "react-icons/bs";
-import { Link } from "react-router-dom";
 import travel from "../../assets/img/travel.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
+import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 
 const Travel = () => {
@@ -43,6 +42,7 @@ const Travel = () => {
       </Helmet>
       <Navbar />
       <div className="pt-[15vh] pb-10 container mx-auto">
+        <NavigatorComponent navigationData={navigationData} />
         <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
           Travel & Hospitality
         </h1>
@@ -245,3 +245,10 @@ const Travel = () => {
 };
 
 export default Travel;
+const navigationData = [
+  { title: "Services", link: "/services" },
+  {
+    title: "Travel",
+    link: "/industries-we-serve/travel",
+  },
+];
