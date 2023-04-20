@@ -99,6 +99,7 @@ export const AuthContextProvider = ({ children }) => {
       localStorage.setItem("user", JSON.stringify(data.user));
       // Set the user object as the current user
       setUser(data.user);
+      return data;
     } catch (error) {
       console.log(error);
       postLogger({ level: "error", message: error });

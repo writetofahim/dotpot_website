@@ -1169,7 +1169,7 @@ const welcomeEmailTemplate = () => {
                                           <tr>
                                             <td style="padding: 0 2px 0 2px">
                                               <a
-                                                href="https://www.facebook.com/Dot3on3/"
+                                                href="https://www.facebook.com/dotpotit"
                                                 target="_blank"
                                                 ><img
                                                   alt="Facebook"
@@ -2874,7 +2874,7 @@ const passwordResetTemplate = (name, link) => {
                                         <tr>
                                           <td style="padding: 0 2px 0 2px">
                                             <a
-                                              href="https://www.facebook.com/Dot3on3/"
+                                              href="https://www.facebook.com/dotpotit"
                                               target="_blank"
                                               ><img
                                                 alt="Facebook"
