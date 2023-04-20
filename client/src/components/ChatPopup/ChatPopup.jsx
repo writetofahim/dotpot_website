@@ -23,7 +23,8 @@ console.log("socket", socket);
 // ];
 
 const ChatPopup = () => {
-  const { isChatPopupOpen, setIsChatPopupOpen } = React.useContext(AuthContext);
+  const { isChatPopupOpen, setIsChatPopupOpen, randomValue } =
+    React.useContext(AuthContext);
 
   // const [isChatPopupOpen, setIsChatPopupOpen] = useState(false);
   const [messages, setMessages] = useState([]);
@@ -78,10 +79,9 @@ const ChatPopup = () => {
         console.log(err);
       }
     };
-    if (conversationId && setIsChatPopupOpen) {
-      loadMessages();
-    }
-  }, [setIsChatPopupOpen]);
+    loadMessages();
+    console.log("Load messages");
+  }, [setIsChatPopupOpen, randomValue]);
 
   const handleOpen = async () => {
     const conversationId = localStorage.getItem("conversation_id");

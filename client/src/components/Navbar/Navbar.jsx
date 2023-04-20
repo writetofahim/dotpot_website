@@ -173,7 +173,7 @@ const Navbar = () => {
       icon: "https://cdn-icons-png.flaticon.com/512/1693/1693746.png",
       submenu: [
         {
-          to: "/key-features/ai-development",
+          to: "/industries-we-serve/ai",
           title: "Object Recognition",
           icon: "https://cdn-icons-png.flaticon.com/512/8654/8654854.png",
         },
@@ -183,7 +183,7 @@ const Navbar = () => {
           icon: "https://cdn-icons-png.flaticon.com/512/6805/6805674.png",
         },
         {
-          to: "/key-features/ai-development",
+          to: "/industries-we-serve/ai",
           title: "Business Intelligence",
           icon: "https://cdn-icons-png.flaticon.com/512/7458/7458531.png",
         },
@@ -193,7 +193,7 @@ const Navbar = () => {
           icon: "https://cdn-icons-png.flaticon.com/512/9299/9299890.png",
         },
         {
-          to: "/key-features/ai-development",
+          to: "/industries-we-serve/ai",
           title: "Natural Language Processing",
           icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",
         },

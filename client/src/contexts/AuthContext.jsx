@@ -10,6 +10,7 @@ export const AuthContextProvider = ({ children }) => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [isChatPopupOpen, setIsChatPopupOpen] = useState(false);
+  const [randomValue, setRandomValue] = useState(null);
 
   // sign in with google
   const googleLogin = useGoogleLogin({
@@ -126,6 +127,8 @@ export const AuthContextProvider = ({ children }) => {
     googleLogin,
     isChatPopupOpen,
     setIsChatPopupOpen,
+    randomValue,
+    setRandomValue,
   };
 
   // Return the AuthContext.Provider with the user object, login, registration, and logout functions as its value

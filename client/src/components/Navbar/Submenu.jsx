@@ -11,10 +11,10 @@ const Submenu = ({
   return (
     <>
       <div
-        onClick={() => setSelectedSubmenu(service._id)}
+        onMouseEnter={() => setSelectedSubmenu(service._id)}
         className={`w-full ${
           selectedSubmenu === service._id && "text-secondary-400"
-        } hover:text-secondary-400 font-[600] flex items-center gap-2`}
+        } hover:text-secondary-400 font-[600] flex items-center gap-2 `}
       >
         {service.title} <IoIosArrowForward />
       </div>

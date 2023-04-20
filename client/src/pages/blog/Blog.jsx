@@ -28,6 +28,7 @@ import postLogger from "../../utils/postLogger";
 import { renderToString } from "react-dom/server";
 import { Helmet } from "react-helmet";
 import stripTags from "striptags";
+import dotpotiTLogo from "../../assets/img/icon.png";
 
 const BlogCard = (props) => {
   const id = props._id;
@@ -334,12 +335,12 @@ const FirstBlog = ({ title, body, image, _id, tags, createdAt, index }) => {
         <div className="absolute bottom-0 right-0 w-[250px] h-[250px] rounded-md bg-gradient-to-r from-[#f8a541] to-[#f8ae3f] "></div>
       </div>
       <div className="md:w-[55%] w-full p-4">
-        <h1
+        <h3
           onClick={() => navigate(`/blog/${_id}`)}
           className="text-xl font-bold hover:underline cursor-pointer"
         >
           {title}
-        </h1>
+        </h3>
         <p className="my-3 text-slate-500">
           {moment(new Date(createdAt)).format("MMM Do YY")}
         </p>
@@ -424,18 +425,18 @@ const BlogCard3 = ({ title, body, image, _id, tags, createdAt, index }) => {
         </div>
       </div>
       <div className="md:w-[55%] w-full p-4">
-        <h1
+        <h3
           onClick={() => navigate(`/blog/${_id}`)}
           className="text-lg font-bold hover:underline cursor-pointer"
         >
           {title}
-        </h1>
+        </h3>
         <p className="my-3 text-slate-500">
           {moment(new Date(createdAt)).format("MMM Do YY")}
         </p>
         <p className="my-3 text-slate-500">{slicedString}...</p>
         <div className="flex items-center gap-2">
-          <img className="w-4 " src="./src/assets/img/icon.png" alt="" />
+          <img className="w-4 " src={dotpotiTLogo} alt="" />
           <p className="font-bold">Dotpot iT</p>
         </div>
       </div>

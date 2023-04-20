@@ -306,7 +306,7 @@ const AddonsCard = (props) => {
 // End of Addons Card
 
 const CustomizeService = () => {
-  const { user, setIsChatPopupOpen } = useContext(AuthContext);
+  const { user, setIsChatPopupOpen, setRandomValue } = useContext(AuthContext);
   const [openService, setOpenService] = useState(null);
   const [selectedServices, setSelectedServices] = useState({});
   const [order, setOrder] = useState([]);
@@ -392,7 +392,7 @@ const CustomizeService = () => {
           : null;
         orderMessage += "\n";
       });
-      orderMessage += "Total price is: " + price;
+      orderMessage += "Total price is: $" + price;
       console.log(orderMessage);
 
       const msgResponse = await axios.post(
@@ -403,6 +403,7 @@ const CustomizeService = () => {
         }
       );
       setIsChatPopupOpen(true);
+      setRandomValue(Math.random());
       setIsSubmitting(false);
       setIsSuccess(true);
       setOrder([]);
