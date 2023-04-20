@@ -18,6 +18,7 @@ import SocialMedia from "../../components/SocialMedia/SocialMedia";
 import WhoWeWorkWith from "../../components/WhoWeWorkWith/WhoWeWorkWith";
 
 import Particle from "../../components/Hero/Particle";
+import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 
 const AboutUs = () => {
@@ -27,54 +28,57 @@ const AboutUs = () => {
     "https://www.hyperlinkinfosystem.com/assets/uploads/banner/1634022694.png";
   const button = { title: "Contact Us", link: "/contact" };
   return (
-    <div className="w-full">
-      <Helmet>
-        <title>About Us | Dotpot iT</title>
-        <meta
-          name="description"
-          content="Learn about Dotpot iT, a leading IT company providing innovative solutions for businesses."
-        />
-        <meta property="og:title" content="About Us | Dotpot iT" />
-        <meta
-          property="og:description"
-          content="Learn about Dotpot iT, a leading IT company providing innovative solutions for businesses."
-        />
-        <meta
-          property="og:image"
-          content="https://i.ibb.co/CncFVCL/dotpot.gif"
-        />
-        <meta property="og:url" content="https://dotpotit.com/about" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="About Us | Dotpot iT" />
-        <meta
-          name="twitter:description"
-          content="Learn about Dotpot iT, a leading IT company providing innovative solutions for businesses."
-        />
-        <meta
-          name="twitter:image"
-          content="https://i.ibb.co/CncFVCL/dotpot.gif"
-        />
-      </Helmet>
-
-      <Particle />
+    <>
       <Navbar />
+      <div className="w-full pt-[95px]">
+        <Helmet>
+          <title>About Us | Dotpot iT</title>
+          <meta
+            name="description"
+            content="Learn about Dotpot iT, a leading IT company providing innovative solutions for businesses."
+          />
+          <meta property="og:title" content="About Us | Dotpot iT" />
+          <meta
+            property="og:description"
+            content="Learn about Dotpot iT, a leading IT company providing innovative solutions for businesses."
+          />
+          <meta
+            property="og:image"
+            content="https://i.ibb.co/CncFVCL/dotpot.gif"
+          />
+          <meta property="og:url" content="https://dotpotit.com/about" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="About Us | Dotpot iT" />
+          <meta
+            name="twitter:description"
+            content="Learn about Dotpot iT, a leading IT company providing innovative solutions for businesses."
+          />
+          <meta
+            name="twitter:image"
+            content="https://i.ibb.co/CncFVCL/dotpot.gif"
+          />
+        </Helmet>
 
-      <AboutSection />
+        <Particle />
 
-      {/* <AboutHero heading="About Dotpot iT" text="A fast growing IT complay" heroImg={heroImg} button={button} /> */}
-      {/* <OurPartnersSlider /> */}
+        <NavigatorComponent navigationData={navigationData} />
+        <AboutSection />
 
-      <ContactInfo />
+        {/* <AboutHero heading="About Dotpot iT" text="A fast growing IT complay" heroImg={heroImg} button={button} /> */}
+        {/* <OurPartnersSlider /> */}
 
-      <ProcessWeFollow />
-      <PartnershipModels />
-      <WhoWeWorkWith />
-      <RecentWorks />
-      <SocialMedia />
-      {/* <GoogleMap /> */}
-      {/* <ChatPopup /> */}
-      <Footer />
-    </div>
+        <ContactInfo />
+
+        <ProcessWeFollow />
+        <PartnershipModels />
+        <WhoWeWorkWith />
+        <RecentWorks />
+        <SocialMedia />
+        {/* <GoogleMap /> */}
+        {/* <ChatPopup /> */}
+        <Footer />
+      </div>
+    </>
   );
 };
 
@@ -82,7 +86,7 @@ export default AboutUs;
 
 const AboutSection = () => {
   return (
-    <div className="pt-[15vh] w-full flex items-center justify-center p-2 bg-primary-100 rounded-all py-10">
+    <div className="w-full flex items-center justify-center p-2 bg-primary-100 rounded-all py-10">
       <div className="container p-3 md:p-5 flex flex-col items-center gap-5">
         <Typed
           className="text-center text-3xl md:text-5xl font-bold"
@@ -105,3 +109,5 @@ const AboutSection = () => {
     </div>
   );
 };
+
+const navigationData = [{ title: "About Us", link: "/about" }];

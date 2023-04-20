@@ -10,6 +10,7 @@ import CustomizeService from "../../components/CustomizeService/CustomizeService
 import Footer from "../../components/Footer/Footer";
 import Particle from "../../components/Hero/Particle";
 import Navbar from "../../components/Navbar/Navbar";
+import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import PartnershipModels from "../../components/PartnershipModels/PartnershipModels";
 import RecentBlogs from "../../components/RecentBlogs/RecentBlogs";
 import RecentWorks from "../../components/RecentWorks/RecentWorks";
@@ -50,6 +51,7 @@ const Services = () => {
       <Navbar />
       <Particle />
       <div className="w-full pt-[15vh]">
+        <NavigatorComponent navigationData={navigationData} />
         <CustomizeService />
         {/* <Service /> */}
         <ContactCenterServices />
@@ -66,3 +68,5 @@ const Services = () => {
 };
 
 export default Services;
+
+const navigationData = [{ title: "Services", link: "/services" }];
