@@ -1,7 +1,5 @@
 import React from "react";
-import { BsArrowRightCircleFill } from "react-icons/bs";
-import { Link } from "react-router-dom";
-import agency_bus from "../../assets/img/agency_bus.png";
+import agency_bus from "../../assets/img/agency_Bus.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";

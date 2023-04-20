@@ -495,8 +495,8 @@ const CustomizeService = () => {
           {/* Right container */}
           <div className="pt-10 p-3 md:p-5 border rounded-xl flex-[0.8] min-h-[40vh] pb-10 shadow-xl relative  customizeServiceRight ">
             {/* Top Section */}
-            <div className="">
-              <p className="text-sm text-gray-300">Selected items: </p>
+            <div className="mt-5">
+              <p className=" text-gray-300 ">Selected items: </p>
               {order.map(
                 (item, index) =>
                   (item?.technologies?.length > 0 ||
@@ -558,7 +558,7 @@ const CustomizeService = () => {
             {/* Show technology section */}
             {openService !== null && (
               <div className="w-full">
-                <p className="text-gray-300">Technologies:</p>
+                <p className="text-gray-300 mt-3">Technologies:</p>
                 <div className="w-full p-2 my-2 flex gap-3 flex-wrap">
                   {openService.technologies.map((item, index) => (
                     <TechnologyCard

@@ -44,8 +44,8 @@ const Information = () => {
             {data && data.slogan}
           </p>
           <p className="text-justify text-md md:text-lg text-gray-300">
-            {isOpen ? data?.about : data?.about.slice(0, 200)}
-            {!isOpen && "..."}
+            {isOpen ? data?.about : data?.about.slice(0, 211)}
+            {!isOpen && ""}
           </p>
           {!isOpen ? (
             <button

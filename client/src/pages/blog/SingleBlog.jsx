@@ -45,7 +45,7 @@ const SingleBlog = () => {
   return (
     <>
       <Helmet>
-        <title>{data?.title} || Dotpot iT - Blog</title>
+        <title>{data ? data.title : "Dotpot iT - Blog"}</title>
         <meta
           name="description"
           content="Read the latest articles and news from Dotpot iT's blog."
