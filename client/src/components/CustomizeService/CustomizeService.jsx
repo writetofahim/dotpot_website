@@ -306,10 +306,11 @@ const AddonsCard = (props) => {
 // End of Addons Card
 
 const CustomizeService = () => {
-  const { user, setIsChatPopupOpen, setRandomValue } = useContext(AuthContext);
+  const { user, setIsChatPopupOpen, setRandomValue, order, setOrder } =
+    useContext(AuthContext);
   const [openService, setOpenService] = useState(null);
   const [selectedServices, setSelectedServices] = useState({});
-  const [order, setOrder] = useState([]);
+  // const [order, setOrder] = useState([]);
   const [price, setPrice] = useState(0);
   const [customizeYourService, setCustomizeYourService] = useState([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
