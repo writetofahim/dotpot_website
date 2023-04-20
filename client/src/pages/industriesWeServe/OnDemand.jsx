@@ -105,8 +105,8 @@ const OnDemand = () => {
           </div>
 
           {/*card for redirect to service quote */}
-          <div className="border-b h-52 w-full md:w-4/5 mx-auto my-5 rounded-xl border flex justify-center items-center shadow-md overflow-hidden relative">
-            {/* blobs */}
+          {/* <div className="border-b h-52 w-full md:w-4/5 mx-auto my-5 rounded-xl border flex justify-center items-center shadow-md overflow-hidden relative">
+            
             <div className="flex justify-center items-center">
               <div className="w-96 absolute">
                 <div class="absolute top-0 -left-4 w-52 h-52 bg-indigo-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
@@ -134,7 +134,7 @@ const OnDemand = () => {
                 </Link>
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* paragraph */}
           <div className="my-3">

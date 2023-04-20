@@ -108,7 +108,7 @@ const BlogDevelopment = () => {
           <p className="text-gray-400 lg:px-5 text-justify pb-2">Ready to take your blog site to the next level? Contact us today to learn more about our blog site development services and how we can help you achieve your goals.</p>
         </div>
         
-        <div className=" border-b h-52 w-full md:w-4/5 mx-auto my-5  rounded-xl border flex justify-center items-center shadow-md overflow-hidden relative">
+        {/* <div className=" border-b h-52 w-full md:w-4/5 mx-auto my-5  rounded-xl border flex justify-center items-center shadow-md overflow-hidden relative">
           <div className=" flex justify-center items-center">
             <div className="w-96 absolute">
               <div className="absolute top-0 -left-4 w-52 h-52  bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
@@ -135,7 +135,7 @@ const BlogDevelopment = () => {
               </Link>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
     <Footer />
