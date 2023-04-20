@@ -16,6 +16,7 @@ import parse from "react-html-parser";
 import { useParams } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
+import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import RecentBlogs from "../../components/RecentBlogs/RecentBlogs";
 import axios from "../../utils/axiosInstance";
 import postLogger from "../../utils/postLogger";
@@ -76,6 +77,7 @@ const SingleBlog = () => {
 
       <Navbar />
       <div className="w-full md:p-[15vh] pt-[15vh]">
+        <NavigatorComponent navigationData={navigationData} />
         {data && (
           <div className="full flex items-center justify-center">
             <div className="container flex flex-col items-center p-3 md:p-10 text-justify">
@@ -111,3 +113,5 @@ const SingleBlog = () => {
 };
 
 export default SingleBlog;
+
+const navigationData = [{ title: "Blogs", link: "/blog" }];

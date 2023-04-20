@@ -29,6 +29,7 @@ import { renderToString } from "react-dom/server";
 import { Helmet } from "react-helmet";
 import stripTags from "striptags";
 import dotpotiTLogo from "../../assets/img/icon.png";
+import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 
 const BlogCard = (props) => {
   const id = props._id;
@@ -240,6 +241,7 @@ const Blog = () => {
       <Navbar />
       {/* <Particle /> */}
       <div className="w-full pt-[15vh]">
+        <NavigatorComponent navigationData={navigationData} />
         <div className="w-full flex flex-col items-center justify-center">
           <h1 className="text-6xl mt-10 mb-2 font-bold ">Blogs</h1>
           <p className="text-lg mb-10 px-4">
@@ -443,3 +445,5 @@ const BlogCard3 = ({ title, body, image, _id, tags, createdAt, index }) => {
     </div>
   );
 };
+
+const navigationData = [{ title: "Blogs", link: "/blog" }];

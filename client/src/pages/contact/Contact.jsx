@@ -18,6 +18,7 @@ import WhoWeWorkWith from "../../components/WhoWeWorkWith/WhoWeWorkWith";
 
 import { Helmet } from "react-helmet";
 import Particle from "../../components/Hero/Particle";
+import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 
 const Contact = () => {
@@ -55,6 +56,7 @@ const Contact = () => {
       <Navbar />
       <Particle />
       <div className="w-full pt-[15vh] overflow-hidden">
+        <NavigatorComponent navigationData={navigationData} />
         <ContactInfo />
         <OurPartnersSlider />
         {/* Contact Form Section */}
@@ -84,3 +86,5 @@ const Contact = () => {
 };
 
 export default Contact;
+
+const navigationData = [{ title: "Contact", link: "/contact" }];
