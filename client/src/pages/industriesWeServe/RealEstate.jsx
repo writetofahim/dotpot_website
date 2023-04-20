@@ -1,10 +1,11 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { BsArrowRightCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import re from "../../assets/img/re.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import { Helmet } from "react-helmet";
 
 const RealEstate = () => {
   useScrollToTop();
@@ -25,7 +26,10 @@ const RealEstate = () => {
           property="og:image"
           content="https://www.dotpotit.com/assets/logo-492dab11.png"
         />
-        <meta property="og:url" content="https://www.dotpotit.com/industries-we-serve/real-estate" />
+        <meta
+          property="og:url"
+          content="https://www.dotpotit.com/industries-we-serve/real-estate"
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Real Estate | Dotpot iT" />
         <meta
@@ -47,11 +51,7 @@ const RealEstate = () => {
           needs.
         </p>
         <div className="border-b container mx-auto">
-          <img
-            className="md:w-1/2 mx-auto "
-            src="https://cdn.pixabay.com/photo/2019/09/09/08/23/internet-4463031_960_720.jpg"
-            alt=""
-          />
+          <img className="md:w-1/2 mx-auto " src={re} alt="" />
         </div>
         <div className="container  mx-auto flex flex-col mb-10 my-10">
           <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">

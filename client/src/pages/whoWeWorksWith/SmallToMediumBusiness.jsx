@@ -1,6 +1,7 @@
 import React from "react";
 import { BsArrowRightCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import stmb from "../../assets/img/stmb.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
@@ -21,10 +22,7 @@ const SmallToMediumBusiness = () => {
           </p>
         </div>
         <div className="w-full h-full flex justify-center items-center">
-          <img
-            src="https://beyond-consult.com/wp-content/uploads/2020/09/sme_1.jpg"
-            alt="image"
-          />
+          <img src={stmb} alt="image" />
         </div>
         <div className="my-12 lg:mx-24 mx-6">
           <h2 className="lg:text-2xl text-xl font-bold mb-4">Overview</h2>
@@ -148,7 +146,7 @@ const SmallToMediumBusiness = () => {
                 <strong className="font-semibold">IT consulting:</strong>Dotpot
                 IT can provide small and medium businesses with expert advice
                 and guidance on technology strategy, software selection, and
-                system architecture to ensure that their technology investments
+                system architecture to ensure that their technology invebents
                 align with their business goals.
               </li>
               <li className="text-gray-400 mb-2 lg:px-10 px-3">

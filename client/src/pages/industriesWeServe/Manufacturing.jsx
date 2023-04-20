@@ -1,42 +1,49 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import manufacturingCover from "../../assets/img/manufacturing.png";
+import mf1 from "../../assets/img/mf-1.png";
+import mf2 from "../../assets/img/mf-2.png";
+import mf3 from "../../assets/img/mf-3.png";
+import mf4 from "../../assets/img/mf-4.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import { Helmet } from "react-helmet";
 
 const Manufacturing = () => {
   useScrollToTop();
   return (
     <div>
       <div className="">
-      <Helmet>
-        <title>Manufacturing | Dotpot iT</title>
-        <meta
-          name="description"
-          content="DotpotIT offers custom software solutions for manufacturing to optimize processes, improve productivity, and reduce costs"
-        />
-        <meta property="og:title" content="Manufacturing | Dotpot iT" />
-        <meta
-          property="og:description"
-          content="DotpotIT offers custom software solutions for manufacturing to optimize processes, improve productivity, and reduce costs"
-        />
-        <meta
-          property="og:image"
-          content="https://www.dotpotit.com/assets/logo-492dab11.png"
-        />
-        <meta property="og:url" content="https://www.dotpotit.com/industries-we-serve/manufacturing" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Manufacturing | Dotpot iT" />
-        <meta
-          name="twitter:description"
-          content="DotpotIT offers custom software solutions for manufacturing to optimize processes, improve productivity, and reduce costs"
-        />
-        <meta
-          name="twitter:image"
-          content="https://www.dotpotit.com/assets/logo-492dab11.png"
-        />
-      </Helmet>
+        <Helmet>
+          <title>Manufacturing | Dotpot iT</title>
+          <meta
+            name="description"
+            content="DotpotIT offers custom software solutions for manufacturing to optimize processes, improve productivity, and reduce costs"
+          />
+          <meta property="og:title" content="Manufacturing | Dotpot iT" />
+          <meta
+            property="og:description"
+            content="DotpotIT offers custom software solutions for manufacturing to optimize processes, improve productivity, and reduce costs"
+          />
+          <meta
+            property="og:image"
+            content="https://www.dotpotit.com/assets/logo-492dab11.png"
+          />
+          <meta
+            property="og:url"
+            content="https://www.dotpotit.com/industries-we-serve/manufacturing"
+          />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="Manufacturing | Dotpot iT" />
+          <meta
+            name="twitter:description"
+            content="DotpotIT offers custom software solutions for manufacturing to optimize processes, improve productivity, and reduce costs"
+          />
+          <meta
+            name="twitter:image"
+            content="https://www.dotpotit.com/assets/logo-492dab11.png"
+          />
+        </Helmet>
         <Navbar />
         <div className="">
           <section className="pt-[15vh]    relative w-full overflow-hidden overflow-x-clip bg-slate-50 bg-gradient-to-t from-slate-50 to-slate-100 dark1:bg-[#0B1120] dark1:bg-none">
@@ -72,7 +79,7 @@ const Manufacturing = () => {
                   <div>
                     <img
                       className="w-4/5 md:w-[450px] mx-auto mb-5 rounded-md"
-                      src="https://bambooagile.eu/insights/wp-content/uploads/2021/09/1-10.png"
+                      src={mf1}
                       alt=""
                     />
                   </div>
@@ -92,7 +99,7 @@ const Manufacturing = () => {
                   <div>
                     <img
                       className="w-4/5 md:w-[450px] mx-auto mb-5 rounded-md"
-                      src="https://www.openaccessgovernment.org/wp-content/uploads/2021/03/dreamstime_s_126377515.jpg"
+                      src={mf2}
                       alt=""
                     />
                   </div>
@@ -112,7 +119,7 @@ const Manufacturing = () => {
                   <div>
                     <img
                       className="w-4/5 md:w-[450px] mx-auto mb-5 rounded-md"
-                      src="https://www.twi-global.com/image-library/hero/manufacturing-istock-973143870.jpg"
+                      src={mf3}
                       alt=""
                     />
                   </div>
@@ -132,7 +139,7 @@ const Manufacturing = () => {
                   <div>
                     <img
                       className="w-4/5 md:w-[450px] mx-auto mb-5 rounded-md"
-                      src="https://successive.cloud/wp-content/uploads/2022/04/Data-Analytics-Benefits-768x403.png"
+                      src={mf4}
                       alt=""
                     />
                   </div>

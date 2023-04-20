@@ -1,10 +1,11 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { BsArrowRightCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import retail from "../../assets/img/retail.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import { Helmet } from "react-helmet";
 
 const Retail = () => {
   useScrollToTop();
@@ -25,7 +26,10 @@ const Retail = () => {
           property="og:image"
           content="https://www.dotpotit.com/assets/logo-492dab11.png"
         />
-        <meta property="og:url" content="https://www.dotpotit.com/industries-we-serve/retail-ecommerce" />
+        <meta
+          property="og:url"
+          content="https://www.dotpotit.com/industries-we-serve/retail-ecommerce"
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Retail, Ecommerce | Dotpot iT" />
         <meta
@@ -49,10 +53,7 @@ const Retail = () => {
           </p>
         </div>
         <div className="max-w-4xl mx-auto p-4">
-          <img
-            src="https://repository-images.githubusercontent.com/456963513/82528385-a73f-488f-9003-513321283a6b"
-            alt="Product image"
-          />
+          <img src={retail} alt="Product image" />
         </div>
         <div className="my-12 lg:mx-24 mx-6">
           <h2 className="lg:text-2xl text-xl font-bold mb-4">Overview</h2>

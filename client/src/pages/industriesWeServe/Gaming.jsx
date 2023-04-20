@@ -3,6 +3,8 @@ import { Helmet } from "react-helmet";
 import eaGame from "../../assets/img/eaGame.png";
 import gameHero from "../../assets/img/gameHero.jpg";
 import gameSoft from "../../assets/img/gameSoft.jpg";
+import teamwork from "../../assets/img/teamwork.png";
+import unreal from "../../assets/img/unreal.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
@@ -97,7 +99,7 @@ const Gaming = () => {
               <div>
                 <img
                   className="w-[450px] mx-auto mb-5 rounded-md"
-                  src="https://teambuilding.com/wp-content/uploads/2021/09/team-building-games.jpg"
+                  src={teamwork}
                   alt=""
                 />
               </div>
@@ -116,7 +118,7 @@ const Gaming = () => {
               <div>
                 <img
                   className="w-[450px] mx-auto mb-5 rounded-md"
-                  src="https://eu-images.contentstack.com/v3/assets/blt95b381df7c12c15d/bltc120b614a2dd690a/624c7f957c2d1d030cd47ff4/placeholder-social.png"
+                  src={unreal}
                   alt=""
                 />
               </div>

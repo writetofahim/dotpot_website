@@ -2,6 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { BsArrowRightCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import sn from "../../assets/img/sn.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import OurPartnersSlider from "../../components/OurPartnersSlider/OurPartnersSlider";
@@ -51,11 +52,7 @@ const SocialNetworking = () => {
           networking solutions.
         </p>
         <div className="border-b container mx-auto">
-          <img
-            className="md:w-1/2 mx-auto "
-            src="https://cdn.pixabay.com/photo/2019/09/09/08/23/internet-4463031_960_720.jpg"
-            alt=""
-          />
+          <img className="md:w-1/2 mx-auto " src={sn} alt="" />
         </div>
         <div className="container  mx-auto flex flex-col mb-10 my-10">
           <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block ">

@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import fixed_price from "../../assets/img/fixed_price.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
@@ -14,7 +15,10 @@ const FixedPrice = () => {
           name="description"
           content="Learn about Fixed Price Partnership Model Dotpot iT, a leading IT company providing innovative solutions for businesses."
         />
-        <meta property="og:title" content="Fixed Price Partnership Model | Dotpot iT" />
+        <meta
+          property="og:title"
+          content="Fixed Price Partnership Model | Dotpot iT"
+        />
         <meta
           property="og:description"
           content="Learn about Fixed Price Partnership Model Dotpot iT, a leading IT company providing innovative solutions for businesses."
@@ -23,9 +27,15 @@ const FixedPrice = () => {
           property="og:image"
           content="	https://www.dotpotit.com/assets/logo-492dab11.png"
         />
-        <meta property="og:url" content="https://www.dotpotit.com/partnership_model/fixed-price-model" />
+        <meta
+          property="og:url"
+          content="https://www.dotpotit.com/partnership_model/fixed-price-model"
+        />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Fixed Price Partnership Model | Dotpot iT" />
+        <meta
+          name="twitter:title"
+          content="Fixed Price Partnership Model | Dotpot iT"
+        />
         <meta
           name="twitter:description"
           content="Learn about Fixed Price Partnership Model Dotpot iT, a leading IT company providing innovative solutions for businesses."
@@ -41,7 +51,7 @@ const FixedPrice = () => {
           <div className="w-full h-full flex justify-center items-center">
             <img
               className="max-w-full max-h-full"
-              src="https://www.peerbits.com/static/7abac9dc2f6184ceab3cf6dec7c3dcce/189bc/fixed-time-and-material-fixed-price.jpg"
+              src={fixed_price}
               alt="Product image"
             />
           </div>

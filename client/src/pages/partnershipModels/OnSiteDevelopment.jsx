@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import onsite_dev from "../../assets/img/onsite_dev.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
@@ -14,7 +15,10 @@ const OnSiteDevelopment = () => {
           name="description"
           content="Learn about hire-dedicated-model Dotpot iT, a leading IT company providing innovative solutions for businesses."
         />
-        <meta property="og:title" content="on-site-development-model | Dotpot iT" />
+        <meta
+          property="og:title"
+          content="on-site-development-model | Dotpot iT"
+        />
         <meta
           property="og:description"
           content="Learn about hire-dedicated-model Dotpot iT, a leading IT company providing innovative solutions for businesses."
@@ -23,9 +27,15 @@ const OnSiteDevelopment = () => {
           property="og:image"
           content="	https://www.dotpotit.com/assets/logo-492dab11.png"
         />
-        <meta property="og:url" content="https://www.dotpotit.com/partnership_model/on-site-development-model" />
+        <meta
+          property="og:url"
+          content="https://www.dotpotit.com/partnership_model/on-site-development-model"
+        />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Fixed Price Partnership Model | Dotpot iT" />
+        <meta
+          name="twitter:title"
+          content="Fixed Price Partnership Model | Dotpot iT"
+        />
         <meta
           name="twitter:description"
           content="Learn about hire-dedicated-model Dotpot iT, a leading IT company providing innovative solutions for businesses."
@@ -41,7 +51,7 @@ const OnSiteDevelopment = () => {
           <div className="w-full h-full flex justify-center items-center">
             <img
               className="max-w-full max-h-full"
-              src="https://alcor-bpo.com/wp-content/uploads/2021/04/12-1.png"
+              src={onsite_dev}
               alt="Product image"
             />
           </div>

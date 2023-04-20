@@ -1,6 +1,7 @@
 import React from "react";
 import { BsArrowRightCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import enterprise from "../../assets/img/enterprise.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
@@ -21,10 +22,7 @@ const EnterpriseBusiness = () => {
           </p>
         </div>
         <div className="w-full h-full flex justify-center items-center">
-          <img
-            src="https://st2.depositphotos.com/3591429/11174/i/600/depositphotos_111748420-stock-photo-enterprise-business-campaign-concept.jpg"
-            alt="Product image"
-          />
+          <img src={enterprise} alt="Enter Prise Business" />
         </div>
         <div className="my-12 lg:mx-24 mx-6">
           <h2 className="lg:text-2xl text-xl font-bold mb-4">Overview</h2>

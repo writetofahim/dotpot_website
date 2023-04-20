@@ -2,6 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { BsArrowRightCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import od from "../../assets/img/od.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
@@ -49,11 +50,7 @@ const OnDemand = () => {
           Instant solutions at your fingertips with On Demand Solutions.
         </p>
         <div className="border-b container mx-auto">
-          <img
-            className="md:w-1/2 mx-auto "
-            src="https://www.ondemandsolutions.net/wp-content/uploads/2021/04/xtelesales-ico.png.pagespeed.ic.ShcmC-prh7.png"
-            alt="onDemand-img"
-          />
+          <img className="md:w-1/2 mx-auto " src={od} alt="onDemand-img" />
         </div>
         <div className="container  mx-auto flex flex-col mb-10 my-10">
           <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">

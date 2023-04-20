@@ -1,5 +1,9 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import ai from "../../assets/img/ai.png";
+import aib from "../../assets/img/aib.png";
+import air from "../../assets/img/air.png";
+import ais from "../../assets/img/ais.png";
 import aiImg from "../../assets/img/heroAI.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
@@ -76,7 +80,7 @@ const Ai = () => {
                   <div>
                     <img
                       className="w-[450px] mx-auto mb-5 rounded-md"
-                      src="https://assets.entrepreneur.com/content/3x2/2000/20200316170356-GettyImages-1145585734.jpeg"
+                      src={ai}
                       alt=""
                     />
                   </div>
@@ -96,7 +100,7 @@ const Ai = () => {
                   <div>
                     <img
                       className="w-[450px] mx-auto mb-5 rounded-md"
-                      src="https://www.sysbunny.com/blog/wp-content/uploads/2021/01/Artificial-Intelligence-Solutions-2.png"
+                      src={air}
                       alt=""
                     />
                   </div>
@@ -116,7 +120,7 @@ const Ai = () => {
                   <div>
                     <img
                       className="w-[450px] mx-auto mb-5 rounded-md"
-                      src="https://cdn-gcp.new.marutitech.com/robot_humanoid_using_tablet_computer_big_data_analytic_1_94eab7101e.jpg"
+                      src={ais}
                       alt=""
                     />
                   </div>
@@ -136,7 +140,7 @@ const Ai = () => {
                   <div>
                     <img
                       className="w-[450px] mx-auto mb-5 rounded-md"
-                      src="https://images.theconversation.com/files/374303/original/file-20201210-18-elk4m.jpg?ixlib=rb-1.1.0&rect=0%2C22%2C7500%2C5591&q=45&auto=format&w=926&fit=clip"
+                      src={aib}
                       alt=""
                     />
                   </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import hdm from "../../assets/img/hdm.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
@@ -23,9 +24,15 @@ const HireDedicatedModel = () => {
           property="og:image"
           content="	https://www.dotpotit.com/assets/logo-492dab11.png"
         />
-        <meta property="og:url" content="https://www.dotpotit.com/partnership_model/hire-dedicated-model" />
+        <meta
+          property="og:url"
+          content="https://www.dotpotit.com/partnership_model/hire-dedicated-model"
+        />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Fixed Price Partnership Model | Dotpot iT" />
+        <meta
+          name="twitter:title"
+          content="Fixed Price Partnership Model | Dotpot iT"
+        />
         <meta
           name="twitter:description"
           content="Learn about hire-dedicated-model Dotpot iT, a leading IT company providing innovative solutions for businesses."
@@ -41,7 +48,7 @@ const HireDedicatedModel = () => {
           <div className="w-full h-full flex justify-center items-center">
             <img
               className="max-w-full max-h-full"
-              src="https://web-peppers.com/wp-content/uploads/2020/02/How-to-Hire-the-Best-Dedicated-Development-Team.jpg"
+              src={hdm}
               alt="Product image"
             />
           </div>

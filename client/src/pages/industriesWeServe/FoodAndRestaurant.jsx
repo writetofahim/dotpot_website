@@ -1,10 +1,11 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { BsArrowRightCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import food from "../../assets/img/food.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import { Helmet } from "react-helmet";
 
 const FoodAndRestaurant = () => {
   useScrollToTop();
@@ -25,7 +26,10 @@ const FoodAndRestaurant = () => {
           property="og:image"
           content="https://www.dotpotit.com/assets/logo-492dab11.png"
         />
-        <meta property="og:url" content="https://www.dotpotit.com/industries-we-serve/food-and-restaurant" />
+        <meta
+          property="og:url"
+          content="https://www.dotpotit.com/industries-we-serve/food-and-restaurant"
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Food & Restaurants | Dotpot iT" />
         <meta
@@ -47,11 +51,7 @@ const FoodAndRestaurant = () => {
           crafted with passion and precision.
         </p>
         <div className="border-b container mx-auto">
-          <img
-            className="md:w-1/2 mx-auto "
-            src="https://s3-alpha.figma.com/hub/file/1165372441/70ca6b19-978d-45ac-885a-80a4b95b7f98-cover.png"
-            alt="food-img"
-          />
+          <img className="md:w-1/2 mx-auto " src={food} alt="food-img" />
         </div>
         <div className="container  mx-auto flex flex-col mb-10 my-10">
           <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">

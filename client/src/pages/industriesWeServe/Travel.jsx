@@ -1,10 +1,11 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { BsArrowRightCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import travel from "../../assets/img/travel.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import { Helmet } from "react-helmet";
 
 const Travel = () => {
   useScrollToTop();
@@ -25,7 +26,10 @@ const Travel = () => {
           property="og:image"
           content="https://www.dotpotit.com/assets/logo-492dab11.png"
         />
-        <meta property="og:url" content="https://www.dotpotit.com/industries-we-serve/travel" />
+        <meta
+          property="og:url"
+          content="https://www.dotpotit.com/industries-we-serve/travel"
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Travel & Hospitality | Dotpot iT" />
         <meta
@@ -46,11 +50,7 @@ const Travel = () => {
           Your all-in-one travel companion - DotpotiT's cutting-edge travel app
         </p>
         <div className="border-b container mx-auto">
-          <img
-            className="md:w-1/2 mx-auto "
-            src="https://appsamurai.com/wp-content/uploads/2017/10/promote-travel-apps.png"
-            alt=""
-          />
+          <img className="md:w-1/2 mx-auto " src={travel} alt="" />
         </div>
         <div className="container  mx-auto flex flex-col mb-10 my-10">
           <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">

@@ -1,10 +1,11 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { BsArrowRightCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import edu from "../../assets/img/edu.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import { Helmet } from "react-helmet";
 
 const education = () => {
   useScrollToTop();
@@ -16,7 +17,10 @@ const education = () => {
           name="description"
           content="Revolutionize Online Learning with Expert Web Solutions by Dotpot IT"
         />
-        <meta property="og:title" content="Education & E-Learning | Dotpot iT" />
+        <meta
+          property="og:title"
+          content="Education & E-Learning | Dotpot iT"
+        />
         <meta
           property="og:description"
           content="Revolutionize Online Learning with Expert Web Solutions by Dotpot IT"
@@ -25,9 +29,15 @@ const education = () => {
           property="og:image"
           content="https://www.dotpotit.com/assets/logo-492dab11.png"
         />
-        <meta property="og:url" content="https://www.dotpotit.com/industries-we-serve/education" />
+        <meta
+          property="og:url"
+          content="https://www.dotpotit.com/industries-we-serve/education"
+        />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Education & E-Learning | Dotpot iT" />
+        <meta
+          name="twitter:title"
+          content="Education & E-Learning | Dotpot iT"
+        />
         <meta
           name="twitter:description"
           content="Revolutionize Online Learning with Expert Web Solutions by Dotpot IT"
@@ -48,10 +58,7 @@ const education = () => {
           </p>
         </div>
         <div className="max-w-4xl mx-auto p-4">
-          <img
-            src="https://i.pinimg.com/originals/f4/ff/de/f4ffde4a135719cf67e1d19a4145b92d.png"
-            alt="Product image"
-          />
+          <img src={edu} alt="Product image" />
         </div>
         <div className="my-12 lg:mx-24 mx-6">
           <h2 className="lg:text-2xl text-xl font-bold mb-4">Overview</h2>
