@@ -1,5 +1,7 @@
 # DotpotiT Official Website:
 
+![Version](https://img.shields.io/badge/Version-1.0.0-1abc9c.svg?style=flat-square&colorA=gray&colorB=green) ![Node.js Version](https://img.shields.io/badge/Node.js-v18.15.0-brightgreen.svg?style=flat-square) ![NPM Version](https://img.shields.io/badge/npm-v9.5.0-blue.svg?style=flat-square) ![Deployment Status](https://img.shields.io/badge/Deployment-Live-1abc9c.svg?style=flat-square&colorA=gray&colorB=green) ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-1abc9c.svg?style=flat-square&colorA=gray&colorB=blue)
+
 ## Introduction:
 
 Welcome to DotpotiT! This web application provides a platform for showcase their services and portfolio, connect with potential clients and create and manage personalized portfolios. DotpotiT is built using ReactJS and Tailwind CSS and context API for the client-side and admin-panel. Also AXIOS is used for data fetching from both the client and admin sides. NodeJS, ExpressJS, JWT, and MongoDB for the API. 
@@ -49,7 +51,7 @@ Welcome to DotpotiT! This web application provides a platform for showcase their
 - tsparticles
 ## Folder Structure:
 - api directory contains controllers, middlewares, models, node_modules and routes of the website.
-- cliet directory contains src of website.
+- client directory contains src of website.
 ### Client:  
 
 The client-side of DotpotiT is built using ReactJS and Tailwind CSS and context API with data fetching handled by AXIOS. 
@@ -123,7 +125,7 @@ Follow this steps to install and run the project:
     `npm run build`
 - Serve the client-side application using the nginx.
 - Start the API server using PM2.
-    pm2 start npm --name "api" -- start
+    `pm2 start npm --name "api" -- start`
 - Set up a reverse proxy to route traffic from the web server to the API server running on port 8800.
 - Test the application to ensure it's functioning as expected.
 - Create a domain name for the application using Amazon Route 53.
