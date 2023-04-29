@@ -4,98 +4,111 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const http = require("http");
 const { Server } = require("socket.io");
-const cors = require("cors")
-const morgan = require('morgan');
-const winston = require('./config/winston');
+const cors = require("cors");
+const morgan = require("morgan");
+const winston = require("./config/winston");
 
-const authRouter = require("./routes/authRoutes")
-const blogRoutes = require("./routes/blogRoutes")
-const userRoutes = require("./routes/userRoutes")
-const jobRoutes = require("./routes/jobRoutes")
-const jobApplicationRoutes = require("./routes/jobApplicationRoutes")
-const clientReviewRoutes = require("./routes/clientReviewRoutes")
-const ourPartnerRoutes = require("./routes/ourPartnerRoutes")
-const serviceRoutes = require("./routes/serviceRoutes")
-const socialMediaRoutes = require("./routes/socialMediaRoutes")
-const teamMemberRoutes = require("./routes/teamMemberRoutes")
-const workRoutes = require("./routes/workRoutes")
-const orderRoutes = require("./routes/orderRoutes")
-const uploadRoutes = require("./routes/uploadRoutes")
-const c_client_responseRoutes = require("./routes/c_client_responseRoutes")
-const c_contactCenterServiceRoutes = require("./routes/c_contactCenterServiceRoutes")
-const c_heroRoutes = require("./routes/c_heroRoutes")
-const c_industryWeServeRoutes = require("./routes/c_industryWeServeRoutes")
-const c_infoRoutes = require("./routes/c_infoRoutes")
-const c_keyFeatureRouters = require("./routes/c_keyFeatureRouters")
-const c_partnershipModelRoutes = require("./routes/c_partnershipModelRoutes")
-const c_whoWeWorkWithRoutes = require("./routes/c_whoWeWorkWithRoutes")
+const authRouter = require("./routes/authRoutes");
+const blogRoutes = require("./routes/blogRoutes");
+const userRoutes = require("./routes/userRoutes");
+const jobRoutes = require("./routes/jobRoutes");
+const jobApplicationRoutes = require("./routes/jobApplicationRoutes");
+const clientReviewRoutes = require("./routes/clientReviewRoutes");
+const ourPartnerRoutes = require("./routes/ourPartnerRoutes");
+const serviceRoutes = require("./routes/serviceRoutes");
+const socialMediaRoutes = require("./routes/socialMediaRoutes");
+const teamMemberRoutes = require("./routes/teamMemberRoutes");
+const workRoutes = require("./routes/workRoutes");
+const orderRoutes = require("./routes/orderRoutes");
+const uploadRoutes = require("./routes/uploadRoutes");
+const c_client_responseRoutes = require("./routes/c_client_responseRoutes");
+const c_contactCenterServiceRoutes = require("./routes/c_contactCenterServiceRoutes");
+const c_heroRoutes = require("./routes/c_heroRoutes");
+const c_industryWeServeRoutes = require("./routes/c_industryWeServeRoutes");
+const c_infoRoutes = require("./routes/c_infoRoutes");
+const c_keyFeatureRouters = require("./routes/c_keyFeatureRouters");
+const c_partnershipModelRoutes = require("./routes/c_partnershipModelRoutes");
+const c_whoWeWorkWithRoutes = require("./routes/c_whoWeWorkWithRoutes");
 const chatRoutes = require("./routes/chatRoutes");
 const loggerRoutes = require("./routes/loggerRoutes");
 
 dotenv.config();
 
 mongoose
-    .connect(process.env.MONGO_URL)
-    .then(() => console.log("DB Connection Successfull"))
-    .catch((err) => {
-        console.error(err);
-    });
+  .connect(process.env.MONGO_URL)
+  .then(() => console.log("DB Connection Successfull"))
+  .catch((err) => {
+    console.error(err);
+  });
 
 app.use(express.json());
-app.use(morgan('combined', { stream: winston.stream }));
-
+app.use(morgan("combined", { stream: winston.stream }));
 
 // error handler
-app.use(function(err, req, res, next) {
-    // set locals, only providing error in development
-    res.send({message:err.message, error:req.app.get('env') === 'development' ? err : {}});
-  
-    // include winston logging
-    winston.error(
-      `${err.status || 500} - ${err.message} - ${req.originalUrl} - ${req.method} - ${req.ip}`
-    );
-  
-    // render the error page
-    res.status(err.status || 500);
-    res.render('error');
+app.use(function (err, req, res, next) {
+  // set locals, only providing error in development
+  res.send({
+    message: err.message,
+    error: req.app.get("env") === "development" ? err : {},
   });
+
+  // include winston logging
+  winston.error(
+    `${err.status || 500} - ${err.message} - ${req.originalUrl} - ${
+      req.method
+    } - ${req.ip}`
+  );
+
+  // render the error page
+  res.status(err.status || 500);
+  res.render("error");
+});
 
 // app.use(cors({
 //     origin: ["http://localhost:5173", "http://localhost:5174", "http://dotpotit.com","http://dotpotit.com/admin", "https://dotpotit.com", "https://dotpotit.com/admin", "https://dotpot-admin.vercel.app"]
 //   }));
-app.use(cors())
-app.use('/uploads/conversation', express.static(__dirname + '/uploads/conversation'));
-app.use('/uploads', express.static(__dirname + '/uploads'));
-app.use('/uploads/blogs', express.static(__dirname + '/uploads/blogs'));
-app.use('/uploads/response', express.static(__dirname + '/uploads/response'));
-
+app.use(cors());
+app.use(
+  "/uploads/conversation",
+  express.static(__dirname + "/uploads/conversation")
+);
+app.use("/uploads", express.static(__dirname + "/uploads"));
+app.use("/uploads/blogs", express.static(__dirname + "/uploads/blogs"));
+app.use("/uploads/response", express.static(__dirname + "/uploads/response"));
 
 const server = http.createServer(app);
 const io = new Server(server, {
-    cors: {
-        origin: ["http://localhost:5173", "http://localhost:5174", "http://dotpotit.com","http://dotpotit.com/admin", "https://dotpotit.com", "https://dotpotit.com/admin","https://dotpot-admin.vercel.app"],
-        methods: ["GET", "POST"],
-    },
+  cors: {
+    origin: [
+      "http://localhost:5173",
+      "http://localhost:5174",
+      "http://dotpotit.com",
+      "http://dotpotit.com/admin",
+      "https://dotpotit.com",
+      "https://dotpotit.com/admin",
+      "https://dotpot-admin.vercel.app",
+    ],
+    methods: ["GET", "POST"],
+  },
 });
 
 global.io = io;
 
 io.on("connection", (socket) => {
-    console.log(`User Connected for chat: ${socket.id}`);
+  console.log(`User Connected for chat: ${socket.id}`);
 
-    socket.on("join_room", (data) => {
-        socket.join(data);
-    });
+  socket.on("join_room", (data) => {
+    socket.join(data);
+  });
 
-    socket.on("send_message", (data) => {
-        socket.to(data.room).emit("receive_message", data);
-    });
+  socket.on("send_message", (data) => {
+    socket.to(data.room).emit("receive_message", data);
+  });
 });
 
-
-app.use("/api/auth", authRouter)
-app.use("/api/user", userRoutes)
-app.use("/api/blog", blogRoutes)
+app.use("/api/auth", authRouter);
+app.use("/api/user", userRoutes);
+app.use("/api/blog", blogRoutes);
 app.use("/api/client_review", clientReviewRoutes);
 app.use("/api/chats", chatRoutes);
 app.use("/api/job", jobRoutes);
@@ -106,23 +119,23 @@ app.use("/api/socialmedia", socialMediaRoutes);
 app.use("/api/team_member", teamMemberRoutes);
 app.use("/api/work", workRoutes);
 app.use("/api/order", orderRoutes);
-app.use("/api/upload", uploadRoutes)
+app.use("/api/upload", uploadRoutes);
 
 // Components
-app.use("/api/client_response", c_client_responseRoutes)
-app.use("/api/contact_center_service", c_contactCenterServiceRoutes)
-app.use("/api/hero", c_heroRoutes)
-app.use("/api/industry_we_serve", c_industryWeServeRoutes)
-app.use("/api/info", c_infoRoutes)
-app.use("/api/key_feature", c_keyFeatureRouters)
-app.use("/api/partnership_model", c_partnershipModelRoutes)
-app.use("/api/who_we_work_with", c_whoWeWorkWithRoutes)
+app.use("/api/client_response", c_client_responseRoutes);
+app.use("/api/contact_center_service", c_contactCenterServiceRoutes);
+app.use("/api/hero", c_heroRoutes);
+app.use("/api/industry_we_serve", c_industryWeServeRoutes);
+app.use("/api/info", c_infoRoutes);
+app.use("/api/key_feature", c_keyFeatureRouters);
+app.use("/api/partnership_model", c_partnershipModelRoutes);
+app.use("/api/who_we_work_with", c_whoWeWorkWithRoutes);
 
 // Logger
-app.use("/api/logger", loggerRoutes)
+app.use("/api/logger", loggerRoutes);
 
-const port = 8800
+const port = 8800;
 
 server.listen(port, () => {
-    console.log("Backend server is running! on port ", port);
+  console.log("Backend server is running! on port ", port);
 });
