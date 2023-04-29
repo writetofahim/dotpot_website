@@ -103,6 +103,34 @@ Follow this steps to install and run the project:
     - Start the server by running the following command: `npm run dev`
     - Open the project on browser at [localhost:5174] `http://localhost:5174`
 
+
+# Deployment:
+- Create an AWS account if you don't have one already.
+- Launch an EC2 instance with the desired specifications, such as the operating system, storage, and network configuration. You can use an Amazon Machine Image (AMI) with pre-installed software, or you can manually install the required software on the instance.
+- Set up security groups to manage inbound and outbound traffic to the instance. Ensure that the necessary ports are open for your application to function properly.
+- Connect to the instance using SSH or a remote desktop client, depending on your instance's operating system.
+- Install PM2 on the instance by running the following command:
+    `npm install -g pm2`
+- Clone the DotpotiT website repository from GitHub onto the instance.
+    `git clone https://github.com/DotpotiT/dotpotit.git`
+- Install the necessary dependencies, such as Node.js and other packages required by the application.
+    `cd client`
+    `npm install --legacy-peer-deps`
+- Go to API and install the necessary dependencies
+    `cd api`
+    `npm install`
+- Build the client-side application using the following command:
+    `npm run build`
+- Serve the client-side application using the nginx.
+- Start the API server using PM2.
+    pm2 start npm --name "api" -- start
+- Set up a reverse proxy to route traffic from the web server to the API server running on port 8800.
+- Test the application to ensure it's functioning as expected.
+- Create a domain name for the application using Amazon Route 53.
+- Configure the DNS records to point to the instance's public IP address.
+- Set up SSL/TLS certificates using Amazon Certificate Manager to encrypt traffic to and from the application.
+- Finally, monitor the application's performance and security, and make any necessary updates or changes.
+
 ## Contributing:
 
 Contributions are always welcome! If you have any suggestions or improvements, please create a pull request.
