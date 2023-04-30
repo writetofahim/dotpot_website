@@ -115,17 +115,19 @@ Follow this steps to install and run the project:
     `npm install -g pm2`
 - Clone the DotpotiT website repository from GitHub onto the instance.
     `git clone https://github.com/DotpotiT/dotpotit.git`
-- Install the necessary dependencies, such as Node.js and other packages required by the application.
-    `cd client`
-    `npm install --legacy-peer-deps`
 - Go to API and install the necessary dependencies
     `cd api`
     `npm install`
-- Build the client-side application using the following command:
-    `npm run build`
-- Serve the client-side application using the nginx.
 - Start the API server using PM2.
     `pm2 start npm --name "api" -- start`
+- Serve the client-side application using the nginx.
+- Install the necessary dependencies, such as Node.js and other packages required by the application for client.
+    `cd client`
+    `npm install --legacy-peer-deps`
+- Build the client-side application using the following command:
+    `npm run build`
+- Serve the Client dist folder using PM2.
+    `pm2 start --name "client" "npx serve dist -s -l 5173"`
 - Set up a reverse proxy to route traffic from the web server to the API server running on port 8800.
 - Test the application to ensure it's functioning as expected.
 - Create a domain name for the application using Amazon Route 53.
