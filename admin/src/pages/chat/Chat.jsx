@@ -16,10 +16,15 @@ const Chat = () => {
   const getChatList = async () => {
     setIsLoading(true);
     axios
-      .get(`/chats?page=${page}`)
+      .get(`/chats?page=${page}`, {
+        headers: {
+          Authorization: `Bearer ${JSON.parse(
+            localStorage.getItem("accessToken")
+          )}`,
+        },
+      })
       .then(({ data }) => {
         postLogger({ level: "info", message: data });
-        console.log(data);
         setChatList([...data.chats]);
         setTotalChats(data.totalChatsCount);
       })

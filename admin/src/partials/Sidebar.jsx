@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { AiFillWechat, AiOutlineInfoCircle } from "react-icons/ai";
 import { BiCalendarEdit } from "react-icons/bi";
 import { BsMicrosoftTeams, BsPersonWorkspace } from "react-icons/bs";
@@ -19,10 +19,12 @@ import axios from "../utils/axiosInstance";
 
 import { NavLink, useLocation } from "react-router-dom";
 
+import { AuthContext } from "../contexts/AuthContext";
 import socket from "../socket";
 import SidebarLinkGroup from "./SidebarLinkGroup";
 
 function Sidebar({ sidebarOpen, setSidebarOpen }) {
+  const { logout } = useContext(AuthContext);
   const location = useLocation();
   const { pathname } = location;
 
@@ -36,14 +38,25 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
   );
 
   const getUnseenCount = () => {
-    axios.get("/chats/totalAdminUnseen").then((response) => {
-      setUnseenMessages(response.data?.count);
-    });
+    const accessToken = JSON.parse(localStorage.getItem("accessToken"));
+    if (accessToken) {
+      axios
+        .get("/chats/totalAdminUnseen", {
+          headers: { Authorization: "Bearer " + accessToken },
+        })
+        .then((response) => {
+          setUnseenMessages(response.data?.count);
+        })
+        .catch((error) => {
+          if (error.response.status === 401) {
+            logout(); // call the logout function from your context
+          }
+        });
+    }
   };
 
   useEffect(() => {
     socket.on("newMessage", (data) => {
-      console.log("New message received in sidebar");
       getUnseenCount();
     });
     socket.on("adminSeen", (data) => {

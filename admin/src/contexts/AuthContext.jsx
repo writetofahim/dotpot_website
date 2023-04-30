@@ -38,7 +38,7 @@ export const AuthContextProvider = ({ children }) => {
       const { data } = await axios.post("/auth/login", { email, password });
       // Save the access token and user object in localStorage
       if (data.user.role !== "ADMIN") {
-        throw new Error("Email or password is not correct!");
+        throw new Error("You don't have admin access!");
       }
       localStorage.setItem("accessToken", JSON.stringify(data.token));
       localStorage.setItem(
@@ -49,8 +49,11 @@ export const AuthContextProvider = ({ children }) => {
       setUser(data.user);
       postLogger({ level: "info", message: data });
     } catch (error) {
-      setError(error.message); // set the error state with the error message
-      console.log(error);
+      if (error.response?.data?.message) {
+        return setError(error.response?.data?.message);
+      } else {
+        setError(error.message);
+      }
       postLogger({ level: "error", message: error });
     }
   };

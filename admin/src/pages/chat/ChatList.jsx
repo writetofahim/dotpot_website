@@ -34,7 +34,8 @@ const ChatList = ({
               onClick={handleLoadMore}
               className="text-center px-3 py-1 bg-blue-600 text-white rounded-lg flex items-center gap-2 disabled:bg-blue-300"
             >
-              Load More {isLoading && <FaSpinner className="animate-spin" />}
+              {isLoading ? "Loading" : "Load More"}{" "}
+              {isLoading && <FaSpinner className="animate-spin" />}
             </button>
           </div>
         )}
