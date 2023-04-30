@@ -1,13 +1,12 @@
-import React, { useContext, useEffect, useState } from "react";
-import axios from "../../utils/axiosInstance";
-import { FaSpinner } from "react-icons/fa"
+import React, { useEffect, useState } from "react";
+import { FaSpinner } from "react-icons/fa";
 import { useSearchParams } from "react-router-dom";
 import CommonSnackbar from "../../components/ComonSnackbar";
-import WorkTechnology from "./WorkTechnology";
+import axios from "../../utils/axiosInstance";
 import postLogger from "../../utils/postLogger";
+import WorkTechnology from "./WorkTechnology";
 
 const AddWorks = () => {
-
   const [title, setTitle] = useState("");
   const [technologies, setTechnologies] = useState([]);
   const [file, setFile] = useState(null);
@@ -20,13 +19,13 @@ const AddWorks = () => {
   const [searchParams] = useSearchParams();
   const workId = searchParams.get("id");
 
-
   useEffect(() => {
     if (workId) {
-      axios.get(`/work/${workId}`)
-        .then(res => {
-          console.log(res.data)
-          const { image: img, title, technologies,link } = res.data.work
+      axios
+        .get(`/work/${workId}`)
+        .then((res) => {
+          console.log(res.data);
+          const { image: img, title, technologies, link } = res.data.work;
           setTitle(title);
           setTechnologies(technologies);
           setLink(link);
@@ -34,18 +33,20 @@ const AddWorks = () => {
           const preview = document.getElementById("preview");
           const imageDiv = document.getElementById("imageDiv");
           const image = new Image();
-          image.src = img.includes("https://") ? img : `${import.meta.env.REACT_APP_SERVER_PATH}/${img}`
+          image.src = img.includes("https://")
+            ? img
+            : `${import.meta.env.REACT_APP_SERVER_PATH}/${img}`;
           imageDiv.classList.remove("hidden");
           preview.innerHTML = "";
           preview.appendChild(image);
-          postLogger({level:"info", message:res})
+          postLogger({ level: "info", message: res });
         })
-        .catch(err => {
+        .catch((err) => {
           console.log(err);
-          postLogger({level:"error", message:err})
-        })
+          postLogger({ level: "error", message: err });
+        });
     }
-  }, [])
+  }, []);
 
   function handleChangeImage(event) {
     const file = event.target.files[0];
@@ -71,8 +72,8 @@ const AddWorks = () => {
     const newWork = {
       title,
       technologies,
-      link
-    }
+      link,
+    };
 
     try {
       if (file) {
@@ -84,34 +85,32 @@ const AddWorks = () => {
         newWork.image = attachment;
         if (workId) {
           const { data: d } = await axios.put(`/work/${workId}`, newWork);
-          console.log(d)
-          setMessage("Work updated Successfully!")
+          console.log(d);
+          setMessage("Work updated Successfully!");
         } else {
           const { data } = await axios.post("/work", newWork);
           console.log(newWork);
           console.log(data);
-          setMessage("Work Posted Successfully!")
+          setMessage("Work Posted Successfully!");
           handleReset();
         }
         setLoading(false);
         setSnackbar(true);
-
       }
       if (!file && workId) {
         const { data: d } = await axios.put(`/work/${workId}`, newWork);
-        setMessage("Work Updated Successfully!")
+        setMessage("Work Updated Successfully!");
         setLoading(false);
         setSnackbar(true);
       }
-
     } catch (error) {
       console.log(error);
       setLoading(false);
     }
-  }
+  };
 
   const handleReset = () => {
-    setTitle("")
+    setTitle("");
     setTechnologies([]);
     setFile(null);
     document.getElementById("pic").value = "";
@@ -119,16 +118,30 @@ const AddWorks = () => {
     if (imageDiv) {
       imageDiv.classList.add("hidden");
     }
-  }
-
+  };
 
   return (
     <div className="w-3/4 mx-auto py-5 ">
-      {snackbar && <CommonSnackbar message={message} open={snackbar} setOpen={setSnackbar} />}
-      <h2 className="text-xl text-center mb-5">{workId ? "Edit" : "Add"} Work</h2>
+      {snackbar && (
+        <CommonSnackbar
+          message={message}
+          open={snackbar}
+          setOpen={setSnackbar}
+        />
+      )}
+      <h2 className="text-xl text-center mb-5">
+        {workId ? "Edit" : "Add"} Work
+      </h2>
       <form onSubmit={handlePostSubmit}>
         <label className="block text-gray-700 font-bold mb-2">Title</label>
-        <input value={title} onChange={(e) => setTitle(e.target.value)} className="mb-5 w-full" type="text" placeholder="Title" required />
+        <input
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          className="mb-5 w-full"
+          type="text"
+          placeholder="Title"
+          required
+        />
         <div>
           <div className="mb-4">
             <label className="block text-gray-700 font-bold mb-2">
@@ -144,17 +157,28 @@ const AddWorks = () => {
               required
             />
           </div>
-          <div className="mb-5">
-            <WorkTechnology technology={technologies} setTechnology={setTechnologies} />
-          </div>
           <div id="imageDiv" className="hidden">
             <div className="w-52 h-52 bg-gray-300 rounded-md flex items-center justify-center mx-auto mb-5">
               <div className="" id="preview"></div>
             </div>
           </div>
+          <div className="mb-5">
+            <WorkTechnology
+              technology={technologies}
+              setTechnology={setTechnologies}
+            />
+          </div>
         </div>
-        <label className="block text-gray-700 font-bold mb-2">Project Link</label>
-        <input value={link} onChange={(e) => setLink(e.target.value)} className="mb-5 w-full" type="text" placeholder="Link" />
+        <label className="block text-gray-700 font-bold mb-2">
+          Project Link
+        </label>
+        <input
+          value={link}
+          onChange={(e) => setLink(e.target.value)}
+          className="mb-5 w-full"
+          type="text"
+          placeholder="Link"
+        />
 
         <div className="mt-14 flex justify-center gap-5">
           <button
