@@ -106,7 +106,7 @@ Follow this steps to install and run the project:
     - Open the project on browser at [localhost:5174] `http://localhost:5174`
 
 
-# Deployment:
+## Deployment:
 - Create an AWS account if you don't have one already.
 - Launch an EC2 instance with the desired specifications, such as the operating system, storage, and network configuration. You can use an Amazon Machine Image (AMI) with pre-installed software, or you can manually install the required software on the instance.
 - Set up security groups to manage inbound and outbound traffic to the instance. Ensure that the necessary ports are open for your application to function properly.
@@ -124,6 +124,62 @@ Follow this steps to install and run the project:
     ![image](https://user-images.githubusercontent.com/66058172/235347670-eaa21860-6e4d-4b47-9c65-3d5020da836f.png)
 
 - Serve the client-side application using the nginx.
+    
+   
+    ``` server {
+    listen 80;
+    server_name dotpotit.com www.dotpotit.com;
+    return 301 https://$host$request_uri;
+    }
+
+    server {
+        listen 443 ssl http2;
+        server_name dotpotit.com www.dotpotit.com;
+
+        ssl_certificate /etc/letsencrypt/live/dotpotit.com/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/dotpotit.com/privkey.pem;
+        include /etc/letsencrypt/options-ssl-nginx.conf;
+        ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+
+        location / {
+            proxy_pass http://localhost:5173;
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection "upgrade";
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+        }
+        location /api {
+            proxy_pass http://localhost:8800;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+        }
+
+        location /api/uploads {
+            autoindex on;
+            alias /home/ubuntu/website/api/uploads;
+            try_files $uri $uri/ =404;
+            expires 30d;
+        }
+        location /admin {
+        proxy_pass http://localhost:5174/;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+            proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        }
+
+        location /socket.io {
+        proxy_pass http://localhost:8800;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        }
+    }
+
 - Install the necessary dependencies, such as Node.js and other packages required by the application for client.
     `cd client`
     `npm install --legacy-peer-deps`
