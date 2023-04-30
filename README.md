@@ -28,10 +28,8 @@ Welcome to DotpotiT! This web application provides a platform for showcase their
 - ExpressJs
 - MongoDB
 - Tailwind CSS
-- React Router DOM
-- Multer
 - Material UI
-- Sass
+<!-- - Sass
 - Slick-Slider 
 - tsParticles
 - axios
@@ -48,7 +46,7 @@ Welcome to DotpotiT! This web application provides a platform for showcase their
 - react-tsparticles
 - slick-carousel
 - socket.io-client
-- tsparticles
+- tsparticles -->
 ## Folder Structure:
 - api directory contains controllers, middlewares, models, node_modules and routes of the website.
 - client directory contains src of website.
@@ -128,16 +126,16 @@ Follow this steps to install and run the project:
    
     ``` server {
     listen 80;
-    server_name dotpotit.com www.dotpotit.com;
+    server_name yourdomain.com www.yourdomain.com;
     return 301 https://$host$request_uri;
     }
 
     server {
         listen 443 ssl http2;
-        server_name dotpotit.com www.dotpotit.com;
+        server_name yourdomain.com www.yourdomain.com;
 
-        ssl_certificate /etc/letsencrypt/live/dotpotit.com/fullchain.pem;
-        ssl_certificate_key /etc/letsencrypt/live/dotpotit.com/privkey.pem;
+        ssl_certificate /etc/letsencrypt/live/yourdomain.com/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/yourdomain.com/privkey.pem;
         include /etc/letsencrypt/options-ssl-nginx.conf;
         ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
 
