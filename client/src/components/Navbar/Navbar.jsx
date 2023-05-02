@@ -347,7 +347,7 @@ const Navbar = () => {
           title={"Confirm logout"}
         />
       )}
-      <div className="w-full flex items-center justify-center fixed z-50 bg-white">
+      <div className="w-full flex items-center justify-center fixed z-50 bg-bgPrimary-500/50 border-b border-border backdrop-blur-2xl">
         <nav
           className="container flex justify-between items-center p-4 z-999"
           id="nav"
@@ -369,8 +369,8 @@ const Navbar = () => {
                 <span
                   className={`${
                     isActive
-                      ? "lg:text-secondary-400 text-white"
-                      : "lg:text-gray-400 "
+                      ? "lg:text-[#FE9249] text-white"
+                      : "lg:text-primary-500 "
                   } mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-secondary-400`}
                 >
                   Home
@@ -382,8 +382,8 @@ const Navbar = () => {
                 <li
                   className={`${
                     isActive
-                      ? "lg:text-secondary-400 text-white"
-                      : "lg:text-gray-400 "
+                      ? "lg:text-[#FE9249] text-white"
+                      : "lg:text-primary-500 "
                   } mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-secondary-400`}
                 >
                   About Us
@@ -393,7 +393,7 @@ const Navbar = () => {
             <div className={"relative w-max"}>
               <li
                 ref={serviceButtonRef}
-                className={` mx-4 cursor-pointer uppercase font-bold text-lg hover:scale-110 hover:text-secondary-400 flex gap-2 items-center`}
+                className={` mx-4 cursor-pointer uppercase font-bold text-lg hover:scale-110 text-primary-500 hover:text-secondary-400 flex gap-2 items-center`}
                 onClick={() => setIsSubmenuOpen((p) => !p)}
                 onMouseEnter={() => setIsSubmenuOpen((p) => !p)}
               >
@@ -407,15 +407,15 @@ const Navbar = () => {
                 }}
                 className={`absolute ${
                   isSubmenuOpen ? "flex" : "hidden"
-                } top-6 left-0 w-max flex-col gap-3 py-5 bg-white rounded-md shadow-2xl`}
+                } top-6 left-0 w-max flex-col gap-3 py-5 bg-bgSecondary-500 rounded-md shadow-2xl`}
               >
                 {services.map((service, i) => (
                   <div
                     key={i}
-                    className="px-5 flex group/item gap-2 items-center w-full hover:scale-105 duration-100 cursor-pointer relative"
+                    className="px-5 flex group/item gap-2 items-center w-full hover:scale-105 duration-100 cursor-pointer relative text-primary-500"
                   >
-                    <img className="" width={20} src={service.icon} alt="" />
-                    <Submenu
+                    <img className="bg-primary-500" width={20} src={service.icon} alt="" />
+                    <Submenu 
                       service={service}
                       selectedSubmenu={selectedSubmenu}
                       setSelectedSubmenu={setSelectedSubmenu}
@@ -451,8 +451,8 @@ const Navbar = () => {
                 <li
                   className={`${
                     isActive
-                      ? "lg:text-secondary-400 text-white"
-                      : "lg:text-gray-400 "
+                      ? "lg:text-[#FE9249] text-white"
+                      : "lg:text-primary-500 "
                   } mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-secondary-400`}
                   onClick={() => setToggleMenu(false)}
                 >
@@ -465,8 +465,8 @@ const Navbar = () => {
                 <li
                   className={`${
                     isActive
-                      ? "lg:text-secondary-400 text-white"
-                      : "lg:text-gray-400 "
+                      ? "lg:text-[#FE9249] text-white"
+                      : "lg:text-primary-500 "
                   } mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-secondary-400`}
                   onClick={() => setToggleMenu(false)}
                 >
@@ -481,8 +481,8 @@ const Navbar = () => {
                   <li
                     className={`${
                       isActive
-                        ? "lg:text-secondary-400 text-white"
-                        : "lg:text-gray-400 "
+                        ? "lg:text-[#FE9249] text-white"
+                        : "lg:text-primary-500 "
                     } mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-secondary-400`}
                     onClick={() => setToggleMenu(false)}
                   >
@@ -492,7 +492,7 @@ const Navbar = () => {
               </NavLink>
             ) : (
               <li
-                className="mx-4 cursor-pointer uppercase text-white font-bold lg:text-gray-400 text-lg hover:scale-110 hover:text-secondary-400"
+                className="mx-4 cursor-pointer uppercase text-white font-bold lg:text-primary-500 text-lg hover:scale-110 hover:text-secondary-400"
                 onClick={() => setOpen(true)}
               >
                 Logout
@@ -500,7 +500,7 @@ const Navbar = () => {
             )}
 
             <Link to="/apply" target="_blank">
-              <li className="bg-secondary-400 py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-secondary-500 text-white">
+              <li className="bg-bgSecondary-300 py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-bgSecondary-500 text-primary-500">
                 Apply For Jobs
               </li>
             </Link>
@@ -527,7 +527,7 @@ const Navbar = () => {
                 </li>
                 <Link to="/">
                   <li
-                    className="mx-4 cursor-pointer uppercase text-gray lg:text-gray-400 text-xl font-bold mt-3"
+                    className="mx-4 cursor-pointer uppercase text-gray lg:text-primary-500 text-xl font-bold mt-3"
                     onClick={() => setToggleMenu(false)}
                   >
                     Home
@@ -535,7 +535,7 @@ const Navbar = () => {
                 </Link>
                 <Link to="/about">
                   <li
-                    className="mx-4 cursor-pointer uppercase text-gray lg:text-gray-400 text-xl font-bold mt-3"
+                    className="mx-4 cursor-pointer uppercase text-gray lg:text-primary-500 text-xl font-bold mt-3"
                     onClick={() => setToggleMenu(false)}
                   >
                     About Us
@@ -543,7 +543,7 @@ const Navbar = () => {
                 </Link>
                 <Link to="/services">
                   <li
-                    className="mx-4 cursor-pointer uppercase text-gray lg:text-gray-400 text-xl font-bold mt-3 flex gap-2 items-center"
+                    className="mx-4 cursor-pointer uppercase text-gray lg:text-primary-500 text-xl font-bold mt-3 flex gap-2 items-center"
                     onClick={() => setIsDropDownOpen((p) => !p)}
                   >
                     Services <IoIosArrowDown />
@@ -558,7 +558,7 @@ const Navbar = () => {
                     <div key={i}>
                       <div
                         key={i}
-                        className={`mx-4 cursor-pointer uppercase text-gray lg:text-gray-400 text-base font-bold mt-3 relative`}
+                        className={`mx-4 cursor-pointer uppercase text-gray lg:text-primary-500 text-base font-bold mt-3 relative`}
                       >
                         <span
                           onClick={() => setSelectedSubmenu(service._id)}
@@ -594,7 +594,7 @@ const Navbar = () => {
                   ))}
                   <Link to="/services">
                     <li
-                      className="mx-4 cursor-pointer uppercase text-gray lg:text-gray-400 text-lg font-bold mt-3"
+                      className="mx-4 cursor-pointer uppercase text-gray lg:text-primary-500 text-lg font-bold mt-3"
                       onClick={() => setToggleMenu(false)}
                     >
                       Get A Quote{" "}
@@ -603,7 +603,7 @@ const Navbar = () => {
                 </div>
                 <Link to="/contact">
                   <li
-                    className="mx-4 cursor-pointer uppercase text-gray lg:text-gray-400 text-xl font-bold mt-3"
+                    className="mx-4 cursor-pointer uppercase text-gray lg:text-primary-500 text-xl font-bold mt-3"
                     onClick={() => setToggleMenu(false)}
                   >
                     Contact
@@ -611,7 +611,7 @@ const Navbar = () => {
                 </Link>
                 <Link to="/blog">
                   <li
-                    className="mx-4 cursor-pointer uppercase text-gray lg:text-gray-400 text-xl font-bold mt-3"
+                    className="mx-4 cursor-pointer uppercase text-gray lg:text-primary-500 text-xl font-bold mt-3"
                     onClick={() => setToggleMenu(false)}
                   >
                     Blog
@@ -619,13 +619,13 @@ const Navbar = () => {
                 </Link>
                 {!user ? (
                   <Link to="/login">
-                    <li className="mx-4 cursor-pointer uppercase lg:text-gray-400 text-lg font-bold hover:scale-110 mt-2">
+                    <li className="mx-4 cursor-pointer uppercase lg:text-primary-500 text-lg font-bold hover:scale-110 mt-2">
                       Login
                     </li>
                   </Link>
                 ) : (
                   <li
-                    className="mx-4 cursor-pointer uppercase font-bold lg:text-gray-400 text-lg hover:scale-110 "
+                    className="mx-4 cursor-pointer uppercase font-bold lg:text-primary-500 text-lg hover:scale-110 "
                     onClick={() => setOpen(true)}
                   >
                     Logout

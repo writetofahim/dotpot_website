@@ -25,7 +25,7 @@ function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
     <GrNext
-      className="md:block text-4xl md:text-5xl absolute right-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 hover:bg-primary-300 transition-all -translate-y-[100%] p-2 rounded-full translate-x-[30%]"
+      className="md:block text-4xl md:text-5xl absolute right-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 hover:bg-primary-300  bg-primary-500 transition-all -translate-y-[100%] p-2 rounded-full translate-x-[30%]"
       onClick={onClick}
     />
   );
@@ -35,7 +35,7 @@ function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
   return (
     <GrPrevious
-      className="md:block z-10 text-4xl md:text-5xl absolute left-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 hover:bg-primary-300 transition-all -translate-y-[100%] p-2 rounded-full -translate-x-[30%]"
+      className="md:block z-10 text-4xl md:text-5xl absolute left-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 hover:bg-primary-300 bg-primary-500 transition-all -translate-y-[100%] p-2 rounded-full -translate-x-[30%]"
       onClick={onClick}
     />
   );
@@ -89,24 +89,28 @@ export const SingleSlide = (props) => {
         alt=""
         className="rounded-tl-xl rounded-tr-xl w-full aspect-video object-cover"
       />
-      <div className=" bg-white rounded-bl-xl rounded-br-xl shadow p-5 flex flex-col">
+      <div className=" bg-bgSecondary-200 rounded-bl-xl rounded-br-xl shadow p-5 flex flex-col">
         <Stack direction="row" className="flex flex-wrap gap-1">
           {props.tags.map((tag, index) => (
-            <Chip
-              label={tag}
-              key={index}
-              variant="outlined"
-              className="hover:border-primary-500 cursor-pointer"
-            />
+            // <Chip
+            //   label={tag}
+            //   key={index}
+            //   variant="outlined"
+            //   className="hover:border cursor-pointer"
+            // />
+
+            <div className="border  rounded-full px-2 ">
+              <p className="text-secondary-500">{tag}</p>
+            </div>
           ))}
         </Stack>
-        <p className="mt-2 text-gray-400">{props.date}</p>
-        <h3 className="text-xl font-bold text-gray-400 my-2 h-[80px]">
+        <p className="mt-2 text-white">{props.date}</p>
+        <h3 className="text-xl font-bold text-primary-500 my-2 h-[80px]">
           {props.title.slice(0, 45)}...
         </h3>
         <Link
           to={`/blog/${props._id}`}
-          className="text-gray-400 font-bold hover:text-secondary-500 flex items-center gap-2"
+          className=" font-bold hover:text-secondary-500 text-primary-500 flex items-center gap-2"
         >
           Read More <BsArrowRight />
         </Link>

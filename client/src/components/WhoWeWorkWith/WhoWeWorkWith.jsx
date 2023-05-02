@@ -23,7 +23,7 @@ export const Card = (props) => {
   return (
     <Link
       to={props.link}
-      className="bg-white rounded-lg flex flex-col items-stretch justify-between md:justify-center p-3 md:p-10 shadow h-[150px] md:h-[200px] w-[45%] md:w-[40%] md:min-w-[200px] hover:scale-110 transition-all cursor-pointer"
+      className="bg-bgSecondary-200 rounded-lg flex flex-col items-stretch justify-between md:justify-center p-3 md:p-10 shadow h-[150px] md:h-[200px] w-[45%] md:w-[40%] md:min-w-[200px] hover:scale-110 transition-all cursor-pointer"
     >
       <div className="flex flex-col gap-5 items-center justify-center">
         <img
@@ -57,10 +57,10 @@ const WhoWeWorkWith = () => {
   }, []);
 
   return (
-    <div className="whoWeWorWith w-full min-h-[60vh] overflow-hidden py-10 md:flex md:flex-col md:justify-center md:items-center bg-primary-100 ">
+    <div className="whoWeWorWith w-full min-h-[60vh] overflow-hidden py-10 md:flex md:flex-col md:justify-center md:items-center bg-bgSecondary-500 ">
       <div className="mt-5 w-full md:max-w-[1400px]  flex flex-col lg:flex-row md:flex-row gap-5 items-center">
         <div className="left w-1/1 md:w-1/3 lg:2/3 h-max p-5 text-left">
-          <h1 className="text-3xl md:text-5xl text-center md:text-left font-bold mb-5">
+          <h1 className="text-3xl md:text-5xl text-center md:text-left font-bold mb-5 text-primary-500">
             <Typed
               className="text-3xl md:text-4xl text-center md:text-left font-bold mb-2"
               strings={[whoDoWeWorkData.title]}
@@ -69,7 +69,7 @@ const WhoWeWorkWith = () => {
               loop
             />
           </h1>
-          <p className="text-justify text-md md:text-lg">
+          <p className="text-justify text-md md:text-lg text-secondary-500">
             {whoDoWeWorkData.desc}
           </p>
         </div>

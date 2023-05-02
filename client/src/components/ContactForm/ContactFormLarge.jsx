@@ -77,37 +77,37 @@ const ContactFormLarge = () => {
     }
 
     return (
-        <div className="shadow w-full p-5 rounded-xl max-w-[1200px] bg-white">
+        <div className="shadow w-full p-5 rounded-xl max-w-[1200px] bg-bgSecondary-500 border border-b border-border">
             {openModal && <ResponseSuccessModal openModal={openModal} setOpenModal={setOpenModal} />}
             <form onSubmit={handleSubmit}>
                 <div className="w-full flex flex-col md:flex-row items-center md:gap-5">
-                    <div className="border-b w-full flex items-center mt-5">
+                    <div className="border-b border-border w-full flex items-center mt-5">
                         <MdPerson className='text-primary-500 text-2xl' />
-                        <input type="text" placeholder="Your Full Name*" name="name" className="w-full p-2 text-gray-400 outline-none" required />
+                        <input type="text" placeholder="Your Full Name*" name="name" className="w-full p-2 text-gray-400  bg-bgSecondary-500 outline-none" required />
                     </div>
-                    <div className="border-b w-full flex items-center mt-5">
+                    <div className="border-b border-border w-full flex items-center mt-5">
                         <MdMail className='text-primary-500 text-2xl' />
-                        <input type="email" name='email' placeholder="Your Email*" className="w-full p-2 text-gray-400 outline-none" required />
+                        <input type="email" name='email' placeholder="Your Email*" className="w-full p-2 text-gray-400  bg-bgSecondary-500 outline-none" required />
                     </div>
                 </div>
                 <div className="w-full flex flex-col md:flex-row items-center md:gap-5">
-                    <div className="border-b w-full flex items-center mt-5">
+                    <div className="border-b border-border w-full flex items-center mt-5">
                         <MdPhone className='text-primary-500 text-2xl' />
-                        <input name='phone' type="text" placeholder="Contact Number*" className="w-full p-2 text-gray-400 outline-none" required />
+                        <input name='phone' type="text" placeholder="Contact Number*" className="w-full p-2 text-gray-400  bg-bgSecondary-500 outline-none" required />
                     </div>
-                    <div className="border-b w-full flex items-center mt-5">
+                    <div className="border-b border-border w-full flex items-center mt-5">
                         <RiWhatsappFill className='text-primary-500 text-2xl' />
-                        <input name="whatsapp" type="text" placeholder="Whatsapp Number" className="w-full p-2 text-gray-400 outline-none" required />
+                        <input name="whatsapp" type="text" placeholder="Whatsapp Number" className="w-full p-2 text-gray-400  bg-bgSecondary-500 outline-none" required />
                     </div>
-                    <div className="border-b w-full flex items-center mt-5">
+                    <div className="border-b border-border w-full flex items-center mt-5">
                         <BsSkype className='text-primary-500 text-2xl' />
-                        <input name='skype' type="text" placeholder="Skype" className="w-full p-2 text-gray-400 outline-none" required />
+                        <input name='skype' type="text" placeholder="Skype" className="w-full p-2 text-gray-400  bg-bgSecondary-500 outline-none" required />
                     </div>
                 </div>
-                <div className="border-b w-full flex items-center mt-5">
-                    <input onChange={(e) => setFiles(e.target.files)} type="file" placeholder="Choose a file" name="files" className="w-full p-2 text-gray-400 outline-none" />
+                <div className="border-b border-border w-full flex items-center mt-5">
+                    <input onChange={(e) => setFiles(e.target.files)} type="file" placeholder="Choose a file" name="files" className="w-full p-2 text-gray-400  bg-bgSecondary-500 outline-none " />
                 </div>
-                <div className="border-b w-full flex items-center mt-5 ">
+                <div className="border-b border-border w-full flex items-center mt-5 ">
                     <div className='w-full lg:flex gap-3 items-center mb-2'>
                         <AiFillDollarCircle className='text-primary-500 lg:text-2xl text-2xl inline-block lg:mr-0 mr-2' />
                         {/* <div className='flex flex-wrap lg:text-base text-xs gap-3 mt-2'>
@@ -118,14 +118,14 @@ const ContactFormLarge = () => {
                         <RangeSlider sliderValue={selectedBudget} setSliderValue={setSelectedBudget} />
                     </div>
                 </div>
-                <div className="border-b w-full flex items-start mt-5 mb-10">
+                <div className="border-b border-border w-full flex items-start mt-5 mb-10">
                     <MdMessage className='text-primary-500 text-2xl mt-3' />
-                    <textarea name="message" type="text" placeholder="Your Message*" rows="5" className="w-full p-2 text-gray-400 outline-none">
+                    <textarea name="message" type="text" placeholder="Your Message*" rows="5" className="w-full p-2 text-gray-400  bg-bgSecondary-500 outline-none">
                     </textarea>
                 </div>
-                <p className='text-gray-400 mb-10'>We sign NDA for all our projects.</p>
+                <p className='text-gray-400  bg-bgSecondary-500 mb-10'>We sign NDA for all our projects.</p>
                 {error && <p>{error}</p>}
-                <button disabled={isSubmitting} variant="contained" className={`bg-primary-500 px-10 py-3 text-white rounded-sm hover:bg-secondary-500 font-bold mt-2 flex items-center gap-3 ${isSubmitting && "cursor-not-allowed"}`}>
+                <button disabled={isSubmitting} variant="contained" className={`bg-bgSecondary-100 px-10 py-3 text-white rounded-sm hover:bg-secondary-500 font-bold mt-2 flex items-center gap-3 ${isSubmitting && "cursor-not-allowed"}`}>
                     Send {isSubmitting ? <FaSpinner className="animate-spin" /> : <BsArrowRight />}
                 </button>
 

@@ -25,7 +25,7 @@ const ContactInfo = () => {
 
   return (
     <section className="text-gray-600 body-font mt-10">
-      <h1 className="text-3xl md:text-5xl text-center font-extrabold pt-10 block backdrop-blur-sm">
+      <h1 className="text-3xl md:text-5xl text-center font-extrabold pt-10 block backdrop-blur-sm text-primary-500">
         Reach us On
       </h1>
       <div className="container px-5 py-24 mx-auto flex flex-col-reverse md:flex-row flex-wrap gap-10 md:gap-0">

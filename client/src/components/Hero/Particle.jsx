@@ -21,6 +21,11 @@ const Particle = () => {
   const particlesLoaded = useCallback(async container => {
   
   }, []);
+  
+
+  const bgColor = "#0E1628"
+  // const particleColor="#a674fca7"
+  const particleColor="#fff"
 
   return (
     <Particles
@@ -30,7 +35,7 @@ const Particle = () => {
   options={{
     background: {
       color: {
-        value: "#0d48a10",
+        value: bgColor,
       },
     },
     fullScreen: {
@@ -55,7 +60,7 @@ const Particle = () => {
     },
     particles: {
       color: {
-        value: "#a674fca7",
+        value: particleColor,
       },
       collisions: {
         enable: false,

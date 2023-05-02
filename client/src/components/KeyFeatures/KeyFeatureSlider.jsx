@@ -33,7 +33,7 @@ function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
     <GrNext
-      className="  md:block text-4xl md:text-5xl absolute right-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 hover:bg-primary-300 transition-all p-2 rounded-full translate-x-[0%]"
+      className="  md:block text-4xl md:text-5xl absolute right-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 bg-primary-500 hover:bg-primary-300 transition-all p-2 rounded-full translate-x-[0%]"
       onClick={onClick}
     />
   );
@@ -43,7 +43,7 @@ function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
   return (
     <GrPrevious
-      className=" md:block z-10 text-4xl md:text-5xl absolute left-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 hover:bg-primary-300 transition-all p-2 rounded-full translate-x-[0%]"
+      className=" md:block z-10 text-4xl md:text-5xl absolute left-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 bg-primary-500 hover:bg-primary-300 transition-all p-2 rounded-full translate-x-[0%]"
       onClick={onClick}
     />
   );
@@ -102,18 +102,18 @@ var settings = {
 export const SingleSlide = (props) => {
   return (
     <Link to={props.link}>
-      <div className="h-[300px] my-5 flex flex-col items-center border bg-white mx-2 p-5 rounded-lg shadow-lg text-gray-400 cursor-pointer relative">
+      <div className="h-[300px] my-5 flex flex-col items-center border border-border bg-bgSecondary-500  mx-2 p-5 rounded-lg shadow-lg text-gray-400 cursor-pointer relative">
         <div className="mb-3">
-          <img src={props.icon} alt="" className="w-[70px] h-[70px]" />
+          <img src={props.icon} alt="" className="w-[70px] h-[70px]"/>
         </div>
-        <h2 className="text-2xl h-[70px] text-center font-bold">
+        <h2 className="text-2xl h-[70px] text-center font-bold text-primary-500">
           {props.title}
         </h2>
-        <p className="text-left ">
+        <p className="text-left text-secondary-500">
           {props.description?.slice(0, 65)}
           ...
         </p>
-        <span className="absolute bottom-3 left-5 font-bold hover:text-secondary-500 flex items-center">
+        <span className="absolute bottom-3 left-5 font-bold hover:text-secondary-500 flex items-center text-primary-500">
           Read More <AiOutlineDoubleRight />
         </span>
       </div>

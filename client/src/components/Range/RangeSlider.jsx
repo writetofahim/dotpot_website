@@ -16,7 +16,7 @@ function RangeSlider({ sliderValue, setSliderValue }) {
 
   return (
     <div className='w-full'>
-      <span>Project Budget: {sliderValue}$</span>
+      <span className='text-primary-500'>Project Budget: {sliderValue}$</span>
       <input type="range" min="0" max="10000" value={sliderValue} onChange={handleSliderChange} className="w-full mb-5 bg-primary-400"/>
     </div>
   );
