@@ -19,6 +19,7 @@ import axios from "../utils/axiosInstance";
 
 import { NavLink, useLocation } from "react-router-dom";
 
+import { RiPaintFill } from "react-icons/ri";
 import { AuthContext } from "../contexts/AuthContext";
 import socket from "../socket";
 import SidebarLinkGroup from "./SidebarLinkGroup";
@@ -224,6 +225,31 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                     <div className="flex flex-shrink-0 ml-2">
                       <span className="inline-flex items-center justify-center h-5 text-xs font-medium text-white bg-indigo-500 px-2 rounded">
                         {unseenMessages}
+                      </span>
+                    </div>
+                  </div>
+                </NavLink>
+              </li>
+              {/* Chat */}
+              <li
+                className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
+                  pathname.includes("theme") && "bg-slate-900"
+                }`}
+              >
+                <NavLink
+                  end
+                  to="/admin/theme"
+                  className={`block text-slate-200 truncate transition duration-150 ${
+                    pathname.includes("chat")
+                      ? "hover:text-slate-200"
+                      : "hover:text-white"
+                  }`}
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="grow flex items-center">
+                      <RiPaintFill />
+                      <span className="text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                        Theme
                       </span>
                     </div>
                   </div>

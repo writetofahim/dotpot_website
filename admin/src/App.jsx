@@ -39,23 +39,25 @@ import AddService from "./pages/services/AddServices";
 import AllServices from "./pages/services/AllServices";
 import AddTeam from "./pages/team/AddTeam";
 import AllTeam from "./pages/team/AllTeam";
+import Theme from "./pages/theme/Theme";
 import AddUsers from "./pages/users/AddUsers";
 import AllUsers from "./pages/users/AllUsers";
 import AddWhoWeWorksWith from "./pages/whoWeWorkWith/AddWhoWeWorksWith";
 import AllWhoWeWorksWith from "./pages/whoWeWorkWith/AllWhoWeWorksWith";
 import AddWorks from "./pages/works/AddWorks";
 import AllWorks from "./pages/works/AllWorks";
+import axios from "./utils/axiosInstance";
 // import AddClientsReview from "./pages/clientsReview/AddClientsReview";
 
 function App() {
   const location = useLocation();
-  const { user } = useContext(AuthContext);
+  const { user, logout } = useContext(AuthContext);
   const navigate = useNavigate();
 
   useEffect(() => {
-    navigate(location?.pathname==="/" ? "/admin" : location?.pathname);
-  }, [])
-  
+    navigate(location?.pathname === "/" ? "/admin" : location?.pathname);
+  }, []);
+
   useEffect(() => {
     if (!user) {
       navigate("/admin/login");
@@ -65,6 +67,20 @@ function App() {
     window.scroll({ top: 0 });
     document.querySelector("html").style.scrollBehavior = "";
   }, [location.pathname, user]); // triggered on route change
+
+  useEffect(() => {
+    axios.interceptors.response.use(
+      (response) => {
+        return response;
+      },
+      (error) => {
+        if (error.response.status === 401) {
+          logout(); // call the logout function from your context
+        }
+        return Promise.reject(error);
+      }
+    );
+  }, []);
 
   return (
     <>
@@ -80,7 +96,8 @@ function App() {
           }
         >
           <Route path="/admin/" element={<Dashboard />} />
-          <Route path="/admin/chat" element={<Chat />}/>
+          <Route path="/admin/chat" element={<Chat />} />
+          <Route path="/admin/theme" element={<Theme />} />
           <Route path="/admin/job-applications" element={<JobApplications />} />
           <Route path="/admin/orders" element={<Orders />} />
           <Route
@@ -99,7 +116,10 @@ function App() {
           <Route path="/admin/works/add-works" element={<AddWorks />} />
           <Route path="/admin/jobs/all-jobs" element={<AllJobs />} />
           <Route path="/admin/jobs/add-jobs" element={<AddJobs />} />
-          <Route path="/admin/services/all-services" element={<AllServices />} />
+          <Route
+            path="/admin/services/all-services"
+            element={<AllServices />}
+          />
           <Route path="/admin/services/add-services" element={<AddService />} />
           <Route path="/admin/team/all-team" element={<AllTeam />} />
           <Route path="/admin/team/add-team" element={<AddTeam />} />
