@@ -50,7 +50,7 @@ const ContactCenterSupport = () => {
       <div className="bg-bgPrimary-500">
         <div className="pt-[15vh] pb-10 container mx-auto min-h-screen px-3">
           <div className="bg-bgPrimary-500">
-          <NavigatorComponent navigationData={navigationData}/>
+            <NavigatorComponent navigationData={navigationData}/>
           </div>
           <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-center text-primary-500">
             Contact Center Support
