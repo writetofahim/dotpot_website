@@ -83,10 +83,10 @@ const createColor = async (req, res) => {
  */
 const updateColorById = async (req, res) => {
   try {
-    const { name, colors } = req.body;
+    const { name, colors, border, particleColor } = req.body;
     const updatedColor = await Color.findByIdAndUpdate(
       req.params.id,
-      { name, colors },
+      { name, colors, border, particleColor },
       { new: true }
     );
     if (!updatedColor) {

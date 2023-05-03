@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { ImSpinner2 } from "react-icons/im";
+import CommonSnackbar from "../../components/CommonSnackbar";
 import axios from "../../utils/axiosInstance";
 
 // const themeColors = [
@@ -98,61 +100,140 @@ import axios from "../../utils/axiosInstance";
 
 const Theme = () => {
   const [themeColors, setThemeColors] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [changing, setChanging] = useState(false);
+  const [error, setError] = useState("");
+
+  const [message, setMessage] = useState("");
+  const [open, setOpen] = useState(false);
+  const [severity, setSeverity] = useState("success");
+
   useEffect(() => {
-    axios.get("http://localhost:8800/api/colors").then((response) => {
-      console.log(response);
-      setThemeColors(response.data.data);
-    });
+    setLoading(true);
+    axios
+      .get("/colors")
+      .then((response) => {
+        setThemeColors(response.data.data);
+      })
+      .catch((err) => {
+        setError("Something went wrong!");
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }, []);
 
+  const handleChangeTheme = (id) => {
+    setChanging(true);
+    axios
+      .post(`/colors/selected/${id}`)
+      .then((response) => {
+        if (response?.status === 200) {
+          setThemeColors((prev) =>
+            prev.map((color) => {
+              return { ...color, selected: color._id === id ? true : false };
+            })
+          );
+          setMessage("Theme changed successfully!");
+          setSeverity("success");
+          setOpen(true);
+        }
+      })
+      .catch((err) => {
+        setMessage("Something went wrong!");
+        setSeverity("error");
+        setOpen(true);
+      })
+      .finally(() => {
+        setChanging(false);
+      });
+  };
+
   return (
-    <div className="p-3 md:p-5 ">
-      <h1 className="text-xl font-bold">Theme </h1>
-      <div className="flex flex-wrap gap-5 mt-5">
-        {loading && (
-          <div>
-            <img
-              src="https://ionic.io/blog/wp-content/uploads/2018/03/skeleton.gif"
-              alt=""
-            />
+    <>
+      {open && (
+        <CommonSnackbar
+          message={message}
+          open={open}
+          setOpen={setOpen}
+          severity={severity}
+        />
+      )}
+      <div className="p-3 md:p-5 ">
+        <div className="flex gap-3 items-center">
+          <h1 className="text-xl font-bold relative z-10">Theme</h1>
+          <div className={`${changing ? "block" : "hidden"}`}>
+            <ImSpinner2 className="animate-spin" />
           </div>
-        )}
-        {themeColors.length > 0 &&
-          !loading &&
-          themeColors.map((color) => (
-            <div
-              key={color.name}
-              className={`rounded-md bg-white shadow-2xl p-3 border-2 ${
-                color.selected && "border-blue-600"
-              } flex gap-5 items-center`}
-            >
-              <input checked={color.selected} readOnly type="radio" />
-              <div className={`${color.selected && "gsd"}`}>{color.name}</div>
-              <div>
-                <div className="p-3 rounded-md shadow-lg flex gap-1">
-                  {Object.values(color.colors.bgPrimary).map((code, i) => (
-                    <div
-                      key={i}
-                      className={`w-5 h-10`}
-                      style={{ backgroundColor: code }}
-                    ></div>
-                  ))}
+        </div>
+        <div className="flex flex-wrap gap-5 mt-5">
+          {loading && (
+            <div className="flex flex-wrap -mt-[50px]">
+              {[...new Array(3)].map((_, i) => (
+                <img
+                  key={i}
+                  className="md:w-[350px] h-[230px] w-full"
+                  src="https://ionic.io/blog/wp-content/uploads/2018/03/skeleton.gif"
+                  alt=""
+                />
+              ))}
+            </div>
+          )}
+          {themeColors.length > 0 &&
+            !loading &&
+            themeColors.map((color) => (
+              <div
+                key={color.name}
+                onClick={() => handleChangeTheme(color._id)}
+                className={`md:w-[350px] w-full rounded-md ${
+                  color?.selected
+                    ? "bg-gray-200 border-blue-600"
+                    : "bg-gray-50 hover:bg-gray-200 hover:border-blue-600"
+                } shadow-2xl p-3 border-2 flex gap-5 items-center justify-between cursor-pointer ${
+                  changing && "cursor-not-allowed duration-300"
+                }`}
+              >
+                <input
+                  className="cursor-pointer"
+                  checked={color?.selected}
+                  disabled={loading}
+                  readOnly
+                  type="radio"
+                />
+                <div
+                  className={`${
+                    color.selected ? "text-gray-900" : "text-gray-500"
+                  } font-bold`}
+                >
+                  {color.name}
                 </div>
-                <div className="p-3 rounded-md shadow-lg flex gap-1">
-                  {Object.values(color.colors.primary).map((code, i) => (
-                    <div
-                      key={i}
-                      className={`w-5 h-10`}
-                      style={{ backgroundColor: code }}
-                    ></div>
-                  ))}
+                <div className="w-max">
+                  <div className="w-full p-3 rounded shadow-lg flex gap-1 bg-white mb-2">
+                    {Object.values(color.colors.bgPrimary).map((code, i) => (
+                      <div
+                        key={i}
+                        className={`w-5 h-10 `}
+                        style={{ backgroundColor: code }}
+                      ></div>
+                    ))}
+                  </div>
+                  <div className="w-full p-3 rounded shadow-lg flex gap-1 bg-white">
+                    {Object.values(color.colors.primary).map((code, i) => (
+                      <div
+                        key={i}
+                        className={`w-5 h-10 `}
+                        style={{ backgroundColor: code }}
+                      ></div>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+
+          {error && <p className="text-red-400 text-lg ">{error}</p>}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

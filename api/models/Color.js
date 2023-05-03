@@ -44,6 +44,7 @@ const ColorSchema = new Schema({
       500: { type: String },
     },
     border: { type: String },
+    particleColor: { type: String },
   },
 });
 

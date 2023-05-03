@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { AiOutlineClose } from "react-icons/ai";
 import axios from "../../utils/axiosInstance";
 import postLogger from "../../utils/postLogger";
 
@@ -6,39 +7,58 @@ const CompanyInfo = () => {
   const [data, setData] = useState(null);
   const [formData, setFormData] = useState({});
 
+  const [primaryLogo, setPrimaryLogo] = useState(null);
+  const [secondaryLogo, setSecondaryLogo] = useState(null);
+
   // Data Fetching
   useEffect(() => {
     axios
       .get("/info")
       .then((response) => {
-        setData(response.data[0])
-        postLogger({level:"info", message:response})
+        setData(response.data[0]);
+        postLogger({ level: "info", message: response });
       })
       .catch((error) => {
-        console.error(error)
-        postLogger({level:"error", message:error})
+        console.error(error);
+        postLogger({ level: "error", message: error });
       });
-    // console.log(data[0]);
-
   }, []);
+
+  // upload file to server
+  const handleUploadFile = async (f) => {
+    const fileFormData = new FormData();
+    fileFormData.append("file", f);
+    const { data: resFiles } = await axios.post("/upload/blogs", fileFormData);
+    return resFiles[0].filename;
+  };
 
   // console.log(data);
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // const formData = new FormData(event.target);
+
+    if (secondaryLogo) {
+      formData.secondary_logo = await handleUploadFile(secondaryLogo);
+      setSecondaryLogo(null);
+    }
+    if (primaryLogo) {
+      formData.primary_logo = await handleUploadFile(primaryLogo);
+      setPrimaryLogo(null);
+    }
+
+    console.log(formData);
     axios
       .put(`/info/${data._id}`, formData)
       .then((response) => {
-        console.log(response)
-        postLogger({level:"info", message:response})
+        console.log(response);
+        postLogger({ level: "info", message: response });
       })
       .catch((error) => {
-        console.error(error)
-        postLogger({level:"error", message:error})
+        console.error(error);
+        postLogger({ level: "error", message: error });
       });
   };
 
@@ -64,6 +84,16 @@ const CompanyInfo = () => {
                 onChange={handleInputChange}
               />
             </div>
+            <LogoInput
+              logo={data.primary_logo}
+              setSelectedFile={setPrimaryLogo}
+              title={"Primary logo"}
+            />
+            <LogoInput
+              logo={data.secondary_logo}
+              setSelectedFile={setSecondaryLogo}
+              title={"Secondary logo"}
+            />
             <div className="w-full border-none mt-3">
               <label htmlFor="slogan" className="">
                 Company Slogan:
@@ -146,3 +176,50 @@ const CompanyInfo = () => {
 };
 
 export default CompanyInfo;
+
+const LogoInput = ({ title, logo, setSelectedFile }) => {
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  function handleImageChange(event) {
+    const file = event.target.files[0];
+    setSelectedFile(file);
+
+    const reader = new FileReader();
+
+    reader.onload = function (event) {
+      setSelectedImage(event.target.result);
+    };
+
+    reader.readAsDataURL(file);
+  }
+  return (
+    <div className="w-full border-none mt-3">
+      <label htmlFor="name" className="">
+        {title}:
+      </label>
+      <div className="md:flex justify-between gap-5">
+        <input
+          type="file"
+          name="primary_logo"
+          className="md:w-1/2 w-full border-b mt-2"
+          onChange={handleImageChange}
+        />
+        <div className="md:w-1/2 w-full">
+          {selectedImage && (
+            <div className="flex justify-end">
+              <AiOutlineClose
+                onClick={() => {
+                  setSelectedImage(null);
+                  setSelectedFile(null);
+                }}
+                className="text-xl text-left cursor-pointer"
+              />
+            </div>
+          )}
+          {selectedImage && <img src={selectedImage} alt="Selected" />}
+          {!selectedImage && <img src={logo} alt="Primary logo" />}
+        </div>
+      </div>
+    </div>
+  );
+};

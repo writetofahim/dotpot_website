@@ -7,7 +7,6 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 });
 
 export default function CommonSnackbar({ open, setOpen, message, severity }) {
-  console.log("what happing here?");
   const handleClick = () => {
     setOpen(true);
   };
