@@ -31,6 +31,7 @@ const c_partnershipModelRoutes = require("./routes/c_partnershipModelRoutes");
 const c_whoWeWorkWithRoutes = require("./routes/c_whoWeWorkWithRoutes");
 const chatRoutes = require("./routes/chatRoutes");
 const loggerRoutes = require("./routes/loggerRoutes");
+const colorRoutes = require("./routes/colorRoutes");
 
 dotenv.config();
 
@@ -130,6 +131,7 @@ app.use("/api/info", c_infoRoutes);
 app.use("/api/key_feature", c_keyFeatureRouters);
 app.use("/api/partnership_model", c_partnershipModelRoutes);
 app.use("/api/who_we_work_with", c_whoWeWorkWithRoutes);
+app.use("/api/colors", colorRoutes);
 
 // Logger
 app.use("/api/logger", loggerRoutes);
