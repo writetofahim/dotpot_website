@@ -96,7 +96,9 @@ const Home = () => {
       <WhoWeWorkWith />
       <WhatOurClientSay />
       <RecentBlogs />
+      {/* <div id="team"> */}
       <OurTeam />
+      {/* </div> */}
       <SocialMedia />
       <OurPartnersSlider />
       {/* <GoogleMap /> */}

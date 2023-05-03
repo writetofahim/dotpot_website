@@ -475,6 +475,13 @@ const Navbar = () => {
               )}
             </NavLink>
 
+            {/* adding team nav as per asif sir */}
+            
+                {/* <li className="mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-secondary-400 text-primary-500">
+                  <a href="#team">Team</a>
+                </li> */}
+             
+
             {!user ? (
               <NavLink to="/login">
                 {({ isActive }) => (
