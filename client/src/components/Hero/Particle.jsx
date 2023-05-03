@@ -6,94 +6,104 @@ The options object is used to customize the appearance and behavior of the parti
 The Particle component can be imported and used in other React components to display the particle animation.
  */
 
-import React from 'react'
+import React from "react";
 import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 
-
 const Particle = () => {
-  const particlesInit = useCallback(async engine => {
+  const particlesInit = useCallback(async (engine) => {
     // console.log(engine);
     await loadFull(engine);
   }, []);
 
-  const particlesLoaded = useCallback(async container => {
-  
-  }, []);
-  
+  const particlesLoaded = useCallback(async (container) => {}, []);
 
-  const bgColor = "#0E1628"
-  // const particleColor="#a674fca7"
-  const particleColor="#fff"
+  // dark starts
+  // const bgColor = "#0E1628"
+  // const particleColor = "#fff";
+
+  // coffee starts
+  // const bgColor = "#1D141C";
+  // const particleColor = "#5A5059";
+
+
+ 
+  // night starts
+  // const bgColor = "#0E1526";
+  // const particleColor = "#1B294A";
+
+  // cyberpunk starts
+  const bgColor = "#FFEE00";
+  const particleColor = "#ADA528";
+
+    // const particleColor="#a674fca7"
 
   return (
     <Particles
-  id="tsparticles"
-  init={particlesInit}
-  loaded={particlesLoaded}
-  options={{
-    background: {
-      color: {
-        value: bgColor,
-      },
-    },
-    fullScreen: {
-      enabled: true,
-      zIndex: -1,
-    },
-    fpsLimit: 60,
-    interactivity: {
-      events: {
-        onHover: {
-          enable: true,
-          mode: "repulse",
+      id="tsparticles"
+      init={particlesInit}
+      loaded={particlesLoaded}
+      options={{
+        background: {
+          color: {
+            value: bgColor,
+          },
         },
-        resize: true,
-      },
-      modes: {
-        repulse: {
-          distance: 200,
-          duration: 0.4,
+        fullScreen: {
+          enabled: true,
+          zIndex: -1,
         },
-      },
-    },
-    particles: {
-      color: {
-        value: particleColor,
-      },
-      collisions: {
-        enable: false,
-      },
-      move: {
-        directions: "none",
-        enable: true,
-        outModes: {
-          default: "bounce",
+        fpsLimit: 60,
+        interactivity: {
+          events: {
+            onHover: {
+              enable: true,
+              mode: "repulse",
+            },
+            resize: true,
+          },
+          modes: {
+            repulse: {
+              distance: 200,
+              duration: 0.4,
+            },
+          },
         },
-        random: false,
-        speed: 1.5,
-        straight: false,
-      },
-      number: {
-        value: 100,
-      },
-      opacity: {
-        value: 1,
-      },
-      shape: {
-        type: "circle",
-      },
-      size: {
-        value: { min: 2, max: 7 },
-      },
-    },
-    detectRetina: false,
-  }}
-/>
+        particles: {
+          color: {
+            value: particleColor,
+          },
+          collisions: {
+            enable: false,
+          },
+          move: {
+            directions: "none",
+            enable: true,
+            outModes: {
+              default: "bounce",
+            },
+            random: false,
+            speed: 1.5,
+            straight: false,
+          },
+          number: {
+            value: 100,
+          },
+          opacity: {
+            value: 1,
+          },
+          shape: {
+            type: "circle",
+          },
+          size: {
+            value: { min: 2, max: 7 },
+          },
+        },
+        detectRetina: false,
+      }}
+    />
+  );
+};
 
-
-  )
-}
-
-export default Particle
+export default Particle;
