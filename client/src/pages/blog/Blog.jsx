@@ -176,6 +176,8 @@ const BlogCard = (props) => {
 //   );
 // };
 
+const navigationData = [{ title: "Blogs", link: "/blog" }];
+
 const Blog = () => {
   useScrollToTop();
   const [data, setData] = useState(null);
@@ -240,8 +242,9 @@ const Blog = () => {
       </Helmet>
       <Navbar />
       {/* <Particle /> */}
-      <div className="w-full pt-[15vh]">
-        <NavigatorComponent navigationData={navigationData} />
+
+      <div className="w-full pt-[15vh] bg-bgPrimary-500">
+      <NavigatorComponent navigationData={navigationData} />
         <div className="w-full flex flex-col items-center justify-center bg-bgPrimary-500">
           <h1 className="text-6xl mt-10 mb-2 font-bold text-primary-500">Blogs</h1>
           <p className="text-lg mb-10 px-4 text-secondary-500">
@@ -254,7 +257,7 @@ const Blog = () => {
                             ))
                         }
                     </div> */}
-          <div className="container lg:grid lg:grid-cols-2 grid-cols-1 gap-5 lg:space-y-0 space-y-5 md:gap-10 justify-center lg:p-5 p-3 flex-wrap">
+          <div className="container lg:grid lg:grid-cols-2 grid-cols-1 gap-5 lg:space-y-0 space-y-5 md:gap-10 justify-center lg:p-5 p-3 flex-wrap text-primary-500">
             {data && <FirstBlog {...data[0]} />}
             {data &&
               data
@@ -343,10 +346,10 @@ const FirstBlog = ({ title, body, image, _id, tags, createdAt, index }) => {
         >
           {title}
         </h3>
-        <p className="my-3 text-slate-500">
+        <p className="my-3 text-secondary-500">
           {moment(new Date(createdAt)).format("MMM Do YY")}
         </p>
-        <p className="my-3 text-slate-500">{slicedString}...</p>
+        <p className="my-3 text-secondary-500">{slicedString}...</p>
         <div className="flex items-center gap-2">
           <img className="w-4 " src="./src/assets/img/icon.png" alt="" />
           <p className="font-bold">Dotpot iT</p>
@@ -446,4 +449,4 @@ const BlogCard3 = ({ title, body, image, _id, tags, createdAt, index }) => {
   );
 };
 
-const navigationData = [{ title: "Blogs", link: "/blog" }];
+

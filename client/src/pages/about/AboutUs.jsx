@@ -30,7 +30,7 @@ const AboutUs = () => {
   return (
     <>
       <Navbar />
-      <div className="w-full pt-[95px]">
+      <div className="w-full pt-[15vh]">
         <Helmet>
           <title>About Us | Dotpot iT</title>
           <meta

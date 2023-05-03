@@ -71,11 +71,12 @@ const Gaming = () => {
           <NavigatorComponent navigationData={navigationData} />
 
           {/* main container */}
+          <div className="bg-bgPrimary-400">
           <div className="container mt-8  min-h-screen  mx-auto">
             <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center ">
               Game Development
             </h1>
-            <p className="text-center">
+            <p className="text-center text-secondary-500">
               Revolutionizing Gaming Experience: The Development of DotPot IT
             </p>
             {/* slider */}
@@ -85,11 +86,11 @@ const Gaming = () => {
               </div>
 
               <div className="md:w-2/5 h-82 mx-auto rounded-lg  mt-10 p-5 flex flex-col justify-center items-center">
-                <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-gray-400">
+                <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">
                   Our Game Development{" "}
                   <span className="text-primary-500">Service</span>
                 </h3>
-                <p className="text-center">
+                <p className="text-center text-secondary-500">
                   Dotpot provides game development services, handling everything
                   from game design to programming and testing. They focus on
                   user engagement and offer ongoing support.
@@ -106,10 +107,10 @@ const Gaming = () => {
                 />
               </div>
               <div className="rounded-lg w-full md:w-[590px] border p-5 flex flex-col justify-center items-center">
-                <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-gray-400">
+                <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">
                   Experienced <span className="text-primary-500">team</span>
                 </h3>
-                <p className="text-center">
+                <p className="text-center text-secondary-500">
                   Our team consists of skilled game developers and designers
                   with vast experience.
                 </p>
@@ -125,11 +126,11 @@ const Gaming = () => {
                 />
               </div>
               <div className="rounded-lg w-full md:w-[590px] border p-5 flex flex-col justify-center items-center">
-                <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-gray-400">
+                <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">
                   Cutting-edge game{" "}
                   <span className="text-primary-500">development </span>
                 </h3>
-                <p className="text-center">
+                <p className="text-center text-secondary-500">
                   We use innovative technologies and tools for advanced game
                   development.
                 </p>
@@ -147,18 +148,18 @@ const Gaming = () => {
                 />
               </div>
               <div className="rounded-lg w-full md:w-[590px] border p-5 flex flex-col justify-center items-center">
-                <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-gray-400">
+                <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">
                   Across different{" "}
                   <span className="text-primary-500">platforms</span>
                 </h3>
-                <p className="text-center">
+                <p className="text-center text-secondary-500">
                   We develop games for mobile, PC, and consoles, across multiple
                   platforms.
                 </p>
               </div>
             </div>
 
-            <div className="my-5 md:flex gap-5 px-5 w-full  justify-evenly">
+            <div className="py-5 md:flex gap-5 px-5 w-full  justify-evenly">
               <div>
                 <img
                   className="w-[450px] mx-auto mb-5 rounded-md"
@@ -167,11 +168,11 @@ const Gaming = () => {
                 />
               </div>
               <div className="rounded-lg w-full md:w-[590px] border p-5 flex flex-col justify-center items-center">
-                <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-gray-400">
+                <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">
                   Customized game{" "}
                   <span className="text-primary-500">design</span>
                 </h3>
-                <p className="text-center">
+                <p className="text-center text-secondary-500">
                   Tailored games to fit client requirements with personalized
                   design and development.
                 </p>
@@ -201,6 +202,7 @@ const Gaming = () => {
               <div class="absolute top-0 -right-4 w-52 h-52  bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
               <div class="absolute -bottom-8 left-20 w-52 h-52  bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
             </div> */}
+          </div>
           </div>
         </section>
       </div>

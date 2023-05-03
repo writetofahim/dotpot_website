@@ -94,7 +94,7 @@ const SingleBlog = () => {
                 {data?.tags.map((item, index) => (
                   <p
                     key={index}
-                    className="inline px-3 py-1 border rounded-full mr-2 text-gray-400 hover:text-secondary-500 transition-all"
+                    className="inline px-3 py-1 border rounded-full mr-2 text-primery-500 hover:text-secondary-500 transition-all"
                   >
                     {item},{" "}
                   </p>
