@@ -11,24 +11,24 @@ const {
 } = require("../controllers/colorController");
 
 // Get all colors
-router.get("/api/colors", getAllColors);
-
-// Get a single color by id
-router.get("/api/colors/:id", getColorById);
-
-// Create a new color
-router.post("/api/colors", createColor);
-
-// Update a color by id
-router.put("/api/colors/:id", updateColorById);
-
-// Delete a color by id
-router.delete("/api/colors/:id", deleteColorById);
+router.get("/", getAllColors);
 
 // Get selected colors
-router.get("/api/colors/selected", getSelectedColors);
+router.get("/selected", getSelectedColors);
+
+// Create a new color
+router.post("/", createColor);
+
+// Get a single color by id
+router.get("/:id", getColorById);
+
+// Update a color by id
+router.put("/:id", updateColorById);
+
+// Delete a color by id
+router.delete("/:id", deleteColorById);
 
 // Update the selected attribute of a color by id
-router.post("/api/colors/selected/:id", changeSelectedColor);
+router.post("/selected/:id", changeSelectedColor);
 
 module.exports = router;

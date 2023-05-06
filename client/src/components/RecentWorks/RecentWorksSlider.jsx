@@ -15,6 +15,7 @@ Finally, the RecentWorksSlider component wraps the slider component and the indi
 
 import React, { useEffect, useState } from "react";
 import { GrNext, GrPrevious } from "react-icons/gr";
+import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import axios from "../../utils/axiosInstance";
 import postLogger from "../../utils/postLogger";
@@ -101,9 +102,11 @@ export const SingleSlide = (props) => {
   return (
     <div className="mx-5 mb-14 rounded-lg relative shadow-xl hover:shadow-lg bg-bgSecondary-500 border border-border px-5 pt-5 group hover:bg-bgSecondary-200 overflow-hidden duration-200">
       <div className="h-[100px]">
-        <h3 className="text-2xl font-bold text-gray-400 mb-2 text-center hover:underline cursor-pointer">
-          {props.title}
-        </h3>
+        <Link to={props?.link}>
+          <h3 className="text-2xl font-bold text-gray-400 mb-2 text-center hover:underline cursor-pointer">
+            {props.title}
+          </h3>
+        </Link>
         <div className="flex gap-2 flex-wrap items-center justify-center mb-5">
           {props.technologies &&
             props.technologies.map((tech, index) => (

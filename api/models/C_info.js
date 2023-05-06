@@ -1,41 +1,52 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const CompanyInfoSchema = new mongoose.Schema({
+const CompanyInfoSchema = new mongoose.Schema(
+  {
     name: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
     },
-    address:{
-        type: String,
+    primary_logo: {
+      type: String,
+      required: true,
+    },
+    secondary_logo: {
+      type: String,
+      required: true,
+    },
+    address: {
+      type: String,
     },
     slogan: {
-        type: String
+      type: String,
     },
     logo: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
     },
     logo_dark: {
-        type: String
+      type: String,
     },
     phone: {
-        type: [String],
+      type: [String],
     },
     email: {
-        type: [String],
+      type: [String],
     },
     about: {
-        type: String,
+      type: String,
     },
     video_link: {
-        type: String
+      type: String,
     },
     image_link: {
-        type: String
+      type: String,
     },
     other_info: {
-        type: String
-    }
-}, { timestamps: true });
+      type: String,
+    },
+  },
+  { timestamps: true }
+);
 
-module.exports = mongoose.model('C_info', CompanyInfoSchema);
+module.exports = mongoose.model("C_info", CompanyInfoSchema);
