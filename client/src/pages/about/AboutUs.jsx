@@ -30,7 +30,7 @@ const AboutUs = () => {
   return (
     <>
       <Navbar />
-      <div className="w-full pt-[95px]">
+      <div className="w-full pt-[15vh]">
         <Helmet>
           <title>About Us | Dotpot iT</title>
           <meta
@@ -86,15 +86,15 @@ export default AboutUs;
 
 const AboutSection = () => {
   return (
-    <div className="w-full flex items-center justify-center p-2 bg-primary-100 rounded-all py-10">
+    <div className="w-full flex items-center justify-center p-2 bg-bgSecondary-500 rounded-all py-10">
       <div className="container p-3 md:p-5 flex flex-col items-center gap-5">
         <Typed
-          className="text-center text-3xl md:text-5xl font-bold"
+          className="text-center text-3xl md:text-5xl font-bold text-primary-500"
           strings={["Who We Are?"]}
           typeSpeed={100}
         />
         {/* <h1 className="text-center text-gray-600 text-3xl md:text-5xl font-bold">Who We Are ? </h1> */}
-        <p className="w-full md:w-2/3 text-center text-lg md:text-xl">
+        <p className="w-full md:w-2/3 text-center text-lg md:text-xl text-secondary-500">
           Dotpot iT is a leading IT company that offers a wide range of IT
           products and services. From app development and web development to
           game development, AI development, and blockchain development, we

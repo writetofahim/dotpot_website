@@ -42,7 +42,6 @@ import SocialMedia from "../../components/SocialMedia/SocialMedia";
 import WhatOurClientSay from "../../components/WhatOurClientsSay/WhatOurClientsSay";
 import WhoWeWorkWith from "../../components/WhoWeWorkWith/WhoWeWorkWith";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-
 const Home = () => {
   useScrollToTop();
   return (
@@ -96,7 +95,9 @@ const Home = () => {
       <WhoWeWorkWith />
       <WhatOurClientSay />
       <RecentBlogs />
+      {/* <div id="team"> */}
       <OurTeam />
+      {/* </div> */}
       <SocialMedia />
       <OurPartnersSlider />
       {/* <GoogleMap /> */}

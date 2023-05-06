@@ -41,13 +41,13 @@ const ChatContact = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="px-3 min-h-screen pt-[15vh] pb-10">
+      <div className="px-3 min-h-screen pt-[15vh] pb-10 bg-bgPrimary-500">
         <NavigatorComponent navigationData={navigationData} />
         <div className="container mx-auto">
           <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
             Web Chat Support
           </h1>
-          <div className="text-gray-400 flex flex-col gap-5 p-5">
+          <div className="text-primary-500 flex flex-col gap-5 p-5">
             <p className="text-justify">
               The Dotpot IT contact center system features a robust web chat
               module that meets the evolving needs of customers. By integrating
@@ -78,35 +78,35 @@ const ChatContact = () => {
             />
           </div>
           <div className="md:my-6 block md:flex gap-10 sm:my-5">
-            <div className="bg-white rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
+            <div className="bg-bgSecondary-500 rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5 text-primary-500">
               <h2 className="text-lg font-bold mb-2">
                 Improve customer experience
               </h2>
-              <p className="text-gray-700 text-justify">
+              <p className="text-justify">
                 The Dotpot IT Chat module enables personalized chat experiences
                 by providing access to multichannel customer interactions.
               </p>
             </div>
-            <div className="bg-white rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
+            <div className="bg-bgSecondary-500 rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5 text-primary-500">
               <h2 className="text-lg font-bold mb-2">Increase revenue</h2>
-              <p className="text-gray-700 text-justify">
+              <p className=" text-justify">
                 Just-in-time online engagement with the Dotpot IT Chat module
                 can increase sales and reduce non-sale calls.
               </p>
             </div>
-            <div className="bg-white rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
+            <div className="bg-bgSecondary-500 rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5 text-primary-500">
               <h2 className="text-lg font-bold mb-2">
                 Deliver fast and accurate
               </h2>
-              <p className="text-gray-700 text-justify">
+              <p className="text-justify">
                 Ensure chat sessions are delivered to the right agent with
                 queue-specific and skill-based routing using the Dotpot IT Chat
                 module.
               </p>
             </div>
           </div>
-          <div className="text-gray-400 flex flex-col gap-5 p-5">
-            <p className="text-gray-700 font-bold">
+          <div className="text-primary-500 flex flex-col gap-5 p-5">
+            <p className="font-bold">
               ACD Based Web Chat Routing
             </p>
             <p className="text-gray-700 text-justify">
