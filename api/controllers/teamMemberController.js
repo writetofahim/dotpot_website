@@ -1,4 +1,4 @@
-const TeamMember = require('../models/TeamMember');
+const TeamMember = require("../models/TeamMember");
 
 exports.createTeamMember = async (req, res) => {
   try {
@@ -7,7 +7,7 @@ exports.createTeamMember = async (req, res) => {
     res.status(201).json(savedTeamMember);
   } catch (err) {
     console.error(err);
-    res.status(500).send('Server error');
+    res.status(500).send("Server error");
   }
 };
 
@@ -42,12 +42,12 @@ exports.getAllTeamMembers = async (req, res) => {
       totalTeamMembers,
       totalPages,
       currentPage: page,
-      teamMembers: teamMembers
+      teamMembers: teamMembers,
     });
   } catch (err) {
     // If there's an error, log it to the console and send a 500 response
     console.log(err);
-    res.status(500).send({ error: 'Server error' });
+    res.status(500).send({ error: "Server error" });
   }
 };
 
@@ -55,25 +55,29 @@ exports.getTeamMemberById = async (req, res) => {
   try {
     const teamMember = await TeamMember.findById(req.params.id);
     if (!teamMember) {
-      return res.status(404).send('Team member not found');
+      return res.status(404).send("Team member not found");
     }
     res.status(200).json(teamMember);
   } catch (err) {
     console.error(err);
-    res.status(500).send('Server error');
+    res.status(500).send("Server error");
   }
 };
 
 exports.updateTeamMemberById = async (req, res) => {
   try {
-    const updatedTeamMember = await TeamMember.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    const updatedTeamMember = await TeamMember.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true }
+    );
     if (!updatedTeamMember) {
-      return res.status(404).send('Team member not found');
+      return res.status(404).send("Team member not found");
     }
     res.status(200).json(updatedTeamMember);
   } catch (err) {
     console.error(err);
-    res.status(500).send('Server error');
+    res.status(500).send("Server error");
   }
 };
 
@@ -81,11 +85,11 @@ exports.deleteTeamMemberById = async (req, res) => {
   try {
     const deletedTeamMember = await TeamMember.findByIdAndDelete(req.params.id);
     if (!deletedTeamMember) {
-      return res.status(404).send('Team member not found');
+      return res.status(404).send("Team member not found");
     }
-    res.status(200).send('Team member deleted successfully');
+    res.status(200).send("Team member deleted successfully");
   } catch (err) {
     console.error(err);
-    res.status(500).send('Server error');
+    res.status(500).send("Server error");
   }
 };
