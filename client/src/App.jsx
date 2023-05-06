@@ -63,9 +63,20 @@ import EnterpriseBusiness from "./pages/whoWeWorksWith/EnterpriseBusiness";
 import SmallToMediumBusiness from "./pages/whoWeWorksWith/SmallToMediumBusiness";
 import StartupBusiness from "./pages/whoWeWorksWith/StartupBusiness";
 import Terms_Conditions from "./terms_conditions/Terms_Conditions";
+import axios from "./utils/axiosInstance"
 
 function App() {
   const [loading, isLoading] = useState(true);
+
+  useEffect(() => {
+    const getColors=async ()=>{
+      const response = await axios.get('https://dotpotit.com/api/colors/selected')
+      const theme = response.data.data[0]
+      document.getElementsByTagName("html")[0].className = `theme-${theme.name}`
+    }
+    getColors()
+  }, [])
+  
   useEffect(() => {
     const timer = setTimeout(() => {
       // console.log("This will run after 1 second!");

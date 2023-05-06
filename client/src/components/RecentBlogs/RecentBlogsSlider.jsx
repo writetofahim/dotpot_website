@@ -99,7 +99,7 @@ export const SingleSlide = (props) => {
             //   className="hover:border cursor-pointer"
             // />
 
-            <div className="border  rounded-full px-2 ">
+            <div key={index} className="border  rounded-full px-2 ">
               <p className="text-secondary-500">{tag}</p>
             </div>
           ))}

@@ -6,12 +6,32 @@ The options object is used to customize the appearance and behavior of the parti
 The Particle component can be imported and used in other React components to display the particle animation.
  */
 
-import React from "react";
+import axios from "../../utils/axiosInstance";
+import React, { useState } from "react";
+import { useEffect } from "react";
 import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 
 const Particle = () => {
+
+  // const [themeColor, setThemeColor] = useState([])
+  const [backgroundColor, setBackgroundColor] = useState("#F2F2F2")
+  const [particleColor, setParticleColor] = useState("#000")
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const res = await axios.get('/colors/selected');
+        // setThemeColor(res.data.data[0].colors)
+        setBackgroundColor(res.data.data[0].colors.bgPrimary["500"])
+        setParticleColor(res.data.data[0].colors.particleColor)
+      } catch (err) {
+        console.log(err)
+      }
+    }
+    getData()
+  }, []);
   const particlesInit = useCallback(async (engine) => {
     // console.log(engine);
     await loadFull(engine);
@@ -34,10 +54,12 @@ const Particle = () => {
   // const particleColor = "#1B294A";
 
   // cyberpunk starts
-  const bgColor = "#FFEE00";
-  const particleColor = "#ADA528";
+  // const bgColor = "#FFEE00";
+  // const particleColor = "#ADA528";
 
     // const particleColor="#a674fca7"
+
+    
 
   return (
     <Particles
@@ -47,7 +69,7 @@ const Particle = () => {
       options={{
         background: {
           color: {
-            value: bgColor,
+            value: backgroundColor,
           },
         },
         fullScreen: {
