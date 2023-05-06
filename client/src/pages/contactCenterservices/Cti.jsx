@@ -42,13 +42,13 @@ const Cti = () => {
       </Helmet>
 
       <Navbar />
-      <div className="px-3 min-h-screen pt-[15vh] bg-bgPrimary-500">
+      <div className="px-3 min-h-screen pt-[15vh]">
         <NavigatorComponent navigationData={navigationData} />
         <div className="container mx-auto">
           <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
             Computer Telephony Integration (CTI)
           </h1>
-          <div className="text-primary-500 flex flex-col gap-5 p-5">
+          <div className="text-gray-400 flex flex-col gap-5 p-5">
             <p className="text-justify">
               Dotpot IT integrates with various CRMs and offers CTI screen
               popups to agents, providing them with caller information, such as
@@ -56,7 +56,7 @@ const Cti = () => {
               agents personalize calls and improve customer experience.
             </p>
           </div>
-          <div className="border-b border-border container mx-auto">
+          <div className="border-b container mx-auto">
             <img
               className="md:w-1/2 mx-auto "
               src={cti}
@@ -64,34 +64,34 @@ const Cti = () => {
             />
           </div>
           <div className="md:my-6 block md:flex gap-1 sm:my-5">
-            <div className="bg-bgSecondary-500 rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
-              <h2 className="text-lg font-bold mb-2 text-primary-500">Integrated CRM</h2>
-              <p className="text-primary-500 text-justify">
+            <div className="bg-white rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
+              <h2 className="text-lg font-bold mb-2">Integrated CRM</h2>
+              <p className="text-gray-700 text-justify">
                 Pop up contacts from CRM or built-in address book with Dotpot
                 IT.
               </p>
             </div>
-            <div className="bg-bgSecondary-500 rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
-              <h2 className="text-lg font-bold mb-2 text-primary-500">
+            <div className="bg-white rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
+              <h2 className="text-lg font-bold mb-2">
                 Collaborative Screen Pops
               </h2>
-              <p className="text-primary-500 text-justify">
+              <p className="text-gray-700 text-justify">
                 Popup contacts from your others contacts.
               </p>
             </div>
-            <div className="bg-bgSecondary-500 rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
-              <h2 className="text-lg font-bold mb-2 text-primary-500">Call Whisper</h2>
-              <p className="text-primary-500 text-justify">
+            <div className="bg-white rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
+              <h2 className="text-lg font-bold mb-2">Call Whisper</h2>
+              <p className="text-gray-700 text-justify">
                 Hear who is calling you, and even decide to take the call or
                 not.
               </p>
             </div>
           </div>
-          <p className="text-primary-500 flex flex-col gap-2 px-5 font-bold">
+          <p className="text-gray-700 flex flex-col gap-2 px-5 font-bold">
             Application of CTI:
           </p>
-          <div className="px-5 text-primary-500">
-            <ul className="list-disc p-5 pb-5">
+          <div className="px-5">
+            <ul className="list-disc p-5 mb-5">
               <li>
                 Screen popups can give agents access to contextual details about
                 callers the moment the phone rings.

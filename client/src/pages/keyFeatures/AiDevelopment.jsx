@@ -93,13 +93,12 @@ const AiDevelopment = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="bg-bgPrimary-500">
       <div className="pt-[15vh] pb-10 container mx-auto min-h-screen px-3">
         <NavigatorComponent navigationData={navigationData} />
         <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
           AI Development
         </h1>
-        <p className="text-md text-secondary-500 text-center mb-10">
+        <p className="text-md text-gray-400 text-center mb-10">
           Our AI solutions transform businesses with automation and
           intelligence.
         </p>
@@ -107,11 +106,11 @@ const AiDevelopment = () => {
           <img className="md:w-1/2 mx-auto " src={coverImg} alt="" />
         </div>
         <div className="container  mx-auto flex flex-col mb-10 my-10">
-          <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500 ">
+          <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block ">
             Overview
           </h3>
           {/* Overview */}
-          <div className="text-primary-500 flex flex-col gap-5 p-5 text-justify">
+          <div className="text-gray-400 flex flex-col gap-5 p-5 text-justify">
             <p>
               AI development involves the use of machine learning algorithms to
               create intelligent computer systems that can perform tasks without
@@ -164,10 +163,10 @@ const AiDevelopment = () => {
 
           {/* paragraph */}
           <div className="my-3">
-            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-primary-500 ">
+            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-gray-400 ">
               What Is AI Development?
             </h2>
-            <div className="text-primary-500 flex flex-col gap-5 p-5">
+            <div className="text-gray-400 flex flex-col gap-5 p-5">
               <p className="text-justify">
                 Artificial Intelligence (AI) development involves creating
                 intelligent machines that can perform tasks that typically
@@ -200,15 +199,15 @@ const AiDevelopment = () => {
 
           {/* Why Choose DotpotiT For Machine Learning? */}
           <div className="my-3">
-            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-10  block text-primary-500 ">
+            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-10  block text-gray-400 ">
               Why Choose DotpotiT For Machine Learning?
             </h2>
             {/*1) Improvised Technologies*/}
             <div className="my-3">
-              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-primary-500 ">
+              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-gray-400 ">
                 1) Improvised Technologies
               </h2>
-              <div className="text-primary-500 flex flex-col gap-5 p-5">
+              <div className="text-gray-400 flex flex-col gap-5 p-5">
                 <p className="text-justify">
                   AI and Machine Learning are cutting-edge technologies that
                   have found their way into businesses worldwide. At our
@@ -221,10 +220,10 @@ const AiDevelopment = () => {
             </div>
             {/* 2) Dynamic Solution*/}
             <div className="my-3">
-              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-primary-500 ">
+              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-gray-400 ">
                 2) Dynamic Solution
               </h2>
-              <div className="text-primary-500 flex flex-col gap-5 p-5">
+              <div className="text-gray-400 flex flex-col gap-5 p-5">
                 <p className="text-justify">
                   DotpotiT provides top-notch Artificial Intelligence and
                   Machine Learning technology, backed by 10+ years of
@@ -235,10 +234,10 @@ const AiDevelopment = () => {
             </div>
             {/* 3) Enhance Productivity */}
             <div className="my-3">
-              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-primary-500 ">
+              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-gray-400 ">
                 3) Enhance Productivity
               </h2>
-              <div className="text-primary-500 flex flex-col gap-5 p-5">
+              <div className="text-gray-400 flex flex-col gap-5 p-5">
                 <p className="text-justify">
                   Our AI and ML technology improves business productivity, and
                   our professionals develop effective strategies to meet client
@@ -248,10 +247,10 @@ const AiDevelopment = () => {
             </div>
             {/* 4) Deep Insights */}
             <div className="my-3">
-              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-primary-500 ">
+              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-gray-400 ">
                 4) Deep Insights
               </h2>
-              <div className="text-primary-500 flex flex-col gap-5 p-5">
+              <div className="text-gray-400 flex flex-col gap-5 p-5">
                 <p className="text-justify">
                   We ensure transparent communication with clients when
                   providing AI and ML insights to help their businesses grow.
@@ -295,7 +294,6 @@ const AiDevelopment = () => {
             </div>
           </div> */}
         </div>
-      </div>
       </div>
 
       <div className="">

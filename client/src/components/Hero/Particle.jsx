@@ -6,126 +6,89 @@ The options object is used to customize the appearance and behavior of the parti
 The Particle component can be imported and used in other React components to display the particle animation.
  */
 
-import axios from "../../utils/axiosInstance";
-import React, { useState } from "react";
-import { useEffect } from "react";
+import React from 'react'
 import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 
+
 const Particle = () => {
-
-  // const [themeColor, setThemeColor] = useState([])
-  const [backgroundColor, setBackgroundColor] = useState("#F2F2F2")
-  const [particleColor, setParticleColor] = useState("#000")
-
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const res = await axios.get('/colors/selected');
-        // setThemeColor(res.data.data[0].colors)
-        setBackgroundColor(res.data.data[0].colors.bgPrimary["500"])
-        setParticleColor(res.data.data[0].colors.particleColor)
-      } catch (err) {
-        console.log(err)
-      }
-    }
-    getData()
-  }, []);
-  const particlesInit = useCallback(async (engine) => {
+  const particlesInit = useCallback(async engine => {
     // console.log(engine);
     await loadFull(engine);
   }, []);
 
-  const particlesLoaded = useCallback(async (container) => {}, []);
-
-  // dark starts
-  // const bgColor = "#0E1628"
-  // const particleColor = "#fff";
-
-  // coffee starts
-  // const bgColor = "#1D141C";
-  // const particleColor = "#5A5059";
-
-
- 
-  // night starts
-  // const bgColor = "#0E1526";
-  // const particleColor = "#1B294A";
-
-  // cyberpunk starts
-  // const bgColor = "#FFEE00";
-  // const particleColor = "#ADA528";
-
-    // const particleColor="#a674fca7"
-
-    
+  const particlesLoaded = useCallback(async container => {
+  
+  }, []);
 
   return (
     <Particles
-      id="tsparticles"
-      init={particlesInit}
-      loaded={particlesLoaded}
-      options={{
-        background: {
-          color: {
-            value: backgroundColor,
-          },
+  id="tsparticles"
+  init={particlesInit}
+  loaded={particlesLoaded}
+  options={{
+    background: {
+      color: {
+        value: "#0d48a10",
+      },
+    },
+    fullScreen: {
+      enabled: true,
+      zIndex: -1,
+    },
+    fpsLimit: 60,
+    interactivity: {
+      events: {
+        onHover: {
+          enable: true,
+          mode: "repulse",
         },
-        fullScreen: {
-          enabled: true,
-          zIndex: -1,
+        resize: true,
+      },
+      modes: {
+        repulse: {
+          distance: 200,
+          duration: 0.4,
         },
-        fpsLimit: 60,
-        interactivity: {
-          events: {
-            onHover: {
-              enable: true,
-              mode: "repulse",
-            },
-            resize: true,
-          },
-          modes: {
-            repulse: {
-              distance: 200,
-              duration: 0.4,
-            },
-          },
+      },
+    },
+    particles: {
+      color: {
+        value: "#a674fca7",
+      },
+      collisions: {
+        enable: false,
+      },
+      move: {
+        directions: "none",
+        enable: true,
+        outModes: {
+          default: "bounce",
         },
-        particles: {
-          color: {
-            value: particleColor,
-          },
-          collisions: {
-            enable: false,
-          },
-          move: {
-            directions: "none",
-            enable: true,
-            outModes: {
-              default: "bounce",
-            },
-            random: false,
-            speed: 1.5,
-            straight: false,
-          },
-          number: {
-            value: 100,
-          },
-          opacity: {
-            value: 1,
-          },
-          shape: {
-            type: "circle",
-          },
-          size: {
-            value: { min: 2, max: 7 },
-          },
-        },
-        detectRetina: false,
-      }}
-    />
-  );
-};
+        random: false,
+        speed: 1.5,
+        straight: false,
+      },
+      number: {
+        value: 100,
+      },
+      opacity: {
+        value: 1,
+      },
+      shape: {
+        type: "circle",
+      },
+      size: {
+        value: { min: 2, max: 7 },
+      },
+    },
+    detectRetina: false,
+  }}
+/>
 
-export default Particle;
+
+  )
+}
+
+export default Particle

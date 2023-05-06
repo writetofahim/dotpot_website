@@ -118,42 +118,41 @@ const CyberSecurity = () => {
       </Helmet>
       {/* Navbar */}
       <Navbar />
-      <div className="bg-bgPrimary-500 ">
-        <div className="min-h-screen container mx-auto px-3 lg:px-5 pt-[15vh] pb-10">
-          <NavigatorComponent navigationData={navigationData} />
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-center text-primary-500">
-            Cyber Security
-          </h1>
-          <p className="text-md text-center mb-10 text-secondary-500">
-            Our Cyber Security provides the state of the earth security services
-            for our customer's data.
-          </p>
-          <div className="mb-5 container mx-auto">
-            <img className="md:w-1/2 mx-auto " src={cyberSecurity} alt="" />
+      <div className="min-h-screen container mx-auto px-3 lg:px-5 pt-[15vh] pb-10">
+        <NavigatorComponent navigationData={navigationData} />
+        <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
+          Cyber Security
+        </h1>
+        <p className="text-md text-gray-400 text-center mb-10">
+          Our Cyber Security provides the state of the earth security services
+          for our customer's data.
+        </p>
+        <div className="mb-5 container mx-auto">
+          <img className="md:w-1/2 mx-auto " src={cyberSecurity} alt="" />
+        </div>
+        <div className="container  mx-auto flex flex-col mb-10 my-10">
+          <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block">
+            Overview
+          </h3>
+          {/* Overview */}
+          <div className="text-gray-400 flex flex-col gap-5 p-5">
+            <p className="text-justify">
+              In today’s digital age, cybersecurity threats are becoming more
+              frequent and sophisticated, making it crucial for businesses to
+              ensure they are protected from cyber attacks. Cybersecurity is not
+              just a technical issue, it is a business issue, and ignoring it
+              can result in devastating consequences such as data breaches,
+              financial losses, and reputational damage. At our cybersecurity
+              service, we offer comprehensive solutions to help protect your
+              business from cyber threats. Our team of experienced cybersecurity
+              professionals have the expertise and tools needed to identify,
+              prevent, and respond to security breaches. Here are some of the
+              key benefits of our cybersecurity service:
+            </p>
           </div>
-          <div className="container  mx-auto flex flex-col mb-10 my-10">
-            <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">
-              Overview
-            </h3>
-            {/* Overview */}
-            <div className="flex flex-col gap-5 p-5 text-primary-500">
-              <p className="text-justify">
-                In today’s digital age, cybersecurity threats are becoming more
-                frequent and sophisticated, making it crucial for businesses to
-                ensure they are protected from cyber attacks. Cybersecurity is not
-                just a technical issue, it is a business issue, and ignoring it
-                can result in devastating consequences such as data breaches,
-                financial losses, and reputational damage. At our cybersecurity
-                service, we offer comprehensive solutions to help protect your
-                business from cyber threats. Our team of experienced cybersecurity
-                professionals have the expertise and tools needed to identify,
-                prevent, and respond to security breaches. Here are some of the
-                key benefits of our cybersecurity service:
-              </p>
-            </div>
 
-            {/*card for redirect to service quote */}
-            {/* <div className=" border-b h-52 w-full md:w-4/5 mx-auto my-5  rounded-xl border flex justify-center items-center shadow-md overflow-hidden relative">
+          {/*card for redirect to service quote */}
+          {/* <div className=" border-b h-52 w-full md:w-4/5 mx-auto my-5  rounded-xl border flex justify-center items-center shadow-md overflow-hidden relative">
             
             <div className=" flex justify-center items-center">
               <div className="w-96 absolute">
@@ -183,91 +182,91 @@ const CyberSecurity = () => {
             </div>
           </div> */}
 
-            {/* <TechnologiesTab title="Technologies We Work On" data={data} /> */}
+          {/* <TechnologiesTab title="Technologies We Work On" data={data} /> */}
 
-            {/* paragraph */}
+          {/* paragraph */}
+          <div className="my-3">
+            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-gray-400 ">
+              Threat Intelligence:
+            </h2>
+            <div className="text-gray-400 flex flex-col gap-5 p-5">
+              <p className="text-justify">
+                Our service offers real-time threat intelligence, which involves
+                monitoring and analyzing threats to your systems and networks.
+                This enables us to identify vulnerabilities and proactively
+                address them before they can be exploited by attackers.
+              </p>
+            </div>
+          </div>
+
+          {/* Why Choose DotpotiT For Machine Learning? */}
+          <div className="my-3">
+            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-10  block text-gray-400 ">
+              Why Choose DotpotiT For Machine Learning?
+            </h2>
+            {/*1) Improvised Technologies*/}
             <div className="my-3">
-              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-primary-500 ">
-                Threat Intelligence:
+              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-gray-400 ">
+                1) Improvised Technologies
               </h2>
-              <div className="text-primary-500 flex flex-col gap-5 p-5">
+              <div className="text-gray-400 flex flex-col gap-5 p-5">
                 <p className="text-justify">
-                  Our service offers real-time threat intelligence, which involves
-                  monitoring and analyzing threats to your systems and networks.
-                  This enables us to identify vulnerabilities and proactively
-                  address them before they can be exploited by attackers.
+                  AI and Machine Learning are cutting-edge technologies that
+                  have found their way into businesses worldwide. At our
+                  company, we offer the latest and most advanced technologies to
+                  meet our clients' needs. Our developers have the skills and
+                  expertise to implement these technologies with precision,
+                  ensuring maximum efficiency.
                 </p>
               </div>
             </div>
-
-            {/* Why Choose DotpotiT For Machine Learning? */}
+            {/* 2) Dynamic Solution*/}
             <div className="my-3">
-              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-10  block text-primary-500 ">
-                Why Choose DotpotiT For Machine Learning?
+              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-gray-400 ">
+                2) Dynamic Solution
               </h2>
-              {/*1) Improvised Technologies*/}
-              <div className="my-3">
-                <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-primary-500 ">
-                  1) Improvised Technologies
-                </h2>
-                <div className="text-primary-500 flex flex-col gap-5 p-5">
-                  <p className="text-justify">
-                    AI and Machine Learning are cutting-edge technologies that
-                    have found their way into businesses worldwide. At our
-                    company, we offer the latest and most advanced technologies to
-                    meet our clients' needs. Our developers have the skills and
-                    expertise to implement these technologies with precision,
-                    ensuring maximum efficiency.
-                  </p>
-                </div>
-              </div>
-              {/* 2) Dynamic Solution*/}
-              <div className="my-3">
-                <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-primary-500 ">
-                  2) Dynamic Solution
-                </h2>
-                <div className="text-primary-500 flex flex-col gap-5 p-5">
-                  <p className="text-justify">
-                    DotpotiT provides top-notch Artificial Intelligence and
-                    Machine Learning technology, backed by 10+ years of
-                    experience. Our ML and AI data solutions offer a wide range of
-                    features and dynamic solutions to help businesses thrive.
-                  </p>
-                </div>
-              </div>
-              {/* 3) Enhance Productivity */}
-              <div className="my-3">
-                <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-primary-500 ">
-                  3) Enhance Productivity
-                </h2>
-                <div className="text-primary-500 flex flex-col gap-5 p-5">
-                  <p className="text-justify">
-                    Our AI and ML technology improves business productivity, and
-                    our professionals develop effective strategies to meet client
-                    needs.
-                  </p>
-                </div>
-              </div>
-              {/* 4) Deep Insights */}
-              <div className="my-3">
-                <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-primary-500 ">
-                  4) Deep Insights
-                </h2>
-                <div className="text-primary-500 flex flex-col gap-5 p-5">
-                  <p>
-                    We ensure transparent communication with clients when
-                    providing AI and ML insights to help their businesses grow.
-                    Our team is open about our process, models, and decisions, and
-                    we interact with clients to provide deep insights into their
-                    project. We acknowledge their demands and strive to meet their
-                    business needs.
-                  </p>
-                </div>
+              <div className="text-gray-400 flex flex-col gap-5 p-5">
+                <p className="text-justify">
+                  DotpotiT provides top-notch Artificial Intelligence and
+                  Machine Learning technology, backed by 10+ years of
+                  experience. Our ML and AI data solutions offer a wide range of
+                  features and dynamic solutions to help businesses thrive.
+                </p>
               </div>
             </div>
+            {/* 3) Enhance Productivity */}
+            <div className="my-3">
+              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-gray-400 ">
+                3) Enhance Productivity
+              </h2>
+              <div className="text-gray-400 flex flex-col gap-5 p-5">
+                <p className="text-justify">
+                  Our AI and ML technology improves business productivity, and
+                  our professionals develop effective strategies to meet client
+                  needs.
+                </p>
+              </div>
+            </div>
+            {/* 4) Deep Insights */}
+            <div className="my-3">
+              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-gray-400 ">
+                4) Deep Insights
+              </h2>
+              <div className="text-gray-400 flex flex-col gap-5 p-5">
+                <p>
+                  We ensure transparent communication with clients when
+                  providing AI and ML insights to help their businesses grow.
+                  Our team is open about our process, models, and decisions, and
+                  we interact with clients to provide deep insights into their
+                  project. We acknowledge their demands and strive to meet their
+                  business needs.
+                </p>
+              </div>
+            </div>
+          </div>
 
-            {/*card for redirect to service quote */}
-            {/* <div className=" border-b h-52 w-full md:w-4/5 mx-auto my-5  rounded-xl border flex justify-center items-center shadow-md overflow-hidden relative">
+          {/*card for redirect to service quote */}
+          {/* <div className=" border-b h-52 w-full md:w-4/5 mx-auto my-5  rounded-xl border flex justify-center items-center shadow-md overflow-hidden relative">
             
             <div className=" flex justify-center items-center">
               <div className="w-96 absolute">
@@ -296,7 +295,6 @@ const CyberSecurity = () => {
               </div>
             </div>
           </div> */}
-          </div>
         </div>
       </div>
 

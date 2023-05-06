@@ -41,7 +41,7 @@ const CustomerService = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="px-3 min-h-screen pt-[15vh] pb-10 bg-bgPrimary-500">
+      <div className="px-3 min-h-screen pt-[15vh] pb-10">
         <NavigatorComponent navigationData={navigationData} />
 
         <div className="container mx-auto">
@@ -55,7 +55,7 @@ const CustomerService = () => {
               alt="Customer service"
             />
           </div>
-          <div className="text-primary-500 flex flex-col gap-5 p-5">
+          <div className="text-gray-400 flex flex-col gap-5 p-5">
             <p className="text-justify">
               Providing excellent customer service is crucial for building and
               enhancing relationships with customers. Regardless of the quality
@@ -66,11 +66,11 @@ const CustomerService = () => {
               deserve.
             </p>
           </div>
-          <p className="text-primary-500 flex flex-col gap-2 px-5">
+          <p className="text-gray-700 flex flex-col gap-2 px-5">
             Major Features:
           </p>
           <div className="px-5">
-            <ul className="list-disc p-5 mb-5 text-primary-500">
+            <ul className="list-disc p-5 mb-5">
               <li>Multiple channels support mechanism (voice, email, chat)</li>
               <li>Virtual queuing</li>
               <li>Recording of support calls</li>

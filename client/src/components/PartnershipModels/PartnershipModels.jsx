@@ -20,18 +20,18 @@ export const Card = (props) => {
   return (
     <Link
       to={props.link}
-      className="md:mx-5 p-4 md:p-5 bg-bgSecondary-500 border border-border rounded-lg shadow-xl flex-1 hover:scale-110 transition-all cursor-pointer "
+      className="md:mx-5 p-4 md:p-5 bg-white rounded-lg shadow-xl flex-1 hover:scale-110 transition-all cursor-pointer "
     >
       <div className="h-[280px] flex flex-col justify-between items-center">
         <div className="">
           <img className="w-[100px]" src={props.icon} alt={props.title} />
         </div>
-        <h2 className="text-2xl text-center font-bold text-primary-500">{props.title}</h2>
-        <p className="text-center inline text-secondary-500">
+        <h2 className="text-2xl text-center font-bold">{props.title}</h2>
+        <p className="text-center inline">
           {props.description?.slice(0, 70)}
           ...
         </p>
-        <span className="inline-flex items-center font-bold hover:text-secondary-500 text-primary-500">
+        <span className="inline-flex items-center font-bold hover:text-secondary-500">
           Read More <AiOutlineDoubleRight />
         </span>
       </div>
@@ -59,7 +59,7 @@ const PartnershipModels = () => {
   return (
     <div className="w-full overflow-hidden pt-10 pb-20 md:flex md:flex-col md:justify-center flex-wrap ">
       <div className="p-3 md:p-5 mt-5 w-full md:max-w-[1400px] self-center backdrop-blur-sm">
-        <h1 className="mt-10 text-3xl md:text-5xl text-center font-bold w-full text-primary-500">
+        <h1 className="mt-10 text-3xl md:text-5xl text-center font-bold w-full  ">
           Partnership Models
         </h1>
         <p className="text-md text-center text-gray-400 font-bold mt-2">

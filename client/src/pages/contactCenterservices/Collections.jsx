@@ -41,14 +41,14 @@ const Collections = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="px-3 min-h-screen pt-[15vh] pb-10 bg-bgPrimary-500">
+      <div className="px-3 min-h-screen pt-[15vh] pb-10">
         <NavigatorComponent navigationData={navigationData} />
 
         <div className="container mx-auto">
           <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
             Collections
           </h1>
-          <div className="text-primary-500 flex flex-col gap-5 p-5">
+          <div className="text-gray-400 flex flex-col gap-5 p-5">
             <p className="text-justify">
               Dotpot IT offers automated dialing solutions that ensure your
               agents only receive calls that are answered by debtors. This
@@ -70,7 +70,7 @@ const Collections = () => {
               alt="Customer service"
             />
           </div>
-          <div className="text-primary-500 flex flex-col gap-5 p-5">
+          <div className="text-gray-400 flex flex-col gap-5 p-5">
             <p className="text-justify">
               We offers a telemarketing module that is suitable for businesses
               and call centers of all sizes. Our module is designed to enhance
@@ -81,10 +81,10 @@ const Collections = () => {
               your telemarketing efforts.
             </p>
           </div>
-          <p className="text-primary-500 flex flex-col gap-2 px-5 3xl md:5xl font-bold">
+          <p className="text-gray-700 flex flex-col gap-2 px-5 3xl md:5xl font-bold">
             Overview:
           </p>
-          <div className="px-5 text-primary-500">
+          <div className="px-5">
             <ul className="list-disc p-5 mb-5">
               <li>Quickly implement new collections programs.</li>
               <li>Automated messaging with live agent connect.</li>

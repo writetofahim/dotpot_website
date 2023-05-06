@@ -156,25 +156,24 @@ const WebsiteDesign = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="bg-bgPrimary-500">
       <div className="pt-[15vh] container mx-auto min-h-screen px-3">
         <NavigatorComponent navigationData={navigationData} />
 
         <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
           Website Design
         </h1>
-        <p className="text-md text-secondary-500 text-center mb-10">
+        <p className="text-md text-gray-400 text-center mb-10">
           Custom, responsive website designs improve user experience.
         </p>
         <div className="mb-5 container mx-auto">
           <img className="md:w-1/2 mx-auto " src={coverImg} alt="" />
         </div>
-        <div className="container  mx-auto flex flex-col py-10">
+        <div className="container  mx-auto flex flex-col mb-10 my-10">
           <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">
             Overview
           </h3>
           {/* Overview */}
-          <div className="text-primary-500 flex flex-col gap-5 p-5">
+          <div className="text-gray-400 flex flex-col gap-5 p-5">
             <p className="text-justify">
               In today's world, a website is a crucial aspect of any business.
               It serves as a platform to showcase products, skills, and talents.
@@ -233,10 +232,10 @@ const WebsiteDesign = () => {
 
           {/* process we follow */}
           <div className="my-3">
-            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-primary-500 ">
+            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-gray-400 ">
               Process We Follow:
             </h2>
-            <div className="text-primary-500 flex flex-col gap-5 p-5">
+            <div className="text-gray-400 flex flex-col gap-5 p-5">
               <p className="text-justify">
                 How Our Experts Handle The Project Efficiently,
               </p>
@@ -244,10 +243,10 @@ const WebsiteDesign = () => {
           </div>
           {/* 1) Planning */}
           <div className="my-3">
-            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-primary-500 ">
+            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-gray-400 ">
               1) Planning
             </h2>
-            <div className="text-primary-500 flex flex-col gap-5 p-5">
+            <div className="text-gray-400 flex flex-col gap-5 p-5">
               <p className="text-justify">
                 Gather all the information and plan the project, craft the idea
                 for the website and CMS development.
@@ -256,10 +255,10 @@ const WebsiteDesign = () => {
           </div>
           {/* 2) Web Designing*/}
           <div className="my-3">
-            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-primary-500 ">
+            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-gray-400 ">
               2) Web Designing
             </h2>
-            <div className="text-primary-500 flex flex-col gap-5 p-5">
+            <div className="text-gray-400 flex flex-col gap-5 p-5">
               <p className="text-justify">
                 Our team of front-end designers will create a visually appealing
                 and responsive website using wireframes and UI/UX design,
@@ -269,10 +268,10 @@ const WebsiteDesign = () => {
           </div>
           {/* 3) Define Content */}
           <div className="my-3">
-            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-primary-500 ">
+            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-gray-400 ">
               3) Define Content
             </h2>
-            <div className="text-primary-500 flex flex-col gap-5 p-5">
+            <div className="text-gray-400 flex flex-col gap-5 p-5">
               <p className="text-justify">
                 Content is an essential aspect of a website, and we understand
                 its significance. Our team will provide informative and engaging
@@ -283,10 +282,10 @@ const WebsiteDesign = () => {
           </div>
           {/* 4) Development */}
           <div className="my-3">
-            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-primary-500 ">
+            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-gray-400 ">
               4) Development
             </h2>
-            <div className="text-primary-500 flex flex-col gap-5 p-5">
+            <div className="text-gray-400 flex flex-col gap-5 p-5">
               <p className="text-justify">
                 Once the website's objectives are established, the development
                 process begins, which is a critical pre-final stage of the
@@ -296,10 +295,10 @@ const WebsiteDesign = () => {
           </div>
           {/* 5) Testing */}
           <div className="my-3">
-            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-primary-500 ">
+            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-gray-400 ">
               5) Testing
             </h2>
-            <div className="text-primary-500 flex flex-col gap-5 p-5">
+            <div className="text-gray-400 flex flex-col gap-5 p-5">
               <p className="text-justify">
                 Before launching the website, testing plays a crucial role in
                 identifying any bugs or errors that might affect the user
@@ -310,10 +309,10 @@ const WebsiteDesign = () => {
           </div>
           {/* 6) Deployment */}
           <div className="my-3">
-            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-primary-500 ">
+            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-gray-400 ">
               6) Deployment
             </h2>
-            <div className="text-primary-500 flex flex-col gap-5 p-5">
+            <div className="text-gray-400 flex flex-col gap-5 p-5">
               <p className="text-justify">
                 Once all the aspects of website development are complete,
                 including design, development, testing, and bug fixing, the
@@ -325,10 +324,10 @@ const WebsiteDesign = () => {
           </div>
           {/* 7) Post Deployment & Maintenance */}
           <div className="my-3">
-            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-primary-500 ">
+            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-gray-400 ">
               7) Post Deployment & Maintenance
             </h2>
-            <div className="text-primary-500 flex flex-col gap-5 p-5">
+            <div className="text-gray-400 flex flex-col gap-5 p-5">
               <p className="text-justify">
                 Post-launch, we offer comprehensive support to ensure that the
                 website functions smoothly, and we address any concerns or
@@ -336,8 +335,8 @@ const WebsiteDesign = () => {
               </p>
             </div>
           </div>
+          <div></div>
         </div>
-      </div>
       </div>
       <div className="">
         <Footer />

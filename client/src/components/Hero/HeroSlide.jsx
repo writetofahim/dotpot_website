@@ -26,7 +26,7 @@ function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
     <GrNext
-      className="md:block text-4xl md:text-5xl absolute right-0 top-1/2 cursor-pointe opacity-30 hover:opacity-100 bg-primary-500 hover:bg-primary-300 hover:text-white cursor-pointer transition-all -translate-y-[100%] p-2 translate-x-[20%] rounded-full"
+      className="md:block text-4xl md:text-5xl absolute right-0 top-1/2 cursor-pointe opacity-30 hover:opacity-100 hover:bg-primary-300 hover:text-white cursor-pointer transition-all -translate-y-[100%] p-2 translate-x-[20%] rounded-full"
       onClick={onClick}
     />
   );
@@ -36,7 +36,7 @@ function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
   return (
     <GrPrevious
-      className="md:block z-10 text-4xl md:text-5xl absolute left-0 top-1/2 cursor-pointe opacity-30 hover:opacity-100 bg-primary-500 hover:bg-primary-300 hover:text-white cursor-pointer transition-all -translate-y-[100%]  p-2 -translate-x-[20%] rounded-full"
+      className="md:block z-10 text-4xl md:text-5xl absolute left-0 top-1/2 cursor-pointe opacity-30 hover:opacity-100 hover:bg-primary-300 hover:text-white cursor-pointer transition-all -translate-y-[100%]  p-2 -translate-x-[20%] rounded-full"
       onClick={onClick}
     />
   );
@@ -64,7 +64,7 @@ export const SingleSlide = (props) => {
             {props.title}
           </h1> */}
           <Typed
-            className="text-3xl md:text-5xl text-center md:text-left font-bold mb-2 text-primary-500"
+            className="text-3xl md:text-5xl text-center md:text-left font-bold mb-2"
             strings={[props.title]}
             typeSpeed={100}
             backSpeed={50}
@@ -79,7 +79,7 @@ export const SingleSlide = (props) => {
                     #1
                   </h1>
                 </div> */}
-            <p className="md:w-2/3 w-4/5 text-sm md:text-xl text-center md:text-left text-secondary-500">
+            <p className="md:w-2/3 w-4/5 text-sm md:text-xl text-center md:text-left">
               {props.description}
             </p>
           </div>

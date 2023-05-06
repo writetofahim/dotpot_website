@@ -4,7 +4,6 @@ import pd from "../../assets/img/pd.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 
 const Pd = () => {
   useScrollToTop();
@@ -47,13 +46,12 @@ const Pd = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="px-3 min-h-screen pt-[15vh] pb-10 bg-bgPrimary-500">
-        <NavigatorComponent navigationData={navigationData} />
+      <div className="px-3 min-h-screen pt-[15vh] pb-10">
         <div className="container mx-auto">
           <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
             Predictive Dialer
           </h1>
-          <div className="text-primary-500 flex flex-col gap-5 p-5">
+          <div className="text-gray-400 flex flex-col gap-5 p-5">
             <p className="text-justify">
               Dotpot IT's Predictive Dialer is a state-of-the-art automated
               dialing solution that is specifically designed for contact center
@@ -78,7 +76,7 @@ const Pd = () => {
               alt="Customer service"
             />
           </div>
-          <div className="text-primary-500 flex flex-col gap-5 p-5">
+          <div className="text-gray-400 flex flex-col gap-5 p-5">
             <p className="font-bold">
               Features and Benefit of Dotpot IT Predictive Dialer
             </p>
