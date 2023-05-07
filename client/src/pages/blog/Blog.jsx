@@ -61,7 +61,7 @@ const BlogCard = (props) => {
 
           <Link
             to={`./${id}`}
-            className="mt-2 text-secondary-300 hover:text-secondary-500 transition-all flex items-center"
+            className="mt-2 text-secondary-300 hover:text-textColor-500 transition-all flex items-center"
           >
             Read more
             <AiOutlineDoubleRight />
@@ -243,11 +243,11 @@ const Blog = () => {
       <Navbar />
       {/* <Particle /> */}
 
-      <div className="w-full pt-[15vh] bg-bgPrimary-500">
+      <div className="w-full pt-[15vh] bg-background-500">
       <NavigatorComponent navigationData={navigationData} />
-        <div className="w-full flex flex-col items-center justify-center bg-bgPrimary-500">
-          <h1 className="text-6xl mt-10 mb-2 font-bold text-primary-500">Blogs</h1>
-          <p className="text-lg mb-10 px-4 text-secondary-500">
+        <div className="w-full flex flex-col items-center justify-center bg-background-500">
+          <h1 className="text-6xl mt-10 mb-2 font-bold text-textColor-500">Blogs</h1>
+          <p className="text-lg mb-10 px-4 text-textColor-500">
             Follow our blog to get all the latest tech news
           </p>
           {/* <div className="container flex gap-5 md:gap-10 justify-center p-5 flex-wrap">
@@ -257,7 +257,7 @@ const Blog = () => {
                             ))
                         }
                     </div> */}
-          <div className="container lg:grid lg:grid-cols-2 grid-cols-1 gap-5 lg:space-y-0 space-y-5 md:gap-10 justify-center lg:p-5 p-3 flex-wrap text-primary-500">
+          <div className="container lg:grid lg:grid-cols-2 grid-cols-1 gap-5 lg:space-y-0 space-y-5 md:gap-10 justify-center lg:p-5 p-3 flex-wrap text-textColor-500">
             {data && <FirstBlog {...data[0]} />}
             {data &&
               data
@@ -346,10 +346,10 @@ const FirstBlog = ({ title, body, image, _id, tags, createdAt, index }) => {
         >
           {title}
         </h3>
-        <p className="my-3 text-secondary-500">
+        <p className="my-3 text-textColor-500">
           {moment(new Date(createdAt)).format("MMM Do YY")}
         </p>
-        <p className="my-3 text-secondary-500">{slicedString}...</p>
+        <p className="my-3 text-textColor-500">{slicedString}...</p>
         <div className="flex items-center gap-2">
           <img className="w-4 " src="./src/assets/img/icon.png" alt="" />
           <p className="font-bold">Dotpot iT</p>

@@ -41,11 +41,11 @@ const Retail = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="bg-bgPrimary-500">
+      <div className="bg-background-500">
         <div className="pt-[15vh] pb-10 container mx-auto">
           <NavigatorComponent navigationData={navigationData} />
           <div>
-            <h1 className="text-3xl md:text-5xl font-extrabold mb-2 text-primary-500 text-center">
+            <h1 className="text-3xl md:text-5xl font-extrabold mb-2 text-textColor-500 text-center">
               Retail & E-Commerce
             </h1>
             <p className="text-lg text-secondary-400 text-center mb-10">
@@ -57,8 +57,8 @@ const Retail = () => {
             <img src={retail} alt="Product image" />
           </div>
           <div className="my-12 lg:mx-24 mx-6">
-            <h2 className="lg:text-2xl text-xl font-bold mb-4 text-primary-500">Overview</h2>
-            <div className="text-primary-500 flex flex-col gap-5 py-2 lg:px-5 text-justify">
+            <h2 className="lg:text-2xl text-xl font-bold mb-4 text-textColor-500">Overview</h2>
+            <div className="text-textColor-500 flex flex-col gap-5 py-2 lg:px-5 text-justify">
               <p>
                 Dotpot is a leading web design and development agency that offers
                 dynamic web solutions to clients in the Retail & E-Commerce
@@ -99,10 +99,10 @@ const Retail = () => {
               </p>
             </div>
             <div className="pt-6">
-              <h2 className="lg:text-2xl text-xl font-bold mb-4 text-primary-500">
+              <h2 className="lg:text-2xl text-xl font-bold mb-4 text-textColor-500">
                 Benefits of working with Dotpot IT
               </h2>
-              <p className="text-primary-500 lg:px-5 text-justify pb-2">
+              <p className="text-textColor-500 lg:px-5 text-justify pb-2">
                 Working with Dotpot IT for web design and development services
                 offers businesses in the Retail & E-Commerce industry a range of
                 benefits, including customized web solutions, improved online
@@ -110,7 +110,7 @@ const Retail = () => {
                 support, and increased business growth.
               </p>
               <ul className="list-disc list-inside">
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">
                     Customized web solutions:
                   </strong>
@@ -121,7 +121,7 @@ const Retail = () => {
                     E-Commerce industry.
                   </p>
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">
                     Enhanced online visibility:
                   </strong>
@@ -132,7 +132,7 @@ const Retail = () => {
                     industry.
                   </p>
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">
                     User-friendly websites:{" "}
                   </strong>
@@ -143,7 +143,7 @@ const Retail = () => {
                     customer conversions.
                   </p>
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">Mobile optimization:</strong>
                   <br />
                   <p className="px-2">
@@ -151,7 +151,7 @@ const Retail = () => {
                     they look great and function well on different screen sizes.
                   </p>
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">
                     E-commerce integration:
                   </strong>
@@ -162,7 +162,7 @@ const Retail = () => {
                     their products and services online.
                   </p>
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">
                     Search engine optimization (SEO):
                   </strong>
@@ -173,7 +173,7 @@ const Retail = () => {
                     online.
                   </p>
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">Expert support: </strong>
                   <br />
                   <p className="px-2">
@@ -182,7 +182,7 @@ const Retail = () => {
                     up-to-date, secure, and fully functional.
                   </p>
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">
                     Increased business growth:
                   </strong>
@@ -194,7 +194,7 @@ const Retail = () => {
                     increase their revenue
                   </p>
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">
                     E-commerce integration:
                   </strong>
@@ -208,10 +208,10 @@ const Retail = () => {
               </ul>
             </div>
             <div className="pt-6 flex flex-col gap-5">
-              <h2 className="lg:text-2xl text-xl font-bold mb-2 text-primary-500">
+              <h2 className="lg:text-2xl text-xl font-bold mb-2 text-textColor-500">
                 Why we wil be your best choice?
               </h2>
-              <p className="text-primary-500 lg:px-5 text-justify">
+              <p className="text-textColor-500 lg:px-5 text-justify">
                 Dotpot IT is a top choice for businesses in the Retail &
                 E-Commerce industry looking for web design and development
                 services. With years of experience and expertise in this industry,
@@ -226,7 +226,7 @@ const Retail = () => {
                 integration, payment gateway integration, inventory management,
                 and order tracking.
               </p>
-              <p className="text-primary-500 lg:px-5 text-justify">
+              <p className="text-textColor-500 lg:px-5 text-justify">
                 What sets Dotpot IT apart is its commitment to providing
                 high-quality, customer-focused web solutions. We work closely with
                 our clients to understand their goals and objectives and provide
@@ -239,7 +239,7 @@ const Retail = () => {
                 experience, and customer engagement, leading to increased business
                 growth and revenue.
               </p>
-              <p className="text-primary-500 lg:px-5 text-justify">
+              <p className="text-textColor-500 lg:px-5 text-justify">
                 Overall, Dotpot IT is considered the best choice for web design
                 and development services in the Retail & E-Commerce industry due
                 to its years of experience, expertise, and customer-centric
@@ -250,7 +250,7 @@ const Retail = () => {
               </p>
             </div>
             <div className="pt-6">
-              <p className="text-primary-500 lg:px-5 text-justify">
+              <p className="text-textColor-500 lg:px-5 text-justify">
                 Take your Retail & E-Commerce business to the next level with
                 Dotpot IT. Our customized web solutions, e-commerce website
                 development services, and expert support can help you enhance your

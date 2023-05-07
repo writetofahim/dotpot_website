@@ -56,7 +56,7 @@ const Ai = () => {
             <div className="absolute hidden h-16 w-[600px] rotate-[-40deg] rounded-3xl bg-sky-400 opacity-10 blur-2xl filter dark1:hidden lg:top-24 lg:-right-28 lg:block lg:h-12 lg:w-[600px] lg:opacity-30 lg:blur-2xl xl:-right-40 xl:h-4 xl:w-[700px] xl:opacity-100"></div>
             <div className="absolute hidden h-14 w-[600px] rotate-[-40deg] rounded-3xl bg-purple-400 opacity-30 blur-2xl filter dark1:hidden lg:top-20 lg:-right-28 lg:block lg:h-10 lg:w-[600px] lg:opacity-20 lg:blur-xl xl:-right-40 xl:h-2 xl:w-[800px] xl:opacity-100"></div>
             
-            <div className="bg-bgPrimary-500">
+            <div className="bg-background-500">
               <div className="container mx-auto pt-[15vh]">
               <NavigatorComponent navigationData={navigationData} />
                 <div className="">
@@ -68,10 +68,10 @@ const Ai = () => {
                 </div>
                 {/* cover */}
                 <div className="w-full mx-auto px-5 h-52">
-                  <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center ">
+                  <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center ">
                     AI Development
                   </h1>
-                  <p className="text-secondary-500 flex flex-col gap-5 p-5 items-center">
+                  <p className="text-textColor-500 flex flex-col gap-5 p-5 items-center">
                     DotpotIT offers AI solutions to automate operations, analyze
                     data, and drive business growth with chatbots, virtual
                     assistants, and more.
@@ -88,11 +88,11 @@ const Ai = () => {
                       />
                     </div>
                     <div className="rounded-lg w-full md:w-[590px] border border-border p-5 flex flex-col justify-center items-center">
-                      <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">
+                      <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
                         Customized AI{" "}
-                        <span className="text-primary-500">solutions</span>
+                        <span className="text-textColor-500">solutions</span>
                       </h3>
-                      <p className="text-center text-secondary-500">
+                      <p className="text-center text-textColor-500">
                         We provide personalized AI solutions to match the specific
                         needs of our clients.
                       </p>
@@ -108,11 +108,11 @@ const Ai = () => {
                       />
                     </div>
                     <div className="rounded-lg w-full md:w-[590px] border border-border p-5 flex flex-col justify-center items-center">
-                      <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">
+                      <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
                         Integration of
-                        <span className="text-primary-500"> AI </span>
+                        <span className="text-textColor-500"> AI </span>
                       </h3>
-                      <p className="text-center text-secondary-500">
+                      <p className="text-center text-textColor-500">
                         Seamless integration of AI into current processes and
                         systems for enhanced efficiency.
                       </p>
@@ -128,11 +128,11 @@ const Ai = () => {
                       />
                     </div>
                     <div className="rounded-lg w-full md:w-[590px] border border-border p-5 flex flex-col justify-center items-center">
-                      <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">
+                      <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
                         Machine Learning for Predictive
-                        <span className="text-primary-500"> Analytics</span>
+                        <span className="text-textColor-500"> Analytics</span>
                       </h3>
-                      <p className="text-center text-secondary-500">
+                      <p className="text-center text-textColor-500">
                         Use of machine learning algorithms for data analysis and
                         prediction.
                       </p>
@@ -148,11 +148,11 @@ const Ai = () => {
                       />
                     </div>
                     <div className="rounded-lg w-full md:w-[590px] border border-border p-5 flex flex-col justify-center items-center">
-                      <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">
+                      <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
                         Rapid AI
-                        <span className="text-primary-500"> Deployment</span>
+                        <span className="text-textColor-500"> Deployment</span>
                       </h3>
-                      <p className="text-center text-secondary-500">
+                      <p className="text-center text-textColor-500">
                         Fast and efficient deployment of tailored AI solutions to
                         meet unique client needs.
                       </p>

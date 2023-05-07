@@ -71,7 +71,7 @@ const Register = () => {
             onSubmit={handleSubmit}
             className="w-full max-w-md p-5 border rounded-xl shadow-xl glassmorphism"
           >
-            <h1 className="text-center text-6xl text-primary-500 font-bold">
+            <h1 className="text-center text-6xl text-textColor-500 font-bold">
               Register
             </h1>
 
@@ -211,7 +211,7 @@ const Register = () => {
               <div className="mt-6 text-center text-gray-500 font-bold">
                 <Link to="/login" className="text-sm hover:underline">
                   Already Have an account?{" "}
-                  <span className="text-primary-500">Sign in</span>
+                  <span className="text-textColor-500">Sign in</span>
                 </Link>
               </div>
             </div>

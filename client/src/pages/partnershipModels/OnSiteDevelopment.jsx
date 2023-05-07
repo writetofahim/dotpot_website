@@ -47,7 +47,7 @@ const OnSiteDevelopment = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="bg-bgPrimary-500">
+      <div className="bg-background-500">
         <div className="container mx-auto pt-[15vh] pb-10">
           <NavigatorComponent navigationData={navigationData} />
 
@@ -59,7 +59,7 @@ const OnSiteDevelopment = () => {
                 alt="Product image"
               />
             </div>
-            <div className="my-6 lg:mx-24 mx-6 text-primary-500">
+            <div className="my-6 lg:mx-24 mx-6 text-textColor-500">
               <h2 className="lg:text-2xl text-xl font-bold mb-4">
                 On Site Development Partnership Model
               </h2>

@@ -21,7 +21,7 @@ import processSm from "../../assets/img/processSm.png";
 //           src="https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/about/app-development-ab.png"
 //           alt="app downloads"
 //         />
-//         <p className="text-xl font-bold text-center text-primary-500">
+//         <p className="text-xl font-bold text-center text-textColor-500">
 //           {props.title}
 //         </p>
 //         <p className="text-center">{props.desc}</p>
@@ -32,9 +32,9 @@ import processSm from "../../assets/img/processSm.png";
 
 const ProcessWeFollow = () => {
   return (
-    <div className="processWeFollow w-full overflow-hidden py-10 md:flex md:flex-col md:justify-center bg-bgSecondary-500">
+    <div className="processWeFollow w-full overflow-hidden py-10 md:flex md:flex-col md:justify-center bg-primary-100">
       <div className="p-5 mt-5 w-full md:max-w-[1400px] self-center flex gap-10 flex-wrap items-center justify-center">
-        <h1 className="text-3xl md:text-5xl text-center font-bold w-full mb-5 text-primary-500">
+        <h1 className="text-3xl md:text-5xl text-center font-bold w-full mb-5 text-textColor-500">
           Process We Follow
         </h1>
         {/* {

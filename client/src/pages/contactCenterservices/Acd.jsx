@@ -41,13 +41,13 @@ const Acd = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="px-3 min-h-screen pt-[15vh] pb-10 bg-bgPrimary-500">
+      <div className="px-3 min-h-screen pt-[15vh] pb-10 bg-background-500">
         <NavigatorComponent navigationData={navigationData} />
         <div className="container mx-auto">
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
+          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center">
             Automatic Call Distribution (ACD)
           </h1>
-          <div className="text-primary-500 flex flex-col gap-5 p-5">
+          <div className="text-textColor-500 flex flex-col gap-5 p-5">
             <p className="text-justify">
               Dotpot IT Automatic Call Distribution (ACD) is a technology that
               allows contact centers to distribute inbound calls, emails and
@@ -63,9 +63,9 @@ const Acd = () => {
             <img className="md:w-1/2 mx-auto " src={acd} alt="ACD Image" />
           </div>
           <div className="md:my-6 block md:flex gap-1 sm:my-5">
-            <div className="bg-bgSecondary-500 rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
-              <h2 className="text-lg font-bold mb-2 text-primary-500">Skills-Based Routing</h2>
-              <p className="text-primary-500 text-justify">
+            <div className="bg-background-500 rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
+              <h2 className="text-lg font-bold mb-2 text-textColor-500">Skills-Based Routing</h2>
+              <p className="text-textColor-500 text-justify">
                 An agent can be assigned to receive calls from multiple
                 skills/companies. Dotpot IT contact center system allows
                 categorization of agents based on skills or length of service.
@@ -73,9 +73,9 @@ const Acd = () => {
                 calls.
               </p>
             </div>
-            <div className="bg-bgSecondary-500 rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
-              <h2 className="text-lg font-bold mb-2 text-primary-500">Caller Priority</h2>
-              <p className="text-primary-500 text-justify">
+            <div className="bg-background-500 rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
+              <h2 className="text-lg font-bold mb-2 text-textColor-500">Caller Priority</h2>
+              <p className="text-textColor-500 text-justify">
                 While every customer is important, certain instances may require
                 the need to prioritize specific incoming calls based on status,
                 size, and urgency. gPlex system allows setting call priorities
@@ -83,9 +83,9 @@ const Acd = () => {
                 answered first.
               </p>
             </div>
-            <div className="bg-bgSecondary-500 rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
-              <h2 className="text-lg font-bold mb-2 text-primary-500">Find Last Call Agent</h2>
-              <p className="text-primary-500 text-justify">
+            <div className="bg-background-500 rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
+              <h2 className="text-lg font-bold mb-2 text-textColor-500">Find Last Call Agent</h2>
+              <p className="text-textColor-500 text-justify">
                 If a caller calls for the second time the ACD engine attempts to
                 transfer the call to the agent who had handled the caller’s
                 previous call.
@@ -93,26 +93,26 @@ const Acd = () => {
             </div>
           </div>
           <div className="md:my-6 block md:flex gap-10">
-            <div className="bg-bgSecondary-500 rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
-              <h2 className="text-lg font-bold mb-2 text-primary-500">Round Robin</h2>
-              <p className="text-primary-500 text-justify">
+            <div className="bg-background-500 rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
+              <h2 className="text-lg font-bold mb-2 text-textColor-500">Round Robin</h2>
+              <p className="text-textColor-500 text-justify">
                 The Round Robin feature ensures that the incoming calls to your
                 call center are distributed to the agents on the basis of
                 covering all agents on duty in a cyclic order.
               </p>
             </div>
-            <div className="bg-bgSecondary-500 rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
-              <h2 className="text-lg font-bold mb-2 text-primary-500">Longest Idle Agent</h2>
-              <p className="text-primary-500 text-justify">
+            <div className="bg-background-500 rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
+              <h2 className="text-lg font-bold mb-2 text-textColor-500">Longest Idle Agent</h2>
+              <p className="text-textColor-500 text-justify">
                 Longest Idle Agent feature is designed to ensure that incoming
                 calls are routed to the agent (among the set of appropriate type
                 of agent for that caller) who has been idle for the longest
                 time.
               </p>
             </div>
-            <div className="bg-bgSecondary-500 rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
-              <h2 className="text-lg font-bold mb-2 text-primary-500">Random</h2>
-              <p className="text-primary-500 text-justify">
+            <div className="bg-background-500 rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
+              <h2 className="text-lg font-bold mb-2 text-textColor-500">Random</h2>
+              <p className="text-textColor-500 text-justify">
                 Random call distribution is the most basic form of ACD. This
                 type of call distribution may only be applicable where
                 sufficient agents are available on duty compared to the rate of
@@ -120,7 +120,7 @@ const Acd = () => {
               </p>
             </div>
           </div>
-          <div className="text-primary-500 flex flex-col gap-5 p-5 mb-5">
+          <div className="text-textColor-500 flex flex-col gap-5 p-5 mb-5">
             <p className="text-justify">
               Dotpot IT skill-based ACD quickly matches callers in the queue to
               the agents who can best help them. That means efficient call

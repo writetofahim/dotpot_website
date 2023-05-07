@@ -41,13 +41,13 @@ const FoodAndRestaurant = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="bg-bgPrimary-500">
+      <div className="bg-background-500">
         <div className="pt-[15vh] pb-10 container mx-auto">
           <NavigatorComponent navigationData={navigationData} />
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
+          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center">
             Food & Restaurants
           </h1>
-          <p className="text-lg text-secondary-500 text-center mb-10">
+          <p className="text-lg text-textColor-500 text-center mb-10">
             Satisfy your cravings with our innovative Food & Restaurant solutions,
             crafted with passion and precision.
           </p>
@@ -55,11 +55,11 @@ const FoodAndRestaurant = () => {
             <img className="md:w-1/2 mx-auto " src={food} alt="food-img" />
           </div>
           <div className="container  mx-auto flex flex-col mb-10 my-10">
-            <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">
+            <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
               Overview
             </h3>
             {/* Overview */}
-            <div className="text-primary-500 flex flex-col gap-5 p-5">
+            <div className="text-textColor-500 flex flex-col gap-5 p-5">
               <p>
                 DotpotiT is a company that offers technology-driven solutions for
                 the food and restaurant industry. Our aim is to provide innovative
@@ -119,11 +119,11 @@ const FoodAndRestaurant = () => {
               </div>
 
               <div className="flex flex-col gap-5">
-                <h3 className="text-center text-primary-500 font-bold text-xl ">
+                <h3 className="text-center text-textColor-500 font-bold text-xl ">
                   Want to Know How Much Exactly Your Food & Restaurant
                   applications Will Cost?
                 </h3>
-                <h3 className="text-center text-primary-500 font-semibold">
+                <h3 className="text-center text-textColor-500 font-semibold">
                   "The Experts Are Just A Click Away. Get A Quote."
                 </h3>
 
@@ -142,10 +142,10 @@ const FoodAndRestaurant = () => {
 
             {/* paragraph */}
             <div className="my-3">
-              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-primary-500 ">
+              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-textColor-500 ">
                 How we work?
               </h2>
-              <div className="text-primary-500 flex flex-col gap-5 p-5">
+              <div className="text-textColor-500 flex flex-col gap-5 p-5">
                 <p>
                   At DotpotiT, we understand that every restaurant is unique and
                   has its own requirements when it comes to the digital landscape.
@@ -192,35 +192,35 @@ const FoodAndRestaurant = () => {
             </div>
             {/* Advantages of Blockchain Technology */}
             <ul className="ml-5">
-              <h3 className="text-xl md:text-2xl  my-2 md:mb-1  text-primary-500 ">
+              <h3 className="text-xl md:text-2xl  my-2 md:mb-1  text-textColor-500 ">
                 Why you should choose us!
               </h3>
-              <li className=" ml-5 list-disc text-primary-500 ">
+              <li className=" ml-5 list-disc text-textColor-500 ">
                 <strong>Customized Solutions:</strong> At DotpotiT, we understand
                 that every restaurant has unique needs and requirements. That’s
                 why we provide customized solutions that are tailored to meet the
                 specific needs of each restaurant.
               </li>
-              <li className=" ml-5 list-disc text-primary-500 ">
+              <li className=" ml-5 list-disc text-textColor-500 ">
                 <strong>Experienced Team:</strong> Our team consists of
                 experienced professionals who have worked with various restaurants
                 and food businesses in the past. With their expertise, we can
                 provide top-notch solutions that are both effective and efficient.
               </li>
-              <li className=" ml-5 list-disc text-primary-500 ">
+              <li className=" ml-5 list-disc text-textColor-500 ">
                 <strong>Timely Delivery:</strong> We understand that time is of
                 the essence in the food and restaurant industry. That’s why we
                 ensure timely delivery of our solutions so that our clients can
                 stay ahead of the competition.
               </li>
-              <li className=" ml-5 list-disc text-primary-500 ">
+              <li className=" ml-5 list-disc text-textColor-500 ">
                 <strong>Competitive Pricing: </strong>
                 We offer our services at competitive pricing, making sure that our
                 clients get the best value for their money. Our aim is to provide
                 cost-effective solutions that help our clients achieve their
                 goals.
               </li>
-              <li className=" ml-5 list-disc text-primary-500 ">
+              <li className=" ml-5 list-disc text-textColor-500 ">
                 <strong>24/7 Customer Support:</strong> At DotpotiT, we believe in
                 providing exceptional customer support to our clients. We are
                 always available to answer any questions and provide support

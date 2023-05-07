@@ -56,7 +56,7 @@ const Web3 = () => {
             <div className="absolute hidden h-16 w-[600px] rotate-[-40deg] rounded-3xl bg-sky-400 opacity-10 blur-2xl filter dark1:hidden lg:top-24 lg:-right-28 lg:block lg:h-12 lg:w-[600px] lg:opacity-30 lg:blur-2xl xl:-right-40 xl:h-4 xl:w-[700px] xl:opacity-100"></div>
             <div className="absolute hidden h-14 w-[600px] rotate-[-40deg] rounded-3xl bg-purple-400 opacity-30 blur-2xl filter dark1:hidden lg:top-20 lg:-right-28 lg:block lg:h-10 lg:w-[600px] lg:opacity-20 lg:blur-xl xl:-right-40 xl:h-2 xl:w-[800px] xl:opacity-100"></div>
             
-            <div className="bg-bgPrimary-500">
+            <div className="bg-background-500">
               <div className="container mx-auto pt-[15vh]">
               <NavigatorComponent navigationData={navigationData} />
                 <div className="my-5">
@@ -68,10 +68,10 @@ const Web3 = () => {
                 </div>
                 {/* cover */}
                 <div className="w-full mx-auto px-5 h-52">
-                  <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center ">
+                  <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center ">
                     Web3 Development
                   </h1>
-                  <p className="text-secondary-500 flex flex-col gap-5 p-5 text-center">
+                  <p className="text-textColor-500 flex flex-col gap-5 p-5 text-center">
                     At DotpotIT, we offer innovative web3 solutions for businesses
                     using blockchain and decentralized technologies.
                   </p>
@@ -87,11 +87,11 @@ const Web3 = () => {
                       />
                     </div>
                     <div className="rounded-lg w-full md:w-[590px] border border-border p-5 flex flex-col justify-center items-center">
-                      <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">
+                      <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
                         Customized web3
-                        <span className="text-primary-500"> solutions</span>
+                        <span className="text-textColor-500"> solutions</span>
                       </h3>
-                      <p className="text-center text-secondary-500">
+                      <p className="text-center text-textColor-500">
                         Customized web3 solutions to meet the specific needs of
                         each client.
                       </p>
@@ -107,11 +107,11 @@ const Web3 = () => {
                       />
                     </div>
                     <div className="rounded-lg w-full md:w-[590px] border border-border p-5 flex flex-col justify-center items-center">
-                      <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">
+                      <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
                         Blockchain for Security and
-                        <span className="text-primary-500"> Transparency </span>
+                        <span className="text-textColor-500"> Transparency </span>
                       </h3>
-                      <p className="text-center text-secondary-500">
+                      <p className="text-center text-textColor-500">
                         Use of blockchain technology to enhance security and
                         transparency
                       </p>
@@ -127,11 +127,11 @@ const Web3 = () => {
                       />
                     </div>
                     <div className="rounded-lg w-full md:w-[590px] border border-border p-5 flex flex-col justify-center items-center">
-                      <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">
+                      <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
                         Efficient dApps and Smart
-                        <span className="text-primary-500"> Contracts</span>
+                        <span className="text-textColor-500"> Contracts</span>
                       </h3>
-                      <p className="text-center text-secondary-500">
+                      <p className="text-center text-textColor-500">
                         Development of dApps and smart contracts for automation
                         and efficiency.
                       </p>
@@ -147,11 +147,11 @@ const Web3 = () => {
                       />
                     </div>
                     <div className="rounded-lg w-full md:w-[590px] border border-border p-5 flex flex-col justify-center items-center">
-                      <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">
+                      <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
                         NFT
-                        <span className="text-primary-500"> Integration</span>
+                        <span className="text-textColor-500"> Integration</span>
                       </h3>
-                      <p className="text-center text-secondary-500">
+                      <p className="text-center text-textColor-500">
                         Integration of NFTs for digital art, collectibles, and
                         gaming.
                       </p>

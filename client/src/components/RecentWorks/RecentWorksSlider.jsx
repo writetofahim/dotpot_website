@@ -100,7 +100,7 @@ var settings = {
 
 export const SingleSlide = (props) => {
   return (
-    <div className="mx-5 mb-14 rounded-lg relative shadow-xl hover:shadow-lg bg-bgSecondary-500 border border-border px-5 pt-5 group hover:bg-bgSecondary-200 overflow-hidden duration-200">
+    <div className="mx-5 mb-14 rounded-lg relative shadow-xl hover:shadow-lg px-5 pt-5 group bg-background-500 overflow-hidden duration-200">
       <div className="h-[100px]">
         <Link to={props?.link}>
           <h3 className="text-2xl font-bold text-gray-400 mb-2 text-center hover:underline cursor-pointer">
@@ -112,7 +112,7 @@ export const SingleSlide = (props) => {
             props.technologies.map((tech, index) => (
               <div
                 key={index}
-                className={`text-sm rounded-full px-2 py-1 bg-gradient-to-r from-cyan-500 to-blue-500 text-white`}
+                className={`text-sm rounded-full px-2 py-1 bg-gradient-to-r from-primary-500 to-primary-200 text-buttonText-500`}
               >
                 {tech}
               </div>

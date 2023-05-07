@@ -47,11 +47,11 @@ const FixedPrice = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="bg-bgPrimary-500">
+      <div className="bg-background-500">
         <div className="container mx-auto pt-[15vh] pb-10">
           <NavigatorComponent navigationData={navigationData} />
 
-          <div className="flex flex-col pt-12 lg:text-justify text-primary-500">
+          <div className="flex flex-col pt-12 lg:text-justify text-textColor-500">
             <div className="w-full h-full flex justify-center items-center">
               <img
                 className="max-w-full max-h-full"

@@ -104,24 +104,24 @@ const MobileAppDevelopment = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="bg-bgPrimary-500">
+      <div className="bg-background-500">
         <div className="pt-[15vh] container mx-auto min-h-screen px-3">
           <NavigatorComponent navigationData={navigationData} />
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
+          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center">
             Mobile App Development
           </h1>
-          <p className="text-md text-secondary-500 text-center mb-10">
+          <p className="text-md text-textColor-500 text-center mb-10">
             Get Top-notch, Extensively, Innovative Mobile App Solution By Us
           </p>
           <div className="mb-5 container mx-auto">
             <img className="md:w-1/2 mx-auto " src={coverImg} alt="" />
           </div>
           <div className="container  mx-auto flex flex-col py-10">
-            <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">
+            <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
               Overview
             </h3>
             {/* Overview */}
-            <div className="text-primary-500 flex flex-col gap-5 p-5">
+            <div className="text-textColor-500 flex flex-col gap-5 p-5">
               <p className="text-justify">
                 Our company provides a top-notch, extensive, and innovative mobile
                 app solution that is tailored to meet your specific needs. We have
@@ -208,10 +208,10 @@ const MobileAppDevelopment = () => {
 
             {/* paragraph */}
             <div className="my-3">
-              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-primary-500 ">
+              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-textColor-500 ">
                 What Is Mobile App Development?
               </h2>
-              <div className="text-primary-500 flex flex-col gap-5 p-5">
+              <div className="text-textColor-500 flex flex-col gap-5 p-5">
                 <p className="text-justify">
                   Mobile app development is the process of creating software that
                   runs on mobile devices such as smartphones, tablets, and iPads.
@@ -246,10 +246,10 @@ const MobileAppDevelopment = () => {
             </div>
 
             <div className="my-3">
-              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-primary-500">
+              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-textColor-500">
                 Why Mobile App Development Is Important For Businesses?
               </h2>
-              <div className="text-primary-500 flex flex-col gap-5 p-5">
+              <div className="text-textColor-500 flex flex-col gap-5 p-5">
                 <p className="text-justify">
                   Mobile applications may seem insignificant, but they can have a
                   profound impact on businesses. They enable businesses to send
@@ -266,10 +266,10 @@ const MobileAppDevelopment = () => {
             </div>
 
             <div className="my-3">
-              <h2 className="text-xl md:text-2xl  mb-2 md:mb-1 block font-bold text-primary-500">
+              <h2 className="text-xl md:text-2xl  mb-2 md:mb-1 block font-bold text-textColor-500">
                 Importance Of App Development In Different Industries
               </h2>
-              <div className="text-primary-500 flex flex-col gap-5 p-5">
+              <div className="text-textColor-500 flex flex-col gap-5 p-5">
                 <p className="text-justify">
                   It's common knowledge that businesses operate in different
                   industries, each with its own unique set of challenges and
@@ -290,10 +290,10 @@ const MobileAppDevelopment = () => {
 
             {/* mobile app dev */}
             <div className="my-3">
-              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1 block text-primary-500 ">
+              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1 block text-textColor-500 ">
                 Types Of Mobile App Development
               </h2>
-              <div className="text-primary-500 flex flex-col gap-5 p-5">
+              <div className="text-textColor-500 flex flex-col gap-5 p-5">
                 <p className="text-justify">
                   When it comes to mobile app development, there are four main
                   types that businesses can choose from. These include native
@@ -326,12 +326,12 @@ const MobileAppDevelopment = () => {
                     device-specific features, and a more polished user experience.
                   </p>
 
-                  <h3 className="text-xl md:text-2xl  my-2 md:mb-1  text-primary-500 font-bold">
+                  <h3 className="text-xl md:text-2xl  my-2 md:mb-1  text-textColor-500 font-bold">
                     Example of Native Mobile Application
                   </h3>
-                  <li className=" ml-5 list-disc text-primary-500 ">Scan To Go</li>
-                  <li className=" ml-5 list-disc text-primary-500 ">WhatsApp</li>
-                  <li className=" ml-5 list-disc text-primary-500 ">Spotify</li>
+                  <li className=" ml-5 list-disc text-textColor-500 ">Scan To Go</li>
+                  <li className=" ml-5 list-disc text-textColor-500 ">WhatsApp</li>
+                  <li className=" ml-5 list-disc text-textColor-500 ">Spotify</li>
                 </ul>
                 <ul className="ml-5 my-3">
                   <li className="text-xl md:text-2xl  mb-2 md:mb-1  list-disc font-bold ">
@@ -349,9 +349,9 @@ const MobileAppDevelopment = () => {
                   <h3 className="text-xl md:text-2xl  my-2 md:mb-1  font-bold ">
                     Example of Hybrid Mobile Application
                   </h3>
-                  <li className=" ml-5 list-disc text-primary-500 ">Gmail</li>
-                  <li className=" ml-5 list-disc text-primary-500 ">Evernote</li>
-                  <li className=" ml-5 list-disc text-primary-500 ">Twitter</li>
+                  <li className=" ml-5 list-disc text-textColor-500 ">Gmail</li>
+                  <li className=" ml-5 list-disc text-textColor-500 ">Evernote</li>
+                  <li className=" ml-5 list-disc text-textColor-500 ">Twitter</li>
                 </ul>
               </div>
             </div>

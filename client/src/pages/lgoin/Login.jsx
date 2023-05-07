@@ -93,7 +93,7 @@ const Login = () => {
             onSubmit={handleSubmit}
             className="w-full max-w-md p-5 border rounded-xl shadow-xl glassmorphism"
           >
-            <h1 className="text-center text-6xl text-primary-500 font-bold">
+            <h1 className="text-center text-6xl text-textColor-500 font-bold">
               SIGN IN
             </h1>
 
@@ -211,7 +211,7 @@ const Login = () => {
               <div className="mt-6 text-center text-gray-500 font-bold">
                 <Link to="/register" className="text-sm hover:underline">
                   Don’t have an account yet?{" "}
-                  <span className="text-primary-500">Sign up</span>
+                  <span className="text-textColor-500">Sign up</span>
                 </Link>
               </div>
             </div>

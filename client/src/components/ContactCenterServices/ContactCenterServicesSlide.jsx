@@ -21,7 +21,7 @@ function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
     <GrNext
-      className="md:block text-4xl bg-primary-500 md:text-5xl absolute right-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 hover:bg-primary-300  transition-all -translate-y-[50%]  p-2 rounded-full translate-x-[30%] "
+      className="md:block text-4xl md:text-5xl absolute right-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 hover:bg-primary-300  transition-all -translate-y-[50%]  p-2 rounded-full translate-x-[30%] "
       onClick={onClick}
     />
   );
@@ -31,7 +31,7 @@ function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
   return (
     <GrPrevious
-      className="md:block z-10 text-4xl md:text-5xl absolute left-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 bg-primary-500 hover:bg-primary-300 transition-all -translate-y-[50%]  p-2 rounded-full -translate-x-[30%] "
+      className="md:block z-10 text-4xl md:text-5xl absolute left-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100  hover:bg-primary-300 transition-all -translate-y-[50%]  p-2 rounded-full -translate-x-[30%] "
       onClick={onClick}
     />
   );
@@ -80,10 +80,10 @@ var settings = {
 export const SingleSlide = (props) => {
   return (
     <Link to={props.link}>
-      <div className="z-2 bg-bgSecondary-200 md:w-[1/8] mx-2 h-[200px] p-3 rounded-xl shadow flex flex-col items-center justify-center hover:border hover:border-primary-500 transition-all">
-        {/* <h3 className="text-3xl font-bold italic text-primary-500">{props.title}</h3> */}
+      <div className="z-2 bg-background-500 md:w-[1/8] mx-2 h-[200px] p-3 rounded-xl shadow flex flex-col items-center justify-center hover:border hover:border-primary-500 transition-all">
+        {/* <h3 className="text-3xl font-bold italic text-textColor-500">{props.title}</h3> */}
         <img src={props.icon} alt={props.title} className="w-[50%]" />
-        <p className="mt-5 text-center hover:text-secondary-500 text-primary-500 text-xl font-bold">
+        <p className="mt-5 text-center hover:text-secondary-500 text-textColor-500 text-xl font-bold">
           {props.title}
         </p>
       </div>

@@ -76,7 +76,7 @@ const SingleBlog = () => {
       </Helmet>
 
       <Navbar />
-      <div className="bg-bgPrimary-500">
+      <div className="bg-background-500">
         <div className="w-full md:p-[15vh] pt-[15vh] ">
           <NavigatorComponent navigationData={navigationData} />
           {data && (
@@ -88,19 +88,19 @@ const SingleBlog = () => {
                   alt=""
                 />
                 <div className="md:w-5/5">
-                  <h3 className="my-5 text-3xl font-bold text-left text-primary-500">
+                  <h3 className="my-5 text-3xl font-bold text-left text-textColor-500">
                     {data.title}
                   </h3>
-                  <p className="text-primary-500">{data.date}</p>
+                  <p className="text-textColor-500">{data.date}</p>
                   {data?.tags.map((item, index) => (
                     <p
                       key={index}
-                      className="inline px-3 py-1 border border-border rounded-full mr-2 text-primary-500 hover:text-secondary-500 transition-all"
+                      className="inline px-3 py-1 border border-border rounded-full mr-2 text-textColor-500 hover:text-textColor-500 transition-all"
                     >
                       {item},{" "}
                     </p>
                   ))}
-                  <div className="mt-5 text-primary-500">{parse(data.body)}</div>
+                  <div className="mt-5 text-textColor-500">{parse(data.body)}</div>
                 </div>
               </div>
             </div>

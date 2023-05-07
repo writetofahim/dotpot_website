@@ -118,13 +118,13 @@ const CyberSecurity = () => {
       </Helmet>
       {/* Navbar */}
       <Navbar />
-      <div className="bg-bgPrimary-500 ">
+      <div className="bg-background-500 ">
         <div className="min-h-screen container mx-auto px-3 lg:px-5 pt-[15vh] pb-10">
           <NavigatorComponent navigationData={navigationData} />
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-center text-primary-500">
+          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-center text-textColor-500">
             Cyber Security
           </h1>
-          <p className="text-md text-center mb-10 text-secondary-500">
+          <p className="text-md text-center mb-10 text-textColor-500">
             Our Cyber Security provides the state of the earth security services
             for our customer's data.
           </p>
@@ -132,11 +132,11 @@ const CyberSecurity = () => {
             <img className="md:w-1/2 mx-auto " src={cyberSecurity} alt="" />
           </div>
           <div className="container  mx-auto flex flex-col mb-10 my-10">
-            <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">
+            <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
               Overview
             </h3>
             {/* Overview */}
-            <div className="flex flex-col gap-5 p-5 text-primary-500">
+            <div className="flex flex-col gap-5 p-5 text-textColor-500">
               <p className="text-justify">
                 In today’s digital age, cybersecurity threats are becoming more
                 frequent and sophisticated, making it crucial for businesses to
@@ -187,10 +187,10 @@ const CyberSecurity = () => {
 
             {/* paragraph */}
             <div className="my-3">
-              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-primary-500 ">
+              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-textColor-500 ">
                 Threat Intelligence:
               </h2>
-              <div className="text-primary-500 flex flex-col gap-5 p-5">
+              <div className="text-textColor-500 flex flex-col gap-5 p-5">
                 <p className="text-justify">
                   Our service offers real-time threat intelligence, which involves
                   monitoring and analyzing threats to your systems and networks.
@@ -202,15 +202,15 @@ const CyberSecurity = () => {
 
             {/* Why Choose DotpotiT For Machine Learning? */}
             <div className="my-3">
-              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-10  block text-primary-500 ">
+              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-10  block text-textColor-500 ">
                 Why Choose DotpotiT For Machine Learning?
               </h2>
               {/*1) Improvised Technologies*/}
               <div className="my-3">
-                <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-primary-500 ">
+                <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-textColor-500 ">
                   1) Improvised Technologies
                 </h2>
-                <div className="text-primary-500 flex flex-col gap-5 p-5">
+                <div className="text-textColor-500 flex flex-col gap-5 p-5">
                   <p className="text-justify">
                     AI and Machine Learning are cutting-edge technologies that
                     have found their way into businesses worldwide. At our
@@ -223,10 +223,10 @@ const CyberSecurity = () => {
               </div>
               {/* 2) Dynamic Solution*/}
               <div className="my-3">
-                <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-primary-500 ">
+                <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-textColor-500 ">
                   2) Dynamic Solution
                 </h2>
-                <div className="text-primary-500 flex flex-col gap-5 p-5">
+                <div className="text-textColor-500 flex flex-col gap-5 p-5">
                   <p className="text-justify">
                     DotpotiT provides top-notch Artificial Intelligence and
                     Machine Learning technology, backed by 10+ years of
@@ -237,10 +237,10 @@ const CyberSecurity = () => {
               </div>
               {/* 3) Enhance Productivity */}
               <div className="my-3">
-                <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-primary-500 ">
+                <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-textColor-500 ">
                   3) Enhance Productivity
                 </h2>
-                <div className="text-primary-500 flex flex-col gap-5 p-5">
+                <div className="text-textColor-500 flex flex-col gap-5 p-5">
                   <p className="text-justify">
                     Our AI and ML technology improves business productivity, and
                     our professionals develop effective strategies to meet client
@@ -250,10 +250,10 @@ const CyberSecurity = () => {
               </div>
               {/* 4) Deep Insights */}
               <div className="my-3">
-                <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-primary-500 ">
+                <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-textColor-500 ">
                   4) Deep Insights
                 </h2>
-                <div className="text-primary-500 flex flex-col gap-5 p-5">
+                <div className="text-textColor-500 flex flex-col gap-5 p-5">
                   <p>
                     We ensure transparent communication with clients when
                     providing AI and ML insights to help their businesses grow.

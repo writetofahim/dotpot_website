@@ -47,12 +47,12 @@ const ContactCenterSupport = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="bg-bgPrimary-500">
+      <div className="bg-background-500">
         <div className="pt-[15vh] pb-10 container mx-auto min-h-screen px-3">
-          <div className="bg-bgPrimary-500">
+          <div className="bg-background-500">
             <NavigatorComponent navigationData={navigationData}/>
           </div>
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-center text-primary-500">
+          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-center text-textColor-500">
             Contact Center Support
           </h1>
           <p className="text-md text-secondary-400 text-center mb-10">
@@ -63,11 +63,11 @@ const ContactCenterSupport = () => {
             <img className="md:w-1/2 mx-auto " src={coverImg} alt="" />
           </div>
           <div className="container  mx-auto flex flex-col py-10">
-            <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">
+            <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
               Overview
             </h3>
             {/* Overview */}
-            <div className="text-primary-500 flex flex-col gap-5 p-5">
+            <div className="text-textColor-500 flex flex-col gap-5 p-5">
               <p className="text-justify">
                 Our company specializes in offering top-notch Contact Center
                 Solutions designed to help businesses optimize their productivity.

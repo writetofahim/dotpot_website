@@ -27,7 +27,7 @@ export default function ResponseSuccessModal({ openModal, setOpenModal }) {
                 <Box sx={style}>
                     <div className='flex flex-col justify-center items-center bg-white rounded-xl py-7'>
                         <MdDone className='text-5xl text-green-500' />
-                        <p className='text-primary-500 text-xl font-bold'>Your Response was submitted successfully</p>
+                        <p className='text-textColor-500 text-xl font-bold'>Your Response was submitted successfully</p>
                         <p className='text-gray-500'>We will get back to you soon</p>
                     </div>
                 </Box>

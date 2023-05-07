@@ -18,14 +18,14 @@ const AgenciesBusiness = () => {
   return (
     <div>
       <Navbar />
-      <div className="bg-bgPrimary-500">
+      <div className="bg-background-500">
         <div className="pt-[15vh] pb-10 container mx-auto">
           <NavigatorComponent navigationData={navigationData} />
           <div>
-            <h1 className="text-3xl md:text-5xl font-extrabold mb-2 text-primary-500 text-center">
+            <h1 className="text-3xl md:text-5xl font-extrabold mb-2 text-textColor-500 text-center">
               Agencies Business
             </h1>
-            <p className="text-lg text-secondary-500 text-center mb-10">
+            <p className="text-lg text-textColor-500 text-center mb-10">
               Empowering Businesses to Scale and Succeed through Strategic
               Partnership and Creative Solutions
             </p>
@@ -34,8 +34,8 @@ const AgenciesBusiness = () => {
             <img src={agency_bus} alt="Product image" />
           </div>
           <div className="my-12 lg:mx-24 mx-6">
-            <h2 className="lg:text-2xl text-xl font-bold mb-4 text-primary-500">Overview</h2>
-            <div className="text-primary-500 flex flex-col gap-5 py-2 lg:px-5 text-justify">
+            <h2 className="lg:text-2xl text-xl font-bold mb-4 text-textColor-500">Overview</h2>
+            <div className="text-textColor-500 flex flex-col gap-5 py-2 lg:px-5 text-justify">
               <p>
                 Agencies businesses are organizations that provide professional
                 services to other businesses or individuals. These services can
@@ -66,10 +66,10 @@ const AgenciesBusiness = () => {
               </p>
             </div>
             <div className="pt-6">
-              <h2 className="lg:text-2xl text-xl font-bold mb-4 text-primary-500">
+              <h2 className="lg:text-2xl text-xl font-bold mb-4 text-textColor-500">
                 What types of services do agencies businesses typically provide?
               </h2>
-              <p className="text-primary-500 lg:px-5 text-justify">
+              <p className="text-textColor-500 lg:px-5 text-justify">
                 Agencies businesses can provide a wide range of services,
                 including marketing and advertising, public relations, branding
                 and creative design, web and software development, data analytics,
@@ -78,20 +78,20 @@ const AgenciesBusiness = () => {
                 line.
               </p>
               <ul className="list-disc list-inside">
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">Service-based:</strong>{" "}
                   Agencies businesses are service-based and provide specialized
                   services to other businesses or individuals. They do not
                   typically produce a physical product or provide a consistent
                   service over time.
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">Project-based:</strong>{" "}
                   Agencies businesses typically work on a project-by-project
                   basis, meaning they are engaged by a client to provide specific
                   services for a limited time period.
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">
                     Specialized expertise:
                   </strong>{" "}
@@ -100,14 +100,14 @@ const AgenciesBusiness = () => {
                   public relations, design, and software development. This allows
                   them to provide high-quality services to their clients.
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">Flexibility:</strong> Agencies
                   businesses offer flexibility, allowing clients to scale their
                   services up or down depending on their needs. This can be
                   particularly valuable for businesses that experience
                   fluctuations in demand throughout the year.
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">
                     Creativity and innovation:
                   </strong>{" "}
@@ -117,7 +117,7 @@ const AgenciesBusiness = () => {
                   the competition by providing unique and creative solutions to
                   common problems.
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">Results-oriented: </strong>{" "}
                   Agencies businesses are results-oriented and focused on
                   delivering measurable results for their clients. They work
@@ -127,10 +127,10 @@ const AgenciesBusiness = () => {
               </ul>
             </div>
             <div className="pt-6">
-              <h2 className="lg:text-2xl text-xl font-bold mb-4 text-primary-500">
+              <h2 className="lg:text-2xl text-xl font-bold mb-4 text-textColor-500">
                 What are some benefits of working with agencies businesses?
               </h2>
-              <p className="text-primary-500 lg:px-5 text-justify">
+              <p className="text-textColor-500 lg:px-5 text-justify">
                 Here are many benefits to working with agencies businesses. First
                 and foremost, they provide access to specialized skills and
                 expertise that may not be available in-house. They also offer
@@ -140,7 +140,7 @@ const AgenciesBusiness = () => {
                 businesses stay ahead of the competition and achieve their goals.
               </p>
               <ul className="list-disc list-inside">
-                <li className="text-primary-500 mb-2 lg:px-10 px-3 ">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3 ">
                   <strong className="font-semibold">
                     Access to specialized skills and expertise:
                   </strong>
@@ -150,7 +150,7 @@ const AgenciesBusiness = () => {
                   This allows businesses to leverage these skills and expertise
                   without having to hire full-time employees.
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">Flexibility:</strong>Agencies
                   businesses provide services on a project-by-project basis,
                   allowing businesses to scale their services up or down as
@@ -158,7 +158,7 @@ const AgenciesBusiness = () => {
                   businesses that experience fluctuations in demand throughout the
                   year.
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">Cost-effective:</strong>
                   Working with agencies businesses can often be more
                   cost-effective than hiring full-time employees or maintaining an
@@ -167,7 +167,7 @@ const AgenciesBusiness = () => {
                   access to a range of tools and resources without the overhead
                   costs.
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">
                     Innovation and creativity:
                   </strong>
@@ -177,7 +177,7 @@ const AgenciesBusiness = () => {
                   of the competition by providing unique and creative solutions to
                   common problems.
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">Results-driven:</strong>
                   Agencies businesses are focused on delivering results for their
                   clients. They work closely with businesses to understand their
@@ -188,10 +188,10 @@ const AgenciesBusiness = () => {
               </ul>
             </div>
             <div className="pt-6">
-              <h2 className="lg:text-2xl text-xl font-bold mb-4 text-primary-500">
+              <h2 className="lg:text-2xl text-xl font-bold mb-4 text-textColor-500">
                 How can Dotpot iT support agencies businesses?
               </h2>
-              <p className="text-primary-500 lg:px-5 text-justify">
+              <p className="text-textColor-500 lg:px-5 text-justify">
                 Dotpot IT can provide agencies businesses with a range of services
                 to help them leverage technology and achieve their goals. This may
                 include IT consulting, software development, network security,
@@ -200,21 +200,21 @@ const AgenciesBusiness = () => {
                 success.
               </p>
               <ul className="list-disc list-inside">
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">IT consulting:</strong>Dotpot
                   IT can provide agencies businesses with expert advice and
                   guidance on technology strategy, software selection, and system
                   architecture to ensure that their technology investments align
                   with their business goals.
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">Software development:</strong>
                   Dotpot IT can develop custom software solutions to meet the
                   unique needs of agencies businesses, including web and mobile
                   applications, agencies resource planning (ERP) systems, and
                   more.
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">Network security:</strong>
                   Dotpot IT can help agencies businesses protect their networks
                   from cyber threats by implementing firewalls, intrusion
@@ -222,14 +222,14 @@ const AgenciesBusiness = () => {
                   conduct regular security audits to identify vulnerabilities and
                   ensure compliance with regulatory requirements.
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">Cloud solutions:</strong>
                   Dotpot IT can help agencies businesses leverage cloud computing
                   to reduce costs, increase scalability, and improve flexibility.
                   This may include cloud migration services, cloud infrastructure
                   management, and cloud application development.
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">Data analytics:</strong>Dotpot
                   IT can help agencies businesses gain insights from large amounts
                   of data through advanced analytics techniques such as machine
@@ -237,7 +237,7 @@ const AgenciesBusiness = () => {
                   them make data-driven decisions and improve business
                   performance.
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">Digital marketing:</strong>
                   DotPot IT can help agencies businesses build their online
                   presence and reach a wider audience through digital marketing
@@ -247,7 +247,7 @@ const AgenciesBusiness = () => {
               </ul>
             </div>
             <div className="pt-6">
-              <p className="text-primary-500 px-5">
+              <p className="text-textColor-500 px-5">
                 By providing these and other services, Dotpot IT can support
                 agencies businesses in achieving their goals, improving
                 efficiency, and gaining a competitive advantage in their

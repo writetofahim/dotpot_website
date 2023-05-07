@@ -83,25 +83,25 @@ const BlockchainDevelopment = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="bg-bgPrimary-500">
+      <div className="bg-background-500">
         <div className="pt-[15vh] container mx-auto pb-10 min-h-screen p-3">
           <NavigatorComponent navigationData={navigationData} />
 
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
+          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center">
             Blockchain Development
           </h1>
-          <p className="text-md text-secondary-500 text-center mb-10">
+          <p className="text-md text-textColor-500 text-center mb-10">
             Hire The Expert Development Team of Blockchain Technology!
           </p>
           <div className="mb-5 container mx-auto">
             <img className="md:w-1/2 mx-auto " src={coverImg} alt="" />
           </div>
           <div className="container  mx-auto flex flex-col mb-10 my-10">
-            <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">
+            <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
               Overview
             </h3>
             {/* Overview */}
-            <div className="text-primary-500 flex flex-col gap-5 p-5">
+            <div className="text-textColor-500 flex flex-col gap-5 p-5">
               <p className="text-justify">
                 Blockchain technology has become a hot topic among businesses,
                 particularly in the IT industry. It has paved the way for secure
@@ -152,10 +152,10 @@ const BlockchainDevelopment = () => {
 
             {/* paragraph */}
             <div className="my-3">
-              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-primary-500 ">
+              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-textColor-500 ">
                 What is Blockchain?
               </h2>
-              <div className="text-primary-500 flex flex-col gap-5 p-5">
+              <div className="text-textColor-500 flex flex-col gap-5 p-5">
                 <p className="text-justify">
                   Blockchain is a distributed digital ledger that securely stores
                   data and ensures its integrity through cryptography. It is not
@@ -177,13 +177,13 @@ const BlockchainDevelopment = () => {
             </div>
             {/* Advantages of Blockchain Technology */}
             <ul className="ml-5">
-              <h3 className="text-xl md:text-2xl  my-2 md:mb-1  text-primary-500 font-bold">
+              <h3 className="text-xl md:text-2xl  my-2 md:mb-1  text-textColor-500 font-bold">
                 Advantages of Blockchain Technology
               </h3>
-              <li className=" ml-5 list-disc text-primary-500 pl-2">Efficiency</li>
-              <li className=" ml-5 list-disc text-primary-500 pl-2">Transparency</li>
-              <li className=" ml-5 list-disc text-primary-500 pl-2">Trust</li>
-              <li className=" ml-5 list-disc text-primary-500 pl-2">Flexibility</li>
+              <li className=" ml-5 list-disc text-textColor-500 pl-2">Efficiency</li>
+              <li className=" ml-5 list-disc text-textColor-500 pl-2">Transparency</li>
+              <li className=" ml-5 list-disc text-textColor-500 pl-2">Trust</li>
+              <li className=" ml-5 list-disc text-textColor-500 pl-2">Flexibility</li>
             </ul>
           </div>
 

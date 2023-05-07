@@ -47,7 +47,7 @@ const BlogDevelopment = () => {
       <div className="pt-[15vh] pb-10 container mx-auto">
         <NavigatorComponent navigationData={navigationData} />
         <div>
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 text-primary-500 text-center">
+          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 text-textColor-500 text-center">
             Blog Site Development
           </h1>
           <p className="text-lg text-gray-400 text-center mb-10">

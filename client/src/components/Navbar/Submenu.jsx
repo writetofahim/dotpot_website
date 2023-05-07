@@ -20,7 +20,7 @@ const Submenu = ({
       </div>
       {selectedSubmenu === service._id && (
         <div
-          className={`flex h-max duration-500 transition-all  flex-col gap-2 absolute -top-2 lg:left-[285px] bg-bgSecondary-500 p-3 rounded-md shadow-xl`}
+          className={`flex h-max duration-500 transition-all  flex-col gap-2 absolute -top-2 lg:left-[285px] bg-background-500 p-3 rounded-md shadow-xl`}
         >
           {service?.submenu?.map((item, i) => (
             <Link

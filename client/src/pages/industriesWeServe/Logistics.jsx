@@ -47,14 +47,14 @@ const Logistics = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="bg-bgPrimary-500">
+      <div className="bg-background-500">
         <div className="pt-[15vh] container mx-auto">
           <NavigatorComponent navigationData={navigationData} />
           <div>
-            <h1 className="text-3xl md:text-5xl font-extrabold mb-2 text-primary-500 text-center">
+            <h1 className="text-3xl md:text-5xl font-extrabold mb-2 text-textColor-500 text-center">
               Logistics & Distribution
             </h1>
-            <p className="text-lg text-secondary-500 text-center mb-10">
+            <p className="text-lg text-textColor-500 text-center mb-10">
               Revolutionize Your Logistics & Distribution Business with Customized
               Web Solutions from Dotpot IT
             </p>
@@ -63,8 +63,8 @@ const Logistics = () => {
             <img src={logistic} alt="Product image" />
           </div>
           <div className="py-12 lg:mx-24 mx-6">
-            <h2 className="lg:text-2xl text-xl font-bold mb-4 text-primary-500">Overview</h2>
-            <div className="text-primary-500 flex flex-col gap-5 py-2 lg:px-5 text-justify">
+            <h2 className="lg:text-2xl text-xl font-bold mb-4 text-textColor-500">Overview</h2>
+            <div className="text-textColor-500 flex flex-col gap-5 py-2 lg:px-5 text-justify">
               <p>
                 Dotpot IT is a leading provider of web design and development
                 services for businesses in the Logistics & Distribution industry.
@@ -112,10 +112,10 @@ const Logistics = () => {
               </p>
             </div>
             <div className="pt-6">
-              <h2 className="lg:text-2xl text-xl font-bold mb-4 text-primary-500">
+              <h2 className="lg:text-2xl text-xl font-bold mb-4 text-textColor-500">
                 Benefits of working with Dotpot IT
               </h2>
-              <p className="text-primary-500 lg:px-5 text-justify pb-2">
+              <p className="text-textColor-500 lg:px-5 text-justify pb-2">
                 By partnering with Dotpot IT for web design and development
                 services in the Logistics & Distribution industry, businesses can
                 benefit from our expertise, experience, and customer-focused
@@ -123,7 +123,7 @@ const Logistics = () => {
                 presence.
               </p>
               <ul className="list-disc list-inside">
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">
                     Customized Web Solutions:
                   </strong>
@@ -136,7 +136,7 @@ const Logistics = () => {
                     that meet their business objectives.
                   </p>
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">
                     Enhanced online visibility:
                   </strong>
@@ -147,7 +147,7 @@ const Logistics = () => {
                     industry.
                   </p>
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">
                     User-friendly websites:{" "}
                   </strong>
@@ -157,7 +157,7 @@ const Logistics = () => {
                     navigate, enhancing user experience and engagement.
                   </p>
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">Mobile optimization:</strong>
                   <br />
                   <p className="px-2">
@@ -166,7 +166,7 @@ const Logistics = () => {
                     anywhere, and anytime.
                   </p>
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">
                     Expert Web Developers and Designers:{" "}
                   </strong>
@@ -177,7 +177,7 @@ const Logistics = () => {
                     ensuring that your website is in good hands.
                   </p>
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">
                     Search engine optimization (SEO):
                   </strong>
@@ -188,7 +188,7 @@ const Logistics = () => {
                     target audience.
                   </p>
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">Expert support: </strong>
                   <br />
                   <p className="px-2">
@@ -197,7 +197,7 @@ const Logistics = () => {
                     fully functional.
                   </p>
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">
                     Enhanced Online Presence and Brand Reputation:
                   </strong>
@@ -209,7 +209,7 @@ const Logistics = () => {
                     business growth.
                   </p>
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">
                     Competitive Pricing and Flexible Packages:
                   </strong>
@@ -224,10 +224,10 @@ const Logistics = () => {
               </ul>
             </div>
             <div className="pt-6 flex flex-col gap-5">
-              <h2 className="lg:text-2xl text-xl font-bold mb-2 text-primary-500">
+              <h2 className="lg:text-2xl text-xl font-bold mb-2 text-textColor-500">
                 Why we wil be your best choice?
               </h2>
-              <p className="text-primary-500 lg:px-5 text-justify">
+              <p className="text-textColor-500 lg:px-5 text-justify">
                 Dotpot IT is a trusted provider of web design and development
                 services for businesses in the Logistics & Distribution industry.
                 With extensive experience and expertise in this field, we offer
@@ -239,7 +239,7 @@ const Logistics = () => {
                 services that help businesses in this industry streamline their
                 logistics operations and improve their overall efficiency.
               </p>
-              <p className="text-primary-500 lg:px-5 text-justify">
+              <p className="text-textColor-500 lg:px-5 text-justify">
                 What sets Dotpot IT apart is our unwavering commitment to
                 providing high-quality, customer-focused web solutions. We work
                 closely with our clients to understand their goals and objectives
@@ -253,7 +253,7 @@ const Logistics = () => {
                 customer engagement, leading to improved business growth and
                 revenue.
               </p>
-              <p className="text-primary-500 lg:px-5 text-justify">
+              <p className="text-textColor-500 lg:px-5 text-justify">
                 Overall, Dotpot IT is the preferred choice for web design and
                 development services in the Logistics & Distribution industry,
                 thanks to our years of experience, expertise, and customer-centric
@@ -263,7 +263,7 @@ const Logistics = () => {
               </p>
             </div>
             <div className="pt-6">
-              <p className="text-primary-500 lg:px-5 text-justify">
+              <p className="text-textColor-500 lg:px-5 text-justify">
                 Enhance your Logistics & Distribution business with Dotpot IT's
                 customized web solutions, e-commerce website development services,
                 and expert support. Trust us to deliver high-quality,

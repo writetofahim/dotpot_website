@@ -41,24 +41,24 @@ const Travel = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="bg-bgPrimary-500"> 
+      <div className="bg-background-500"> 
         <div className="pt-[15vh] pb-10 container mx-auto">
           <NavigatorComponent navigationData={navigationData} />
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
+          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center">
             Travel & Hospitality
           </h1>
-          <p className="text-lg text-secondary-500 text-center mb-10">
+          <p className="text-lg text-textColor-500 text-center mb-10">
             Your all-in-one travel companion - DotpotiT's cutting-edge travel app
           </p>
           <div className="border-b border-border container mx-auto">
             <img className="md:w-1/2 mx-auto " src={travel} alt="" />
           </div>
           <div className="container  mx-auto flex flex-col mb-10 my-10">
-            <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">
+            <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
               Overview
             </h3>
             {/* Overview */}
-            <div className="text-primary-500 flex flex-col gap-5 p-5">
+            <div className="text-textColor-500 flex flex-col gap-5 p-5">
               <p>
                 The travel industry has evolved significantly in recent years,
                 with more people looking to explore new destinations and
@@ -100,11 +100,11 @@ const Travel = () => {
               </div>
 
               <div className="flex flex-col gap-5">
-                <h3 className="text-center text-primary-500 font-bold text-xl ">
+                <h3 className="text-center text-textColor-500 font-bold text-xl ">
                   Want to Know How Much Exactly Your Travel application Will
                   Cost?
                 </h3>
-                <h3 className="text-center text-primary-500 font-semibold">
+                <h3 className="text-center text-textColor-500 font-semibold">
                   "The Experts Are Just A Click Away. Get A Quote."
                 </h3>
 
@@ -123,10 +123,10 @@ const Travel = () => {
 
             {/* paragraph */}
             <div className="my-3">
-              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-primary-500 ">
+              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-textColor-500 ">
                 How we work?
               </h2>
-              <div className="text-primary-500 flex flex-col gap-5 p-5">
+              <div className="text-textColor-500 flex flex-col gap-5 p-5">
                 <p>
                   At DotpotiT, we understand the unique needs and challenges of
                   the travel industry. Our team of experienced developers,
@@ -176,56 +176,56 @@ const Travel = () => {
             </div>
             {/* Advantages of Blockchain Technology */}
             <ul className="ml-5">
-              <h3 className="text-xl md:text-2xl  my-2 md:mb-1  text-primary-500 ">
+              <h3 className="text-xl md:text-2xl  my-2 md:mb-1  text-textColor-500 ">
                 Why you should choose us!
               </h3>
-              <li className=" ml-5 list-disc text-primary-500">
+              <li className=" ml-5 list-disc text-textColor-500">
                 <strong>Industry Experience:</strong> Our team has years of
                 experience in developing technology solutions for the travel
                 industry, giving us a deep understanding of the unique challenges
                 and opportunities that it presents.
               </li>
-              <li className=" ml-5 list-disc text-primary-500">
+              <li className=" ml-5 list-disc text-textColor-500">
                 <strong>Expert Travel Advice:</strong> Our team of travel experts
                 has years of experience in the industry, and we use that knowledge
                 to provide you with expert travel advice. We'll help you plan your
                 trip from start to finish, making sure that every aspect of your
                 travel experience is top-notch.
               </li>
-              <li className=" ml-5 list-disc text-primary-500">
+              <li className=" ml-5 list-disc text-textColor-500">
                 <strong>Customized Solutions:</strong> We work closely with
                 clients to develop custom solutions that are tailored to their
                 specific needs and requirements. Our collaborative approach
                 ensures that we deliver solutions that truly meet our clients'
                 needs.
               </li>
-              <li className=" ml-5 list-disc text-primary-500">
+              <li className=" ml-5 list-disc text-textColor-500">
                 <strong>Quality and Scalability: </strong>
                 Our solutions are designed to be of the highest quality and are
                 built with scalability in mind. This ensures that our clients'
                 businesses can grow and adapt to changing market conditions.
               </li>
-              <li className=" ml-5 list-disc text-primary-500">
+              <li className=" ml-5 list-disc text-textColor-500">
                 <strong>Cutting-Edge Technology:</strong> We prioritize the use of
                 the latest technologies and development frameworks, ensuring that
                 our solutions are always at the forefront of industry trends and
                 can provide a competitive advantage.
               </li>
-              <li className=" ml-5 list-disc text-primary-500">
+              <li className=" ml-5 list-disc text-textColor-500">
                 <strong>24/7 Customer Support:</strong> Our team is committed to
                 providing exceptional customer support throughout the development
                 process and beyond. We work closely with clients to ensure that
                 their needs are met and that their technology solutions are
                 running smoothly.
               </li>
-              <li className=" ml-5 list-disc text-primary-500">
+              <li className=" ml-5 list-disc text-textColor-500">
                 <strong>Sustainable Tourism:</strong> We believe in responsible
                 and sustainable tourism, and we're committed to working with
                 partners who share our values. We strive to minimize the
                 environmental impact of travel and promote cultural preservation
                 and conservation.
               </li>
-              <li className=" ml-5 list-disc text-primary-500">
+              <li className=" ml-5 list-disc text-textColor-500">
                 <strong>Innovations:</strong> We are constantly pushing the
                 boundaries of what is possible with technology to provide
                 innovative solutions that deliver real value to our clients. Our

@@ -16,8 +16,9 @@ import { loadFull } from "tsparticles";
 const Particle = () => {
 
   // const [themeColor, setThemeColor] = useState([])
-  const [backgroundColor, setBackgroundColor] = useState("#F2F2F2")
-  const [particleColor, setParticleColor] = useState("#000")
+  const [backgroundColor, setBackgroundColor] = useState("#0C1222")
+  // particle color for default: a674fca7, fff
+  const [particleColor, setParticleColor] = useState("#fff")
 
   useEffect(() => {
     const getData = async () => {

@@ -49,10 +49,10 @@ const JobSearchbar = () => {
                     </div>
                     <div className="">
                         <p className='text-center'>
-                            <Link to='./apply/employee/resume' className='text-primary-500 font-bold italic'>Post your resume</Link> - It only takes a few minutes
+                            <Link to='./apply/employee/resume' className='text-textColor-500 font-bold italic'>Post your resume</Link> - It only takes a few minutes
                         </p>
                         <p className='text-center'>
-                            <Link to='./apply/employer/' className='text-primary-500 font-bold italic'>Employer: Post a Job</Link> - Your next hire is here
+                            <Link to='./apply/employer/' className='text-textColor-500 font-bold italic'>Employer: Post a Job</Link> - Your next hire is here
                         </p>
                     </div>
                 </div>

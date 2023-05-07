@@ -20,7 +20,7 @@ function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
     <GrNext
-      className="md:block text-4xl md:text-5xl absolute right-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 hover:bg-primary-300 bg-primary-500 transition-all -translate-y-[150%] p-2 rounded-full translate-x-[30%]"
+      className="md:block text-4xl md:text-5xl absolute right-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 hover:bg-primary-300  transition-all -translate-y-[150%] p-2 rounded-full translate-x-[30%]"
       onClick={onClick}
     />
   );
@@ -30,7 +30,7 @@ function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
   return (
     <GrPrevious
-      className="md:block z-10 text-4xl md:text-5xl absolute left-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 hover:bg-primary-300 bg-primary-500 transition-all -translate-y-[150%] p-2 rounded-full -translate-x-[30%]"
+      className="md:block z-10 text-4xl md:text-5xl absolute left-0 top-1/2 cursor-pointer opacity-30 hover:opacity-100 hover:bg-primary-300 transition-all -translate-y-[150%] p-2 rounded-full -translate-x-[30%]"
       onClick={onClick}
     />
   );
@@ -49,6 +49,15 @@ var settings = {
   nextArrow: <SampleNextArrow />,
   prevArrow: <SamplePrevArrow />,
   responsive: [
+    {
+      breakpoint: 1300,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: true,
+      },
+    },
     {
       breakpoint: 1024,
       settings: {
@@ -80,17 +89,17 @@ export const SingleSlide = (props) => {
   // console.log(props)
   return (
     <a href={props.link} target="_blank">
-      <div className="mx-5 mb-20 rounded-lg p-5 bg-bgSecondary-500 border border-border flex items-center flex-col shadow-xl cursor-pointer hover:border hover:border-primary-400 hover:scale-x-105 transition-all">
+      <div className="mx-5 mb-20 rounded-lg p-5 bg-background-500 flex items-center flex-col shadow-xl cursor-pointer hover:border hover:border-primary-400 hover:scale-x-105 transition-all">
         <img
           src={`${import.meta.env.REACT_APP_SERVER_PATH}/${props.image}`}
           alt=""
           className=" w-2/5 aspect-square object-contain rounded-full"
         />
 
-        <h3 className="mt-2 text-xl text-center font-bold text-primary-500">
+        <h3 className="mt-2 text-xl text-center font-bold text-gray-400">
           {props.name}
         </h3>
-        <p className="font-bold text-center text-secondary-500">
+        <p className="font-bold text-center text-secondary-400">
           {props.title}
         </p>
       </div>

@@ -41,10 +41,10 @@ const DedicatedTeam = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="bg-bgPrimary-500">
+      <div className="bg-background-500">
         <div className="pt-[15vh] pb-10 container mx-auto min-h-screen px-3">
           <NavigatorComponent navigationData={navigationData} />
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
+          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center">
             Dedicated Team
           </h1>
           <p className="text-md text-secondary-400 text-center mb-10">
@@ -54,11 +54,11 @@ const DedicatedTeam = () => {
             <img className="md:w-1/2 mx-auto " src={coverImg} alt="" />
           </div>
           <div className="container  mx-auto flex flex-col py-10">
-            <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">
+            <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
               Overview
             </h3>
             {/* Overview */}
-            <div className="text-primary-500 flex flex-col gap-5 p-5">
+            <div className="text-textColor-500 flex flex-col gap-5 p-5">
               <p className="text-justify">
                 At our company, we have a dedicated team of professionals who are
                 committed to empowering your business. Our team consists of

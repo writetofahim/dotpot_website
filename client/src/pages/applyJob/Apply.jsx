@@ -97,7 +97,7 @@ const Apply = () => {
             {openModal && <ApplyJobSuccessModal openModal={openModal} setOpenModal={setOpenModal} />}
             <div className='w-full flex items-center justify-center overflow-x-hidden' >
                 <div className="w-full max-w-[1400px] container p-5 flex flex-col items-center">
-                    <h1 className="text-3xl text-primary-500 font-bold mb-10">Apply Now for {data && data.title}</h1>
+                    <h1 className="text-3xl text-textColor-500 font-bold mb-10">Apply Now for {data && data.title}</h1>
                     <form onSubmit={handleSubmit} className='md:w-3/5 border rounded-xl p-5 shadow-lg mb-5'>
                         <h3 className="text-xl text-center mb-3">{data && data.title}</h3>
                         {

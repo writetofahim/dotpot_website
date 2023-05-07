@@ -41,24 +41,24 @@ const OnDemand = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="bg-bgPrimary-500">
+      <div className="bg-background-500">
         <div className="pt-[15vh] pb-10 container mx-auto">
           <NavigatorComponent navigationData={navigationData} />
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
+          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center">
             On Demand Solutions
           </h1>
-          <p className="text-lg text-center mb-10 text-secondary-500">
+          <p className="text-lg text-center mb-10 text-textColor-500">
             Instant solutions at your fingertips with On Demand Solutions.
           </p>
           <div className="border-b container border-border mx-auto">
             <img className="md:w-1/2 mx-auto " src={od} alt="onDemand-img" />
           </div>
           <div className="container  mx-auto flex flex-col mb-10 my-10">
-            <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">
+            <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
               Overview
             </h3>
             {/* Overview */}
-            <div className="text-primary-500 flex flex-col gap-5 p-5">
+            <div className="text-textColor-500 flex flex-col gap-5 p-5">
               <p>
                 As our lives become increasingly busy and fast-paced, we often
                 find ourselves needing solutions that can cater to our immediate
@@ -139,10 +139,10 @@ const OnDemand = () => {
 
             {/* paragraph */}
             <div className="my-3">
-              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-primary-500 ">
+              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-textColor-500 ">
                 How we work?
               </h2>
-              <div className="text-primary-500 flex flex-col gap-5 p-5">
+              <div className="text-textColor-500 flex flex-col gap-5 p-5">
                 <p>
                   At DotpotiT, we believe in a collaborative approach to working
                   with our clients to provide customized on-demand solutions
@@ -197,38 +197,38 @@ const OnDemand = () => {
             </div>
             {/* Advantages of Blockchain Technology */}
             <ul className="ml-5">
-              <h3 className="text-xl md:text-2xl  my-2 md:mb-1 text-primary-500 ">
+              <h3 className="text-xl md:text-2xl  my-2 md:mb-1 text-textColor-500 ">
                 Why you should choose us!
               </h3>
-              <li className=" ml-5 list-disc text-primary-500">
+              <li className=" ml-5 list-disc text-textColor-500">
                 <strong>Cutting-edge Technology:</strong> At DotpotiT, we pride
                 ourselves on staying ahead of the curve with the latest and most
                 advanced technology solutions. This means that you can be assured
                 that your on-demand solution will be equipped with the latest and
                 most innovative features available.
               </li>
-              <li className=" ml-5 list-disc text-primary-500">
+              <li className=" ml-5 list-disc text-textColor-500">
                 <strong>Expertise & Experience:</strong> Our team of experts has
                 extensive experience in developing on-demand solutions across a
                 wide range of industries. We have a proven track record of
                 delivering high-quality solutions that meet our clients' unique
                 needs and requirements.
               </li>
-              <li className=" ml-5 list-disc text-primary-500">
+              <li className=" ml-5 list-disc text-textColor-500">
                 <strong>Customized Solutions:</strong> We understand that every
                 business is unique, which is why we take a personalized approach
                 to developing on-demand solutions. We work closely with our
                 clients to understand their specific needs and tailor our
                 solutions to meet those needs precisely.
               </li>
-              <li className=" ml-5 list-disc text-primary-500">
+              <li className=" ml-5 list-disc text-textColor-500">
                 <strong>Fast & Reliable service:</strong>
                 We know that when it comes to on-demand solutions, time is of the
                 essence. That's why we offer fast and reliable services that you
                 can depend on, ensuring that your solution is up and running as
                 quickly as possible.
               </li>
-              <li className=" ml-5 list-disc text-primary-500">
+              <li className=" ml-5 list-disc text-textColor-500">
                 <strong>Competitive Pricing:</strong> At DotpotiT, we believe in
                 providing high-quality solutions at an affordable price. We offer
                 competitive pricing packages that are designed to meet the needs

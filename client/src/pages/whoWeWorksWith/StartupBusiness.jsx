@@ -18,14 +18,14 @@ const StartupBusiness = () => {
   return (
     <div>
       <Navbar />
-      <div className="bg-bgPrimary-500">
+      <div className="bg-background-500">
         <div className="pt-[15vh] py-10 container mx-auto">
           <NavigatorComponent navigationData={navigationData} />
           <div>
-            <h1 className="text-3xl md:text-5xl font-extrabold mb-2 text-primary-500 text-center">
+            <h1 className="text-3xl md:text-5xl font-extrabold mb-2 text-textColor-500 text-center">
               Start Up Business
             </h1>
-            <p className="text-lg text-secondary-500 text-center mb-10">
+            <p className="text-lg text-textColor-500 text-center mb-10">
               Turning Entrepreneurial Dreams into Successful Ventures
             </p>
           </div>
@@ -33,8 +33,8 @@ const StartupBusiness = () => {
             <img src={startup} alt="Product image" />
           </div>
           <div className="my-12 lg:mx-24 mx-6">
-            <h2 className="lg:text-2xl text-xl font-bold mb-4 text-primary-500">Overview</h2>
-            <div className="text-primary-500 flex flex-col gap-5 py-2 lg:px-5 text-justify">
+            <h2 className="lg:text-2xl text-xl font-bold mb-4 text-textColor-500">Overview</h2>
+            <div className="text-textColor-500 flex flex-col gap-5 py-2 lg:px-5 text-justify">
               <p>
                 Dotpot IT is a forward-thinking start-up that seeks to simplify
                 the complexities of technology for businesses. By conducting
@@ -78,10 +78,10 @@ const StartupBusiness = () => {
               </p>
             </div>
             <div className="pt-6">
-              <h2 className="lg:text-2xl text-xl font-bold mb-4 text-primary-500">
+              <h2 className="lg:text-2xl text-xl font-bold mb-4 text-textColor-500">
                 What is a start-up business?
               </h2>
-              <p className="text-primary-500 lg:px-5 text-justify">
+              <p className="text-textColor-500 lg:px-5 text-justify">
                 A start-up business is a new company that is typically founded by
                 entrepreneurs or small groups of individuals. Start-ups are often
                 focused on developing innovative products, services, or business
@@ -92,42 +92,42 @@ const StartupBusiness = () => {
               <h2 className="lg:text-2xl text-xl font-bold mb-4 ">
                 What are the key characteristics of a start-up business?
               </h2>
-              <p className="text-primary-500 lg:px-5 text-justify">
+              <p className="text-textColor-500 lg:px-5 text-justify">
                 Start-ups are typically characterized by their focus on
                 innovation, agility, and growth. They are often founded by
                 entrepreneurs who are willing to take risks and are highly
                 adaptable to changes in the market.
               </p>
               <ul className="list-disc list-inside">
-                <h4 className="text-primary-500 lg:px-5 mt-2 font-semibold">
+                <h4 className="text-textColor-500 lg:px-5 mt-2 font-semibold">
                   Key Characteristics of Start-Up Businesses:
                 </h4>
-                <li className="text-primary-500 mb-2 lg:px-5 text-justify">
+                <li className="text-textColor-500 mb-2 lg:px-5 text-justify">
                   Focus on innovation, agility, and growth
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-5 text-justify">
+                <li className="text-textColor-500 mb-2 lg:px-5 text-justify">
                   Founded by risk-taking entrepreneurs
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-5 text-justify">
+                <li className="text-textColor-500 mb-2 lg:px-5 text-justify">
                   Develop new products, services, or business models that can
                   disrupt existing industries
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-5 text-justify">
+                <li className="text-textColor-500 mb-2 lg:px-5 text-justify">
                   Agile and adaptable to changes in the market
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-5 text-justify">
+                <li className="text-textColor-500 mb-2 lg:px-5 text-justify">
                   Prioritize growth and scaling the business
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-5 text-justify">
+                <li className="text-textColor-500 mb-2 lg:px-5 text-justify">
                   Often seek out funding to support growth and achieve goals.
                 </li>
               </ul>
             </div>
             <div className="pt-6">
-              <h2 className="lg:text-2xl text-xl font-bold mb-4 text-primary-500">
+              <h2 className="lg:text-2xl text-xl font-bold mb-4 text-textColor-500">
                 How do you come up with a start-up business idea?
               </h2>
-              <p className="text-primary-500 lg:px-5 text-justify">
+              <p className="text-textColor-500 lg:px-5 text-justify">
                 There are several ways to come up with a start-up business idea.
                 You can identify a gap in the market or a need that is not being
                 met by existing products or services. You can also develop a new
@@ -139,7 +139,7 @@ const StartupBusiness = () => {
               <h2 className="lg:text-2xl text-xl font-bold mb-4">
                 What are some common challenges faced by start-up businesses?
               </h2>
-              <p className="text-primary-500 lg:px-5 text-justify">
+              <p className="text-textColor-500 lg:px-5 text-justify">
                 Start-up businesses often face a number of challenges, including
                 securing funding, building a strong team, developing and launching
                 products, and scaling the business. Additionally, start-ups must
@@ -147,52 +147,52 @@ const StartupBusiness = () => {
                 changes in the industry.
               </p>
               <ul className="list-disc list-inside">
-                <h4 className="text-primary-500 px-5 mt-2 font-semibold ">
+                <h4 className="text-textColor-500 px-5 mt-2 font-semibold ">
                   Common Challenges of Start-Up Businesses:
                 </h4>
-                <li className="text-primary-500 mb-2 lg:px-5 text-julg:px-5 text-justify">
+                <li className="text-textColor-500 mb-2 lg:px-5 text-julg:px-5 text-justify">
                   Securing funding
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-5 text-julg:px-5 text-justify">
+                <li className="text-textColor-500 mb-2 lg:px-5 text-julg:px-5 text-justify">
                   Building a strong team
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-5 text-julg:px-5 text-justify">
+                <li className="text-textColor-500 mb-2 lg:px-5 text-julg:px-5 text-justify">
                   Developing and launching products
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-5 text-julg:px-5 text-justify">
+                <li className="text-textColor-500 mb-2 lg:px-5 text-julg:px-5 text-justify">
                   Scaling the business
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-5 text-julg:px-5 text-justify">
+                <li className="text-textColor-500 mb-2 lg:px-5 text-julg:px-5 text-justify">
                   Navigating a highly competitive market
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-5 text-julg:px-5 text-justify">
+                <li className="text-textColor-500 mb-2 lg:px-5 text-julg:px-5 text-justify">
                   Remaining adaptable to changes in the industry
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-5 text-julg:px-5 text-justify">
+                <li className="text-textColor-500 mb-2 lg:px-5 text-julg:px-5 text-justify">
                   Managing cash flow
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-5 text-julg:px-5 text-justify">
+                <li className="text-textColor-500 mb-2 lg:px-5 text-julg:px-5 text-justify">
                   Maintaining focus and avoiding distractions
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-5 text-julg:px-5 text-justify">
+                <li className="text-textColor-500 mb-2 lg:px-5 text-julg:px-5 text-justify">
                   Balancing the need for growth with the need for profitability
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-5 text-julg:px-5 text-justify">
+                <li className="text-textColor-500 mb-2 lg:px-5 text-julg:px-5 text-justify">
                   Complying with legal and regulatory requirements
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-5 text-julg:px-5 text-justify">
+                <li className="text-textColor-500 mb-2 lg:px-5 text-julg:px-5 text-justify">
                   Managing risk and uncertainty
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-5 text-julg:px-5 text-justify">
+                <li className="text-textColor-500 mb-2 lg:px-5 text-julg:px-5 text-justify">
                   Dealing with failure and setbacks.
                 </li>
               </ul>
             </div>
             <div className="pt-6">
-              <h2 className="lg:text-2xl text-xl font-bold mb-4 text-primary-500">
+              <h2 className="lg:text-2xl text-xl font-bold mb-4 text-textColor-500">
                 How important is a business plan for a start-up business?
               </h2>
-              <p className="text-primary-500 lg:px-5 text-justify">
+              <p className="text-textColor-500 lg:px-5 text-justify">
                 A business plan is critical for a start-up business as it outlines
                 the goals, strategies, and financial projections for the company.
                 It also helps to identify potential challenges and opportunities
@@ -200,10 +200,10 @@ const StartupBusiness = () => {
               </p>
             </div>
             <div className="pt-6">
-              <h2 className="lg:text-2xl text-xl font-bold mb-4 text-primary-500">
+              <h2 className="lg:text-2xl text-xl font-bold mb-4 text-textColor-500">
                 How can Dotpot iT support start up businesses?
               </h2>
-              <p className="text-primary-500 lg:px-5 text-justify">
+              <p className="text-textColor-500 lg:px-5 text-justify">
                 Dotpot IT can provide start up businesses with a range of services
                 to help them leverage technology and achieve their goals. This may
                 include IT consulting, software development, network security,
@@ -212,21 +212,21 @@ const StartupBusiness = () => {
                 success.
               </p>
               <ul className="list-disc list-inside">
-                <li className="text-primary-500 mb-2 lg:px-5 text-justify">
+                <li className="text-textColor-500 mb-2 lg:px-5 text-justify">
                   <strong className="font-semibold">IT consulting:</strong>Dotpot
                   IT can provide start up businesses with expert advice and
                   guidance on technology strategy, software selection, and system
                   architecture to ensure that their technology investments align
                   with their business goals.
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-5 text-justify">
+                <li className="text-textColor-500 mb-2 lg:px-5 text-justify">
                   <strong className="font-semibold">Software development:</strong>
                   Dotpot IT can develop custom software solutions to meet the
                   unique needs of start up businesses, including web and mobile
                   applications, start up resource planning (ERP) systems, and
                   more.
                 </li>
-                <li className="text-primary-500 mb-2 px-10">
+                <li className="text-textColor-500 mb-2 px-10">
                   <strong className="font-semibold">Network security:</strong>
                   Dotpot IT can help start up businesses protect their networks
                   from cyber threats by implementing firewalls, intrusion
@@ -234,14 +234,14 @@ const StartupBusiness = () => {
                   conduct regular security audits to identify vulnerabilities and
                   ensure compliance with regulatory requirements.
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-5 text-justify">
+                <li className="text-textColor-500 mb-2 lg:px-5 text-justify">
                   <strong className="font-semibold">Cloud solutions:</strong>
                   Dotpot IT can help start up businesses leverage cloud computing
                   to reduce costs, increase scalability, and improve flexibility.
                   This may include cloud migration services, cloud infrastructure
                   management, and cloud application development.
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-5 text-justify">
+                <li className="text-textColor-500 mb-2 lg:px-5 text-justify">
                   <strong className="font-semibold">Data analytics:</strong>Dotpot
                   IT can help start up businesses gain insights from large amounts
                   of data through advanced analytics techniques such as machine
@@ -249,7 +249,7 @@ const StartupBusiness = () => {
                   them make data-driven decisions and improve business
                   performance.
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-5 text-justify">
+                <li className="text-textColor-500 mb-2 lg:px-5 text-justify">
                   <strong className="font-semibold">Digital marketing:</strong>
                   DotPot IT can help start up businesses build their online
                   presence and reach a wider audience through digital marketing
@@ -259,7 +259,7 @@ const StartupBusiness = () => {
               </ul>
             </div>
             <div className="pt-6">
-              <p className="text-primary-500 lg:px-5 text-justify">
+              <p className="text-textColor-500 lg:px-5 text-justify">
                 By providing these and other services, Dotpot IT can support start
                 up businesses in achieving their goals, improving efficiency, and
                 gaining a competitive advantage in their respective industries.

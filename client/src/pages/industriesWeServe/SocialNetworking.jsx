@@ -41,13 +41,13 @@ const SocialNetworking = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="bg-bgPrimary-500">
+      <div className="bg-background-500">
         <div className="pt-[15vh] container min-h-screen mx-auto">
           <NavigatorComponent navigationData={navigationData} />
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
+          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center">
             Social Networking
           </h1>
-          <p className="text-lg  text-center mb-10 text-secondary-500">
+          <p className="text-lg  text-center mb-10 text-textColor-500">
             Connect with your audience like never before - with DotpotiT's social
             networking solutions.
           </p>
@@ -59,7 +59,7 @@ const SocialNetworking = () => {
               Overview
             </h3>
             {/* Overview */}
-            <div className="text-primary-500 flex flex-col gap-5 p-5">
+            <div className="text-textColor-500 flex flex-col gap-5 p-5">
               <p>
                 Social networking is a rapidly evolving industry that has
                 revolutionized the way people connect with each other online. At
@@ -121,10 +121,10 @@ const SocialNetworking = () => {
 
             {/* paragraph */}
             <div className="my-3">
-              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-primary-500 ">
+              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-textColor-500 ">
                 How we work?
               </h2>
-              <div className="text-primary-500 flex flex-col gap-5 p-5">
+              <div className="text-textColor-500 flex flex-col gap-5 p-5">
                 <p>
                   At DotpotiT, we work with a diverse range of clients to provide
                   top-notch social networking solutions. Our process starts with
@@ -163,27 +163,27 @@ const SocialNetworking = () => {
             </div>
             {/* Advantages of Blockchain Technology */}
             <ul className="ml-5">
-              <h3 className="text-xl md:text-2xl  my-2 md:mb-1  text-primary-500">
+              <h3 className="text-xl md:text-2xl  my-2 md:mb-1  text-textColor-500">
                 Why you should choose us!
               </h3>
-              <li className=" ml-5 list-disc text-primary-500 ">
+              <li className=" ml-5 list-disc text-textColor-500 ">
                 Highly experienced team of developers who are passionate about
                 building innovative solutions.
               </li>
-              <li className=" ml-5 list-disc text-primary-500 ">
+              <li className=" ml-5 list-disc text-textColor-500 ">
                 Proven track record of delivering high-quality projects on time
                 and within budget.
               </li>
-              <li className=" ml-5 list-disc text-primary-500 ">
+              <li className=" ml-5 list-disc text-textColor-500 ">
                 Commitment to providing exceptional customer service and support
                 throughout the entire development process and beyond.
               </li>
-              <li className=" ml-5 list-disc text-primary-500 ">
+              <li className=" ml-5 list-disc text-textColor-500 ">
                 We prioritize communication and transparency throughout the
                 development process, providing regular updates and involving our
                 clients in key decision-making processes.
               </li>
-              <li className=" ml-5 list-disc text-primary-500 ">
+              <li className=" ml-5 list-disc text-textColor-500 ">
                 Our team stays up-to-date with the latest industry trends and
                 technologies, ensuring that our clients receive cutting-edge
                 solutions.

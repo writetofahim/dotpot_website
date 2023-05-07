@@ -90,11 +90,11 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="bg-bgSecondary-500 text-primary-500 pt-10">
+    <footer className="bg-gray-800 pt-10">
       <div className="container mx-auto py-8 px-4">
         {/* Three columns */}
         <div className="md:grid grid-cols-1 md:grid-cols-5 lg:grid-cols-4 gap-4 hidden">
-          <div className="md:col-span-2 lg:col-span-1 w-full">
+          <div className="md:col-span-2 lg:col-span-1 w-full text-gray-200">
             <Link to="/">
               <img src={logo} alt="" className="w-[250px]" />
             </Link>
@@ -112,16 +112,16 @@ const Footer = () => {
             </p>
             <p >help@dotpotit.com</p>
             <p > hr@dotpotit.com</p>
-            {/* <p className="text-primary-500"> sales@dotpotit.com</p> */}
+            {/* <p className="text-buttonText-500"> sales@dotpotit.com</p> */}
             <p > marketing@dotpotit.com</p>
-            {/* <p className="text-primary-500"> career@dotpotit.com</p> */}
+            {/* <p className="text-buttonText-500"> career@dotpotit.com</p> */}
             <div className="flex gap-4 mt-5 items-center">
               {socialLinks.map((link, i) => (
                 <a
                   key={i}
                   href={link.url}
                   target="_blank"
-                  className="text-primary-500 hover:text-secondary-500 cursor-pointer duration-300 text-xl"
+                  className="text-buttonColor-500 hover:text-primary-500 cursor-pointer duration-300 text-xl"
                 >
                   {socialIcons[i]}
                 </a>
@@ -132,14 +132,14 @@ const Footer = () => {
           {/* Columns */}
           {links.map((item, index) => (
             <div className="md:col-span-1" key={index}>
-              <h2 className="font-bold text-lg mb-2 text-primary-500">{item.title}</h2>
+              <h2 className="font-bold text-lg mb-2 text-buttonText-500">{item.title}</h2>
               {/* Links */}
               <ul className="space-y-2">
                 {item.links.map((link, index) => (
                   <li
                     key={index}
                     onClick={() => window.scrollTo(0, 0)}
-                    className="hover:text-secondary-500 text-primary-500"
+                    className="hover:text-secondary-500 text-gray-200"
                   >
                     <Link to={link.link}>{link.title}</Link>
                   </li>
@@ -150,7 +150,7 @@ const Footer = () => {
         </div>
 
         {/* Mobile accordion */}
-        <div className="md:hidden block w-full text-primary-500">
+        <div className="md:hidden block w-full text-buttonText-500">
           <Link to="/">
             <img src={logo} alt="" className="w-4/5" />
           </Link>
@@ -179,7 +179,7 @@ const Footer = () => {
                 key={i}
                 href={link.url}
                 target="_blank"
-                className="text-primary-500 hover:text-secondary-500 cursor-pointer duration-300 text-xl"
+                className="text-buttonText-500 hover:text-secondary-500 cursor-pointer duration-300 text-xl"
               >
                 {socialIcons[i]}
               </a>

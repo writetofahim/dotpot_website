@@ -13,23 +13,23 @@ import { Link } from 'react-router-dom'
 const ContactForm = () => {
     return (
         <div className="shadow w-full p-5 rounded-xl">
-            <p className="text-xl text-primary-500 font-bold">
+            <p className="text-xl text-textColor-500 font-bold">
                 Contact With Us
             </p>
             <div className="border-b w-full flex items-center mt-5">
-                <MdPerson className='text-primary-500 text-2xl'/>
+                <MdPerson className='text-textColor-500 text-2xl'/>
                 <input type="text" placeholder="Your Full Name*" className="w-full p-2 text-gray-400 outline-none" required/>
             </div>
             <div className="border-b w-full flex items-center mt-5">
-                <MdMail className='text-primary-500 text-2xl'/>
+                <MdMail className='text-textColor-500 text-2xl'/>
                 <input type="email" placeholder="Your Email*" className="w-full p-2 text-gray-400 outline-none" required/>
             </div>
             <div className="border-b w-full flex items-center mt-5">
-                <MdPhone className='text-primary-500 text-2xl'/>
+                <MdPhone className='text-textColor-500 text-2xl'/>
                 <input type="text" placeholder="Contact Number*" className="w-full p-2 text-gray-400 outline-none" required/>
             </div>
             <div className="border-b w-full flex items-start mt-5 mb-10">
-                <MdMessage className='text-primary-500 text-2xl mt-3'/>
+                <MdMessage className='text-textColor-500 text-2xl mt-3'/>
                 <textarea type="text" placeholder="Your Message*" rows="5" className="w-full p-2 text-gray-400 outline-none">
                 </textarea>
             </div>

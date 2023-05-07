@@ -41,11 +41,11 @@ const ItSupport = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="bg-bgPrimary-500">
+      <div className="bg-background-500">
         <div className="pt-[15vh] container mx-auto pb-10 min-h-screen p-3">
           <NavigatorComponent navigationData={navigationData} />
 
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
+          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center">
             It Support
           </h1>
           <p className="text-md text-secondary-400 text-center mb-10">
@@ -56,11 +56,11 @@ const ItSupport = () => {
             <img className="md:w-1/2 mx-auto " src={coverImg} alt="" />
           </div>
           <div className="container  mx-auto flex flex-col mb-10 my-10">
-            <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">
+            <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
               Overview
             </h3>
             {/* Overview */}
-            <div className="flex flex-col gap-5 p-5 text-justify text-primary-500">
+            <div className="flex flex-col gap-5 p-5 text-justify text-textColor-500">
               <p>
                 Information Technology (IT) is the backbone of modern businesses,
                 and reliable IT support is essential for maximizing efficiency and

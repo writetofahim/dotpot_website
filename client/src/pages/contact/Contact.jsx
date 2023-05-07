@@ -61,11 +61,11 @@ const Contact = () => {
         <OurPartnersSlider />
         {/* Contact Form Section */}
         <div className="full flex flex-col items-center justify-center mb-10">
-          <h3 className="mt-10 mb-5 text-5xl font-bold text-primary-500">Contact Us</h3>
-          <p className="mb-5 text-center font-semibold text-secondary-500">
+          <h3 className="mt-10 mb-5 text-5xl font-bold text-textColor-500">Contact Us</h3>
+          <p className="mb-5 text-center font-semibold text-textColor-500">
             We would be happy to hear from you, please fill in the form below or
             mail us your requirements on <br />
-            <Link to="mailto: help@dotpotit.com" className="text-secondary-500">
+            <Link to="mailto: help@dotpotit.com" className="text-textColor-500">
               help@dotpotit.com
             </Link>
           </p>

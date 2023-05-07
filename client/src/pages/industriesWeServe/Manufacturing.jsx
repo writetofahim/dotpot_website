@@ -56,7 +56,7 @@ const Manufacturing = () => {
             <div className="absolute hidden h-16 w-[600px] rotate-[-40deg] rounded-3xl bg-sky-400 opacity-10 blur-2xl filter dark1:hidden lg:top-24 lg:-right-28 lg:block lg:h-12 lg:w-[600px] lg:opacity-30 lg:blur-2xl xl:-right-40 xl:h-4 xl:w-[700px] xl:opacity-100"></div>
             <div className="absolute hidden h-14 w-[600px] rotate-[-40deg] rounded-3xl bg-purple-400 opacity-30 blur-2xl filter dark1:hidden lg:top-20 lg:-right-28 lg:block lg:h-10 lg:w-[600px] lg:opacity-20 lg:blur-xl xl:-right-40 xl:h-2 xl:w-[800px] xl:opacity-100"></div>
 
-            <div className="bg-bgPrimary-500">
+            <div className="bg-background-500">
               <div className="container mx-auto pt-[15vh]">
                 <NavigatorComponent navigationData={navigationData} />
                 <div className="my-5">
@@ -68,10 +68,10 @@ const Manufacturing = () => {
                 </div>
                 {/* cover */}
                 <div className="w-full mx-auto px-5 h-52">
-                  <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center ">
+                  <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center ">
                     Manufacturing
                   </h1>
-                  <p className="text-secondary-500 flex flex-col gap-5 p-5 text-center">
+                  <p className="text-textColor-500 flex flex-col gap-5 p-5 text-center">
                     DotpotIT offers custom software solutions for manufacturing to
                     optimize processes, improve productivity, and reduce costs.
                   </p>
@@ -87,11 +87,11 @@ const Manufacturing = () => {
                       />
                     </div>
                     <div className="rounded-lg w-full md:w-[590px] border border-border p-5 flex flex-col justify-center items-center">
-                      <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">
+                      <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
                         Tailored Software
-                        <span className="text-primary-500"> Solutions</span>
+                        <span className="text-textColor-500"> Solutions</span>
                       </h3>
-                      <p className="text-center text-secondary-500">
+                      <p className="text-center text-textColor-500">
                         Customized software solutions designed to meet the
                         specific needs of each client.
                       </p>
@@ -107,11 +107,11 @@ const Manufacturing = () => {
                       />
                     </div>
                     <div className="rounded-lg w-full md:w-[590px] border border-border p-5 flex flex-col justify-center items-center">
-                      <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">
+                      <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
                         Automation for Efficiency and
-                        <span className="text-primary-500"> Accuracy </span>
+                        <span className="text-textColor-500"> Accuracy </span>
                       </h3>
-                      <p className="text-center text-secondary-500">
+                      <p className="text-center text-textColor-500">
                         Implementation of automation to reduce labor costs and
                         improve accuracy.
                       </p>
@@ -127,11 +127,11 @@ const Manufacturing = () => {
                       />
                     </div>
                     <div className="rounded-lg w-full md:w-[590px] border border-border p-5 flex flex-col justify-center items-center">
-                      <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">
+                      <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
                         Manufacturing Operations
-                        <span className="text-primary-500"> Expertise</span>
+                        <span className="text-textColor-500"> Expertise</span>
                       </h3>
-                      <p className="text-center text-secondary-500">
+                      <p className="text-center text-textColor-500">
                         Expertise in supply chain management, inventory control,
                         and production scheduling.
                       </p>
@@ -147,11 +147,11 @@ const Manufacturing = () => {
                       />
                     </div>
                     <div className="rounded-lg w-full md:w-[590px] border border-border p-5 flex flex-col justify-center items-center">
-                      <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">
+                      <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
                         Data Analytics for Better
-                        <span className="text-primary-500"> Decisions</span>
+                        <span className="text-textColor-500"> Decisions</span>
                       </h3>
-                      <p className="text-center text-secondary-500">
+                      <p className="text-center text-textColor-500">
                         Integration of data analytics to provide insights for
                         better decision-making.
                       </p>

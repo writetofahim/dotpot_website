@@ -47,14 +47,14 @@ const education = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="bg-bgPrimary-500">
+      <div className="bg-background-500">
         <div className="pt-[15vh] pb-10 container mx-auto">
           <NavigatorComponent navigationData={navigationData} />
           <div>
-            <h1 className="text-3xl md:text-5xl font-extrabold mb-2 text-primary-500 text-center">
+            <h1 className="text-3xl md:text-5xl font-extrabold mb-2 text-textColor-500 text-center">
               Education & E-Learning
             </h1>
-            <p className="text-lg text-secondary-500 text-center mb-10">
+            <p className="text-lg text-textColor-500 text-center mb-10">
               Revolutionize Online Learning with Expert Web Solutions by Dotpot IT
             </p>
           </div>
@@ -62,8 +62,8 @@ const education = () => {
             <img src={edu} alt="Product image" />
           </div>
           <div className="my-12 lg:mx-24 mx-6">
-            <h2 className="lg:text-2xl text-xl font-bold mb-4 text-primary-500">Overview</h2>
-            <div className="text-primary-500 flex flex-col gap-5 py-2 lg:px-5 text-justify">
+            <h2 className="lg:text-2xl text-xl font-bold mb-4 text-textColor-500">Overview</h2>
+            <div className="text-textColor-500 flex flex-col gap-5 py-2 lg:px-5 text-justify">
               <p>
                 Dotpot IT provides high-quality web design and development
                 services to businesses in the Education & E-Learning industry. Our
@@ -104,10 +104,10 @@ const education = () => {
               </p>
             </div>
             <div className="pt-6">
-              <h2 className="lg:text-2xl text-xl font-bold mb-4 text-primary-500">
+              <h2 className="lg:text-2xl text-xl font-bold mb-4 text-textColor-500">
                 Benefits of working with Dotpot IT
               </h2>
-              <p className="text-primary-500 lg:px-5 text-justify pb-2">
+              <p className="text-textColor-500 lg:px-5 text-justify pb-2">
                 Partnering with Dotpot IT provides Education & E-Learning
                 businesses with customized web solutions, enhanced online presence
                 and brand reputation, search engine optimization, e-commerce
@@ -117,7 +117,7 @@ const education = () => {
                 objectives with ease.
               </p>
               <ul className="list-disc list-inside">
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">
                     Customized Web Solutions:
                   </strong>
@@ -128,7 +128,7 @@ const education = () => {
                     E-Learning industry.
                   </p>
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">
                     Enhanced online visibility:
                   </strong>
@@ -139,7 +139,7 @@ const education = () => {
                     industry.
                   </p>
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">
                     User-friendly websites:{" "}
                   </strong>
@@ -150,7 +150,7 @@ const education = () => {
                     customer conversions.
                   </p>
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">Mobile optimization:</strong>
                   <br />
                   <p className="px-2">
@@ -158,7 +158,7 @@ const education = () => {
                     they look great and function well on different screen sizes.
                   </p>
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">
                     Expert Web Developers and Designers:{" "}
                   </strong>
@@ -169,7 +169,7 @@ const education = () => {
                     ensuring that your website is in good hands.
                   </p>
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">
                     Search engine optimization (SEO):
                   </strong>
@@ -180,7 +180,7 @@ const education = () => {
                     online.
                   </p>
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">Expert support: </strong>
                   <br />
                   <p className="px-2">
@@ -189,7 +189,7 @@ const education = () => {
                     up-to-date, secure, and fully functional.
                   </p>
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">
                     Enhanced Online Presence and Brand Reputation:
                   </strong>
@@ -201,7 +201,7 @@ const education = () => {
                     business growth.
                   </p>
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">
                     Competitive Pricing and Flexible Packages:
                   </strong>
@@ -216,10 +216,10 @@ const education = () => {
               </ul>
             </div>
             <div className="pt-6 flex flex-col gap-5">
-              <h2 className="lg:text-2xl text-xl font-bold mb-2 text-primary-500">
+              <h2 className="lg:text-2xl text-xl font-bold mb-2 text-textColor-500">
                 Why we wil be your best choice?
               </h2>
-              <p className="text-primary-500 lg:px-5 text-justify">
+              <p className="text-textColor-500 lg:px-5 text-justify">
                 Dotpot IT is a leading provider of web design and development
                 services for businesses in the Education & E-Learning industry.
                 With years of experience and expertise in this field, we offer
@@ -231,7 +231,7 @@ const education = () => {
                 services that help businesses in this industry deliver online
                 courses and training programs to their target audience.
               </p>
-              <p className="text-primary-500 lg:px-5 text-justify">
+              <p className="text-textColor-500 lg:px-5 text-justify">
                 What sets Dotpot IT apart is our commitment to providing
                 high-quality, customer-focused web solutions. We work closely with
                 our clients to understand their goals and objectives and provide
@@ -245,7 +245,7 @@ const education = () => {
                 customer engagement, leading to improved business growth and
                 revenue.
               </p>
-              <p className="text-primary-500 lg:px-5 text-justify">
+              <p className="text-textColor-500 lg:px-5 text-justify">
                 Overall, Dotpot IT is the top choice for web design and
                 development services in the Education & E-Learning industry,
                 thanks to our years of experience, expertise, and customer-centric
@@ -255,7 +255,7 @@ const education = () => {
               </p>
             </div>
             <div className="pt-6">
-              <p className="text-primary-500 lg:px-5 text-justify">
+              <p className="text-textColor-500 lg:px-5 text-justify">
                 Elevate your Education & E-Learning business to the next level
                 with Dotpot IT. Our customized web solutions, e-learning website
                 development services, and expert support can help you

@@ -169,11 +169,11 @@ const ChatPopup = () => {
       )}
 
       <button
-        className="group z-[750] fixed z-1 bottom-4 right-4 bg-bgPrimary-200 text-white p-4 rounded-full border border-border hover:scale-110 transition-all"
+        className="group z-[750] fixed z-1 bottom-4 right-4 bg-primary-500 text-buttonText-500 p-4 rounded-full border border-border hover:scale-110 transition-all"
         onClick={handleOpen}
       >
         <FaComments size={24} />
-        <span className="absolute top-2 right-16 group-hover:block w-[max-content] px-3 py-2 bg-bgPrimary-200 text-white hidden rounded border border-border">
+        <span className="absolute top-2 right-16 group-hover:block w-[max-content] px-3 py-2 bg-primary-500 text-white hidden rounded border border-border">
           Chat with us
         </span>
       </button>

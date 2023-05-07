@@ -11,7 +11,7 @@ const TechnologiesTab = (props) => {
   // };
   return (
     <div className="mb-10">
-      <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-secondary-500 text-center">
+      <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-textColor-500 text-center">
         {props.title}
       </h2>
       <div className="flex gap-5 justify-center text-center border-b mt-5 cursor-pointer text-secondary-200">
@@ -22,7 +22,7 @@ const TechnologiesTab = (props) => {
             }}
             className={
               selected === option.id
-                ? "px-1 py-2 flex justify-center items-center rounded-t hover:border-t hover:border-x text-primary-500 font-semibold border-x border-t"
+                ? "px-1 py-2 flex justify-center items-center rounded-t hover:border-t hover:border-x text-textColor-500 font-semibold border-x border-t"
                 : "px-1 py-2 flex justify-center items-center rounded-t hover:border-t hover:border-x"
             }
             key={index}

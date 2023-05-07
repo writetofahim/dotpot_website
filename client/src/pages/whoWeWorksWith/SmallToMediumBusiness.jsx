@@ -18,14 +18,14 @@ const SmallToMediumBusiness = () => {
   return (
     <div>
       <Navbar />
-      <div className="bg-bgPrimary-500">
+      <div className="bg-background-500">
         <div className="pt-[15vh] pb-10 container mx-auto">
           <NavigatorComponent navigationData={navigationData} />
           <div>
-            <h1 className="text-3xl md:text-5xl font-extrabold mb-2 text-primary-500 text-center">
+            <h1 className="text-3xl md:text-5xl font-extrabold mb-2 text-textColor-500 text-center">
               Small & Medium Business
             </h1>
-            <p className="text-lg text-secondary-500 text-center mb-10">
+            <p className="text-lg text-textColor-500 text-center mb-10">
               Empowering Small & Medium small and mediums: How DotPot IT Can Help
               Your Business Grow
             </p>
@@ -34,8 +34,8 @@ const SmallToMediumBusiness = () => {
             <img src={stmb} alt="image" />
           </div>
           <div className="my-12 lg:mx-24 mx-6">
-            <h2 className="lg:text-2xl text-xl font-bold mb-4 text-primary-500">Overview</h2>
-            <div className="text-primary-500 flex flex-col gap-5 py-2 lg:px-5 text-justify">
+            <h2 className="lg:text-2xl text-xl font-bold mb-4 text-textColor-500">Overview</h2>
+            <div className="text-textColor-500 flex flex-col gap-5 py-2 lg:px-5 text-justify">
               <p>
                 Small and Medium-sized (SMEs) are critical components of the
                 global economy. These businesses have fewer than 500 employees and
@@ -66,29 +66,29 @@ const SmallToMediumBusiness = () => {
               </p>
             </div>
             <div className="pt-6">
-              <h2 className="lg:text-2xl text-xl font-bold mb-4 text-primary-500">
+              <h2 className="lg:text-2xl text-xl font-bold mb-4 text-textColor-500">
                 What is the definition of a small and medium-sized business (SME)?
               </h2>
-              <p className="text-primary-500 lg:px-5 text-justify">
+              <p className="text-textColor-500 lg:px-5 text-justify">
                 An SME is a business that has fewer than 500 employees. This
                 definition may vary depending on the industry or country.
               </p>
             </div>
             <div className="pt-6">
-              <h2 className="lg:text-2xl text-xl font-bold mb-4 text-primary-500">
+              <h2 className="lg:text-2xl text-xl font-bold mb-4 text-textColor-500">
                 What are some of the challenges faced by small and medium-sized
                 businesses?
               </h2>
-              <p className="text-primary-500 lg:px-5 text-justify">
+              <p className="text-textColor-500 lg:px-5 text-justify">
                 SMEs face numerous challenges, including limited access to funding
                 and resources, a lack of expertise, and difficulty competing with
                 larger businesses.
               </p>
               <ul className="list-disc list-inside">
-                <h4 className="text-primary-500 lg:px-5 mt-2 font-semibold">
+                <h4 className="text-textColor-500 lg:px-5 mt-2 font-semibold">
                   Common Challenges of Small & Medium Businesses:
                 </h4>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">
                     Limited Access to Funding:
                   </strong>
@@ -97,28 +97,28 @@ const SmallToMediumBusiness = () => {
                   hesitant to provide loans to small businesses, making it
                   challenging to raise the necessary capital.
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">Limited Resources:</strong>
                   Small and medium-sized businesses may not have the same level of
                   resources as larger businesses. This can make it difficult to
                   compete in the market, as they may not be able to invest in the
                   same technology, marketing, or other resources.
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">Limited Expertise:</strong>
                   SMEs may not have the same level of expertise in all areas of
                   their business, which can make it challenging to manage and grow
                   their business effectively. They may need to seek outside help
                   to fill in these gaps.
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">Difficulty Competing:</strong>
                   Small and medium-sized businesses may find it challenging to
                   compete with larger businesses due to their limited resources
                   and market share. They may need to find innovative ways to
                   differentiate themselves and compete effectively.
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">
                     Regulatory Compliance:
                   </strong>
@@ -127,7 +127,7 @@ const SmallToMediumBusiness = () => {
                   especially challenging for businesses in highly regulated
                   industries.
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">
                     Recruiting and Retaining Talent:
                   </strong>
@@ -139,10 +139,10 @@ const SmallToMediumBusiness = () => {
               </ul>
             </div>
             <div className="pt-6">
-              <h2 className="lg:text-2xl text-xl font-bold mb-4 text-primary-500">
+              <h2 className="lg:text-2xl text-xl font-bold mb-4 text-textColor-500">
                 How can Dotpot iT support small and medium businesses?
               </h2>
-              <p className="text-primary-500 lg:px-5 text-justify">
+              <p className="text-textColor-500 lg:px-5 text-justify">
                 Dotpot IT can provide small and medium businesses with a range of
                 services to help them leverage technology and achieve their goals.
                 This may include IT consulting, software development, network
@@ -151,21 +151,21 @@ const SmallToMediumBusiness = () => {
                 achieve long-term success.
               </p>
               <ul className="list-disc list-inside">
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">IT consulting:</strong>Dotpot
                   IT can provide small and medium businesses with expert advice
                   and guidance on technology strategy, software selection, and
                   system architecture to ensure that their technology invebents
                   align with their business goals.
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">Software development:</strong>
                   Dotpot IT can develop custom software solutions to meet the
                   unique needs of small and medium businesses, including web and
                   mobile applications, small and medium resource planning (ERP)
                   systems, and more.
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">Network security:</strong>
                   Dotpot IT can help small and medium businesses protect their
                   networks from cyber threats by implementing firewalls, intrusion
@@ -173,14 +173,14 @@ const SmallToMediumBusiness = () => {
                   conduct regular security audits to identify vulnerabilities and
                   ensure compliance with regulatory requirements.
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">Cloud solutions:</strong>
                   Dotpot IT can help small and medium businesses leverage cloud
                   computing to reduce costs, increase scalability, and improve
                   flexibility. This may include cloud migration services, cloud
                   infrastructure management, and cloud application development.
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">Data analytics:</strong>Dotpot
                   IT can help small and medium businesses gain insights from large
                   amounts of data through advanced analytics techniques such as
@@ -188,7 +188,7 @@ const SmallToMediumBusiness = () => {
                   can help them make data-driven decisions and improve business
                   performance.
                 </li>
-                <li className="text-primary-500 mb-2 lg:px-10 px-3">
+                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
                   <strong className="font-semibold">Digital marketing:</strong>
                   Dotpot IT can help small and medium businesses build their
                   online presence and reach a wider audience through digital
@@ -198,7 +198,7 @@ const SmallToMediumBusiness = () => {
               </ul>
             </div>
             <div className="pt-6">
-              <p className="text-primary-500 lg:px-5 text-justify">
+              <p className="text-textColor-500 lg:px-5 text-justify">
                 By providing these and other services, Dotpot IT can support small
                 and medium businesses in achieving their goals, improving
                 efficiency, and gaining a competitive advantage in their
