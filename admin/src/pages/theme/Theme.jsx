@@ -209,7 +209,7 @@ const Theme = () => {
                 </div>
                 <div className="w-max">
                   <div className="w-full p-3 rounded shadow-lg flex gap-1 bg-white mb-2">
-                    {Object.values(color.colors.bgPrimary).map((code, i) => (
+                    {Object.values(color.colors.primary).map((code, i) => (
                       <div
                         key={i}
                         className={`w-5 h-10 `}
@@ -218,7 +218,7 @@ const Theme = () => {
                     ))}
                   </div>
                   <div className="w-full p-3 rounded shadow-lg flex gap-1 bg-white">
-                    {Object.values(color.colors.primary).map((code, i) => (
+                    {Object.values(color.colors.secondary).map((code, i) => (
                       <div
                         key={i}
                         className={`w-5 h-10 `}
