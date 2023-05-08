@@ -9,7 +9,6 @@ import { FiInfo } from "react-icons/fi";
 import { GrFormClose } from "react-icons/gr";
 import { useNavigate } from "react-router-dom";
 import Typed from "react-typed";
-import customizeServiceBg from "../../assets/img/customizeService.svg";
 import { AuthContext } from "../../contexts/AuthContext";
 import axios from "../../utils/axiosInstance";
 import postLogger from "../../utils/postLogger";
@@ -83,7 +82,7 @@ const ServicesCard = (props) => {
           />
         ) : (
           <BsCheckCircleFill
-            className="absolute top-1 right-1 text-textColor-500 cursor-pointer hover:scale-110"
+            className="absolute top-1 right-1 text-primary-500 cursor-pointer hover:scale-110"
             onClick={() => removeService()}
           />
         )
@@ -182,7 +181,7 @@ const TechnologyCard = (props) => {
         //   className="absolute top-1 right-1 text-gray-400 cursor-pointer hover:scale-110"
         //   onClick={() => addTechnologie()}
         // />
-        <BsCheckCircleFill className="absolute top-1 right-1 text-textColor-500 cursor-pointer hover:scale-110" />
+        <BsCheckCircleFill className="absolute top-1 right-1 text-primary-500 cursor-pointer hover:scale-110" />
         // <BsCheckCircleFill
         //   className="absolute top-1 right-1 text-textColor-500 cursor-pointer hover:scale-110"
         //   onClick={() => removeTechnologie()}
@@ -197,7 +196,7 @@ const TechnologyCard = (props) => {
       </abbr>
 
       <h3 className="text-center text-gray-300 text-sm">{props.title}</h3>
-      <h3 className="text-center text-gray-300 text-sm">${props.cost}</h3>
+      {/* <h3 className="text-center text-gray-300 text-sm">${props.cost}</h3> */}
     </div>
   );
 };
@@ -285,7 +284,7 @@ const AddonsCard = (props) => {
         //   className="absolute top-1 right-1 text-gray-400 cursor-pointer hover:scale-110"
         //   onClick={() => addAddons()}
         // />
-        <BsCheckCircleFill className="absolute top-1 right-1 text-textColor-500 cursor-pointer hover:scale-110" />
+        <BsCheckCircleFill className="absolute top-1 right-1 text-primary-500 cursor-pointer hover:scale-110" />
         // <BsCheckCircleFill
         //   className="absolute top-1 right-1 text-textColor-500 cursor-pointer hover:scale-110"
         //   onClick={() => removeAddons(props._id)}
@@ -298,7 +297,7 @@ const AddonsCard = (props) => {
         <FiInfo />
       </abbr>
       <h3 className="text-center text-textColor-500 text-sm">{props.title}</h3>
-      <h3 className="text-center text-textColor-500 text-sm">${props.cost}</h3>
+      {/* <h3 className="text-center text-textColor-500 text-sm">${props.cost}</h3> */}
     </div>
   );
 };
@@ -551,7 +550,9 @@ const CustomizeService = () => {
 
             <div className="absolute top-1 right-1 flex flex-col items-center text-gradient bg-gradient-to-r from-[#6e3aff] via-[#26f8ff] to-[#4366ff]">
               <p className="text-sm lg:text-textColor-500">Estimated Cost</p>
-              <p className="text-3xl  font-bold lg:text-textColor-500">{price}$</p>
+              <p className="text-3xl  font-bold lg:text-textColor-500">
+                {price}$
+              </p>
             </div>
             {/* End of Top Section */}
 
