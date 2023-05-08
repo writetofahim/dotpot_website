@@ -1,51 +1,45 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
 
 // define the ColorSchema
-const ColorSchema = new Schema({
-  name: { type: String, required: true },
-  selected: { type: Boolean, default: false },
+const ColorSchema = new mongoose.Schema({
   colors: {
-    bgPrimary: {
-      100: { type: String },
-      200: { type: String },
-      300: { type: String },
-      400: { type: String },
-      500: { type: String },
-      600: { type: String },
-    },
-    bgSecondary: {
-      100: { type: String },
-      200: { type: String },
-      300: { type: String },
-      400: { type: String },
-      500: { type: String },
-      600: { type: String },
+    background: {
+      500: String,
     },
     primary: {
-      100: { type: String },
-      200: { type: String },
-      300: { type: String },
-      400: { type: String },
-      500: { type: String },
-      600: { type: String },
+      100: String,
+      200: String,
+      300: String,
+      400: String,
+      500: String,
+      600: String,
     },
     secondary: {
-      100: { type: String },
-      200: { type: String },
-      300: { type: String },
-      400: { type: String },
-      500: { type: String },
-      600: { type: String },
+      100: String,
+      200: String,
+      300: String,
+      400: String,
+      500: String,
+      600: String,
+    },
+    buttonText: {
+      500: String,
+    },
+    textColor: {
+      500: String,
     },
     gray: {
-      300: { type: String },
-      400: { type: String },
-      500: { type: String },
+      200: String,
+      300: String,
+      400: String,
+      500: String,
+      800: String,
     },
-    border: { type: String },
-    particleColor: { type: String },
+    border: String,
+    particleColor: String,
   },
+  name: String,
+  selected: Boolean,
 });
 
 // create the Color model

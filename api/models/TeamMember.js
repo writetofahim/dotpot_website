@@ -1,39 +1,39 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const teamMemberSchema = new mongoose.Schema(
-    {
-        name: {
-        type: String,
-        required: true,
-        },
-        title: {
-        type: String,
-        required: true,
-        },
-        bio: {
-        type: String,
-        },
-        image: {
-        type: String,
-        required: true,
-        },
-        email: {
-        type: String,
-        },
-        phone: {
-        type: String,
-        },
-        socialMediaUrls: {
-        type: Map,
-        of: String,
-        default: {},
-        },
-        link:{
-            type: String,
-            default:"#"
-        }
+  {
+    name: {
+      type: String,
+      required: true,
     },
-    { timestamps: true }
+    title: {
+      type: String,
+      required: true,
+    },
+    bio: {
+      type: String,
+    },
+    image: {
+      type: String,
+      required: true,
+    },
+    email: {
+      type: String,
+    },
+    phone: {
+      type: String,
+    },
+    socialMediaUrls: {
+      type: Map,
+      of: String,
+      default: {},
+    },
+    link: {
+      type: String,
+      default: "#",
+    },
+  },
+  { timestamps: true }
 );
 
-module.exports = mongoose.model('TeamMember', teamMemberSchema);
+module.exports = mongoose.model("TeamMember", teamMemberSchema);
