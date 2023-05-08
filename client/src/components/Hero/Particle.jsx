@@ -16,7 +16,7 @@ import { loadFull } from "tsparticles";
 const Particle = () => {
 
   // const [themeColor, setThemeColor] = useState([])
-  const [backgroundColor, setBackgroundColor] = useState("#0C1222")
+  const [backgroundColor, setBackgroundColor] = useState("#fff")
   // particle color for default: a674fca7, fff
   const [particleColor, setParticleColor] = useState("#fff")
 
@@ -25,7 +25,8 @@ const Particle = () => {
       try {
         const res = await axios.get('/colors/selected');
         // setThemeColor(res.data.data[0].colors)
-        setBackgroundColor(res.data.data[0].colors.bgPrimary["500"])
+        setBackgroundColor(res.data.data[0].colors.background["500"])
+        // console.log(res.data.data[0].colors.background["500"])
         setParticleColor(res.data.data[0].colors.particleColor)
       } catch (err) {
         console.log(err)

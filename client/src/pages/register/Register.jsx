@@ -83,7 +83,7 @@ const Register = () => {
               <input
                 name="username"
                 type="text"
-                className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300"
+                className="block w-full py-3 text-gray-700 bg-background-500 border rounded-lg px-11 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300"
                 placeholder="Full Name"
                 required
               />
@@ -110,7 +110,7 @@ const Register = () => {
               <input
                 name="email"
                 type="email"
-                className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300"
+                className="block w-full py-3 text-gray-700 bg-background-500 border rounded-lg px-11 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300"
                 placeholder="Email address"
                 required
               />
@@ -137,7 +137,7 @@ const Register = () => {
               <input
                 name="password"
                 type="password"
-                className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300"
+                className="block w-full py-3 text-gray-700 bg-background-500 border rounded-lg px-11 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300"
                 placeholder="Password"
                 required
               />
@@ -164,7 +164,7 @@ const Register = () => {
               <input
                 name="confirmPassword"
                 type="password"
-                className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300"
+                className="block w-full py-3 text-gray-700 bg-background-500 border rounded-lg px-11 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300"
                 placeholder="Confirm Password"
                 required
               />
@@ -208,7 +208,7 @@ const Register = () => {
                 <span className="mx-2">Sign up with Google</span>
               </button>
 
-              <div className="mt-6 text-center text-gray-500 font-bold">
+              <div className="mt-6 text-center text-gray-400 font-bold">
                 <Link to="/login" className="text-sm hover:underline">
                   Already Have an account?{" "}
                   <span className="text-textColor-500">Sign in</span>

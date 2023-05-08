@@ -125,7 +125,7 @@ const ContactFormLarge = () => {
                 </div>
                 <p className='text-gray-400  bg-background-500 mb-10'>We sign NDA for all our projects.</p>
                 {error && <p>{error}</p>}
-                <button disabled={isSubmitting} variant="contained" className={`bg-bgSecondary-100 px-10 py-3 text-white rounded-sm hover:bg-secondary-500 font-bold mt-2 flex items-center gap-3 ${isSubmitting && "cursor-not-allowed"}`}>
+                <button disabled={isSubmitting} variant="contained" className={`bg-secondary-400 px-10 py-3 text-white rounded-sm hover:bg-secondary-500 font-bold mt-2 flex items-center gap-3 ${isSubmitting && "cursor-not-allowed"}`}>
                     Send {isSubmitting ? <FaSpinner className="animate-spin" /> : <BsArrowRight />}
                 </button>
 

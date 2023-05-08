@@ -163,7 +163,7 @@ const CustomizeYourService = () => {
 
 
     return (
-        <div className='w-full h-[100vh] md:h-auto bg-white overflow-hidden py-10 md:flex md:flex-col md:items-center'>
+        <div className='w-full h-[100vh] md:h-auto bg-background-500 overflow-hidden py-10 md:flex md:flex-col md:items-center'>
             <div className="container p-0 md:p-5">
                 <h1 className="mt-10 text-5xl md:text-6xl font-bold text-textColor-500 px-5">Cutomize Your Service</h1>
 

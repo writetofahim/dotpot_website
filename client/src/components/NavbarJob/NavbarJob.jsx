@@ -24,7 +24,7 @@ const NavbarJob = () => {
 
 
     return (
-        <nav className="w-full flex justify-between items-center p-4 z-999 bg-white" id="nav">
+        <nav className="w-full flex justify-between items-center p-4 z-999 bg-background-500" id="nav">
             <div className="md:flex-[0.5] flex-initial justify-center items-center">
                 <Link to='/'>
                     <img src={logo} alt="" className="w-60" />

@@ -120,7 +120,7 @@ const Login = () => {
                 name="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300"
+                className="block w-full py-3 text-gray-700 bg-background-500 border rounded-lg px-11 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300"
                 placeholder="Email address"
                 required
               />
@@ -147,7 +147,7 @@ const Login = () => {
               <input
                 type="password"
                 name="password"
-                className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300"
+                className="block w-full py-3 text-gray-700 bg-background-500 border rounded-lg px-11 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300"
                 placeholder="Password"
                 required
               />
@@ -171,7 +171,7 @@ const Login = () => {
                   disabled={sendingMail}
                   onClick={handleForgotPassword}
                   type="button"
-                  className="mt-2 text-center hover:underline flex items-center gap-2 disabled:text-primary-300"
+                  className="mt-2 text-center text-gray-400 hover:underline flex items-center gap-2 disabled:text-primary-300"
                 >
                   {sendingMail && <FaSpinner className="animate-spin" />} Forgot
                   password?
@@ -208,7 +208,7 @@ const Login = () => {
                 <span className="mx-2">Sign in with Google</span>
               </button>
 
-              <div className="mt-6 text-center text-gray-500 font-bold">
+              <div className="mt-6 text-center text-gray-400 font-bold">
                 <Link to="/register" className="text-sm hover:underline">
                   Don’t have an account yet?{" "}
                   <span className="text-textColor-500">Sign up</span>

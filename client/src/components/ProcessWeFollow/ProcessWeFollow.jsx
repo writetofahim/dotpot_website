@@ -15,7 +15,7 @@ import processSm from "../../assets/img/processSm.png";
 
 // export const ProcessCard = (props) => {
 //   return (
-//     <div className="bg-white rounded-lg flex flex-col items-stretch justify-center p-10 shadow h-[350px] w-[100%] md:w-[40%] lg:w-[22%] md:min-w-[200px]">
+//     <div className="bg-background-500 rounded-lg flex flex-col items-stretch justify-center p-10 shadow h-[350px] w-[100%] md:w-[40%] lg:w-[22%] md:min-w-[200px]">
 //       <div className="flex flex-col gap-5 items-center justify-center">
 //         <img
 //           src="https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/about/app-development-ab.png"

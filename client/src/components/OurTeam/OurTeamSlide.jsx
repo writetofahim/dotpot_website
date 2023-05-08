@@ -89,7 +89,7 @@ export const SingleSlide = (props) => {
   // console.log(props)
   return (
     <a href={props.link} target="_blank">
-      <div className="mx-5 mb-20 rounded-lg p-5 bg-background-500 flex items-center flex-col shadow-xl cursor-pointer hover:border hover:border-primary-400 hover:scale-x-105 transition-all">
+      <div className="mx-5 mb-20 rounded-lg p-5 bg-background-500 flex items-center flex-col shadow-xl cursor-pointer border-primary-400 hover:border hover:scale-x-105 transition-all">
         <img
           src={`${import.meta.env.REACT_APP_SERVER_PATH}/${props.image}`}
           alt=""

@@ -92,16 +92,17 @@ export const SingleSlide = (props) => {
       <div className=" bg-background-500 rounded-bl-xl rounded-br-xl shadow p-5 flex flex-col">
         <Stack direction="row" className="flex flex-wrap gap-1">
           {props.tags.map((tag, index) => (
-            <Chip
-              label={tag}
-              key={index}
-              variant="outlined"
-              className="hover:border cursor-pointer"
-            />
+            // <Chip
+            //   label={tag}
+            //   color="secondary"
+            //   key={index}
+            //   variant="filled"
+            //   className="hover:border cursor-pointer"
+            // />
 
-            // <div key={index} className="border  rounded-full px-2 ">
-            //   <p className="text-textColor-500">{tag}</p>
-            // </div>
+            <div key={index} className="border border-border  rounded-full px-2 ">
+              <p className="text-textColor-500 text-xs p-1 ">{tag}</p>
+            </div>
           ))}
         </Stack>
         <p className="mt-2 text-white">{props.date}</p>

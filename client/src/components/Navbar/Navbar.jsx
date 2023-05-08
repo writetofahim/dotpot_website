@@ -369,7 +369,7 @@ const Navbar = () => {
                 <span
                   className={`${
                     isActive
-                      ? "lg:text-[#FE9249] text-white"
+                      ? "lg:text-secondary-400 text-white"
                       : "lg:text-gray-400 "
                   } mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-secondary-400`}
                 >
@@ -382,7 +382,7 @@ const Navbar = () => {
                 <li
                   className={`${
                     isActive
-                      ? "lg:text-[#FE9249] text-white"
+                      ? "lg:text-secondary-400 text-white"
                       : "lg:text-gray-400 "
                   } mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-secondary-400`}
                 >
@@ -429,7 +429,7 @@ const Navbar = () => {
                   >
                     {service.title} <IoIosArrowForward />
                   </div>
-                  <div className="group-hover/item:flex duration-500 h-0 transition-all group-hover/item:h-max flex-col gap-2 hidden absolute -top-2 lg:left-[285px] bg-white p-3 rounded-md shadow-xl">
+                  <div className="group-hover/item:flex duration-500 h-0 transition-all group-hover/item:h-max flex-col gap-2 hidden absolute -top-2 lg:left-[285px] bg-background-500 p-3 rounded-md shadow-xl">
                     {service?.submenu?.map((item, i) => (
                       <Link
                         key={i}
@@ -451,7 +451,7 @@ const Navbar = () => {
                 <li
                   className={`${
                     isActive
-                      ? "lg:text-[#FE9249] text-white"
+                      ? "lg:text-secondary-400 text-white"
                       : "lg:text-gray-400 "
                   } mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-secondary-400`}
                   onClick={() => setToggleMenu(false)}
@@ -465,7 +465,7 @@ const Navbar = () => {
                 <li
                   className={`${
                     isActive
-                      ? "lg:text-[#FE9249] text-white"
+                      ? "lg:text-secondary-400 text-white"
                       : "lg:text-gray-400 "
                   } mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-secondary-400`}
                   onClick={() => setToggleMenu(false)}
@@ -488,7 +488,7 @@ const Navbar = () => {
                   <li
                     className={`${
                       isActive
-                        ? "lg:text-[#FE9249] text-white"
+                        ? "lg:text-secondary-400 text-white"
                         : "lg:text-gray-400 "
                     } mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-secondary-400`}
                     onClick={() => setToggleMenu(false)}

@@ -34,7 +34,7 @@ import NavigatorComponent from "../../components/NavigatorComponent/NavigatorCom
 const BlogCard = (props) => {
   const id = props._id;
   return (
-    <div className="container p-5 mx-auto border rounded-xl shadow-xl bg-white">
+    <div className="container p-5 mx-auto border rounded-xl shadow-xl bg-background-500">
       <div className=" lg:flex lg:items-center">
         <img
           className="object-cover w-full lg:mx-6 lg:w-1/2 rounded-xl h-72 lg:h-96"
@@ -135,7 +135,7 @@ const BlogCard = (props) => {
 //                   <button
 //                     onClick={handlePrevPage}
 //                     disabled={page === 1}
-//                     className="px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 "
+//                     className="px-3 py-2 ml-0 leading-tight text-gray-500 bg-background-500 border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 "
 //                   >
 //                     <AiOutlineArrowRight className="rotate-180" />
 //                   </button>
@@ -144,7 +144,7 @@ const BlogCard = (props) => {
 //                   <li key={index}>
 //                     <button
 //                       onClick={() => setPage(index + 1)}
-//                       className={`px-3 py-1.5 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700  ${
+//                       className={`px-3 py-1.5 leading-tight text-gray-500 bg-background-500 border border-gray-300 hover:bg-gray-100 hover:text-gray-700  ${
 //                         index + 1 === page
 //                           ? "text-blue-600 border-blue-600 bg-blue-50"
 //                           : ""
@@ -158,7 +158,7 @@ const BlogCard = (props) => {
 //                   <button
 //                     onClick={handleNextPage}
 //                     disabled={page === totalPages}
-//                     className="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 "
+//                     className="px-3 py-2 leading-tight text-gray-500 bg-background-500 border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 "
 //                   >
 //                     <AiOutlineArrowRight />
 //                   </button>
@@ -275,7 +275,7 @@ const Blog = () => {
                   <button
                     onClick={handlePrevPage}
                     disabled={page === 1}
-                    className="px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 "
+                    className="px-3 py-2 ml-0 leading-tight text-gray-500 bg-background-500 border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 "
                   >
                     <AiOutlineArrowRight className="rotate-180" />
                   </button>
@@ -284,7 +284,7 @@ const Blog = () => {
                   <li key={index}>
                     <button
                       onClick={() => setPage(index + 1)}
-                      className={`px-3 py-1.5 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700  ${
+                      className={`px-3 py-1.5 leading-tight text-gray-500 bg-background-500 border border-gray-300 hover:bg-gray-100 hover:text-gray-700  ${
                         index + 1 === page
                           ? "text-blue-600 border-blue-600 bg-blue-50"
                           : ""
@@ -298,7 +298,7 @@ const Blog = () => {
                   <button
                     onClick={handleNextPage}
                     disabled={page === totalPages}
-                    className="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 "
+                    className="px-3 py-2 leading-tight text-gray-500 bg-background-500 border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 "
                   >
                     <AiOutlineArrowRight />
                   </button>
@@ -367,7 +367,7 @@ const BlogCard2 = ({ title, body, image, _id, tags, createdAt, index }) => {
       onClick={() => navigate(`/blog/${_id}`)}
       className={`${
         index === 0 ? "col-span-3" : ""
-      } p-3 bg-white rounded-xl shadow-lg cursor-pointer group`}
+      } p-3 bg-background-500 rounded-xl shadow-lg cursor-pointer group`}
     >
       <div className="">
         <img

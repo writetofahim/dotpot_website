@@ -50,7 +50,7 @@ export const Card = (props) => {
 
 const Service = () => {
   return (
-    <div className='w-full bg-white overflow-hidden py-10 md:flex md:flex-col md:justify-center'>
+    <div className='w-full bg-background-500 overflow-hidden py-10 md:flex md:flex-col md:justify-center'>
       <h1 className="mt-10 text-center text-6xl font-bold text-textColor-500">Services We Offer</h1>
       <div className="p-5 mt-5 w-full md:max-w-[1400px] self-center flex gap-5 md:gap-5 lg:gap-10 flex-wrap items-center justify-center">
         {

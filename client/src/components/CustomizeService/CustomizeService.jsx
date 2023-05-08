@@ -464,14 +464,14 @@ const CustomizeService = () => {
 
         {/* Main Container */}
         <div
-          className="mt-5 flex flex-col lg:flex-row justify-between gap-5 rounded-xl md:min-h-[70vh] "
+          className="mt-5 flex flex-col lg:flex-row justify-between gap-5 rounded-xl md:min-h-[70vh]"
           // style={{
           //   background: `url(${customizeServiceBg})`,
           //   backgroundSize: "cover",
           // }}
         >
           {/* Left container */}
-          <div className="p-3 md:px-3 md:py-5 border border-border rounded-xl flex-[0.2] shadow-xl  customizeServiceLeft">
+          <div className="p-3 md:px-3 md:py-5 border border-border rounded-xl flex-[0.2] shadow-xl customizeServiceLeft bg-primary-100/50 backdrop-blur-sm">
             <h3 className="text-textColor-500 text-xl uppercase font-bold">
               Services
             </h3>
@@ -493,7 +493,7 @@ const CustomizeService = () => {
           {/* End of Left container */}
 
           {/* Right container */}
-          <div className="pt-10 p-3 md:p-5 border border-border rounded-xl flex-[0.8] min-h-[40vh] pb-10 shadow-xl relative  customizeServiceRight">
+          <div className="pt-10 p-3 md:p-5 border border-border rounded-xl flex-[0.8] min-h-[40vh] pb-10 shadow-xl relative  customizeServiceRight bg-primary-100/50 backdrop-blur-sm">
             {/* Top Section */}
             <div className="mt-10">
               <p className=" text-textColor-500 ">Selected items: </p>
@@ -550,8 +550,8 @@ const CustomizeService = () => {
             </div>
 
             <div className="absolute top-1 right-1 flex flex-col items-center text-gradient bg-gradient-to-r from-[#6e3aff] via-[#26f8ff] to-[#4366ff]">
-              <p className="text-sm lg:text-white">Estimated Cost</p>
-              <p className="text-3xl  font-bold lg:text-white">{price}$</p>
+              <p className="text-sm lg:text-textColor-500">Estimated Cost</p>
+              <p className="text-3xl  font-bold lg:text-textColor-500">{price}$</p>
             </div>
             {/* End of Top Section */}
 

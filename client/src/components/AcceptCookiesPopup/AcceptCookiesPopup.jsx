@@ -24,7 +24,7 @@ const AcceptCookies = () => {
                 By clicking “Accept All Cookies”, you agree to the storing of cookies on your device to enhance site navigation, analyze site usage, and assist in our marketing efforts.
                 View our <Link to={"/privacyPolicy"} className='underline'>Privacy Policy</Link> for more information.
                 </h1>
-                <button onClick={handleClick} className='bg-white px-3 py-1.5 rounded mt-3 text-gray-900'>Accept</button>
+                <button onClick={handleClick} className='bg-background-500 px-3 py-1.5 rounded mt-3 text-gray-900'>Accept</button>
             </div>
            
         </div>
