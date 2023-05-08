@@ -83,7 +83,7 @@ var settings = {
 
 export const SingleSlide = (props) => {
   return (
-    <div className="mx-5 mb-20 p-2 md:p-0 rounded-2xl flex flex-col justify-between items-center bg-white shadow-xl lg:h-[300px] overflow-hidden">
+    <div className="mx-5 mb-20 p-2 md:p-0 rounded-2xl flex flex-col justify-between items-center bg-background-500 shadow-xl lg:h-[300px] overflow-hidden">
       <div className="flex flex-col md:grid md:grid-cols-3 md:gap-10 ">
         <div className=" col-span-1 h-full">
           <img
@@ -96,7 +96,7 @@ export const SingleSlide = (props) => {
         </div>
 
         <div className="col-span-2 p-5 flex flex-col justify-between">
-          <p className="h-[180px] overflow-hidden">
+          <p className="h-[180px] overflow-hidden text-textColor-500">
             {" "}
             <ImQuotesLeft className="text-primary-500  font-bold text-xl inline-block mr-2" />{" "}
             {props.review_text}{" "}
@@ -106,10 +106,10 @@ export const SingleSlide = (props) => {
             <h2 className="font-bold text-xl text-secondary-500 mt-3 text-center md:text-left ">
               {props.client_name}
             </h2>
-            <h3 className="font-bold text-center md:text-left">
+            <h3 className="font-bold text-center md:text-left text-textColor-500">
               {props.position}
             </h3>
-            <h3 className="font-medium text-center md:text-left">
+            <h3 className="font-medium text-center md:text-left text-textColor-500">
               {props.company_name}
             </h3>
           </div>

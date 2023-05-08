@@ -9,7 +9,7 @@ import React from 'react'
 
 const GoogleMap = () => {
     return (
-        <div className='w-full py-10 -mb-20 bg-white'>
+        <div className='w-full py-10 -mb-20 bg-background-500'>
             <h1 className="text-3xl md:text-5xl font-bold text-center mb-10 mt-10">
                 Visit Our Office
             </h1>

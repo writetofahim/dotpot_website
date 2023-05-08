@@ -19,16 +19,16 @@ export const ProcessCard = (props) => {
   return (
     <Link
       to={props.link}
-      className="bg-white rounded-lg flex flex-col items-stretch justify-between md:justify-center p-3 md:p-10 shadow h-[150px] md:h-[200px] w-[45%] md:w-[18%] md:min-w-[200px] hover:scale-110 transition-all cursor-pointer"
+      className="bg-background-500 rounded-lg flex flex-col items-stretch justify-between md:justify-center p-3 md:p-10 shadow h-[150px] md:h-[200px] w-[45%] md:w-[18%] md:min-w-[200px] hover:scale-110 transition-all cursor-pointer"
     >
       <div>
-        <div className="flex flex-col gap-5 items-center justify-center">
+        <div className="flex flex-col gap-5 items-center justify-center text-gray-400">
           <img
             src={props.icon}
             alt={props.title}
             className="w-[50px] md:w-[80px] md:h-[80px] h-[50px] object-contain"
           />
-          <p className="text-md md:text-xl font-bold text-center text-gray-400">
+          <p className="text-md md:text-xl font-bold text-center">
             {props.title}
           </p>
         </div>
@@ -59,7 +59,7 @@ const IndustriesWeServe = () => {
   return (
     <div className="industriesWeServe w-full overflow-hidden py-10 md:flex md:flex-col md:justify-center bg-primary-100">
       <div className="p-5 mt-5 w-full md:max-w-[1400px] self-center flex gap-5 flex-wrap items-center justify-center">
-        <h1 className="mt-10 text-3xl md:text-5xl text-center font-bold w-full mb-5 ">
+        <h1 className="mt-10 text-3xl md:text-5xl text-center font-bold w-full mb-5 text-textColor-500">
           Industries We Serve
         </h1>
         {data &&

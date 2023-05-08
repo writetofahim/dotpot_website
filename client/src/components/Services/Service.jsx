@@ -38,7 +38,7 @@ export const Card = (props) => {
       </div>
       <div className="bottom absolute bottom-5">
         <Link to="#">
-          <button variant="contained" className='bg-primary-500 px-10 py-3 text-white rounded-sm hover:bg-secondary-500 font-bold mt-2 flex items-center gap-3'>
+          <button variant="contained" className=' px-10 py-3 text-white rounded-sm hover:bg-secondary-500 font-bold mt-2 flex items-center gap-3'>
             Read More <BsArrowRight />
           </button>
         </Link>
@@ -50,8 +50,8 @@ export const Card = (props) => {
 
 const Service = () => {
   return (
-    <div className='w-full bg-white overflow-hidden py-10 md:flex md:flex-col md:justify-center'>
-      <h1 className="mt-10 text-center text-6xl font-bold text-primary-500">Services We Offer</h1>
+    <div className='w-full bg-background-500 overflow-hidden py-10 md:flex md:flex-col md:justify-center'>
+      <h1 className="mt-10 text-center text-6xl font-bold text-textColor-500">Services We Offer</h1>
       <div className="p-5 mt-5 w-full md:max-w-[1400px] self-center flex gap-5 md:gap-5 lg:gap-10 flex-wrap items-center justify-center">
         {
           servicesData.map((service, index) => (

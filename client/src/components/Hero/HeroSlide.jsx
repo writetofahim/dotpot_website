@@ -64,7 +64,7 @@ export const SingleSlide = (props) => {
             {props.title}
           </h1> */}
           <Typed
-            className="text-3xl md:text-5xl text-center md:text-left font-bold mb-2"
+            className="text-3xl md:text-5xl text-center md:text-left font-bold mb-2 text-textColor-500"
             strings={[props.title]}
             typeSpeed={100}
             backSpeed={50}
@@ -75,11 +75,11 @@ export const SingleSlide = (props) => {
           </p>
           <div className="flex justify-center md:justify-start gap-5 items-center mb-5">
             {/* <div className="pr-5 border-r border-gray-300">
-                  <h1 className="text-4xl text-secondary-500 font-bold">
+                  <h1 className="text-4xl text-textColor-500 font-bold">
                     #1
                   </h1>
                 </div> */}
-            <p className="md:w-2/3 w-4/5 text-sm md:text-xl text-center md:text-left">
+            <p className="md:w-2/3 w-4/5 text-sm md:text-xl text-center md:text-left text-textColor-500">
               {props.description}
             </p>
           </div>

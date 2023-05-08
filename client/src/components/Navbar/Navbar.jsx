@@ -347,7 +347,7 @@ const Navbar = () => {
           title={"Confirm logout"}
         />
       )}
-      <div className="w-full flex items-center justify-center fixed z-50 bg-white">
+      <div className="w-full flex items-center justify-center fixed z-50 bg-background-500/50 border-b border-border backdrop-blur-2xl">
         <nav
           className="container flex justify-between items-center p-4 z-999"
           id="nav"
@@ -393,7 +393,7 @@ const Navbar = () => {
             <div className={"relative w-max"}>
               <li
                 ref={serviceButtonRef}
-                className={` mx-4 cursor-pointer uppercase font-bold text-lg hover:scale-110 hover:text-secondary-400 flex gap-2 items-center`}
+                className={` mx-4 cursor-pointer uppercase font-bold text-lg hover:scale-110 lg:text-gray-400 hover:text-secondary-400 flex gap-2 items-center`}
                 onClick={() => setIsSubmenuOpen((p) => !p)}
                 onMouseEnter={() => setIsSubmenuOpen((p) => !p)}
               >
@@ -407,15 +407,15 @@ const Navbar = () => {
                 }}
                 className={`absolute ${
                   isSubmenuOpen ? "flex" : "hidden"
-                } top-6 left-0 w-max flex-col gap-3 py-5 bg-white rounded-md shadow-2xl`}
+                } top-6 left-0 w-max flex-col gap-3 py-5 bg-background-500 rounded-md shadow-2xl`}
               >
                 {services.map((service, i) => (
                   <div
                     key={i}
-                    className="px-5 flex group/item gap-2 items-center w-full hover:scale-105 duration-100 cursor-pointer relative"
+                    className="px-5 flex group/item gap-2 items-center w-full hover:scale-105 duration-100 cursor-pointer relative lg:text-gray-400"
                   >
-                    <img className="" width={20} src={service.icon} alt="" />
-                    <Submenu
+                    <img  width={20} src={service.icon} alt="" />
+                    <Submenu 
                       service={service}
                       selectedSubmenu={selectedSubmenu}
                       setSelectedSubmenu={setSelectedSubmenu}
@@ -429,7 +429,7 @@ const Navbar = () => {
                   >
                     {service.title} <IoIosArrowForward />
                   </div>
-                  <div className="group-hover/item:flex duration-500 h-0 transition-all group-hover/item:h-max flex-col gap-2 hidden absolute -top-2 lg:left-[285px] bg-white p-3 rounded-md shadow-xl">
+                  <div className="group-hover/item:flex duration-500 h-0 transition-all group-hover/item:h-max flex-col gap-2 hidden absolute -top-2 lg:left-[285px] bg-background-500 p-3 rounded-md shadow-xl">
                     {service?.submenu?.map((item, i) => (
                       <Link
                         key={i}
@@ -475,6 +475,13 @@ const Navbar = () => {
               )}
             </NavLink>
 
+            {/* adding team nav as per asif sir */}
+            
+                {/* <li className="mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-secondary-400 lg:text-gray-400">
+                  <a href="#team">Team</a>
+                </li> */}
+             
+
             {!user ? (
               <NavLink to="/login">
                 {({ isActive }) => (
@@ -500,7 +507,7 @@ const Navbar = () => {
             )}
 
             <Link to="/apply" target="_blank">
-              <li className="bg-secondary-400 py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-secondary-500 text-white">
+              <li className="bg-secondary-400 py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-secondary-500 lg:text-buttonText-500">
                 Apply For Jobs
               </li>
             </Link>

@@ -12,7 +12,7 @@ const KeyFeatures = () => {
   return (
     <div className="md:p-5 w-full flex flex-col items-center ">
       <div className="w-full mt-10 md:max-w[1400px] lg:max-w-[1400px] p-3 md:p-10 md:px-5 lg:px-0 backdrop-blur-sm">
-        <h1 className="text-3xl md:text-5xl font-extrabold block text-center">
+        <h1 className="text-3xl md:text-5xl font-extrabold block text-center text-textColor-500">
           Our Key Features
         </h1>
       </div>

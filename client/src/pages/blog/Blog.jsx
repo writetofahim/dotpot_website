@@ -34,7 +34,7 @@ import NavigatorComponent from "../../components/NavigatorComponent/NavigatorCom
 const BlogCard = (props) => {
   const id = props._id;
   return (
-    <div className="container p-5 mx-auto border rounded-xl shadow-xl bg-white">
+    <div className="container p-5 mx-auto border rounded-xl shadow-xl bg-background-500">
       <div className=" lg:flex lg:items-center">
         <img
           className="object-cover w-full lg:mx-6 lg:w-1/2 rounded-xl h-72 lg:h-96"
@@ -61,7 +61,7 @@ const BlogCard = (props) => {
 
           <Link
             to={`./${id}`}
-            className="mt-2 text-secondary-300 hover:text-secondary-500 transition-all flex items-center"
+            className="mt-2 text-secondary-300 hover:text-textColor-500 transition-all flex items-center"
           >
             Read more
             <AiOutlineDoubleRight />
@@ -135,7 +135,7 @@ const BlogCard = (props) => {
 //                   <button
 //                     onClick={handlePrevPage}
 //                     disabled={page === 1}
-//                     className="px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 "
+//                     className="px-3 py-2 ml-0 leading-tight text-gray-500 bg-background-500 border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 "
 //                   >
 //                     <AiOutlineArrowRight className="rotate-180" />
 //                   </button>
@@ -144,7 +144,7 @@ const BlogCard = (props) => {
 //                   <li key={index}>
 //                     <button
 //                       onClick={() => setPage(index + 1)}
-//                       className={`px-3 py-1.5 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700  ${
+//                       className={`px-3 py-1.5 leading-tight text-gray-500 bg-background-500 border border-gray-300 hover:bg-gray-100 hover:text-gray-700  ${
 //                         index + 1 === page
 //                           ? "text-blue-600 border-blue-600 bg-blue-50"
 //                           : ""
@@ -158,7 +158,7 @@ const BlogCard = (props) => {
 //                   <button
 //                     onClick={handleNextPage}
 //                     disabled={page === totalPages}
-//                     className="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 "
+//                     className="px-3 py-2 leading-tight text-gray-500 bg-background-500 border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 "
 //                   >
 //                     <AiOutlineArrowRight />
 //                   </button>
@@ -175,6 +175,8 @@ const BlogCard = (props) => {
 //     </>
 //   );
 // };
+
+const navigationData = [{ title: "Blogs", link: "/blog" }];
 
 const Blog = () => {
   useScrollToTop();
@@ -240,11 +242,12 @@ const Blog = () => {
       </Helmet>
       <Navbar />
       {/* <Particle /> */}
-      <div className="w-full pt-[15vh]">
-        <NavigatorComponent navigationData={navigationData} />
-        <div className="w-full flex flex-col items-center justify-center">
-          <h1 className="text-6xl mt-10 mb-2 font-bold ">Blogs</h1>
-          <p className="text-lg mb-10 px-4">
+
+      <div className="w-full pt-[15vh] bg-background-500">
+      <NavigatorComponent navigationData={navigationData} />
+        <div className="w-full flex flex-col items-center justify-center bg-background-500">
+          <h1 className="text-6xl mt-10 mb-2 font-bold text-textColor-500">Blogs</h1>
+          <p className="text-lg mb-10 px-4 text-textColor-500">
             Follow our blog to get all the latest tech news
           </p>
           {/* <div className="container flex gap-5 md:gap-10 justify-center p-5 flex-wrap">
@@ -254,7 +257,7 @@ const Blog = () => {
                             ))
                         }
                     </div> */}
-          <div className="container lg:grid lg:grid-cols-2 grid-cols-1 gap-5 lg:space-y-0 space-y-5 md:gap-10 justify-center lg:p-5 p-3 flex-wrap">
+          <div className="container lg:grid lg:grid-cols-2 grid-cols-1 gap-5 lg:space-y-0 space-y-5 md:gap-10 justify-center lg:p-5 p-3 flex-wrap text-textColor-500">
             {data && <FirstBlog {...data[0]} />}
             {data &&
               data
@@ -272,7 +275,7 @@ const Blog = () => {
                   <button
                     onClick={handlePrevPage}
                     disabled={page === 1}
-                    className="px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 "
+                    className="px-3 py-2 ml-0 leading-tight text-gray-500 bg-background-500 border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 "
                   >
                     <AiOutlineArrowRight className="rotate-180" />
                   </button>
@@ -281,7 +284,7 @@ const Blog = () => {
                   <li key={index}>
                     <button
                       onClick={() => setPage(index + 1)}
-                      className={`px-3 py-1.5 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700  ${
+                      className={`px-3 py-1.5 leading-tight text-gray-500 bg-background-500 border border-gray-300 hover:bg-gray-100 hover:text-gray-700  ${
                         index + 1 === page
                           ? "text-blue-600 border-blue-600 bg-blue-50"
                           : ""
@@ -295,7 +298,7 @@ const Blog = () => {
                   <button
                     onClick={handleNextPage}
                     disabled={page === totalPages}
-                    className="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 "
+                    className="px-3 py-2 leading-tight text-gray-500 bg-background-500 border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 "
                   >
                     <AiOutlineArrowRight />
                   </button>
@@ -343,10 +346,10 @@ const FirstBlog = ({ title, body, image, _id, tags, createdAt, index }) => {
         >
           {title}
         </h3>
-        <p className="my-3 text-slate-500">
+        <p className="my-3 text-textColor-500">
           {moment(new Date(createdAt)).format("MMM Do YY")}
         </p>
-        <p className="my-3 text-slate-500">{slicedString}...</p>
+        <p className="my-3 text-textColor-500">{slicedString}...</p>
         <div className="flex items-center gap-2">
           <img className="w-4 " src="./src/assets/img/icon.png" alt="" />
           <p className="font-bold">Dotpot iT</p>
@@ -364,7 +367,7 @@ const BlogCard2 = ({ title, body, image, _id, tags, createdAt, index }) => {
       onClick={() => navigate(`/blog/${_id}`)}
       className={`${
         index === 0 ? "col-span-3" : ""
-      } p-3 bg-white rounded-xl shadow-lg cursor-pointer group`}
+      } p-3 bg-background-500 rounded-xl shadow-lg cursor-pointer group`}
     >
       <div className="">
         <img
@@ -446,4 +449,4 @@ const BlogCard3 = ({ title, body, image, _id, tags, createdAt, index }) => {
   );
 };
 
-const navigationData = [{ title: "Blogs", link: "/blog" }];
+

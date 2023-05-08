@@ -34,10 +34,10 @@ const Information = () => {
 
   // const videoUrl = 'https://www.youtube.com/embed/A23jUjVatn4?autoplay=1&loop=1';
   return (
-    <div className="py-10 md:p-5 bg-primary-100 w-full flex justify-center items-center">
+    <div className="py-10 md:p-5 bg-primary-100  w-full flex justify-center items-center">
       <div className="w-full md:max-w[1400px] lg:max-w-[1400px] p-3 md:p-10 md:px-5 lg:px-0 flex flex-col items-center justify-between md:flex-col lg:flex-row gap-5">
         <div className="left flex-[2] h-full">
-          <h1 className="text-3xl md:text-5xl font-bold mb-5 text-center md:text-left">
+          <h1 className="text-3xl md:text-5xl font-bold mb-5 text-center md:text-left text-textColor-500">
             {data && data.name}
           </h1>
           <p className="mb-5 text-xl text-gray-300 font-bold text-center md:text-left">
@@ -50,14 +50,14 @@ const Information = () => {
           {!isOpen ? (
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="mt-2 flex items-center gap-2 font-bold hover:text-secondary-500 cursor-pointer"
+              className="mt-2 flex items-center gap-2 font-bold hover:text-secondary-500 cursor-pointer text-textColor-500"
             >
               Read More <BsChevronDoubleDown />
             </button>
           ) : (
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="mt-2 flex items-center gap-2 font-bold hover:text-secondary-500 cursor-pointer"
+              className="mt-2 flex items-center gap-2 font-bold hover:text-textColor-500 cursor-pointer"
             >
               Read Less <BsChevronDoubleDown className="rotate-180" />
             </button>

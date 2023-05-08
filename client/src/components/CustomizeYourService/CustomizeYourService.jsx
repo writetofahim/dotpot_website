@@ -48,12 +48,12 @@ const Technologies = ({ addTechnology, tech, removeTechnology, technology }) => 
                     <BsCircle className="absolute top-[2px] right-[2px] text-gray-400 hover:border hover:animate-pulse rounded-full hover:border-black cusor-pointer"
                         onClick={() => addItem(tech)} />
                 ) : (
-                    <TiTick className="absolute top-[2px] right-[2px] hover:border hover:animate-pulse rounded-full border border-blacks text-secondary-500 cusor-pointer"
+                    <TiTick className="absolute top-[2px] right-[2px] hover:border hover:animate-pulse rounded-full border border-blacks text-textColor-500 cusor-pointer"
                         onClick={() => removeItem(tech)} />
                 )
             }
             <abbr title={tech.sdes}>
-                <AiOutlineInfoCircle className="absolute top-[2px] left-[2px] text-gray-400 cursor-pointer hover:text-secondary-500" />
+                <AiOutlineInfoCircle className="absolute top-[2px] left-[2px] text-gray-400 cursor-pointer hover:text-textColor-500" />
             </abbr>
 
         </div>
@@ -88,11 +88,11 @@ const Addons = ({ item, addAddons, removeAddons, addons }) => {
                 !select ? (
                     <BsCircle className="absolute top-[2px] right-[2px] text-gray-400 hover:border hover:animate-pulse rounded-full hover:border-black cusor-pointer" onClick={() => addItem(item)} />
                 ) : (
-                    <TiTick className="absolute top-[2px] right-[2px] hover:border hover:animate-pulse rounded-full border border-blacks text-secondary-500 cusor-pointer" onClick={() => removeItem(item)} />
+                    <TiTick className="absolute top-[2px] right-[2px] hover:border hover:animate-pulse rounded-full border border-blacks text-textColor-500 cusor-pointer" onClick={() => removeItem(item)} />
                 )
             }
             <abbr title={item.sdes}>
-                <AiOutlineInfoCircle className="absolute top-[2px] left-[2px] text-gray-400 cursor-pointer hover:text-secondary-500" />
+                <AiOutlineInfoCircle className="absolute top-[2px] left-[2px] text-gray-400 cursor-pointer hover:text-textColor-500" />
             </abbr>
         </div>
     )
@@ -163,9 +163,9 @@ const CustomizeYourService = () => {
 
 
     return (
-        <div className='w-full h-[100vh] md:h-auto bg-white overflow-hidden py-10 md:flex md:flex-col md:items-center'>
+        <div className='w-full h-[100vh] md:h-auto bg-background-500 overflow-hidden py-10 md:flex md:flex-col md:items-center'>
             <div className="container p-0 md:p-5">
-                <h1 className="mt-10 text-5xl md:text-6xl font-bold text-primary-500 px-5">Cutomize Your Service</h1>
+                <h1 className="mt-10 text-5xl md:text-6xl font-bold text-textColor-500 px-5">Cutomize Your Service</h1>
 
 
                 {/* Main Section */}
@@ -180,7 +180,7 @@ const CustomizeYourService = () => {
                             customizeYourServiceData.map((item, index) => (
                                 <div key={index} className="w-full p-1 md:p-3 border rounded mt-2 md:mt-5 hover:border-primary-500 flex flex-col md:flex-row items-center cursor-pointer gap-1 md:gap-3 shadow hover:scale-110 transition-all" onClick={(e) => addService(item)}>
                                     <img src={item.icon} alt={item.title} className="w-5 h-5 md:h-[50px] md:w-[50px]" />
-                                    <p className="text-sm text-center md:text-left md:text-lg md:font-bold hover:text-primary-500">{item.title}</p>
+                                    <p className="text-sm text-center md:text-left md:text-lg md:font-bold hover:text-textColor-500">{item.title}</p>
                                 </div>
                             ))
                         }
@@ -198,7 +198,7 @@ const CustomizeYourService = () => {
                                             <h1 className="text-sm">Selected services</h1>
                                             <div className="w-full flex items-center gap-3">
                                                 {
-                                                    <div key={technology} className="flex items-center gap-2 py-1 px-2 border  cursor-pointer hover:border-secondary-500 hover:text-secondary-500 hover:scale-110 transition-all"
+                                                    <div key={technology} className="flex items-center gap-2 py-1 px-2 border  cursor-pointer hover:border-secondary-500 hover:text-textColor-500 hover:scale-110 transition-all"
                                                         onClick={() => removeTechnology()}>
                                                         <img src={technology.icon} alt={technology.title} className="w-4 h-4 md:w-8 md:h-8" />
                                                         <RxCross1 />
@@ -206,7 +206,7 @@ const CustomizeYourService = () => {
                                                 }
                                                 {
                                                     addons.map((item, index) => (
-                                                        <div key={index} className="flex items-center gap-2 py-1 px-2 border rounded-full cursor-pointer hover:border-secondary-500 hover:text-secondary-500 hover:scale-110 transition-all"
+                                                        <div key={index} className="flex items-center gap-2 py-1 px-2 border rounded-full cursor-pointer hover:border-secondary-500 hover:text-textColor-500 hover:scale-110 transition-all"
                                                             onClick={() => removeAddons(item)}>
                                                             <img src={item.icon} alt={item.title} className="w-4 h-4 md:w-6 md:h-6" />
                                                             <RxCross1 className='text-sm' />
@@ -218,7 +218,7 @@ const CustomizeYourService = () => {
                                     )
                                 }
                             </div>
-                            <p className="md:text-xl">Starting From <span className="font-bold text-secondary-500">{price}</span> $</p>
+                            <p className="md:text-xl">Starting From <span className="font-bold text-textColor-500">{price}</span> $</p>
                         </div>
                         {
                             selectedService !== null ? (
@@ -250,7 +250,7 @@ const CustomizeYourService = () => {
                                 </>
                             ) :
                                 (
-                                    <p className='text-secondary-500'>Please Select a service to proceed farther</p>
+                                    <p className='text-gray-400'>Please Select a service to proceed farther</p>
                                 )
                         }
                     </div>

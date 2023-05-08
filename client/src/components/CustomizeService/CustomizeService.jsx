@@ -56,7 +56,7 @@ const ServicesCard = (props) => {
   return (
     <div
       // Add the 'bg-primary-100' class if the open service object matches this service object
-      className={`w-[30%] md:w-[20%] md:m-1 lg:w-full p-1 lg:p-2 flex flex-col lg:flex-row items-center gap-1 lg:gap-2 rounded-xl border mt-2 hover:scale-105 hover:shadow-xl transition-all relative cursor-pointer ${
+      className={`w-[30%] md:w-[20%] md:m-1 lg:w-full p-1 lg:p-2 flex flex-col lg:flex-row items-center gap-1 lg:gap-2 rounded-xl border border-border mt-2 hover:scale-105 hover:shadow-xl transition-all relative cursor-pointer bg-background-500  ${
         isExist && "bg-secondary-200 "
       } ${
         openService &&
@@ -71,7 +71,7 @@ const ServicesCard = (props) => {
         alt={props.title}
         className="w-7 lg:w-10 h-7 lg:h-10"
       />
-      <p className="text-center text-[10px] md:text-sm text-gray-500 font-bold lg:text-left">
+      <p className="text-center text-[10px] md:text-sm text-textColor-500 font-bold lg:text-left">
         {props.title}
       </p>
       {
@@ -83,7 +83,7 @@ const ServicesCard = (props) => {
           />
         ) : (
           <BsCheckCircleFill
-            className="absolute top-1 right-1 text-primary-500 cursor-pointer hover:scale-110"
+            className="absolute top-1 right-1 text-textColor-500 cursor-pointer hover:scale-110"
             onClick={() => removeService()}
           />
         )
@@ -164,7 +164,7 @@ const TechnologyCard = (props) => {
 
   return (
     <div
-      className="w-[30%] md:w-[120px] h-[90px] lg:h-[100px] p-1 lg:p-2 border rounded-xl flex flex-col items-center justify-evenly hover:scale-105 hover:shadow-xl transition-all relative overflow-hidden bg-white cursor-pointer"
+      className="w-[30%] md:w-[120px] h-[90px] lg:h-[100px] p-1 lg:p-2 border border-border rounded-xl flex flex-col items-center justify-evenly hover:scale-105 hover:shadow-xl transition-all relative overflow-hidden bg-background-500 cursor-pointer"
       onClick={() => {
         !isSelect ? addTechnologie() : removeTechnologie();
       }}
@@ -182,16 +182,16 @@ const TechnologyCard = (props) => {
         //   className="absolute top-1 right-1 text-gray-400 cursor-pointer hover:scale-110"
         //   onClick={() => addTechnologie()}
         // />
-        <BsCheckCircleFill className="absolute top-1 right-1 text-primary-500 cursor-pointer hover:scale-110" />
+        <BsCheckCircleFill className="absolute top-1 right-1 text-textColor-500 cursor-pointer hover:scale-110" />
         // <BsCheckCircleFill
-        //   className="absolute top-1 right-1 text-primary-500 cursor-pointer hover:scale-110"
+        //   className="absolute top-1 right-1 text-textColor-500 cursor-pointer hover:scale-110"
         //   onClick={() => removeTechnologie()}
         // />
       )}
 
       <abbr
         title={`${props.sdes} Starting from ${props.cost}`}
-        className="absolute top-1 left-1 text-primary-500 cursor-pointer hover:scale-110"
+        className="absolute top-1 left-1 text-textColor-500 cursor-pointer hover:scale-110"
       >
         <FiInfo />
       </abbr>
@@ -268,7 +268,7 @@ const AddonsCard = (props) => {
 
   return (
     <div
-      className="w-[30%] md:w-[100px] h-[90px] lg:h-[100px] p-1 lg:p-2 border rounded-xl flex flex-col items-center justify-evenly hover:scale-105 hover:shadow-xl transition-all relative overflow-hidden bg-white cursor-pointer"
+      className="w-[30%] md:w-[100px] h-[90px] lg:h-[100px] p-1 lg:p-2 border border-border rounded-xl flex flex-col items-center justify-evenly hover:scale-105 hover:shadow-xl transition-all relative overflow-hidden bg-background-500 cursor-pointer "
       onClick={() => {
         !isSelect ? addAddons() : removeAddons(props._id);
       }}
@@ -285,20 +285,20 @@ const AddonsCard = (props) => {
         //   className="absolute top-1 right-1 text-gray-400 cursor-pointer hover:scale-110"
         //   onClick={() => addAddons()}
         // />
-        <BsCheckCircleFill className="absolute top-1 right-1 text-primary-500 cursor-pointer hover:scale-110" />
+        <BsCheckCircleFill className="absolute top-1 right-1 text-textColor-500 cursor-pointer hover:scale-110" />
         // <BsCheckCircleFill
-        //   className="absolute top-1 right-1 text-primary-500 cursor-pointer hover:scale-110"
+        //   className="absolute top-1 right-1 text-textColor-500 cursor-pointer hover:scale-110"
         //   onClick={() => removeAddons(props._id)}
         // />
       )}
       <abbr
         title={`${props.sdes} Starting from ${props.cost}`}
-        className="absolute top-1 left-1 text-primary-500 cursor-pointer hover:scale-110"
+        className="absolute top-1 left-1 text-textColor-500 cursor-pointer hover:scale-110"
       >
         <FiInfo />
       </abbr>
-      <h3 className="text-center text-gray-300 text-sm">{props.title}</h3>
-      <h3 className="text-center text-gray-300 text-sm">${props.cost}</h3>
+      <h3 className="text-center text-textColor-500 text-sm">{props.title}</h3>
+      <h3 className="text-center text-textColor-500 text-sm">${props.cost}</h3>
     </div>
   );
 };
@@ -453,7 +453,7 @@ const CustomizeService = () => {
 
       <div className="container">
         <div className="backdrop-blur-sm">
-          <h1 className="text-3xl md:text-5xl text-center  font-bold">
+          <h1 className="text-3xl md:text-5xl text-center  font-bold text-textColor-500">
             Customize Your Services
           </h1>
           <p className="text-center text-lg font-bold text-gray-400 my-5">
@@ -464,15 +464,15 @@ const CustomizeService = () => {
 
         {/* Main Container */}
         <div
-          className="mt-5 flex flex-col lg:flex-row justify-between gap-5 rounded-xl md:min-h-[70vh] "
-          style={{
-            background: `url(${customizeServiceBg})`,
-            backgroundSize: "cover",
-          }}
+          className="mt-5 flex flex-col lg:flex-row justify-between gap-5 rounded-xl md:min-h-[70vh]"
+          // style={{
+          //   background: `url(${customizeServiceBg})`,
+          //   backgroundSize: "cover",
+          // }}
         >
           {/* Left container */}
-          <div className="p-3 md:px-3 md:py-5 border rounded-xl flex-[0.2] shadow-xl  customizeServiceLeft">
-            <h3 className="text-gray-400 text-xl uppercase font-bold">
+          <div className="p-3 md:px-3 md:py-5 border border-border rounded-xl flex-[0.2] shadow-xl customizeServiceLeft bg-primary-100/50 backdrop-blur-sm">
+            <h3 className="text-textColor-500 text-xl uppercase font-bold">
               Services
             </h3>
             <div className="w-full flex gap-1 flex-wrap justify-center lg:block">
@@ -493,22 +493,22 @@ const CustomizeService = () => {
           {/* End of Left container */}
 
           {/* Right container */}
-          <div className="pt-10 p-3 md:p-5 border rounded-xl flex-[0.8] min-h-[40vh] pb-10 shadow-xl relative  customizeServiceRight ">
+          <div className="pt-10 p-3 md:p-5 border border-border rounded-xl flex-[0.8] min-h-[40vh] pb-10 shadow-xl relative  customizeServiceRight bg-primary-100/50 backdrop-blur-sm">
             {/* Top Section */}
             <div className="mt-10">
-              <p className=" text-gray-300 ">Selected items: </p>
+              <p className=" text-textColor-500 ">Selected items: </p>
               {order.map(
                 (item, index) =>
                   (item?.technologies?.length > 0 ||
                     item?.addons?.length > 0) && (
                     <div key={index} className="flex items-center gap-2 mt-1">
                       <img src={item.icon} alt="" className="w-7 h-7" />
-                      <p className="">:</p>
+                      <p className="text-textColor-500">:</p>
                       <div className="border-r-gray-500 flex flex-wrap items-center gap-2 cursor-pointer">
                         {item.technologies.map((tech, index) => (
                           <div
                             key={index}
-                            className="flex text-sm text-gray-400 items-center gap-1 px-2 py-1 border rounded-full hover:scale-110  transition-all bg-secondary-100"
+                            className="flex text-sm text-gray-400 items-center gap-1 px-2 py-1 rounded-full hover:scale-110  transition-all bg-secondary-200"
                           >
                             <img
                               key={index}
@@ -516,9 +516,9 @@ const CustomizeService = () => {
                               alt={tech.title}
                               className="h-5 w-5"
                             />
-                            <p>{tech.cost}$</p>
+                            <p className="text-textColor-500">{tech.cost}$</p>
                             <GrFormClose
-                              className="hover:text-secondary-400"
+                              className="hover:text-textColor-500"
                               onClick={() =>
                                 removeTechnology(item._id, tech._id)
                               }
@@ -528,7 +528,7 @@ const CustomizeService = () => {
                         {item.addons.map((addon, index) => (
                           <div
                             key={index}
-                            className="flex text-sm text-gray-400 items-center gap-1 px-2 py-1 border rounded-full hover:scale-110  transition-all bg-secondary-100"
+                            className="flex text-sm text-gray-400 items-center gap-1 px-2 py-1 border border-border rounded-full hover:scale-110  transition-all bg-secondary-200"
                           >
                             <img
                               key={index}
@@ -536,7 +536,7 @@ const CustomizeService = () => {
                               alt={addon.title}
                               className="h-5 w-5"
                             />
-                            <p>{addon.cost}$</p>
+                            <p className="text-textColor-500">{addon.cost}$</p>
                             <GrFormClose
                               className="hover:text-secondary-400"
                               onClick={() => removeAddons(item._id, addon._id)}
@@ -550,15 +550,15 @@ const CustomizeService = () => {
             </div>
 
             <div className="absolute top-1 right-1 flex flex-col items-center text-gradient bg-gradient-to-r from-[#6e3aff] via-[#26f8ff] to-[#4366ff]">
-              <p className="text-sm lg:text-white">Estimated Cost</p>
-              <p className="text-3xl  font-bold lg:text-white">{price}$</p>
+              <p className="text-sm lg:text-textColor-500">Estimated Cost</p>
+              <p className="text-3xl  font-bold lg:text-textColor-500">{price}$</p>
             </div>
             {/* End of Top Section */}
 
             {/* Show technology section */}
             {openService !== null && (
               <div className="w-full">
-                <p className="text-gray-300 mt-3">Technologies:</p>
+                <p className="text-textColor-500 mt-3">Technologies:</p>
                 <div className="w-full p-2 my-2 flex gap-3 flex-wrap">
                   {openService.technologies.map((item, index) => (
                     <TechnologyCard
@@ -625,7 +625,7 @@ const CustomizeService = () => {
             )}
 
             <Typed
-              className="text-xl md:text-2xl text-center md:text-lef absolute bottom-1 hidden md:block"
+              className="text-xl md:text-2xl text-center md:text-lef absolute bottom-1 hidden md:block text-gray-400"
               strings={[
                 "Create you own Packages",
                 "Customize Service to Serve Your Need",

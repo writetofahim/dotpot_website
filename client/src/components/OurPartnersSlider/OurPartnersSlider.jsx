@@ -65,7 +65,7 @@ function OurPartnersSlider() {
   }, []);
 
   return (
-    <div className="w-full overflow-x-hidden bg-white">
+    <div className="w-full overflow-x-hidden bg-background-500">
       <Slider {...settings} className="py-2">
         {data &&
           data.map((item, index) => (

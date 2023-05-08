@@ -83,42 +83,43 @@ const BlockchainDevelopment = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="pt-[15vh] container mx-auto pb-10 min-h-screen p-3">
-        <NavigatorComponent navigationData={navigationData} />
+      <div className="bg-background-500">
+        <div className="pt-[15vh] container mx-auto pb-10 min-h-screen p-3">
+          <NavigatorComponent navigationData={navigationData} />
 
-        <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
-          Blockchain Development
-        </h1>
-        <p className="text-md text-gray-400 text-center mb-10">
-          Hire The Expert Development Team of Blockchain Technology!
-        </p>
-        <div className="mb-5 container mx-auto">
-          <img className="md:w-1/2 mx-auto " src={coverImg} alt="" />
-        </div>
-        <div className="container  mx-auto flex flex-col mb-10 my-10">
-          <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block">
-            Overview
-          </h3>
-          {/* Overview */}
-          <div className="text-gray-400 flex flex-col gap-5 p-5">
-            <p className="text-justify">
-              Blockchain technology has become a hot topic among businesses,
-              particularly in the IT industry. It has paved the way for secure
-              payment gateways and is an excellent form of database storage.
-              Using records or blocks, blockchain technology stores data and
-              automatically copies it with the mechanism of cryptography,
-              providing a more secure data storage platform. As a result, data
-              is stored securely in multiple areas, reducing the overall cost of
-              data storage. This technology supports cryptocurrencies and
-              digital currencies, making it a game-changer in the finance
-              industry. With a significant amount of big data, businesses can
-              hire blockchain developers to create new and more efficient
-              business processes.
-            </p>
+          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center">
+            Blockchain Development
+          </h1>
+          <p className="text-md text-textColor-500 text-center mb-10">
+            Hire The Expert Development Team of Blockchain Technology!
+          </p>
+          <div className="mb-5 container mx-auto">
+            <img className="md:w-1/2 mx-auto " src={coverImg} alt="" />
           </div>
+          <div className="container  mx-auto flex flex-col mb-10 my-10">
+            <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
+              Overview
+            </h3>
+            {/* Overview */}
+            <div className="text-textColor-500 flex flex-col gap-5 p-5">
+              <p className="text-justify">
+                Blockchain technology has become a hot topic among businesses,
+                particularly in the IT industry. It has paved the way for secure
+                payment gateways and is an excellent form of database storage.
+                Using records or blocks, blockchain technology stores data and
+                automatically copies it with the mechanism of cryptography,
+                providing a more secure data storage platform. As a result, data
+                is stored securely in multiple areas, reducing the overall cost of
+                data storage. This technology supports cryptocurrencies and
+                digital currencies, making it a game-changer in the finance
+                industry. With a significant amount of big data, businesses can
+                hire blockchain developers to create new and more efficient
+                business processes.
+              </p>
+            </div>
 
-          {/*card for redirect to service quote */}
-          {/* <div className=" border-b h-52 w-full md:w-4/5 mx-auto my-5  rounded-xl border flex justify-center items-center shadow-md overflow-hidden relative">
+            {/*card for redirect to service quote */}
+            {/* <div className=" border-b h-52 w-full md:w-4/5 mx-auto my-5  rounded-xl border flex justify-center items-center shadow-md overflow-hidden relative">
             
             <div className=" flex justify-center items-center">
               <div className="w-96 absolute">
@@ -149,47 +150,48 @@ const BlockchainDevelopment = () => {
             </div>
           </div> */}
 
-          {/* paragraph */}
-          <div className="my-3">
-            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-gray-400 ">
-              What is Blockchain?
-            </h2>
-            <div className="text-gray-400 flex flex-col gap-5 p-5">
-              <p className="text-justify">
-                Blockchain is a distributed digital ledger that securely stores
-                data and ensures its integrity through cryptography. It is not
-                limited to currency transactions but extends to any domain where
-                valuable assets are transacted, including contracts, personal
-                information, health records, and business data.
-              </p>
-              <p className="text-justify">
-                With its unique features, such as decentralization,
-                transparency, and immutability, blockchain technology offers
-                many benefits to businesses, including increased security,
-                efficiency, and cost savings. As a result, many industries are
-                exploring the use of blockchain, including finance, healthcare,
-                supply chain management, and more. As the technology continues
-                to evolve and mature, it has the potential to transform the way
-                businesses operate and interact with each other.
-              </p>
+            {/* paragraph */}
+            <div className="my-3">
+              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-textColor-500 ">
+                What is Blockchain?
+              </h2>
+              <div className="text-textColor-500 flex flex-col gap-5 p-5">
+                <p className="text-justify">
+                  Blockchain is a distributed digital ledger that securely stores
+                  data and ensures its integrity through cryptography. It is not
+                  limited to currency transactions but extends to any domain where
+                  valuable assets are transacted, including contracts, personal
+                  information, health records, and business data.
+                </p>
+                <p className="text-justify">
+                  With its unique features, such as decentralization,
+                  transparency, and immutability, blockchain technology offers
+                  many benefits to businesses, including increased security,
+                  efficiency, and cost savings. As a result, many industries are
+                  exploring the use of blockchain, including finance, healthcare,
+                  supply chain management, and more. As the technology continues
+                  to evolve and mature, it has the potential to transform the way
+                  businesses operate and interact with each other.
+                </p>
+              </div>
             </div>
+            {/* Advantages of Blockchain Technology */}
+            <ul className="ml-5">
+              <h3 className="text-xl md:text-2xl  my-2 md:mb-1  text-textColor-500 font-bold">
+                Advantages of Blockchain Technology
+              </h3>
+              <li className=" ml-5 list-disc text-textColor-500 pl-2">Efficiency</li>
+              <li className=" ml-5 list-disc text-textColor-500 pl-2">Transparency</li>
+              <li className=" ml-5 list-disc text-textColor-500 pl-2">Trust</li>
+              <li className=" ml-5 list-disc text-textColor-500 pl-2">Flexibility</li>
+            </ul>
           </div>
-          {/* Advantages of Blockchain Technology */}
-          <ul className="ml-5">
-            <h3 className="text-xl md:text-2xl  my-2 md:mb-1  text-gray-400 font-bold">
-              Advantages of Blockchain Technology
-            </h3>
-            <li className=" ml-5 list-disc text-gray-400 pl-2">Efficiency</li>
-            <li className=" ml-5 list-disc text-gray-400 pl-2">Transparency</li>
-            <li className=" ml-5 list-disc text-gray-400 pl-2">Trust</li>
-            <li className=" ml-5 list-disc text-gray-400 pl-2">Flexibility</li>
-          </ul>
-        </div>
 
-        <TechnologiesTab
-          title="Platforms and technologies we use"
-          data={data}
-        />
+          <TechnologiesTab
+            title="Platforms and technologies we use"
+            data={data}
+          />
+        </div>
       </div>
       <div className="">
         <Footer />

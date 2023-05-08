@@ -89,24 +89,29 @@ export const SingleSlide = (props) => {
         alt=""
         className="rounded-tl-xl rounded-tr-xl w-full aspect-video object-cover"
       />
-      <div className=" bg-white rounded-bl-xl rounded-br-xl shadow p-5 flex flex-col">
+      <div className=" bg-background-500 rounded-bl-xl rounded-br-xl shadow p-5 flex flex-col">
         <Stack direction="row" className="flex flex-wrap gap-1">
           {props.tags.map((tag, index) => (
-            <Chip
-              label={tag}
-              key={index}
-              variant="outlined"
-              className="hover:border-primary-500 cursor-pointer"
-            />
+            // <Chip
+            //   label={tag}
+            //   color="secondary"
+            //   key={index}
+            //   variant="filled"
+            //   className="hover:border cursor-pointer"
+            // />
+
+            <div key={index} className="border border-border  rounded-full px-2 ">
+              <p className="text-textColor-500 text-xs p-1 ">{tag}</p>
+            </div>
           ))}
         </Stack>
-        <p className="mt-2 text-gray-400">{props.date}</p>
+        <p className="mt-2 text-white">{props.date}</p>
         <h3 className="text-xl font-bold text-gray-400 my-2 h-[80px]">
           {props.title.slice(0, 45)}...
         </h3>
         <Link
           to={`/blog/${props._id}`}
-          className="text-gray-400 font-bold hover:text-secondary-500 flex items-center gap-2"
+          className=" font-bold hover:text-secondary-500 text-gray-400 flex items-center gap-2"
         >
           Read More <BsArrowRight />
         </Link>

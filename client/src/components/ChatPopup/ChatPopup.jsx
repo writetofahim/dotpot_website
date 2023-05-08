@@ -169,20 +169,20 @@ const ChatPopup = () => {
       )}
 
       <button
-        className="group z-[750] fixed z-1 bottom-4 right-4 bg-primary-500 text-white p-4 rounded-full border border-white hover:scale-110 transition-all"
+        className="group z-[750] fixed z-1 bottom-4 right-4 bg-primary-500 text-buttonText-500 p-4 rounded-full border border-border hover:scale-110 transition-all"
         onClick={handleOpen}
       >
         <FaComments size={24} />
-        <span className="absolute top-2 right-16 group-hover:block w-[max-content] px-3 py-2 bg-primary-500 text-white hidden rounded border">
+        <span className="absolute top-2 right-16 group-hover:block w-[max-content] px-3 py-2 bg-primary-500 text-textColor-500 hidden rounded border border-border">
           Chat with us
         </span>
       </button>
 
       {isChatPopupOpen && (
-        <div className="z-[800] fixed bottom-[10vh] right-2 bg-white border-t border-gray-300 w-80 max-h-100 rounded-xl overflow-hidden shadow-xl transition-all">
-          <div className="flex justify-between px-4 py-1.5 border-b bg-primary-400 text-white">
-            <h2 className="text-lg font-medium">Dotpot iT</h2>
-            <button className="text-white text-3xl" onClick={handleClose}>
+        <div className="z-[800] fixed bottom-[10vh] right-2 bg-background-500 border-t border-border w-80 max-h-100 rounded-xl overflow-hidden shadow-xl transition-all">
+          <div className="flex justify-between px-4 py-1.5 border-b bg-primary-400 text-textColor-500">
+            <h2 className="text-lg font-medium text-textColor-500">Dotpot iT</h2>
+            <button className="text-textColor-500 text-3xl" onClick={handleClose}>
               <AiOutlineCloseCircle />
             </button>
           </div>
@@ -195,15 +195,15 @@ const ChatPopup = () => {
                 }
                 alt=""
               />
-              <p className="text-sm text-center mb-2">
+              <p className="text-sm text-center mb-2 text-textColor-500">
                 Dotpot iT Customer Support
               </p>
-              <div className="border-t my-2"></div>
+              <div className="border-t border-border my-2 text-textColor-500"></div>
             </div>
             {messages.map((message, index) => (
               <div
                 key={index}
-                className={`flex gap-2 ${
+                className={`flex gap-2 text-textColor-500 ${
                   message.sender === "admin" ? "" : "justify-end"
                 } items-start`}
               >
@@ -232,7 +232,7 @@ const ChatPopup = () => {
                     className={`p-2 rounded-md ${
                       message.sender === "admin"
                         ? "bg-gray-200 w-full"
-                        : "bg-primary-200 text-white min-w-[100px]"
+                        : "bg-primary-200 text-textColor-500 min-w-[100px]"
                     }`}
                   >
                     {message.text && <p className="text-sm">{message.text}</p>}
@@ -299,7 +299,7 @@ const ChatPopup = () => {
             ></input>
             <button
               disabled={isSending}
-              className="flex-[0.1] bg-primary-500 text-white text-2xl p-2 rounded-lg h-[38px] flex items-center justify-center"
+              className="flex-[0.1] bg-primary-500 text-textColor-500 text-2xl p-2 rounded-lg h-[38px] flex items-center justify-center"
               onClick={handleSendMessage}
             >
               {isSending ? (

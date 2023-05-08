@@ -102,14 +102,14 @@ var settings = {
 export const SingleSlide = (props) => {
   return (
     <Link to={props.link}>
-      <div className="h-[300px] my-5 flex flex-col items-center border bg-white mx-2 p-5 rounded-lg shadow-lg text-gray-400 cursor-pointer relative">
+      <div className="h-[300px] my-5 flex flex-col items-center border border-border bg-background-500  mx-2 p-5 rounded-lg shadow-lg text-gray-400 cursor-pointer relative">
         <div className="mb-3">
-          <img src={props.icon} alt="" className="w-[70px] h-[70px]" />
+          <img src={props.icon} alt="" className="w-[70px] h-[70px]"/>
         </div>
         <h2 className="text-2xl h-[70px] text-center font-bold">
           {props.title}
         </h2>
-        <p className="text-left ">
+        <p className="text-left">
           {props.description?.slice(0, 65)}
           ...
         </p>

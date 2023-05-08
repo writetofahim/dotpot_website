@@ -156,13 +156,13 @@ const WebsiteDevelopment = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="px-3">
+      <div className="px-3 bg-background-500">
         <div className="pt-[15vh] pb-10 container mx-auto min-h-screen">
           <NavigatorComponent navigationData={navigationData} />
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-primary-500 text-center">
+          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center">
             Website Development
           </h1>
-          <p className="text-md text-gray-400 text-center mb-10">
+          <p className="text-md text-textColor-500 text-center mb-10">
             This roadmap outlines the emerging trends and effective strategies
             for web and CMS development.
           </p>
@@ -170,11 +170,11 @@ const WebsiteDevelopment = () => {
             <img className="md:w-1/2 mx-auto " src={coverImg} alt="" />
           </div>
           <div className="container  mx-auto flex flex-col mb-10 my-10">
-            <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-primary-500">
+            <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
               Overview
             </h3>
             {/* Overview */}
-            <div className="text-gray-400 flex flex-col gap-5 p-5">
+            <div className="text-textColor-500 flex flex-col gap-5 p-5">
               <p className="text-justify">
                 In today's world, a website is a crucial aspect of any business.
                 It serves as a platform to showcase products, skills, and
@@ -235,10 +235,10 @@ const WebsiteDevelopment = () => {
 
             {/* process we follow */}
             <div className="my-3">
-              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-gray-400 ">
+              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-textColor-500 ">
                 Process We Follow:
               </h2>
-              <div className="text-gray-400 flex flex-col gap-5 p-5">
+              <div className="text-textColor-500 flex flex-col gap-5 p-5">
                 <p className="text-justify">
                   How Our Experts Handle The Project Efficiently,
                 </p>
@@ -246,10 +246,10 @@ const WebsiteDevelopment = () => {
             </div>
             {/* 1) Planning */}
             <div className="my-3">
-              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-gray-400 ">
+              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-textColor-500 ">
                 1) Planning
               </h2>
-              <div className="text-gray-400 flex flex-col gap-5 p-5">
+              <div className="text-textColor-500 flex flex-col gap-5 p-5">
                 <p className="text-justify">
                   Gather all the information and plan the project, craft the
                   idea for the website and CMS development.
@@ -258,10 +258,10 @@ const WebsiteDevelopment = () => {
             </div>
             {/* 2) Web Designing*/}
             <div className="my-3">
-              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-gray-400 ">
+              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-textColor-500 ">
                 2) Web Designing
               </h2>
-              <div className="text-gray-400 flex flex-col gap-5 p-5">
+              <div className="text-textColor-500 flex flex-col gap-5 p-5">
                 <p className="text-justify">
                   Our team of front-end designers will create a visually
                   appealing and responsive website using wireframes and UI/UX
@@ -271,10 +271,10 @@ const WebsiteDevelopment = () => {
             </div>
             {/* 3) Define Content */}
             <div className="my-3">
-              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-gray-400 ">
+              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-textColor-500 ">
                 3) Define Content
               </h2>
-              <div className="text-gray-400 flex flex-col gap-5 p-5">
+              <div className="text-textColor-500 flex flex-col gap-5 p-5">
                 <p className="text-justify">
                   Content is an essential aspect of a website, and we understand
                   its significance. Our team will provide informative and
@@ -285,10 +285,10 @@ const WebsiteDevelopment = () => {
             </div>
             {/* 4) Development */}
             <div className="my-3">
-              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-gray-400 ">
+              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-textColor-500 ">
                 4) Development
               </h2>
-              <div className="text-gray-400 flex flex-col gap-5 p-5">
+              <div className="text-textColor-500 flex flex-col gap-5 p-5">
                 <p className="text-justify">
                   Once the website's objectives are established, the development
                   process begins, which is a critical pre-final stage of the
@@ -298,10 +298,10 @@ const WebsiteDevelopment = () => {
             </div>
             {/* 5) Testing */}
             <div className="my-3">
-              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-gray-400 ">
+              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-textColor-500 ">
                 5) Testing
               </h2>
-              <div className="text-gray-400 flex flex-col gap-5 p-5">
+              <div className="text-textColor-500 flex flex-col gap-5 p-5">
                 <p className="text-justify">
                   Before launching the website, testing plays a crucial role in
                   identifying any bugs or errors that might affect the user
@@ -312,10 +312,10 @@ const WebsiteDevelopment = () => {
             </div>
             {/* 6) Deployment */}
             <div className="my-3">
-              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-gray-400 ">
+              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-textColor-500 ">
                 6) Deployment
               </h2>
-              <div className="text-gray-400 flex flex-col gap-5 p-5">
+              <div className="text-textColor-500 flex flex-col gap-5 p-5">
                 <p className="text-justify">
                   Once all the aspects of website development are complete,
                   including design, development, testing, and bug fixing, the
@@ -327,10 +327,10 @@ const WebsiteDevelopment = () => {
             </div>
             {/* 7) Post Deployment & Maintenance */}
             <div className="my-3">
-              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-gray-400 ">
+              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-textColor-500 ">
                 7) Post Deployment & Maintenance
               </h2>
-              <div className="text-gray-400 flex flex-col gap-5 p-5">
+              <div className="text-textColor-500 flex flex-col gap-5 p-5">
                 <p className="text-justify">
                   Post-launch, we offer comprehensive support to ensure that the
                   website functions smoothly, and we address any concerns or

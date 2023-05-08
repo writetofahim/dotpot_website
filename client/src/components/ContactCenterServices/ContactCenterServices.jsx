@@ -10,7 +10,7 @@ const ContactCenterServices = () => {
   return (
     <div className="w-full overflow-hidden py-10 md:flex md:flex-col md:justify-center bg-primary-100">
       <div className="p-5 mt-5 w-full md:max-w-[1400px] self-center flex gap-10 flex-wrap items-center justify-center">
-        <h1 className="text-3xl md:text-5xl text-center font-extrabold mb-2 md:mb-2 block">
+        <h1 className="text-3xl md:text-5xl text-center font-extrabold mb-2 md:mb-2 block text-textColor-500">
           Contact Center Services
         </h1>
         <ContactCenterServicesSlide />

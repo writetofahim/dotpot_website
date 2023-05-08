@@ -82,9 +82,9 @@ var settings = {
 
 // export const SingleSlide = (props) => {
 //     return (
-//         <div className="mx-5 mb-20 rounded-lg relative shadow-xl bg-white">
+//         <div className="mx-5 mb-20 rounded-lg relative shadow-xl bg-background-500">
 //             <img src={`${import.meta.env.REACT_APP_SERVER_PATH}/${props.image}`} alt="" className=" rounded-xl aspect-[1.4] object-cover" />
-//             <div className="absolute b-0 left-1/2 transform -translate-x-1/2 translate-y-[-50%] bg-white w-[80%] rounded-xl shadow p-5 flex flex-col items-center">
+//             <div className="absolute b-0 left-1/2 transform -translate-x-1/2 translate-y-[-50%] bg-background-500 w-[80%] rounded-xl shadow p-5 flex flex-col items-center">
 //                 <h3 className="text-xl font-bold text-gray-400 mb-2">{props.title}</h3>
 //                 <Stack direction="row" spacing={1} className="flex flex-wrap">
 //                     {
@@ -100,7 +100,7 @@ var settings = {
 
 export const SingleSlide = (props) => {
   return (
-    <div className="mx-5 mb-14 rounded-lg relative shadow-xl hover:shadow-lg bg-gray-50 px-5 pt-5 group hover:bg-white overflow-hidden duration-200">
+    <div className="mx-5 mb-14 rounded-lg relative shadow-xl hover:shadow-lg px-5 pt-5 group bg-background-500 overflow-hidden duration-200">
       <div className="h-[100px]">
         <Link to={props?.link}>
           <h3 className="text-2xl font-bold text-gray-400 mb-2 text-center hover:underline cursor-pointer">
@@ -112,7 +112,7 @@ export const SingleSlide = (props) => {
             props.technologies.map((tech, index) => (
               <div
                 key={index}
-                className={`text-sm rounded-full px-2 py-1 bg-gradient-to-r from-cyan-500 to-blue-500 text-white`}
+                className={`text-sm rounded-full px-2 py-1 bg-gradient-to-r from-primary-500 to-primary-200 text-buttonText-500`}
               >
                 {tech}
               </div>

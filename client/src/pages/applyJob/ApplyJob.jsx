@@ -26,9 +26,9 @@ export const JobCard = (props) => {
                     <div className="ritht flex items-center justify-center">
                         {
                             love ?
-                                <AiFillHeart className="text-secondary-500 text-2xl" onClick={() => setLove(!love)} />
+                                <AiFillHeart className="text-textColor-500 text-2xl" onClick={() => setLove(!love)} />
                                 :
-                                <AiOutlineHeart className="text-secondary-500 text-2xl" onClick={() => setLove(!love)} />
+                                <AiOutlineHeart className="text-textColor-500 text-2xl" onClick={() => setLove(!love)} />
                         }
                         {/* <div className="cursor-pointer p-5 rounded-full hover:bg-primary-100">
                             <SlOptionsVertical />
@@ -73,9 +73,9 @@ export const JobCard = (props) => {
                         <div className="ritht flex items-center justify-center">
                             {
                                 love ?
-                                    <AiFillHeart className="text-secondary-500 text-2xl" onClick={() => setLove(!love)} />
+                                    <AiFillHeart className="text-textColor-500 text-2xl" onClick={() => setLove(!love)} />
                                     :
-                                    <AiOutlineHeart className="text-secondary-500 text-2xl" onClick={() => setLove(!love)} />
+                                    <AiOutlineHeart className="text-textColor-500 text-2xl" onClick={() => setLove(!love)} />
                             }
                             <div className="cursor-pointer p-5 rounded-full hover:bg-primary-100">
                                 <SlOptionsVertical />

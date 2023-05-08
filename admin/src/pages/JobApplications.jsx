@@ -188,7 +188,7 @@ const JobApplications = () => {
 
   return (
     <div className="w-full min-h-full">
-      <h1 className="text-center text-4xl text-primary-500 font-bold my-5">Job Applications</h1>
+      <h1 className="text-center text-4xl text-textColor-500 font-bold my-5">Job Applications</h1>
       <hr />
       {
         data && <AllJobApplications data={data} setData={setData} />

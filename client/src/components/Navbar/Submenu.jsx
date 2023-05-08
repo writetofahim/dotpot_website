@@ -20,7 +20,7 @@ const Submenu = ({
       </div>
       {selectedSubmenu === service._id && (
         <div
-          className={`flex h-max duration-500 transition-all  flex-col gap-2 absolute -top-2 lg:left-[285px] bg-white p-3 rounded-md shadow-xl`}
+          className={`flex h-max duration-500 transition-all  flex-col gap-2 absolute -top-2 lg:left-[285px] bg-background-500 p-3 rounded-md shadow-xl`}
         >
           {service?.submenu?.map((item, i) => (
             <Link
@@ -32,7 +32,7 @@ const Submenu = ({
               className="w-[200px] hover:text-secondary-400 flex gap-2 items-center"
             >
               {" "}
-              <img className="w-4" src={item.icon} alt="" /> {item.title}
+              <img className="w-4 bg-primary-500" src={item.icon} alt="" /> {item.title}
             </Link>
           ))}
         </div>
