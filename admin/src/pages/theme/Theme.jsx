@@ -185,10 +185,10 @@ const Theme = () => {
               <div
                 key={color.name}
                 onClick={() => handleChangeTheme(color._id)}
-                className={`md:w-[350px] w-full rounded-md ${
+                className={`md:w-[350px] w-full rounded-md bg-[${Object.values(color.colors.background)}] ${
                   color?.selected
-                    ? "bg-gray-200 border-blue-600"
-                    : "bg-gray-50 hover:bg-gray-200 hover:border-blue-600"
+                    ? " border-blue-600"
+                    : " hover:bg-gray-200 hover:border-blue-600"
                 } shadow-2xl p-3 border-2 flex gap-5 items-center justify-between cursor-pointer ${
                   changing && "cursor-not-allowed duration-300"
                 }`}
