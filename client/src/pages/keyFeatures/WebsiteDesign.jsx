@@ -94,7 +94,7 @@ const WebsiteDesign = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`mt-10 ${isVisible
+                    className={`mt-10 mb-16 ${isVisible
                       ? "opacity-100 translate-y-0"
                       : "translate-y-20 opacity-0"
                       } duration-1000 `}
@@ -118,34 +118,37 @@ const WebsiteDesign = () => {
 
           {/* body */}
           <div className="container mx-auto w-full overflow-hidden">
-            <ReactVisibilitySensor partialVisibility>
-              {({ isVisible }) => (
                 <>
                   <div
-                    className={`mt-10 ${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 `}
+                    className={`flex flex-col gap-5`}
                   >
                     {worksData.map(({ id, title, description, illustration }) => (
-                      <ReactVisibilitySensor partialVisibility>
-                      {({isVisible})=>(<div className={`md:flex justify-center items-center gap-x-20 font-work p-5 `}>
-                      <div className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"}`}>
-                        <h1 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
+                      <div className={`md:flex justify-center items-center gap-x-20 font-work p-5`}>
+                      <div className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"} `}>
+                        <ReactVisibilitySensor partialVisibility>
+                      {({isVisible})=>(<div className={` ${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 `}><h1 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
                           {title}
                         </h1>
-                        <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">{description}</p>
-                      </div>
-                      <div className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"} `}>
-                        <img className="w-full mx-auto" src={illustration} alt="" />
-                      </div>
-                    </div>)}
+                        <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">{description}</p></div>)}
                       </ReactVisibilitySensor>
+                        
+                      </div>
+                      <ReactVisibilitySensor partialVisibility>
+                      {({isVisible})=>(<div className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"} ${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 `}>
+                        <img className="w-4/5 mx-auto" src={illustration} alt="" />
+                      </div>)}
+                      </ReactVisibilitySensor>
+                    </div>
                     ))}
                   </div>
                 </>
-              )}
-            </ReactVisibilitySensor>
+      
           </div>
 
           {/* Technologies We Use */}
