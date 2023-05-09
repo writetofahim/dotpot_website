@@ -8,8 +8,8 @@ import coverweb from "../../assets/img/coverweb.png"
 import ecommarceweb from "../../assets/img/ecommarceweb.png"
 import agencyweb from "../../assets/img/agencyweb.png"
 import blogweb from "../../assets/img/blogweb.png"
-import customappweb from "../../assets/img/customappweb.png"
-import hello from "../../assets/img/hello.png"
+import customappweb from "../../assets/img/customappweb.png" 
+import shopify from "../../assets/img/shopify.png"
 import ReactVisibilitySensor from "react-visibility-sensor";
 import { Link } from "react-router-dom";
 import GetAQuote from "../../components/GetAQuote/GetAQuote";
@@ -174,18 +174,45 @@ const WebsiteDesign = () => {
                           <p className="md:text-base text-xs text-gray-400 text-justify">At Dotpot IT, we specialize in creating powerful and user-friendly e-commerce websites that enable businesses to thrive in the digital marketplace. With our expertise in e-commerce development and a deep understanding of consumer behavior, we craft tailored solutions that drive online sales, enhance customer experiences, and boost your bottom line.</p>
                         </div>
                         <div className="lg:w-1/2 w-full flex flex-col items-center justify-center gap-10">
-                          <div className="flex gap-10 flex-wrap justify-center">
+                        <div className="flex gap-10 flex-wrap justify-center">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="html" 
                             className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="css" 
                             className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" alt="tailwind" className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="js" className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" alt="tailwind" 
+                            className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="bootstarp" 
+                            className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="js" 
+                            className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="react" 
                             className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="express" className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="mongo" className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg" alt="laravel" className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-line.svg" alt="next" 
+                            className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="vue" 
+                            className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="angular" 
+                            className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="express" 
+                            className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="node" 
+                            className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="mongo" 
+                            className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="mysql" 
+                            className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-plain.svg" alt="php" 
+                            className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg" alt="laravel" 
+                            className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="python" 
+                            className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="django" 
+                            className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" alt="wordpress" 
+                            className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img src={shopify} alt="shopify" 
+                            className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
                           </div>
                         </div>
                       </div>
@@ -226,18 +253,6 @@ const WebsiteDesign = () => {
 
           {/* Get in Touch */}
           <div className="bg-primary-100">
-            {/* <div className="container mx-auto flex flex-col md:flex-col lg:flex-row justify-evenly items-center">
-              <div className="">
-                <img src={hello} alt="" className="mx-auto lg:mx-0 lg:self-center w-20 h-20" />
-                <h3 className="lg:text-3xl md:text-2xl text-xl lg:text-left md:text-center text-center font-bold">Get in Touch</h3>
-                <p className="lg:text-base md:text-base text-xs text-gray-400 text-justify pt-3">If you have any questions or queries don’t hesitate to reach out to us</p>
-              </div>
-              <div className="text-center md:text-right pt-3">
-                <Link to="/contact">
-                  <button className="bg-secondary-500 px-6 py-2 rounded-lg text-white">Contact Us</button>
-                </Link>
-              </div>
-            </div> */}
             <GetAQuote/>
           </div>
 

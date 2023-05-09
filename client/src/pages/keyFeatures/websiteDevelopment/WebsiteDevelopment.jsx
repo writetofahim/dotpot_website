@@ -9,7 +9,6 @@ import ecommarceweb from "../../../assets/img/ecommarceweb.png"
 import agencyweb from "../../../assets/img/agencyweb.png"
 import blogweb from "../../../assets/img/blogweb.png"
 import customappweb from "../../../assets/img/customappweb.png"
-import hello from "../../../assets/img/hello.png"
 import ReactVisibilitySensor from "react-visibility-sensor";
 import { Link } from "react-router-dom";
 import GetAQuote from "../../../components/GetAQuote/GetAQuote";
@@ -223,18 +222,6 @@ const WebsiteDevelopment = () => {
 
           {/* Get in Touch */}
           <div className="bg-primary-100">
-            {/* <div className="container mx-auto flex flex-col md:flex-col lg:flex-row justify-evenly items-center">
-              <div className="">
-                <img src={hello} alt="" className="mx-auto lg:mx-0 lg:self-center w-20 h-20" />
-                <h3 className="lg:text-3xl md:text-2xl text-xl lg:text-left md:text-center text-center font-bold">Get in Touch</h3>
-                <p className="lg:text-base md:text-base text-xs text-gray-400 text-justify pt-3">If you have any questions or queries don’t hesitate to reach out to us</p>
-              </div>
-              <div className="text-center md:text-right pt-3">
-                <Link to="/contact">
-                  <button className="bg-secondary-500 px-6 py-2 rounded-lg text-white">Contact Us</button>
-                </Link>
-              </div>
-            </div> */}
             <GetAQuote/>
           </div>
 
