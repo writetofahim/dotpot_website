@@ -68,6 +68,30 @@ app.use(function (err, req, res, next) {
 // app.use(cors({
 //     origin: ["http://localhost:5173", "http://localhost:5174", "http://dotpotit.com","http://dotpotit.com/admin", "https://dotpotit.com", "https://dotpotit.com/admin", "https://dotpot-admin.vercel.app"]
 //   }));
+
+const swaggerJSDoc = require("swagger-jsdoc");
+const swaggerUi = require("swagger-ui-express");
+
+const swaggerOptions = {
+  swaggerDefinition: {
+    openapi: "3.0.0",
+    info: {
+      title: "My API",
+      version: "1.0.0",
+      description: "My RESTful API",
+    },
+    servers: [
+      {
+        url: "http://localhost:8800",
+      },
+    ],
+  },
+  apis: ["*.js"],
+};
+
+const swaggerSpec = swaggerJSDoc(swaggerOptions);
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
 app.use(cors());
 app.use(
   "/uploads/conversation",
@@ -135,6 +159,10 @@ app.use("/api/colors", colorRoutes);
 
 // Logger
 app.use("/api/logger", loggerRoutes);
+
+// swagger doc
+const { swaggerServe, swaggerSetup } = require("./config");
+app.use("/api-docs", swaggerServe, swaggerSetup);
 
 const port = 8800;
 

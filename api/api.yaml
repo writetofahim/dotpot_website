@@ -1,0 +1,1596 @@
+openapi: 3.0.0
+
+info:
+  title: Dotpot iT Website API Documentation
+  description: Optional multiline or single-line description in [CommonMark](http://commonmark.org/help/) or HTML.
+  version: 1.0 
+  
+
+servers:
+  - url: http://localhost:8800/
+    description:  Local server 
+  - url: https://dotpotit.com/
+    description:  Pre Production server
+  - url: https://dotpotit.com/
+    description:  Production server
+  
+ 
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: Bearer
+
+  responses:
+    ServerError:
+      description: Internal server error occurred
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                description: A description of the error that occurred
+              code:
+                type: integer
+                description: The HTTP status code associated with the error (e.g. 500)
+    Unauthorized:
+      description: Unauthorized access to the API
+      headers:
+        WWW-Authenticate:
+          description: 'Required for 401 responses'
+          schema:
+            type: string
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    BadRequest:
+      description: The request is invalid or missing required parameters
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: The requested resource was not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+
+  schemas:
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+          description: A human-readable description of the error
+        code:
+          type: integer
+          description: An error code that uniquely identifies the error
+      required:
+        - message
+        - code
+    User:
+      type: object
+      properties:
+        _id:
+          type: string
+        username:
+          type: string
+        email:
+          type: string
+        photo:
+          type: string
+        dateOfBirth:
+          type: string
+          format: date
+        role:
+          type: string
+        fullName:
+          type: string
+        phoneNumber:
+          type: string
+        address:
+          type: string
+        resetToken:
+          type: string
+        resetTokenExpiration:
+          type: string
+          format: date-time
+      required:
+        - username
+        - email
+        - password
+    Blog:
+      type: object
+      properties:
+        title:
+          type: string
+          required: true
+        slug:
+          type: string
+        author:
+          type: string
+          format: objectid
+          description: Reference to the User model
+        body:
+          type: string
+          required: true
+        tags:
+          type: array
+          items:
+            type: string
+        categories:
+          type: array
+          items:
+            type: string
+        image:
+          type: string
+          required: true
+        isPublished:
+          type: boolean
+      timestamps:
+        type: boolean
+    ClientReview:
+      type: object
+      properties:
+        client_id:
+          type: string
+          format: uuid
+          description: The ID of the client who submitted the response
+        name:
+          type: string
+          description: The name of the person who submitted the response
+        email:
+          type: string
+          format: email
+          description: The email address of the person who submitted the response
+        phone:
+          type: string
+          description: The phone number of the person who submitted the response
+        whatsapp:
+          type: string
+          description: The WhatsApp number of the person who submitted the response
+        skype:
+          type: string
+          description: The Skype username of the person who submitted the response
+        linkedin:
+          type: string
+          description: The LinkedIn profile URL of the person who submitted the response
+        budget:
+          type: number
+          description: The budget of the client who submitted the response
+        attachment:
+          type: string
+          description: The URL of the attachment submitted by the client
+        message:
+          type: string
+          description: The message submitted by the client
+    Conversation:
+      type: object
+      properties:
+        _id:
+          type: string
+          description: The unique identifier of the conversation.
+        creator:
+          type: string
+          description: The username of the conversation creator.
+        participant:
+          type: string
+          description: The username of the conversation participant.
+        createdAt:
+          type: string
+          format: date-time
+          description: The timestamp when the conversation was created.
+        updatedAt:
+          type: string
+          format: date-time
+          description: The timestamp when the conversation was last updated.
+
+    Message:
+      type: object
+      properties:
+        _id:
+          type: string
+          description: The unique identifier of the message.
+        conversation_id:
+          type: string
+          description: The unique identifier of the conversation this message belongs to.
+        sender:
+          type: string
+          description: The username of the message sender.
+        receiver:
+          type: string
+          description: The username of the message receiver.
+        text:
+          type: string
+          description: The text content of the message.
+        attachment:
+          type: string
+          description: The URL of any attachment included in the message.
+        isVisitorSeen:
+          type: boolean
+          description: Indicates whether the visitor has seen this message.
+        isAdminSeen:
+          type: boolean
+          description: Indicates whether the admin has seen this message.
+        createdAt:
+          type: string
+          format: date-time
+          description: The timestamp when the message was created.
+        updatedAt:
+          type: string
+          format: date-time
+          description: The timestamp when the message was last updated.
+    Job:
+      type: object
+      required:
+        - title
+        - company
+      properties:
+        title:
+          type: string
+          description: The title of the job.
+        company:
+          type: string
+          description: The name of the company offering the job.
+        location:
+          type: string
+          description: The location of the job.
+        description:
+          type: string
+          description: A description of the job.
+        responsibilities:
+          type: array
+          items:
+            type: string
+          description: A list of job responsibilities.
+        qualifications:
+          type: array
+          items:
+            type: string
+          description: A list of job qualifications.
+        experience:
+          type: array
+          items:
+            type: string
+          description: A list of required job experience.
+        education:
+          type: array
+          items:
+            type: string
+          description: A list of required education or certifications.
+        howToApply:
+          type: string
+          description: Instructions on how to apply for the job.
+        salary:
+          type: object
+          properties:
+            min:
+              type: number
+              description: The minimum salary for the job.
+            max:
+              type: number
+              description: The maximum salary for the job.
+          description: The salary range for the job.
+        benefits:
+          type: array
+          items:
+            type: string
+          description: A list of benefits offered by the job.
+        isRemote:
+          type: boolean
+          description: Whether the job is remote or not.
+        isFullTime:
+          type: boolean
+          description: Whether the job is full-time or not.
+      example:
+        title: Senior Developer
+        company: Acme Inc.
+        location: Los Angeles, CA
+        description: We are seeking a Senior Developer to join our team.
+        responsibilities:
+          - Write clean, maintainable code
+          - Collaborate with cross-functional teams to analyze, design, and ship new features
+        qualifications:
+          - Bachelor's degree in Computer Science or related field
+          - 5+ years of experience in software development
+        experience:
+          - Node.js
+          - React
+          - MongoDB
+        education:
+          - AWS certification
+        howToApply: Please send your resume and cover letter to jobs@acmeinc.com.
+        salary:
+          min: 100000
+          max: 150000
+        benefits:
+          - Health insurance
+          - 401(k) matching
+        isRemote: true
+        isFullTime: true
+    JobApplication:
+      type: object
+      properties:
+        jobId:
+          type: string
+          description: The ID of the job this application belongs to
+        companyName:
+          type: string
+          description: The name of the company this application is for
+          example: "Acme Corporation"
+        companyLogo:
+          type: string
+          description: URL of the company's logo
+        jobTitle:
+          type: string
+          description: The title of the job being applied for
+          example: "Web Developer"
+        name:
+          type: string
+          description: The name of the applicant
+          example: "John Doe"
+        email:
+          type: string
+          format: email
+          description: The email address of the applicant
+          example: "john.doe@example.com"
+        phone:
+          type: string
+          description: The phone number of the applicant
+          example: "555-555-5555"
+        resume:
+          type: string
+          description: URL of the applicant's resume
+        address:
+          type: string
+          description: The address of the applicant
+          example: "123 Main St"
+        education:
+          type: string
+          description: The education of the applicant
+          example: "Bachelor's Degree in Computer Science"
+        experience:
+          type: string
+          description: The work experience of the applicant
+          example: "5 years of experience as a full-stack developer"
+        coverLetter:
+          type: string
+          description: The cover letter of the applicant
+          example: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..."
+        socialMediaUrls:
+          type: object
+          description: URLs to the applicant's social media profiles
+          example:
+            twitter: "https://twitter.com/johndoe"
+            linkedin: "https://www.linkedin.com/in/johndoe"
+          additionalProperties:
+            type: string
+      required:
+        - companyName
+        - jobTitle
+
+    OurPartner:
+      type: object
+      required:
+        - companyName
+        - logo
+        - websiteUrl
+      properties:
+        companyName:
+          type: string
+          description: The name of the partner company.
+        logo:
+          type: string
+          format: binary
+          description: The logo image file of the partner company.
+        websiteUrl:
+          type: string
+          description: The URL of the partner company's website.
+      example:
+        companyName: "Dotpot iT"
+        logo: <binary data>
+        websiteUrl: "https://www.dotpotit.com"
+
+    
+info:
+  title: Auth API
+  version: 1.0.0
+tags:
+  - name: Auth
+    description: Authentication APIs
+
+info:
+  title: User API
+  version: 1.0.0
+  description: API for managing user accounts
+tags:
+  - name: User
+    description: Endpoints for managing user accounts
+
+info:
+  title: Blog API
+  version: 1.0.0
+  description: API for managing blogs
+
+tags:
+  - name: Blog
+    description: Operations related to blog posts
+
+info:
+  title: Chats API
+  version: 1.0.0
+  description: API for managing chats
+
+tags:
+  - name: Chats
+    description: API for managing chat conversations
+
+paths:
+  /api/auth/register:
+    post:
+      tags:
+        - Auth
+      summary: Register user
+      description: Registers a new user.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: Token and user object are returned on successful registration
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
+                  user:
+                    $ref: '#/components/schemas/User'
+        '400':
+          description: User already exists or invalid input provided
+  /api/auth/login:
+    post:
+      tags:
+        - Auth
+      summary: Login user
+      description: Logs in a user and returns a JWT token
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: Token and user object are returned on successful login
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
+                  user:
+                    $ref: '#/components/schemas/User'
+        '400':
+          description: Invalid email or password
+  /api/auth/google:
+    post:
+      tags:
+        - Auth
+      summary: Sign up using Google
+      description: Sign up a user using their Google account.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                code:
+                  type: string
+      responses:
+        '200':
+          description: Token and user object are returned on successful signup
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
+                  user:
+                    $ref: '#/components/schemas/User'
+        '401':
+          description: Unauthorized access
+  /api/auth/reset-password:
+    post:
+      tags:
+        - Auth
+      summary: Request password reset
+      description: Requests a password reset and sends an email to the user with a reset link.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+      responses:
+        '200':
+          description: Email sent successfully
+        '400':
+          description: User not found
+  /api/auth/reset-password/{resetToken}:
+    post:
+      tags:
+        - Auth
+      summary: Verify password reset token
+      description: Verifies a password reset token and sets a new password.
+      parameters:
+        - in: path
+          name: resetToken
+          required: true
+          description: Token generated for password reset
+          schema:
+            type: string
+      requestBody:
+        description: New password for the user
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                newPassword:
+                  type: string
+                  required: true
+      responses:
+        '200':
+          description: Password reset successful
+        '400':
+          description: Invalid token or password format
+        '404':
+          description: Token not found
+
+  /api/user:
+    get:
+      tags:
+        - User
+      summary: Get current user
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '401':
+          description: Unauthorized
+        '404':
+          description: User not found
+    put:
+      tags:
+        - User
+      summary: Update user profile
+      security:
+        - BearerAuth: []
+      requestBody:
+        description: User object to update
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '401':
+          description: Unauthorized
+        '404':
+          description: User not found
+    delete:
+      tags:
+        - User
+      summary: Delete user
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+        '404':
+          description: User not found
+  /api/user/all:
+    get:
+      tags:
+        - User
+      summary: Get all users (admin only)
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: page
+          in: query
+          description: Page number to retrieve
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+        - name: limit
+          in: query
+          description: Maximum number of users to retrieve per page
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 10
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '401':
+          description: Unauthorized
+  /api/blog:
+    get:
+      tags:
+        - Blog
+      summary: Get a paginated list of all blog posts
+      parameters:
+        - in: query
+          name: page
+          description: The page number to retrieve (default: 1)
+          schema:
+            type: integer
+        - in: query
+          name: limit
+          description: The number of posts to retrieve per page (default: 10)
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: A list of blog posts
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  totalBlogs:
+                    type: integer
+                    description: The total number of blog posts in the database
+                  totalPages:
+                    type: integer
+                    description: The total number of pages of blog posts based on the page size and total number of posts
+                  currentPage:
+                    type: integer
+                    description: The current page number of the retrieved posts
+                  blogs:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Blog'
+        '500':
+          $ref: '#/components/responses/ServerError'
+    post:
+      tags:
+        - Blog
+      summary: Create a new blog post
+      requestBody:
+        description: The blog post to create
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Blog'
+      responses:
+        '201':
+          description: The created blog post
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Blog'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/ServerError'
+    
+  /api/blog/{id}:
+    get:
+      tags:
+        - Blog
+      summary: Get a blog post by ID
+      parameters:
+        - in: path
+          name: id
+          description: The ID of the blog post to retrieve
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The retrieved blog post
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Blog'
+        '404':
+          description: Blog post not found
+        '500':
+          $ref: '#/components/responses/ServerError'
+    patch:
+      tags:
+        - Blog
+      summary: Update a blog post by ID
+      parameters:
+        - in: path
+          name: id
+          description: The ID of the blog post to update
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: The updated blog post
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Blog'
+      responses:
+        '200':
+          description: The updated blog post
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Blog'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          description: Blog post not found
+        '500':
+          $ref: '#/components/responses/ServerError'
+    delete:
+      tags:
+        - Blog
+      summary: Delete a blog post by ID
+      parameters:
+        - in: path
+          name: id
+          description: The unique ID of the blog post to be deleted
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Blog post deleted successfully
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          description: Blog post not found
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+  /api/client_review:
+    get:
+      tags:
+        - Client_review
+      summary: Get all client reviews
+      parameters:
+        - in: query
+          name: page
+          schema:
+            type: integer
+            default: 1
+          description: The page number to retrieve
+        - in: query
+          name: limit
+          schema:
+            type: integer
+            default: 10
+          description: The number of reviews per page to retrieve
+      responses:
+        '200':
+          description: A list of client reviews
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  reviews:
+                    type: integer
+                    description: The total number of client reviews
+                  totalPages:
+                    type: integer
+                    description: The total number of pages of reviews
+                  currentPage:
+                    type: integer
+                    description: The current page number
+                  clientReviews:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ClientReview'
+    post:
+      tags:
+        - Client_review
+      summary: Create a new client review
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ClientReview'
+      responses:
+        '201':
+          description: The created client review
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClientReview'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /api/client_review/{id}:
+    get:
+      tags:
+        - Client_review
+      summary: Get a client review by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: The ID of the client review to retrieve
+      responses:
+        '200':
+          description: The client review
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClientReview'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/ServerError'
+    put:
+      tags:
+        - Client_review
+      summary: Update a client review by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: The ID of the client review to update
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ClientReview'
+      responses:
+        '200':
+          description: The updated client review
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClientReview'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/ServerError'
+    delete:
+      tags:
+        - Client_review
+      summary: Delete a client review by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+
+  /api/chats:
+      get:
+        summary: Get all chats
+        description: Get a paginated list of all chats with last messages and admin unseen message count.
+        tags:
+          - Admin_Chats
+        parameters:
+          - in: query
+            name: page
+            schema:
+              type: integer
+            description: The page number to retrieve. Defaults to 1 if not provided.
+        responses:
+          "200":
+            description: OK
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    chats:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          _id:
+                            type: string
+                          creator:
+                            type: string
+                          participant:
+                            type: string
+                          updatedAt:
+                            type: string
+                          createdAt:
+                            type: string
+                          lastMessage:
+                            type: object
+                            properties:
+                              _id:
+                                type: string
+                              conversation_id:
+                                type: string
+                              sender:
+                                type: string
+                              receiver:
+                                type: string
+                              text:
+                                type: string
+                              isAdminSeen:
+                                type: boolean
+                              createdAt:
+                                type: string
+                              updatedAt:
+                                type: string
+                          adminUnseenCount:
+                            type: integer
+                    totalChatsCount:
+                      type: integer
+                    currentPage:
+                      type: integer
+        security:
+          - BearerAuth: []
+
+      post:
+        summary: Create a new chat
+        description: Create a new chat conversation between a visitor and an admin.
+        tags:
+          - Public_Chats
+        requestBody:
+          description: Chat object to be created.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  creator:
+                    type: string
+                  participant:
+                    type: string
+                required:
+                  - creator
+                  - participant
+        responses:
+          "201":
+            description: Created
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    _id:
+                      type: string
+                    conversation_id:
+                      type: string
+                    sender:
+                      type: string
+                    receiver:
+                      type: string
+                    text:
+                      type: string
+                    isAdminSeen:
+                      type: boolean
+                    createdAt:
+                      type: string
+                    updatedAt:
+                      type: string
+        security:
+          - BearerAuth: []
+  /api/chats/totalAdminUnseen:
+    get:
+      tags:
+        - Admin_Chats
+      summary: Get the total number of unread messages for admin
+      produces:
+        - application/json
+      security:
+        - BearerAuth : []
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              count:
+                type: integer
+                description: Total number of unread messages for admin
+
+  /api/chats/{conversationId}/messages:
+    get:
+      tags:
+        - Public_Chats
+      summary: Get messages for a chat by ID
+      parameters:
+        - in: path
+          name: conversationId
+          required: true
+          type: string
+          description: ID of the conversation
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              messages:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Message'
+
+    post:
+      tags:
+        - Public_Chats
+      summary: Add a new message to a chat
+      parameters:
+        - in: path
+          name: conversationId
+          required: true
+          type: string
+          description: ID of the conversation
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            properties:
+              text:
+                type: string
+                description: Text of the message
+              attachment:
+                type: string
+                description: URL of the attachment
+              isOrder:
+                type: boolean
+                description: Indicates if the message is an order
+      produces:
+        - application/json
+      responses:
+        '201':
+          description: Successful response
+          schema:
+            $ref: '#/components/schemas/Message'
+
+  /api/chats/{conversationId}/messages/admin:
+    get:
+      tags:
+        - Admin_Chats
+      summary: Get messages for a chat by ID (for admin)
+
+      security:
+        - BearerAuth : []
+        
+      parameters:
+        - in: path
+          name: conversationId
+          required: true
+          type: string
+          description: ID of the conversation
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              messages:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Message'
+
+  /api/chats/{conversationId}/reply:
+    post:
+      tags:
+        - Admin_Chats
+      summary: Reply to a chat
+      security:
+        - BearerAuth: []
+      parameters:
+        - in: path
+          name: conversationId
+          required: true
+          type: string
+          description: ID of the conversation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                text:
+                  type: string
+                  description: Text of the message
+                attachment:
+                  type: string
+                  description: URL of the attachment
+      produces:
+        - application/json
+      responses:
+        '201':
+          description: Successful response
+          schema:
+            $ref: '#/components/schemas/Message'
+  /api/chats/{conversationId}:
+    delete:
+      tags:
+        - Admin_Chats
+      summary: Delete a conversation with messages and attachments
+      security:
+        - BearerAuth: []
+      parameters:
+        - in: path
+          name: conversationId
+          required: true
+          type: string
+          description: ID of the conversation to delete
+      responses:
+        '204':
+          description: Conversation deleted successfully
+        '404':
+          description: Conversation not found
+        '500':
+          description: Internal server error
+  /api/job:
+    get:
+      tags:
+        - Job
+      summary: Retrieve a list of jobs
+      description: Retrieves jobs from the database with pagination based on the query parameters.
+      parameters:
+        - name: page
+          in: query
+          type: integer
+          description: The page number to retrieve. Defaults to 1 if not specified.
+        - name: limit
+          in: query
+          type: integer
+          description: The number of jobs to retrieve per page. Defaults to 10 if not specified.
+      produces:
+        - application/json
+      responses:
+        200:
+          description: A list of jobs and metadata about the pagination.
+          schema:
+            type: object
+            properties:
+              totalJobs:
+                type: integer
+                description: The total number of jobs in the database.
+              totalPages:
+                type: integer
+                description: The total number of pages based on the limit and total number of jobs.
+              currentPage:
+                type: integer
+                description: The current page number.
+              jobs:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Job'
+
+    post:
+      tags:
+        - Job
+      summary: Create a new job
+      description: Creates a new job in the database.
+      parameters:
+        - name: job
+          in: body
+          description: The job object to create.
+          required: true
+          schema:
+            $ref: '#/components/schemas/Job'
+      produces:
+        - application/json
+      responses:
+        200:
+          description: The created job.
+          schema:
+            $ref: '#/components/schemas/Job'
+
+  /api/job/{id}:
+    get:
+      tags:
+        - Job
+      summary: Retrieve a job by ID
+      description: Retrieves a job from the database by its ID.
+      parameters:
+        - name: id
+          in: path
+          type: string
+          description: The ID of the job to retrieve.
+          required: true
+      produces:
+        - application/json
+      responses:
+        200:
+          description: The retrieved job.
+          schema:
+            $ref: '#/components/schemas/Job'
+        404:
+          description: The specified job was not found.
+
+    put:
+      tags:
+        - Job
+      summary: Update a job by ID
+      security:
+        - BearerAuth: []
+      description: Updates a job in the database by its ID.
+      parameters:
+        - name: id
+          in: path
+          type: string
+          description: The ID of the job to update.
+          required: true
+        - name: job
+          in: body
+          description: The updated job object.
+          required: true
+          schema:
+            $ref: '#/components/schemas/Job'
+      produces:
+        - application/json
+      responses:
+        200:
+          description: The updated job.
+          schema:
+            $ref: '#/components/schemas/Job'
+        404:
+          description: The specified job was not found.
+
+    delete:
+      tags:
+        - Job
+      summary: Delete a job by ID
+      description: Deletes a job from the database by its ID.
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          type: string
+          description: The ID of the job to delete
+
+  /api/job_application:
+    post:
+      tags:
+        - Job Application
+      summary: Create a job application
+      security:
+        - BearerAuth: []
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: jobApplication
+          description: The job application to create
+          schema:
+            $ref: '#/components/schemas/JobApplication'
+      responses:
+        '201':
+          description: Job application created successfully
+          schema:
+            $ref: '#/components/schemas/JobApplication'
+        '500':
+          description: Internal server error
+    get:
+      tags:
+        - Job Application
+      summary: Get all job applications
+      produces:
+        - application/json
+      parameters:
+        - in: query
+          name: page
+          type: integer
+          description: The page number to retrieve
+        - in: query
+          name: limit
+          type: integer
+          description: The number of job applications to retrieve per page
+      responses:
+        '200':
+          description: Job applications retrieved successfully
+          schema:
+            $ref: '#/components/schemas/JobApplication'
+        '500':
+          description: Internal server error
+  /api/job_application/{id}:
+    get:
+      tags:
+        - Job Application
+      summary: Get a specific job application by ID
+      produces:
+        - application/json
+      parameters:
+        - in: path
+          name: id
+          type: string
+          required: true
+          description: The ID of the job application to retrieve
+      responses:
+        '200':
+          description: Job application retrieved successfully
+          schema:
+            $ref: '#/components/schemas/JobApplication'
+        '404':
+          description: Job application not found
+        '500':
+          description: Internal server error
+    put:
+      tags:
+        - Job Application
+      summary: Update a job application by ID
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      security:
+        - BearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          type: string
+          required: true
+          description: The ID of the job application to update
+        - in: body
+          name: jobApplication
+          description: The job application data to update
+          schema:
+            $ref: '#/components/schemas/JobApplication'
+      responses:
+        '200':
+          description: Job application updated successfully
+          schema:
+            $ref: '#/components/schemas/JobApplication'
+        '404':
+          description: Job application not found
+        '500':
+          description: Internal server error
+    delete:
+      tags:
+        - Job Application
+      summary: Delete a job application by ID
+      produces:
+        - application/json
+      security:
+        - BearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          type: string
+          required: true
+          description: The ID of the job application to delete
+      responses:
+        '200':
+          description: Job application deleted successfully
+        '404':
+          description: Job application not found
+        '500':
+          description: Internal server error
+  
+  /api/our_partner:
+    get:
+      summary: Get all partners
+      tags:
+        - Partner
+      parameters:
+        - name: page
+          in: query
+          description: Page number to retrieve
+          type: integer
+          required: false
+        - name: limit
+          in: query
+          description: Maximum number of partners per page
+          type: integer
+          required: false
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              ourPartners:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OurPartner'
+              totalPages:
+                type: integer
+              currentPage:
+                type: integer
+              totalOurPartners:
+                type: integer
+    post:
+      summary: Create a new partner
+      tags:
+        - Partner
+      parameters:
+        - name: partner
+          in: body
+          description: Partner object to create
+          schema:
+            $ref: '#/definitions/OurPartnerInput'
+      security:
+        - adminAuth: []
+      responses:
+        '201':
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+              data:
+                $ref: '#/components/schemas/OurPartner'
+        '400':
+          description: Bad request
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+              message:
+                type: string
+
+  /api/our_partner/{id}:
+    get:
+      summary: Get a specific partner by ID
+      tags:
+        - Partner
+      parameters:
+        - name: id
+          in: path
+          description: ID of the partner to retrieve
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+              data:
+                $ref: '#/components/schemas/OurPartner'
+        '400':
+          description: Bad request
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+              message:
+                type: string
+        '404':
+          description: Partner not found
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+              message:
+                type: string
+
+    put:
+      summary: Update a partner by ID
+      tags:
+        - Partner
+      parameters:
+        - name: id
+          in: path
+          description: ID of the partner to update
+          required: true
+          type: string
+        - name: partner
+          in: body
+          description: Partner object to update
+          schema:
+            $ref: '#/definitions/OurPartnerInput'
+      security:
+        - adminAuth: []
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+              data:
+                $ref: '#/components/schemas/OurPartner'
+        '400':
+          description: Bad request
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+              message:
+                type: string
+        '404':
+          description: Not found
+    delete:
+      tags:
+        - Partner
+      summary: Delete a partner by ID
+      produces:
+        - application/json
+      security:
+        - BearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          type: string
+          required: true
+          description: The ID of the partner to delete
+      responses:
+        '200':
+          description: Our partner deleted successfully
+        '404':
+          description: Our partner not found
+        '500':
+          description: Internal server error

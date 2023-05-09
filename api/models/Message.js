@@ -1,35 +1,37 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const messageSchema = new mongoose.Schema({
+const messageSchema = new mongoose.Schema(
+  {
     conversation_id: {
-        type: mongoose.Types.ObjectId,
-        ref: "Conversation"
+      type: mongoose.Types.ObjectId,
+      ref: "Conversation",
     },
     sender: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
     receiver: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
     },
     text: {
-        type: String,
+      type: String,
     },
     attachment: {
-        type: String,
-    }
-    ,
+      type: String,
+    },
     isVisitorSeen: {
-        type: Boolean,
-        default: false
+      type: Boolean,
+      default: false,
     },
     isAdminSeen: {
-        type: Boolean,
-        default: false
-    }
-}, { timestamps: true });
+      type: Boolean,
+      default: false,
+    },
+  },
+  { timestamps: true }
+);
 
-const Message = mongoose.model('Message', messageSchema);
+const Message = mongoose.model("Message", messageSchema);
 
 module.exports = Message;
