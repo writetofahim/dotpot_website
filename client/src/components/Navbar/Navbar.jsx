@@ -414,8 +414,8 @@ const Navbar = () => {
                     key={i}
                     className="px-5 flex group/item gap-2 items-center w-full hover:scale-105 duration-100 cursor-pointer relative lg:text-gray-400"
                   >
-                    <img  width={20} src={service.icon} alt="" />
-                    <Submenu 
+                    <img width={20} src={service.icon} alt="" />
+                    <Submenu
                       service={service}
                       selectedSubmenu={selectedSubmenu}
                       setSelectedSubmenu={setSelectedSubmenu}
@@ -476,11 +476,10 @@ const Navbar = () => {
             </NavLink>
 
             {/* adding team nav as per asif sir */}
-            
-                {/* <li className="mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-secondary-400 lg:text-gray-400">
+
+            {/* <li className="mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-secondary-400 lg:text-gray-400">
                   <a href="#team">Team</a>
                 </li> */}
-             
 
             {!user ? (
               <NavLink to="/login">
@@ -521,10 +520,11 @@ const Navbar = () => {
               />
             )}
 
+            {/* Mobile Menu */}
             {toggleMenu && (
               <ul
                 className="z-10 fixed -top-0 -right-2 p-3 w-[70vw] h-screen shadow-2xl lg:hidden list-none
-                    flex flex-col justify-start items-center rounded-lg backdrop-blur-md bg-[#ffffff79] text-gray-500 animate-slide-in"
+                    flex flex-col justify-start items-center rounded-lg bg-primary-100/70 backdrop-blur-3xl text-gray-500 animate-slide-in"
               >
                 <li className="text-xl w-full my-7 flex justify-end relative">
                   <AiOutlineClose
