@@ -82,11 +82,11 @@ var settings = {
 
 export const SingleSlide = (props) => {
   return (
-    <div className="mx-5 mb-20 rounded-lg shadow-xl ">
+    <div className="mx-5 mb-20 rounded-lg shadow-xl">
       <img
         src={`${import.meta.env.REACT_APP_SERVER_PATH}/${props.image}`}
         alt=""
-        className="rounded-tl-xl rounded-tr-xl w-full aspect-video object-contain bg-primary-100"
+        className="rounded-tl-xl rounded-tr-xl w-full aspect-video object-contain bg-secondary-100"
       />
       <div className=" bg-background-500 rounded-bl-xl rounded-br-xl shadow p-5 flex flex-col">
         <Stack direction="row" className="flex flex-wrap gap-1">
