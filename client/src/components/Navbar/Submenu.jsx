@@ -32,7 +32,7 @@ const Submenu = ({
               className="w-[200px] hover:text-secondary-400 flex gap-2 items-center"
             >
               {" "}
-              <img className="w-4 bg-primary-500" src={item.icon} alt="" /> {item.title}
+              <img className="w-4 " src={item.icon} alt="" /> {item.title}
             </Link>
           ))}
         </div>
