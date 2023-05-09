@@ -1,15 +1,73 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import customImg from "../../assets/img/custom-software-development.jpg";
+import ReactVisibilitySensor from "react-visibility-sensor";
+import agencyweb from "../../assets/img/agencyweb.png";
+import blogweb from "../../assets/img/blogweb.png";
+import coverweb from "../../assets/img/coverweb.png";
+import customappweb from "../../assets/img/customappweb.png";
+import ecommarceweb from "../../assets/img/ecommarceweb.png";
 import Footer from "../../components/Footer/Footer";
+import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 
 const CustomDevelopment = () => {
+  const worksData = [
+    {
+      id: 1,
+      title: "Tailored Solutions",
+      description:
+        "At Dotpot iT, we offer tailored web solutions that match your unique vision and goals. 🎯 Our team of experts works closely with you to create a custom website that captures your brand identity and engages your target audience. 🌟 From layout to visuals, functionality to user experience, we meticulously craft every element to reflect your business values and objectives. 💡 Stand out from the competition and make a lasting impression with a website that's as unique as your business. Let's bring your vision to life! 💻✨",
+      illustration: ecommarceweb,
+    },
+    {
+      id: 2,
+      title: "Stunning Visuals",
+      description:
+        "At Dotpot iT, we create visually stunning websites that leave a lasting impression. 🌟 Our talented team combines creativity and technical expertise to craft captivating web solutions that align with your brand. 🎨 Elevate your online presence with a website that grabs attention and communicates your message effectively. Let's wow your audience with stunning visuals! 💻✨",
+      illustration: agencyweb,
+    },
+    {
+      id: 3,
+      title: "User-Friendly Experience",
+      description:
+        "At Dotpot iT, we're all about user-friendly experiences. 🙌 With intuitive navigation, seamless interactions, and responsive designs, we ensure a smooth journey for your visitors. 💡 We prioritize accessibility and optimization for all devices, enhancing user satisfaction and engagement. 🚀🌈 Let's create a website that keeps them coming back for more!",
+      illustration: blogweb,
+    },
+    {
+      id: 4,
+      title: "Responsive Design",
+      description:
+        "At Dotpot iT, we prioritize responsive design. 📱💻 Your website will look great and work seamlessly on any device. From smartphones to desktops, we ensure an optimal user experience. Let's create a responsive website that leaves a lasting impression!",
+      illustration: customappweb,
+    },
+    {
+      id: 5,
+      title: "Cutting-Edge Technologies",
+      description:
+        "At Dotpot iT, we stay ahead with cutting-edge technologies. ⚡🚀 Our team of experts is well-versed in the latest tools and frameworks to bring your website to life. We harness the power of technology to deliver a modern and innovative web experience. Let's build your website with the latest tech trends and elevate your online presence!",
+      illustration: customappweb,
+    },
+    {
+      id: 6,
+      title: "SEO Optimization",
+      description:
+        "At Dotpot iT, we ensure your website gets noticed. 🔍✨ Our SEO optimization strategies will help your website rank higher in search engine results, attracting more organic traffic and potential customers. We implement the best practices in keyword research, on-page optimization, and metadata optimization to improve your website's visibility. Let us optimize your website for search engines and drive targeted traffic to your business!",
+      illustration: customappweb,
+    },
+    {
+      id: 7,
+      title: "Ongoing Support",
+      description:
+        "At Dotpot iT, we're with you every step of the way! 🤝 Our support doesn't end after your website launch. We provide ongoing assistance, updates, and maintenance to keep your site running smoothly. With us, you'll have peace of mind knowing that our team is here to support you whenever you need it. Let us handle the technicalities while you focus on growing your business! 💪",
+      illustration: customappweb,
+    },
+  ];
+
   useScrollToTop();
   return (
-    <div>
+    <div className="bg-background-500">
       <Helmet>
         <title>Coustom Development | Dotpot iT</title>
         <meta
@@ -44,209 +102,307 @@ const CustomDevelopment = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="pt-[15vh] pb-10 container mx-auto">
+      <div
+        className={` md:pt-[15vh] pt-[15vh] ${
+          window.innerWidth > 1280 && "md:pt-[11vh]"
+        } `}
+      >
         <NavigatorComponent navigationData={navigationData} />
         <div>
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 text-textColor-500 text-center">
-            Coustom Development
-          </h1>
-          <p className="text-lg text-gray-400 text-center mb-10">
-            custom web design and development service
-          </p>
-        </div>
-        <div className="max-w-4xl mx-auto p-4">
-          <img src={customImg} alt="Product image" />
-        </div>
-        <div className="my-12 lg:mx-24 mx-6">
-          <h2 className="lg:text-2xl text-xl font-bold mb-4">Overview</h2>
-          <div className="text-gray-400 flex flex-col gap-5 py-2 lg:px-5 text-justify">
-            <p>
-              Custom web development involves the creation of unique, bespoke
-              websites and web applications that are specifically designed to
-              meet the needs and requirements of a particular business or
-              organization. This is in contrast to off-the-shelf website
-              templates or platforms that are designed to be used by a wide
-              range of businesses.
-            </p>
-
-            <p>
-              One of the primary benefits of custom web development is that it
-              allows businesses to create a website that is tailored to their
-              specific needs and requirements. This can help businesses achieve
-              their goals more effectively and differentiate themselves from
-              their competitors.
-            </p>
-          </div>
-          <div className="pt-6">
-            <h2 className="lg:text-2xl text-xl font-bold mb-4 ">
-              Benefits of working with Dotpot IT
-            </h2>
-            <p className="text-gray-400 lg:px-5 text-justify pb-2">
-              Working with Dotpot IT for web design and development services
-              offers businesses in the Custom web development industry a range
-              of benefits, including customized web solutions, improved online
-              visibility, user-friendly websites, e-commerce integration, expert
-              support, and increased business growth.
-            </p>
-            <ul className="list-disc list-inside">
-              <li className="text-gray-400 mb-2 lg:px-10 px-3">
-                <strong className="font-semibold">
-                  Tailored to business needs:
-                </strong>
-                <br />
-                <p className="px-2">
-                  One of the biggest advantages of custom web design and
-                  development is that the website is designed and developed
-                  specifically to meet the unique needs and requirements of the
-                  business. This ensures that the website is optimized for the
-                  business's goals and objectives, and can help to differentiate
-                  the business from its competitors.
-                </p>
-              </li>
-              <li className="text-gray-400 mb-2 lg:px-10 px-3">
-                <strong className="font-semibold">Unique design:</strong>
-                <br />
-                <p className="px-2">
-                  Custom web design allows businesses to create a unique and
-                  memorable online presence that reflects their branding and
-                  values. This can help to establish the business's identity and
-                  build brand recognition, which can be critical in today's
-                  crowded digital landscape.
-                </p>
-              </li>
-              <li className="text-gray-400 mb-2 lg:px-10 px-3">
-                <strong className="font-semibold">Responsive design:</strong>
-                <br />
-                <p className="px-2">
-                  Custom web development allows businesses to create websites
-                  that are optimized for all devices, including desktops,
-                  laptops, tablets, and smartphones. This ensures that the
-                  website looks and functions well across all devices, providing
-                  a seamless user experience for visitors.
-                </p>
-              </li>
-              <li className="text-gray-400 mb-2 lg:px-10 px-3">
-                <strong className="font-semibold">Scalability: </strong>
-                <br />
-                <p className="px-2">
-                  Custom web development allows businesses to create websites
-                  that can easily scale as their needs grow and evolve. This can
-                  help to future-proof the website and ensure that it remains
-                  effective in the long term.
-                </p>
-              </li>
-              <li className="text-gray-400 mb-2 lg:px-10 px-3">
-                <strong className="font-semibold">
-                  {" "}
-                  Search engine optimization (SEO):
-                </strong>
-                <br />
-                <p className="px-2">
-                  Custom web development can include optimized content and
-                  design elements that help to improve search engine rankings.
-                  This can help to increase visibility and drive more traffic to
-                  the website, which can ultimately result in more leads and
-                  conversions.
-                </p>
-              </li>
-              <li className="text-gray-400 mb-2 lg:px-10 px-3">
-                <strong className="font-semibold">Security:</strong>
-                <br />
-                <p className="px-2">
-                  Custom web development allows businesses to implement robust
-                  security measures that protect against cyber threats and
-                  safeguard sensitive information. This is especially important
-                  for businesses that collect and store customer data, such as
-                  ecommerce businesses.
-                </p>
-              </li>
-
-              <li className="text-gray-400 mb-2 lg:px-10 px-3">
-                <strong className="font-semibold">Expert support: </strong>
-                <br />
-                <p className="px-2">
-                  Dotpot provides expert website maintenance and support
-                  services, ensuring that our clients' websites remain
-                  up-to-date, secure, and fully functional.
-                </p>
-              </li>
-            </ul>
-          </div>
-          <div className="pt-6 flex flex-col gap-5">
-            <h2 className="lg:text-2xl text-xl font-bold mb-2">
-              Why we wil be your best choice?
-            </h2>
-            <p className="text-gray-400 lg:px-5 text-justify">
-              Dotpot IT is a top choice for businesses in the custom web design
-              and development service industry looking for web design and
-              development services. With years of experience and expertise in
-              this industry, Dotpot IT offers customized web solutions that
-              cater to the unique needs of each client. Our team of web
-              developers and designers uses cutting-edge technology and modern
-              design trends to create visually appealing, user-friendly, and
-              responsive websites that are optimized for search engines. We also
-              offer e-commerce website development services that help businesses
-              in this industry sell their products and services online. Our web
-              design and Development websites/application are secure, easy to
-              use
-            </p>
-            <p className="text-gray-400 lg:px-5 text-justify">
-              What sets Dotpot IT apart is its commitment to providing
-              high-quality, customer-focused web solutions. We work closely with
-              our clients to understand their goals and objectives and provide
-              customized solutions that help them achieve their business
-              objectives and grow their online presence. Our expert support team
-              also provides website maintenance and support services to ensure
-              that our clients' websites remain up-to-date, secure, and fully
-              functional. By partnering with Dotpot IT, user experience, and
-              customer engagement, leading to increased business growth and
-              revenue.
-            </p>
-            <p className="text-gray-400 lg:px-5 text-justify">
-              custom software development can provide a range of benefits for
-              businesses, helping them to improve their efficiency,
-              productivity, and competitive advantage. Choosing the right custom
-              software development services provider can ensure that you achieve
-              your business goals and objectives effectively and efficiently.
-            </p>
-          </div>
-
-          {/* <div className=" border-b h-52 w-full md:w-4/5 mx-auto my-5  rounded-xl border flex justify-center items-center shadow-md overflow-hidden relative">
-            <div className=" flex justify-center items-center">
-              <div className="w-96 absolute">
-                <div className="absolute top-0 -left-4 w-52 h-52  bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-                <div className="absolute top-0 -right-4 w-52 h-52  bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-                <div className="absolute -bottom-8 left-20 w-52 h-52  bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-              </div>
-
-              <div className="flex flex-col gap-5">
-                <h3 className="text-center text-purple-500 font-bold text-xl ">
-                  Get Your Idea from Here!
-                </h3>
-                <h3 className="text-center text-purple-500 font-semibold">
-                  "The Experts Are Just A Click Away. Get A Quote."
-                </h3>
-
-                <Link
-                  to="/services"
-                  className="  w-52 h-10 flex items-center justify-center rounded-md bg-secondary-500 mx-auto hover:scale-105 transition-all shadow-sm"
-                >
-                  <div className="flex justify-center items-center gap-3">
-                    <p className="text-white font-semibold">Contact With Us</p>
-                    <BsArrowRightCircleFill className="text-white hover:cursor-pointer" />
+          {/* Banner */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`mt-10 mb-16 ${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                    } duration-1000 `}
+                  >
+                    <div className="container mx-auto">
+                      <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
+                        <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
+                          <h2 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
+                            Custom Web Design & Development
+                          </h2>
+                          <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
+                            Dotpot iT has you covered! Our talented team of
+                            designers and developers will bring your vision to
+                            life with stunning visuals and a user-friendly
+                            interface. Whether it's a portfolio site or an
+                            e-commerce platform, we'll deliver impressive
+                            results. Let's create something extraordinary
+                            together! 💪🌐
+                          </p>
+                        </div>
+                        <img
+                          src={coverweb}
+                          alt=""
+                          className="w-full md:w-1/2 lg:w-1/2"
+                        />
+                      </div>
+                    </div>
                   </div>
-                </Link>
+                </>
+              )}
+            </ReactVisibilitySensor>
+          </div>
+
+          {/* body */}
+          <div className="container mx-auto w-full overflow-hidden">
+            <>
+              <div className={`flex flex-col gap-5`}>
+                {worksData.map(({ id, title, description, illustration }) => (
+                  <div
+                    className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
+                  >
+                    <div
+                      className={`w-full md:w-1/2 lg:w-1/2 ${
+                        id % 2 === 0 && "order-2"
+                      } `}
+                    >
+                      <ReactVisibilitySensor partialVisibility>
+                        {({ isVisible }) => (
+                          <div
+                            className={` ${
+                              isVisible
+                                ? "opacity-100 translate-y-0"
+                                : "translate-y-20 opacity-0"
+                            } duration-1000 `}
+                          >
+                            <h1 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
+                              {title}
+                            </h1>
+                            <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">
+                              {description}
+                            </p>
+                          </div>
+                        )}
+                      </ReactVisibilitySensor>
+                    </div>
+                    <ReactVisibilitySensor partialVisibility>
+                      {({ isVisible }) => (
+                        <div
+                          className={`w-full md:w-1/2 lg:w-1/2 ${
+                            id % 2 === 0 && "order-1"
+                          } ${
+                            isVisible
+                              ? "opacity-100 translate-y-0"
+                              : "translate-y-20 opacity-0"
+                          } duration-1000 `}
+                        >
+                          <img
+                            className="w-4/5 mx-auto"
+                            src={illustration}
+                            alt=""
+                          />
+                        </div>
+                      )}
+                    </ReactVisibilitySensor>
+                  </div>
+                ))}
               </div>
+            </>
+          </div>
+
+          {/* Technologies We Use */}
+          {/* <div className="bg-primary-100 py-16">
+            <div className="container mx-auto ">
+              <ReactVisibilitySensor partialVisibility>
+                {({ isVisible }) => (
+                  <>
+                    <div
+                      className={`${
+                        isVisible
+                          ? "opacity-100 translate-y-0"
+                          : "translate-y-20 opacity-0"
+                      } duration-1000 p-3 text-textColor-500`}
+                    >
+                      <h1 className="lg:text-3xl md:text-3xl text-xl font-bold text-center">
+                        Technologies We Use
+                      </h1>
+                      <img
+                        className="w-64  mx-auto pb-14"
+                        src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"
+                        alt=""
+                      />
+                      <div className="flex flex-col md:flex-col lg:flex-row items-center justify-center">
+                        <div className="text-center md:text-center lg:text-left w-full lg:w-1/2 px-3 pb-10">
+                          <h2 className="lg:text-3xl md:text-2xl text-xl font-bold mb-5">
+                            We build Using Latest Technologies
+                          </h2>
+                          <p className="md:text-base text-xs text-gray-400 text-justify">
+                            At Dotpot IT, we specialize in creating powerful and
+                            user-friendly e-commerce websites that enable
+                            businesses to thrive in the digital marketplace.
+                            With our expertise in e-commerce development and a
+                            deep understanding of consumer behavior, we craft
+                            tailored solutions that drive online sales, enhance
+                            customer experiences, and boost your bottom line.
+                          </p>
+                        </div>
+                        <div className="lg:w-1/2 w-full flex flex-col items-center justify-center gap-10">
+                          <div className="flex gap-10 flex-wrap justify-center">
+                            <img
+                              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                              alt="html"
+                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all"
+                            />
+                            <img
+                              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                              alt="css"
+                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all"
+                            />
+                            <img
+                              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg"
+                              alt="tailwind"
+                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all"
+                            />
+                            <img
+                              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
+                              alt="bootstarp"
+                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all"
+                            />
+                            <img
+                              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                              alt="js"
+                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all"
+                            />
+                            <img
+                              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                              alt="react"
+                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all"
+                            />
+                            <img
+                              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-line.svg"
+                              alt="next"
+                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all"
+                            />
+                            <img
+                              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg"
+                              alt="vue"
+                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all"
+                            />
+                            <img
+                              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"
+                              alt="angular"
+                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all"
+                            />
+                            <img
+                              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+                              alt="express"
+                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all"
+                            />
+                            <img
+                              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                              alt="node"
+                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all"
+                            />
+                            <img
+                              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                              alt="mongo"
+                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all"
+                            />
+                            <img
+                              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                              alt="mysql"
+                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all"
+                            />
+                            <img
+                              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-plain.svg"
+                              alt="php"
+                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all"
+                            />
+                            <img
+                              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg"
+                              alt="laravel"
+                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all"
+                            />
+                            <img
+                              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                              alt="python"
+                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all"
+                            />
+                            <img
+                              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg"
+                              alt="django"
+                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all"
+                            />
+                            <img
+                              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg"
+                              alt="wordpress"
+                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all"
+                            />
+                            <img
+                              src={shopify}
+                              alt="shopify"
+                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                )}
+              </ReactVisibilitySensor>
             </div>
           </div> */}
+
+          {/* Why Dotpot iT */}
+          <div className="py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                    } duration-1000 p-3 text-textColor-500`}
+                  >
+                    <h1 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
+                      Why Dotpot iT
+                    </h1>
+                    <img
+                      className="w-64 mx-auto"
+                      src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"
+                      alt=""
+                    />
+                    <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
+                      Dotpot iT offers affordable web design services using the
+                      latest technologies. With a focus on delivering visually
+                      appealing and user-friendly websites, they specialize in
+                      e-commerce platforms such as Shopify, WooCommerce, and
+                      Magento. Their experienced team is committed to providing
+                      high-quality design solutions that exceed clients'
+                      expectations and exceptional customer service throughout
+                      the process. Choose Dotpot iT for innovative web design
+                      that helps your business thrive.
+                    </p>
+                  </div>
+                </>
+              )}
+            </ReactVisibilitySensor>
+          </div>
+
+          {/* Get in Touch */}
+          <div className="bg-primary-100">
+            <GetAQuote />
+          </div>
         </div>
       </div>
-      <Footer />
+
+      <div className="">
+        <Footer />
+      </div>
     </div>
   );
 };
 
 export default CustomDevelopment;
+
 const navigationData = [
   { title: "Services", link: "/services" },
   { title: "Custom-Web-Development", link: "/web-development/custom-website" },

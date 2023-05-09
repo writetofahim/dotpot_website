@@ -11,7 +11,6 @@ The component includes a SingleSlide function that creates a single slide for th
 Finally, the RecentWorksSlider function maps over the blogData array to create a slider with multiple SingleSlide components.
  */
 
-import { Chip } from "@mui/material";
 import { Stack } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import { BsArrowRight } from "react-icons/bs";
@@ -87,7 +86,7 @@ export const SingleSlide = (props) => {
       <img
         src={`${import.meta.env.REACT_APP_SERVER_PATH}/${props.image}`}
         alt=""
-        className="rounded-tl-xl rounded-tr-xl w-full aspect-video object-cover"
+        className="rounded-tl-xl rounded-tr-xl w-full aspect-video object-contain bg-primary-100"
       />
       <div className=" bg-background-500 rounded-bl-xl rounded-br-xl shadow p-5 flex flex-col">
         <Stack direction="row" className="flex flex-wrap gap-1">
@@ -100,7 +99,10 @@ export const SingleSlide = (props) => {
             //   className="hover:border cursor-pointer"
             // />
 
-            <div key={index} className="border border-border  rounded-full px-2 ">
+            <div
+              key={index}
+              className="border border-border  rounded-full px-2 "
+            >
               <p className="text-textColor-500 text-xs p-1 ">{tag}</p>
             </div>
           ))}

@@ -119,7 +119,7 @@ export const SingleSlide = (props) => {
             ))}
         </div>
       </div>
-      <div className="mt-0 group-hover:translate-y-3 lg:translate-y-14 translate-y-10 duration-300 custom-shadow lg:h-[250px] ">
+      <div className="mt-0 md:group-hover:translate-y-3 lg:translate-y-14 md:translate-y-10 translate-y-2 duration-300 custom-shadow lg:h-[250px] ">
         <img
           src={`${import.meta.env.REACT_APP_SERVER_PATH}/${props.image}`}
           alt=""
