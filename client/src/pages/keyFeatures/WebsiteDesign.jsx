@@ -53,7 +53,7 @@ const WebsiteDesign = () => {
 
   useScrollToTop();
   return (
-    <div className="">
+    <div className="bg-background-500">
       <Helmet>
         <title>Website Design | Dotpot iT</title>
         <meta
@@ -102,7 +102,7 @@ const WebsiteDesign = () => {
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
                         <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
-                          <h2 className="text-xl md:text-3xl lg:text-5xl font-bold">Website Design</h2>
+                          <h2 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">Website Design</h2>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
                           Website design is the process of creating the visual layout and user interface of a website, with a focus on enhancing the user experience and achieving business goals. It involves technical expertise, creative skills, and an understanding of user behavior.
                           </p>
@@ -131,7 +131,7 @@ const WebsiteDesign = () => {
                       <ReactVisibilitySensor partialVisibility>
                       {({isVisible})=>(<div className={`md:flex justify-center items-center gap-x-20 font-work p-5 `}>
                       <div className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"}`}>
-                        <h1 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5">
+                        <h1 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
                           {title}
                         </h1>
                         <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">{description}</p>
@@ -158,7 +158,7 @@ const WebsiteDesign = () => {
                       className={`${isVisible
                         ? "opacity-100 translate-y-0"
                         : "translate-y-20 opacity-0"
-                        } duration-1000 p-3`}
+                        } duration-1000 p-3 text-textColor-500`}
                     >
                       <h1 className="lg:text-3xl md:text-3xl text-xl font-bold text-center">
                         Technologies We Use
@@ -205,7 +205,7 @@ const WebsiteDesign = () => {
                     className={`${isVisible
                       ? "opacity-100 translate-y-0"
                       : "translate-y-20 opacity-0"
-                      } duration-1000 p-3`}
+                      } duration-1000 p-3 text-textColor-500`}
                   >
                     <h1 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
                       Why Dotpot iT
