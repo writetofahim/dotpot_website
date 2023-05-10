@@ -15,6 +15,47 @@ servers:
     description:  Production server
   
  
+definitions:
+  Technology:
+    type: object
+    properties:
+      title:
+        type: string
+      sdes:
+        type: string
+      icon:
+        type: string
+      cost:
+        type: number
+  Addon:
+    type: object
+    properties:
+      title:
+        type: string
+      sdes:
+        type: string
+      icon:
+        type: string
+      cost:
+        type: number
+  Service:
+    type: object
+    properties:
+      title:
+        type: string
+        required: true
+      icon:
+        type: string
+      technologies:
+        type: array
+        items:
+          $ref: "#/definitions/Technology"
+      addons:
+        type: array
+        items:
+          $ref: "#/definitions/Addon"
+    required:
+      - title
 components:
   securitySchemes:
     BearerAuth:
@@ -1594,3 +1635,111 @@ paths:
           description: Our partner not found
         '500':
           description: Internal server error
+  /api/service:
+    post:
+      summary: Create a new service
+      tags:
+        - Service
+      parameters: []
+      security:
+        - adminAuth: []
+      responses:
+        201:
+          description: Service created successfully
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+              service:
+                $ref: "#/definitions/Service"
+        500:
+          description: Something went wrong
+    get:
+      summary: Get all services
+      tags:
+        - Service
+      parameters: []
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+            properties:
+              totalServices:
+                type: integer
+              totalPages:
+                type: integer
+              currentPage:
+                type: integer
+              services:
+                type: array
+                items:
+                  $ref: "#/definitions/Service"
+        500:
+          description: Something went wrong
+  /api/service/{id}:
+    get:
+      summary: Get a specific service by ID
+      tags:
+        - Service
+      parameters:
+        - name: id
+          in: path
+          description: Service ID
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: "#/definitions/Service"
+        404:
+          description: Service not found
+        500:
+          description: Something went wrong
+    put:
+      summary: Update a service by ID
+      tags:
+        - Service
+      security:
+        - adminAuth: []
+      parameters:
+        - name: id
+          in: path
+          description: Service ID
+          required: true
+          type: string
+      responses:
+        200:
+          description: Service updated successfully
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+              service:
+                $ref: "#/definitions/Service"
+        404:
+          description: Service not found
+        500:
+          description: Something went wrong
+    delete:
+      summary: Delete a service by ID
+      tags:
+        - Service
+      security:
+        - adminAuth: []
+      parameters:
+        - name: id
+          in: path
+          description: Service ID
+          required: true
+          type: string
+      responses:
+        200:
+          description: Service deleted successfully
+        404:
+          description: Service not found
+        500:
+          description: Something went wrong
