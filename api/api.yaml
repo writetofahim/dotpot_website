@@ -2,8 +2,9 @@ openapi: 3.0.0
 
 info:
   title: Dotpot iT Website API Documentation
-  description: Optional multiline or single-line description in [CommonMark](http://commonmark.org/help/) or HTML.
-  version: 1.0 
+  description: This API documentation provides details about the endpoints and functionality of the Dotpot iT Website API. The API allows users to manage colors for the website, including creating new colors, updating existing colors, retrieving color information, and deleting colors. Colors are represented by the Color schema, which includes various color properties such as background, primary, secondary, buttonText, textColor, gray, border, particleColor, name, and selected. The API provides both public and private routes for accessing and managing colors. The API version is 1.0.
+  version: 1.0
+
   
 
 servers:
@@ -56,6 +57,292 @@ definitions:
           $ref: "#/definitions/Addon"
     required:
       - title
+  
+  Hero:
+    type: object
+    properties:
+      title:
+        type: string
+        description: The title of the hero
+      subtitle:
+        type: string
+        description: The subtitle of the hero
+      description:
+        type: string
+        description: The description of the hero
+      button_text:
+        type: string
+        description: The button text of the hero
+      button_link:
+        type: string
+        description: The button link of the hero
+      image:
+        type: string
+        description: The image URL of the hero
+    required:
+      - title
+      - subtitle
+      - description
+      - image
+
+  ContactCenterService:
+    type: object
+    properties:
+      title:
+        type: string
+        description: The title of the contact center service
+      subtitle:
+        type: string
+        description: The subtitle of the contact center service
+      description:
+        type: string
+        description: The description of the contact center service
+      icon:
+        type: string
+        description: The icon of the contact center service
+      link:
+        type: string
+        description: The link of the contact center service
+    required:
+      - title
+      - icon
+
+  CompanyInfo:
+    type: object
+    properties:
+      name:
+        type: string
+        description: The name of the company
+      primary_logo:
+        type: string
+        description: The URL of the primary logo
+      secondary_logo:
+        type: string
+        description: The URL of the secondary logo
+      address:
+        type: string
+        description: The address of the company
+      slogan:
+        type: string
+        description: The slogan of the company
+      logo:
+        type: string
+        description: The URL of the logo
+      logo_dark:
+        type: string
+        description: The URL of the dark version of the logo
+      phone:
+        type: array
+        items:
+          type: string
+        description: An array of phone numbers
+      email:
+        type: array
+        items:
+          type: string
+        description: An array of email addresses
+      about:
+        type: string
+        description: A description of the company
+      video_link:
+        type: string
+        description: The URL of a video link
+      image_link:
+        type: string
+        description: The URL of an image link
+      other_info:
+        type: string
+        description: Other information about the company
+    required:
+      - name
+      - primary_logo
+      - secondary_logo
+      - logo
+
+  ClientResponse:
+    type: object
+    properties:
+      client_id:
+        type: string
+        description: The ID of the client
+      name:
+        type: string
+        description: The name of the client
+      email:
+        type: string
+        description: The email of the client
+      phone:
+        type: string
+        description: The phone number of the client
+      whatsapp:
+        type: string
+        description: The WhatsApp number of the client
+      skype:
+        type: string
+        description: The Skype ID of the client
+      linkedin:
+        type: string
+        description: The LinkedIn profile URL of the client
+      budget:
+        type: number
+        description: The budget of the client
+      attachment:
+        type: string
+        description: The attachment file path
+      message:
+        type: string
+        description: The message from the client
+    required:
+      - client_id
+      - name
+      - email
+      - phone
+      - message
+
+  KeyFeature:
+    type: object
+    properties:
+      title:
+        type: string
+        description: The title of the key feature
+      subtitle:
+        type: string
+        description: The subtitle of the key feature
+      description:
+        type: string
+        description: The description of the key feature
+      icon:
+        type: string
+        description: The icon of the key feature
+      link:
+        type: string
+        description: The link of the key feature
+    required:
+      - title
+      - icon
+      
+  PartnershipModel:
+    type: object
+    properties:
+      title:
+        type: string
+        description: The title of the partnership model
+        required: true
+      description:
+        type: string
+        description: The description of the partnership model
+      icon:
+        type: string
+        description: The icon of the partnership model
+        required: true
+      subtitle:
+        type: string
+        description: The subtitle of the partnership model
+      link:
+        type: string
+        description: The link of the partnership model
+    required:
+      - title
+      - icon
+
+  WhoWeWorkWith:
+    type: object
+    properties:
+      title:
+        type: string
+        description: The title of the Who We Work With item
+        required: true
+      description:
+        type: string
+        description: The description of the Who We Work With item
+      icon:
+        type: string
+        description: The icon of the Who We Work With item
+        required: true
+      subtitle:
+        type: string
+        description: The subtitle of the Who We Work With item
+      link:
+        type: string
+        description: The link of the Who We Work With item
+    required:
+      - title
+      - icon
+
+  Color:
+    type: object
+    properties:
+      colors:
+        type: object
+        properties:
+          background:
+            type: object
+            properties:
+              "500":
+                type: string
+          primary:
+            type: object
+            properties:
+              "100":
+                type: string
+              "200":
+                type: string
+              "300":
+                type: string
+              "400":
+                type: string
+              "500":
+                type: string
+              "600":
+                type: string
+          secondary:
+            type: object
+            properties:
+              "100":
+                type: string
+              "200":
+                type: string
+              "300":
+                type: string
+              "400":
+                type: string
+              "500":
+                type: string
+              "600":
+                type: string
+          buttonText:
+            type: object
+            properties:
+              "500":
+                type: string
+          textColor:
+            type: object
+            properties:
+              "500":
+                type: string
+          gray:
+            type: object
+            properties:
+              "200":
+                type: string
+              "300":
+                type: string
+              "400":
+                type: string
+              "500":
+                type: string
+              "800":
+                type: string
+          border:
+            type: string
+          particleColor:
+            type: string
+      name:
+        type: string
+      selected:
+        type: boolean
+
+
 components:
   securitySchemes:
     BearerAuth:
@@ -436,7 +723,420 @@ components:
         logo: <binary data>
         websiteUrl: "https://www.dotpotit.com"
 
-    
+    SocialMedia:
+      type: object
+      properties:
+        platform:
+          type: string
+          enum:
+            - Facebook
+            - Twitter
+            - Instagram
+            - LinkedIn
+            - YouTube
+            - Pinterest
+            - TikTok
+            - Snapchat
+            - Whatsapp
+          description: The platform of the social media account
+          example: Facebook
+        username:
+          type: string
+          description: The username of the social media account
+        url:
+          type: string
+          description: The URL of the social media account
+          example: https://www.facebook.com/example
+        icon:
+          type: string
+          description: The icon of the social media account
+      required:
+        - platform
+        - url
+      additionalProperties: false
+    SocialMediaResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          description: Indicates if the operation was successful
+          example: true
+        message:
+          type: string
+          description: A descriptive message about the operation
+          example: Social media account created successfully
+        socialMedia:
+          $ref: '#/components/schemas/SocialMedia'
+          description: The social media account data
+      required:
+        - success
+      additionalProperties: false   
+    SocialMediaRequest:
+      type: object
+      properties:
+        platform:
+          type: string
+          enum: [Facebook, Twitter, Instagram, LinkedIn, YouTube, Pinterest, TikTok, Snapchat, Whatsapp]
+          description: The platform of the social media account
+        username:
+          type: string
+          description: The username of the social media account
+        url:
+          type: string
+          description: The URL of the social media account
+        icon:
+          type: string
+          description: The icon associated with the social media account
+      required:
+        - platform
+        - url
+      additionalProperties: false
+
+    TeamMemberRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the team member
+        title:
+          type: string
+          description: The title of the team member
+        bio:
+          type: string
+          description: The bio of the team member
+        image:
+          type: string
+          description: The image URL of the team member
+        email:
+          type: string
+          description: The email of the team member
+        phone:
+          type: string
+          description: The phone number of the team member
+        socialMediaUrls:
+          type: object
+          additionalProperties:
+            type: string
+          description: URLs of social media accounts associated with the team member
+        link:
+          type: string
+          description: The link associated with the team member
+      required:
+        - name
+        - title
+        - image
+
+    Work:
+      type: object
+      properties:
+        _id:
+          type: string
+          description: The ID of the work
+        title:
+          type: string
+          description: The title of the work
+        description:
+          type: string
+          description: The description of the work
+        image:
+          type: string
+          description: The image URL of the work
+        link:
+          type: string
+          description: The link of the work
+        technologies:
+          type: array
+          items:
+            type: string
+          description: The technologies used in the work
+        client:
+          type: string
+          description: The client of the work
+        clientLink:
+          type: string
+          description: The client link of the work
+        startDate:
+          type: string
+          format: date-time
+          description: The start date of the work
+        endDate:
+          type: string
+          format: date-time
+          description: The end date of the work
+        status:
+          type: string
+          enum:
+            - Pending
+            - In Progress
+            - Completed
+          description: The status of the work
+        assignedTo:
+          type: string
+          description: The ID of the user assigned to the work
+        createdBy:
+          type: string
+          description: The ID of the user who created the work
+      required:
+        - title
+        - image
+      example:
+        _id: 61234567890abcdef123456
+        title: Example Work
+        description: This is an example work.
+        image: https://example.com/work.jpg
+        link: https://example.com/work
+        technologies:
+          - HTML
+          - CSS
+          - JavaScript
+        client: Example Client
+        clientLink: https://example.com/client
+        startDate: '2022-01-01T00:00:00Z'
+        endDate: '2022-02-01T00:00:00Z'
+        status: In Progress
+        assignedTo: 61234567890abcdef123456
+        createdBy: 61234567890abcdef123456
+
+    UpdateWorkRequest:
+      type: object
+      properties:
+        title:
+          type: string
+          description: The updated title of the work
+        description:
+          type: string
+          description: The updated description of the work
+        image:
+          type: string
+          description: The updated image URL of the work
+        link:
+          type: string
+          description: The updated link of the work
+        technologies:
+          type: array
+          items:
+            type: string
+          description: The updated technologies used in the work
+        client:
+          type: string
+          description: The updated client of the work
+        clientLink:
+          type: string
+          description: The updated client link of the work
+        startDate:
+          type: string
+          format: date-time
+          description: The updated start date of the work
+        endDate:
+          type: string
+          format: date-time
+          description: The updated end date of the work
+        status:
+          type: string
+          enum:
+            - Pending
+            - In Progress
+            - Completed
+          description: The updated status of the work
+        assignedTo:
+          type: string
+          description: The updated ID of the user assigned to the work
+      example:
+        title: Updated Work Title
+        description: Updated work description.
+        image: https://example.com/updated-work.jpg
+        link: https://example.com/updated-work
+        technologies:
+          - Updated HTML
+          - Updated CSS
+          - Updated JavaScript
+        client: Updated Client
+        clientLink: https://example.com/updated-client
+        startDate: '2022-03-01T00:00:00Z'
+        endDate: '2022-04-01T00:00:00Z'
+        status: Completed
+        assignedTo: 61234567890abcdef123456
+
+    WorkResponse:
+      type: object
+      properties:
+        _id:
+          type: string
+          description: The ID of the work
+        title:
+          type: string
+          description: The title of the work
+        description:
+          type: string
+          description: The description of the work
+        image:
+          type: string
+          description: The image URL of the work
+        link:
+          type: string
+          description: The link of the work
+        technologies:
+          type: array
+          items:
+            type: string
+          description: The technologies used in the work
+        client:
+          type: string
+          description: The client of the work
+        clientLink:
+          type: string
+          description: The client link of the work
+        startDate:
+          type: string
+          format: date-time
+          description: The start date of the work
+        endDate:
+          type: string
+          format: date-time
+          description: The end date of the work
+        status:
+          type: string
+          enum:
+            - Pending
+            - In Progress
+            - Completed
+          description: The status of the work
+        assignedTo:
+          type: string
+          description: The ID of the user assigned to the work
+        createdBy:
+          type: string
+          description: The ID of the user who created the work
+        createdAt:
+          type: string
+          format: date-time
+          description: The creation timestamp of the work
+        updatedAt:
+          type: string
+          format: date-time
+          description: The last update timestamp of the work
+      example:
+        _id: 611111111111111111111111
+        title: Sample Work
+        description: Sample work description.
+        image: https://example.com/sample-work.jpg
+        link: https://example.com/sample-work
+        technologies:
+          - HTML
+          - CSS
+          - JavaScript
+        client: Sample Client
+        clientLink: https://example.com/sample-client
+        startDate: '2022-01-01T00:00:00Z'
+        endDate: '2022-02-01T00:00:00Z'
+        status: Completed
+        assignedTo: 61234567890abcdef123456
+        createdBy: 60987654321fedcba098765
+        createdAt: '2021-08-10T12:34:56Z'
+        updatedAt: '2021-08-20T09:12:34Z'
+
+    CreateWorkRequest:
+      type: object
+      properties:
+        title:
+          type: string
+          description: The title of the work
+          example: Sample Work
+          minLength: 1
+          maxLength: 100
+        description:
+          type: string
+          description: The description of the work
+          example: Sample work description.
+        image:
+          type: string
+          description: The image URL of the work
+          example: https://example.com/sample-work.jpg
+        link:
+          type: string
+          description: The link of the work
+          example: https://example.com/sample-work
+        technologies:
+          type: array
+          items:
+            type: string
+          description: The technologies used in the work
+          example:
+            - HTML
+            - CSS
+            - JavaScript
+        client:
+          type: string
+          description: The client of the work
+          example: Sample Client
+          minLength: 1
+          maxLength: 100
+        clientLink:
+          type: string
+          description: The client link of the work
+          example: https://example.com/sample-client
+        startDate:
+          type: string
+          format: date-time
+          description: The start date of the work
+          example: '2022-01-01T00:00:00Z'
+        endDate:
+          type: string
+          format: date-time
+          description: The end date of the work
+          example: '2022-02-01T00:00:00Z'
+        status:
+          type: string
+          enum:
+            - Pending
+            - In Progress
+            - Completed
+          description: The status of the work
+          example: Completed
+      required:
+        - title
+        - image
+        - status
+      example:
+        title: Sample Work
+        description: Sample work description.
+        image: https://example.com/sample-work.jpg
+        link: https://example.com/sample-work
+        technologies:
+          - HTML
+          - CSS
+          - JavaScript
+        client: Sample Client
+        clientLink: https://example.com/sample-client
+        startDate: '2022-01-01T00:00:00Z'
+        endDate: '2022-02-01T00:00:00Z'
+        status: Completed
+
+    Order:
+      type: object
+      properties:
+        client_id:
+          type: string
+          description: The ID of the client associated with the order.
+        total_cost:
+          type: number
+          description: The total cost of the order.
+        selected_items:
+          type: object
+          description: The selected items for the order.
+        status:
+          type: string
+          enum:
+            - Pending
+            - Active
+            - Delivered
+            - Cancelled
+          default: Pending
+          description: The status of the order.
+      required:
+        - total_cost
+        - selected_items
+
 info:
   title: Auth API
   version: 1.0.0
@@ -448,9 +1148,10 @@ info:
   title: User API
   version: 1.0.0
   description: API for managing user accounts
+
 tags:
-  - name: User
-    description: Endpoints for managing user accounts
+  - name: Work Api
+    description: Endpoints for managing Works
 
 info:
   title: Blog API
@@ -469,6 +1170,15 @@ info:
 tags:
   - name: Chats
     description: API for managing chat conversations
+
+info:
+  title: Order API
+  version: 1.0.0
+  description: API for managing order
+
+tags:
+  - name: Order Api
+    description: API for managing order
 
 paths:
   /api/auth/register:
@@ -1743,3 +2453,1488 @@ paths:
           description: Service not found
         500:
           description: Something went wrong
+
+  /api/socialmedia:
+    post:
+      tags:
+        - Social Media
+      summary: Create a new social media account
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SocialMediaRequest'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SocialMediaResponse'
+        '500':
+          description: Internal server error
+
+    get:
+      tags:
+        - Social Media
+      summary: Get all social media accounts
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SocialMediaResponse'
+        '500':
+          description: Internal server error
+
+  /api/socialmedia/{id}:
+    get:
+      tags:
+        - Social Media
+      summary: Get a specific social media account by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: ID of the social media account
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SocialMediaResponse'
+        '404':
+          description: Social media account not found
+        '500':
+          description: Internal server error
+
+    put:
+      tags:
+        - Social Media
+      summary: Update a social media account by ID
+      security:
+        - BearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: ID of the social media account
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SocialMediaRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SocialMediaResponse'
+        '404':
+          description: Social media account not found
+        '500':
+          description: Internal server error
+
+    delete:
+      tags:
+        - Social Media
+      summary: Delete a social media account by ID
+      security:
+        - BearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: ID of the social media account
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        '404':
+          description: Social media account not found
+        '500':
+          description: Internal server error
+
+
+
+  /api/team_member:
+    post:
+      tags:
+        - Team Member
+      summary: Create a new team member
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TeamMemberRequest'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TeamMemberResponse'
+        '500':
+          description: Internal Server Error
+    get:
+      tags:
+        - Team Member
+      summary: Get all team members
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TeamMemberListResponse'
+        '500':
+          description: Internal Server Error
+
+  /api/team_member/{id}:
+    get:
+      tags:
+        - Team Member
+      summary: Get a specific team member by ID
+      parameters:
+        - name: id
+          in: path
+          description: ID of the team member
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TeamMemberResponse'
+        '404':
+          description: Team member not found
+        '500':
+          description: Internal Server Error
+    put:
+      tags:
+        - Team Member
+      summary: Update a team member by ID
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          description: ID of the team member
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TeamMemberRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TeamMemberResponse'
+        '404':
+          description: Team member not found
+        '500':
+          description: Internal Server Error
+    delete:
+      tags:
+        - Team Member
+      summary: Delete a team member by ID
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          description: ID of the team member
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Team member deleted successfully
+        '404':
+          description: Team member not found
+        '500':
+          description: Internal Server Error
+
+  /api/work:
+    post:
+      tags:
+        - Work Api
+      summary: Create a work
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateWorkRequest'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkResponse'
+        '500':
+          description: Internal Server Error
+    get:
+      tags:
+        - Work Api
+      summary: Get all works
+      parameters:
+        - in: query
+          name: page
+          schema:
+            type: integer
+          description: The page number to retrieve. Defaults to 1 if not specified.
+        - in: query
+          name: limit
+          schema:
+            type: integer
+          description: The number of works to retrieve per page. Defaults to 10 if not specified.
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Work'
+        '500':
+          description: Internal Server Error
+
+  /work/{id}:
+    get:
+      tags:
+        - Work Api
+      summary: Get a specific work by ID
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          description: ID of the work
+          required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkResponse'
+        '404':
+          description: Work not found
+        '500':
+          description: Internal Server Error
+    put:
+      tags:
+        - Work Api
+      summary: Update a work by ID
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateWorkRequest'
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          description: ID of the work
+          required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkResponse'
+        '404':
+          description: Work not found
+        '500':
+          description: Internal Server Error
+    delete:
+      tags:
+        - Work Api
+      summary: Delete a work by ID
+      security:
+        - BearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          description: ID of the work
+          required: true
+      responses:
+        '200':
+          description: Work deleted successfully
+        '404':
+          description: Work not found
+        '500':
+          description: Internal Server Error
+
+  /api/order:
+    post:
+      tags:
+        - Order Api
+      summary: Create a new order
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Order'
+      responses:
+        '201':
+          description: Order created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    $ref: '#/components/schemas/Order'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  error:
+                    type: string
+    get:
+      tags:
+        - Order Api
+      summary: Get all orders
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  reviews:
+                    type: number
+                  totalPages:
+                    type: number
+                  currentPage:
+                    type: number
+                  orders:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Order'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+  /api/order/{id}:
+    get:
+      tags:
+        - Order Api
+      summary: Get a specific order by ID
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          description: The ID of the order
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    $ref: '#/components/schemas/Order'
+        '404':
+          description: Order not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  error:
+                    type: string
+    put:
+      tags:
+        - Order Api
+      summary: Update a specific order by ID
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          description: The ID of the order
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: string
+                  enum:
+                    - Pending
+                    - Active
+                    - Delivered
+                    - Cancelled
+              required:
+                - status
+      responses:
+        '200':
+          description: Order updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    $ref: '#/components/schemas/Order'
+        '404':
+          description: Order not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  error:
+                    type: string
+    delete:
+      tags:
+        - Order Api
+      security:
+        - BearerAuth: []
+      summary: Delete a specific order by ID
+      parameters:
+        - name: id
+          in: path
+          description: The ID of the order
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Order deleted successfully
+
+
+  /api/upload:
+    post:
+      tags:
+        - Upload Api
+      summary: Upload file to conversation folder
+      consumes:
+        - multipart/form-data
+      parameters:
+        - name: file
+          in: formData
+          description: The file to upload
+          required: true
+          type: file
+      responses:
+        200:
+          description: File upload successful
+
+    delete:
+      tags:
+        - Upload Api
+      summary: Remove a file
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: filePath
+          in: body
+          description: The file path to remove
+          required: true
+          schema:
+            type: object
+            properties:
+              filePath:
+                type: string
+          responses:
+            200:
+              description: File remove successful
+            500:
+              description: File remove failed
+
+  /api/upload/response:
+    post:
+      tags:
+        - Upload Api
+      summary: Upload file to client response folder
+      consumes:
+        - multipart/form-data
+      parameters:
+        - name: file
+          in: formData
+          description: The file to upload
+          required: true
+          type: file
+      responses:
+        200:
+          description: File upload successful
+
+  /api/upload/resumes:
+    post:
+      tags:
+        - Upload Api
+      summary: Upload file to resume folder
+      consumes:
+        - multipart/form-data
+      parameters:
+        - name: file
+          in: formData
+          description: The file to upload
+          required: true
+          type: file
+      responses:
+        200:
+          description: File upload successful
+
+  /api/upload/blogs:
+    post:
+      tags:
+        - Upload Api
+      summary: Upload file to blogs folder
+      consumes:
+        - multipart/form-data
+      parameters:
+        - name: file
+          in: formData
+          description: The file to upload
+          required: true
+          type: file
+      responses:
+        200:
+          description: File upload successful
+
+
+
+  /api/client_response:
+    post:
+      tags:
+        - Client Response Api
+      summary: Create a new client response
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: Client response object
+          required: true
+          schema:
+            $ref: "#/definitions/ClientResponse"
+      responses:
+        201:
+          description: Created
+        400:
+          description: Bad Request
+
+    get:
+      tags:
+        - Client Response Api
+      summary: Get all client responses
+      security:
+        - BearerAuth: []
+      parameters:
+        - in: query
+          name: page
+          description: The page number to retrieve
+          required: false
+          type: integer
+        - in: query
+          name: limit
+          description: The number of client responses to retrieve per page
+          required: false
+          type: integer
+      responses:
+        200:
+          description: OK
+        500:
+          description: Server Error
+
+  /api/client_response/{id}:
+    get:
+      tags:
+        - Client Response Api
+      summary: Get a specific client response
+      security:
+        - BearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          description: The ID of the client response
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+        404:
+          description: Not Found
+
+    put:
+      tags:
+        - Client Response Api
+      summary: Update a client response
+      security:
+        - BearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          description: The ID of the client response
+          required: true
+          type: string
+        - in: body
+          name: body
+          description: Updated client response object
+          required: true
+          schema:
+            $ref: "#/definitions/ClientResponse"
+      responses:
+        200:
+          description: OK
+        404:
+          description: Not Found
+        400:
+          description: Bad Request
+
+    delete:
+      tags:
+        - Client Response Api
+      summary: Delete a client response
+      security:
+        - BearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          description: The ID of the client response
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+        404:
+          description: Not Found
+        500:
+          description: Server Error
+
+  /api/contact_center_service:
+    post:
+      tags:
+        - Contact Center Service Api
+      summary: Create a new contact center service
+      security:
+        - BearerAuth: []
+      parameters:
+        - in: body
+          name: body
+          description: Contact center service object
+          required: true
+          schema:
+            $ref: "#/definitions/ContactCenterService"
+      responses:
+        201:
+          description: Created
+        500:
+          description: Server Error
+
+    get:
+      tags:
+        - Contact Center Service Api
+      summary: Get all contact center services
+      responses:
+        200:
+          description: OK
+        500:
+          description: Server Error
+
+  /api/contact_center_service/{id}:
+    get:
+      tags:
+        - Contact Center Service Api
+      summary: Get a single contact center service
+      parameters:
+        - in: path
+          name: id
+          description: The ID of the contact center service
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+        404:
+          description: Not Found
+        500:
+          description: Server Error
+
+    put:
+      tags:
+        - Contact Center Service Api
+      summary: Update a contact center service
+      security:
+        - BearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          description: The ID of the contact center service
+          required: true
+          type: string
+        - in: body
+          name: body
+          description: Updated contact center service object
+          required: true
+          schema:
+            $ref: "#/definitions/ContactCenterService"
+      responses:
+        200:
+          description: OK
+        404:
+          description: Not Found
+        500:
+          description: Server Error
+
+    delete:
+      tags:
+        - Contact Center Service Api
+      summary: Delete a contact center service
+      security:
+        - BearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          description: The ID of the contact center service
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+        404:
+          description: Not Found
+        500:
+          description: Server Error
+
+  /api/hero:
+    post:
+      tags:
+        - Hero Section Api
+      summary: Create a new hero
+      security:
+        - BearerAuth: []
+      parameters:
+        - in: body
+          name: body
+          description: Hero object
+          required: true
+          schema:
+            $ref: "#/definitions/Hero"
+      responses:
+        201:
+          description: Created
+        400:
+          description: Bad Request
+
+    get:
+      tags:
+        - Hero Section Api
+      summary: Get all heroes
+      responses:
+        200:
+          description: OK
+        500:
+          description: Server Error
+
+  /api/hero/{id}:
+    get:
+      tags:
+        - Hero Section Api
+      summary: Get a single hero by ID
+      parameters:
+        - in: path
+          name: id
+          description: The ID of the hero
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+        404:
+          description: Not Found
+        500:
+          description: Server Error
+
+    put:
+      tags:
+        - Hero Section Api
+      summary: Update a hero by ID
+      security:
+        - BearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          description: The ID of the hero
+          required: true
+          type: string
+        - in: body
+          name: body
+          description: Updated hero object
+          required: true
+          schema:
+            $ref: "#/definitions/Hero"
+      responses:
+        200:
+          description: OK
+        404:
+          description: Not Found
+        400:
+          description: Bad Request
+
+    delete:
+      tags:
+        - Hero Section Api
+      summary: Delete a hero by ID
+      security:
+        - BearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          description: The ID of the hero
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+        404:
+          description: Not Found
+        500:
+          description: Server Error
+
+
+  /api/info:
+    get:
+      tags:
+        - Info Api
+      summary: Get all company information
+      responses:
+        200:
+          description: OK
+        500:
+          description: Server Error
+
+    post:
+      tags:
+        - Info Api
+      summary: Create a new company information
+      security:
+        - BearerAuth: []
+      parameters:
+        - in: body
+          name: body
+          description: Company information object
+          required: true
+          schema:
+            $ref: "#/definitions/CompanyInfo"
+      responses:
+        201:
+          description: Created
+        400:
+          description: Bad Request
+
+  /api/info/{id}:
+    get:
+      tags:
+        - Info Api
+      summary: Get a single company information by ID
+      parameters:
+        - in: path
+          name: id
+          description: The ID of the company information
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+        404:
+          description: Not Found
+        500:
+          description: Server Error
+
+    put:
+      tags:
+        - Info Api
+      summary: Update company information by ID
+      security:
+        - BearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          description: The ID of the company information
+          required: true
+          type: string
+        - in: body
+          name: body
+          description: Updated company information object
+          required: true
+          schema:
+            $ref: "#/definitions/CompanyInfo"
+      responses:
+        200:
+          description: OK
+        404:
+          description: Not Found
+        400:
+          description: Bad Request
+
+    delete:
+      tags:
+        - Info Api
+      summary: Delete company information by ID
+      security:
+        - BearerAuth: []
+      parameters:
+        - in: path
+          name: id
+          description: The ID of the company information
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+        404:
+          description: Not Found
+        500:
+          description: Server Error
+
+
+  /api/key_feature:
+    get:
+      tags:
+        - Key Feature Api
+      summary: Get all key features
+      responses:
+        200:
+          description: OK
+        500:
+          description: Server Error
+
+    post:
+      summary: Create a new key feature
+      tags:
+        - Key Feature Api
+      parameters:
+        - in: body
+          name: body
+          description: Key feature object
+          required: true
+          schema:
+            $ref: "#/definitions/KeyFeature"
+      responses:
+        201:
+          description: Created
+        400:
+          description: Bad Request
+      security:
+        - BearerAuth: []
+
+  /api/key_feature/{id}:
+    get:
+      summary: Get a single key feature by ID
+      tags:
+        - Key Feature Api
+      parameters:
+        - in: path
+          name: id
+          description: The ID of the key feature
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+        404:
+          description: Not Found
+        500:
+          description: Server Error
+
+    put:
+      summary: Update a single key feature by ID
+      tags:
+        - Key Feature Api
+      parameters:
+        - in: path
+          name: id
+          description: The ID of the key feature
+          required: true
+          type: string
+        - in: body
+          name: body
+          description: Updated key feature object
+          required: true
+          schema:
+            $ref: "#/definitions/KeyFeature"
+      responses:
+        200:
+          description: OK
+        404:
+          description: Not Found
+        400:
+          description: Bad Request
+      security:
+        - BearerAuth: []
+
+    delete:
+      summary: Delete a single key feature by ID
+      tags:
+        - Key Feature Api
+      parameters:
+        - in: path
+          name: id
+          description: The ID of the key feature
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+        404:
+          description: Not Found
+        500:
+          description: Server Error
+      security:
+        - BearerAuth: []
+
+
+  /api/partnership_model:
+    get:
+      summary: Get all partnership models
+      tags:
+        - Partnership Model
+      responses:
+        200:
+          description: OK
+        500:
+          description: Server Error
+
+    post:
+      summary: Create a new partnership model
+      tags:
+        - Partnership Model
+      parameters:
+        - in: body
+          name: body
+          description: Partnership model object
+          required: true
+          schema:
+            $ref: "#/definitions/PartnershipModel"
+      responses:
+        200:
+          description: OK
+        500:
+          description: Server Error
+      security:
+        - BearerAuth: []
+
+  /api/partnership_model/{id}:
+    get:
+      summary: Get a single partnership model by ID
+      tags:
+        - Partnership Model
+      parameters:
+        - in: path
+          name: id
+          description: The ID of the partnership model
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+        404:
+          description: Not Found
+        500:
+          description: Server Error
+
+    put:
+      summary: Update a single partnership model by ID
+      tags:
+        - Partnership Model
+      parameters:
+        - in: path
+          name: id
+          description: The ID of the partnership model
+          required: true
+          type: string
+        - in: body
+          name: body
+          description: Updated partnership model object
+          required: true
+          schema:
+            $ref: "#/definitions/PartnershipModel"
+      responses:
+        200:
+          description: OK
+        404:
+          description: Not Found
+        500:
+          description: Server Error
+      security:
+        - BearerAuth: []
+
+    delete:
+      summary: Delete a single partnership model by ID
+      tags:
+        - Partnership Model
+      parameters:
+        - in: path
+          name: id
+          description: The ID of the partnership model
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+        404:
+          description: Not Found
+        500:
+          description: Server Error
+      security:
+        - BearerAuth: []
+
+  /api/who_we_work_with:
+    get:
+      summary: Get all Who We Work With items
+      tags:
+        - Who We Work With Api 
+      responses:
+        200:
+          description: OK
+        500:
+          description: Server Error
+
+    post:
+      summary: Create a new Who We Work With item
+      tags:
+        - Who We Work With Api
+      parameters:
+        - in: body
+          name: body
+          description: Who We Work With item object
+          required: true
+          schema:
+            $ref: "#/definitions/WhoWeWorkWith"
+      responses:
+        201:
+          description: Created
+        500:
+          description: Server Error
+      security:
+        - BearerAuth: []
+
+  /api/who_we_work_with/{id}:
+    get:
+      summary: Get a single Who We Work With item by ID
+      tags:
+        - Who We Work With Api
+      parameters:
+        - in: path
+          name: id
+          description: The ID of the Who We Work With item
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+        404:
+          description: Not Found
+        500:
+          description: Server Error
+
+    put:
+      summary: Update a single Who We Work With item by ID
+      tags:
+        - Who We Work With Api
+      parameters:
+        - in: path
+          name: id
+          description: The ID of the Who We Work With item
+          required: true
+          type: string
+        - in: body
+          name: body
+          description: Updated Who We Work With item object
+          required: true
+          schema:
+            $ref: "#/definitions/WhoWeWorkWith"
+      responses:
+        200:
+          description: OK
+        404:
+          description: Not Found
+        500:
+          description: Server Error
+      security:
+        - BearerAuth: []
+
+    delete:
+      summary: Delete a single Who We Work With item by ID
+      tags:
+        - Who We Work With Api
+      parameters:
+        - in: path
+          name: id
+          description: The ID of the Who We Work With item
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+        404:
+          description: Not Found
+        500:
+          description: Server Error
+      security:
+        - BearerAuth: []
+
+
+  /api/colors:
+    get:
+      summary: Get all colors
+      description: Retrieve a list of all colors
+      tags:
+        - Color Theme Api
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+              data:
+                type: array
+                items:
+                  $ref: "#/definitions/Color"
+              message:
+                type: string
+    post:
+      tags:
+        - Color Theme Api
+      summary: Create a new color
+      security:
+        - BearerAuth: []
+      description: Create a new color
+      produces:
+        - application/json
+      parameters:
+        - name: color
+          in: body
+          description: Color object
+          required: true
+          schema:
+            $ref: "#/definitions/Color"
+      responses:
+        201:
+          description: Created
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+              data:
+                $ref: "#/definitions/Color"
+              message:
+                type: string
+  /api/colors/{id}:
+    get:
+      tags:
+        - Color Theme Api
+      summary: Get a color by ID
+      description: Retrieve a color by its ID
+      produces:
+        - application/json
+      parameters:
+        - name: id
+          in: path
+          description: Color ID
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+              data:
+                $ref: "#/definitions/Color"
+              message:
+                type: string
+        404:
+          description: Color not found
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+              data:
+                type: null
+              message:
+                type: string
+    put:
+      tags:
+        - Color Theme Api
+      summary: Update a color by ID
+      security:
+        - BearerAuth: []
+      description: Update a color by its ID
+      produces:
+        - application/json
+      parameters:
+        - name: id
+          in: path
+          description: Color ID
+          required: true
+          type: string
+        - name: color
+          in: body
+          description: Color object
+          required: true
+          schema:
+            $ref: "#/definitions/Color"
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+              data:
+                $ref: "#/definitions/Color"
+              message:
+                type: string
+        404:
+          description: Color not found
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+              data:
+                type: null
+              message:
+                type: string
+    delete:
+      tags:
+        - Color Theme Api
+      summary: Delete a color by ID
+      description: Delete a color by its ID
+      security:
+        - BearerAuth: []
+      produces:
+        - application/json
+      parameters:
+        - name: id
+          in: path
+          description: Color ID
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+              data:
+                type: null
+              message:
+                type: string
+        404:
+          description: Color not found
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+              message:
+                type: Color not found
+               
+swagger: "2.0"
+info:
+  title: Logger API
+  description: API for logging messages
+  version: 1.0.0
+host: localhost:3000
+basePath: /api/logger
+schemes:
+  - http
+
+

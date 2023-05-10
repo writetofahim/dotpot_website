@@ -3,11 +3,15 @@ const YAML = require("yamljs");
 const swaggerJSDocs = YAML.load("api.yaml");
 
 const options = {
-  customCss: `img {content:url(\'../logo.svg\'); height:auto;} `,
-  customfavIcon: "../favicon.ico",
-  customSiteTitle: "Code Improve API Doc",
+  customCssUrl: "./custom.css",
+  customJsStr: [
+    'console.log("Hello World")',
+    `
+      var x = 1;
+      console.log(x);
+      `,
+  ],
 };
-
 //   module.exports = { swaggerServe: swaggerUI.serve, swaggerSetup: swaggerUI.setup(swaggerJSDocs) };
 
 module.exports = {

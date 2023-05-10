@@ -1,22 +1,28 @@
-const express = require('express');
-const { uploadFileResponse } = require('../controllers/uploadController');
+const express = require("express");
+const {
+  uploadFileResponse,
+  removeAnyFile,
+} = require("../controllers/uploadController");
 
-const attachmentUpload = require('../middlewares/attachmentUpload');
-const blogsImageUpload = require('../middlewares/blogsImageUpload');
-const resumeUpload = require('../middlewares/resumesUpload');
+const attachmentUpload = require("../middlewares/attachmentUpload");
+const blogsImageUpload = require("../middlewares/blogsImageUpload");
+const resumeUpload = require("../middlewares/resumesUpload");
+const adminMiddleware = require("../middlewares/adminMiddleware");
 const router = express.Router();
 
 // upload file to conversation folder
-router.post('/', attachmentUpload("conversation"), uploadFileResponse);
+router.post("/", attachmentUpload("conversation"), uploadFileResponse);
+
+// remove file from
+router.delete("/", adminMiddleware, removeAnyFile);
 
 // upload file to client response folder
-router.post('/response', attachmentUpload("response"), uploadFileResponse);
+router.post("/response", attachmentUpload("response"), uploadFileResponse);
 
 // upload file to resume folder
-router.post('/resumes', resumeUpload("resumes"), uploadFileResponse);
+router.post("/resumes", resumeUpload("resumes"), uploadFileResponse);
 
 // upload file to resume folder
-router.post('/blogs',  blogsImageUpload("blogs"), uploadFileResponse);
-
+router.post("/blogs", blogsImageUpload("blogs"), uploadFileResponse);
 
 module.exports = router;
