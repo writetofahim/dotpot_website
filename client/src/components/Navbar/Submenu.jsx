@@ -7,6 +7,7 @@ const Submenu = ({
   selectedSubmenu,
   setSelectedSubmenu,
   setIsSubmenuOpen,
+  setIsDropDownOpen,
 }) => {
   return (
     <>

@@ -2,7 +2,7 @@ openapi: 3.0.0
 
 info:
   title: Dotpot iT Website API Documentation
-  description: This API documentation provides details about the endpoints and functionality of the Dotpot iT Website API. The API allows users to manage colors for the website, including creating new colors, updating existing colors, retrieving color information, and deleting colors. Colors are represented by the Color schema, which includes various color properties such as background, primary, secondary, buttonText, textColor, gray, border, particleColor, name, and selected. The API provides both public and private routes for accessing and managing colors. The API version is 1.0.
+  description: The "Dotpot iT Website API Documentation" provides comprehensive information and reference for developers to integrate and interact with the Dotpot iT website's API. It covers the available endpoints, request and response structures, authentication mechanisms, and other relevant details necessary for successful API integration.
   version: 1.0
 
   
@@ -3926,15 +3926,47 @@ paths:
                 type: boolean
               message:
                 type: Color not found
-               
-swagger: "2.0"
-info:
-  title: Logger API
-  description: API for logging messages
-  version: 1.0.0
-host: localhost:3000
-basePath: /api/logger
-schemes:
-  - http
+  /api/admin:
+    post:
+      tags:
+        - Logger
+      summary: Log a message as an admin
+      parameters:
+        - in: body
+          name: logMessage
+          description: Log message and level
+          required: true
+          schema:
+            type: object
+            properties:
+              level:
+                type: string
+                enum: [error, warn, info, verbose, debug, silly]
+              message:
+                type: string
+      responses:
+        '200':
+          description: OK
+  /api/client:
+    post:
+      tags:
+        - Logger
+      summary: Log a message as a client
+      parameters:
+        - in: body
+          name: logMessage
+          description: Log message and level
+          required: true
+          schema:
+            type: object
+            properties:
+              level:
+                type: string
+                enum: [error, warn, info, verbose, debug, silly]
+              message:
+                type: string
+      responses:
+        '200':
+          description: OK               
 
 

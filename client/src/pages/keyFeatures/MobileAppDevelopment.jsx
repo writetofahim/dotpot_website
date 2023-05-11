@@ -1,20 +1,26 @@
-import React from "react";
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
-import { useScrollToTop } from "../../hooks/useScrollToTop";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
-import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
-import mobileapp from "../../assets/img/mobileapp.png"
-import androidapp from "../../assets/img/androidapp.png"
-import iosapp from "../../assets/img/iosapp.png"
-import windowsapp from "../../assets/img/windowsapp.png"
-import hybrideapp from "../../assets/img/hybrideapp.png"
-import crossplatform from "../../assets/img/crossplatform.png"
-import appmaintenance from "../../assets/img/appmaintenance.png"
-import appstore from "../../assets/img/appstore.png"
+import { useLocation } from "react-router-dom";
 import ReactVisibilitySensor from "react-visibility-sensor";
-import { Link } from "react-router-dom";
+import androidapp from "../../assets/img/androidapp.png";
+import appmaintenance from "../../assets/img/appmaintenance.png";
+import appstore from "../../assets/img/appstore.png";
+import crossplatform from "../../assets/img/crossplatform.png";
+import hybrideapp from "../../assets/img/hybrideapp.png";
+import iosapp from "../../assets/img/iosapp.png";
+import mobileapp from "../../assets/img/mobileapp.png";
+import flutter_development from "../../assets/img/web_development/flutter_development.png";
+import iconic_app_development from "../../assets/img/web_development/iconic_app_development.svg";
+import kotlin_development from "../../assets/img/web_development/kotlin_development.png";
+import swift_app_development from "../../assets/img/web_development/swift_app_development.png";
+
+import windowsapp from "../../assets/img/windowsapp.png";
+
+import Footer from "../../components/Footer/Footer";
 import GetAQuote from "../../components/GetAQuote/GetAQuote";
+import Navbar from "../../components/Navbar/Navbar";
+import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
+import { useScrollToTop } from "../../hooks/useScrollToTop";
 
 const MobileAppDevelopment = () => {
   const worksData = [
@@ -23,60 +29,99 @@ const MobileAppDevelopment = () => {
       title: "Android App Development",
       description:
         "Dotpot can provide Android App Development services to help businesses reach their customers on the world's most popular mobile platform. Our team of Android developers uses the latest technologies and programming languages to build high-quality, performance-driven apps for Android devices.",
-      illustration:
-      androidapp
+      illustration: androidapp,
+      sectionId: "android",
     },
     {
       id: 2,
       title: "iOS App Development",
       description:
         "Dotpot can provide iOS App Development services to help businesses reach their customers on Apple's iOS platform. Our team of iOS developers uses Swift and Objective-C to build native apps that provide a seamless user experience and meet Apple's strict guidelines.",
-      illustration:
-      iosapp
+      illustration: iosapp,
+      sectionId: "ios",
     },
     {
       id: 3,
-      title: "Windows App Development",
-      description:
-        "Dotpot can provide Windows App Development services to help businesses reach their customers on Windows devices. Our team of Windows developers uses C# and XAML to build high-quality, performance-driven apps for Windows devices.",
-      illustration:
-      windowsapp
+      title: "Flutter Development",
+      description: `Flutter is an open-source framework by Google for building high-performance, cross-platform mobile apps with a single codebase. It offers a reactive UI framework, extensive widget library, and "write once, run anywhere" approach. With its strong performance and active developer community, Flutter enables rapid development of visually appealing and native-like mobile applications.`,
+      illustration: flutter_development,
+      sectionId: "flutter",
     },
     {
       id: 4,
-      title: "Hybride App Development",
-      description:
-        "Dotpot iT specializes in hybrid app development, creating cross-platform apps with a single code base. Our experienced team will work with you to create a custom, responsive, and user-friendly app that reaches a wider audience and saves time and resources. Contact us today to learn more.",
-      illustration:
-      hybrideapp
+      title: "Kotlin Development",
+      description: `Kotlin is a modern, statically-typed programming language developed by JetBrains. It is fully interoperable with Java and offers concise syntax, null safety, functional programming capabilities, and excellent tooling. Kotlin is widely used for Android app development and provides enhanced productivity, readability, and scalability, making it a popular choice for developers.`,
+      illustration: kotlin_development,
+      sectionId: "kotlin",
     },
     {
       id: 5,
-      title: "Cross-Platform App Development",
-      description:
-        "Dotpot iT creates cross-platform mobile apps that work seamlessly on iOS and Android. Save time and money with one app that reaches a wider audience. Contact us today to learn more",
-      illustration:
-      crossplatform
+      title: "Iconic Development",
+      description: `Iconic Development is a leading framework for building cross-platform mobile apps, offering efficient code sharing, native performance, and a wide range of pre-built UI components. It simplifies development by enabling simultaneous app creation for iOS and Android platforms using a single codebase.`,
+      illustration: iconic_app_development,
+      sectionId: "iconic",
     },
     {
       id: 6,
-      title: "App Maintenance and Support",
-      description:
-        "Dotpot iT provides app maintenance and support services, including regular updates, bug fixes, and performance optimization. Keep your mobile app running smoothly and focus on your business while we take care of your app. Contact us today to learn more!",
-      illustration:
-      appmaintenance
+      title: "Swift Development",
+      description: `Swift is a modern and powerful programming language developed by Apple for building iOS, macOS, watchOS, and tvOS applications. It provides a concise syntax, type safety, and numerous built-in features, making it efficient for developing robust and user-friendly apps across Apple's platforms.`,
+      illustration: swift_app_development,
+      sectionId: "swift",
     },
     {
       id: 7,
+      title: "Windows App Development",
+      description:
+        "Dotpot can provide Windows App Development services to help businesses reach their customers on Windows devices. Our team of Windows developers uses C# and XAML to build high-quality, performance-driven apps for Windows devices.",
+      illustration: windowsapp,
+      sectionId: "windows",
+    },
+    {
+      id: 8,
+      title: "Hybride App Development",
+      description:
+        "Dotpot iT specializes in hybrid app development, creating cross-platform apps with a single code base. Our experienced team will work with you to create a custom, responsive, and user-friendly app that reaches a wider audience and saves time and resources. Contact us today to learn more.",
+      illustration: hybrideapp,
+      sectionId: "hybrid",
+    },
+    {
+      id: 9,
+      title: "Cross-Platform App Development",
+      description:
+        "Dotpot iT creates cross-platform mobile apps that work seamlessly on iOS and Android. Save time and money with one app that reaches a wider audience. Contact us today to learn more",
+      illustration: crossplatform,
+      sectionId: "cross",
+    },
+    {
+      id: 10,
+      title: "App Maintenance and Support",
+      description:
+        "Dotpot iT provides app maintenance and support services, including regular updates, bug fixes, and performance optimization. Keep your mobile app running smoothly and focus on your business while we take care of your app. Contact us today to learn more!",
+      illustration: appmaintenance,
+      sectionId: "maintenance",
+    },
+    {
+      id: 11,
       title: "App Store Optimization (ASO)",
       description:
         "Dotpot iT's App Store Optimization (ASO) service boosts your mobile app's visibility and downloads with thorough keyword research, metadata optimization, visual design, and ratings management. Contact us today to learn more about our ASO services and increase your app's success.",
-      illustration:
-      appstore
+      illustration: appstore,
+      sectionId: "optimization",
     },
   ];
 
   useScrollToTop();
+  const location = useLocation();
+  const fragment = location.hash.substring(1);
+  console.log("fragment", fragment);
+
+  useEffect(() => {
+    if (fragment) {
+      const locationElement = document.getElementById(fragment);
+      locationElement.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [fragment]);
+
   return (
     <div className="bg-background-500">
       <Helmet>
@@ -116,7 +161,11 @@ const MobileAppDevelopment = () => {
         />
       </Helmet>
       <Navbar />
-      <div className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"} `}>
+      <div
+        className={` md:pt-[15vh] pt-[15vh] ${
+          window.innerWidth > 1280 && "md:pt-[11vh]"
+        } `}
+      >
         <NavigatorComponent navigationData={navigationData} />
         <div>
           {/* Banner */}
@@ -125,20 +174,30 @@ const MobileAppDevelopment = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`mt-10 mb-16 ${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 `}
+                    className={`mt-10 mb-16 ${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                    } duration-1000 `}
                   >
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
                         <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
-                          <h2 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">Mobile App Development</h2>
+                          <h2 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
+                            Mobile App Development
+                          </h2>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            Bring your app vision to life with Dotpot iT. Our expert team will work with you to create a custom mobile app that meets your unique needs. Contact us today!
+                            Bring your app vision to life with Dotpot iT. Our
+                            expert team will work with you to create a custom
+                            mobile app that meets your unique needs. Contact us
+                            today!
                           </p>
                         </div>
-                        <img src={mobileapp} alt="" className="w-full md:w-1/2 lg:w-1/2" />
+                        <img
+                          src={mobileapp}
+                          alt=""
+                          className="w-full md:w-1/2 lg:w-1/2"
+                        />
                       </div>
                     </div>
                   </div>
@@ -150,36 +209,62 @@ const MobileAppDevelopment = () => {
           {/* body */}
           <div className="container mx-auto w-full overflow-hidden">
             <>
-              <div
-                className={`flex flex-col gap-5`}
-              >
-                {worksData.map(({ id, title, description, illustration }) => (
-                  <div className={`md:flex justify-center items-center gap-x-20 font-work p-5`} key={id}>
-                    <div className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"} `}>
+              <div className={`flex flex-col gap-5`}>
+                {worksData.map(
+                  ({ id, title, description, illustration, sectionId }) => (
+                    <div
+                      id={sectionId}
+                      className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
+                      key={id}
+                    >
+                      <div
+                        className={`w-full md:w-1/2 lg:w-1/2 ${
+                          id % 2 === 0 && "order-2"
+                        } `}
+                      >
+                        <ReactVisibilitySensor partialVisibility>
+                          {({ isVisible }) => (
+                            <div
+                              className={` ${
+                                isVisible
+                                  ? "opacity-100 translate-y-0"
+                                  : "translate-y-20 opacity-0"
+                              } duration-1000 `}
+                            >
+                              <h1 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
+                                {title}
+                              </h1>
+                              <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">
+                                {description}
+                              </p>
+                            </div>
+                          )}
+                        </ReactVisibilitySensor>
+                      </div>
                       <ReactVisibilitySensor partialVisibility>
-                        {({ isVisible }) => (<div className={` ${isVisible
-                          ? "opacity-100 translate-y-0"
-                          : "translate-y-20 opacity-0"
-                          } duration-1000 `}><h1 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
-                            {title}
-                          </h1>
-                          <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">{description}</p></div>)}
+                        {({ isVisible }) => (
+                          <div
+                            className={`w-full md:w-1/2 lg:w-1/2 ${
+                              id % 2 === 0 && "order-1"
+                            } ${
+                              isVisible
+                                ? "opacity-100 translate-y-0"
+                                : "translate-y-20 opacity-0"
+                            } duration-1000 `}
+                          >
+                            <img
+                              className="w-4/5 mx-auto"
+                              src={illustration}
+                              alt=""
+                            />
+                          </div>
+                        )}
                       </ReactVisibilitySensor>
-
                     </div>
-                    <ReactVisibilitySensor partialVisibility>
-                      {({ isVisible }) => (<div className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"} ${isVisible
-                        ? "opacity-100 translate-y-0"
-                        : "translate-y-20 opacity-0"
-                        } duration-1000 `}>
-                        <img className="w-4/5 mx-auto" src={illustration} alt="" />
-                      </div>)}
-                    </ReactVisibilitySensor>
-                  </div>
-                ))}
+                  )
+                )}
               </div>
             </>
-
           </div>
 
           {/* Technologies We Use */}
@@ -189,10 +274,11 @@ const MobileAppDevelopment = () => {
                 {({ isVisible }) => (
                   <>
                     <div
-                      className={`${isVisible
-                        ? "opacity-100 translate-y-0"
-                        : "translate-y-20 opacity-0"
-                        } duration-1000 p-3 text-textColor-500`}
+                      className={`${
+                        isVisible
+                          ? "opacity-100 translate-y-0"
+                          : "translate-y-20 opacity-0"
+                      } duration-1000 p-3 text-textColor-500`}
                     >
                       <h1 className="lg:text-3xl md:text-3xl text-xl font-bold text-center">
                         Technologies We Use
@@ -204,29 +290,69 @@ const MobileAppDevelopment = () => {
                       />
                       <div className="flex flex-col md:flex-col lg:flex-row items-center justify-center">
                         <div className="text-center md:text-center lg:text-left w-full lg:w-1/2 px-3 pb-10">
-                          <h2 className="lg:text-3xl md:text-2xl text-xl font-bold mb-5">We build Using Latest Technologies</h2>
-                          <p className="md:text-base text-xs text-gray-400 text-justify">Dotpot iT is an innovative company that stays ahead of the curve by utilizing cutting-edge technologies. Our team of experts constantly explores the latest tools and techniques to deliver effective solutions for businesses. By leveraging the power of the latest technologies, we develop transformative solutions that help businesses stay competitive and drive growth. Partnering with Dotpot iT means accessing the most advanced and innovative technologies available today.</p>
+                          <h2 className="lg:text-3xl md:text-2xl text-xl font-bold mb-5">
+                            We build Using Latest Technologies
+                          </h2>
+                          <p className="md:text-base text-xs text-gray-400 text-justify">
+                            Dotpot iT is an innovative company that stays ahead
+                            of the curve by utilizing cutting-edge technologies.
+                            Our team of experts constantly explores the latest
+                            tools and techniques to deliver effective solutions
+                            for businesses. By leveraging the power of the
+                            latest technologies, we develop transformative
+                            solutions that help businesses stay competitive and
+                            drive growth. Partnering with Dotpot iT means
+                            accessing the most advanced and innovative
+                            technologies available today.
+                          </p>
                         </div>
                         <div className="lg:w-1/2 w-full flex flex-col items-center justify-center gap-10">
                           <div className="flex gap-10 flex-wrap justify-center">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="java"
-                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="kotlin"
-                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" alt="swift"
-                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="fluter"
-                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="react"
-                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="dart"
-                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-line.svg" alt="next"
-                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="vue"
-                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="angular"
-                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img
+                              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+                              alt="java"
+                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all"
+                            />
+                            <img
+                              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg"
+                              alt="kotlin"
+                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all"
+                            />
+                            <img
+                              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg"
+                              alt="swift"
+                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all"
+                            />
+                            <img
+                              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg"
+                              alt="fluter"
+                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all"
+                            />
+                            <img
+                              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                              alt="react"
+                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all"
+                            />
+                            <img
+                              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg"
+                              alt="dart"
+                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all"
+                            />
+                            <img
+                              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-line.svg"
+                              alt="next"
+                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all"
+                            />
+                            <img
+                              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg"
+                              alt="vue"
+                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all"
+                            />
+                            <img
+                              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"
+                              alt="angular"
+                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all"
+                            />
                           </div>
                         </div>
                       </div>
@@ -243,10 +369,11 @@ const MobileAppDevelopment = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 p-3 text-textColor-500`}
+                    className={`${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                    } duration-1000 p-3 text-textColor-500`}
                   >
                     <h1 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
                       Why Dotpot iT
@@ -257,7 +384,16 @@ const MobileAppDevelopment = () => {
                       alt=""
                     />
                     <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
-                      Dotpot iT provides top-notch mobile app development services that utilize the latest technologies at an affordable cost. Our focus is on delivering innovative and user-friendly mobile-based solutions for businesses of all industries. We have a team of experienced developers who are committed to providing high-quality solutions that exceed clients' expectations and offer exceptional customer service throughout the development process. Choose Dotpot iT for cutting-edge mobile app development that helps your business thrive.
+                      Dotpot iT provides top-notch mobile app development
+                      services that utilize the latest technologies at an
+                      affordable cost. Our focus is on delivering innovative and
+                      user-friendly mobile-based solutions for businesses of all
+                      industries. We have a team of experienced developers who
+                      are committed to providing high-quality solutions that
+                      exceed clients' expectations and offer exceptional
+                      customer service throughout the development process.
+                      Choose Dotpot iT for cutting-edge mobile app development
+                      that helps your business thrive.
                     </p>
                   </div>
                 </>

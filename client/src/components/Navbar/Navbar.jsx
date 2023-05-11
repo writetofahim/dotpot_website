@@ -64,32 +64,32 @@ const Navbar = () => {
       icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",
       submenu: [
         {
-          to: "/key-features/mobile-app-development",
+          to: "/key-features/mobile-app-development/#android",
           title: "Android App",
           icon: "https://cdn-icons-png.flaticon.com/512/160/160138.png",
         },
         {
-          to: "/key-features/mobile-app-development",
+          to: "/key-features/mobile-app-development/#ios",
           title: "iPhone App",
           icon: "https://cdn-icons-png.flaticon.com/512/7344/7344131.png",
         },
         {
-          to: "/key-features/mobile-app-development",
+          to: "/key-features/mobile-app-development/#flutter",
           title: "Flutter App",
           icon: "https://img.icons8.com/ios/256/flutter.png",
         },
         {
-          to: "/key-features/mobile-app-development",
+          to: "/key-features/mobile-app-development/#kotlin",
           title: "Kotlin",
           icon: "https://img.icons8.com/ios/256/kotlin.png",
         },
         {
-          to: "/key-features/mobile-app-development",
+          to: "/key-features/mobile-app-development/#iconic",
           title: "Iconic",
           icon: "https://www.shareicon.net/download/2015/08/23/89513_ionic_512x512.png",
         },
         {
-          to: "/key-features/mobile-app-development",
+          to: "/key-features/mobile-app-development/#swift",
           title: "Swift",
           icon: "https://img.icons8.com/ios/256/swift.png",
         },
@@ -420,6 +420,7 @@ const Navbar = () => {
                       selectedSubmenu={selectedSubmenu}
                       setSelectedSubmenu={setSelectedSubmenu}
                       setIsSubmenuOpen={setIsSubmenuOpen}
+                      setIsDropDownOpen={setIsDropDownOpen}
                     />
                     {/* <div
                     onClick={() => {
