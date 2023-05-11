@@ -1,305 +1,215 @@
 import React from "react";
-import startup from "../../assets/img/startup.png";
-import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
-import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
+import Footer from "../../components/Footer/Footer";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import { Helmet } from "react-helmet";
+import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
+import startup01 from "../../assets/img/startup01.png"
+import startup02 from "../../assets/img/startup02.png"
+import startup03 from "../../assets/img/startup03.png"
+import startup04 from "../../assets/img/startup04.png"
+import startup05 from "../../assets/img/startup05.png"
+import startup06 from "../../assets/img/startup06.png"
+import ReactVisibilitySensor from "react-visibility-sensor";
+import GetAQuote from "../../components/GetAQuote/GetAQuote";
 
-const navigationData = [
-  { title: "Services", link: "/services" },
-  {
-    title: "Startup Business",
-    link: "/who-we-works-with/startup-business",
-  },
-];
+const WebsiteDesign = () => {
 
-const StartupBusiness = () => {
+  const worksData = [
+    {
+      id: 1,
+      title: "Expertise and Experience",
+      description:
+        "Our IT company has a team of skilled professionals with years of experience in developing software and providing IT services to a variety of clients. This expertise can be invaluable to startups that may not have the technical knowledge or resources to build their own technology infrastructure.",
+      illustration:
+        startup02
+    },
+    {
+      id: 2,
+      title: "Customized Solutions",
+      description:
+        " Your IT company can develop custom software solutions tailored to the unique needs of each startup. This ensures that the technology solution is efficient, effective, and aligns with the business goals of the startup.",
+      illustration:
+        startup03
+    },
+    {
+      id: 3,
+      title: "Ongoing Support",
+      description:
+        "Startups can benefit from ongoing technical support and maintenance to ensure that their technology infrastructure remains up-to-date and optimized. Your IT company can provide regular updates, security patches, and system backups to keep the startup's technology running smoothly.",
+      illustration:
+        startup04
+    },
+    {
+      id: 4,
+      title: "Cost-Effective",
+      description:
+        "Startups often operate on a tight budget, and your IT company can provide cost-effective solutions that deliver maximum value for the investment. By outsourcing technology development and support, startups can save money on hiring and training in-house IT staff.",
+      illustration:
+        startup05
+    },
+    {
+      id: 5,
+      title: "Strategic Partnership",
+      description:
+        "By partnering with your IT company, startups can benefit from a strategic advisor who can provide insights and guidance on technology investments, security, and other IT-related issues. Your IT company can serve as a trusted partner that helps the startup achieve its long-term goals.",
+      illustration:
+        startup06
+    },
+  ];
+
   useScrollToTop();
   return (
-    <div>
+    <div className="bg-background-500">
+      <Helmet>
+        <title>Startup Business | Dotpot iT</title>
+        <meta
+          name="description"
+          content="Empower your startup's success with our tailored IT solutions and expert support."
+        />
+        <meta property="og:title" content="Startup Business | Dotpot iT" />
+        <meta
+          property="og:description"
+          content="Empower your startup's success with our tailored IT solutions and expert support."
+        />
+        <meta
+          property="og:image"
+          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+        <meta
+          property="og:url"
+          content="https://www.dotpotit.com/key-features/website-design"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Website Design | Dotpot iT" />
+        <meta
+          name="twitter:description"
+          content="Empower your startup's success with our tailored IT solutions and expert support."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+      </Helmet>
       <Navbar />
-      <div className="bg-background-500">
-        <div className="pt-[15vh] py-10 container mx-auto">
-          <NavigatorComponent navigationData={navigationData} />
-          <div>
-            <h1 className="text-3xl md:text-5xl font-extrabold mb-2 text-textColor-500 text-center">
-              Start Up Business
-            </h1>
-            <p className="text-lg text-textColor-500 text-center mb-10">
-              Turning Entrepreneurial Dreams into Successful Ventures
-            </p>
-          </div>
-          <div className="max-w-4xl mx-auto p-4">
-            <img src={startup} alt="Product image" />
-          </div>
-          <div className="my-12 lg:mx-24 mx-6">
-            <h2 className="lg:text-2xl text-xl font-bold mb-4 text-textColor-500">Overview</h2>
-            <div className="text-textColor-500 flex flex-col gap-5 py-2 lg:px-5 text-justify">
-              <p>
-                Dotpot IT is a forward-thinking start-up that seeks to simplify
-                the complexities of technology for businesses. By conducting
-                thorough market research, the company has identified a need for
-                reliable and user-friendly software solutions that can help
-                businesses streamline their operations and maximize productivity.
-              </p>
-
-              <p>
-                To achieve its goals, Dotpot IT has developed a solid business
-                plan that outlines its strategies, goals, and financial
-                projections. This plan includes a detailed marketing strategy that
-                focuses on reaching and engaging with potential clients through
-                various channels, including social media, email campaigns, and
-                targeted advertising.
-              </p>
-
-              <p>
-                As Dotpot IT launches, the team will remain focused on its goals
-                and remain adaptable to changes in the market. The company will
-                prioritize building a strong team of talented individuals who
-                share its vision and are committed to helping Dotpot IT achieve
-                its goals. This team will include software engineers, designers,
-                marketers, and customer service representatives.
-              </p>
-
-              <p>
-                To ensure the success of the company, Dotpot IT will continuously
-                iterate on its products and services based on customer feedback
-                and market trends. The company's culture values innovation,
-                collaboration, and accountability, and it will focus on building a
-                strong reputation as a reliable and innovative technology partner
-                for businesses.
-              </p>
-
-              <p>
-                By staying focused, adaptable, and customer-centric, Dotpot IT has
-                the potential to become a leader in the software solutions space
-                and transform the way businesses use technology to drive growth
-                and success.
-              </p>
-            </div>
-            <div className="pt-6">
-              <h2 className="lg:text-2xl text-xl font-bold mb-4 text-textColor-500">
-                What is a start-up business?
-              </h2>
-              <p className="text-textColor-500 lg:px-5 text-justify">
-                A start-up business is a new company that is typically founded by
-                entrepreneurs or small groups of individuals. Start-ups are often
-                focused on developing innovative products, services, or business
-                models that have the potential to disrupt existing industries.
-              </p>
-            </div>
-            <div className="pt-6">
-              <h2 className="lg:text-2xl text-xl font-bold mb-4 ">
-                What are the key characteristics of a start-up business?
-              </h2>
-              <p className="text-textColor-500 lg:px-5 text-justify">
-                Start-ups are typically characterized by their focus on
-                innovation, agility, and growth. They are often founded by
-                entrepreneurs who are willing to take risks and are highly
-                adaptable to changes in the market.
-              </p>
-              <ul className="list-disc list-inside">
-                <h4 className="text-textColor-500 lg:px-5 mt-2 font-semibold">
-                  Key Characteristics of Start-Up Businesses:
-                </h4>
-                <li className="text-textColor-500 mb-2 lg:px-5 text-justify">
-                  Focus on innovation, agility, and growth
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-5 text-justify">
-                  Founded by risk-taking entrepreneurs
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-5 text-justify">
-                  Develop new products, services, or business models that can
-                  disrupt existing industries
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-5 text-justify">
-                  Agile and adaptable to changes in the market
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-5 text-justify">
-                  Prioritize growth and scaling the business
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-5 text-justify">
-                  Often seek out funding to support growth and achieve goals.
-                </li>
-              </ul>
-            </div>
-            <div className="pt-6">
-              <h2 className="lg:text-2xl text-xl font-bold mb-4 text-textColor-500">
-                How do you come up with a start-up business idea?
-              </h2>
-              <p className="text-textColor-500 lg:px-5 text-justify">
-                There are several ways to come up with a start-up business idea.
-                You can identify a gap in the market or a need that is not being
-                met by existing products or services. You can also develop a new
-                product or service that solves a problem or addresses a pain point
-                for consumers.
-              </p>
-            </div>
-            <div className="pt-6">
-              <h2 className="lg:text-2xl text-xl font-bold mb-4">
-                What are some common challenges faced by start-up businesses?
-              </h2>
-              <p className="text-textColor-500 lg:px-5 text-justify">
-                Start-up businesses often face a number of challenges, including
-                securing funding, building a strong team, developing and launching
-                products, and scaling the business. Additionally, start-ups must
-                navigate a highly competitive market and remain adaptable to
-                changes in the industry.
-              </p>
-              <ul className="list-disc list-inside">
-                <h4 className="text-textColor-500 px-5 mt-2 font-semibold ">
-                  Common Challenges of Start-Up Businesses:
-                </h4>
-                <li className="text-textColor-500 mb-2 lg:px-5 text-julg:px-5 text-justify">
-                  Securing funding
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-5 text-julg:px-5 text-justify">
-                  Building a strong team
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-5 text-julg:px-5 text-justify">
-                  Developing and launching products
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-5 text-julg:px-5 text-justify">
-                  Scaling the business
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-5 text-julg:px-5 text-justify">
-                  Navigating a highly competitive market
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-5 text-julg:px-5 text-justify">
-                  Remaining adaptable to changes in the industry
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-5 text-julg:px-5 text-justify">
-                  Managing cash flow
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-5 text-julg:px-5 text-justify">
-                  Maintaining focus and avoiding distractions
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-5 text-julg:px-5 text-justify">
-                  Balancing the need for growth with the need for profitability
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-5 text-julg:px-5 text-justify">
-                  Complying with legal and regulatory requirements
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-5 text-julg:px-5 text-justify">
-                  Managing risk and uncertainty
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-5 text-julg:px-5 text-justify">
-                  Dealing with failure and setbacks.
-                </li>
-              </ul>
-            </div>
-            <div className="pt-6">
-              <h2 className="lg:text-2xl text-xl font-bold mb-4 text-textColor-500">
-                How important is a business plan for a start-up business?
-              </h2>
-              <p className="text-textColor-500 lg:px-5 text-justify">
-                A business plan is critical for a start-up business as it outlines
-                the goals, strategies, and financial projections for the company.
-                It also helps to identify potential challenges and opportunities
-                and serves as a roadmap for the business.
-              </p>
-            </div>
-            <div className="pt-6">
-              <h2 className="lg:text-2xl text-xl font-bold mb-4 text-textColor-500">
-                How can Dotpot iT support start up businesses?
-              </h2>
-              <p className="text-textColor-500 lg:px-5 text-justify">
-                Dotpot IT can provide start up businesses with a range of services
-                to help them leverage technology and achieve their goals. This may
-                include IT consulting, software development, network security,
-                cloud solutions, and more. By working with DotPot IT, start up
-                businesses can stay ahead of the curve and achieve long-term
-                success.
-              </p>
-              <ul className="list-disc list-inside">
-                <li className="text-textColor-500 mb-2 lg:px-5 text-justify">
-                  <strong className="font-semibold">IT consulting:</strong>Dotpot
-                  IT can provide start up businesses with expert advice and
-                  guidance on technology strategy, software selection, and system
-                  architecture to ensure that their technology investments align
-                  with their business goals.
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-5 text-justify">
-                  <strong className="font-semibold">Software development:</strong>
-                  Dotpot IT can develop custom software solutions to meet the
-                  unique needs of start up businesses, including web and mobile
-                  applications, start up resource planning (ERP) systems, and
-                  more.
-                </li>
-                <li className="text-textColor-500 mb-2 px-10">
-                  <strong className="font-semibold">Network security:</strong>
-                  Dotpot IT can help start up businesses protect their networks
-                  from cyber threats by implementing firewalls, intrusion
-                  detection systems, and other security measures. They can also
-                  conduct regular security audits to identify vulnerabilities and
-                  ensure compliance with regulatory requirements.
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-5 text-justify">
-                  <strong className="font-semibold">Cloud solutions:</strong>
-                  Dotpot IT can help start up businesses leverage cloud computing
-                  to reduce costs, increase scalability, and improve flexibility.
-                  This may include cloud migration services, cloud infrastructure
-                  management, and cloud application development.
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-5 text-justify">
-                  <strong className="font-semibold">Data analytics:</strong>Dotpot
-                  IT can help start up businesses gain insights from large amounts
-                  of data through advanced analytics techniques such as machine
-                  learning, data mining, and predictive analytics. This can help
-                  them make data-driven decisions and improve business
-                  performance.
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-5 text-justify">
-                  <strong className="font-semibold">Digital marketing:</strong>
-                  DotPot IT can help start up businesses build their online
-                  presence and reach a wider audience through digital marketing
-                  techniques such as search engine optimization (SEO), social
-                  media marketing, and email marketing.
-                </li>
-              </ul>
-            </div>
-            <div className="pt-6">
-              <p className="text-textColor-500 lg:px-5 text-justify">
-                By providing these and other services, Dotpot IT can support start
-                up businesses in achieving their goals, improving efficiency, and
-                gaining a competitive advantage in their respective industries.
-              </p>
-            </div>
-            {/* <div className=" border-b h-52 w-full md:w-4/5 mx-auto my-5  rounded-xl border flex justify-center items-center shadow-md overflow-hidden relative">
-            <div className=" flex justify-center items-center">
-              <div className="w-96 absolute">
-                <div className="absolute top-0 -left-4 w-52 h-52  bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-                <div className="absolute top-0 -right-4 w-52 h-52  bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-                <div className="absolute -bottom-8 left-20 w-52 h-52  bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-              </div>
-
-              <div className="flex flex-col gap-5">
-                <h3 className="text-center text-purple-500 font-bold text-xl ">
-                  If you want to run a start up business, Dotpot iT is always
-                  with you!
-                </h3>
-                <h3 className="text-center text-purple-500 font-semibold">
-                  "The Experts Are Just A Click Away. Get A Quote."
-                </h3>
-
-                <Link
-                  to="/services"
-                  className="  w-52 h-10 flex items-center justify-center rounded-md bg-secondary-500 mx-auto hover:scale-105 transition-all shadow-sm"
-                >
-                  <div className="flex justify-center items-center gap-3">
-                    <p className="text-white font-semibold">Contact With Us</p>
-                    <BsArrowRightCircleFill className="text-white hover:cursor-pointer" />
+      <div className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"} `}>
+        <NavigatorComponent navigationData={navigationData} />
+        <div>
+          {/* Banner */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`mt-10 mb-16 ${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 `}
+                  >
+                    <div className="container mx-auto">
+                      <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
+                        <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
+                          <h2 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">Start Up Business</h2>
+                          <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
+                            As an IT company, your expertise can be invaluable to startup businesses looking to establish a strong digital presence. Your team of skilled professionals can provide a range of services, such as developing custom software solutions, designing and launching a website or mobile app, setting up cloud infrastructure, and providing ongoing technical support.
+                          </p>
+                        </div>
+                        <img src={startup01} alt="" className="w-full md:w-1/2 lg:w-1/2" />
+                      </div>
+                    </div>
                   </div>
-                </Link>
-              </div>
-            </div>
-          </div> */}
+                </>
+              )}
+            </ReactVisibilitySensor>
           </div>
+
+          {/* body */}
+          <div className="container mx-auto w-full overflow-hidden">
+            <>
+              <div
+                className={`flex flex-col gap-5`}
+              >
+                {worksData.map(({ id, title, description, illustration }) => (
+                  <div key={id} className={`md:flex justify-center items-center gap-x-20 font-work p-5`}>
+                    <div className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"} `}>
+                      <ReactVisibilitySensor partialVisibility>
+                        {({ isVisible }) => (<div className={` ${isVisible
+                          ? "opacity-100 translate-y-0"
+                          : "translate-y-20 opacity-0"
+                          } duration-1000 `}><h1 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
+                            {title}
+                          </h1>
+                          <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">{description}</p></div>)}
+                      </ReactVisibilitySensor>
+
+                    </div>
+                    <ReactVisibilitySensor partialVisibility>
+                      {({ isVisible }) => (<div className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"} ${isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                        } duration-1000 `}>
+                        <img className="w-4/5 mx-auto" src={illustration} alt="" />
+                      </div>)}
+                    </ReactVisibilitySensor>
+                  </div>
+                ))}
+              </div>
+            </>
+
+          </div>
+
+
+
+          {/* Why Dotpot iT */}
+          <div className="py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 p-3 text-textColor-500`}
+                  >
+                    <h1 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
+                      Why Dotpot iT
+                    </h1>
+                    <img
+                      className="w-64 mx-auto"
+                      src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"
+                      alt=""
+                    />
+                    <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
+                      In the early stages of a startup, having a reliable and efficient technology infrastructure is critical. With your help, startups can streamline their operations, automate processes, and ultimately scale their business more quickly. Your team can also help startups optimize their online marketing efforts, such as search engine optimization, social media marketing, and email campaigns.</p>
+                    <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
+                      In addition to providing technical support, your company can also serve as a trusted advisor to startups, helping them navigate the complex world of IT and make informed decisions about their technology investments. By partnering with your IT company, startups can focus on their core business objectives and leave the technology to the experts.
+                    </p>
+                  </div>
+                </>
+              )}
+            </ReactVisibilitySensor>
+          </div>
+
+          {/* Get in Touch */}
+          <div className="bg-primary-100">
+            <GetAQuote />
+          </div>
+
         </div>
       </div>
-      <Footer />
-    </div>
+
+      <div className="">
+        <Footer />
+      </div>
+    </div >
   );
 };
 
-export default StartupBusiness;
+export default WebsiteDesign;
+
+const navigationData = [
+  {
+    title: "Startup Business",
+    link: "/who-we-works-with/startup-business",
+  }
+];

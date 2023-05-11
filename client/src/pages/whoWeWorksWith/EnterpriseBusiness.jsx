@@ -1,256 +1,214 @@
 import React from "react";
-import enterprise from "../../assets/img/enterprise.png";
-import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
-import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
+import Footer from "../../components/Footer/Footer";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import { Helmet } from "react-helmet";
+import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
+import Enterprise_Business_01 from "../../assets/img/Enterprise_Business_01.png"
+import Enterprise_Business_02 from "../../assets/img/Enterprise_Business_02.png"
+import Enterprise_Business_03 from "../../assets/img/Enterprise_Business_03.png"
+import Enterprise_Business_04 from "../../assets/img/Enterprise_Business_04.png"
+import Enterprise_Business_05 from "../../assets/img/Enterprise_Business_05.png"
+import Enterprise_Business_06 from "../../assets/img/Enterprise_Business_06.png"
+import shopify from "../../assets/img/shopify.png"
+import ReactVisibilitySensor from "react-visibility-sensor";
+import GetAQuote from "../../components/GetAQuote/GetAQuote";
 
-const navigationData = [
-  { title: "Services", link: "/services" },
-  {
-    title: "Enterprise Business",
-    link: "/who-we-works-with/enterprise-business",
-  },
-];
+const WebsiteDesign = () => {
 
-const EnterpriseBusiness = () => {
+  const worksData = [
+    {
+      id: 1,
+      title: "Custom software development",
+      description:
+        "Your IT company can create custom software solutions tailored to meet the specific needs of enterprise businesses. This can help automate processes, improve efficiency, and enhance customer experiences.",
+      illustration:
+        Enterprise_Business_02
+    },
+    {
+      id: 2,
+      title: "IT support and maintenance",
+      description:
+        "By providing comprehensive IT support and maintenance services, your company can ensure that enterprise businesses' systems are always up and running. This can help minimize downtime and prevent costly disruptions.",
+      illustration:
+        Enterprise_Business_03
+    },
+    {
+      id: 3,
+      title: "Data security and compliance",
+      description:
+        "Your company can help enterprise businesses manage their data and ensure that it is secure and compliant with relevant regulations. This can include implementing strong security measures and providing ongoing monitoring and maintenance.",
+      illustration:
+        Enterprise_Business_04
+    },
+    {
+      id: 4,
+      title: "Cloud solutions",
+      description:
+        "Your IT company can help enterprise businesses transition to cloud-based solutions, which can offer scalability, flexibility, and cost savings. This can include everything from cloud storage to cloud-based software and infrastructure.",
+      illustration:
+        Enterprise_Business_05
+    },
+    {
+      id: 5,
+      title: "Emerging technologies",
+      description:
+        "By staying up-to-date with the latest technologies and trends, your IT company can help enterprise businesses stay ahead of the curve. This can include everything from artificial intelligence and machine learning to blockchain and IoT solutions.",
+      illustration:
+        Enterprise_Business_06
+    },
+  ];
+
   useScrollToTop();
   return (
-    <div>
+    <div className="bg-background-500">
+      <Helmet>
+        <title>Enterprise Business | Dotpot iT</title>
+        <meta
+          name="description"
+          content="We can help enterprise businesses improve their performance and achieve their goals through our expertise in software development and IT services."
+        />
+        <meta property="og:title" content="Enterprise Business | Dotpot iT" />
+        <meta
+          property="og:description"
+          content="We can help enterprise businesses improve their performance and achieve their goals through our expertise in software development and IT services."
+        />
+        <meta
+          property="og:image"
+          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+        <meta
+          property="og:url"
+          content="https://www.dotpotit.com/key-features/website-design"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Website Design | Dotpot iT" />
+        <meta
+          name="twitter:description"
+          content="We can help enterprise businesses improve their performance and achieve their goals through our expertise in software development and IT services."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+      </Helmet>
       <Navbar />
-      <div className="bg-background-500">
-        <div className="pt-[15vh] pb-10 container mx-auto">
-          <NavigatorComponent navigationData={navigationData} />
-          <div>
-            <h1 className="text-3xl md:text-5xl font-extrabold mb-2 text-textColor-500 text-center">
-              Enterprise Business
-            </h1>
-            <p className="text-lg text-secondary-400 text-center mb-10">
-              Unlocking the Potential of Large-Scale Operations with Technology
-              and Digital Solutions
-            </p>
-          </div>
-          <div className="w-full h-full flex justify-center items-center">
-            <img src={enterprise} alt="Enter Prise Business" />
-          </div>
-          <div className="my-12 lg:mx-24 mx-6">
-            <h2 className="lg:text-2xl text-xl font-bold mb-4 text-textColor-500">Overview</h2>
-            <div className="text-textColor-500 flex flex-col gap-5 py-2 lg:px-5 text-justify">
-              <p>
-                Enterprise businesses are large organizations that typically
-                operate in multiple locations, have diverse product or service
-                offerings, and employ a significant number of employees. These
-                businesses are often industry leaders and have a significant
-                impact on the economy.
-              </p>
-
-              <p>
-                Enterprise businesses face unique challenges and opportunities.
-                They require robust systems, processes, and technology to manage
-                their operations effectively. They also need to be able to adapt
-                to changes in the market and stay ahead of the competition.
-              </p>
-
-              <p>
-                To thrive in today's fast-paced business environment, enterprise
-                businesses need to leverage the latest technology and digital
-                solutions. This includes services such as cloud computing,
-                artificial intelligence (AI), big data analytics, and
-                cybersecurity. By adopting these technologies, enterprise
-                businesses can streamline their operations, reduce costs, and gain
-                a competitive advantage.
-              </p>
-
-              <p>
-                DotPot IT can provide enterprise businesses with the support they
-                need to leverage these technologies and achieve their goals. This
-                may include services such as IT consulting, software development,
-                network security, and cloud solutions. By working with DotPot IT,
-                enterprise businesses can stay ahead of the curve and achieve
-                long-term success in their respective industries.
-              </p>
-            </div>
-            <div className="pt-6">
-              <h2 className="lg:text-2xl text-xl font-bold mb-4 text-textColor-500">
-                What distinguishes an enterprise business from a small or
-                medium-sized business?
-              </h2>
-              <p className="text-textColor-500 lg:px-5 text-justify">
-                Enterprise businesses are typically larger in scale, with more
-                employees, a wider geographic reach, and a broader range of
-                products or services. They often have complex organizational
-                structures and require more robust systems and processes to manage
-                their operations effectively.
-              </p>
-            </div>
-            <div className="pt-6">
-              <h2 className="lg:text-2xl text-xl font-bold mb-4 text-textColor-500">
-                What are some of the challenges that enterprise businesses face?
-              </h2>
-              <p className="text-textColor-500 lg:px-5 text-justify">
-                Enterprise businesses face a variety of challenges, including
-                managing complex operations, adapting to changes in the market,
-                staying ahead of the competition, and ensuring regulatory
-                compliance. They also need to be able to effectively manage and
-                protect large amounts of data and maintain strong cybersecurity
-                practices.
-              </p>
-              <ul className="list-disc list-inside">
-                <h4 className="text-textColor-500 lg:px-5 mt-2 font-semibold">
-                  Common Challenges of Enterprise Businesses:
-                </h4>
-                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
-                  Managing complex operations across multiple locations
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
-                  Adapting to changes in the market and staying ahead of the
-                  competition
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
-                  Ensuring regulatory compliance and managing legal risk
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
-                  Maintaining strong cybersecurity practices and protecting large
-                  amounts of data
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
-                  Managing a large and diverse workforce
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
-                  Keeping up with advances in technology and leveraging them
-                  effectively
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
-                  Balancing the need for growth with the need for profitability
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
-                  Maintaining a strong brand reputation and customer loyalty
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
-                  Managing supply chain complexity and ensuring reliable delivery
-                  of products or services
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
-                  Navigating the global marketplace and cultural differences in
-                  international operations.
-                </li>
-              </ul>
-            </div>
-            <div className="pt-6">
-              <h2 className="lg:text-2xl text-xl font-bold mb-4 text-textColor-500">
-                How can technology help enterprise businesses overcome these
-                challenges?
-              </h2>
-              <p className="text-textColor-500 lg:px-5 text-justify">
-                Technology can help enterprise businesses streamline their
-                operations, reduce costs, and gain a competitive advantage. Cloud
-                computing, big data analytics, artificial intelligence, and
-                cybersecurity solutions are just a few examples of how technology
-                can help enterprise businesses achieve their goals.
-              </p>
-            </div>
-            <div className="pt-6">
-              <h2 className="lg:text-2xl text-xl font-bold mb-4 text-textColor-500">
-                How can Dotpot iT support enterprise businesses?
-              </h2>
-              <p className="text-textColor-500 lg:px-5">
-                Dotpot IT can provide enterprise businesses with a range of
-                services to help them leverage technology and achieve their goals.
-                This may include IT consulting, software development, network
-                security, cloud solutions, and more. By working with DotPot IT,
-                enterprise businesses can stay ahead of the curve and achieve
-                long-term success.
-              </p>
-              <ul className="list-disc list-inside">
-                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
-                  <strong className="font-semibold">IT consulting:</strong>Dotpot
-                  IT can provide enterprise businesses with expert advice and
-                  guidance on technology strategy, software selection, and system
-                  architecture to ensure that their technology investments align
-                  with their business goals.
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
-                  <strong className="font-semibold">Software development:</strong>
-                  Dotpot IT can develop custom software solutions to meet the
-                  unique needs of enterprise businesses, including web and mobile
-                  applications, enterprise resource planning (ERP) systems, and
-                  more.
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
-                  <strong className="font-semibold">Network security:</strong>
-                  Dotpot IT can help enterprise businesses protect their networks
-                  from cyber threats by implementing firewalls, intrusion
-                  detection systems, and other security measures. They can also
-                  conduct regular security audits to identify vulnerabilities and
-                  ensure compliance with regulatory requirements.
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
-                  <strong className="font-semibold">Cloud solutions:</strong>
-                  Dotpot IT can help enterprise businesses leverage cloud
-                  computing to reduce costs, increase scalability, and improve
-                  flexibility. This may include cloud migration services, cloud
-                  infrastructure management, and cloud application development.
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
-                  <strong className="font-semibold">Data analytics:</strong>Dotpot
-                  IT can help enterprise businesses gain insights from large
-                  amounts of data through advanced analytics techniques such as
-                  machine learning, data mining, and predictive analytics. This
-                  can help them make data-driven decisions and improve business
-                  performance.
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
-                  <strong className="font-semibold">Digital marketing:</strong>
-                  Dotpot IT can help enterprise businesses build their online
-                  presence and reach a wider audience through digital marketing
-                  techniques such as search engine optimization (SEO), social
-                  media marketing, and email marketing.
-                </li>
-              </ul>
-            </div>
-            <div className="pt-6">
-              <p className="text-textColor-500 lg:px-5 text-justify">
-                By providing these and other services, Dotpot IT can support
-                enterprise businesses in achieving their goals, improving
-                efficiency, and gaining a competitive advantage in their
-                respective industries.
-              </p>
-            </div>
-            {/* <div className=" border-b h-52 w-full md:w-4/5 mx-auto my-5  rounded-xl border flex justify-center items-center shadow-md overflow-hidden relative">
-            <div className=" flex justify-center items-center">
-              <div className="w-96 absolute">
-                <div className="absolute top-0 -left-4 w-52 h-52  bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-                <div className="absolute top-0 -right-4 w-52 h-52  bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-                <div className="absolute -bottom-8 left-20 w-52 h-52  bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-              </div>
-
-              <div className="flex flex-col gap-5">
-                <h3 className="text-center text-purple-500 font-bold text-xl ">
-                  If you want to run a enterprise business, Dotpot iT is always
-                  with you!
-                </h3>
-                <h3 className="text-center text-purple-500 font-semibold">
-                  "The Experts Are Just A Click Away. Get A Quote."
-                </h3>
-
-                <Link
-                  to="/services"
-                  className="  w-52 h-10 flex items-center justify-center rounded-md bg-secondary-500 mx-auto hover:scale-105 transition-all shadow-sm"
-                >
-                  <div className="flex justify-center items-center gap-3">
-                    <p className="text-white font-semibold">Contact With Us</p>
-                    <BsArrowRightCircleFill className="text-white hover:cursor-pointer" />
+      <div className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"} `}>
+        <NavigatorComponent navigationData={navigationData} />
+        <div>
+          {/* Banner */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`mt-10 mb-16 ${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 `}
+                  >
+                    <div className="container mx-auto">
+                      <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
+                        <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
+                          <h2 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">Enterprise Business</h2>
+                          <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
+                            As an IT company, your software development and IT services can help enterprise businesses improve efficiency, productivity, and security. By providing cutting-edge solutions and technology, you can help these businesses stay competitive in their markets and achieve their goals.
+                          </p>
+                        </div>
+                        <img src={Enterprise_Business_01} alt="" className="w-full md:w-1/3 lg:w-1/3" />
+                      </div>
+                    </div>
                   </div>
-                </Link>
-              </div>
-            </div>
-          </div> */}
+                </>
+              )}
+            </ReactVisibilitySensor>
           </div>
+
+          {/* body */}
+          <div className="container mx-auto w-full overflow-hidden">
+            <>
+              <div
+                className={`flex flex-col gap-5`}
+              >
+                {worksData.map(({ id, title, description, illustration }) => (
+                  <div key={id} className={`md:flex justify-center items-center gap-x-20 font-work p-5`}>
+                    <div className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"} `}>
+                      <ReactVisibilitySensor partialVisibility>
+                        {({ isVisible }) => (<div className={` ${isVisible
+                          ? "opacity-100 translate-y-0"
+                          : "translate-y-20 opacity-0"
+                          } duration-1000 `}><h1 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
+                            {title}
+                          </h1>
+                          <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">{description}</p></div>)}
+                      </ReactVisibilitySensor>
+
+                    </div>
+                    <ReactVisibilitySensor partialVisibility>
+                      {({ isVisible }) => (<div className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"} ${isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                        } duration-1000 `}>
+                        <img className="w-4/5 mx-auto" src={illustration} alt="" />
+                      </div>)}
+                    </ReactVisibilitySensor>
+                  </div>
+                ))}
+              </div>
+            </>
+
+          </div>
+
+
+
+          {/* Why Dotpot iT */}
+          <div className="py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 p-3 text-textColor-500`}
+                  >
+                    <h1 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
+                      Why Dotpot iT
+                    </h1>
+                    <img
+                      className="w-64 mx-auto"
+                      src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"
+                      alt=""
+                    />
+                    <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
+                      Company's expertise and customized solutions. With years of experience in software development and IT services, Dotpot IT has the knowledge and resources to help enterprise businesses address their unique challenges and achieve their goals. Additionally, Dotpot IT can create custom software solutions tailored to meet the specific needs of enterprise businesses, whether it's automating processes, improving customer experiences, or ensuring data security and compliance. By partnering with Dotpot IT, enterprise businesses can benefit from the company's expertise and cutting-edge solutions, helping them stay competitive in their markets and achieve success.
+                    </p>
+                  </div>
+                </>
+              )}
+            </ReactVisibilitySensor>
+          </div>
+
+          {/* Get in Touch */}
+          <div className="bg-primary-100">
+            <GetAQuote />
+          </div>
+
         </div>
       </div>
-      <Footer />
-    </div>
+
+      <div className="">
+        <Footer />
+      </div>
+    </div >
   );
 };
 
-export default EnterpriseBusiness;
+export default WebsiteDesign;
+
+const navigationData = [
+  {
+    title: "Enterprise Business",
+    link: "/who-we-works-with/enterprise-business",
+  }
+];
