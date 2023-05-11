@@ -6,10 +6,10 @@ import { Helmet } from "react-helmet";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import blockchaindevelopment from "../../assets/img/blockchaindevelopment.png"
 import contractdevelopment from "../../assets/img/contractdevelopment.png"
-import agencyweb from "../../assets/img/agencyweb.png"
-import blogweb from "../../assets/img/blogweb.png"
-import customappweb from "../../assets/img/customappweb.png"
-import shopify from "../../assets/img/shopify.png"
+import decentralizedapplication from "../../assets/img/decentralizedapplication.png"
+import tokendevelopment from "../../assets/img/tokendevelopment.png"
+import blockchainintegration from "../../assets/img/blockchainintegration.png"
+import cryptocurrencywallet from "../../assets/img/cryptocurrencywallet.png"
 import ReactVisibilitySensor from "react-visibility-sensor";
 import { Link } from "react-router-dom";
 import GetAQuote from "../../components/GetAQuote/GetAQuote";
@@ -30,7 +30,7 @@ const BlockchainDevelopment = () => {
       description:
         "Dotpot iT specializes in building custom Decentralized Applications (DApps) that run on blockchain networks, providing increased security and transparency. Our experienced developers use blockchain technologies like Ethereum, Hyperledger, and EOS to create DApps that meet your specific requirements and use cases. Contact us to learn more about how we can help you build a custom DApp that meets your business needs.",
       illustration:
-        contractdevelopment
+      decentralizedapplication
     },
     {
       id: 3,
@@ -38,7 +38,7 @@ const BlockchainDevelopment = () => {
       description:
         "Dotpot iT offers custom Token Development services to create and launch Initial Coin Offerings (ICOs) on various blockchain networks. Our experienced developers use blockchain technologies like Ethereum, EOS, and TRON to create custom tokens that meet your specific business requirements. Contact us to learn more about how we can help you launch a custom token on the blockchain network of your choice.",
       illustration:
-        blogweb
+      tokendevelopment
     },
     {
       id: 4,
@@ -46,7 +46,7 @@ const BlockchainDevelopment = () => {
       description:
         "Dotpot iT offers Blockchain Integration services to help businesses integrate blockchain technology into their existing systems. Our experienced developers can help you connect your systems to a blockchain network, enabling increased security, transparency, and efficiency. Contact us to learn more about how we can help you integrate blockchain technology into your business processes.",
       illustration:
-        customappweb
+      blockchainintegration
     },
     {
       id: 5,
@@ -54,7 +54,7 @@ const BlockchainDevelopment = () => {
       description:
         "Dotpot iT offers Cryptocurrency Wallet Development services to create secure and user-friendly digital wallets for storing and managing cryptocurrencies. Contact us to learn more about how we can help you create a custom wallet that meets your specific needs.",
       illustration:
-        customappweb
+      cryptocurrencywallet
     },
   ];
 

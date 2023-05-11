@@ -1,11 +1,14 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import ReactVisibilitySensor from "react-visibility-sensor";
-import agencyweb from "../../assets/img/agencyweb.png";
-import blogweb from "../../assets/img/blogweb.png";
-import coverweb from "../../assets/img/coverweb.png";
-import customappweb from "../../assets/img/customappweb.png";
-import ecommarceweb from "../../assets/img/ecommarceweb.png";
+import customwebdd from "../../assets/img/customwebdd.png";
+import tailoredweb from "../../assets/img/tailoredweb.png";
+import stunningwebsites from "../../assets/img/stunningwebsites.png";
+import userexperience from "../../assets/img/userexperience.png";
+import prioritizeresponsive from "../../assets/img/prioritizeresponsive.png";
+import cuttingedge from "../../assets/img/cuttingedge.png";
+import SEO from "../../assets/img/SEO.png";
+import ongoingsupport from "../../assets/img/ongoingsupport.png";
 import Footer from "../../components/Footer/Footer";
 import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
@@ -19,49 +22,49 @@ const CustomDevelopment = () => {
       title: "Tailored Solutions",
       description:
         "At Dotpot iT, we offer tailored web solutions that match your unique vision and goals. 🎯 Our team of experts works closely with you to create a custom website that captures your brand identity and engages your target audience. 🌟 From layout to visuals, functionality to user experience, we meticulously craft every element to reflect your business values and objectives. 💡 Stand out from the competition and make a lasting impression with a website that's as unique as your business. Let's bring your vision to life! 💻✨",
-      illustration: ecommarceweb,
+      illustration: tailoredweb,
     },
     {
       id: 2,
       title: "Stunning Visuals",
       description:
         "At Dotpot iT, we create visually stunning websites that leave a lasting impression. 🌟 Our talented team combines creativity and technical expertise to craft captivating web solutions that align with your brand. 🎨 Elevate your online presence with a website that grabs attention and communicates your message effectively. Let's wow your audience with stunning visuals! 💻✨",
-      illustration: agencyweb,
+      illustration: stunningwebsites,
     },
     {
       id: 3,
       title: "User-Friendly Experience",
       description:
         "At Dotpot iT, we're all about user-friendly experiences. 🙌 With intuitive navigation, seamless interactions, and responsive designs, we ensure a smooth journey for your visitors. 💡 We prioritize accessibility and optimization for all devices, enhancing user satisfaction and engagement. 🚀🌈 Let's create a website that keeps them coming back for more!",
-      illustration: blogweb,
+      illustration: userexperience,
     },
     {
       id: 4,
       title: "Responsive Design",
       description:
         "At Dotpot iT, we prioritize responsive design. 📱💻 Your website will look great and work seamlessly on any device. From smartphones to desktops, we ensure an optimal user experience. Let's create a responsive website that leaves a lasting impression!",
-      illustration: customappweb,
+      illustration: prioritizeresponsive,
     },
     {
       id: 5,
       title: "Cutting-Edge Technologies",
       description:
         "At Dotpot iT, we stay ahead with cutting-edge technologies. ⚡🚀 Our team of experts is well-versed in the latest tools and frameworks to bring your website to life. We harness the power of technology to deliver a modern and innovative web experience. Let's build your website with the latest tech trends and elevate your online presence!",
-      illustration: customappweb,
+      illustration: cuttingedge,
     },
     {
       id: 6,
       title: "SEO Optimization",
       description:
         "At Dotpot iT, we ensure your website gets noticed. 🔍✨ Our SEO optimization strategies will help your website rank higher in search engine results, attracting more organic traffic and potential customers. We implement the best practices in keyword research, on-page optimization, and metadata optimization to improve your website's visibility. Let us optimize your website for search engines and drive targeted traffic to your business!",
-      illustration: customappweb,
+      illustration: SEO,
     },
     {
       id: 7,
       title: "Ongoing Support",
       description:
         "At Dotpot iT, we're with you every step of the way! 🤝 Our support doesn't end after your website launch. We provide ongoing assistance, updates, and maintenance to keep your site running smoothly. With us, you'll have peace of mind knowing that our team is here to support you whenever you need it. Let us handle the technicalities while you focus on growing your business! 💪",
-      illustration: customappweb,
+      illustration: ongoingsupport,
     },
   ];
 
@@ -138,7 +141,7 @@ const CustomDevelopment = () => {
                           </p>
                         </div>
                         <img
-                          src={coverweb}
+                          src={customwebdd}
                           alt=""
                           className="w-full md:w-1/2 lg:w-1/2"
                         />
