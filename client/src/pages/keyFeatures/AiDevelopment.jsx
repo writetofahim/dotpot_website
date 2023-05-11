@@ -1,67 +1,75 @@
 import React from "react";
-import coverImg from "../../assets/img/aiDev.jpeg";
-import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
-import TechnologiesTab from "../../components/technologiesTab/TechnologiesTab";
+import Footer from "../../components/Footer/Footer";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-
 import { Helmet } from "react-helmet";
-import keras from "../../assets/img/icon/ai/keras.png";
-import numPy from "../../assets/img/icon/ai/numPy.png";
-import pandas from "../../assets/img/icon/ai/pandas.jpg";
-import tensorFlow from "../../assets/img/icon/ai/tensorFlow.png";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
+import aidevelopment from "../../assets/img/aidevelopment.png"
+import machinelearning from "../../assets/img/machinelearning.png"
+import NLP from "../../assets/img/NLP.png"
+import predictiveanalytics from "../../assets/img/predictiveanalytics.png"
+import customizedsolutions from "../../assets/img/customizedsolutions.png"
+import intelligentautomation from "../../assets/img/intelligentautomation.png"
+import datacience from "../../assets/img/datacience.png"
+import ReactVisibilitySensor from "react-visibility-sensor";
+import { Link } from "react-router-dom";
+import GetAQuote from "../../components/GetAQuote/GetAQuote";
 
 const AiDevelopment = () => {
-  const data = [
+  const worksData = [
     {
-      title: "Machine Learning",
       id: 1,
-      technologies: [
-        {
-          img: tensorFlow,
-          name: "TensorFlow",
-        },
-        {
-          img: numPy,
-          name: "NumPy",
-        },
-        {
-          img: keras,
-          name: "Keras",
-        },
-        {
-          img: pandas,
-          name: "Pandas",
-        },
-      ],
+      title: "Machine Learning",
+      description:
+        "Unlock the power of your data with Dotpot iT's Machine Learning services. Build predictive models, automate processes, and personalize experiences to drive growth with our experts. Optimize resource allocation, improve decision-making, and stay ahead of the competition. Contact us today to learn more. ",
+      illustration:
+      machinelearning
     },
     {
-      title: "Neural Networks ",
       id: 2,
-      technologies: [
-        {
-          img: tensorFlow,
-          name: "TensorFlow",
-        },
-        {
-          img: numPy,
-          name: "NumPy",
-        },
-        {
-          img: keras,
-          name: "Keras",
-        },
-        {
-          img: pandas,
-          name: "Pandas",
-        },
-      ],
+      title: "Natural Language Processing (NLP)",
+      description:
+        "Revolutionize the way you interact with customers using Dotpot iT's NLP services. Build chatbots, automate support, and extract insights with advanced techniques. Improve response times, increase satisfaction, and reduce costs. Contact us to learn more.",
+      illustration:
+      NLP
+    },
+    {
+      id: 3,
+      title: "Predictive Analytics",
+      description:
+        "Dotpot iT's Predictive Analytics services help you forecast trends, optimize resource allocation, and improve decision-making with advanced machine learning algorithms. Stay ahead of the curve and drive business success with accurate predictions from our team of experts. Contact us today to learn more.",
+      illustration:
+      predictiveanalytics
+    },
+    {
+      id: 4,
+      title: "Custom Solution",
+      description:
+        "At Dotpot iT, we offer Custom Solutions services to help you meet your specific business requirements. Our experts work closely with you to develop tailored solutions using advanced technologies such as machine learning, artificial intelligence, and data science. Let us help you optimize your business processes, increase efficiency, and drive growth. Contact us today to learn more.",
+      illustration:
+      customizedsolutions
+    },
+    {
+      id: 5,
+      title: "Intelligent Automation",
+      description:
+        "Dotpot iT's Intelligent Automation services help you automate routine tasks, reduce costs, and increase efficiency using advanced technologies like RPA, ML, and AI. Let us help you transform your business today.",
+      illustration:
+      intelligentautomation
+    },
+    {
+      id: 6,
+      title: "Data Science",
+      description:
+        "Dotpot iT's Data Science services help you unlock insights from your data, make informed decisions, and drive business growth with advanced techniques and algorithms. Let us help you transform your business with the power of data science.",
+      illustration:
+      datacience
     },
   ];
+
   useScrollToTop();
   return (
-    <div className="">
+    <div className="bg-background-500">
       <Helmet>
         <title>AI Development | Dotpot iT</title>
         <meta
@@ -93,214 +101,154 @@ const AiDevelopment = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="bg-background-500">
-      <div className="pt-[15vh] pb-10 container mx-auto min-h-screen px-3">
+      <div className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"} `}>
         <NavigatorComponent navigationData={navigationData} />
-        <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center">
-          AI Development
-        </h1>
-        <p className="text-md text-textColor-500 text-center mb-10">
-          Our AI solutions transform businesses with automation and
-          intelligence.
-        </p>
-        <div className="mb-5 container mx-auto">
-          <img className="md:w-1/2 mx-auto " src={coverImg} alt="" />
-        </div>
-        <div className="container  mx-auto flex flex-col mb-10 my-10">
-          <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500 ">
-            Overview
-          </h3>
-          {/* Overview */}
-          <div className="text-textColor-500 flex flex-col gap-5 p-5 text-justify">
-            <p>
-              AI development involves the use of machine learning algorithms to
-              create intelligent computer systems that can perform tasks without
-              human intervention. It has revolutionized the way businesses
-              operate and has found applications in various industries, such as
-              healthcare, finance, and transportation. The development of AI
-              requires a thorough understanding of programming, data analysis,
-              and statistical modeling. The advancements in hardware, software,
-              and cloud computing have facilitated the growth of AI. The
-              development of deep learning algorithms, neural networks, and
-              natural language processing has enabled machines to perform
-              complex tasks, such as recognizing images, translating languages,
-              and even driving cars. AI development is an exciting field with
-              endless possibilities for innovation and growth.
-            </p>
-          </div>
-
-          {/*card for redirect to service quote */}
-          {/* <div className=" border-b h-52 w-full md:w-4/5 mx-auto my-5  rounded-xl border flex justify-center items-center shadow-md overflow-hidden relative">
-            
-            <div className=" flex justify-center items-center">
-              <div className="w-96 absolute">
-                <div className="absolute top-0 -left-4 w-52 h-52  bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-                <div className="absolute top-0 -right-4 w-52 h-52  bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-                <div className="absolute -bottom-8 left-20 w-52 h-52  bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-              </div>
-
-              <div className="flex flex-col gap-5">
-                <h3 className="text-center text-purple-500 font-bold text-xl ">
-                  Want to Know How Much Exactly Your AI development Will Cost?
-                </h3>
-                <h3 className="text-center text-purple-500 font-semibold">
-                  "The Experts Are Just A Click Away. Get A Quote."
-                </h3>
-
-                <Link
-                  to="/services"
-                  className="  w-52 h-10 flex items-center justify-center rounded-md bg-secondary-500 mx-auto hover:scale-105 transition-all shadow-sm"
-                >
-                  <div className="flex justify-center items-center gap-3">
-                    <p className="text-white font-semibold">Share your Idea</p>
-                    <BsArrowRightCircleFill className="text-white hover:cursor-pointer" />
+        <div>
+          {/* Banner */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`mt-10 mb-16 ${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 `}
+                  >
+                    <div className="container mx-auto">
+                      <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
+                        <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
+                          <h2 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">AI Development</h2>
+                          <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
+                          Transform Your Business with Advanced AI Solutions. Discover the Power of Machine Learning, Natural Language Processing, and More with Dotpot iT. Unlock New Opportunities and Drive Growth Today!
+                          </p>
+                        </div>
+                        <img src={aidevelopment} alt="" className="w-full md:w-1/2 lg:w-1/2" />
+                      </div>
+                    </div>
                   </div>
-                </Link>
-              </div>
-            </div>
-          </div> */}
-
-          <TechnologiesTab title="Technologies We Work On" data={data} />
-
-          {/* paragraph */}
-          <div className="my-3">
-            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-textColor-500 ">
-              What Is AI Development?
-            </h2>
-            <div className="text-textColor-500 flex flex-col gap-5 p-5">
-              <p className="text-justify">
-                Artificial Intelligence (AI) development involves creating
-                intelligent machines that can perform tasks that typically
-                require human intelligence, such as visual perception, speech
-                recognition, decision-making, and language translation. AI
-                development is based on the principle of machine learning, where
-                machines learn from data, identify patterns, and make decisions
-                without human intervention.
-              </p>
-              <p className="text-justify">
-                The three main types of AI development include narrow or weak
-                AI, general or strong AI, and super AI. Narrow AI is programmed
-                to perform specific tasks such as recognizing speech or driving
-                a car. General AI, on the other hand, has the ability to perform
-                any intellectual task that a human can do. Super AI is the most
-                advanced form of AI and has the ability to surpass human
-                intelligence and capabilities.
-              </p>
-              <p className="text-justify">
-                AI development has various applications across industries,
-                including healthcare, finance, manufacturing, and
-                transportation. AI-powered technologies can improve efficiency,
-                accuracy, and speed of operations, leading to cost savings and
-                increased productivity. However, ethical concerns related to AI
-                development, such as bias and job displacement, need to be
-                addressed.
-              </p>
-            </div>
+                </>
+              )}
+            </ReactVisibilitySensor>
           </div>
 
-          {/* Why Choose DotpotiT For Machine Learning? */}
-          <div className="my-3">
-            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-10  block text-textColor-500 ">
-              Why Choose DotpotiT For Machine Learning?
-            </h2>
-            {/*1) Improvised Technologies*/}
-            <div className="my-3">
-              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-textColor-500 ">
-                1) Improvised Technologies
-              </h2>
-              <div className="text-textColor-500 flex flex-col gap-5 p-5">
-                <p className="text-justify">
-                  AI and Machine Learning are cutting-edge technologies that
-                  have found their way into businesses worldwide. At our
-                  company, we offer the latest and most advanced technologies to
-                  meet our clients' needs. Our developers have the skills and
-                  expertise to implement these technologies with precision,
-                  ensuring maximum efficiency.
-                </p>
-              </div>
-            </div>
-            {/* 2) Dynamic Solution*/}
-            <div className="my-3">
-              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-textColor-500 ">
-                2) Dynamic Solution
-              </h2>
-              <div className="text-textColor-500 flex flex-col gap-5 p-5">
-                <p className="text-justify">
-                  DotpotiT provides top-notch Artificial Intelligence and
-                  Machine Learning technology, backed by 10+ years of
-                  experience. Our ML and AI data solutions offer a wide range of
-                  features and dynamic solutions to help businesses thrive.
-                </p>
-              </div>
-            </div>
-            {/* 3) Enhance Productivity */}
-            <div className="my-3">
-              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-textColor-500 ">
-                3) Enhance Productivity
-              </h2>
-              <div className="text-textColor-500 flex flex-col gap-5 p-5">
-                <p className="text-justify">
-                  Our AI and ML technology improves business productivity, and
-                  our professionals develop effective strategies to meet client
-                  needs.
-                </p>
-              </div>
-            </div>
-            {/* 4) Deep Insights */}
-            <div className="my-3">
-              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-textColor-500 ">
-                4) Deep Insights
-              </h2>
-              <div className="text-textColor-500 flex flex-col gap-5 p-5">
-                <p className="text-justify">
-                  We ensure transparent communication with clients when
-                  providing AI and ML insights to help their businesses grow.
-                  Our team is open about our process, models, and decisions, and
-                  we interact with clients to provide deep insights into their
-                  project. We acknowledge their demands and strive to meet their
-                  business needs.
-                </p>
-              </div>
-            </div>
-          </div>
+          {/* body */}
+          <div className="container mx-auto w-full overflow-hidden">
+            <>
+              <div
+                className={`flex flex-col gap-5`}
+              >
+                {worksData.map(({ id, title, description, illustration }) => (
+                  <div className={`md:flex justify-center items-center gap-x-20 font-work p-5`} key={id}>
+                    <div className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"} `}>
+                      <ReactVisibilitySensor partialVisibility>
+                        {({ isVisible }) => (<div className={` ${isVisible
+                          ? "opacity-100 translate-y-0"
+                          : "translate-y-20 opacity-0"
+                          } duration-1000 `}><h1 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
+                            {title}
+                          </h1>
+                          <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">{description}</p></div>)}
+                      </ReactVisibilitySensor>
 
-          {/*card for redirect to service quote */}
-          {/* <div className=" border-b h-52 w-full md:w-4/5 mx-auto my-5  rounded-xl border flex justify-center items-center shadow-md overflow-hidden relative">
-           
-            <div className=" flex justify-center items-center">
-              <div className="w-96 absolute">
-                <div className="absolute top-0 -left-4 w-52 h-52  bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-                <div className="absolute top-0 -right-4 w-52 h-52  bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-                <div className="absolute -bottom-8 left-20 w-52 h-52  bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-              </div>
-
-              <div className="flex flex-col gap-5">
-                <h3 className="text-center text-purple-500 font-bold text-xl ">
-                  Want to Know How Much Exactly Your AI development Will Cost?
-                </h3>
-                <h3 className="text-center text-purple-500 font-semibold">
-                  "The Experts Are Just A Click Away. Get A Quote."
-                </h3>
-
-                <Link
-                  to="/services"
-                  className="  w-52 h-10 flex items-center justify-center rounded-md bg-secondary-500 mx-auto hover:scale-105 transition-all shadow-sm"
-                >
-                  <div className="flex justify-center items-center gap-3">
-                    <p className="text-white font-semibold">Share your Idea</p>
-                    <BsArrowRightCircleFill className="text-white hover:cursor-pointer" />
+                    </div>
+                    <ReactVisibilitySensor partialVisibility>
+                      {({ isVisible }) => (<div className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"} ${isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                        } duration-1000 `}>
+                        <img className="w-4/5 mx-auto" src={illustration} alt="" />
+                      </div>)}
+                    </ReactVisibilitySensor>
                   </div>
-                </Link>
+                ))}
               </div>
+            </>
+
+          </div>
+
+          {/* Technologies We Use */}
+          <div className="bg-primary-100 py-16">
+            <div className="container mx-auto ">
+              <ReactVisibilitySensor partialVisibility>
+                {({ isVisible }) => (
+                  <>
+                    <div
+                      className={`${isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                        } duration-1000 p-3 text-textColor-500`}
+                    >
+                      <h1 className="lg:text-3xl md:text-3xl text-xl font-bold text-center">
+                        Technologies We Use
+                      </h1>
+                      <img
+                        className="w-64  mx-auto pb-14"
+                        src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"
+                        alt=""
+                      />
+                      <div className="flex flex-col md:flex-col lg:flex-row items-center justify-center">
+                        <div className="text-center md:text-center lg:text-left w-full lg:w-1/2 px-3 pb-10">
+                          <h2 className="lg:text-3xl md:text-2xl text-xl font-bold mb-5">We build Using Latest Technologies</h2>
+                          <p className="md:text-base text-xs text-gray-400 text-justify">Dotpot iT is an innovative company that stays ahead of the curve by utilizing cutting-edge technologies. Our team of experts constantly explores the latest tools and techniques to deliver effective solutions for businesses. By leveraging the power of the latest technologies, we develop transformative solutions that help businesses stay competitive and drive growth. Partnering with Dotpot iT means accessing the most advanced and innovative technologies available today.</p>
+                        </div>
+                        <div className="lg:w-1/2 w-full flex flex-col items-center justify-center gap-10">
+                          <div className="flex gap-10 flex-wrap justify-center">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="python"
+                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="tensorflow"
+                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img src="https://icon-icons.com/icons2/2389/PNG/512/keras_logo_icon_145136.png" alt="keras"
+                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img src="https://icon-icons.com/icons2/2699/PNG/512/numpy_logo_icon_168071.png" alt="nampy"
+                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img src="https://vectorseek.com/wp-content/uploads/2023/02/Scikit-learn-Logo-Vector.jpg" alt="scitlearn"
+                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                )}
+              </ReactVisibilitySensor>
             </div>
-          </div> */}
+          </div>
+
+          {/* Why Dotpot iT */}
+          <div className="py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 p-3 text-textColor-500`}
+                  >
+                    <h1 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
+                      Why Dotpot iT
+                    </h1>
+                    <img
+                      className="w-64 mx-auto"
+                      src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"
+                      alt=""
+                    />
+                    <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
+                    Dotpot iT offers affordable AI Development services that leverage the latest technologies. With a focus on delivering innovative and user-friendly solutions, we specialize in developing AI-powered applications for businesses across industries. Our experienced team is committed to providing high-quality solutions that exceed clients' expectations, and exceptional customer service throughout the development process. Choose Dotpot iT for cutting-edge AI development that helps your business thrive.
+                    </p>
+                  </div>
+                </>
+              )}
+            </ReactVisibilitySensor>
+          </div>
+
+          {/* Get in Touch */}
+          <div className="bg-primary-100">
+            <GetAQuote />
+          </div>
         </div>
       </div>
-      </div>
-
-      <div className="">
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 };

@@ -1,51 +1,66 @@
 import React from "react";
-import { Helmet } from "react-helmet";
-import coverImg from "../../assets/img/blockchainDev.jpg";
-import ethereum from "../../assets/img/icon/blockchain/crypto.png";
-import kotlin from "../../assets/img/icon/blockchain/kotlin.webp";
-import solidity from "../../assets/img/icon/blockchain/solidity.png";
-import stellar from "../../assets/img/icon/blockchain/stellar.png";
-import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
-import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
-import TechnologiesTab from "../../components/technologiesTab/TechnologiesTab";
+import Footer from "../../components/Footer/Footer";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import { Helmet } from "react-helmet";
+import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
+import blockchaindevelopment from "../../assets/img/blockchaindevelopment.png"
+import contractdevelopment from "../../assets/img/contractdevelopment.png"
+import agencyweb from "../../assets/img/agencyweb.png"
+import blogweb from "../../assets/img/blogweb.png"
+import customappweb from "../../assets/img/customappweb.png"
+import shopify from "../../assets/img/shopify.png"
+import ReactVisibilitySensor from "react-visibility-sensor";
+import { Link } from "react-router-dom";
+import GetAQuote from "../../components/GetAQuote/GetAQuote";
 
 const BlockchainDevelopment = () => {
-  const data = [
+  const worksData = [
     {
-      title: "Platforms",
       id: 1,
-      technologies: [
-        {
-          img: ethereum,
-          name: "Ethereum",
-        },
-        {
-          img: stellar,
-          name: "Stellar",
-        },
-      ],
+      title: "Smart Contract Development",
+      description:
+        "Dotpot iT offers custom Smart Contract Development services to automate business processes, reduce costs, and increase security and transparency. Our experienced developers work closely with clients to create secure and tamper-proof contracts that meet their unique needs. Contact us to learn more about how we can help you harness the power of blockchain technology through Smart Contracts.",
+      illustration:
+      contractdevelopment
     },
     {
-      title: "Languages",
       id: 2,
-      technologies: [
-        {
-          img: solidity,
-          name: "Solidity",
-        },
-        {
-          img: kotlin,
-          name: "Kotlin",
-        },
-      ],
+      title: "Decentralized Application Development",
+      description:
+        "Dotpot iT specializes in building custom Decentralized Applications (DApps) that run on blockchain networks, providing increased security and transparency. Our experienced developers use blockchain technologies like Ethereum, Hyperledger, and EOS to create DApps that meet your specific requirements and use cases. Contact us to learn more about how we can help you build a custom DApp that meets your business needs.",
+      illustration:
+        contractdevelopment
+    },
+    {
+      id: 3,
+      title: "Token Development",
+      description:
+        "Dotpot iT offers custom Token Development services to create and launch Initial Coin Offerings (ICOs) on various blockchain networks. Our experienced developers use blockchain technologies like Ethereum, EOS, and TRON to create custom tokens that meet your specific business requirements. Contact us to learn more about how we can help you launch a custom token on the blockchain network of your choice.",
+      illustration:
+        blogweb
+    },
+    {
+      id: 4,
+      title: "Blockchain Integration ",
+      description:
+        "Dotpot iT offers Blockchain Integration services to help businesses integrate blockchain technology into their existing systems. Our experienced developers can help you connect your systems to a blockchain network, enabling increased security, transparency, and efficiency. Contact us to learn more about how we can help you integrate blockchain technology into your business processes.",
+      illustration:
+        customappweb
+    },
+    {
+      id: 5,
+      title: "Cryptocurrency Wallet Development",
+      description:
+        "Dotpot iT offers Cryptocurrency Wallet Development services to create secure and user-friendly digital wallets for storing and managing cryptocurrencies. Contact us to learn more about how we can help you create a custom wallet that meets your specific needs.",
+      illustration:
+        customappweb
     },
   ];
 
   useScrollToTop();
   return (
-    <div className="">
+    <div className="bg-background-500">
       <Helmet>
         <title>Blockchain Development | Dotpot iT</title>
         <meta
@@ -83,119 +98,150 @@ const BlockchainDevelopment = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="bg-background-500">
-        <div className="pt-[15vh] container mx-auto pb-10 min-h-screen p-3">
-          <NavigatorComponent navigationData={navigationData} />
-
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center">
-            Blockchain Development
-          </h1>
-          <p className="text-md text-textColor-500 text-center mb-10">
-            Hire The Expert Development Team of Blockchain Technology!
-          </p>
-          <div className="mb-5 container mx-auto">
-            <img className="md:w-1/2 mx-auto " src={coverImg} alt="" />
-          </div>
-          <div className="container  mx-auto flex flex-col mb-10 my-10">
-            <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
-              Overview
-            </h3>
-            {/* Overview */}
-            <div className="text-textColor-500 flex flex-col gap-5 p-5">
-              <p className="text-justify">
-                Blockchain technology has become a hot topic among businesses,
-                particularly in the IT industry. It has paved the way for secure
-                payment gateways and is an excellent form of database storage.
-                Using records or blocks, blockchain technology stores data and
-                automatically copies it with the mechanism of cryptography,
-                providing a more secure data storage platform. As a result, data
-                is stored securely in multiple areas, reducing the overall cost of
-                data storage. This technology supports cryptocurrencies and
-                digital currencies, making it a game-changer in the finance
-                industry. With a significant amount of big data, businesses can
-                hire blockchain developers to create new and more efficient
-                business processes.
-              </p>
-            </div>
-
-            {/*card for redirect to service quote */}
-            {/* <div className=" border-b h-52 w-full md:w-4/5 mx-auto my-5  rounded-xl border flex justify-center items-center shadow-md overflow-hidden relative">
-            
-            <div className=" flex justify-center items-center">
-              <div className="w-96 absolute">
-                <div className="absolute top-0 -left-4 w-52 h-52  bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-                <div className="absolute top-0 -right-4 w-52 h-52  bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-                <div className="absolute -bottom-8 left-20 w-52 h-52  bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-              </div>
-
-              <div className="flex flex-col gap-5">
-                <h3 className="text-center text-purple-500 font-bold text-xl ">
-                  Want to Know How Much Exactly Your Blockchain development Will
-                  Cost?
-                </h3>
-                <h3 className="text-center text-purple-500 font-semibold">
-                  "The Experts Are Just A Click Away. Get A Quote."
-                </h3>
-
-                <Link
-                  to="/services"
-                  className="  w-52 h-10 flex items-center justify-center rounded-md bg-secondary-500 mx-auto hover:scale-105 transition-all shadow-sm"
-                >
-                  <div className="flex justify-center items-center gap-3">
-                    <p className="text-white font-semibold">Share your Idea</p>
-                    <BsArrowRightCircleFill className="text-white hover:cursor-pointer" />
+      <div className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"} `}>
+        <NavigatorComponent navigationData={navigationData} />
+        <div>
+          {/* Banner */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`mt-10 mb-16 ${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 `}
+                  >
+                    <div className="container mx-auto">
+                      <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
+                        <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
+                          <h2 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">Blockchain Development</h2>
+                          <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
+                            Transform the future with Dotpot iT - Your expert partner for custom blockchain solutions. Build secure and transparent systems with our cutting-edge development services.
+                          </p>
+                        </div>
+                        <img src={blockchaindevelopment} alt="" className="w-full md:w-1/2 lg:w-1/2" />
+                      </div>
+                    </div>
                   </div>
-                </Link>
-              </div>
-            </div>
-          </div> */}
-
-            {/* paragraph */}
-            <div className="my-3">
-              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-textColor-500 ">
-                What is Blockchain?
-              </h2>
-              <div className="text-textColor-500 flex flex-col gap-5 p-5">
-                <p className="text-justify">
-                  Blockchain is a distributed digital ledger that securely stores
-                  data and ensures its integrity through cryptography. It is not
-                  limited to currency transactions but extends to any domain where
-                  valuable assets are transacted, including contracts, personal
-                  information, health records, and business data.
-                </p>
-                <p className="text-justify">
-                  With its unique features, such as decentralization,
-                  transparency, and immutability, blockchain technology offers
-                  many benefits to businesses, including increased security,
-                  efficiency, and cost savings. As a result, many industries are
-                  exploring the use of blockchain, including finance, healthcare,
-                  supply chain management, and more. As the technology continues
-                  to evolve and mature, it has the potential to transform the way
-                  businesses operate and interact with each other.
-                </p>
-              </div>
-            </div>
-            {/* Advantages of Blockchain Technology */}
-            <ul className="ml-5">
-              <h3 className="text-xl md:text-2xl  my-2 md:mb-1  text-textColor-500 font-bold">
-                Advantages of Blockchain Technology
-              </h3>
-              <li className=" ml-5 list-disc text-textColor-500 pl-2">Efficiency</li>
-              <li className=" ml-5 list-disc text-textColor-500 pl-2">Transparency</li>
-              <li className=" ml-5 list-disc text-textColor-500 pl-2">Trust</li>
-              <li className=" ml-5 list-disc text-textColor-500 pl-2">Flexibility</li>
-            </ul>
+                </>
+              )}
+            </ReactVisibilitySensor>
           </div>
 
-          <TechnologiesTab
-            title="Platforms and technologies we use"
-            data={data}
-          />
+          {/* body */}
+          <div className="container mx-auto w-full overflow-hidden">
+            <>
+              <div
+                className={`flex flex-col gap-5`}
+              >
+                {worksData.map(({ id, title, description, illustration }) => (
+                  <div className={`md:flex justify-center items-center gap-x-20 font-work p-5`} key={id}>
+                    <div className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"} `}>
+                      <ReactVisibilitySensor partialVisibility>
+                        {({ isVisible }) => (<div className={` ${isVisible
+                          ? "opacity-100 translate-y-0"
+                          : "translate-y-20 opacity-0"
+                          } duration-1000 `}><h1 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
+                            {title}
+                          </h1>
+                          <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">{description}</p></div>)}
+                      </ReactVisibilitySensor>
+
+                    </div>
+                    <ReactVisibilitySensor partialVisibility>
+                      {({ isVisible }) => (<div className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"} ${isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                        } duration-1000 `}>
+                        <img className="w-4/5 mx-auto" src={illustration} alt="" />
+                      </div>)}
+                    </ReactVisibilitySensor>
+                  </div>
+                ))}
+              </div>
+            </>
+
+          </div>
+
+          {/* Technologies We Use */}
+          <div className="bg-primary-100 py-16">
+            <div className="container mx-auto ">
+              <ReactVisibilitySensor partialVisibility>
+                {({ isVisible }) => (
+                  <>
+                    <div
+                      className={`${isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                        } duration-1000 p-3 text-textColor-500`}
+                    >
+                      <h1 className="lg:text-3xl md:text-3xl text-xl font-bold text-center">
+                        Technologies We Use
+                      </h1>
+                      <img
+                        className="w-64  mx-auto pb-14"
+                        src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"
+                        alt=""
+                      />
+                      <div className="flex flex-col md:flex-col lg:flex-row items-center justify-center">
+                        <div className="text-center md:text-center lg:text-left w-full lg:w-1/2 px-3 pb-10">
+                          <h2 className="lg:text-3xl md:text-2xl text-xl font-bold mb-5">We build Using Latest Technologies</h2>
+                          <p className="md:text-base text-xs text-gray-400 text-justify">Dotpot iT is an innovative company that stays ahead of the curve by utilizing cutting-edge technologies. Our team of experts constantly explores the latest tools and techniques to deliver effective solutions for businesses. By leveraging the power of the latest technologies, we develop transformative solutions that help businesses stay competitive and drive growth. Partnering with Dotpot iT means accessing the most advanced and innovative technologies available today.</p>
+                        </div>
+                        <div className="lg:w-1/2 w-full flex flex-col items-center justify-center gap-10">
+                          <div className="flex gap-10 flex-wrap justify-center">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="node"
+                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Ethereum-icon-purple.svg/2048px-Ethereum-icon-purple.svg.png" alt="ethereum"
+                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img src="https://img.uxwing.com/wp-content/themes/uxwing/download/web-app-development/web-3-icon.svg" alt="ethereum"
+                              className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                )}
+              </ReactVisibilitySensor>
+            </div>
+          </div>
+
+          {/* Why Dotpot iT */}
+          <div className="py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 p-3 text-textColor-500`}
+                  >
+                    <h1 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
+                      Why Dotpot iT
+                    </h1>
+                    <img
+                      className="w-64 mx-auto"
+                      src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"
+                      alt=""
+                    />
+                    <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
+                      Dotpot iT provides top-notch Blockchain Development services that utilize the latest technologies at an affordable cost. Our focus is on delivering innovative and user-friendly blockchain-based solutions for businesses of all industries. We have a team of experienced developers who are committed to providing high-quality solutions that exceed clients' expectations and offer exceptional customer service throughout the development process. Choose Dotpot iT for cutting-edge blockchain development that helps your business thrive.
+                    </p>
+                  </div>
+                </>
+              )}
+            </ReactVisibilitySensor>
+          </div>
+
+          {/* Get in Touch */}
+          <div className="bg-primary-100">
+            <GetAQuote />
+          </div>
         </div>
       </div>
-      <div className="">
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 };

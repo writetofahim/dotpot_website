@@ -1,91 +1,66 @@
-/* This is a component thats render CyberSecurity page
- */
-
 import React from "react";
-import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
+import Footer from "../../components/Footer/Footer";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-
 import { Helmet } from "react-helmet";
-import cyberSecurity from "../../assets/img/cyberSecurity.png";
-import keras from "../../assets/img/icon/ai/keras.png";
-import numPy from "../../assets/img/icon/ai/numPy.png";
-import pandas from "../../assets/img/icon/ai/pandas.jpg";
-import tensorFlow from "../../assets/img/icon/ai/tensorFlow.png";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
+import cybersecuritycover from "../../assets/img/cybersecuritycover.png"
+import comprehensivesecurity from "../../assets/img/comprehensivesecurity.png"
+import riskassessment from "../../assets/img/riskassessment.png"
+import monitoring from "../../assets/img/monitoring.png"
+import compliance from "../../assets/img/compliance.png"
+import proactiveapproach from "../../assets/img/proactiveapproach.png"
+import ReactVisibilitySensor from "react-visibility-sensor";
+import { Link } from "react-router-dom";
+import GetAQuote from "../../components/GetAQuote/GetAQuote";
 
 const CyberSecurity = () => {
-  const data = [
+  const worksData = [
     {
-      title: "Machine Learning",
       id: 1,
-      technologies: [
-        {
-          img: tensorFlow,
-          name: "TensorFlow",
-        },
-        {
-          img: numPy,
-          name: "NumPy",
-        },
-        {
-          img: keras,
-          name: "Keras",
-        },
-        {
-          img: pandas,
-          name: "Pandas",
-        },
-      ],
+      title: "Comprehensive Security Solutions",
+      description:
+        "Dotpot IT offers a range of cyber security solutions that cover various aspects of security, including network security, endpoint security, cloud security, web security, and application security.",
+      illustration:
+      comprehensivesecurity
     },
     {
-      title: "Machine Learning",
       id: 2,
-      technologies: [
-        {
-          img: tensorFlow,
-          name: "TensorFlow",
-        },
-        {
-          img: numPy,
-          name: "NumPy",
-        },
-        {
-          img: keras,
-          name: "Keras",
-        },
-        {
-          img: pandas,
-          name: "Pandas",
-        },
-      ],
+      title: "Risk Assessment",
+      description:
+        "Dotpot IT conducts a comprehensive risk assessment of your organization's IT infrastructure to identify vulnerabilities, threats, and risks. Based on the assessment, they provide customized security solutions that meet your organization's specific needs.",
+      illustration:
+      riskassessment
     },
     {
-      title: "Neural Networks ",
       id: 3,
-      technologies: [
-        {
-          img: tensorFlow,
-          name: "TensorFlow",
-        },
-        {
-          img: numPy,
-          name: "NumPy",
-        },
-        {
-          img: keras,
-          name: "Keras",
-        },
-        {
-          img: pandas,
-          name: "Pandas",
-        },
-      ],
+      title: "24/7 Monitoring",
+      description:
+        "Dotpot IT provides continuous monitoring of your organization's IT infrastructure, including your network, servers, endpoints, and applications, to detect and respond to security incidents in real-time.",
+      illustration:
+      monitoring
+    },
+    {
+      id: 4,
+      title: "Compliance",
+      description:
+        "Dotpot IT ensures that your organization's security measures comply with industry standards and regulatory requirements, such as HIPAA, PCI DSS, and GDPR.",
+      illustration:
+      compliance
+    },
+    {
+      id: 5,
+      title: "Proactive Approach",
+      description:
+        "Dotpot IT takes a proactive approach to cyber security by conducting regular security assessments, monitoring your IT infrastructure, and implementing measures to prevent potential threats before they become a problem.",
+      illustration:
+      proactiveapproach
     },
   ];
+  
   useScrollToTop();
   return (
-    <div className="">
+    <div className="bg-background-500">
       <Helmet>
         <title>Cyber Security | Dotpot iT</title>
         <meta
@@ -118,192 +93,108 @@ const CyberSecurity = () => {
       </Helmet>
       {/* Navbar */}
       <Navbar />
-      <div className="bg-background-500 ">
-        <div className="min-h-screen container mx-auto px-3 lg:px-5 pt-[15vh] pb-10">
-          <NavigatorComponent navigationData={navigationData} />
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-center text-textColor-500">
-            Cyber Security
-          </h1>
-          <p className="text-md text-center mb-10 text-textColor-500">
-            Our Cyber Security provides the state of the earth security services
-            for our customer's data.
-          </p>
-          <div className="mb-5 container mx-auto">
-            <img className="md:w-1/2 mx-auto " src={cyberSecurity} alt="" />
+      <div className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"} `}>
+        <NavigatorComponent navigationData={navigationData} />
+        <div>
+          {/* Banner */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`mt-10 mb-16 ${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 `}
+                  >
+                    <div className="container mx-auto">
+                      <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
+                        <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
+                          <h2 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">Cyber Security</h2>
+                          <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
+                          A dedicated cyber security team is responsible for identifying and responding to cyber threats. It is led by a CISO and includes professionals with diverse skill sets. The team collaborates with other teams and external stakeholders, updates their skills and knowledge, and has a well-defined incident response plan.
+                          </p>
+                        </div>
+                        <img src={cybersecuritycover} alt="" className="w-full md:w-1/2 lg:w-1/2" />
+                      </div>
+                    </div>
+                  </div>
+                </>
+              )}
+            </ReactVisibilitySensor>
           </div>
-          <div className="container  mx-auto flex flex-col mb-10 my-10">
-            <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
-              Overview
-            </h3>
-            {/* Overview */}
-            <div className="flex flex-col gap-5 p-5 text-textColor-500">
-              <p className="text-justify">
-                In today’s digital age, cybersecurity threats are becoming more
-                frequent and sophisticated, making it crucial for businesses to
-                ensure they are protected from cyber attacks. Cybersecurity is not
-                just a technical issue, it is a business issue, and ignoring it
-                can result in devastating consequences such as data breaches,
-                financial losses, and reputational damage. At our cybersecurity
-                service, we offer comprehensive solutions to help protect your
-                business from cyber threats. Our team of experienced cybersecurity
-                professionals have the expertise and tools needed to identify,
-                prevent, and respond to security breaches. Here are some of the
-                key benefits of our cybersecurity service:
-              </p>
-            </div>
 
-            {/*card for redirect to service quote */}
-            {/* <div className=" border-b h-52 w-full md:w-4/5 mx-auto my-5  rounded-xl border flex justify-center items-center shadow-md overflow-hidden relative">
-            
-            <div className=" flex justify-center items-center">
-              <div className="w-96 absolute">
-                <div className="absolute top-0 -left-4 w-52 h-52  bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-                <div className="absolute top-0 -right-4 w-52 h-52  bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-                <div className="absolute -bottom-8 left-20 w-52 h-52  bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-              </div>
+          {/* body */}
+          <div className="container mx-auto w-full overflow-hidden">
+            <>
+              <div
+                className={`flex flex-col gap-5`}
+              >
+                {worksData.map(({ id, title, description, illustration }) => (
+                  <div className={`md:flex justify-center items-center gap-x-20 font-work p-5`} key={id}>
+                    <div className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"} `}>
+                      <ReactVisibilitySensor partialVisibility>
+                        {({ isVisible }) => (<div className={` ${isVisible
+                          ? "opacity-100 translate-y-0"
+                          : "translate-y-20 opacity-0"
+                          } duration-1000 `}><h1 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
+                            {title}
+                          </h1>
+                          <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">{description}</p></div>)}
+                      </ReactVisibilitySensor>
 
-              <div className="flex flex-col gap-5">
-                <h3 className="text-center text-purple-500 font-bold text-xl ">
-                  Want to Know How Much Your Cyber Security Will Cost?
-                </h3>
-                <h3 className="text-center text-purple-500 font-semibold">
-                  "The Experts Are Just A Click Away. Get A Quote."
-                </h3>
-
-                <Link
-                  to="/services"
-                  className="  w-52 h-10 flex items-center justify-center rounded-md bg-secondary-500 mx-auto hover:scale-105 transition-all shadow-sm"
-                >
-                  <div className="flex justify-center items-center gap-3">
-                    <p className="text-white font-semibold">Share your Idea</p>
-                    <BsArrowRightCircleFill className="text-white hover:cursor-pointer" />
+                    </div>
+                    <ReactVisibilitySensor partialVisibility>
+                      {({ isVisible }) => (<div className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"} ${isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                        } duration-1000 `}>
+                        <img className="w-4/5 mx-auto" src={illustration} alt="" />
+                      </div>)}
+                    </ReactVisibilitySensor>
                   </div>
-                </Link>
+                ))}
               </div>
-            </div>
-          </div> */}
+            </>
 
-            {/* <TechnologiesTab title="Technologies We Work On" data={data} /> */}
+          </div>
 
-            {/* paragraph */}
-            <div className="my-3">
-              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-textColor-500 ">
-                Threat Intelligence:
-              </h2>
-              <div className="text-textColor-500 flex flex-col gap-5 p-5">
-                <p className="text-justify">
-                  Our service offers real-time threat intelligence, which involves
-                  monitoring and analyzing threats to your systems and networks.
-                  This enables us to identify vulnerabilities and proactively
-                  address them before they can be exploited by attackers.
-                </p>
-              </div>
-            </div>
-
-            {/* Why Choose DotpotiT For Machine Learning? */}
-            <div className="my-3">
-              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-10  block text-textColor-500 ">
-                Why Choose DotpotiT For Machine Learning?
-              </h2>
-              {/*1) Improvised Technologies*/}
-              <div className="my-3">
-                <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-textColor-500 ">
-                  1) Improvised Technologies
-                </h2>
-                <div className="text-textColor-500 flex flex-col gap-5 p-5">
-                  <p className="text-justify">
-                    AI and Machine Learning are cutting-edge technologies that
-                    have found their way into businesses worldwide. At our
-                    company, we offer the latest and most advanced technologies to
-                    meet our clients' needs. Our developers have the skills and
-                    expertise to implement these technologies with precision,
-                    ensuring maximum efficiency.
-                  </p>
-                </div>
-              </div>
-              {/* 2) Dynamic Solution*/}
-              <div className="my-3">
-                <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-textColor-500 ">
-                  2) Dynamic Solution
-                </h2>
-                <div className="text-textColor-500 flex flex-col gap-5 p-5">
-                  <p className="text-justify">
-                    DotpotiT provides top-notch Artificial Intelligence and
-                    Machine Learning technology, backed by 10+ years of
-                    experience. Our ML and AI data solutions offer a wide range of
-                    features and dynamic solutions to help businesses thrive.
-                  </p>
-                </div>
-              </div>
-              {/* 3) Enhance Productivity */}
-              <div className="my-3">
-                <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-textColor-500 ">
-                  3) Enhance Productivity
-                </h2>
-                <div className="text-textColor-500 flex flex-col gap-5 p-5">
-                  <p className="text-justify">
-                    Our AI and ML technology improves business productivity, and
-                    our professionals develop effective strategies to meet client
-                    needs.
-                  </p>
-                </div>
-              </div>
-              {/* 4) Deep Insights */}
-              <div className="my-3">
-                <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-textColor-500 ">
-                  4) Deep Insights
-                </h2>
-                <div className="text-textColor-500 flex flex-col gap-5 p-5">
-                  <p>
-                    We ensure transparent communication with clients when
-                    providing AI and ML insights to help their businesses grow.
-                    Our team is open about our process, models, and decisions, and
-                    we interact with clients to provide deep insights into their
-                    project. We acknowledge their demands and strive to meet their
-                    business needs.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/*card for redirect to service quote */}
-            {/* <div className=" border-b h-52 w-full md:w-4/5 mx-auto my-5  rounded-xl border flex justify-center items-center shadow-md overflow-hidden relative">
-            
-            <div className=" flex justify-center items-center">
-              <div className="w-96 absolute">
-                <div className="absolute top-0 -left-4 w-52 h-52  bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-                <div className="absolute top-0 -right-4 w-52 h-52  bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-                <div className="absolute -bottom-8 left-20 w-52 h-52  bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-              </div>
-
-              <div className="flex flex-col gap-5">
-                <h3 className="text-center text-purple-500 font-bold text-xl ">
-                  Want to Know How Much Exactly Your AI development Will Cost?
-                </h3>
-                <h3 className="text-center text-purple-500 font-semibold">
-                  "The Experts Are Just A Click Away. Get A Quote."
-                </h3>
-
-                <Link
-                  to="/services"
-                  className="  w-52 h-10 flex items-center justify-center rounded-md bg-secondary-500 mx-auto hover:scale-105 transition-all shadow-sm"
-                >
-                  <div className="flex justify-center items-center gap-3">
-                    <p className="text-white font-semibold">Share your Idea</p>
-                    <BsArrowRightCircleFill className="text-white hover:cursor-pointer" />
+          {/* Why Dotpot iT */}
+          <div className="py-16 bg-primary-100">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 p-3 text-textColor-500`}
+                  >
+                    <h1 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
+                      Why Dotpot iT
+                    </h1>
+                    <img
+                      className="w-64 mx-auto"
+                      src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"
+                      alt=""
+                    />
+                    <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
+                    Dotpot iT provides top-notch Cyber Security services that utilize the latest technologies at an affordable cost. Our focus is on delivering innovative and user-friendly security solutions for businesses of all industries. We have a team of experienced security professionals who are committed to providing high-quality solutions that exceed clients' expectations and offer exceptional customer service throughout the process. We understand the importance of securing your business from cyber threats, and we provide cutting-edge security measures to ensure the safety of your data and systems. Choose Dotpot iT for cutting-edge Cyber Security services that help your business thrive.
+                    </p>
                   </div>
-                </Link>
-              </div>
-            </div>
-          </div> */}
+                </>
+              )}
+            </ReactVisibilitySensor>
+          </div>
+
+          {/* Get in Touch */}
+          <div className="">
+            <GetAQuote />
           </div>
         </div>
       </div>
-
-      <div className="">
         <Footer />
       </div>
-    </div>
   );
 };
 
