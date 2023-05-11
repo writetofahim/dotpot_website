@@ -1,15 +1,48 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import portfolioDev from "../../assets/img/portfolioDev.png";
+import retail from "../../assets/img/portfolioDev.png";
+import overview from  '../../assets/img/portfolio/overview.png'
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import GetAQuote from "../../components/GetAQuote/GetAQuote";
+import ReactVisibilitySensor from "react-visibility-sensor";
+import parse from 'react-html-parser'
 
 const PortfolioDevelopment = () => {
   useScrollToTop();
+  const worksData = [
+    {
+      id: 1,
+      title: "Overview",
+      description:
+        "Dotpot iT offers Portfolio Web Development services to help individuals and businesses create custom portfolios that showcase their skills and accomplishments. With a focus on user experience and functionality, we build visually appealing portfolios optimized for search engines. Contact us to learn more.",
+      illustration: overview
+    },
+    {
+      id: 2,
+      title: "User-friendly Portfolio Navigation",
+      description:`User-friendly portfolio navigation is organizing a portfolio website to be easy to navigate and improve user experience by quickly finding information.`,
+      illustration:retail
+    },
+    {
+      id: 3,
+      title: "Professional Portfolio Development",
+      description:
+        "Professional portfolio development involves creating a high-quality collection of work samples and showcasing them in a visually appealing and organized manner.",
+      illustration:retail
+    },
+    {
+      id: 4,
+      title: "Engaging Portfolio Design",
+      description:
+        "Engaging portfolio design involves creating a visually attractive and interactive layout for showcasing work samples that captivates and retains the viewer's attention.",
+      illustration:retail
+    },
+  ];
   return (
-    <div>
+    <div className="bg-background-500">
       <Helmet>
         <title>Portfolio Development| Dotpot iT</title>
         <meta
@@ -44,7 +77,83 @@ const PortfolioDevelopment = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="pt-[15vh] pb-10 container mx-auto">
+
+
+      <div className={` pt-[15vh] ${window.innerWidth>1280 ? "md:pt-[11vh]": "md:pt-[15vh]"} `}>
+        <NavigatorComponent navigationData={navigationData} />
+        <div>
+          {/* Banner */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`mt-10 mb-16 ${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 `}
+                  >
+                    <div className="container mx-auto">
+                      <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
+                        <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
+                          <h2 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">Portfolio Development</h2>
+                          <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
+                          Showcasing Your Skills: Building a Strong Portfolio by Us
+                          </p>
+                        </div>
+                        <img src={retail} alt="" className="w-full md:w-1/2 lg:w-1/2" />
+                      </div>
+                    </div>
+                  </div>
+                </>
+              )}
+            </ReactVisibilitySensor>
+          </div>
+
+          {/* body */}
+          <div className="container mx-auto w-full overflow-hidden">
+                <>
+                  <div
+                    className={`flex flex-col gap-5`}
+                  >
+                    {worksData.map(({ id, title, description, illustration }) => (
+                      <div key={id} className={`md:flex justify-center items-center gap-x-20 font-work p-5`}>
+                      <div className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"} `}>
+                        <ReactVisibilitySensor partialVisibility>
+                      {({isVisible})=>(<div className={` ${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 `}><h1 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
+                          {title}
+                        </h1>
+                        <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">{parse(description)}</p></div>)}
+                      </ReactVisibilitySensor>
+                        
+                      </div>
+                      <ReactVisibilitySensor partialVisibility>
+                      {({isVisible})=>(<div className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"} ${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 `}>
+                        <img className="w-4/5 mx-auto" src={illustration} alt="" />
+                      </div>)}
+                      </ReactVisibilitySensor>
+                    </div>
+                    ))}
+                  </div>
+                </>
+      
+          </div>
+
+          {/* Get in Touch */}
+          <div className="bg-primary-100">
+            <GetAQuote/>
+          </div>
+
+        </div>
+      </div>
+
+      {/* <div className="pt-[15vh] pb-10 container mx-auto">
         <NavigatorComponent navigationData={navigationData} />
         <div>
           <h1 className="text-3xl md:text-5xl font-extrabold mb-2 text-textColor-500 text-center">
@@ -55,7 +164,7 @@ const PortfolioDevelopment = () => {
           </p>
         </div>
         <div className="flex justify-center p-4">
-          <img src={portfolioDev} alt="Product image" />
+          <img src={retail} alt="Product image" />
         </div>
         <div className="my-12 lg:mx-24 mx-6">
           <h2 className="lg:text-2xl text-xl font-bold mb-4">Overview</h2>
@@ -319,36 +428,9 @@ const PortfolioDevelopment = () => {
               that meets your needs and budget.
             </p>
           </div>
-          {/* <div className=" border-b h-52 w-full md:w-4/5 mx-auto my-5  rounded-xl border flex justify-center items-center shadow-md overflow-hidden relative">
-            <div className=" flex justify-center items-center">
-              <div className="w-96 absolute">
-                <div className="absolute top-0 -left-4 w-52 h-52  bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-                <div className="absolute top-0 -right-4 w-52 h-52  bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-                <div className="absolute -bottom-8 left-20 w-52 h-52  bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-              </div>
-
-              <div className="flex flex-col gap-5">
-                <h3 className="text-center text-purple-500 font-bold text-xl ">
-                  Get Your Service from Here!
-                </h3>
-                <h3 className="text-center text-purple-500 font-semibold">
-                  "The Experts Are Just A Click Away. Get A Quote."
-                </h3>
-
-                <Link
-                  to="/services"
-                  className="  w-52 h-10 flex items-center justify-center rounded-md bg-secondary-500 mx-auto hover:scale-105 transition-all shadow-sm"
-                >
-                  <div className="flex justify-center items-center gap-3">
-                    <p className="text-white font-semibold">Contact With Us</p>
-                    <BsArrowRightCircleFill className="text-white hover:cursor-pointer" />
-                  </div>
-                </Link>
-              </div>
-            </div>
-          </div> */}
+         
         </div>
-      </div>
+      </div> */}
       <Footer />
     </div>
   );

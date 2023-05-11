@@ -1,15 +1,55 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import EC from "../../assets/img/EC.png";
+import retail from "../../assets/img/EC.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import GetAQuote from "../../components/GetAQuote/GetAQuote";
+import ReactVisibilitySensor from "react-visibility-sensor";
+import parse from 'react-html-parser'
 
 const EcommerceDevelopment = () => {
   useScrollToTop();
+  const worksData = [
+    {
+      id: 1,
+      title: "Overview",
+      description:
+        "Dotpot IT offers budget-friendly E-Commerce website development services focused on user experience. Their team provides guidance throughout the process and post-launch support.",
+      illustration: retail
+    },
+    {
+      id: 2,
+      title: "Benefits of working with Dotpot IT",
+      description:`
+      <li class="text-gray-400 mb-2 lg:px-10 px-3">
+        <strong class="font-semibold">Expertise:</strong>
+        <br />
+
+        Our experienced team stays up-to-date with the latest E-Commerce website trends and technologies to ensure a cutting-edge site.
+
+      </li>
+      <li class="text-gray-400 mb-2 lg:px-10 px-3">
+        <strong class="font-semibold">Customization:</strong>
+        <br />
+
+        We don't offer one-size-fits-all solutions. Every E-Commerce website we develop is tailored to your specific needs for a unique solution.
+
+      </li>
+      <li class="text-gray-400 mb-2 lg:px-10 px-3">
+        <strong class="font-semibold">Support:</strong>
+        <br />
+
+        We provide full support from initial consultation to post-launch maintenance and updates for your peace of mind.
+
+      </li>`,
+      illustration:retail
+    },
+
+  ];
   return (
-    <div>
+    <div className="bg-background-500">
       <Helmet>
         <title>E-Commerce website Development | Dotpot iT</title>
         <meta
@@ -47,136 +87,94 @@ const EcommerceDevelopment = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="pt-[15vh] pb-10 container mx-auto">
+
+
+
+      
+      
+
+      <div className={` pt-[15vh] ${window.innerWidth>1280 ? "md:pt-[11vh]": "md:pt-[15vh]"} `}>
         <NavigatorComponent navigationData={navigationData} />
         <div>
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 text-textColor-500 text-center">
-            E-Commerce website Development
-          </h1>
-          <p className="text-lg text-gray-400 text-center mb-10">
-            At Dotpot IT, we offer end-to-end E-Commerce website development
-            services to help take your online business to the next level. Our
-            team of experts will work closely with you to create a custom
-            solution tailored to your unique needs, from initial design and
-            development to ongoing maintenance and support. With Dotpot IT, you
-            can focus on growing your business while we take care of the
-            technical details.
-          </p>
-        </div>
-        <div className="max-w-4xl mx-auto p-4">
-          <img src={EC} alt="Product image" />
-        </div>
-        <div className="my-12 lg:mx-24 mx-6">
-          <h2 className="lg:text-2xl text-xl font-bold mb-4">Overview</h2>
-          <div className="text-gray-400 flex flex-col gap-5 py-2 lg:px-5 text-justify">
-            <p>
-              Welcome to Dotpot IT, your trusted partner for professional
-              E-Commerce website development services. Our team of expert
-              developers is dedicated to helping you create a high-quality,
-              engaging platform that will enable you to sell your products and
-              services online.
-            </p>
-
-            <p>
-              At Dotpot IT, we understand that a successful E-Commerce website
-              is more than just a collection of pages. It's a dynamic and
-              interactive platform that allows you to showcase your products,
-              engage with your customers, and build a loyal following. That's
-              why we approach every project with a focus on user experience and
-              engagement, leveraging the latest technologies and design trends
-              to create a site that's both beautiful and functional.
-            </p>
-
-            <p>
-              Our E-Commerce website development services are designed to meet
-              your specific needs and exceed your expectations. We offer a range
-              of packages to fit every budget, starting from just $2500. Our
-              team will work closely with you to understand your goals and
-              objectives, and create a customized solution that's tailored to
-              your unique requirements.
-            </p>
-            <p>
-              Whether you're just starting out or looking to revamp an existing
-              site, our team of experts will guide you through the entire
-              development process, from initial consultation to post-launch
-              support and maintenance. With Dotpot IT, you can rest assured that
-              you're in good hands.
-            </p>
+          {/* Banner */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`mt-10 mb-16 ${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 `}
+                  >
+                    <div className="container mx-auto">
+                      <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
+                        <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
+                          <h2 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">E-Commerce website Development</h2>
+                          <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
+                          Dotpot IT offers E-commerce website development services from design to maintenance, so you can focus on growing your business.
+                          </p>
+                        </div>
+                        <img src={retail} alt="" className="w-full md:w-1/2 lg:w-1/2" />
+                      </div>
+                    </div>
+                  </div>
+                </>
+              )}
+            </ReactVisibilitySensor>
           </div>
-          <div className="pt-6">
-            <h2 className="lg:text-2xl text-xl font-bold mb-4 ">
-              Benefits of working with Dotpot IT
-            </h2>
-            <p className="text-gray-400 lg:px-5 text-justify pb-2">
-              So why choose Dotpot IT for your E-Commerce website development
-              needs? Here are just a few reasons:
-            </p>
-            <ul className="list-disc list-inside">
-              <li className="text-gray-400 mb-2 lg:px-10 px-3">
-                <strong className="font-semibold">Expertise:</strong>
-                <br />
-                <p className="px-2">
-                  Our team has years of experience in the field of E-Commerce
-                  website development, and we stay up-to-date with the latest
-                  trends and technologies to ensure your site is always
-                  cutting-edge.
-                </p>
-              </li>
-              <li className="text-gray-400 mb-2 lg:px-10 px-3">
-                <strong className="font-semibold">Customization:</strong>
-                <br />
-                <p className="px-2">
-                  We don't believe in one-size-fits-all solutions. Every
-                  E-Commerce website we develop is tailored to the specific
-                  needs of our clients, so you can be sure you're getting a
-                  solution that's uniquely yours.
-                </p>
-              </li>
-              <li className="text-gray-400 mb-2 lg:px-10 px-3">
-                <strong className="font-semibold">Support:</strong>
-                <br />
-                <p className="px-2">
-                  We're here to support you every step of the way, from initial
-                  consultation to post-launch maintenance and updates. You can
-                  count on us to be there when you need us.
-                </p>
-              </li>
-            </ul>
-            <p className="text-gray-400 lg:px-5 text-justify pb-2">
+
+          {/* body */}
+          <div className="container mx-auto w-full overflow-hidden">
+                <>
+                  <div
+                    className={`flex flex-col gap-5`}
+                  >
+                    {worksData.map(({ id, title, description, illustration }) => (
+                      <div key={id} className={`md:flex justify-center items-center gap-x-20 font-work p-5`}>
+                      <div className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"} `}>
+                        <ReactVisibilitySensor partialVisibility>
+                      {({isVisible})=>(<div className={` ${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 `}><h1 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
+                          {title}
+                        </h1>
+                        <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify py-1">{parse(description)}</p></div>)}
+                      </ReactVisibilitySensor>
+                        
+                      </div>
+                      <ReactVisibilitySensor partialVisibility>
+                      {({isVisible})=>(<div className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"} ${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 `}>
+                        <img className="w-4/5 mx-auto" src={illustration} alt="" />
+                      </div>)}
+                      </ReactVisibilitySensor>
+                    </div>
+                    ))}
+                  </div>
+                  <ReactVisibilitySensor partialVisibility>
+                    {({isVisible})=>(<p className= {`text-gray-400 lg:px-5 text-center pb-2 w-1/2 mx-auto mt-16 ${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000  `}>
               Ready to take your E-Commerce website to the next level? Contact
               us today to learn more about our E-Commerce website development
               services and how we can help you achieve your goals.
-            </p>
+            </p>)}
+
+                  </ReactVisibilitySensor>
+                </>
+      
           </div>
 
-          {/* <div className=" border-b h-52 w-full md:w-4/5 mx-auto my-5  rounded-xl border flex justify-center items-center shadow-md overflow-hidden relative">
-          <div className=" flex justify-center items-center">
-            <div className="w-96 absolute">
-              <div className="absolute top-0 -left-4 w-52 h-52  bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-              <div className="absolute top-0 -right-4 w-52 h-52  bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-              <div className="absolute -bottom-8 left-20 w-52 h-52  bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-            </div>
-
-            <div className="flex flex-col gap-5">
-              <h3 className="text-center text-purple-500 font-bold text-xl ">
-                Get Your Idea from Here!
-              </h3>
-              <h3 className="text-center text-purple-500 font-semibold">
-                "The Experts Are Just A Click Away. Get A Quote."
-              </h3>
-
-              <Link
-                to="/services"
-                className="  w-52 h-10 flex items-center justify-center rounded-md bg-secondary-500 mx-auto hover:scale-105 transition-all shadow-sm"
-              >
-                <div className="flex justify-center items-center gap-3">
-                  <p className="text-white font-semibold">Contact With Us</p>
-                  <BsArrowRightCircleFill className="text-white hover:cursor-pointer" />
-                </div>
-              </Link>
-            </div>
+          {/* Get in Touch */}
+          <div className="bg-primary-100">
+            <GetAQuote/>
           </div>
-        </div> */}
+
         </div>
       </div>
       <Footer />

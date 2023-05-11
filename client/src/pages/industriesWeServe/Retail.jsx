@@ -1,15 +1,101 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import retail from "../../assets/img/retail.png";
+import retail from "../../assets/img/ecommarceweb.png"
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import ReactVisibilitySensor from "react-visibility-sensor";
+import GetAQuote from "../../components/GetAQuote/GetAQuote";
+import parse from 'html-react-parser';
 
 const Retail = () => {
+  const worksData = [
+    {
+      id: 1,
+      title: "Overview",
+      description:
+        "Dotpot is a web design and development agency specializing in Retail & E-Commerce businesses. They offer customized web solutions, including design, development, e-commerce development, and maintenance. Their team uses modern technology to create visually appealing, user-friendly, and responsive websites optimized for search engines. Dotpot aims to enhance online visibility, user experience, and customer engagement for their clients.",
+      illustration: retail
+    },
+    {
+      id: 2,
+      title: "Benefits of working with Dotpot IT",
+      description:`
+      Dotpot IT provides Retail & E-Commerce businesses with custom web solutions, better online visibility, user-friendly sites, e-commerce integration, expert support, and growth.
+  
+
+      <li className="text-textColor-500 mb-2 lg:px-10 px-3">
+        <strong className="font-semibold">
+          Customized web solutions
+        </strong>
+        <br />
+      </li>
+      <li className="text-textColor-500 mb-2 lg:px-10 px-3">
+        <strong className="font-semibold">
+          Enhanced online visibility
+        </strong>
+        <br />
+      </li>
+      <li className="text-textColor-500 mb-2 lg:px-10 px-3">
+        <strong className="font-semibold">
+          User-friendly websites
+        </strong>
+        <br />
+      
+      </li>
+      <li className="text-textColor-500 mb-2 lg:px-10 px-3">
+        <strong className="font-semibold">Mobile optimization:</strong>
+        <br />
+    
+      </li>
+      <li className="text-textColor-500 mb-2 lg:px-10 px-3">
+        <strong className="font-semibold">
+          E-commerce integration:
+        </strong>
+        <br />
+        
+      </li>
+      <li className="text-textColor-500 mb-2 lg:px-10 px-3">
+        <strong className="font-semibold">
+          Search engine optimization (SEO):
+        </strong>
+        <br />
+        
+      </li>
+      <li className="text-textColor-500 mb-2 lg:px-10 px-3">
+        <strong className="font-semibold">Expert support: </strong>
+        <br />
+       
+      </li>
+      <li className="text-textColor-500 mb-2 lg:px-10 px-3">
+        <strong className="font-semibold">
+          Increased business growth:
+        </strong>
+        <br />
+        
+      </li>
+      <li className="text-textColor-500 mb-2 lg:px-10 px-3">
+        <strong className="font-semibold">
+          E-commerce integration:
+        </strong>
+        <br />
+        
+      </li>
+`,
+      illustration:retail
+    },
+    {
+      id: 3,
+      title: "Why we wil be your best choice?",
+      description:
+        "Dotpot iT offers world-class blog website design solutions that drive engagement and revenue. Our experienced team creates custom, visually stunning, and user-friendly blog websites optimized for search engine rankings, mobile responsiveness, and user experience. Trust us to exceed your expectations with high-quality design solutions and exceptional customer service. Let Dotpot iT help you establish a strong online presence with a professional blog website design.",
+      illustration:retail
+    },
+  ];
   useScrollToTop();
   return (
-    <div>
+    <div className="bg-background-500">
       <Helmet>
         <title>Retail, Ecommerce | Dotpot iT</title>
         <meta
@@ -41,7 +127,185 @@ const Retail = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="bg-background-500">
+
+      <div className={` pt-[15vh] ${window.innerWidth>1280 ? "md:pt-[11vh]": "md:pt-[15vh]"} `}>
+        <NavigatorComponent navigationData={navigationData} />
+        <div>
+          {/* Banner */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`mt-10 mb-16 ${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 `}
+                  >
+                    <div className="container mx-auto">
+                      <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
+                        <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
+                          <h2 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">Retail & E-Commerce</h2>
+                          <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
+                          Empowering Retail & E-Commerce through Dynamic Web Development Solutions
+                          </p>
+                        </div>
+                        <img src={retail} alt="" className="w-full md:w-1/2 lg:w-1/2" />
+                      </div>
+                    </div>
+                  </div>
+                </>
+              )}
+            </ReactVisibilitySensor>
+          </div>
+
+          {/* body */}
+          <div className="container mx-auto w-full overflow-hidden">
+                <>
+                  <div
+                    className={`flex flex-col gap-5`}
+                  >
+                    {worksData.map(({ id, title, description, illustration }) => (
+                      <div key={id} className={`md:flex justify-center items-center gap-x-20 font-work p-5`}>
+                      <div className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"} `}>
+                        <ReactVisibilitySensor partialVisibility>
+                      {({isVisible})=>(<div className={` ${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 `}><h1 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
+                          {title}
+                        </h1>
+                        <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">{parse(description)}</p></div>)}
+                      </ReactVisibilitySensor>
+                        
+                      </div>
+                      <ReactVisibilitySensor partialVisibility>
+                      {({isVisible})=>(<div className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"} ${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 `}>
+                        <img className="w-4/5 mx-auto" src={illustration} alt="" />
+                      </div>)}
+                      </ReactVisibilitySensor>
+                    </div>
+                    ))}
+                  </div>
+                </>
+      
+          </div>
+
+          {/* Technologies We Use */}
+          {/* <div className="bg-primary-100 py-16">
+            <div className="container mx-auto ">
+              <ReactVisibilitySensor partialVisibility>
+                {({ isVisible }) => (
+                  <>
+                    <div
+                      className={`${isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                        } duration-1000 p-3 text-textColor-500`}
+                    >
+                      <h1 className="lg:text-3xl md:text-3xl text-xl font-bold text-center">
+                        Technologies We Use
+                      </h1>
+                      <img
+                        className="w-64  mx-auto pb-14"
+                        src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"
+                        alt=""
+                      />
+                      <div className="flex flex-col md:flex-col lg:flex-row items-center justify-center">
+                        <div className="text-center md:text-center lg:text-left w-full lg:w-1/2 px-3 pb-10">
+                          <h2 className="lg:text-3xl md:text-2xl text-xl font-bold mb-5">We build Using Latest Technologies</h2>
+                          <p className="md:text-base text-xs text-gray-400 text-justify">At Dotpot IT, we specialize in creating powerful and user-friendly e-commerce websites that enable businesses to thrive in the digital marketplace. With our expertise in e-commerce development and a deep understanding of consumer behavior, we craft tailored solutions that drive online sales, enhance customer experiences, and boost your bottom line.</p>
+                        </div>
+                        <div className="lg:w-1/2 w-full flex flex-col items-center justify-center gap-10">
+                        <div className="flex gap-10 flex-wrap justify-center">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="html" 
+                            className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="css" 
+                            className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" alt="tailwind" 
+                            className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="bootstarp" 
+                            className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="js" 
+                            className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="react" 
+                            className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-line.svg" alt="next" 
+                            className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="vue" 
+                            className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="angular" 
+                            className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="express" 
+                            className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="node" 
+                            className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="mongo" 
+                            className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="mysql" 
+                            className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-plain.svg" alt="php" 
+                            className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg" alt="laravel" 
+                            className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="python" 
+                            className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="django" 
+                            className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" alt="wordpress" 
+                            className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                            <img src={shopify} alt="shopify" 
+                            className="w-24 rounded bg-white px-3 py-6 hover:scale-105 hover:shado xl transition-all" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                )}
+              </ReactVisibilitySensor>
+            </div>
+          </div> */}
+
+          {/* Why Dotpot iT */}
+          {/* <div className="py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 p-3 text-textColor-500`}
+                  >
+                    <h1 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
+                      Why Dotpot iT
+                    </h1>
+                    <img
+                      className="w-64 mx-auto"
+                      src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"
+                      alt=""
+                    />
+                    <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
+                      Dotpot iT offers affordable web design services using the latest technologies. With a focus on delivering visually appealing and user-friendly websites, they specialize in e-commerce platforms such as Shopify, WooCommerce, and Magento. Their experienced team is committed to providing high-quality design solutions that exceed clients' expectations and exceptional customer service throughout the process. Choose Dotpot iT for innovative web design that helps your business thrive.
+                    </p>
+                  </div>
+                </>
+              )}
+            </ReactVisibilitySensor>
+          </div> */}
+
+          {/* Get in Touch */}
+          <div className="bg-primary-100">
+            <GetAQuote/>
+          </div>
+
+        </div>
+      </div>
+
+      {/* <div className="bg-background-500">
         <div className="pt-[15vh] pb-10 container mx-auto">
           <NavigatorComponent navigationData={navigationData} />
           <div>
@@ -260,37 +524,10 @@ const Retail = () => {
                 business.
               </p>
             </div>
-            {/* <div className=" border-b h-52 w-full md:w-4/5 mx-auto my-5  rounded-xl border flex justify-center items-center shadow-md overflow-hidden relative">
-            <div className=" flex justify-center items-center">
-              <div className="w-96 absolute">
-                <div className="absolute top-0 -left-4 w-52 h-52  bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-                <div className="absolute top-0 -right-4 w-52 h-52  bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-                <div className="absolute -bottom-8 left-20 w-52 h-52  bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-              </div>
-
-              <div className="flex flex-col gap-5">
-                <h3 className="text-center text-purple-500 font-bold text-xl ">
-                  Get Your Idea from Here!
-                </h3>
-                <h3 className="text-center text-purple-500 font-semibold">
-                  "The Experts Are Just A Click Away. Get A Quote."
-                </h3>
-
-                <Link
-                  to="/services"
-                  className="  w-52 h-10 flex items-center justify-center rounded-md bg-secondary-500 mx-auto hover:scale-105 transition-all shadow-sm"
-                >
-                  <div className="flex justify-center items-center gap-3">
-                    <p className="text-white font-semibold">Contact With Us</p>
-                    <BsArrowRightCircleFill className="text-white hover:cursor-pointer" />
-                  </div>
-                </Link>
-              </div>
-            </div>
-          </div> */}
+            
           </div>
         </div>
-      </div>
+      </div> */}
       <Footer />
     </div>
   );

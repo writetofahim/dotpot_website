@@ -155,7 +155,7 @@ const CustomDevelopment = () => {
             <>
               <div className={`flex flex-col gap-5`}>
                 {worksData.map(({ id, title, description, illustration }) => (
-                  <div
+                  <div key={id}
                     className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
                   >
                     <div
