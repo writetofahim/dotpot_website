@@ -54,7 +54,7 @@ export const JobCard = (props) => {
                         <p>On Site</p>
                     )
                 }
-                <h3 className='p-1 bg-primary-200 w-max my-1 rounded text-textColor-500'>Salary : {props.salary.min}TK - {props.salary.max}TK</h3>
+                <h3 className='p-1 bg-gray-200 w-max my-1 rounded text-primary-500'>Salary : {props.salary.min}TK - {props.salary.max}TK</h3>
                 <div className="flex flex-wrap gap-1">
                     {
                         props.benefits.map((item, index) => (
@@ -104,11 +104,14 @@ export const JobCard = (props) => {
                             <p>On Site</p>
                         )
                     }
-                    <h3 className='p-1 bg-primary-200 w-max my-1 rounded'>Salary : {props.salary.min}TK - {props.salary.max}TK</h3>
+                    <h3 className='p-1 bg-gray-200 text-primary-500 w-max my-1 rounded'>Salary : {props.salary.min}TK - {props.salary.max}TK</h3>
                     <div className="flex flex-wrap gap-1">
                         {
                             props.benefits.map((item, index) => (
-                                <Chip label={item} key={index} variant="outlined" />
+                                // <Chip label={item} key={index} variant="outlined" />
+                                <div key={index} className='border border-border  rounded-full px-2'>
+                                <p className="text-textColor-500 text-sm p-1 ">{item}</p>
+                            </div>
                             ))
                         }
                     </div>
@@ -178,7 +181,7 @@ const ApplyJob = () => {
                                                 <p>{activeJob.location}</p>
                                             </div>
                                             <p>{activeJob.type}</p>
-                                            <h3 className='p-1 bg-primary-200 w-max my-1 rounded text-textColor-500'>Salary : {activeJob.salary.min}TK - {activeJob.salary.max}TK</h3>
+                                            <h3 className='p-1 bg-gray-200 w-max my-1 rounded text-primary-500'>Salary : {activeJob.salary.min}TK - {activeJob.salary.max}TK</h3>
                                             <div className="flex flex-wrap gap-1">
                                                 {
                                                     activeJob.benefits.map((item, index) => (
@@ -190,7 +193,7 @@ const ApplyJob = () => {
                                                 }
                                             </div>
                                             <Link to={`/apply/${id}`}>
-                                                <button variant="contained" className='bg-primary-500 px-10 py-3 text-textColor-500 rounded-sm hover:bg-secondary-500 font-bold mt-2 flex items-center gap-3'>
+                                                <button variant="contained" className='bg-secondary-400 px-10 py-3 text-buttonText-500 rounded-sm hover:bg-secondary-500 font-bold mt-2 flex items-center gap-3'>
                                                     Apply Now <BsArrowRight />
                                                 </button>
                                             </Link>
@@ -202,14 +205,16 @@ const ApplyJob = () => {
                                             <p className="">{activeJob.type}</p>
                                             <Divider className='py-3' />
                                             <h3 className="text-xl font-bold mt-2">Benefits</h3>
+                                            <div className='flex'>
                                             {
                                                 activeJob.benefits.map((item, index) => (
                                                     // <Chip label={item} key={index} variant="outlined" className='mr-1' />
                                                     <div key={index} className='border border-border rounded-full px-2'>
-                                                            <p className="text-textColor-500 text-sm p-1 ">{item}</p>
+                                                            <p className="text-textColor-500 text-sm p-1">{item}</p>
                                                         </div>
                                                 ))
                                             }
+                                            </div>
 
                                             <Divider className='py-3' />
                                             <h3 className="text-xl font-bold mt-2">Full Job Description</h3>
