@@ -185,7 +185,8 @@ const Theme = () => {
               <div
                 key={color.name}
                 onClick={() => handleChangeTheme(color._id)}
-                className={`md:w-[350px] w-full rounded-md bg-[${Object.values(color.colors.background)}] ${
+                style={{backgroundColor:Object.values(color.colors.background)}}
+                className={`md:w-[350px] w-full rounded-md  ${
                   color?.selected
                     ? " border-blue-600"
                     : " hover:bg-gray-200 hover:border-blue-600"

@@ -7,7 +7,7 @@ const theme = [
   {
     colors: {
       background: {
-        500: "#FFFFFF"
+        500: "#FFFFFF",
       },
       primary: {
         100: "#f1ebfc",
@@ -25,11 +25,11 @@ const theme = [
         500: "#ff9957",
         600: "rgba(255, 145, 69, 0.8)",
       },
-      buttonText:{
-        500: "#FFFFFF"
+      buttonText: {
+        500: "#FFFFFF",
       },
-      textColor:{
-        500: "#000000"
+      textColor: {
+        500: "#000000",
       },
       gray: {
         200: "#EBE6E6",
@@ -46,13 +46,13 @@ const theme = [
     selected: true,
     __v: 0,
   },
-// default theme end
+  // default theme end
 
-// dark start
+  // dark start
   {
     colors: {
       background: {
-        500: "#0C1222"
+        500: "#0C1222",
       },
       primary: {
         100: "#182233",
@@ -70,11 +70,11 @@ const theme = [
         500: "#777000",
         600: "#525100",
       },
-      buttonText:{
-        500: "#FFFFFF"
+      buttonText: {
+        500: "#FFFFFF",
       },
-      textColor:{
-        500: "#E2E8F0"
+      textColor: {
+        500: "#E2E8F0",
       },
       gray: {
         200: "#E5E7EB",
@@ -91,10 +91,133 @@ const theme = [
     selected: false,
     __v: 0,
   },
-// dark end
+  // dark end
 
+  // cupcake start
+  {
+    colors: {
+      background: {
+        500: "#EFEAE6",
+      },
+      primary: {
+        100: "#f1ebfc",
+        200: "#bd9afc",
+        300: "#b087fa",
+        400: "#a574fc",
+        500: "#8D52F8",
+        600: "rgba(141, 82, 248, 0.8)",
+      },
+      secondary: {
+        100: "#fcd8c0",
+        200: "#ffd3b5",
+        300: "#ffaf7a",
+        400: "#ffa469",
+        500: "#ff9957",
+        600: "rgba(255, 145, 69, 0.8)",
+      },
+      buttonText: {
+        500: "#FFFFFF",
+      },
+      textColor: {
+        500: "#472C55",
+      },
+      gray: {
+        200: "#EBE6E6",
+        300: "#706e6e",
+        400: "#524f4f",
+        500: "#333131",
+        800: "#1F2937",
+      },
+      border: "#DBE1E8",
+      particleColor: "#a674fca7",
+    },
+    name: "Cupcake",
+  },
+  // cupcake ends
 
+  // cupcake_v2 start
+  {
+    colors: {
+      background: {
+        500: "#EFEAE6",
+      },
+      primary: {
+        100: "#fcd8c0",
+        200: "#ffd3b5",
+        300: "#ffaf7a",
+        400: "#ffa469",
+        500: "#ff9957",
+        600: "rgba(255, 145, 69, 0.8)",
+      },
+      secondary: {
+        100: "#f1ebfc",
+        200: "#bd9afc",
+        300: "#b087fa",
+        400: "#a574fc",
+        500: "#8D52F8",
+        600: "rgba(141, 82, 248, 0.8)",
+      },
+      buttonText: {
+        500: "#FFFFFF",
+      },
+      textColor: {
+        500: "#472C55",
+      },
+      gray: {
+        200: "#EBE6E6",
+        300: "#706e6e",
+        400: "#524f4f",
+        500: "#333131",
+        800: "#1F2937",
+      },
+      border: "#DBE1E8",
+      particleColor: "#a674fca7",
+    },
+    name: "Cupcake_v2",
+  },
+  // cupcake_v2 ends
 
+  // cyberpunk start
+  {
+    colors: {
+      background: {
+        500: "#FFEE00",
+      },
+      primary: {
+        100: "#f1ebfc",
+        200: "#bd9afc",
+        300: "#b087fa",
+        400: "#a574fc",
+        500: "#8D52F8",
+        600: "rgba(141, 82, 248, 0.8)",
+      },
+      secondary: {
+        100: "#fcd8c0",
+        200: "#ffd3b5",
+        300: "#ffaf7a",
+        400: "#ffa469",
+        500: "#ff9957",
+        600: "rgba(255, 145, 69, 0.8)",
+      },
+      buttonText: {
+        500: "#FFFFFF",
+      },
+      textColor: {
+        500: "#333000",
+      },
+      gray: {
+        200: "#EBE6E6",
+        300: "#706e6e",
+        400: "#524f4f",
+        500: "#333131",
+        800: "#1F2937",
+      },
+      border: "#8DF374",
+      particleColor: "#333000",
+    },
+    name: "Cyberpunk",
+  },
+  // cyberpunk ends
 
   // {
   //   colors: {

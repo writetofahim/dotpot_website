@@ -347,7 +347,7 @@ const Navbar = () => {
           title={"Confirm logout"}
         />
       )}
-      <div className="w-full flex items-center justify-center fixed z-50 bg-background-500/50 border-b border-border backdrop-blur-2xl">
+      <div className="w-full flex items-center justify-center fixed z-50 bg-background-500">
         <nav
           className="container flex justify-between items-center p-4 z-999"
           id="nav"
