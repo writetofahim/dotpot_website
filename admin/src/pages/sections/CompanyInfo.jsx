@@ -85,12 +85,16 @@ const CompanyInfo = () => {
               />
             </div>
             <LogoInput
-              logo={data.primary_logo}
+              logo={`${import.meta.env.REACT_APP_SERVER_PATH}/${
+                data.primary_logo
+              }`}
               setSelectedFile={setPrimaryLogo}
               title={"Primary logo"}
             />
             <LogoInput
-              logo={data.secondary_logo}
+              logo={`${import.meta.env.REACT_APP_SERVER_PATH}/${
+                data.secondary_logo
+              }`}
               setSelectedFile={setSecondaryLogo}
               title={"Secondary logo"}
             />

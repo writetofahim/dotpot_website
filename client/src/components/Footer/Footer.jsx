@@ -26,7 +26,6 @@ import {
 } from "react-icons/bs";
 import { FaTiktok } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import logo from "../../assets/img/logoDark.png";
 import { footerData } from "../../data";
 import axios from "../../utils/axiosInstance";
 import postLogger from "../../utils/postLogger";
@@ -79,6 +78,16 @@ const Footer = () => {
     <BsInstagram />,
   ];
 
+  const [companyInfo, setCompanyInfo] = useState({});
+
+  useEffect(() => {
+    axios.get("/info").then((response) => {
+      setCompanyInfo(response.data[0]);
+      console.log(response.data[0]);
+    });
+    return () => {};
+  }, []);
+
   useEffect(() => {
     const fetchLinks = async () => {
       const { data } = await axios.get("/socialmedia");
@@ -96,24 +105,30 @@ const Footer = () => {
         <div className="md:grid grid-cols-1 md:grid-cols-5 lg:grid-cols-4 gap-4 hidden">
           <div className="md:col-span-2 lg:col-span-1 w-full text-gray-200">
             <Link to="/">
-              <img src={logo} alt="" className="w-[250px]" />
+              <img
+                src={`${import.meta.env.REACT_APP_SERVER_PATH}/${
+                  companyInfo.secondary_logo
+                }`}
+                alt=""
+                className="w-[250px]"
+              />
             </Link>
             {/* <p className="mb-3 ml-3">Help Business Successful Online</p> */}
-            <p >Dotpot iT</p>
-            <p >House-1, Road-3, Block-A</p>
-            <p >Mirpur-10, Dhaka, Bangladesh</p>
+            <p>Dotpot iT</p>
+            <p>House-1, Road-3, Block-A</p>
+            <p>Mirpur-10, Dhaka, Bangladesh</p>
             <br />
-            <p >
+            <p>
               <strong>Phone:</strong>
             </p>
-            <p >+880 1817 176 192</p>
-            <p >
+            <p>+880 1817 176 192</p>
+            <p>
               <strong>Emails:</strong>{" "}
             </p>
-            <p >help@dotpotit.com</p>
-            <p > hr@dotpotit.com</p>
+            <p>help@dotpotit.com</p>
+            <p> hr@dotpotit.com</p>
             {/* <p className="text-buttonText-500"> sales@dotpotit.com</p> */}
-            <p > marketing@dotpotit.com</p>
+            <p> marketing@dotpotit.com</p>
             {/* <p className="text-buttonText-500"> career@dotpotit.com</p> */}
             <div className="flex gap-4 mt-5 items-center">
               {socialLinks.map((link, i) => (
@@ -132,7 +147,9 @@ const Footer = () => {
           {/* Columns */}
           {links.map((item, index) => (
             <div className="md:col-span-1" key={index}>
-              <h2 className="font-bold text-lg mb-2 text-buttonText-500">{item.title}</h2>
+              <h2 className="font-bold text-lg mb-2 text-buttonText-500">
+                {item.title}
+              </h2>
               {/* Links */}
               <ul className="space-y-2">
                 {item.links.map((link, index) => (
@@ -152,26 +169,32 @@ const Footer = () => {
         {/* Mobile accordion */}
         <div className="md:hidden block w-full text-buttonText-500">
           <Link to="/">
-            <img src={logo} alt="" className="w-4/5" />
+            <img
+              src={`${import.meta.env.REACT_APP_SERVER_PATH}/${
+                companyInfo.secondary_logo
+              }`}
+              alt=""
+              className="w-4/5"
+            />
           </Link>
           {/* <p>Make your Business Success Online</p> */}
           <br />
-          <p >Dotpot iT</p>
-          <p >House-1, Road-3, Block-A</p>
-          <p >Mirpur-10, Dhaka, Bangladesh</p>
+          <p>Dotpot iT</p>
+          <p>House-1, Road-3, Block-A</p>
+          <p>Mirpur-10, Dhaka, Bangladesh</p>
           <br />
-          <p >
+          <p>
             <strong>Phone:</strong>
           </p>
-          <p > +880 1817 176 192</p>
+          <p> +880 1817 176 192</p>
           <br />
-          <p >
+          <p>
             <strong>Emails:</strong>{" "}
           </p>
-          <p >help@dotpotit.com</p>
-          <p > hr@dotpotit.com</p>
+          <p>help@dotpotit.com</p>
+          <p> hr@dotpotit.com</p>
           {/* <p className=""> sales@dotpotit.com</p> */}
-          <p > marketing@dotpotit.com</p>
+          <p> marketing@dotpotit.com</p>
           {/* <p className=""> career@dotpotit.com</p> */}
           <div className="flex gap-4 mt-5 items-center">
             {socialLinks.map((link, i) => (

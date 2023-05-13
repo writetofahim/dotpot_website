@@ -1533,6 +1533,10 @@ export const footerData = {
           title: "Terms & Conditions",
           link: "/terms_conditions",
         },
+        {
+          title: "White Paper",
+          link: "/white-paper",
+        },
       ],
     },
     {

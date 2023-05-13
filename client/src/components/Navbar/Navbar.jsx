@@ -15,9 +15,9 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { HiMenuAlt4 } from "react-icons/hi";
 import { IoIosArrowDown } from "react-icons/io";
-import { Link, NavLink, useNavigate } from "react-router-dom";
-import logo from "../../assets/img/logo.png";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
+import axios from "../../utils/axiosInstance";
 import CommonModal from "../CommonModal/CommonModal";
 import Submenu from "./Submenu";
 
@@ -29,12 +29,19 @@ const Navbar = () => {
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
   const [selectedSubmenu, setSelectedSubmenu] = useState(null);
 
+  const [companyInfo, setCompanyInfo] = useState({});
+
   const [open, setOpen] = useState(false);
 
   const serviceButtonRef = useRef(null);
   const serviceSubmenuDiv = useRef(null);
 
-  const navigate = useNavigate();
+  useEffect(() => {
+    axios.get("/info").then((response) => {
+      setCompanyInfo(response.data[0]);
+    });
+    return () => {};
+  }, []);
 
   useEffect(() => {
     function handleDocumentClick(event) {
@@ -135,32 +142,32 @@ const Navbar = () => {
       icon: "https://cdn-icons-png.flaticon.com/512/2152/2152349.png",
       submenu: [
         {
-          to: "/key-features/blockchain-development",
+          to: "/key-features/blockchain-development/#wallet",
           title: "Wallet",
           icon: "https://cdn-icons-png.flaticon.com/512/482/482541.png",
         },
         {
-          to: "/key-features/blockchain-development",
+          to: "/key-features/blockchain-development/#exchange",
           title: "Exchange",
           icon: "https://cdn-icons-png.flaticon.com/512/152/152371.png",
         },
         {
-          to: "/key-features/blockchain-development",
+          to: "/key-features/blockchain-development/#ethereum",
           title: "Ethereum",
           icon: "https://cdn-icons-png.flaticon.com/512/7825/7825880.png",
         },
         {
-          to: "/key-features/blockchain-development",
+          to: "/key-features/blockchain-development/#smart-contact",
           title: "Smart Contacts",
           icon: "https://cdn-icons-png.flaticon.com/512/7267/7267609.png",
         },
         {
-          to: "/key-features/blockchain-development",
+          to: "/key-features/blockchain-development/#private-blockchain",
           title: "Private Blockchain",
           icon: "https://cdn-icons-png.flaticon.com/512/7020/7020079.png",
         },
         {
-          to: "/key-features/blockchain-development",
+          to: "/key-features/blockchain-development/#nft-arketplace",
           title: "NFT Marketplace",
           icon: "https://cdn-icons-png.flaticon.com/512/6615/6615937.png",
         },
@@ -354,7 +361,13 @@ const Navbar = () => {
         >
           <div className="lg:flex-[0.5] flex-initial justify-center items-center">
             <Link to="/">
-              <img src={logo} alt="" className="w-60" />
+              <img
+                src={`${import.meta.env.REACT_APP_SERVER_PATH}/${
+                  companyInfo.primary_logo
+                }`}
+                alt=""
+                className="w-60"
+              />
             </Link>
             {/* <p className="text-gray-500 hover:text-secondary-400 hidden lg:block italic">
               We make your Business Successful

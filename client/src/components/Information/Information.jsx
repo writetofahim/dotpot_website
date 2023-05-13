@@ -71,6 +71,7 @@ const Information = () => {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
             className="rounded-3xl w-full md:w-4/5 aspect-video mt-5 shadow-lg"
+            autoplay
           ></iframe>
           {/* <img src={`${import.meta.env.REACT_APP_SERVER_PATH}/${data.image}`} alt="" className="rounded-3xl w-full md:w-4/5 aspect-video mt-5 shadow-lg" /> */}
         </div>
