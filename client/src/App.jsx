@@ -1,6 +1,7 @@
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import AcceptCookiesPopup from "./components/AcceptCookiesPopup/AcceptCookiesPopup";
@@ -58,24 +59,28 @@ import CustomDevelopment from "./pages/webDevelopment/CustomDevelopment";
 import EcommerceDevelopment from "./pages/webDevelopment/EcommerceDevelopment";
 import LandingPageDevelopment from "./pages/webDevelopment/LandingPageDevelopment";
 import PortfolioDevelopment from "./pages/webDevelopment/PortfolioDevelopment";
+import WhitePaper from "./pages/whitePaper/WhitePaper";
 import AgenciesBusiness from "./pages/whoWeWorksWith/AgenciesBusiness";
 import EnterpriseBusiness from "./pages/whoWeWorksWith/EnterpriseBusiness";
 import SmallToMediumBusiness from "./pages/whoWeWorksWith/SmallToMediumBusiness";
 import StartupBusiness from "./pages/whoWeWorksWith/StartupBusiness";
 import Terms_Conditions from "./terms_conditions/Terms_Conditions";
-import axios from "axios";
 
 function App() {
   const [loading, isLoading] = useState(true);
   useEffect(() => {
-    const getColors=async ()=>{
-      const response = await axios.get('https://dotpotit.com/api/colors/selected')
-      const theme = response.data.data[0]
-      console.log(theme)
-      document.getElementsByTagName("html")[0].className = `theme-${theme.name}`
-    }
-    getColors()
-  }, [])
+    const getColors = async () => {
+      const response = await axios.get(
+        "https://dotpotit.com/api/colors/selected"
+      );
+      const theme = response.data.data[0];
+      console.log(theme);
+      document.getElementsByTagName(
+        "html"
+      )[0].className = `theme-${theme.name}`;
+    };
+    getColors();
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -106,6 +111,7 @@ function App() {
         <Route path="/blog/:id" element={<SingleBlog />} />
         <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
         <Route path="/terms_conditions" element={<Terms_Conditions />} />
+        <Route path="/white-paper" element={<WhitePaper />} />
 
         {/* Services Pages */}
 
