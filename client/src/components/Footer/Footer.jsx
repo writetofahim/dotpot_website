@@ -41,7 +41,7 @@ export const MobileMenu = (props) => {
   return (
     <div className="md:hidden mt-8">
       <button
-        className="font-bold text-lg w-full text-left flex gap-5 items-center"
+        className="font-bold text-lg w-full text-left flex gap-5 items-center text-buttonText-500"
         onClick={toggleLinks}
       >
         {props.title} {!showLinks ? <BsPlusLg /> : <BiMinus />}
