@@ -44,7 +44,7 @@ const AboutUs = () => {
           />
           <meta
             property="og:image"
-            content="https://i.ibb.co/CncFVCL/dotpot.gif"
+            content="https://dotpotit.com/api/uploads/blogs/logo_primary-1683973589433.png"
           />
           <meta property="og:url" content="https://dotpotit.com/about" />
           <meta name="twitter:card" content="summary_large_image" />
@@ -55,7 +55,7 @@ const AboutUs = () => {
           />
           <meta
             name="twitter:image"
-            content="https://i.ibb.co/CncFVCL/dotpot.gif"
+            content="https://dotpotit.com/api/uploads/blogs/logo_primary-1683973589433.png"
           />
         </Helmet>
 
