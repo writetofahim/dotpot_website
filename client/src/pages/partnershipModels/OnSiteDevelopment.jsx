@@ -1,19 +1,17 @@
 import React from "react";
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
-import { useScrollToTop } from "../../hooks/useScrollToTop";
 import { Helmet } from "react-helmet";
-import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
+import ReactVisibilitySensor from "react-visibility-sensor";
 import coveron from "../../assets/img/On_Site_Development_1.png";
 import capabilities from "../../assets/img/On_Site_Development_2.png";
 import enhence from "../../assets/img/On_Site_Development_3.png";
 import quick from "../../assets/img/On_Site_Development_4.png";
 import knowledge from "../../assets/img/On_Site_Development_5.png";
 import summary from "../../assets/img/On_Site_Development_6 .png";
-import shopify from "../../assets/img/shopify.png";
-import ReactVisibilitySensor from "react-visibility-sensor";
-import { Link } from "react-router-dom";
+import Footer from "../../components/Footer/Footer";
 import GetAQuote from "../../components/GetAQuote/GetAQuote";
+import Navbar from "../../components/Navbar/Navbar";
+import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
+import { useScrollToTop } from "../../hooks/useScrollToTop";
 
 const OnSiteDevelopment = () => {
   const worksData = [
@@ -67,10 +65,14 @@ const OnSiteDevelopment = () => {
   return (
     <div>
       <Helmet>
-        <title>on-site-development-model | Dotpot iT</title>
+        <title>On-site-development-model | Dotpot iT</title>
         <meta
           name="description"
           content="Learn about hire-dedicated-model Dotpot iT, a leading IT company providing innovative solutions for businesses."
+        />
+        <link
+          rel="canonical"
+          href="https://www.dotpotit.com/partnership_model/on-site-development-model"
         />
         <meta
           property="og:title"
@@ -157,7 +159,8 @@ const OnSiteDevelopment = () => {
               <>
                 <div className={`flex flex-col gap-5`}>
                   {worksData.map(({ id, title, description, illustration }) => (
-                    <div key={id}
+                    <div
+                      key={id}
                       className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
                     >
                       <div

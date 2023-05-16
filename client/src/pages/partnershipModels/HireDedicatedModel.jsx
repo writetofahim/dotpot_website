@@ -1,19 +1,17 @@
 import React from "react";
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
-import { useScrollToTop } from "../../hooks/useScrollToTop";
 import { Helmet } from "react-helmet";
-import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
+import ReactVisibilitySensor from "react-visibility-sensor";
 import coverhere from "../../assets/img/Here_Dedicated_1.png";
 import optimize from "../../assets/img/Here_Dedicated_2.png";
 import streamline from "../../assets/img/Here_Dedicated_3.png";
 import flexible from "../../assets/img/Here_Dedicated_4.png";
 import here5 from "../../assets/img/Here_Dedicated_5.png";
 import summury from "../../assets/img/Here_Dedicated_6.png";
-import shopify from "../../assets/img/shopify.png";
-import ReactVisibilitySensor from "react-visibility-sensor";
-import { Link } from "react-router-dom";
+import Footer from "../../components/Footer/Footer";
 import GetAQuote from "../../components/GetAQuote/GetAQuote";
+import Navbar from "../../components/Navbar/Navbar";
+import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
+import { useScrollToTop } from "../../hooks/useScrollToTop";
 
 const HireDedicatedModel = () => {
   const worksData = [
@@ -58,7 +56,8 @@ const HireDedicatedModel = () => {
       means that you can extend your working hours and deliver
       projects faster`,
       illustration: here5,
-    },   {
+    },
+    {
       id: 5,
       title: "Conclusion",
       description: `👍Hiring a dedicated model is a great option for
@@ -74,11 +73,12 @@ const HireDedicatedModel = () => {
   return (
     <div>
       <Helmet>
-        <title>hire-dedicated-model | Dotpot iT</title>
+        <title>Hire-dedicated-model | Dotpot iT</title>
         <meta
           name="description"
           content="Learn about hire-dedicated-model Dotpot iT, a leading IT company providing innovative solutions for businesses."
         />
+        <link rel="canonical" href="/partnership_model/hire-dedicated-model" />
         <meta property="og:title" content="hire-dedicated-model | Dotpot iT" />
         <meta
           property="og:description"
@@ -134,15 +134,15 @@ const HireDedicatedModel = () => {
                               Here Dedicated
                             </h2>
                             <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            🚀Dotpot iT is a rapidly growing technology company
-                              that offers a wide range of IT services, including
-                              software development, mobile app development, web
-                              development, and digital marketing. To keep up
-                              with the demand for its services, the company
-                              needs a team of skilled professionals who can work
-                              together to deliver high-quality solutions to its
-                              clients. This is where hiring a dedicated model
-                              comes in
+                              🚀Dotpot iT is a rapidly growing technology
+                              company that offers a wide range of IT services,
+                              including software development, mobile app
+                              development, web development, and digital
+                              marketing. To keep up with the demand for its
+                              services, the company needs a team of skilled
+                              professionals who can work together to deliver
+                              high-quality solutions to its clients. This is
+                              where hiring a dedicated model comes in
                             </p>
                           </div>
                           <img
@@ -163,7 +163,8 @@ const HireDedicatedModel = () => {
               <>
                 <div className={`flex flex-col gap-5`}>
                   {worksData.map(({ id, title, description, illustration }) => (
-                    <div key={id}
+                    <div
+                      key={id}
                       className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
                     >
                       <div

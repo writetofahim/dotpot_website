@@ -1,13 +1,13 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import parse from "react-html-parser";
+import ReactVisibilitySensor from "react-visibility-sensor";
 import retail from "../../assets/img/EC.png";
 import Footer from "../../components/Footer/Footer";
+import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import GetAQuote from "../../components/GetAQuote/GetAQuote";
-import ReactVisibilitySensor from "react-visibility-sensor";
-import parse from 'react-html-parser'
 
 const EcommerceDevelopment = () => {
   useScrollToTop();
@@ -17,12 +17,12 @@ const EcommerceDevelopment = () => {
       title: "Overview",
       description:
         "Dotpot IT offers budget-friendly E-Commerce website development services focused on user experience. Their team provides guidance throughout the process and post-launch support.",
-      illustration: retail
+      illustration: retail,
     },
     {
       id: 2,
       title: "Benefits of working with Dotpot IT",
-      description:`
+      description: `
       <li class="text-gray-400 mb-2 lg:px-10 px-3">
         <strong class="font-semibold">Expertise:</strong>
         <br />
@@ -44,9 +44,8 @@ const EcommerceDevelopment = () => {
         We provide full support from initial consultation to post-launch maintenance and updates for your peace of mind.
 
       </li>`,
-      illustration:retail
+      illustration: retail,
     },
-
   ];
   return (
     <div className="bg-background-500">
@@ -56,6 +55,11 @@ const EcommerceDevelopment = () => {
           name="description"
           content="Learn about E-Commerce website Development iT, a leading IT company providing innovative solutions for businesses.visit website for details"
         />
+        <link
+          rel="canonical"
+          href="https://www.dotpotit.com/web-development/e-commerce-website"
+        />
+
         <meta
           property="og:title"
           content="E-Commerce website Development | Dotpot iT"
@@ -88,12 +92,11 @@ const EcommerceDevelopment = () => {
       </Helmet>
       <Navbar />
 
-
-
-      
-      
-
-      <div className={` pt-[15vh] ${window.innerWidth>1280 ? "md:pt-[11vh]": "md:pt-[15vh]"} `}>
+      <div
+        className={` pt-[15vh] ${
+          window.innerWidth > 1280 ? "md:pt-[11vh]" : "md:pt-[15vh]"
+        } `}
+      >
         <NavigatorComponent navigationData={navigationData} />
         <div>
           {/* Banner */}
@@ -102,20 +105,29 @@ const EcommerceDevelopment = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`mt-10 mb-16 ${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 `}
+                    className={`mt-10 mb-16 ${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                    } duration-1000 `}
                   >
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
                         <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
-                          <h2 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">E-Commerce website Development</h2>
+                          <h2 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
+                            E-Commerce website Development
+                          </h2>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                          Dotpot IT offers E-commerce website development services from design to maintenance, so you can focus on growing your business.
+                            Dotpot IT offers E-commerce website development
+                            services from design to maintenance, so you can
+                            focus on growing your business.
                           </p>
                         </div>
-                        <img src={retail} alt="" className="w-full md:w-1/2 lg:w-1/2" />
+                        <img
+                          src={retail}
+                          alt=""
+                          className="w-full md:w-1/2 lg:w-1/2"
+                        />
                       </div>
                     </div>
                   </div>
@@ -126,55 +138,82 @@ const EcommerceDevelopment = () => {
 
           {/* body */}
           <div className="container mx-auto w-full overflow-hidden">
-                <>
+            <>
+              <div className={`flex flex-col gap-5`}>
+                {worksData.map(({ id, title, description, illustration }) => (
                   <div
-                    className={`flex flex-col gap-5`}
+                    key={id}
+                    className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
                   >
-                    {worksData.map(({ id, title, description, illustration }) => (
-                      <div key={id} className={`md:flex justify-center items-center gap-x-20 font-work p-5`}>
-                      <div className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"} `}>
-                        <ReactVisibilitySensor partialVisibility>
-                      {({isVisible})=>(<div className={` ${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 `}><h1 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
-                          {title}
-                        </h1>
-                        <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify py-1">{parse(description)}</p></div>)}
-                      </ReactVisibilitySensor>
-                        
-                      </div>
+                    <div
+                      className={`w-full md:w-1/2 lg:w-1/2 ${
+                        id % 2 === 0 && "order-2"
+                      } `}
+                    >
                       <ReactVisibilitySensor partialVisibility>
-                      {({isVisible})=>(<div className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"} ${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 `}>
-                        <img className="w-4/5 mx-auto" src={illustration} alt="" />
-                      </div>)}
+                        {({ isVisible }) => (
+                          <div
+                            className={` ${
+                              isVisible
+                                ? "opacity-100 translate-y-0"
+                                : "translate-y-20 opacity-0"
+                            } duration-1000 `}
+                          >
+                            <h1 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
+                              {title}
+                            </h1>
+                            <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify py-1">
+                              {parse(description)}
+                            </p>
+                          </div>
+                        )}
                       </ReactVisibilitySensor>
                     </div>
-                    ))}
+                    <ReactVisibilitySensor partialVisibility>
+                      {({ isVisible }) => (
+                        <div
+                          className={`w-full md:w-1/2 lg:w-1/2 ${
+                            id % 2 === 0 && "order-1"
+                          } ${
+                            isVisible
+                              ? "opacity-100 translate-y-0"
+                              : "translate-y-20 opacity-0"
+                          } duration-1000 `}
+                        >
+                          <img
+                            className="w-4/5 mx-auto"
+                            src={illustration}
+                            alt=""
+                          />
+                        </div>
+                      )}
+                    </ReactVisibilitySensor>
                   </div>
-                  <ReactVisibilitySensor partialVisibility>
-                    {({isVisible})=>(<p className= {`text-gray-400 lg:px-5 text-center pb-2 w-1/2 mx-auto mt-16 ${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000  `}>
-              Ready to take your E-Commerce website to the next level? Contact
-              us today to learn more about our E-Commerce website development
-              services and how we can help you achieve your goals.
-            </p>)}
-
-                  </ReactVisibilitySensor>
-                </>
-      
+                ))}
+              </div>
+              <ReactVisibilitySensor partialVisibility>
+                {({ isVisible }) => (
+                  <p
+                    className={`text-gray-400 lg:px-5 text-center pb-2 w-1/2 mx-auto mt-16 ${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                    } duration-1000  `}
+                  >
+                    Ready to take your E-Commerce website to the next level?
+                    Contact us today to learn more about our E-Commerce website
+                    development services and how we can help you achieve your
+                    goals.
+                  </p>
+                )}
+              </ReactVisibilitySensor>
+            </>
           </div>
 
           {/* Get in Touch */}
           <div className="bg-primary-100">
-            <GetAQuote/>
+            <GetAQuote />
           </div>
-
         </div>
       </div>
       <Footer />

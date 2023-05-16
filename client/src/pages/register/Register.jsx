@@ -54,6 +54,43 @@ const Register = () => {
   };
   return (
     <>
+      <Helmet>
+        <title>Registration | Dotpot iT</title>
+        <meta
+          name="description"
+          content="Get Top-notch, Extensively, Innovative Mobile App Solution By Us"
+        />
+        <link rel="canonical" href="https://www.dotpotit.com/register" />
+        <meta
+          property="og:title"
+          content="Mobile App Development | Dotpot iT"
+        />
+        <meta
+          property="og:description"
+          content="Get Top-notch, Extensively, Innovative Mobile App Solution By Us"
+        />
+        <meta
+          property="og:image"
+          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+        <meta
+          property="og:url"
+          content="https://www.dotpotit.com/key-features/mobile-app-development"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Mobile App Development | Dotpot iT"
+        />
+        <meta
+          name="twitter:description"
+          content="Get Top-notch, Extensively, Innovative Mobile App Solution By Us"
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+        />
+      </Helmet>
       <Navbar />
       <Particle />
       {isOpen && (

@@ -1,16 +1,16 @@
+import parse from "html-react-parser";
 import React from "react";
 import { Helmet } from "react-helmet";
+import ReactVisibilitySensor from "react-visibility-sensor";
 import retail from "../../assets/img/landing_page.png";
-import overview from '../../assets/img/web_development/Zakir_overview_of_web_landing_page_6d4efaf1-483e-481d-b78a-2f36f37463d3.png'
-import benefites from '../../assets/img/web_development/Zakir_benefites_of_working_with_Dotpot_iT_for_website_developme_04558361-d3e0-49a2-a9a7-84b8946c262e.png'
-import whyWe from '../../assets/img/web_development/Zakir_why_we_will_be_your_best_choice_illustration_9b54b4e5-8156-4000-9b52-a82ad73d1fbe.png'
+import benefites from "../../assets/img/web_development/Zakir_benefites_of_working_with_Dotpot_iT_for_website_developme_04558361-d3e0-49a2-a9a7-84b8946c262e.png";
+import overview from "../../assets/img/web_development/Zakir_overview_of_web_landing_page_6d4efaf1-483e-481d-b78a-2f36f37463d3.png";
+import whyWe from "../../assets/img/web_development/Zakir_why_we_will_be_your_best_choice_illustration_9b54b4e5-8156-4000-9b52-a82ad73d1fbe.png";
 import Footer from "../../components/Footer/Footer";
+import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import ReactVisibilitySensor from "react-visibility-sensor";
-import GetAQuote from "../../components/GetAQuote/GetAQuote";
-import parse from "html-react-parser";
 
 const LandingPageDevelopment = () => {
   useScrollToTop();
@@ -25,7 +25,7 @@ const LandingPageDevelopment = () => {
     {
       id: 2,
       title: "Benefits of working with Dotpot IT",
-      description:`
+      description: `
       Dotpot IT provides custom web solutions, e-commerce integration, and growth services for Retail & E-Commerce businesses.
 
 
@@ -130,7 +130,6 @@ const LandingPageDevelopment = () => {
       </li>`,
       illustration: retail,
     },
-   
   ];
   return (
     <div className="bg-background-500">
@@ -139,6 +138,10 @@ const LandingPageDevelopment = () => {
         <meta
           name="description"
           content="Learn about Landing Page Development Dotpot iT, a leading IT company providing innovative solutions for businesses.visit website for details"
+        />
+        <link
+          rel="canonical"
+          href="https://www.dotpotit.com/web-development/landing-page"
         />
         <meta
           property="og:title"
@@ -195,10 +198,10 @@ const LandingPageDevelopment = () => {
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
                         <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
                           <h2 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
-                          Landing Page Development
+                            Landing Page Development
                           </h2>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                          Captivate Your Audience with a Stellar Landing Page
+                            Captivate Your Audience with a Stellar Landing Page
                           </p>
                         </div>
                         <img
@@ -219,7 +222,8 @@ const LandingPageDevelopment = () => {
             <>
               <div className={`flex flex-col gap-5`}>
                 {worksData.map(({ id, title, description, illustration }) => (
-                  <div key={id}
+                  <div
+                    key={id}
                     className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
                   >
                     <div

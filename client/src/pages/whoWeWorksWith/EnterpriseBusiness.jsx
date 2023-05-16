@@ -1,61 +1,54 @@
 import React from "react";
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
-import { useScrollToTop } from "../../hooks/useScrollToTop";
 import { Helmet } from "react-helmet";
-import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
-import Enterprise_Business_01 from "../../assets/img/Enterprise_Business_01.png"
-import Enterprise_Business_02 from "../../assets/img/Enterprise_Business_02.png"
-import Enterprise_Business_03 from "../../assets/img/Enterprise_Business_03.png"
-import Enterprise_Business_04 from "../../assets/img/Enterprise_Business_04.png"
-import Enterprise_Business_05 from "../../assets/img/Enterprise_Business_05.png"
-import Enterprise_Business_06 from "../../assets/img/Enterprise_Business_06.png"
-import shopify from "../../assets/img/shopify.png"
 import ReactVisibilitySensor from "react-visibility-sensor";
+import Enterprise_Business_01 from "../../assets/img/Enterprise_Business_01.png";
+import Enterprise_Business_02 from "../../assets/img/Enterprise_Business_02.png";
+import Enterprise_Business_03 from "../../assets/img/Enterprise_Business_03.png";
+import Enterprise_Business_04 from "../../assets/img/Enterprise_Business_04.png";
+import Enterprise_Business_05 from "../../assets/img/Enterprise_Business_05.png";
+import Enterprise_Business_06 from "../../assets/img/Enterprise_Business_06.png";
+import Footer from "../../components/Footer/Footer";
 import GetAQuote from "../../components/GetAQuote/GetAQuote";
+import Navbar from "../../components/Navbar/Navbar";
+import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
+import { useScrollToTop } from "../../hooks/useScrollToTop";
 
 const WebsiteDesign = () => {
-
   const worksData = [
     {
       id: 1,
       title: "Custom software development",
       description:
         "Your IT company can create custom software solutions tailored to meet the specific needs of enterprise businesses. This can help automate processes, improve efficiency, and enhance customer experiences.",
-      illustration:
-        Enterprise_Business_02
+      illustration: Enterprise_Business_02,
     },
     {
       id: 2,
       title: "IT support and maintenance",
       description:
         "By providing comprehensive IT support and maintenance services, your company can ensure that enterprise businesses' systems are always up and running. This can help minimize downtime and prevent costly disruptions.",
-      illustration:
-        Enterprise_Business_03
+      illustration: Enterprise_Business_03,
     },
     {
       id: 3,
       title: "Data security and compliance",
       description:
         "Your company can help enterprise businesses manage their data and ensure that it is secure and compliant with relevant regulations. This can include implementing strong security measures and providing ongoing monitoring and maintenance.",
-      illustration:
-        Enterprise_Business_04
+      illustration: Enterprise_Business_04,
     },
     {
       id: 4,
       title: "Cloud solutions",
       description:
         "Your IT company can help enterprise businesses transition to cloud-based solutions, which can offer scalability, flexibility, and cost savings. This can include everything from cloud storage to cloud-based software and infrastructure.",
-      illustration:
-        Enterprise_Business_05
+      illustration: Enterprise_Business_05,
     },
     {
       id: 5,
       title: "Emerging technologies",
       description:
         "By staying up-to-date with the latest technologies and trends, your IT company can help enterprise businesses stay ahead of the curve. This can include everything from artificial intelligence and machine learning to blockchain and IoT solutions.",
-      illustration:
-        Enterprise_Business_06
+      illustration: Enterprise_Business_06,
     },
   ];
 
@@ -67,6 +60,10 @@ const WebsiteDesign = () => {
         <meta
           name="description"
           content="We can help enterprise businesses improve their performance and achieve their goals through our expertise in software development and IT services."
+        />
+        <link
+          rel="canonical"
+          href="https://www.dotpotit.com/key-features/website-design"
         />
         <meta property="og:title" content="Enterprise Business | Dotpot iT" />
         <meta
@@ -93,7 +90,11 @@ const WebsiteDesign = () => {
         />
       </Helmet>
       <Navbar />
-      <div className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"} `}>
+      <div
+        className={` md:pt-[15vh] pt-[15vh] ${
+          window.innerWidth > 1280 && "md:pt-[11vh]"
+        } `}
+      >
         <NavigatorComponent navigationData={navigationData} />
         <div>
           {/* Banner */}
@@ -102,20 +103,32 @@ const WebsiteDesign = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`mt-10 mb-16 ${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 `}
+                    className={`mt-10 mb-16 ${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                    } duration-1000 `}
                   >
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
                         <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
-                          <h2 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">Enterprise Business</h2>
+                          <h2 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
+                            Enterprise Business
+                          </h2>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            As an IT company, your software development and IT services can help enterprise businesses improve efficiency, productivity, and security. By providing cutting-edge solutions and technology, you can help these businesses stay competitive in their markets and achieve their goals.
+                            As an IT company, your software development and IT
+                            services can help enterprise businesses improve
+                            efficiency, productivity, and security. By providing
+                            cutting-edge solutions and technology, you can help
+                            these businesses stay competitive in their markets
+                            and achieve their goals.
                           </p>
                         </div>
-                        <img src={Enterprise_Business_01} alt="" className="w-full md:w-1/3 lg:w-1/3" />
+                        <img
+                          src={Enterprise_Business_01}
+                          alt=""
+                          className="w-full md:w-1/3 lg:w-1/3"
+                        />
                       </div>
                     </div>
                   </div>
@@ -127,39 +140,60 @@ const WebsiteDesign = () => {
           {/* body */}
           <div className="container mx-auto w-full overflow-hidden">
             <>
-              <div
-                className={`flex flex-col gap-5`}
-              >
+              <div className={`flex flex-col gap-5`}>
                 {worksData.map(({ id, title, description, illustration }) => (
-                  <div key={id} className={`md:flex justify-center items-center gap-x-20 font-work p-5`}>
-                    <div className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"} `}>
+                  <div
+                    key={id}
+                    className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
+                  >
+                    <div
+                      className={`w-full md:w-1/2 lg:w-1/2 ${
+                        id % 2 === 0 && "order-2"
+                      } `}
+                    >
                       <ReactVisibilitySensor partialVisibility>
-                        {({ isVisible }) => (<div className={` ${isVisible
-                          ? "opacity-100 translate-y-0"
-                          : "translate-y-20 opacity-0"
-                          } duration-1000 `}><h1 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
-                            {title}
-                          </h1>
-                          <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">{description}</p></div>)}
+                        {({ isVisible }) => (
+                          <div
+                            className={` ${
+                              isVisible
+                                ? "opacity-100 translate-y-0"
+                                : "translate-y-20 opacity-0"
+                            } duration-1000 `}
+                          >
+                            <h1 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
+                              {title}
+                            </h1>
+                            <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">
+                              {description}
+                            </p>
+                          </div>
+                        )}
                       </ReactVisibilitySensor>
-
                     </div>
                     <ReactVisibilitySensor partialVisibility>
-                      {({ isVisible }) => (<div className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"} ${isVisible
-                        ? "opacity-100 translate-y-0"
-                        : "translate-y-20 opacity-0"
-                        } duration-1000 `}>
-                        <img className="w-4/5 mx-auto" src={illustration} alt="" />
-                      </div>)}
+                      {({ isVisible }) => (
+                        <div
+                          className={`w-full md:w-1/2 lg:w-1/2 ${
+                            id % 2 === 0 && "order-1"
+                          } ${
+                            isVisible
+                              ? "opacity-100 translate-y-0"
+                              : "translate-y-20 opacity-0"
+                          } duration-1000 `}
+                        >
+                          <img
+                            className="w-4/5 mx-auto"
+                            src={illustration}
+                            alt=""
+                          />
+                        </div>
+                      )}
                     </ReactVisibilitySensor>
                   </div>
                 ))}
               </div>
             </>
-
           </div>
-
-
 
           {/* Why Dotpot iT */}
           <div className="py-16">
@@ -167,10 +201,11 @@ const WebsiteDesign = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 p-3 text-textColor-500`}
+                    className={`${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                    } duration-1000 p-3 text-textColor-500`}
                   >
                     <h1 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
                       Why Dotpot iT
@@ -181,7 +216,18 @@ const WebsiteDesign = () => {
                       alt=""
                     />
                     <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
-                      Company's expertise and customized solutions. With years of experience in software development and IT services, Dotpot IT has the knowledge and resources to help enterprise businesses address their unique challenges and achieve their goals. Additionally, Dotpot IT can create custom software solutions tailored to meet the specific needs of enterprise businesses, whether it's automating processes, improving customer experiences, or ensuring data security and compliance. By partnering with Dotpot IT, enterprise businesses can benefit from the company's expertise and cutting-edge solutions, helping them stay competitive in their markets and achieve success.
+                      Company's expertise and customized solutions. With years
+                      of experience in software development and IT services,
+                      Dotpot IT has the knowledge and resources to help
+                      enterprise businesses address their unique challenges and
+                      achieve their goals. Additionally, Dotpot IT can create
+                      custom software solutions tailored to meet the specific
+                      needs of enterprise businesses, whether it's automating
+                      processes, improving customer experiences, or ensuring
+                      data security and compliance. By partnering with Dotpot
+                      IT, enterprise businesses can benefit from the company's
+                      expertise and cutting-edge solutions, helping them stay
+                      competitive in their markets and achieve success.
                     </p>
                   </div>
                 </>
@@ -193,14 +239,13 @@ const WebsiteDesign = () => {
           <div className="bg-primary-100">
             <GetAQuote />
           </div>
-
         </div>
       </div>
 
       <div className="">
         <Footer />
       </div>
-    </div >
+    </div>
   );
 };
 
@@ -210,5 +255,5 @@ const navigationData = [
   {
     title: "Enterprise Business",
     link: "/who-we-works-with/enterprise-business",
-  }
+  },
 ];

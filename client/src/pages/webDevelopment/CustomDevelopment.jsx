@@ -1,14 +1,14 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import ReactVisibilitySensor from "react-visibility-sensor";
-import customwebdd from "../../assets/img/customwebdd.png";
-import tailoredweb from "../../assets/img/tailoredweb.png";
-import stunningwebsites from "../../assets/img/stunningwebsites.png";
-import userexperience from "../../assets/img/userexperience.png";
-import prioritizeresponsive from "../../assets/img/prioritizeresponsive.png";
-import cuttingedge from "../../assets/img/cuttingedge.png";
 import SEO from "../../assets/img/SEO.png";
+import customwebdd from "../../assets/img/customwebdd.png";
+import cuttingedge from "../../assets/img/cuttingedge.png";
 import ongoingsupport from "../../assets/img/ongoingsupport.png";
+import prioritizeresponsive from "../../assets/img/prioritizeresponsive.png";
+import stunningwebsites from "../../assets/img/stunningwebsites.png";
+import tailoredweb from "../../assets/img/tailoredweb.png";
+import userexperience from "../../assets/img/userexperience.png";
 import Footer from "../../components/Footer/Footer";
 import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
@@ -72,15 +72,19 @@ const CustomDevelopment = () => {
   return (
     <div className="bg-background-500">
       <Helmet>
-        <title>Coustom Development | Dotpot iT</title>
+        <title>Custom Development | Dotpot iT</title>
         <meta
           name="description"
-          content="Learn about Coustom DevelopmentDotpot iT, a leading IT company providing innovative solutions for businesses.visit website for details"
+          content="Learn about Custom DevelopmentDotpot iT, a leading IT company providing innovative solutions for businesses.visit website for details"
         />
-        <meta property="og:title" content="Coustom Development| Dotpot iT" />
+        <link
+          rel="canonical"
+          href="https://www.dotpotit.com/web-development/blog-website"
+        />
+        <meta property="og:title" content="Custom Development| Dotpot iT" />
         <meta
           property="og:description"
-          content="Learn about Coustom Development Dotpot iT, a leading IT company providing innovative solutions for businesses."
+          content="Learn about Custom Development Dotpot iT, a leading IT company providing innovative solutions for businesses."
         />
         <meta
           property="og:image"
@@ -158,7 +162,8 @@ const CustomDevelopment = () => {
             <>
               <div className={`flex flex-col gap-5`}>
                 {worksData.map(({ id, title, description, illustration }) => (
-                  <div key={id}
+                  <div
+                    key={id}
                     className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
                   >
                     <div

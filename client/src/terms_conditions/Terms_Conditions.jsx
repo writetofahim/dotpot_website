@@ -1,29 +1,55 @@
-import React from 'react'
-import Footer from '../components/Footer/Footer'
-import Navbar from '../components/Navbar/Navbar'
-import terms from "../assets/pdfs/terms.pdf"
-import { useScrollToTop } from '../hooks/useScrollToTop'
+import React from "react";
+import { Helmet } from "react-helmet";
+import terms from "../assets/pdfs/terms.pdf";
+import Footer from "../components/Footer/Footer";
+import Navbar from "../components/Navbar/Navbar";
+import { useScrollToTop } from "../hooks/useScrollToTop";
 
 const Terms_Conditions = () => {
-  useScrollToTop()
+  useScrollToTop();
   return (
     <div className="w-full">
+      <Helmet>
+        <title>Terms and Condition | Dotpot iT</title>
+        <meta
+          name="description"
+          content="Learn about Dotpot iT, a leading IT company providing innovative solutions for businesses."
+        />
+        <link rel="canonical" href="https://www.dotpotit.com/privacyPolicy" />
+        <meta property="og:title" content="About Us | Dotpot iT" />
+        <meta
+          property="og:description"
+          content="Learn about Dotpot iT, a leading IT company providing innovative solutions for businesses."
+        />
+        <meta
+          property="og:image"
+          content="https://dotpotit.com/api/uploads/blogs/logo_primary-1683973589433.png"
+        />
+        <meta property="og:url" content="https://dotpotit.com/about" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Us | Dotpot iT" />
+        <meta
+          name="twitter:description"
+          content="Learn about Dotpot iT, a leading IT company providing innovative solutions for businesses."
+        />
+        <meta
+          name="twitter:image"
+          content="https://dotpotit.com/api/uploads/blogs/logo_primary-1683973589433.png"
+        />
+      </Helmet>
       <Navbar />
-
       {/* Main Div */}
       <div className="pt-24 w-full min-h-[100vh] flex items-center justify-center">
-          
         <iframe
           src={terms}
           title="Terms and Conditions"
           className="w-full h-screen"
         />
-
       </div>
 
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Terms_Conditions
+export default Terms_Conditions;

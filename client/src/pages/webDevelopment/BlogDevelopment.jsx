@@ -1,13 +1,13 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import parse from "react-html-parser";
+import ReactVisibilitySensor from "react-visibility-sensor";
 import retail from "../../assets/img/blog_site.png";
 import Footer from "../../components/Footer/Footer";
+import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import ReactVisibilitySensor from "react-visibility-sensor";
-import parse from 'react-html-parser'
-import GetAQuote from "../../components/GetAQuote/GetAQuote";
 
 const BlogDevelopment = () => {
   useScrollToTop();
@@ -17,12 +17,12 @@ const BlogDevelopment = () => {
       title: "Overview",
       description:
         "Dotpot IT offers professional blog site development services with a focus on user experience and engagement. We offer customizable packages starting from $1000 to fit every budget and meet unique requirements. Contact us today to start sharing your message with the world.",
-      illustration: retail
+      illustration: retail,
     },
     {
       id: 2,
       title: "Benefits of working with Dotpot IT",
-      description:`
+      description: `
       Dotpot IT provides custom web solutions, e-commerce integration, and growth services for Retail & E-Commerce businesses.
       <li class="text-textColor-500 mb-2 lg:px-10 px-3">
         <strong class="font-semibold">
@@ -81,14 +81,14 @@ const BlogDevelopment = () => {
         <br />
         
       </li>`,
-      illustration:retail
+      illustration: retail,
     },
     {
       id: 3,
       title: "Why we wil be your best choice?",
       description:
         "Dotpot iT designs custom, user-friendly blog websites optimized for SEO and user experience, helping businesses establish a strong online presence and drive revenue.",
-      illustration:retail
+      illustration: retail,
     },
   ];
   return (
@@ -98,6 +98,10 @@ const BlogDevelopment = () => {
         <meta
           name="description"
           content="Learn about Blog Site Development Dotpot iT, a leading IT company providing innovative solutions for businesses.visit website for details"
+        />
+        <link
+          rel="canonical"
+          href="https://www.dotpotit.com/web-development/blog-website"
         />
         <meta property="og:title" content="Blog Site Development| Dotpot iT" />
         <meta
@@ -128,7 +132,11 @@ const BlogDevelopment = () => {
       </Helmet>
       <Navbar />
 
-      <div className={` pt-[15vh] ${window.innerWidth>1280 ? "md:pt-[11vh]": "md:pt-[15vh]"} `}>
+      <div
+        className={` pt-[15vh] ${
+          window.innerWidth > 1280 ? "md:pt-[11vh]" : "md:pt-[15vh]"
+        } `}
+      >
         <NavigatorComponent navigationData={navigationData} />
         <div>
           {/* Banner */}
@@ -137,20 +145,29 @@ const BlogDevelopment = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`mt-10 mb-16 ${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 `}
+                    className={`mt-10 mb-16 ${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                    } duration-1000 `}
                   >
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
                         <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
-                          <h2 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">Blog Site Development</h2>
+                          <h2 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
+                            Blog Site Development
+                          </h2>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                          "Developing a successful blog site is not just about creating a platform, it's about creating a community." - Darren Rowse
+                            "Developing a successful blog site is not just about
+                            creating a platform, it's about creating a
+                            community." - Darren Rowse
                           </p>
                         </div>
-                        <img src={retail} alt="" className="w-full md:w-1/2 lg:w-1/2" />
+                        <img
+                          src={retail}
+                          alt=""
+                          className="w-full md:w-1/2 lg:w-1/2"
+                        />
                       </div>
                     </div>
                   </div>
@@ -161,44 +178,66 @@ const BlogDevelopment = () => {
 
           {/* body */}
           <div className="container mx-auto w-full overflow-hidden">
-                <>
+            <>
+              <div className={`flex flex-col gap-5`}>
+                {worksData.map(({ id, title, description, illustration }) => (
                   <div
-                    className={`flex flex-col gap-5`}
+                    key={id}
+                    className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
                   >
-                    {worksData.map(({ id, title, description, illustration }) => (
-                      <div key={id} className={`md:flex justify-center items-center gap-x-20 font-work p-5`}>
-                      <div className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"} `}>
-                        <ReactVisibilitySensor partialVisibility>
-                      {({isVisible})=>(<div className={` ${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 `}><h1 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
-                          {title}
-                        </h1>
-                        <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">{parse(description)}</p></div>)}
-                      </ReactVisibilitySensor>
-                        
-                      </div>
+                    <div
+                      className={`w-full md:w-1/2 lg:w-1/2 ${
+                        id % 2 === 0 && "order-2"
+                      } `}
+                    >
                       <ReactVisibilitySensor partialVisibility>
-                      {({isVisible})=>(<div className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"} ${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 `}>
-                        <img className="w-4/5 mx-auto" src={illustration} alt="" />
-                      </div>)}
+                        {({ isVisible }) => (
+                          <div
+                            className={` ${
+                              isVisible
+                                ? "opacity-100 translate-y-0"
+                                : "translate-y-20 opacity-0"
+                            } duration-1000 `}
+                          >
+                            <h1 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
+                              {title}
+                            </h1>
+                            <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">
+                              {parse(description)}
+                            </p>
+                          </div>
+                        )}
                       </ReactVisibilitySensor>
                     </div>
-                    ))}
+                    <ReactVisibilitySensor partialVisibility>
+                      {({ isVisible }) => (
+                        <div
+                          className={`w-full md:w-1/2 lg:w-1/2 ${
+                            id % 2 === 0 && "order-1"
+                          } ${
+                            isVisible
+                              ? "opacity-100 translate-y-0"
+                              : "translate-y-20 opacity-0"
+                          } duration-1000 `}
+                        >
+                          <img
+                            className="w-4/5 mx-auto"
+                            src={illustration}
+                            alt=""
+                          />
+                        </div>
+                      )}
+                    </ReactVisibilitySensor>
                   </div>
-                </>
-      
+                ))}
+              </div>
+            </>
           </div>
 
           {/* Get in Touch */}
           <div className="bg-primary-100">
-            <GetAQuote/>
+            <GetAQuote />
           </div>
-
         </div>
       </div>
       <Footer />

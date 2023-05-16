@@ -27,6 +27,7 @@ const Services = () => {
           name="description"
           content="Learn about Dotpot iT, a leading IT company providing innovative solutions for businesses."
         />
+        <link rel="canonical" href="https://www.dotpotit.com/services" />
         <meta property="og:title" content="About Us | Dotpot iT" />
         <meta
           property="og:description"

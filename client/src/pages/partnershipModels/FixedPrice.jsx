@@ -1,18 +1,16 @@
 import React from "react";
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
-import { useScrollToTop } from "../../hooks/useScrollToTop";
 import { Helmet } from "react-helmet";
-import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
-import coverfix from "../../assets/img/Fixed_Price4.png";
-import projectscope from "../../assets/img/Fixed_Price3.png";
+import ReactVisibilitySensor from "react-visibility-sensor";
 import benifit from "../../assets/img/Fixed_Price1.png";
+import projectscope from "../../assets/img/Fixed_Price3.png";
+import coverfix from "../../assets/img/Fixed_Price4.png";
 import client from "../../assets/img/Fixed_Price5.png";
 import summuryfix from "../../assets/img/Fixed_Price6.png";
-import shopify from "../../assets/img/shopify.png";
-import ReactVisibilitySensor from "react-visibility-sensor";
-import { Link } from "react-router-dom";
+import Footer from "../../components/Footer/Footer";
 import GetAQuote from "../../components/GetAQuote/GetAQuote";
+import Navbar from "../../components/Navbar/Navbar";
+import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
+import { useScrollToTop } from "../../hooks/useScrollToTop";
 
 const FixedPrice = () => {
   const worksData = [
@@ -61,6 +59,7 @@ const FixedPrice = () => {
           name="description"
           content="Learn about Fixed Price Partnership Model Dotpot iT, a leading IT company providing innovative solutions for businesses."
         />
+        <link rel="canonical" href="/partnership_model/fixed-price-model" />
         <meta
           property="og:title"
           content="Fixed Price Partnership Model | Dotpot iT"
@@ -119,9 +118,9 @@ const FixedPrice = () => {
                               Fixed Price
                             </h2>
                             <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            👍In a Fixed Price Partnership Model, Dotpot iT and
-                              the client agree upon a fixed price for a specific
-                              project or set of services. This model is
+                              👍In a Fixed Price Partnership Model, Dotpot iT
+                              and the client agree upon a fixed price for a
+                              specific project or set of services. This model is
                               beneficial for clients who have a clear
                               understanding of their project requirements and
                               want to know the exact cost upfront
@@ -145,7 +144,8 @@ const FixedPrice = () => {
               <>
                 <div className={`flex flex-col gap-5`}>
                   {worksData.map(({ id, title, description, illustration }) => (
-                    <div key={id}
+                    <div
+                      key={id}
                       className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
                     >
                       <div
