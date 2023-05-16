@@ -16,6 +16,10 @@ const SocialNetworking = () => {
           name="description"
           content="Connect with your audience like never before - with DotpotiT's social networking solutions"
         />
+        <link
+          rel="canonical"
+          href="https://dotpotit.com/industries-we-serve/social-networking"
+        />
         <meta property="og:title" content="Social Networking | Dotpot iT" />
         <meta
           property="og:description"
@@ -48,8 +52,8 @@ const SocialNetworking = () => {
             Social Networking
           </h1>
           <p className="text-lg  text-center mb-10 text-textColor-500">
-            Connect with your audience like never before - with DotpotiT's social
-            networking solutions.
+            Connect with your audience like never before - with DotpotiT's
+            social networking solutions.
           </p>
           <div className="container mx-auto">
             <img className="md:w-1/2 mx-auto mb-10" src={sn} alt="" />
@@ -65,8 +69,8 @@ const SocialNetworking = () => {
                 revolutionized the way people connect with each other online. At
                 DotpotiT, we understand the importance of social networking in
                 today's digital age, and we offer a range of services to help
-                businesses and individuals leverage the power of social networking
-                to connect with their audiences.
+                businesses and individuals leverage the power of social
+                networking to connect with their audiences.
                 <br />
                 Our team of experts has extensive experience in designing and
                 developing social networking sites that are intuitive,
@@ -74,16 +78,17 @@ const SocialNetworking = () => {
                 clients to understand their unique needs and develop customized
                 solutions that meet their specific requirements.
                 <br />
-                Whether you are looking to build a new social networking site from
-                scratch or enhance an existing one, we have the expertise and
-                resources to deliver results. Our services include website design
-                and development, mobile app development, social media marketing,
-                and more.
+                Whether you are looking to build a new social networking site
+                from scratch or enhance an existing one, we have the expertise
+                and resources to deliver results. Our services include website
+                design and development, mobile app development, social media
+                marketing, and more.
                 <br />
-                At DotpotiT, we are committed to helping our clients stay ahead of
-                the curve in the ever-changing landscape of social networking.
-                Contact us today to learn more about our services and how we can
-                help you achieve your goals in the social networking industry.
+                At DotpotiT, we are committed to helping our clients stay ahead
+                of the curve in the ever-changing landscape of social
+                networking. Contact us today to learn more about our services
+                and how we can help you achieve your goals in the social
+                networking industry.
               </p>
             </div>
 
@@ -126,38 +131,38 @@ const SocialNetworking = () => {
               </h2>
               <div className="text-textColor-500 flex flex-col gap-5 p-5">
                 <p>
-                  At DotpotiT, we work with a diverse range of clients to provide
-                  top-notch social networking solutions. Our process starts with
-                  understanding our clients' unique needs and tailoring our
-                  services to match those requirements. We then utilize the latest
-                  technologies and development practices to deliver exceptional
-                  results. Our team of experts has years of experience in the
-                  industry and is committed to delivering excellence on every
-                  project. With our dedication to customer satisfaction and a
-                  track record of successful project deliveries, we are confident
-                  that we are the best choice for all your social networking
-                  needs.
+                  At DotpotiT, we work with a diverse range of clients to
+                  provide top-notch social networking solutions. Our process
+                  starts with understanding our clients' unique needs and
+                  tailoring our services to match those requirements. We then
+                  utilize the latest technologies and development practices to
+                  deliver exceptional results. Our team of experts has years of
+                  experience in the industry and is committed to delivering
+                  excellence on every project. With our dedication to customer
+                  satisfaction and a track record of successful project
+                  deliveries, we are confident that we are the best choice for
+                  all your social networking needs.
                 </p>
                 <p>
-                  At DotpotiT, we pride ourselves on being a one-stop-shop for all
-                  your social networking needs. From ideation to development, and
-                  from design to launch, we have you covered every step of the
-                  way. Our team of experts has extensive experience in building
-                  social networking sites that are user-friendly, secure, and
-                  scalable. We are passionate about delivering exceptional results
-                  and strive to exceed our clients' expectations. When you work
-                  with us, you can rest assured that your project is in good
-                  hands.
+                  At DotpotiT, we pride ourselves on being a one-stop-shop for
+                  all your social networking needs. From ideation to
+                  development, and from design to launch, we have you covered
+                  every step of the way. Our team of experts has extensive
+                  experience in building social networking sites that are
+                  user-friendly, secure, and scalable. We are passionate about
+                  delivering exceptional results and strive to exceed our
+                  clients' expectations. When you work with us, you can rest
+                  assured that your project is in good hands.
                 </p>
                 <p>
                   We are a team of passionate and dedicated professionals who
-                  understand the importance of delivering on our promises. We work
-                  tirelessly to ensure that our clients' social networking sites
-                  are of the highest quality, meet their requirements, and exceed
-                  their expectations. With our years of experience, cutting-edge
-                  technologies, and commitment to customer satisfaction, we are
-                  confident that we are the right choice for all your social
-                  networking needs.
+                  understand the importance of delivering on our promises. We
+                  work tirelessly to ensure that our clients' social networking
+                  sites are of the highest quality, meet their requirements, and
+                  exceed their expectations. With our years of experience,
+                  cutting-edge technologies, and commitment to customer
+                  satisfaction, we are confident that we are the right choice
+                  for all your social networking needs.
                 </p>
               </div>
             </div>

@@ -16,6 +16,10 @@ const MobileApp = () => {
           name="description"
           content="Get in touch with us for your IT needs. Mobile App support your business, mobile app, and more."
         />
+        <link
+          rel="canonical"
+          href="https://dotpotit.com/contact_center_services/mobile-app"
+        />
         <meta property="og:title" content="Mobile App support | Dotpot iT" />
         <meta
           property="og:description"

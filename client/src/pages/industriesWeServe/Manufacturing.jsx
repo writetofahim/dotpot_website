@@ -21,6 +21,10 @@ const Manufacturing = () => {
             name="description"
             content="DotpotIT offers custom software solutions for manufacturing to optimize processes, improve productivity, and reduce costs"
           />
+          <link
+            rel="canonical"
+            href="https://dotpotit.com/industries-we-serve/manufacturing"
+          />
           <meta property="og:title" content="Manufacturing | Dotpot iT" />
           <meta
             property="og:description"
@@ -72,8 +76,9 @@ const Manufacturing = () => {
                     Manufacturing
                   </h1>
                   <p className="text-textColor-500 flex flex-col gap-5 p-5 text-center">
-                    DotpotIT offers custom software solutions for manufacturing to
-                    optimize processes, improve productivity, and reduce costs.
+                    DotpotIT offers custom software solutions for manufacturing
+                    to optimize processes, improve productivity, and reduce
+                    costs.
                   </p>
                 </div>
                 {/* points */}

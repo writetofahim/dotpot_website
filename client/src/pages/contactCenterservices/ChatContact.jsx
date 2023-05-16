@@ -16,6 +16,10 @@ const ChatContact = () => {
           name="description"
           content="Get in touch with us for your IT needs. Web Chat Support for website, mobile app, and more."
         />
+        <link
+          rel="canonical"
+          href="https://dotpotit.com/contact_center_services/chat"
+        />
         <meta property="og:title" content="Web Chat Support | Dotpot iT" />
         <meta
           property="og:description"
@@ -106,9 +110,7 @@ const ChatContact = () => {
             </div>
           </div>
           <div className="text-textColor-500 flex flex-col gap-5 p-5">
-            <p className="font-bold">
-              ACD Based Web Chat Routing
-            </p>
+            <p className="font-bold">ACD Based Web Chat Routing</p>
             <p className="text-gray-700 text-justify">
               Dotpot IT CC's Web Chat module uses the same ACD system as the CC
               solution for routing chat sessions. Chat sessions are treated as

@@ -215,14 +215,13 @@ const Blog = () => {
         <title>Dotpot iT - Blog</title>
         <meta
           name="description"
-          content="Read the latest articles and news from Dotpot iT's blog."
+          content="Read the latest articles and news from Dotpot iT's blog. We cover a wide range of topics, including app development, web development, game development, AI development, and blockchain development. We also share tips and advice on how businesses can use technology to improve their operations and achieve their goals."
         />
-        <meta name="keywords" content="Dotpot iT, blog, articles, news" />
         <link rel="canonical" href="https://dotpotit.com/blog" />
         <meta property="og:title" content="Dotpot iT - Blog" />
         <meta
           property="og:description"
-          content="Read the latest articles and news from Dotpot iT's blog."
+          content="Read the latest articles and news from Dotpot iT's blog. We cover a wide range of topics, including app development, web development, game development, AI development, and blockchain development. We also share tips and advice on how businesses can use technology to improve their operations and achieve their goals."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://dotpotit.com/blog" />
@@ -233,7 +232,7 @@ const Blog = () => {
         <meta name="twitter:title" content="Dotpot iT - Blog" />
         <meta
           name="twitter:description"
-          content="Read the latest articles and news from Dotpot iT's blog."
+          content="Read the latest articles and news from Dotpot iT's blog. We cover a wide range of topics, including app development, web development, game development, AI development, and blockchain development. We also share tips and advice on how businesses can use technology to improve their operations and achieve their goals."
         />
         <meta
           name="twitter:image"
@@ -244,9 +243,11 @@ const Blog = () => {
       {/* <Particle /> */}
 
       <div className="w-full pt-[15vh] bg-background-500">
-      <NavigatorComponent navigationData={navigationData} />
+        <NavigatorComponent navigationData={navigationData} />
         <div className="w-full flex flex-col items-center justify-center bg-background-500">
-          <h1 className="text-6xl mt-10 mb-2 font-bold text-textColor-500">Blogs</h1>
+          <h1 className="text-6xl mt-10 mb-2 font-bold text-textColor-500">
+            Blogs
+          </h1>
           <p className="text-lg mb-10 px-4 text-textColor-500">
             Follow our blog to get all the latest tech news
           </p>
@@ -351,7 +352,7 @@ const FirstBlog = ({ title, body, image, _id, tags, createdAt, index }) => {
         </p>
         <p className="my-3 text-textColor-500">{slicedString}...</p>
         <div className="flex items-center gap-2">
-          <img className="w-4 " src="./src/assets/img/icon.png" alt="" />
+          <img className="w-4 " src={dotpotiTLogo} alt="" />
           <p className="font-bold">Dotpot iT</p>
         </div>
       </div>
@@ -448,5 +449,3 @@ const BlogCard3 = ({ title, body, image, _id, tags, createdAt, index }) => {
     </div>
   );
 };
-
-

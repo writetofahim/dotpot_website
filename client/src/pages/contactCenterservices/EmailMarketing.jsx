@@ -16,6 +16,11 @@ const EmailMarketing = () => {
           name="description"
           content="Get in touch with us for your IT needs. Email-Marketing for website, mobile app, and more."
         />
+        <link
+          rel="canonical"
+          href="https://dotpotit.com/contact_center_services/email-marketing"
+        />
+
         <meta property="og:title" content="Email-Marketing | Dotpot iT" />
         <meta
           property="og:description"

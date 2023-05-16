@@ -16,6 +16,10 @@ const Ivr = () => {
           name="description"
           content="Get in touch with us for your IT needs. Interactive Voice Response (IVR) support your business, mobile app, and more."
         />
+        <link
+          rel="canonical"
+          href="https://dotpotit.com/contact_center_services/ivr"
+        />
         <meta
           property="og:title"
           content="Interactive Voice Response (IVR) support | Dotpot iT"
@@ -70,7 +74,9 @@ const Ivr = () => {
           </div>
           <div className="md:my-6 block md:flex gap-1 sm:my-5">
             <div className="bg-background-500 rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
-              <h2 className="text-lg font-bold mb-2 text-textColor-500">Easy Edit and Upload</h2>
+              <h2 className="text-lg font-bold mb-2 text-textColor-500">
+                Easy Edit and Upload
+              </h2>
               <p className="text-textColor-500 text-justify">
                 With the flexible IVR module of Dotpot IT, you have the ability
                 to create and modify voice menus for call routing at any given
@@ -81,7 +87,9 @@ const Ivr = () => {
               </p>
             </div>
             <div className="bg-background-500 rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
-              <h2 className="text-lg font-bold mb-2 text-textColor-500">Design Own IVR</h2>
+              <h2 className="text-lg font-bold mb-2 text-textColor-500">
+                Design Own IVR
+              </h2>
               <p className="text-textColor-500 text-justify">
                 Dotpot IT system provides you with the ability to create an IVR
                 system that is customized to your business requirements. The
@@ -90,7 +98,9 @@ const Ivr = () => {
               </p>
             </div>
             <div className="bg-background-500 rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
-              <h2 className="text-lg font-bold mb-2 text-textColor-500">Responsive IVR</h2>
+              <h2 className="text-lg font-bold mb-2 text-textColor-500">
+                Responsive IVR
+              </h2>
               <p className="text-textColor-500 text-justify">
                 IVR systems are now commonly employed for making outbound calls
                 to perform various time-sensitive tasks, such as providing or

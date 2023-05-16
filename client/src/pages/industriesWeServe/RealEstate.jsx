@@ -16,6 +16,10 @@ const RealEstate = () => {
           name="description"
           content="Expertise you can rely on - Real estate solutions tailored to your needs"
         />
+        <link
+          rel="canonical"
+          href="https://dotpotit.com/industries-we-serve/real-estate"
+        />
         <meta property="og:title" content="Real Estate | Dotpot iT" />
         <meta
           property="og:description"
@@ -68,23 +72,23 @@ const RealEstate = () => {
                 potential.
                 <br />
                 We offer a range of services tailored specifically for the real
-                estate industry, including website design and development, search
-                engine optimization, social media marketing, and more. Whether
-                you're a small real estate agency or a large brokerage, we have
-                the experience and tools necessary to help you succeed.
+                estate industry, including website design and development,
+                search engine optimization, social media marketing, and more.
+                Whether you're a small real estate agency or a large brokerage,
+                we have the experience and tools necessary to help you succeed.
                 <br />
                 Our team of experts has a deep understanding of the real estate
-                industry and the technology landscape, and we stay up-to-date with
-                the latest trends and developments. We work closely with our
-                clients to understand their unique needs and goals, and we develop
-                customized solutions that deliver real results.
+                industry and the technology landscape, and we stay up-to-date
+                with the latest trends and developments. We work closely with
+                our clients to understand their unique needs and goals, and we
+                develop customized solutions that deliver real results.
                 <br />
                 At DotpotiT, we are committed to providing our clients with the
                 highest level of service and support. We take pride in our work
                 and are passionate about helping real estate companies achieve
                 their goals. So if you're looking for a partner to help you take
-                your real estate business to the next level, look no further than
-                DotpotiT.
+                your real estate business to the next level, look no further
+                than DotpotiT.
               </p>
             </div>
 
@@ -127,39 +131,41 @@ const RealEstate = () => {
               </h2>
               <div className="text-textColor-500 flex flex-col gap-5 p-5">
                 <p>
-                  At DotpotiT, we believe that transparency and collaboration are
-                  key to creating successful real estate projects. We work closely
-                  with our clients to understand their needs and goals, and to
-                  ensure that every project is tailored to their specific
-                  requirements. Our team of experienced real estate professionals
-                  has a deep understanding of the market, and we leverage this
-                  expertise to deliver innovative and effective solutions for our
-                  clients.
+                  At DotpotiT, we believe that transparency and collaboration
+                  are key to creating successful real estate projects. We work
+                  closely with our clients to understand their needs and goals,
+                  and to ensure that every project is tailored to their specific
+                  requirements. Our team of experienced real estate
+                  professionals has a deep understanding of the market, and we
+                  leverage this expertise to deliver innovative and effective
+                  solutions for our clients.
                 </p>
                 <p>
                   Our process begins with a comprehensive consultation, during
                   which we take the time to fully understand our client's vision
                   and objectives. From there, we work closely with our team of
                   architects, designers, and contractors to develop a detailed
-                  project plan that encompasses every aspect of the project, from
-                  site selection to design and construction.
+                  project plan that encompasses every aspect of the project,
+                  from site selection to design and construction.
                 </p>
                 <p>
                   Throughout the project lifecycle, we maintain a high level of
                   communication with our clients, providing regular updates and
                   progress reports to ensure that they are fully informed every
                   step of the way. We pride ourselves on our attention to detail
-                  and our ability to navigate complex regulatory environments, and
-                  we work tirelessly to ensure that every project is completed on
-                  time, on budget, and to the highest possible standard.
+                  and our ability to navigate complex regulatory environments,
+                  and we work tirelessly to ensure that every project is
+                  completed on time, on budget, and to the highest possible
+                  standard.
                 </p>
                 <p>
-                  At DotpotiT, we are committed to delivering exceptional results
-                  for our clients, and we approach every project with the same
-                  level of dedication and attention to detail. Whether you are
-                  looking to develop a new commercial property, a residential
-                  development, or a mixed-use project, we have the experience,
-                  expertise, and resources to help you achieve your goals.
+                  At DotpotiT, we are committed to delivering exceptional
+                  results for our clients, and we approach every project with
+                  the same level of dedication and attention to detail. Whether
+                  you are looking to develop a new commercial property, a
+                  residential development, or a mixed-use project, we have the
+                  experience, expertise, and resources to help you achieve your
+                  goals.
                 </p>
               </div>
             </div>
@@ -169,15 +175,16 @@ const RealEstate = () => {
                 Why you should choose us!
               </h3>
               <li className=" ml-5 list-disc text-textColor-500 ">
-                Our team of experienced professionals has extensive knowledge and
-                expertise in the real estate industry. We stay up to date with the
-                latest market trends and changes to ensure that we provide you
-                with the best advice and service possible.
+                Our team of experienced professionals has extensive knowledge
+                and expertise in the real estate industry. We stay up to date
+                with the latest market trends and changes to ensure that we
+                provide you with the best advice and service possible.
               </li>
               <li className=" ml-5 list-disc text-textColor-500 ">
                 Our top priority is always our clients. We take the time to
-                understand your unique needs and work closely with you to provide
-                customized solutions that meet your specific goals and objectives.
+                understand your unique needs and work closely with you to
+                provide customized solutions that meet your specific goals and
+                objectives.
               </li>
               <li className=" ml-5 list-disc text-textColor-500 ">
                 At DotpotiT, we believe in being transparent and honest with our
@@ -192,9 +199,9 @@ const RealEstate = () => {
                 and respect.
               </li>
               <li className=" ml-5 list-disc text-textColor-500 ">
-                We offer competitive pricing for all of our real estate services.
-                We work hard to ensure that you get the best value for your money,
-                without compromising on the quality of our service.
+                We offer competitive pricing for all of our real estate
+                services. We work hard to ensure that you get the best value for
+                your money, without compromising on the quality of our service.
               </li>
               <li className=" ml-5 list-disc text-textColor-500 ">
                 We are always looking for new and innovative ways to help our

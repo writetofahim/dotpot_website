@@ -16,6 +16,10 @@ const education = () => {
           name="description"
           content="Revolutionize Online Learning with Expert Web Solutions by Dotpot IT"
         />
+        <link
+          rel="canonical"
+          href="https://dotpotit.com/industries-we-serve/education"
+        />
         <meta
           property="og:title"
           content="Education & E-Learning | Dotpot iT"
@@ -55,44 +59,48 @@ const education = () => {
               Education & E-Learning
             </h1>
             <p className="text-lg text-textColor-500 text-center mb-10">
-              Revolutionize Online Learning with Expert Web Solutions by Dotpot IT
+              Revolutionize Online Learning with Expert Web Solutions by Dotpot
+              IT
             </p>
           </div>
           <div className="max-w-4xl mx-auto p-4">
             <img src={edu} alt="Product image" />
           </div>
           <div className="my-12 lg:mx-24 mx-6">
-            <h2 className="lg:text-2xl text-xl font-bold mb-4 text-textColor-500">Overview</h2>
+            <h2 className="lg:text-2xl text-xl font-bold mb-4 text-textColor-500">
+              Overview
+            </h2>
             <div className="text-textColor-500 flex flex-col gap-5 py-2 lg:px-5 text-justify">
               <p>
                 Dotpot IT provides high-quality web design and development
-                services to businesses in the Education & E-Learning industry. Our
-                team of experienced web developers and designers uses cutting-edge
-                technology and modern design trends to create customized web
-                solutions that meet the unique needs of our clients. We work
-                closely with our clients to understand their goals and objectives
-                and provide tailored solutions that help them achieve their
-                business objectives and enhance their online presence.
+                services to businesses in the Education & E-Learning industry.
+                Our team of experienced web developers and designers uses
+                cutting-edge technology and modern design trends to create
+                customized web solutions that meet the unique needs of our
+                clients. We work closely with our clients to understand their
+                goals and objectives and provide tailored solutions that help
+                them achieve their business objectives and enhance their online
+                presence.
               </p>
 
               <p>
-                We specialize in developing e-learning websites that are visually
-                appealing, user-friendly, and responsive. Our e-learning website
-                development services include creating user-friendly interfaces,
-                developing online course management systems, and integrating
-                payment gateways. Our websites are also optimized for search
-                engines to ensure that our clients' websites rank higher on search
-                engine results pages, leading to increased online visibility and
-                customer engagement.
+                We specialize in developing e-learning websites that are
+                visually appealing, user-friendly, and responsive. Our
+                e-learning website development services include creating
+                user-friendly interfaces, developing online course management
+                systems, and integrating payment gateways. Our websites are also
+                optimized for search engines to ensure that our clients'
+                websites rank higher on search engine results pages, leading to
+                increased online visibility and customer engagement.
               </p>
 
               <p>
                 In addition to e-learning website development, we also offer
                 website maintenance and support services to ensure that our
-                clients' websites remain up-to-date, secure, and fully functional.
-                Our expert support team is available to address any
-                website-related issues and provide ongoing support to ensure that
-                our clients' websites are running smoothly.
+                clients' websites remain up-to-date, secure, and fully
+                functional. Our expert support team is available to address any
+                website-related issues and provide ongoing support to ensure
+                that our clients' websites are running smoothly.
               </p>
               <p>
                 By partnering with Dotpot IT, businesses in the Education &
@@ -109,12 +117,12 @@ const education = () => {
               </h2>
               <p className="text-textColor-500 lg:px-5 text-justify pb-2">
                 Partnering with Dotpot IT provides Education & E-Learning
-                businesses with customized web solutions, enhanced online presence
-                and brand reputation, search engine optimization, e-commerce
-                functionality, expert support and maintenance, and flexible
-                pricing packages. Working with Dotpot IT can revolutionize the way
-                businesses deliver online learning and achieve their business
-                objectives with ease.
+                businesses with customized web solutions, enhanced online
+                presence and brand reputation, search engine optimization,
+                e-commerce functionality, expert support and maintenance, and
+                flexible pricing packages. Working with Dotpot IT can
+                revolutionize the way businesses deliver online learning and
+                achieve their business objectives with ease.
               </p>
               <ul className="list-disc list-inside">
                 <li className="text-textColor-500 mb-2 lg:px-10 px-3">
@@ -123,9 +131,9 @@ const education = () => {
                   </strong>
                   <br />
                   <p className="px-2">
-                    Dotpot IT provides customized web solutions that are tailored
-                    to the unique needs of businesses in the Education &
-                    E-Learning industry.
+                    Dotpot IT provides customized web solutions that are
+                    tailored to the unique needs of businesses in the Education
+                    & E-Learning industry.
                   </p>
                 </li>
                 <li className="text-textColor-500 mb-2 lg:px-10 px-3">
@@ -151,7 +159,9 @@ const education = () => {
                   </p>
                 </li>
                 <li className="text-textColor-500 mb-2 lg:px-10 px-3">
-                  <strong className="font-semibold">Mobile optimization:</strong>
+                  <strong className="font-semibold">
+                    Mobile optimization:
+                  </strong>
                   <br />
                   <p className="px-2">
                     Our websites are optimized for mobile devices, ensuring that
@@ -175,9 +185,9 @@ const education = () => {
                   </strong>
                   <br />
                   <p className="px-2">
-                    We optimize our websites for search engines, making it easier
-                    for potential customers to find our client's businesses
-                    online.
+                    We optimize our websites for search engines, making it
+                    easier for potential customers to find our client's
+                    businesses online.
                   </p>
                 </li>
                 <li className="text-textColor-500 mb-2 lg:px-10 px-3">
@@ -196,9 +206,9 @@ const education = () => {
                   <br />
                   <p className="px-2">
                     Our web solutions can help businesses in the Education &
-                    E-Learning industry to enhance their online presence and brand
-                    reputation, leading to increased customer engagement and
-                    business growth.
+                    E-Learning industry to enhance their online presence and
+                    brand reputation, leading to increased customer engagement
+                    and business growth.
                   </p>
                 </li>
                 <li className="text-textColor-500 mb-2 lg:px-10 px-3">
@@ -207,10 +217,10 @@ const education = () => {
                   </strong>
                   <br />
                   <p className="px-2">
-                    We offer competitive pricing and flexible packages to suit the
-                    needs and budget of each client, making it easier for
-                    businesses to get the web solutions they need at an affordable
-                    price.
+                    We offer competitive pricing and flexible packages to suit
+                    the needs and budget of each client, making it easier for
+                    businesses to get the web solutions they need at an
+                    affordable price.
                   </p>
                 </li>
               </ul>
@@ -233,25 +243,26 @@ const education = () => {
               </p>
               <p className="text-textColor-500 lg:px-5 text-justify">
                 What sets Dotpot IT apart is our commitment to providing
-                high-quality, customer-focused web solutions. We work closely with
-                our clients to understand their goals and objectives and provide
-                customized solutions that help them achieve their business
-                objectives and enhance their online presence. Our expert support
-                team also provides website maintenance and support services to
-                ensure that our clients' websites remain up-to-date, secure, and
-                fully functional. By partnering with Dotpot IT, businesses in the
-                Education & E-Learning industry can revolutionize the way they
-                deliver online learning, enhance user experience, and increase
-                customer engagement, leading to improved business growth and
-                revenue.
+                high-quality, customer-focused web solutions. We work closely
+                with our clients to understand their goals and objectives and
+                provide customized solutions that help them achieve their
+                business objectives and enhance their online presence. Our
+                expert support team also provides website maintenance and
+                support services to ensure that our clients' websites remain
+                up-to-date, secure, and fully functional. By partnering with
+                Dotpot IT, businesses in the Education & E-Learning industry can
+                revolutionize the way they deliver online learning, enhance user
+                experience, and increase customer engagement, leading to
+                improved business growth and revenue.
               </p>
               <p className="text-textColor-500 lg:px-5 text-justify">
                 Overall, Dotpot IT is the top choice for web design and
                 development services in the Education & E-Learning industry,
-                thanks to our years of experience, expertise, and customer-centric
-                approach. Our customized web solutions, e-learning website
-                development services, and expert support help businesses achieve
-                their goals and grow their online presence with ease.
+                thanks to our years of experience, expertise, and
+                customer-centric approach. Our customized web solutions,
+                e-learning website development services, and expert support help
+                businesses achieve their goals and grow their online presence
+                with ease.
               </p>
             </div>
             <div className="pt-6">
@@ -260,10 +271,10 @@ const education = () => {
                 with Dotpot IT. Our customized web solutions, e-learning website
                 development services, and expert support can help you
                 revolutionize the way you deliver online learning, enhance user
-                experience, and increase customer engagement, leading to improved
-                business growth and revenue. Trust us to deliver high-quality,
-                customer-focused web solutions that help you achieve your business
-                goals and enhance your online presence.
+                experience, and increase customer engagement, leading to
+                improved business growth and revenue. Trust us to deliver
+                high-quality, customer-focused web solutions that help you
+                achieve your business goals and enhance your online presence.
               </p>
             </div>
             {/* <div className=" border-b h-52 w-full md:w-4/5 mx-auto my-5  rounded-xl border flex justify-center items-center shadow-md overflow-hidden relative">

@@ -3,8 +3,8 @@ import { Helmet } from "react-helmet";
 import pd from "../../assets/img/pd.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
-import { useScrollToTop } from "../../hooks/useScrollToTop";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
+import { useScrollToTop } from "../../hooks/useScrollToTop";
 
 const Pd = () => {
   useScrollToTop();
@@ -15,6 +15,10 @@ const Pd = () => {
         <meta
           name="description"
           content="Get in touch with us for your IT needs. Predictive Dialer support your business, Predictive Dialer, and more."
+        />
+        <link
+          rel="canonical"
+          href="https://dotpotit.com/contact_center_services/pd"
         />
         <meta
           property="og:title"

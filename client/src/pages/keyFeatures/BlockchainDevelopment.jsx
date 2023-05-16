@@ -117,6 +117,10 @@ const BlockchainDevelopment = () => {
           name="description"
           content="Hire The Expert Development Team of Blockchain Technology"
         />
+        <link
+          rel="canonical"
+          href="https://dotpotit.com/key-features/blockchain-development"
+        />
         <meta
           property="og:title"
           content="Blockchain Development | Dotpot iT"

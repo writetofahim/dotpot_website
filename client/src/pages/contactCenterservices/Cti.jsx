@@ -16,6 +16,10 @@ const Cti = () => {
           name="description"
           content="Get in touch with us for your IT needs.  Telephony Integration (CTI), mobile app, and more."
         />
+        <link
+          rel="canonical"
+          href="https://dotpotit.com/contact_center_services/cti"
+        />
         <meta property="og:title" content="Web Chat Support | Dotpot iT" />
         <meta
           property="og:description"
@@ -65,7 +69,9 @@ const Cti = () => {
           </div>
           <div className="md:my-6 block md:flex gap-1 sm:my-5">
             <div className="bg-background-500 rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
-              <h2 className="text-lg font-bold mb-2 text-textColor-500">Integrated CRM</h2>
+              <h2 className="text-lg font-bold mb-2 text-textColor-500">
+                Integrated CRM
+              </h2>
               <p className="text-textColor-500 text-justify">
                 Pop up contacts from CRM or built-in address book with Dotpot
                 IT.
@@ -80,7 +86,9 @@ const Cti = () => {
               </p>
             </div>
             <div className="bg-background-500 rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
-              <h2 className="text-lg font-bold mb-2 text-textColor-500">Call Whisper</h2>
+              <h2 className="text-lg font-bold mb-2 text-textColor-500">
+                Call Whisper
+              </h2>
               <p className="text-textColor-500 text-justify">
                 Hear who is calling you, and even decide to take the call or
                 not.

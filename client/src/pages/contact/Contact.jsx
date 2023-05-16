@@ -32,6 +32,7 @@ const Contact = () => {
           name="description"
           content="Get in touch with us for your IT needs. Contact us for website development, mobile app development, and more."
         />
+        <link rel="canonical" href="https://dotpotit.com/about-us" />
         <meta property="og:title" content="Contact Us | Dotpot iT" />
         <meta
           property="og:description"
@@ -61,7 +62,9 @@ const Contact = () => {
         <OurPartnersSlider />
         {/* Contact Form Section */}
         <div className="full flex flex-col items-center justify-center mb-10">
-          <h3 className="mt-10 mb-5 text-5xl font-bold text-textColor-500">Contact Us</h3>
+          <h3 className="mt-10 mb-5 text-5xl font-bold text-textColor-500">
+            Contact Us
+          </h3>
           <p className="mb-5 text-center font-semibold text-textColor-500">
             We would be happy to hear from you, please fill in the form below or
             mail us your requirements on <br />

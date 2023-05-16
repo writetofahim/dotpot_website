@@ -11,9 +11,14 @@ This component also renders Navbar, RecentBlogs, and Footer.
  */
 
 import React, { useEffect, useState } from "react";
+import { renderToString } from "react-dom/server";
 import { Helmet } from "react-helmet";
-import parse from "react-html-parser";
+import {
+  default as ReactHtmlParser,
+  default as parse,
+} from "react-html-parser";
 import { useParams } from "react-router-dom";
+import striptags from "striptags";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
@@ -43,35 +48,42 @@ const SingleBlog = () => {
       });
   }, [id]);
 
+  const parsedArray = ReactHtmlParser(data?.body);
+  const parsedString = renderToString(parsedArray); // convert array to string of HTML
+  const slicedString = striptags(parsedString).slice(0, 160);
+
   return (
     <>
       <Helmet>
-        <title>{data ? data.title : "Dotpot iT - Blog"}</title>
+        <title>{data?.title}</title>
         <meta
           name="description"
-          content="Read the latest articles and news from Dotpot iT's blog."
+          content={`${slicedString} Read more at ${data?.url}.`}
         />
-        <meta name="keywords" content="Dotpot iT, blog, articles, news" />
-        <link rel="canonical" href="https://dotpotit.com/blog" />
-        <meta property="og:title" content="Dotpot iT - Blog" />
+        <meta
+          name="keywords"
+          content="Dotpot iT, blog, articles, news, real estate, real estate app"
+        />
+        <link rel="canonical" href={`${data?.url}`} />
+        <meta property="og:title" content={`${data?.title}`} />
         <meta
           property="og:description"
-          content="Read the latest articles and news from Dotpot iT's blog."
+          content={`${slicedString} Read more at ${data?.url}.`}
         />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://dotpotit.com/blog" />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={`${data?.url}`} />
         <meta
           property="og:image"
-          content="https://dotpotit.com/assets/logo-492dab11.png"
+          content="https://dotpotit.com/assets/blogs/real-estate-app-1683109447717.png"
         />
-        <meta name="twitter:title" content="Dotpot iT - Blog" />
+        <meta name="twitter:title" content={`${data?.title}`} />
         <meta
           name="twitter:description"
-          content="Read the latest articles and news from Dotpot iT's blog."
+          content={`${slicedString} Read more at ${data?.url}.`}
         />
         <meta
           name="twitter:image"
-          content="https://dotpotit.com/assets/logo-492dab11.png"
+          content={`${import.meta.env.REACT_APP_SERVER_PATH}/${data?.image}`}
         />
       </Helmet>
 
@@ -84,14 +96,16 @@ const SingleBlog = () => {
               <div className="container flex flex-col items-center p-3 md:p-10 text-justify">
                 <img
                   className="w-full"
-                  src={`${import.meta.env.REACT_APP_SERVER_PATH}/${data.image}`}
+                  src={`${import.meta.env.REACT_APP_SERVER_PATH}/${
+                    data?.image
+                  }`}
                   alt=""
                 />
                 <div className="md:w-5/5">
                   <h3 className="my-5 text-3xl font-bold text-left text-textColor-500">
-                    {data.title}
+                    {data?.title}
                   </h3>
-                  <p className="text-textColor-500">{data.date}</p>
+                  <p className="text-textColor-500">{data?.date}</p>
                   {data?.tags.map((item, index) => (
                     <p
                       key={index}
@@ -100,7 +114,9 @@ const SingleBlog = () => {
                       {item},{" "}
                     </p>
                   ))}
-                  <div className="mt-5 text-textColor-500">{parse(data.body)}</div>
+                  <div className="mt-5 text-textColor-500">
+                    {parse(data?.body)}
+                  </div>
                 </div>
               </div>
             </div>

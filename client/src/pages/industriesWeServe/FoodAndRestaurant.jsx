@@ -16,6 +16,10 @@ const FoodAndRestaurant = () => {
           name="description"
           content="Satisfy your cravings with our innovative Food & Restaurant solutions, crafted with passion and precision"
         />
+        <link
+          rel="canonical"
+          href="https://dotpotit.com/industries-we-serve/food-and-restaurant"
+        />
         <meta property="og:title" content="Food & Restaurants | Dotpot iT" />
         <meta
           property="og:description"
@@ -48,8 +52,8 @@ const FoodAndRestaurant = () => {
             Food & Restaurants
           </h1>
           <p className="text-lg text-textColor-500 text-center mb-10">
-            Satisfy your cravings with our innovative Food & Restaurant solutions,
-            crafted with passion and precision.
+            Satisfy your cravings with our innovative Food & Restaurant
+            solutions, crafted with passion and precision.
           </p>
           <div className="border-b border-border container mx-auto">
             <img className="md:w-1/2 mx-auto " src={food} alt="food-img" />
@@ -61,19 +65,19 @@ const FoodAndRestaurant = () => {
             {/* Overview */}
             <div className="text-textColor-500 flex flex-col gap-5 p-5">
               <p>
-                DotpotiT is a company that offers technology-driven solutions for
-                the food and restaurant industry. Our aim is to provide innovative
-                and efficient tools that help businesses in this sector to improve
-                their operations, increase revenue, and enhance customer
-                experience.
+                DotpotiT is a company that offers technology-driven solutions
+                for the food and restaurant industry. Our aim is to provide
+                innovative and efficient tools that help businesses in this
+                sector to improve their operations, increase revenue, and
+                enhance customer experience.
                 <br />
                 With our expertise and experience, we are able to provide a wide
                 range of services to the food and restaurant industry. These
                 include online ordering systems, table reservation management,
-                menu design, food delivery solutions, and more. We understand that
-                the food and restaurant industry is highly competitive, and we
-                strive to offer cutting-edge solutions that keep our clients ahead
-                of the competition.
+                menu design, food delivery solutions, and more. We understand
+                that the food and restaurant industry is highly competitive, and
+                we strive to offer cutting-edge solutions that keep our clients
+                ahead of the competition.
                 <br />
                 Our solutions are designed to be scalable and customizable,
                 ensuring that they can be tailored to the specific needs of each
@@ -85,26 +89,27 @@ const FoodAndRestaurant = () => {
                 At DotpotiT, we believe that technology can play a significant
                 role in the success of the food and restaurant industry. By
                 leveraging our expertise and innovative solutions, we help
-                businesses in this sector to stay ahead of the curve and thrive in
-                an increasingly competitive landscape.
+                businesses in this sector to stay ahead of the curve and thrive
+                in an increasingly competitive landscape.
                 <br />
                 At DotpotiT, we understand that the food and restaurant industry
                 is not just about offering delicious cuisine, but also about
                 providing an overall memorable experience for customers. That's
-                why we work with top-notch restaurants and food establishments to
-                help them enhance their customer experience through cutting-edge
-                technology solutions. Our goal is to ensure that every diner who
-                walks through the doors of our partner restaurants has an
-                exceptional experience from the moment they make a reservation to
-                the time they leave the establishment.
+                why we work with top-notch restaurants and food establishments
+                to help them enhance their customer experience through
+                cutting-edge technology solutions. Our goal is to ensure that
+                every diner who walks through the doors of our partner
+                restaurants has an exceptional experience from the moment they
+                make a reservation to the time they leave the establishment.
                 <br />
                 We believe that food is not just a necessity, but a passion.
                 That's why DotpotiT is committed to working with the best in the
                 food and restaurant industry. We take pride in providing
                 technology solutions that enable our partners to focus on their
-                passion for crafting exceptional dishes and providing outstanding
-                service. By choosing DotpotiT as your technology partner, you can
-                focus on your passion for food and leave the technology to us.
+                passion for crafting exceptional dishes and providing
+                outstanding service. By choosing DotpotiT as your technology
+                partner, you can focus on your passion for food and leave the
+                technology to us.
               </p>
             </div>
 
@@ -148,25 +153,25 @@ const FoodAndRestaurant = () => {
               <div className="text-textColor-500 flex flex-col gap-5 p-5">
                 <p>
                   At DotpotiT, we understand that every restaurant is unique and
-                  has its own requirements when it comes to the digital landscape.
-                  That’s why we offer tailored solutions that cater to the
-                  specific needs of each of our clients.
+                  has its own requirements when it comes to the digital
+                  landscape. That’s why we offer tailored solutions that cater
+                  to the specific needs of each of our clients.
                 </p>
                 <p>
                   Our team of experts begins by working closely with our clients
                   to understand their business and goals. We then create a
-                  customized plan that addresses their unique challenges and helps
-                  them achieve their objectives. Our approach is collaborative,
-                  and we work closely with our clients every step of the way to
-                  ensure that their vision is realized.
+                  customized plan that addresses their unique challenges and
+                  helps them achieve their objectives. Our approach is
+                  collaborative, and we work closely with our clients every step
+                  of the way to ensure that their vision is realized.
                 </p>
                 <p>
                   We pride ourselves on being agile and adaptable, and we
                   understand that the digital landscape is constantly evolving.
                   That’s why we stay up-to-date with the latest trends and
                   technologies in the industry. We are committed to delivering
-                  innovative and cutting-edge solutions that help our clients stay
-                  ahead of the competition.
+                  innovative and cutting-edge solutions that help our clients
+                  stay ahead of the competition.
                 </p>
                 <p>
                   At DotpotiT, we believe that communication is key to a
@@ -196,16 +201,17 @@ const FoodAndRestaurant = () => {
                 Why you should choose us!
               </h3>
               <li className=" ml-5 list-disc text-textColor-500 ">
-                <strong>Customized Solutions:</strong> At DotpotiT, we understand
-                that every restaurant has unique needs and requirements. That’s
-                why we provide customized solutions that are tailored to meet the
-                specific needs of each restaurant.
+                <strong>Customized Solutions:</strong> At DotpotiT, we
+                understand that every restaurant has unique needs and
+                requirements. That’s why we provide customized solutions that
+                are tailored to meet the specific needs of each restaurant.
               </li>
               <li className=" ml-5 list-disc text-textColor-500 ">
                 <strong>Experienced Team:</strong> Our team consists of
-                experienced professionals who have worked with various restaurants
-                and food businesses in the past. With their expertise, we can
-                provide top-notch solutions that are both effective and efficient.
+                experienced professionals who have worked with various
+                restaurants and food businesses in the past. With their
+                expertise, we can provide top-notch solutions that are both
+                effective and efficient.
               </li>
               <li className=" ml-5 list-disc text-textColor-500 ">
                 <strong>Timely Delivery:</strong> We understand that time is of
@@ -215,17 +221,17 @@ const FoodAndRestaurant = () => {
               </li>
               <li className=" ml-5 list-disc text-textColor-500 ">
                 <strong>Competitive Pricing: </strong>
-                We offer our services at competitive pricing, making sure that our
-                clients get the best value for their money. Our aim is to provide
-                cost-effective solutions that help our clients achieve their
-                goals.
+                We offer our services at competitive pricing, making sure that
+                our clients get the best value for their money. Our aim is to
+                provide cost-effective solutions that help our clients achieve
+                their goals.
               </li>
               <li className=" ml-5 list-disc text-textColor-500 ">
-                <strong>24/7 Customer Support:</strong> At DotpotiT, we believe in
-                providing exceptional customer support to our clients. We are
+                <strong>24/7 Customer Support:</strong> At DotpotiT, we believe
+                in providing exceptional customer support to our clients. We are
                 always available to answer any questions and provide support
-                whenever needed. Our aim is to build long-term relationships with
-                our clients based on trust and reliability.
+                whenever needed. Our aim is to build long-term relationships
+                with our clients based on trust and reliability.
               </li>
             </ul>
           </div>

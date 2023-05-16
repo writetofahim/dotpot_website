@@ -130,6 +130,10 @@ const MobileAppDevelopment = () => {
           name="description"
           content="Get Top-notch, Extensively, Innovative Mobile App Solution By Us"
         />
+        <link
+          rel="canonical"
+          href="https://dotpotit.com/key-features/mobile-app-development"
+        />
         <meta
           property="og:title"
           content="Mobile App Development | Dotpot iT"

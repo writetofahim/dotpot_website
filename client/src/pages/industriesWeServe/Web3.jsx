@@ -21,6 +21,10 @@ const Web3 = () => {
             name="description"
             content="At DotpotIT, we offer innovative web3 solutions for businesses using blockchain and decentralized technologies"
           />
+          <link
+            rel="canonical"
+            href="https://dotpotit.com/industries-we-serve/web3"
+          />
           <meta property="og:title" content="Web3 Development | Dotpot iT" />
           <meta
             property="og:description"
@@ -55,10 +59,10 @@ const Web3 = () => {
             <div className="absolute h-14 w-[600px] rotate-[-40deg] rounded-3xl bg-purple-400 opacity-30 blur-2xl filter dark1:hidden lg:bottom-20 lg:-left-28 lg:h-10 lg:w-[600px] lg:opacity-20 lg:blur-xl xl:-left-40 xl:h-2 xl:w-[800px] xl:opacity-100"></div>
             <div className="absolute hidden h-16 w-[600px] rotate-[-40deg] rounded-3xl bg-sky-400 opacity-10 blur-2xl filter dark1:hidden lg:top-24 lg:-right-28 lg:block lg:h-12 lg:w-[600px] lg:opacity-30 lg:blur-2xl xl:-right-40 xl:h-4 xl:w-[700px] xl:opacity-100"></div>
             <div className="absolute hidden h-14 w-[600px] rotate-[-40deg] rounded-3xl bg-purple-400 opacity-30 blur-2xl filter dark1:hidden lg:top-20 lg:-right-28 lg:block lg:h-10 lg:w-[600px] lg:opacity-20 lg:blur-xl xl:-right-40 xl:h-2 xl:w-[800px] xl:opacity-100"></div>
-            
+
             <div className="bg-background-500">
               <div className="container mx-auto pt-[15vh]">
-              <NavigatorComponent navigationData={navigationData} />
+                <NavigatorComponent navigationData={navigationData} />
                 <div className="my-5">
                   <img
                     className="w-[400px] md:w-1/2 mx-auto px-5"
@@ -72,8 +76,8 @@ const Web3 = () => {
                     Web3 Development
                   </h1>
                   <p className="text-textColor-500 flex flex-col gap-5 p-5 text-center">
-                    At DotpotIT, we offer innovative web3 solutions for businesses
-                    using blockchain and decentralized technologies.
+                    At DotpotIT, we offer innovative web3 solutions for
+                    businesses using blockchain and decentralized technologies.
                   </p>
                 </div>
                 {/* points */}
@@ -109,7 +113,10 @@ const Web3 = () => {
                     <div className="rounded-lg w-full md:w-[590px] border border-border p-5 flex flex-col justify-center items-center">
                       <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
                         Blockchain for Security and
-                        <span className="text-textColor-500"> Transparency </span>
+                        <span className="text-textColor-500">
+                          {" "}
+                          Transparency{" "}
+                        </span>
                       </h3>
                       <p className="text-center text-textColor-500">
                         Use of blockchain technology to enhance security and

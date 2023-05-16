@@ -53,6 +53,7 @@ const Home = () => {
           name="description"
           content="Learn about Dotpot iT, a leading IT company providing innovative solutions for businesses."
         />
+        <link rel="canonical" href="https://dotpotit.com/" />
         <meta
           property="og:title"
           content="Dotpot iT || Help Business Successful Online"

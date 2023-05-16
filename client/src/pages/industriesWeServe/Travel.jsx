@@ -16,6 +16,10 @@ const Travel = () => {
           name="description"
           content="Your all-in-one travel companion - DotpotiT's cutting-edge travel app"
         />
+        <link
+          rel="canonical"
+          href="https://dotpotit.com/industries-we-serve/"
+        />
         <meta property="og:title" content="Travel & Hospitality | Dotpot iT" />
         <meta
           property="og:description"
@@ -41,14 +45,15 @@ const Travel = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="bg-background-500"> 
+      <div className="bg-background-500">
         <div className="pt-[15vh] pb-10 container mx-auto">
           <NavigatorComponent navigationData={navigationData} />
           <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center">
             Travel & Hospitality
           </h1>
           <p className="text-lg text-textColor-500 text-center mb-10">
-            Your all-in-one travel companion - DotpotiT's cutting-edge travel app
+            Your all-in-one travel companion - DotpotiT's cutting-edge travel
+            app
           </p>
           <div className="border-b border-border container mx-auto">
             <img className="md:w-1/2 mx-auto " src={travel} alt="" />
@@ -68,24 +73,25 @@ const Travel = () => {
                 and booking easier, more efficient, and more enjoyable for
                 customers.
                 <br />
-                At DotpotiT, we understand the importance of personalization when
-                it comes to travel planning. We work with our clients to
+                At DotpotiT, we understand the importance of personalization
+                when it comes to travel planning. We work with our clients to
                 understand their unique needs and preferences, and we use this
-                information to develop tailored solutions that meet their specific
-                requirements. Our aim is to create a seamless and personalized
-                travel experience for each and every customer.
+                information to develop tailored solutions that meet their
+                specific requirements. Our aim is to create a seamless and
+                personalized travel experience for each and every customer.
                 <br />
                 We provide a range of technological solutions, including travel
-                booking platforms, travel itinerary management systems, and travel
-                information databases. Our platforms are designed to be
+                booking platforms, travel itinerary management systems, and
+                travel information databases. Our platforms are designed to be
                 user-friendly and intuitive, allowing customers to easily browse
-                and book travel options. We also prioritize security and privacy,
-                ensuring that all customer data is protected at all times.
+                and book travel options. We also prioritize security and
+                privacy, ensuring that all customer data is protected at all
+                times.
                 <br />
-                Overall, DotpotiT is committed to providing the best technological
-                solutions for the travel industry. We believe that technology can
-                transform the way people travel, and we are dedicated to making
-                this a reality for our clients.
+                Overall, DotpotiT is committed to providing the best
+                technological solutions for the travel industry. We believe that
+                technology can transform the way people travel, and we are
+                dedicated to making this a reality for our clients.
               </p>
             </div>
 
@@ -130,47 +136,47 @@ const Travel = () => {
                 <p>
                   At DotpotiT, we understand the unique needs and challenges of
                   the travel industry. Our team of experienced developers,
-                  designers, and project managers work closely with our clients to
-                  develop custom technology solutions that meet their specific
-                  needs. Our collaborative approach ensures that we fully
-                  understand our clients' requirements and can deliver innovative
-                  solutions that drive success.
+                  designers, and project managers work closely with our clients
+                  to develop custom technology solutions that meet their
+                  specific needs. Our collaborative approach ensures that we
+                  fully understand our clients' requirements and can deliver
+                  innovative solutions that drive success.
                 </p>
                 <p>
                   We follow a streamlined development process that prioritizes
                   quality, efficiency, and scalability. Our team works closely
                   with clients to gather requirements and create a detailed
-                  project plan. We then utilize agile methodologies to develop and
-                  test the solution in iterative sprints, ensuring that we stay on
-                  track and deliver on time.
+                  project plan. We then utilize agile methodologies to develop
+                  and test the solution in iterative sprints, ensuring that we
+                  stay on track and deliver on time.
                 </p>
                 <p>
-                  Our technology solutions for the travel industry are designed to
-                  be flexible and scalable, allowing them to adapt to the changing
-                  needs of our clients' businesses. We prioritize the use of the
-                  latest technologies and development frameworks, ensuring that
-                  our solutions are always up-to-date and at the forefront of
-                  industry trends.
+                  Our technology solutions for the travel industry are designed
+                  to be flexible and scalable, allowing them to adapt to the
+                  changing needs of our clients' businesses. We prioritize the
+                  use of the latest technologies and development frameworks,
+                  ensuring that our solutions are always up-to-date and at the
+                  forefront of industry trends.
                 </p>
                 <p>
-                  At DotpotiT, we believe in providing personalized solutions that
-                  cater to the unique needs of our clients. Our team of experts
-                  takes the time to understand your business requirements and
-                  goals, and we work collaboratively with you to develop a
-                  solution that meets your specific needs. We also understand that
-                  technology can be complex, which is why we make it a priority to
-                  communicate clearly and transparently with our clients every
-                  step of the way.
+                  At DotpotiT, we believe in providing personalized solutions
+                  that cater to the unique needs of our clients. Our team of
+                  experts takes the time to understand your business
+                  requirements and goals, and we work collaboratively with you
+                  to develop a solution that meets your specific needs. We also
+                  understand that technology can be complex, which is why we
+                  make it a priority to communicate clearly and transparently
+                  with our clients every step of the way.
                 </p>
                 <p>
                   To ensure the success of our clients, we also provide ongoing
-                  support and maintenance for our solutions. Our team of dedicated
-                  professionals is available around the clock to answer any
-                  questions or concerns you may have and to provide technical
-                  assistance whenever you need it. We also stay up-to-date with
-                  the latest industry trends and innovations, so you can be sure
-                  that your travel application solution is always cutting-edge and
-                  competitive in the market.
+                  support and maintenance for our solutions. Our team of
+                  dedicated professionals is available around the clock to
+                  answer any questions or concerns you may have and to provide
+                  technical assistance whenever you need it. We also stay
+                  up-to-date with the latest industry trends and innovations, so
+                  you can be sure that your travel application solution is
+                  always cutting-edge and competitive in the market.
                 </p>
               </div>
             </div>
@@ -182,15 +188,15 @@ const Travel = () => {
               <li className=" ml-5 list-disc text-textColor-500">
                 <strong>Industry Experience:</strong> Our team has years of
                 experience in developing technology solutions for the travel
-                industry, giving us a deep understanding of the unique challenges
-                and opportunities that it presents.
+                industry, giving us a deep understanding of the unique
+                challenges and opportunities that it presents.
               </li>
               <li className=" ml-5 list-disc text-textColor-500">
-                <strong>Expert Travel Advice:</strong> Our team of travel experts
-                has years of experience in the industry, and we use that knowledge
-                to provide you with expert travel advice. We'll help you plan your
-                trip from start to finish, making sure that every aspect of your
-                travel experience is top-notch.
+                <strong>Expert Travel Advice:</strong> Our team of travel
+                experts has years of experience in the industry, and we use that
+                knowledge to provide you with expert travel advice. We'll help
+                you plan your trip from start to finish, making sure that every
+                aspect of your travel experience is top-notch.
               </li>
               <li className=" ml-5 list-disc text-textColor-500">
                 <strong>Customized Solutions:</strong> We work closely with
@@ -206,17 +212,17 @@ const Travel = () => {
                 businesses can grow and adapt to changing market conditions.
               </li>
               <li className=" ml-5 list-disc text-textColor-500">
-                <strong>Cutting-Edge Technology:</strong> We prioritize the use of
-                the latest technologies and development frameworks, ensuring that
-                our solutions are always at the forefront of industry trends and
-                can provide a competitive advantage.
+                <strong>Cutting-Edge Technology:</strong> We prioritize the use
+                of the latest technologies and development frameworks, ensuring
+                that our solutions are always at the forefront of industry
+                trends and can provide a competitive advantage.
               </li>
               <li className=" ml-5 list-disc text-textColor-500">
                 <strong>24/7 Customer Support:</strong> Our team is committed to
-                providing exceptional customer support throughout the development
-                process and beyond. We work closely with clients to ensure that
-                their needs are met and that their technology solutions are
-                running smoothly.
+                providing exceptional customer support throughout the
+                development process and beyond. We work closely with clients to
+                ensure that their needs are met and that their technology
+                solutions are running smoothly.
               </li>
               <li className=" ml-5 list-disc text-textColor-500">
                 <strong>Sustainable Tourism:</strong> We believe in responsible
@@ -229,10 +235,10 @@ const Travel = () => {
                 <strong>Innovations:</strong> We are constantly pushing the
                 boundaries of what is possible with technology to provide
                 innovative solutions that deliver real value to our clients. Our
-                approach is to stay ahead of the curve by investing in the latest
-                technologies and tools, so that we can continue to provide
-                cutting-edge solutions that keep our clients ahead of their
-                competition.
+                approach is to stay ahead of the curve by investing in the
+                latest technologies and tools, so that we can continue to
+                provide cutting-edge solutions that keep our clients ahead of
+                their competition.
               </li>
             </ul>
           </div>
