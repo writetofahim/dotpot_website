@@ -65,6 +65,7 @@ import EnterpriseBusiness from "./pages/whoWeWorksWith/EnterpriseBusiness";
 import SmallToMediumBusiness from "./pages/whoWeWorksWith/SmallToMediumBusiness";
 import StartupBusiness from "./pages/whoWeWorksWith/StartupBusiness";
 import Terms_Conditions from "./terms_conditions/Terms_Conditions";
+import Faq from "./pages/FAQ/Faq";
 
 function App() {
   const [loading, isLoading] = useState(true);
@@ -98,6 +99,7 @@ function App() {
       <ChatPopup />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/faq" element={<Faq />} />
         <Route path="/login" element={<Login />} />
         <Route path="/reset-password/:resetToken" element={<ResetPassword />} />
         <Route path="/register" element={<Register />} />
