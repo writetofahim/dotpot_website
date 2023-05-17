@@ -79,7 +79,7 @@ const WebsiteDesign = () => {
         />
         <link
           rel="canonical"
-          href="https://www.dotpotit.com/web-development/landing-page"
+          href="https://www.dotpotit.com/who-we-works-with/small-and-medium-business"
         />
         <meta property="og:title" content="Medium Business | Dotpot iT" />
         <meta

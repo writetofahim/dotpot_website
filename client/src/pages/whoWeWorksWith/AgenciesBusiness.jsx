@@ -13,7 +13,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 
-const WebsiteDesign = () => {
+const AgenciesBusiness = () => {
   const worksData = [
     {
       id: 1,
@@ -63,7 +63,7 @@ const WebsiteDesign = () => {
         />
         <link
           rel="canonical"
-          href="https://www.dotpotit.com/key-features/website-design"
+          href="https://www.dotpotit.com/who-we-works-with/agencies-business"
         />
         <meta property="og:title" content="Agencies Business | Dotpot iT" />
         <meta
@@ -260,7 +260,7 @@ const WebsiteDesign = () => {
   );
 };
 
-export default WebsiteDesign;
+export default AgenciesBusiness;
 
 const navigationData = [
   {

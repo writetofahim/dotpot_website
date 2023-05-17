@@ -55,7 +55,7 @@ const ResetPassword = () => {
           name="description"
           content="Get Top-notch, Extensively, Innovative Mobile App Solution By Us"
         />
-        <link rel="canonical" href="/reset-password/" />
+        <link rel="canonical" href="https://www.dotpotit.com/reset-password/" />
         <meta
           property="og:title"
           content="Mobile App Development | Dotpot iT"

@@ -63,7 +63,7 @@ const WebsiteDesign = () => {
         />
         <link
           rel="canonical"
-          href="https://www.dotpotit.com/key-features/website-design"
+          href="https://www.dotpotit.com/who-we-works-with/enterprise-business"
         />
         <meta property="og:title" content="Enterprise Business | Dotpot iT" />
         <meta
