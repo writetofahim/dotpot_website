@@ -10,6 +10,10 @@ const conversationSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    lastMessage: {
+      type: mongoose.Types.ObjectId,
+      ref: "Message",
+    },
   },
   { timestamps: true }
 );

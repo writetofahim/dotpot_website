@@ -16,21 +16,22 @@ const getAllChats = async (req, res) => {
     const totalChatsCount = await Conversation.countDocuments();
     const chats = await Conversation.find()
       .sort({ updatedAt: -1 })
-      .limit(pageSize * page);
-    const chatsWithLastMessage = await Promise.all(
-      chats.map(async (chat) => {
-        const lastMessage = await Message.findOne({
-          conversation_id: chat._id,
-        }).sort({ createdAt: -1 });
-        const adminUnseenCount = await Message.countDocuments({
-          conversation_id: chat._id,
-          isAdminSeen: false,
-        });
-        return { ...chat._doc, lastMessage, adminUnseenCount };
-      })
-    );
+      .limit(pageSize * page)
+      .populate("lastMessage");
+    // const chatsWithLastMessage = await Promise.all(
+    //   chats.map(async (chat) => {
+    //     const lastMessage = await Message.findOne({
+    //       conversation_id: chat._id,
+    //     }).sort({ createdAt: -1 });
+    //     const adminUnseenCount = await Message.countDocuments({
+    //       conversation_id: chat._id,
+    //       isAdminSeen: false,
+    //     });
+    //     return { ...chat._doc, lastMessage, adminUnseenCount };
+    //   })
+    // );
     res.json({
-      chats: chatsWithLastMessage,
+      chats: chats,
       totalChatsCount,
       currentPage: page,
     });
@@ -63,6 +64,13 @@ const createChat = async (req, res) => {
     const message = await newMessage.save();
     // emit a 'newChat' event with the new chat data to all connected clients
     // io.emit('newChat', newChat);
+
+    await Conversation.findOneAndUpdate(
+      { _id: newMessage.conversation_id },
+      { $set: { lastMessage: message._id } },
+      { new: true }
+    );
+
     res.status(201).json(message);
   } catch (err) {
     res.status(400).json({ message: err.message });
@@ -94,6 +102,7 @@ const getMessagesById = async (req, res) => {
   res.json(res.chat);
 };
 
+// get messages for admin
 const getMessagesByIdForAdmin = async (req, res) => {
   const conversationId = req.params.conversationId;
   await Message.updateMany(
@@ -106,6 +115,7 @@ const getMessagesByIdForAdmin = async (req, res) => {
   res.json(res.chat);
 };
 
+// add message from visitor
 const addMessageToAChat = async (req, res) => {
   const message = {
     conversation_id: req.params.conversationId,
@@ -118,9 +128,10 @@ const addMessageToAChat = async (req, res) => {
   try {
     const newMessage = new Message(message);
     const msg = await newMessage.save();
+
     await Conversation.findOneAndUpdate(
-      { _id: req.params.conversationId },
-      { $set: { updatedAt: new Date() } },
+      { _id: msg.conversation_id },
+      { $set: { lastMessage: newMessage._id } },
       { new: true }
     );
     if (req.body.isOrder) {
@@ -134,6 +145,12 @@ const addMessageToAChat = async (req, res) => {
       };
       const newAdminMsg = new Message(adminMsg);
       const AdminMsg = await newAdminMsg.save();
+
+      await Conversation.findOneAndUpdate(
+        { _id: AdminMsg.conversation_id },
+        { $set: { lastMessage: AdminMsg._id } },
+        { new: true }
+      );
     }
 
     io.emit("newMessage", msg);
@@ -143,6 +160,7 @@ const addMessageToAChat = async (req, res) => {
   }
 };
 
+// replay message from admin
 const replayToChat = async (req, res) => {
   const message = {
     conversation_id: req.params.conversationId,
@@ -155,10 +173,16 @@ const replayToChat = async (req, res) => {
   try {
     const newMessage = new Message(message);
     const msg = await newMessage.save();
+
     await Conversation.findOneAndUpdate(
-      { _id: req.params.conversationId },
-      { $set: { updatedAt: new Date() } },
+      { _id: msg.conversation_id },
+      { $set: { lastMessage: msg._id } },
       { new: true }
+    );
+
+    await Message.updateMany(
+      { conversation_id: req.params.conversationId },
+      { $set: { isAdminSeen: true } }
     );
 
     io.emit("newMessage", msg);

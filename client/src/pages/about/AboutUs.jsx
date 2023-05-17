@@ -89,11 +89,13 @@ const AboutSection = () => {
   return (
     <div className="w-full flex items-center justify-center p-2 bg-background-500 rounded-all py-10">
       <div className="container p-3 md:p-5 flex flex-col items-center gap-5">
-        <Typed
-          className="text-center text-3xl md:text-5xl font-bold text-textColor-500"
-          strings={["Who We Are?"]}
-          typeSpeed={100}
-        />
+        <h1>
+          <Typed
+            className="text-center text-3xl md:text-5xl font-bold text-textColor-500"
+            strings={["Who We Are?"]}
+            typeSpeed={100}
+          />
+        </h1>
         {/* <h1 className="text-center text-gray-600 text-3xl md:text-5xl font-bold">Who We Are ? </h1> */}
         <p className="w-full md:w-2/3 text-center text-lg md:text-xl text-textColor-500">
           Dotpot iT is a leading IT company that offers a wide range of IT
