@@ -14,40 +14,33 @@ const education = () => {
         <title>Education & E-Learning | Dotpot iT</title>
         <meta
           name="description"
-          content="Revolutionize Online Learning with Expert Web Solutions by Dotpot IT"
+          content="Transform your healthcare and fitness business with Dotpot IT's web development services. Revolutionize your online presence for success."
         />
-        <link
-          rel="canonical"
-          href="https://dotpotit.com/industries-we-serve/education"
-        />
-        <meta
-          property="og:title"
-          content="Education & E-Learning | Dotpot iT"
-        />
+        <link rel="canonical" href="https://dotpotit.com/industries-we-serve/education" />
+        <meta property="og:title" content="Education & E-Learning | Dotpot iT" />
         <meta
           property="og:description"
-          content="Revolutionize Online Learning with Expert Web Solutions by Dotpot IT"
+          content="Transform your healthcare and fitness business with Dotpot IT's web development services."
         />
         <meta
           property="og:image"
-          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
         <meta
-          property="og:url"
-          content="https://www.dotpotit.com/industries-we-serve/education"
+          name="keywords"
+          content="Software development company, Education & E-Learning industry, E-Learning website solutions, learning management system integration."
         />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://dotpotit.com/industries-we-serve/education" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Education & E-Learning | Dotpot iT"
-        />
+        <meta name="twitter:title" content="Education & E-Learning | Dotpot iT" />
         <meta
           name="twitter:description"
-          content="Revolutionize Online Learning with Expert Web Solutions by Dotpot IT"
+          content="Transform your healthcare and fitness business with Dotpot IT's web development services. Revolutionize your online presence for success."
         />
         <meta
           name="twitter:image"
-          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
       </Helmet>
       <Navbar />
@@ -58,13 +51,12 @@ const education = () => {
             <h1 className="text-3xl md:text-5xl font-extrabold mb-2 text-textColor-500 text-center">
               Education & E-Learning
             </h1>
-            <p className="text-lg text-textColor-500 text-center mb-10">
-              Revolutionize Online Learning with Expert Web Solutions by Dotpot
-              IT
-            </p>
+            <h2 className="text-lg text-gray-400 text-center mb-10">
+              Transform your healthcare and fitness business with Dotpot IT's web development services. Revolutionize your online presence for success.
+            </h2>
           </div>
           <div className="max-w-4xl mx-auto p-4">
-            <img src={edu} alt="Product image" />
+            <img src={edu} alt="Education & E-Learning" />
           </div>
           <div className="my-12 lg:mx-24 mx-6">
             <h2 className="lg:text-2xl text-xl font-bold mb-4 text-textColor-500">

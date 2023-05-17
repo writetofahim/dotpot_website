@@ -100,42 +100,40 @@ const Retail = () => {
         <title>Retail, Ecommerce | Dotpot iT</title>
         <meta
           name="description"
-          content="Empowering Retail & E-Commerce through Dynamic Web Development Solutions"
+          content="Dotpot is a web design and development agency focused on Retail & E-Commerce. They provide tailored web solutions, from design and development to e-commerce and maintenance. With modern tech, they create visually appealing, user-friendly, and SEO-optimized sites, aiming to boost online visibility, engagement, and user experience."
         />
-        <link
-          rel="canonical"
-          href="https://dotpotit.com/industries-we-serve/retail-ecommerce"
-        />
+        <link rel="canonical" href="https://dotpotit.com/industries-we-serve/retail-ecommerce" />
         <meta property="og:title" content="Retail, Ecommerce | Dotpot iT" />
         <meta
           property="og:description"
-          content="Empowering Retail & E-Commerce through Dynamic Web Development Solutions"
+          content="Dotpot is a web design and development agency focused on Retail & E-Commerce. They provide tailored web solutions, from design and development to e-commerce and maintenance. With modern tech, they create visually appealing, user-friendly, and SEO-optimized sites, aiming to boost online visibility, engagement, and user experience."
         />
         <meta
           property="og:image"
-          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
         <meta
-          property="og:url"
-          content="https://www.dotpotit.com/industries-we-serve/retail-ecommerce"
+          name="keywords"
+          content="Software development company, Retail & E-Commerce businesses, e-commerce development."
         />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://dotpotit.com/industries-we-serve/retail-ecommerce" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Retail, Ecommerce | Dotpot iT" />
         <meta
           name="twitter:description"
-          content="Empowering Retail & E-Commerce through Dynamic Web Development Solutions"
+          content="Dotpot is a web design and development agency focused on Retail & E-Commerce. They provide tailored web solutions, from design and development to e-commerce and maintenance. With modern tech, they create visually appealing, user-friendly, and SEO-optimized sites, aiming to boost online visibility, engagement, and user experience."
         />
         <meta
           name="twitter:image"
-          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
       </Helmet>
       <Navbar />
 
       <div
-        className={` pt-[15vh] ${
-          window.innerWidth > 1280 ? "md:pt-[11vh]" : "md:pt-[15vh]"
-        } `}
+        className={` pt-[15vh] ${window.innerWidth > 1280 ? "md:pt-[11vh]" : "md:pt-[15vh]"
+          } `}
       >
         <NavigatorComponent navigationData={navigationData} />
         <div>
@@ -145,26 +143,24 @@ const Retail = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`mt-10 mb-16 ${
-                      isVisible
-                        ? "opacity-100 translate-y-0"
-                        : "translate-y-20 opacity-0"
-                    } duration-1000 `}
+                    className={`mt-10 mb-16 ${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 `}
                   >
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
                         <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
-                          <h2 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
+                          <h1 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
                             Retail & E-Commerce
+                          </h1>
+                          <h2 className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
+                          Dotpot is a web design and development agency focused on Retail & E-Commerce. They provide tailored web solutions, from design and development to e-commerce and maintenance. With modern tech, they create visually appealing, user-friendly, and SEO-optimized sites, aiming to boost online visibility, engagement, and user experience.
                           </h2>
-                          <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            Empowering Retail & E-Commerce through Dynamic Web
-                            Development Solutions
-                          </p>
                         </div>
                         <img
                           src={retail}
-                          alt=""
+                          alt="Retail & E-Commerce Image"
                           className="w-full md:w-1/2 lg:w-1/2"
                         />
                       </div>
@@ -185,22 +181,20 @@ const Retail = () => {
                     className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
                   >
                     <div
-                      className={`w-full md:w-1/2 lg:w-1/2 ${
-                        id % 2 === 0 && "order-2"
-                      } `}
+                      className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
+                        } `}
                     >
                       <ReactVisibilitySensor partialVisibility>
                         {({ isVisible }) => (
                           <div
-                            className={` ${
-                              isVisible
-                                ? "opacity-100 translate-y-0"
-                                : "translate-y-20 opacity-0"
-                            } duration-1000 `}
+                            className={` ${isVisible
+                              ? "opacity-100 translate-y-0"
+                              : "translate-y-20 opacity-0"
+                              } duration-1000 `}
                           >
-                            <h1 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
+                            <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
                               {title}
-                            </h1>
+                            </h2>
                             <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">
                               {parse(description)}
                             </p>
@@ -211,18 +205,16 @@ const Retail = () => {
                     <ReactVisibilitySensor partialVisibility>
                       {({ isVisible }) => (
                         <div
-                          className={`w-full md:w-1/2 lg:w-1/2 ${
-                            id % 2 === 0 && "order-1"
-                          } ${
-                            isVisible
+                          className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
+                            } ${isVisible
                               ? "opacity-100 translate-y-0"
                               : "translate-y-20 opacity-0"
-                          } duration-1000 `}
+                            } duration-1000 `}
                         >
                           <img
                             className="w-4/5 mx-auto"
                             src={illustration}
-                            alt=""
+                            alt={title}
                           />
                         </div>
                       )}

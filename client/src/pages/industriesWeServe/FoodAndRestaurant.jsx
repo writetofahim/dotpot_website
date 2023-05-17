@@ -14,34 +14,33 @@ const FoodAndRestaurant = () => {
         <title>Food & Restaurants | Dotpot iT</title>
         <meta
           name="description"
-          content="Satisfy your cravings with our innovative Food & Restaurant solutions, crafted with passion and precision"
+          content="Indulge in our innovative Food & Restaurant solutions, crafted with passion and precision to satisfy your cravings. Elevate your dining experience today. "
         />
-        <link
-          rel="canonical"
-          href="https://dotpotit.com/industries-we-serve/food-and-restaurant"
-        />
+        <link rel="canonical" href="https://dotpotit.com/industries-we-serve/food-and-restaurant" />
         <meta property="og:title" content="Food & Restaurants | Dotpot iT" />
         <meta
           property="og:description"
-          content="Satisfy your cravings with our innovative Food & Restaurant solutions, crafted with passion and precision"
+          content="Indulge in our innovative Food & Restaurant solutions, crafted with passion and precision to satisfy your cravings. Elevate your dining experience today. "
         />
         <meta
           property="og:image"
-          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
         <meta
-          property="og:url"
-          content="https://www.dotpotit.com/industries-we-serve/food-and-restaurant"
+          name="keywords"
+          content="Software development company, Fine dining experiences, Culinary delights."
         />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://dotpotit.com/industries-we-serve/food-and-restaurant" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Food & Restaurants | Dotpot iT" />
         <meta
           name="twitter:description"
-          content="Satisfy your cravings with our innovative Food & Restaurant solutions, crafted with passion and precision"
+          content="Indulge in our innovative Food & Restaurant solutions, crafted with passion and precision to satisfy your cravings. Elevate your dining experience today. "
         />
         <meta
           name="twitter:image"
-          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
       </Helmet>
       <Navbar />
@@ -51,17 +50,16 @@ const FoodAndRestaurant = () => {
           <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center">
             Food & Restaurants
           </h1>
-          <p className="text-lg text-textColor-500 text-center mb-10">
-            Satisfy your cravings with our innovative Food & Restaurant
-            solutions, crafted with passion and precision.
-          </p>
+          <h2 className="text-lg text-gray-400 text-center mb-10">
+            Indulge in our innovative Food & Restaurant solutions, crafted with passion and precision to satisfy your cravings. Elevate your dining experience today.
+          </h2>
           <div className="border-b border-border container mx-auto">
-            <img className="md:w-1/2 mx-auto " src={food} alt="food-img" />
+            <img className="md:w-1/2 mx-auto " src={food} alt="Food & Restaurants Image" />
           </div>
           <div className="container  mx-auto flex flex-col mb-10 my-10">
-            <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
+            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
               Overview
-            </h3>
+            </h2>
             {/* Overview */}
             <div className="text-textColor-500 flex flex-col gap-5 p-5">
               <p>
@@ -197,9 +195,9 @@ const FoodAndRestaurant = () => {
             </div>
             {/* Advantages of Blockchain Technology */}
             <ul className="ml-5">
-              <h3 className="text-xl md:text-2xl  my-2 md:mb-1  text-textColor-500 ">
+              <h2 className="text-xl md:text-2xl  my-2 md:mb-1  text-textColor-500 ">
                 Why you should choose us!
-              </h3>
+              </h2>
               <li className=" ml-5 list-disc text-textColor-500 ">
                 <strong>Customized Solutions:</strong> At DotpotiT, we
                 understand that every restaurant has unique needs and

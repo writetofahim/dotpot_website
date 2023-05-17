@@ -14,34 +14,33 @@ const SocialNetworking = () => {
         <title>Social Networking | Dotpot iT</title>
         <meta
           name="description"
-          content="Connect with your audience like never before - with DotpotiT's social networking solutions"
+          content="Connect with your audience like never before using DotpotIT's social networking solutions. Engage, interact, and cultivate a thriving online community."
         />
-        <link
-          rel="canonical"
-          href="https://dotpotit.com/industries-we-serve/social-networking"
-        />
+        <link rel="canonical" href="https://dotpotit.com/industries-we-serve/social-networking" />
         <meta property="og:title" content="Social Networking | Dotpot iT" />
         <meta
           property="og:description"
-          content="Connect with your audience like never before - with DotpotiT's social networking solutions"
+          content="Connect with your audience like never before using DotpotIT's social networking solutions. Engage, interact, and cultivate a thriving online community."
         />
         <meta
           property="og:image"
-          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
         <meta
-          property="og:url"
-          content="https://www.dotpotit.com/industries-we-serve/social-networking"
+          name="keywords"
+          content="Software development company, Social media marketing, Online community building."
         />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://dotpotit.com/industries-we-serve/social-networking" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Social Networking | Dotpot iT" />
         <meta
           name="twitter:description"
-          content="Connect with your audience like never before - with DotpotiT's social networking solutions"
+          content="Connect with your audience like never before using DotpotIT's social networking solutions. Engage, interact, and cultivate a thriving online community."
         />
         <meta
           name="twitter:image"
-          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
       </Helmet>
       <Navbar />
@@ -51,12 +50,11 @@ const SocialNetworking = () => {
           <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center">
             Social Networking
           </h1>
-          <p className="text-lg  text-center mb-10 text-textColor-500">
-            Connect with your audience like never before - with DotpotiT's
-            social networking solutions.
-          </p>
+          <h2 className="text-lg  text-center mb-10 text-gray-400">
+            Connect with your audience like never before using DotpotIT's social networking solutions. Engage, interact, and cultivate a thriving online community.
+          </h2>
           <div className="container mx-auto">
-            <img className="md:w-1/2 mx-auto mb-10" src={sn} alt="" />
+            <img className="md:w-1/2 mx-auto mb-10" src={sn} alt="Social Networking Image" />
           </div>
           <div className="container  mx-auto flex flex-col py-10">
             <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block ">

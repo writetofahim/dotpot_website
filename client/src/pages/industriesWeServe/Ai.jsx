@@ -19,34 +19,33 @@ const Ai = () => {
           <title>AI Development | Dotpot iT</title>
           <meta
             name="description"
-            content="DotpotIT offers AI solutions to automate operations, analyze data, and drive business growth with chatbots, virtual assistants, and more"
+            content="Leverage DotpotIT's AI solutions for business growth. Automate operations, analyze data, and elevate customer experiences with chatbots and virtual assistants. "
           />
-          <link
-            rel="canonical"
-            href="https://dotpotit.com/industries-we-serve/ai"
-          />
+          <link rel="canonical" href="https://dotpotit.com/industries-we-serve/ai" />
           <meta property="og:title" content="AI Development | Dotpot iT" />
           <meta
             property="og:description"
-            content="DotpotIT offers AI solutions to automate operations, analyze data, and drive business growth with chatbots, virtual assistants, and more"
+            content="Leverage DotpotIT's AI solutions for business growth. Automate operations, analyze data, and elevate customer experiences with chatbots and virtual assistants. "
           />
           <meta
             property="og:image"
-            content="https://www.dotpotit.com/assets/logo-492dab11.png"
+            content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
           />
           <meta
-            property="og:url"
-            content="https://www.dotpotit.com/industries-we-serve/ai"
+            name="keywords"
+            content="Software development company, Artificial intelligence solutions, AI development services."
           />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://dotpotit.com/industries-we-serve/ai" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content="AI Development | Dotpot iT" />
           <meta
             name="twitter:description"
-            content="DotpotIT offers AI solutions to automate operations, analyze data, and drive business growth with chatbots, virtual assistants, and more"
+            content="Leverage DotpotIT's AI solutions for business growth. Automate operations, analyze data, and elevate customer experiences with chatbots and virtual assistants. "
           />
           <meta
             name="twitter:image"
-            content="https://www.dotpotit.com/assets/logo-492dab11.png"
+            content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
           />
         </Helmet>
         <Navbar />
@@ -67,7 +66,7 @@ const Ai = () => {
                   <img
                     className="w-[400px] md:w-1/2 mx-auto px-5"
                     src={aiImg}
-                    alt=""
+                    alt="AI Development Image"
                   />
                 </div>
                 {/* cover */}
@@ -75,11 +74,9 @@ const Ai = () => {
                   <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center ">
                     AI Development
                   </h1>
-                  <p className="text-textColor-500 flex flex-col gap-5 p-5 items-center">
-                    DotpotIT offers AI solutions to automate operations, analyze
-                    data, and drive business growth with chatbots, virtual
-                    assistants, and more.
-                  </p>
+                  <h2 className="text-gray-400 flex flex-col gap-5 p-5 items-center">
+                    Leverage DotpotIT's AI solutions for business growth. Automate operations, analyze data, and elevate customer experiences with chatbots and virtual assistants.
+                  </h2>
                 </div>
                 {/* points */}
                 <div>
@@ -88,14 +85,14 @@ const Ai = () => {
                       <img
                         className="w-[450px] mx-auto mb-5 rounded-md"
                         src={ai}
-                        alt=""
+                        alt="Customized AI solutions Image"
                       />
                     </div>
                     <div className="rounded-lg w-full md:w-[590px] border border-border p-5 flex flex-col justify-center items-center">
-                      <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
+                      <h2 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
                         Customized AI{" "}
                         <span className="text-textColor-500">solutions</span>
-                      </h3>
+                      </h2>
                       <p className="text-center text-textColor-500">
                         We provide personalized AI solutions to match the
                         specific needs of our clients.
@@ -108,14 +105,14 @@ const Ai = () => {
                       <img
                         className="w-[450px] mx-auto mb-5 rounded-md"
                         src={air}
-                        alt=""
+                        alt="Integration of AI Image"
                       />
                     </div>
                     <div className="rounded-lg w-full md:w-[590px] border border-border p-5 flex flex-col justify-center items-center">
-                      <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
+                      <h2 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
                         Integration of
                         <span className="text-textColor-500"> AI </span>
-                      </h3>
+                      </h2>
                       <p className="text-center text-textColor-500">
                         Seamless integration of AI into current processes and
                         systems for enhanced efficiency.
@@ -128,14 +125,14 @@ const Ai = () => {
                       <img
                         className="w-[450px] mx-auto mb-5 rounded-md"
                         src={ais}
-                        alt=""
+                        alt="Machine Learning for Predictive Analytics Image"
                       />
                     </div>
                     <div className="rounded-lg w-full md:w-[590px] border border-border p-5 flex flex-col justify-center items-center">
-                      <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
+                      <h2 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
                         Machine Learning for Predictive
                         <span className="text-textColor-500"> Analytics</span>
-                      </h3>
+                      </h2>
                       <p className="text-center text-textColor-500">
                         Use of machine learning algorithms for data analysis and
                         prediction.
@@ -148,14 +145,14 @@ const Ai = () => {
                       <img
                         className="w-[450px] mx-auto mb-5 rounded-md"
                         src={aib}
-                        alt=""
+                        alt="Rapid AI Deployment Image"
                       />
                     </div>
                     <div className="rounded-lg w-full md:w-[590px] border border-border p-5 flex flex-col justify-center items-center">
-                      <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
+                      <h2 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
                         Rapid AI
                         <span className="text-textColor-500"> Deployment</span>
-                      </h3>
+                      </h2>
                       <p className="text-center text-textColor-500">
                         Fast and efficient deployment of tailored AI solutions
                         to meet unique client needs.

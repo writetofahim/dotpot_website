@@ -15,38 +15,37 @@ const Web3 = () => {
   return (
     <div>
       <div className="">
-        <Helmet>
+      <Helmet>
           <title>Web3 Development | Dotpot iT</title>
           <meta
             name="description"
-            content="At DotpotIT, we offer innovative web3 solutions for businesses using blockchain and decentralized technologies"
+            content="Experience the future with DotpotIT's innovative web3 solutions. Harness the power of blockchain and decentralized technologies for your business success. "
           />
-          <link
-            rel="canonical"
-            href="https://dotpotit.com/industries-we-serve/web3"
-          />
+          <link rel="canonical" href="https://dotpotit.com/industries-we-serve/web3" />
           <meta property="og:title" content="Web3 Development | Dotpot iT" />
           <meta
             property="og:description"
-            content="At DotpotIT, we offer innovative web3 solutions for businesses using blockchain and decentralized technologies"
+            content="Experience the future with DotpotIT's innovative web3 solutions. Harness the power of blockchain and decentralized technologies for your business success. "
           />
           <meta
             property="og:image"
-            content="https://www.dotpotit.com/assets/logo-492dab11.png"
+            content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
           />
           <meta
-            property="og:url"
-            content="https://www.dotpotit.com/industries-we-serve/web3"
+            name="keywords"
+            content="Software development company, Blockchain development, Decentralized applications (dApps)."
           />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://dotpotit.com/industries-we-serve/web3" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content="Web3 Development | Dotpot iT" />
           <meta
             name="twitter:description"
-            content="At DotpotIT, we offer innovative web3 solutions for businesses using blockchain and decentralized technologies"
+            content="Experience the future with DotpotIT's innovative web3 solutions. Harness the power of blockchain and decentralized technologies for your business success. "
           />
           <meta
             name="twitter:image"
-            content="https://www.dotpotit.com/assets/logo-492dab11.png"
+            content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
           />
         </Helmet>
         <Navbar />
@@ -67,7 +66,7 @@ const Web3 = () => {
                   <img
                     className="w-[400px] md:w-1/2 mx-auto px-5"
                     src={web3Cover}
-                    alt=""
+                    alt="Web3 Development Image"
                   />
                 </div>
                 {/* cover */}
@@ -75,10 +74,9 @@ const Web3 = () => {
                   <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center ">
                     Web3 Development
                   </h1>
-                  <p className="text-textColor-500 flex flex-col gap-5 p-5 text-center">
-                    At DotpotIT, we offer innovative web3 solutions for
-                    businesses using blockchain and decentralized technologies.
-                  </p>
+                  <h2 className="text-textColor-500 flex flex-col gap-5 p-5 text-center">
+                  Experience the future with DotpotIT's innovative web3 solutions. Harness the power of blockchain and decentralized technologies for your business success. 
+                  </h2>
                 </div>
                 {/* points */}
                 <div>
@@ -87,14 +85,14 @@ const Web3 = () => {
                       <img
                         className="w-4/5 md:w-[450px] mx-auto mb-5 rounded-md"
                         src={customWeb}
-                        alt=""
+                        alt="Customized web3 solutions Image"
                       />
                     </div>
                     <div className="rounded-lg w-full md:w-[590px] border border-border p-5 flex flex-col justify-center items-center">
-                      <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
+                      <h2 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
                         Customized web3
                         <span className="text-textColor-500"> solutions</span>
-                      </h3>
+                      </h2>
                       <p className="text-center text-textColor-500">
                         Customized web3 solutions to meet the specific needs of
                         each client.
@@ -107,17 +105,17 @@ const Web3 = () => {
                       <img
                         className="w-4/5 md:w-[450px] mx-auto mb-5 rounded-md"
                         src={blockchainSecurity}
-                        alt=""
+                        alt="Blockchain for Security and Transparency Image"
                       />
                     </div>
                     <div className="rounded-lg w-full md:w-[590px] border border-border p-5 flex flex-col justify-center items-center">
-                      <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
+                      <h2 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
                         Blockchain for Security and
                         <span className="text-textColor-500">
                           {" "}
                           Transparency{" "}
                         </span>
-                      </h3>
+                      </h2>
                       <p className="text-center text-textColor-500">
                         Use of blockchain technology to enhance security and
                         transparency
@@ -130,14 +128,14 @@ const Web3 = () => {
                       <img
                         className="w-4/5 md:w-[450px] mx-auto mb-5 rounded-md"
                         src={smart_Contracts}
-                        alt=""
+                        alt="Efficient dApps and Smart Contracts Image"
                       />
                     </div>
                     <div className="rounded-lg w-full md:w-[590px] border border-border p-5 flex flex-col justify-center items-center">
-                      <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
+                      <h2 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
                         Efficient dApps and Smart
                         <span className="text-textColor-500"> Contracts</span>
-                      </h3>
+                      </h2>
                       <p className="text-center text-textColor-500">
                         Development of dApps and smart contracts for automation
                         and efficiency.
@@ -150,7 +148,7 @@ const Web3 = () => {
                       <img
                         className="w-4/5 md:w-[450px] mx-auto mb-5 rounded-md"
                         src={nft}
-                        alt=""
+                        alt="NFT Integration Image"
                       />
                     </div>
                     <div className="rounded-lg w-full md:w-[590px] border border-border p-5 flex flex-col justify-center items-center">

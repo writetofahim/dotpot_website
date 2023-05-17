@@ -14,34 +14,33 @@ const Healthcare = () => {
         <title>Healthcare & Fitness | Dotpot iT</title>
         <meta
           name="description"
-          content="Revolutionize Your Healthcare and Fitness Business with Dotpot IT's Web Development Services"
+          content="Revolutionize your healthcare and fitness business with Dotpot IT's cutting-edge web development services. Boost your online presence for unparalleled success and growth."
         />
-        <link
-          rel="canonical"
-          href="https://dotpotit.com/industries-we-serve/healthcare"
-        />
+        <link rel="canonical" href="https://dotpotit.com/industries-we-serve/healthcare" />
         <meta property="og:title" content="Healthcare & Fitness | Dotpot iT" />
         <meta
           property="og:description"
-          content="Revolutionize Your Healthcare and Fitness Business with Dotpot IT's Web Development Services"
+          content="Revolutionize your healthcare and fitness business with Dotpot IT's cutting-edge web development services. Boost your online presence for unparalleled success and growth."
         />
         <meta
           property="og:image"
-          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
         <meta
-          property="og:url"
-          content="https://www.dotpotit.com/industries-we-serve/healthcare"
+          name="keywords"
+          content="Software development company, Wellness, Health management."
         />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://dotpotit.com/industries-we-serve/healthcare" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Healthcare & Fitness | Dotpot iT" />
         <meta
           name="twitter:description"
-          content="Revolutionize Your Healthcare and Fitness Business with Dotpot IT's Web Development Services"
+          content="Revolutionize your healthcare and fitness business with Dotpot IT's cutting-edge web development services. Boost your online presence for unparalleled success and growth."
         />
         <meta
           name="twitter:image"
-          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
       </Helmet>
       <Navbar />
@@ -52,13 +51,13 @@ const Healthcare = () => {
             <h1 className="text-3xl md:text-5xl font-extrabold mb-2 text-textColor-500 text-center">
               Healthcare & Fitness
             </h1>
-            <p className="text-lg text-secondary-400 text-center mb-10">
+            <h2 className="text-lg text-gray-400 text-center mb-10">
               Revolutionize Your Healthcare and Fitness Business with Dotpot
               IT's Web Development Services
-            </p>
+            </h2>
           </div>
           <div className="max-w-4xl mx-auto p-4">
-            <img src={haelth_care} alt="Product image" />
+            <img src={haelth_care} alt="Healthcare & Fitness Image" />
           </div>
           <div className="py-12 lg:mx-24 mx-6">
             <h2 className="lg:text-2xl text-xl font-bold mb-4 text-textColor-500">

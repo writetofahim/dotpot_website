@@ -14,34 +14,33 @@ const Travel = () => {
         <title>Travel & Hospitality | Dotpot iT</title>
         <meta
           name="description"
-          content="Your all-in-one travel companion - DotpotiT's cutting-edge travel app"
+          content="Experience the ultimate travel companion - DotpotiT's state-of-the-art app. Simplify your journey with our cutting-edge features and seamless user experience."
         />
-        <link
-          rel="canonical"
-          href="https://dotpotit.com/industries-we-serve/"
-        />
+        <link rel="canonical" href="https://dotpotit.com/industries-we-serve/travel" />
         <meta property="og:title" content="Travel & Hospitality | Dotpot iT" />
         <meta
           property="og:description"
-          content="Your all-in-one travel companion - DotpotiT's cutting-edge travel app"
+          content="Experience the ultimate travel companion - DotpotiT's state-of-the-art app. Simplify your journey with our cutting-edge features and seamless user experience."
         />
         <meta
           property="og:image"
-          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
         <meta
-          property="og:url"
-          content="https://www.dotpotit.com/industries-we-serve/travel"
+          name="keywords"
+          content="Software development company, Hotel bookings, Travel accommodations."
         />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://dotpotit.com/industries-we-serve/travel" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Travel & Hospitality | Dotpot iT" />
         <meta
           name="twitter:description"
-          content="Your all-in-one travel companion - DotpotiT's cutting-edge travel app"
+          content="Experience the ultimate travel companion - DotpotiT's state-of-the-art app. Simplify your journey with our cutting-edge features and seamless user experience."
         />
         <meta
           name="twitter:image"
-          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
       </Helmet>
       <Navbar />
@@ -51,12 +50,11 @@ const Travel = () => {
           <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center">
             Travel & Hospitality
           </h1>
-          <p className="text-lg text-textColor-500 text-center mb-10">
-            Your all-in-one travel companion - DotpotiT's cutting-edge travel
-            app
-          </p>
+          <h2 className="text-lg text-gray-400 text-center mb-10">
+            Experience the ultimate travel companion - DotpotiT's state-of-the-art app. Simplify your journey with our cutting-edge features and seamless user experience.
+          </h2>
           <div className="border-b border-border container mx-auto">
-            <img className="md:w-1/2 mx-auto " src={travel} alt="" />
+            <img className="md:w-1/2 mx-auto " src={travel} alt="Travel & Hospitality Image" />
           </div>
           <div className="container  mx-auto flex flex-col mb-10 my-10">
             <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
@@ -182,9 +180,9 @@ const Travel = () => {
             </div>
             {/* Advantages of Blockchain Technology */}
             <ul className="ml-5">
-              <h3 className="text-xl md:text-2xl  my-2 md:mb-1  text-textColor-500 ">
+              <h2 className="text-xl md:text-2xl  my-2 md:mb-1  text-textColor-500 ">
                 Why you should choose us!
-              </h3>
+              </h2>
               <li className=" ml-5 list-disc text-textColor-500">
                 <strong>Industry Experience:</strong> Our team has years of
                 experience in developing technology solutions for the travel

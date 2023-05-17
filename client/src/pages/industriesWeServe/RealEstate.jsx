@@ -14,34 +14,33 @@ const RealEstate = () => {
         <title>Real Estate | Dotpot iT</title>
         <meta
           name="description"
-          content="Expertise you can rely on - Real estate solutions tailored to your needs"
+          content="Depend on our expertise - Customized real estate solutions that cater to your specific requirements. Trust in our reliable services for success."
         />
-        <link
-          rel="canonical"
-          href="https://dotpotit.com/industries-we-serve/real-estate"
-        />
+        <link rel="canonical" href="https://dotpotit.com/industries-we-serve/real-estate" />
         <meta property="og:title" content="Real Estate | Dotpot iT" />
         <meta
           property="og:description"
-          content="Expertise you can rely on - Real estate solutions tailored to your needs"
+          content="Depend on our expertise - Customized real estate solutions that cater to your specific requirements. Trust in our reliable services for success."
         />
         <meta
           property="og:image"
-          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
         <meta
-          property="og:url"
-          content="https://www.dotpotit.com/industries-we-serve/real-estate"
+          name="keywords"
+          content="Software development company, Property listings, Real estate agents."
         />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://dotpotit.com/industries-we-serve/real-estate" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Real Estate | Dotpot iT" />
         <meta
           name="twitter:description"
-          content="Expertise you can rely on - Real estate solutions tailored to your needs"
+          content="Depend on our expertise - Customized real estate solutions that cater to your specific requirements. Trust in our reliable services for success."
         />
         <meta
           name="twitter:image"
-          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
       </Helmet>
       <Navbar />
@@ -51,17 +50,16 @@ const RealEstate = () => {
           <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center">
             Real Estate
           </h1>
-          <p className="text-lg text-textColor-500 text-center mb-10">
-            Expertise you can rely on - Real estate solutions tailored to your
-            needs.
-          </p>
+          <h2 className="text-lg text-gray-400 text-center mb-10">
+            Depend on our expertise - Customized real estate solutions that cater to your specific requirements. Trust in our reliable services for success.
+          </h2>
           <div className="container mx-auto">
-            <img className="md:w-1/2 mx-auto mb-10 " src={re} alt="" />
+            <img className="md:w-1/2 mx-auto mb-10 " src={re} alt="Real Estate Image" />
           </div>
           <div className="container  mx-auto flex flex-col py-10">
-            <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
+            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
               Overview
-            </h3>
+            </h2>
             {/* Overview */}
             <div className="text-textColor-500 flex flex-col gap-5 p-5">
               <p>
@@ -171,9 +169,9 @@ const RealEstate = () => {
             </div>
             {/* Advantages of Blockchain Technology */}
             <ul className="ml-5">
-              <h3 className="text-xl md:text-2xl  my-2 md:mb-1  text-textColor-500">
+              <h2 className="text-xl md:text-2xl  my-2 md:mb-1  text-textColor-500">
                 Why you should choose us!
-              </h3>
+              </h2>
               <li className=" ml-5 list-disc text-textColor-500 ">
                 Our team of experienced professionals has extensive knowledge
                 and expertise in the real estate industry. We stay up to date

@@ -21,37 +21,36 @@ const Gaming = () => {
   return (
     <div>
       <Helmet>
-        <title>Gaming | Dotpot iT</title>
+        <title>Game Development | Dotpot iT</title>
         <meta
           name="description"
-          content="Revolutionizing Gaming Experience: The Development of DotPot IT"
+          content="Revolutionize gaming experience with Dotpot IT's cutting-edge development. Elevate gameplay and immerse yourself in a new era of gaming innovation."
         />
-        <link
-          rel="canonical"
-          href="https://dotpotit.com/industries-we-serve/gaming"
-        />
-        <meta property="og:title" content="Gaming | Dotpot iT" />
+        <link rel="canonical" href="https://dotpotit.com/industries-we-serve/gaming" />
+        <meta property="og:title" content="Game Development | Dotpot iT" />
         <meta
           property="og:description"
-          content="Revolutionizing Gaming Experience: The Development of DotPot IT"
+          content="Revolutionize gaming experience with Dotpot IT's cutting-edge development. Elevate gameplay and immerse yourself in a new era of gaming innovation."
         />
         <meta
           property="og:image"
-          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
         <meta
-          property="og:url"
-          content="https://www.dotpotit.com/industries-we-serve/gaming"
+          name="keywords"
+          content="Software development company, Game design and development, Interactive gaming solutions"
         />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://dotpotit.com/industries-we-serve/gaming" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Gaming | Dotpot iT" />
+        <meta name="twitter:title" content="Game Development | Dotpot iT" />
         <meta
           name="twitter:description"
-          content="Revolutionizing Gaming Experience: The Development of DotPot IT"
+          content="Revolutionize gaming experience with Dotpot IT's cutting-edge development. Elevate gameplay and immerse yourself in a new era of gaming innovation."
         />
         <meta
           name="twitter:image"
-          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
       </Helmet>
       <Navbar />
@@ -80,9 +79,9 @@ const Gaming = () => {
               <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center ">
                 Game Development
               </h1>
-              <p className="text-center text-textColor-500">
-                Revolutionizing Gaming Experience: The Development of DotPot IT
-              </p>
+              <h2 className="text-center text-textColor-500">
+                Revolutionize gaming experience with Dotpot IT's cutting-edge development. Elevate gameplay and immerse yourself in a new era of gaming innovation.
+              </h2>
               {/* slider */}
               <div className="md:flex gap-5  justify-center border-b border-border pb-5">
                 <div className=" w-full md:w-2/5 h-82 mx-auto m-10">
@@ -90,10 +89,10 @@ const Gaming = () => {
                 </div>
 
                 <div className="md:w-2/5 h-82 mx-auto rounded-lg  mt-10 p-5 flex flex-col justify-center items-center">
-                  <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
+                  <h2 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
                     Our Game Development{" "}
                     <span className="text-textColor-500">Service</span>
-                  </h3>
+                  </h2>
                   <p className="text-center text-textColor-500">
                     Dotpot provides game development services, handling
                     everything from game design to programming and testing. They
@@ -107,13 +106,13 @@ const Gaming = () => {
                   <img
                     className="w-[450px] mx-auto mb-5 rounded-md"
                     src={teamwork}
-                    alt=""
+                    alt="Experienced team Image"
                   />
                 </div>
                 <div className="rounded-lg w-full md:w-[590px] border border-border bordwe p-5 flex flex-col justify-center items-center">
-                  <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
+                  <h2 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
                     Experienced <span className="text-textColor-500">team</span>
-                  </h3>
+                  </h2>
                   <p className="text-center text-textColor-500">
                     Our team consists of skilled game developers and designers
                     with vast experience.
@@ -126,14 +125,14 @@ const Gaming = () => {
                   <img
                     className="w-[450px] mx-auto mb-5 rounded-md"
                     src={unreal}
-                    alt=""
+                    alt="Cutting-edge game development Image"
                   />
                 </div>
                 <div className="rounded-lg w-full md:w-[590px] border border-border p-5 flex flex-col justify-center items-center">
-                  <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
+                  <h2 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
                     Cutting-edge game{" "}
                     <span className="text-textColor-500">development </span>
-                  </h3>
+                  </h2>
                   <p className="text-center text-textColor-500">
                     We use innovative technologies and tools for advanced game
                     development.
@@ -148,14 +147,14 @@ const Gaming = () => {
                     src={
                       "https://www.xfire.com/wp-content/uploads/2021/10/Netflix-Twitter-Facebook-Outage-Squid-Game-Meme-Guns.jpg"
                     }
-                    alt=""
+                    alt="CAcross different platforms"
                   />
                 </div>
                 <div className="rounded-lg w-full md:w-[590px] border border-border p-5 flex flex-col justify-center items-center">
-                  <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
+                  <h2 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
                     Across different{" "}
                     <span className="text-textColor-500">platforms</span>
-                  </h3>
+                  </h2>
                   <p className="text-center text-textColor-500">
                     We develop games for mobile, PC, and consoles, across
                     multiple platforms.
@@ -168,14 +167,14 @@ const Gaming = () => {
                   <img
                     className="w-[450px] mx-auto mb-5 rounded-md"
                     src={gameHero}
-                    alt=""
+                    alt="Customized game design Image"
                   />
                 </div>
                 <div className="rounded-lg w-full md:w-[590px] border border-border p-5 flex flex-col justify-center items-center">
-                  <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
+                  <h2 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
                     Customized game{" "}
                     <span className="text-textColor-500">design</span>
-                  </h3>
+                  </h2>
                   <p className="text-center text-textColor-500">
                     Tailored games to fit client requirements with personalized
                     design and development.

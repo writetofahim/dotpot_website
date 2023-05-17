@@ -15,38 +15,37 @@ const Manufacturing = () => {
   return (
     <div>
       <div className="">
-        <Helmet>
+      <Helmet>
           <title>Manufacturing | Dotpot iT</title>
           <meta
             name="description"
-            content="DotpotIT offers custom software solutions for manufacturing to optimize processes, improve productivity, and reduce costs"
+            content="Optimize manufacturing processes with DotpotIT's custom software solutions. Boost productivity, reduce costs, and drive efficiency for your business success. "
           />
-          <link
-            rel="canonical"
-            href="https://dotpotit.com/industries-we-serve/manufacturing"
-          />
+          <link rel="canonical" href="https://dotpotit.com/industries-we-serve/manufacturing" />
           <meta property="og:title" content="Manufacturing | Dotpot iT" />
           <meta
             property="og:description"
-            content="DotpotIT offers custom software solutions for manufacturing to optimize processes, improve productivity, and reduce costs"
+            content="Optimize manufacturing processes with DotpotIT's custom software solutions. Boost productivity, reduce costs, and drive efficiency for your business success. "
           />
           <meta
             property="og:image"
-            content="https://www.dotpotit.com/assets/logo-492dab11.png"
+            content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
           />
           <meta
-            property="og:url"
-            content="https://www.dotpotit.com/industries-we-serve/manufacturing"
+            name="keywords"
+            content="Software development company, Manufacturing software solutions, Process optimization for manufacturing"
           />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://dotpotit.com/industries-we-serve/manufacturing" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content="Manufacturing | Dotpot iT" />
           <meta
             name="twitter:description"
-            content="DotpotIT offers custom software solutions for manufacturing to optimize processes, improve productivity, and reduce costs"
+            content="Optimize manufacturing processes with DotpotIT's custom software solutions. Boost productivity, reduce costs, and drive efficiency for your business success. "
           />
           <meta
             name="twitter:image"
-            content="https://www.dotpotit.com/assets/logo-492dab11.png"
+            content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
           />
         </Helmet>
         <Navbar />
@@ -67,7 +66,7 @@ const Manufacturing = () => {
                   <img
                     className="w-[400px] md:w-1/2 mx-auto px-5"
                     src={manufacturingCover}
-                    alt=""
+                    alt="Manufacturing Image"
                   />
                 </div>
                 {/* cover */}
@@ -75,11 +74,9 @@ const Manufacturing = () => {
                   <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center ">
                     Manufacturing
                   </h1>
-                  <p className="text-textColor-500 flex flex-col gap-5 p-5 text-center">
-                    DotpotIT offers custom software solutions for manufacturing
-                    to optimize processes, improve productivity, and reduce
-                    costs.
-                  </p>
+                  <h2 className="text-textColor-500 flex flex-col gap-5 p-5 text-center">
+                  Optimize manufacturing processes with DotpotIT's custom software solutions. Boost productivity, reduce costs, and drive efficiency for your business success.
+                  </h2>
                 </div>
                 {/* points */}
                 <div>
@@ -88,14 +85,14 @@ const Manufacturing = () => {
                       <img
                         className="w-4/5 md:w-[450px] mx-auto mb-5 rounded-md"
                         src={mf1}
-                        alt=""
+                        alt="Tailored Software Solutions Image"
                       />
                     </div>
                     <div className="rounded-lg w-full md:w-[590px] border border-border p-5 flex flex-col justify-center items-center">
-                      <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
+                      <h2 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
                         Tailored Software
                         <span className="text-textColor-500"> Solutions</span>
-                      </h3>
+                      </h2>
                       <p className="text-center text-textColor-500">
                         Customized software solutions designed to meet the
                         specific needs of each client.
@@ -108,14 +105,14 @@ const Manufacturing = () => {
                       <img
                         className="w-4/5 md:w-[450px] mx-auto mb-5 rounded-md"
                         src={mf2}
-                        alt=""
+                        alt="Automation for Efficiency and Accuracy Image"
                       />
                     </div>
                     <div className="rounded-lg w-full md:w-[590px] border border-border p-5 flex flex-col justify-center items-center">
-                      <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
+                      <h2 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
                         Automation for Efficiency and
                         <span className="text-textColor-500"> Accuracy </span>
-                      </h3>
+                      </h2>
                       <p className="text-center text-textColor-500">
                         Implementation of automation to reduce labor costs and
                         improve accuracy.
@@ -128,14 +125,14 @@ const Manufacturing = () => {
                       <img
                         className="w-4/5 md:w-[450px] mx-auto mb-5 rounded-md"
                         src={mf3}
-                        alt=""
+                        alt="Manufacturing Operations Expertise Image"
                       />
                     </div>
                     <div className="rounded-lg w-full md:w-[590px] border border-border p-5 flex flex-col justify-center items-center">
-                      <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
+                      <h2 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
                         Manufacturing Operations
                         <span className="text-textColor-500"> Expertise</span>
-                      </h3>
+                      </h2>
                       <p className="text-center text-textColor-500">
                         Expertise in supply chain management, inventory control,
                         and production scheduling.
@@ -148,14 +145,14 @@ const Manufacturing = () => {
                       <img
                         className="w-4/5 md:w-[450px] mx-auto mb-5 rounded-md"
                         src={mf4}
-                        alt=""
+                        alt="Data Analytics for Better Decisions Image"
                       />
                     </div>
                     <div className="rounded-lg w-full md:w-[590px] border border-border p-5 flex flex-col justify-center items-center">
-                      <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
+                      <h2 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
                         Data Analytics for Better
                         <span className="text-textColor-500"> Decisions</span>
-                      </h3>
+                      </h2>
                       <p className="text-center text-textColor-500">
                         Integration of data analytics to provide insights for
                         better decision-making.
