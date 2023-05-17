@@ -11,45 +11,34 @@ const Pd = () => {
   return (
     <div>
       <Helmet>
-        <title>Predictive Dialer for Contact center support | Dotpot iT</title>
-        <meta
-          name="description"
-          content="Get in touch with us for your IT needs. Predictive Dialer support your business, Predictive Dialer, and more."
-        />
-        <link
-          rel="canonical"
-          href="https://dotpotit.com/contact_center_services/pd"
-        />
-        <meta
-          property="og:title"
-          content="Predictive Dialer support | Dotpot iT"
-        />
-        <meta
-          property="og:description"
-          content="Get in touch with us for your IT needs. Predictive Dialer support your business, Predictive Dialer, and more."
-        />
-        <meta
-          property="og:image"
-          content="https://dotpotit.com/assets/logo-492dab11.png"
-        />
-        <meta
-          property="og:url"
-          content="https://dotpotit.com/contact_center_services/pd"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Predictive Dialer support | Dotpot iT"
-        />
-        <meta
-          name="twitter:description"
-          content="Get in touch with us for your IT needs. Predictive Dialer support your business, Predictive Dialer, and more."
-        />
-        <meta
-          name="twitter:image"
-          content="https://dotpotit.com/assets/logo-492dab11.png"
-        />
-      </Helmet>
+          <title>Predictive Dialer for Contact center support | Dotpot iT</title>
+          <meta
+            name="description"
+            content="Dotpot IT's Predictive Dialer is a state-of-the-art automated dialing solution that is specifically designed for contact center environments"
+          />
+          <meta name="keywords" content="software development company, predictive dialer, automated dialing" />
+          <link rel="canonical" href="https://dotpotit.com/contact_center_services/pd" />
+          <meta property="og:title" content="Predictive Dialer for Contact center support | Dotpot iT" />
+          <meta
+            property="og:description"
+            content="Dotpot IT's Predictive Dialer is a state-of-the-art automated dialing solution that is specifically designed for contact center environments"
+          />
+          <meta
+            property="og:image"
+            content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
+          />
+          <meta property="og:url" content="https://dotpotit.com/contact_center_services/pd" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="Predictive Dialer for Contact center support | Dotpot iT" />
+          <meta
+            name="twitter:description"
+            content="Dotpot IT's Predictive Dialer is a state-of-the-art automated dialing solution that is specifically designed for contact center environments"
+          />
+          <meta
+            name="twitter:image"
+            content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
+          />
+        </Helmet>
       <Navbar />
       <div className="px-3 min-h-screen pt-[15vh] pb-10 bg-background-500">
         <NavigatorComponent navigationData={navigationData} />
@@ -83,9 +72,9 @@ const Pd = () => {
             />
           </div>
           <div className="text-textColor-500 flex flex-col gap-5 p-5">
-            <p className="font-bold">
+            <h2 className="font-bold">
               Features and Benefit of Dotpot IT Predictive Dialer
-            </p>
+            </h2>
             <p className="text-justify">
               The Dotpot IT predictive dialer can significantly enhance the
               amount of time that call center agents spend interacting with live
@@ -96,7 +85,7 @@ const Pd = () => {
               handling time, and average number of contacts to optimize the
               dialing process for maximum efficiency.
             </p>
-            <p className="font-bold">Limitless Opportunities</p>
+            <h2 className="font-bold">Limitless Opportunities</h2>
             <p className="text-justify">
               Manual call campaigns can prove to be a costly affair for call
               centers as they lack mechanisms to prevent calls from being
@@ -107,7 +96,7 @@ const Pd = () => {
               availability and targeting contacts accordingly, making it a
               valuable tool for manual call campaigns.
             </p>
-            <p className="font-bold">Increased Agent Efficiency</p>
+            <h2 className="font-bold">Increased Agent Efficiency</h2>
             <p className="text-justify">
               By utilizing a sophisticated algorithm, the Dotpot IT predictive
               dialer can significantly enhance the amount of time that call
@@ -120,7 +109,7 @@ const Pd = () => {
               a system that can dramatically increase agent productivity while
               maintaining high-quality customer interactions.
             </p>
-            <p className="font-bold">Intelligent Call Supperession</p>
+            <h2 className="font-bold">Intelligent Call Supperession</h2>
             <p className="text-justify">
               The Dotpot IT predictive dialer incorporates a smart dialing
               algorithm that effectively filters out unnecessary and
@@ -132,7 +121,7 @@ const Pd = () => {
               maximizing their productivity and delivering a better customer
               experience.
             </p>
-            <p className="font-bold">Make Your Own Campaign</p>
+            <h2 className="font-bold">Make Your Own Campaign</h2>
             <p className="text-justify">
               Achieving a maximum return on investment (ROI) is possible with
               the flawless implementation of your campaign plans. With the
@@ -144,7 +133,7 @@ const Pd = () => {
               available, you can optimize your campaigns to achieve the highest
               possible ROI.
             </p>
-            <p className="font-bold">Auto Scheduler</p>
+            <h2 className="font-bold">Auto Scheduler</h2>
             <p className="text-justify">
               The Dotpot IT predictive dialer system provides contact center
               managers with the flexibility to set up multiple campaigns to run
@@ -158,7 +147,7 @@ const Pd = () => {
               manage multiple campaigns effortlessly and maximize their
               productivity.
             </p>
-            <p className="font-bold">Connect With A Large Audience</p>
+            <h2 className="font-bold">Connect With A Large Audience</h2>
             <p className="text-justify">
               With the Dotpot IT predictive dialer, businesses can contact a
               large number of potential customers with a minimal number of
@@ -172,7 +161,7 @@ const Pd = () => {
               businesses can enhance their marketing strategies and drive better
               results with minimal investment.
             </p>
-            <p className="font-bold">Announcement/Robo-Calls</p>
+            <h2 className="font-bold">Announcement/Robo-Calls</h2>
             <p className="text-justify">
               The Dotpot IT predictive dialer enables you to configure and
               deliver pre-recorded messages (also known as robo-calls) to your
@@ -186,7 +175,7 @@ const Pd = () => {
               their outreach efforts and ensure that their messages reach the
               right audience at the right time.
             </p>
-            <p className="font-bold">Drop Voice Mail</p>
+            <h2 className="font-bold">Drop Voice Mail</h2>
             <p className="text-justify">
               In the event that the called party does not answer, the Dotpot IT
               predictive dialer system can automatically deliver a pre-recorded
@@ -200,7 +189,7 @@ const Pd = () => {
               delivered to the intended audience, regardless of whether or not
               they are able to answer the call.
             </p>
-            <p className="font-bold">Feedback And Survey Calls</p>
+            <h2 className="font-bold">Feedback And Survey Calls</h2>
             <p className="text-justify">
               The Dotpot IT predictive dialer system allows you to conduct
               regular or special surveys and gather feedback from your
@@ -214,7 +203,7 @@ const Pd = () => {
               businesses can stay ahead of the competition and ensure that they
               are meeting the evolving needs of their customers.
             </p>
-            <p className="font-bold">Smart Reports</p>
+            <h2 className="font-bold">Smart Reports</h2>
             <p className="text-justify">
               Dotpot IT PD system provides valuable reports and statistics that
               enable businesses to gain insights into campaign performance and
@@ -222,7 +211,7 @@ const Pd = () => {
               their strategies, improve outcomes, and stay ahead of the
               competition.
             </p>
-            <p className="font-bold">Monitoring Via Live Dashboard</p>
+            <h2 className="font-bold">Monitoring Via Live Dashboard</h2>
             <p className="text-justify">
               The Dotpot IT predictive dialer system features a smart dashboard
               that captures and displays real-time contact center activities.

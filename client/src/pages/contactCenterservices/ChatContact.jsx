@@ -11,39 +11,34 @@ const ChatContact = () => {
   return (
     <div>
       <Helmet>
-        <title>Web Chat Support | Dotpot iT</title>
-        <meta
-          name="description"
-          content="Get in touch with us for your IT needs. Web Chat Support for website, mobile app, and more."
-        />
-        <link
-          rel="canonical"
-          href="https://dotpotit.com/contact_center_services/chat"
-        />
-        <meta property="og:title" content="Web Chat Support | Dotpot iT" />
-        <meta
-          property="og:description"
-          content="Get in touch with us for your IT needs. Web Chat Support for website, mobile app, and more."
-        />
-        <meta
-          property="og:image"
-          content="https://dotpotit.com/assets/logo-492dab11.png"
-        />
-        <meta
-          property="og:url"
-          content="https://dotpotit.com/contact_center_services/chat"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Web Chat Support | Dotpot iT" />
-        <meta
-          name="twitter:description"
-          content="Get in touch with us for your IT needs. Web Chat Support for website, mobile app, and more."
-        />
-        <meta
-          name="twitter:image"
-          content="https://dotpotit.com/assets/logo-492dab11.png"
-        />
-      </Helmet>
+          <title>Web Chat Support | Dotpot iT</title>
+          <meta
+            name="description"
+            content="The Dotpot IT contact center system integrates a powerful web chat module, empowering businesses with exceptional customer service."
+          />
+          <meta name="keywords" content="software development company, Chat, Contact " /> 
+          <link rel="canonical" href="https://dotpotit.com/contact_center_services/chat" />
+          <meta property="og:title" content="Web Chat Support | Dotpot iT" />
+          <meta
+            property="og:description"
+            content="The Dotpot IT contact center system integrates a powerful web chat module, empowering businesses with exceptional customer service."
+          />
+          <meta
+            property="og:image"
+            content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
+          />
+          <meta property="og:url" content="https://dotpotit.com/contact_center_services/chat" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="Web Chat Support | Dotpot iT" />
+          <meta
+            name="twitter:description"
+            content="The Dotpot IT contact center system integrates a powerful web chat module, empowering businesses with exceptional customer service."
+          />
+          <meta
+            name="twitter:image"
+            content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
+          />
+        </Helmet>
       <Navbar />
       <div className="px-3 min-h-screen pt-[15vh] pb-10 bg-background-500">
         <NavigatorComponent navigationData={navigationData} />

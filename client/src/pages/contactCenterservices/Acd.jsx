@@ -11,35 +11,34 @@ const Acd = () => {
   return (
     <div>
       <Helmet>
-        <title>Automatic Call Distribution (ACD)</title>
-        <meta
-          name="description"
-          content="Get in touch with us for your IT needs. Contact us for website development, mobile app development, and more."
-        />
-        <meta property="og:title" content="Contact Us | Dotpot iT" />
-        <meta
-          property="og:description"
-          content="Get in touch with us for your IT needs. Contact us for website development, mobile app development, and more."
-        />
-        <meta
-          property="og:image"
-          content="https://dotpotit.com/assets/logo-492dab11.png"
-        />
-        <meta
-          property="og:url"
-          content="https://dotpotit.com/contact_center_services/acd"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Contact Us | Dotpot iT" />
-        <meta
-          name="twitter:description"
-          content="Get in touch with us for your IT needs. Contact us for website development, mobile app development, and more."
-        />
-        <meta
-          name="twitter:image"
-          content="https://dotpotit.com/assets/logo-492dab11.png"
-        />
-      </Helmet>
+          <title>Automatic Call Distribution</title>
+          <meta
+            name="description"
+            content="Get in touch with us for your IT needs. Contact us for website development, mobile app development, and more."
+          />
+          <meta name="keywords" content="software development company, acd, call center" />
+          <link rel="canonical" href="https://dotpotit.com/contact_center_services/acd" />
+          <meta property="og:title" content="Automatic Call Distribution" />
+          <meta
+            property="og:description"
+            content="Get in touch with us for your IT needs. Contact us for website development, mobile app development, and more."
+          />
+          <meta
+            property="og:image"
+            content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
+          />
+          <meta property="og:url" content="https://dotpotit.com/contact_center_services/acd" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="Automatic Call Distribution" />
+          <meta
+            name="twitter:description"
+            content="Get in touch with us for your IT needs. Contact us for website development, mobile app development, and more."
+          />
+          <meta
+            name="twitter:image"
+            content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
+          />
+        </Helmet>
       <Navbar />
       <div className="px-3 min-h-screen pt-[15vh] pb-10 bg-background-500">
         <NavigatorComponent navigationData={navigationData} />

@@ -42,6 +42,35 @@ const Faq = () => {
   return (
     <div className="h-full">
       <Navbar />
+      <Helmet>
+          <title>FAQ | Dotpot iT</title>
+          <meta
+            name="description"
+            content="FAQ Page - IT Company: Services, quotes, industries, on-site support, managed services, data security, cloud migration."
+          />
+          <meta name="keywords" content="software development company, faq of dotpotit" />
+          <link rel="canonical" href="https://dotpotit.com/faq" />
+          <meta property="og:title" content="FAQ | Dotpot iT" />
+          <meta
+            property="og:description"
+            content="FAQ Page - IT Company: Services, quotes, industries, on-site support, managed services, data security, cloud migration."
+          />
+          <meta
+            property="og:image"
+            content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
+          />
+          <meta property="og:url" content="https://dotpotit.com/faq" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="FAQ | Dotpot iT" />
+          <meta
+            name="twitter:description"
+            content="FAQ Page - IT Company: Services, quotes, industries, on-site support, managed services, data security, cloud migration."
+          />
+          <meta
+            name="twitter:image"
+            content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
+          />
+        </Helmet>
       <section className="w-full pt-[15vh] items-center justify-center flex flex-col">
         <h1 className="text-4xl text-textColor-500 font-bold text-center ">
           FAQ

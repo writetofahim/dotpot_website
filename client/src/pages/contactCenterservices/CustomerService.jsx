@@ -11,39 +11,34 @@ const CustomerService = () => {
   return (
     <div>
       <Helmet>
-        <title>Customer Service | Dotpot iT</title>
-        <meta
-          name="description"
-          content="Get in touch with us for your IT needs. Customer Service for website, mobile app, and more."
-        />
-        <link
-          rel="canonical"
-          href="https://dotpotit.com/contact_center_services/customer-service"
-        />
-        <meta property="og:title" content="Customer Service | Dotpot iT" />
-        <meta
-          property="og:description"
-          content="Get in touch with us for your IT needs. Customer Service for website, mobile app, and more."
-        />
-        <meta
-          property="og:image"
-          content="https://dotpotit.com/assets/logo-492dab11.png"
-        />
-        <meta
-          property="og:url"
-          content="https://dotpotit.com/contact_center_services/customer-service"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Customer Service | Dotpot iT" />
-        <meta
-          name="twitter:description"
-          content="Get in touch with us for your IT needs. Customer Service for website, mobile app, and more."
-        />
-        <meta
-          name="twitter:image"
-          content="https://dotpotit.com/assets/logo-492dab11.png"
-        />
-      </Helmet>
+          <title>Customer Service | Dotpot iT</title>
+          <meta
+            name="description"
+            content="Dotpot IT CC prioritizes exceptional customer service for strong customer relationships and memorable experiences."
+          />
+          <meta name="keywords" content="software development company, cc, customer center" />
+          <link rel="canonical" href="https://dotpotit.com/contact_center_services/customer-service" />
+          <meta property="og:title" content="Customer Service | Dotpot iT" />
+          <meta
+            property="og:description"
+            content="Dotpot IT CC prioritizes exceptional customer service for strong customer relationships and memorable experiences."
+          />
+          <meta
+            property="og:image"
+            content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
+          />
+          <meta property="og:url" content="https://dotpotit.com/contact_center_services/customer-service" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="Customer Service | Dotpot iT" />
+          <meta
+            name="twitter:description"
+            content="Dotpot IT CC prioritizes exceptional customer service for strong customer relationships and memorable experiences."
+          />
+          <meta
+            name="twitter:image"
+            content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
+          />
+        </Helmet>
       <Navbar />
       <div className="px-3 min-h-screen pt-[15vh] pb-10 bg-background-500">
         <NavigatorComponent navigationData={navigationData} />

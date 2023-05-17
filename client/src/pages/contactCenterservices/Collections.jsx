@@ -11,39 +11,34 @@ const Collections = () => {
   return (
     <div>
       <Helmet>
-        <title>Collection | Dotpot iT</title>
-        <meta
-          name="description"
-          content="Get in touch with us for your IT needs. Web Chat Support for website, mobile app, and more."
-        />
-        <link
-          rel="canonical"
-          href="https://dotpotit.com/contact_center_services/collection"
-        />
-        <meta property="og:title" content="Web Chat Support | Dotpot iT" />
-        <meta
-          property="og:description"
-          content="Get in touch with us for your IT needs. Web Chat Support for website, mobile app, and more."
-        />
-        <meta
-          property="og:image"
-          content="https://dotpotit.com/assets/logo-492dab11.png"
-        />
-        <meta
-          property="og:url"
-          content="https://dotpotit.com/contact_center_services/chat"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Web Chat Support | Dotpot iT" />
-        <meta
-          name="twitter:description"
-          content="Get in touch with us for your IT needs. Web Chat Support for website, mobile app, and more."
-        />
-        <meta
-          name="twitter:image"
-          content="https://dotpotit.com/assets/logo-492dab11.png"
-        />
-      </Helmet>
+          <title>Collection | Dotpot iT</title>
+          <meta
+            name="description"
+            content="Dotpot IT offers automated dialing solutions for efficient debtor contact and increased debt recovery rates."
+          />
+          <meta name="keywords" content="software development company, automated dialing," />
+          <link rel="canonical" href="https://dotpotit.com/contact_center_services/collection" />
+          <meta property="og:title" content="Collection | Dotpot iT" />
+          <meta
+            property="og:description"
+            content="Dotpot IT offers automated dialing solutions for efficient debtor contact and increased debt recovery rates."
+          />
+          <meta
+            property="og:image"
+            content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
+          />
+          <meta property="og:url" content="https://dotpotit.com/contact_center_services/collection" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="Collection | Dotpot iT" />
+          <meta
+            name="twitter:description"
+            content="Dotpot IT offers automated dialing solutions for efficient debtor contact and increased debt recovery rates."
+          />
+          <meta
+            name="twitter:image"
+            content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
+          />
+        </Helmet>
       <Navbar />
       <div className="px-3 min-h-screen pt-[15vh] pb-10 bg-background-500">
         <NavigatorComponent navigationData={navigationData} />
@@ -85,9 +80,9 @@ const Collections = () => {
               your telemarketing efforts.
             </p>
           </div>
-          <p className="text-textColor-500 flex flex-col gap-2 px-5 3xl md:5xl font-bold">
+          <h2 className="text-textColor-500 flex flex-col gap-2 px-5 3xl md:5xl font-bold">
             Overview:
-          </p>
+          </h2>
           <div className="px-5 text-textColor-500">
             <ul className="list-disc p-5 mb-5">
               <li>Quickly implement new collections programs.</li>

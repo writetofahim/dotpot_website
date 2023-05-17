@@ -64,44 +64,33 @@ const OnSiteDevelopment = () => {
   useScrollToTop();
   return (
     <div>
-      <Helmet>
+    <Helmet>
         <title>On-site-development-model | Dotpot iT</title>
         <meta
           name="description"
-          content="Learn about hire-dedicated-model Dotpot iT, a leading IT company providing innovative solutions for businesses."
+          content="Learn about on site development Dotpot iT, a leading IT company providing innovative solutions for businesses."
         />
-        <link
-          rel="canonical"
-          href="https://www.dotpotit.com/partnership_model/on-site-development-model"
-        />
-        <meta
-          property="og:title"
-          content="on-site-development-model | Dotpot iT"
-        />
+        <meta name="keywords" content="software development company, it company" />
+        <link rel="canonical" href="https://dotpotit.com/partnership_model/on-site-development-model" />
+        <meta property="og:title" content="On-site-development-model | Dotpot iT" />
         <meta
           property="og:description"
-          content="Learn about hire-dedicated-model Dotpot iT, a leading IT company providing innovative solutions for businesses."
+          content="Learn about on site development Dotpot iT, a leading IT company providing innovative solutions for businesses."
         />
         <meta
           property="og:image"
-          content="	https://www.dotpotit.com/assets/logo-492dab11.png"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
-        <meta
-          property="og:url"
-          content="https://www.dotpotit.com/partnership_model/on-site-development-model"
-        />
+        <meta property="og:url" content="https://dotpotit.com/partnership_model/on-site-development-model" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Fixed Price Partnership Model | Dotpot iT"
-        />
+        <meta name="twitter:title" content="On-site-development-model | Dotpot iT" />
         <meta
           name="twitter:description"
-          content="Learn about hire-dedicated-model Dotpot iT, a leading IT company providing innovative solutions for businesses."
+          content="Learn about on site development Dotpot iT, a leading IT company providing innovative solutions for businesses."
         />
         <meta
           name="twitter:image"
-          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
       </Helmet>
       <Navbar />

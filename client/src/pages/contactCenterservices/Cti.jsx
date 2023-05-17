@@ -11,39 +11,34 @@ const Cti = () => {
   return (
     <div>
       <Helmet>
-        <title> Telephony Integration (CTI) | Dotpot iT</title>
-        <meta
-          name="description"
-          content="Get in touch with us for your IT needs.  Telephony Integration (CTI), mobile app, and more."
-        />
-        <link
-          rel="canonical"
-          href="https://dotpotit.com/contact_center_services/cti"
-        />
-        <meta property="og:title" content="Web Chat Support | Dotpot iT" />
-        <meta
-          property="og:description"
-          content="Get in touch with us for your IT needs.  Telephony Integration (CTI), mobile app, and more."
-        />
-        <meta
-          property="og:image"
-          content="https://dotpotit.com/assets/logo-492dab11.png"
-        />
-        <meta
-          property="og:url"
-          content="https://dotpotit.com/contact_center_services/chat"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Web Chat Support | Dotpot iT" />
-        <meta
-          name="twitter:description"
-          content="Get in touch with us for your IT needs.  Telephony Integration (CTI), mobile app, and more."
-        />
-        <meta
-          name="twitter:image"
-          content="https://dotpotit.com/assets/logo-492dab11.png"
-        />
-      </Helmet>
+          <title>Telephony Integration (CTI) | Dotpot iT</title>
+          <meta
+            name="description"
+            content="Dotpot IT integrates with various CRMs and offers CTI screen popups to agents, providing them with caller information, such as name and phone number, before connecting to the call. This helps agents personalize calls and improve customer experience."
+          />
+          <meta name="keywords" content="software development company, cti, cti screen" />
+          <link rel="canonical" href="https://dotpotit.com/contact_center_services/cti" />
+          <meta property="og:title" content="Telephony Integration (CTI) | Dotpot iT" />
+          <meta
+            property="og:description"
+            content="Dotpot IT integrates with various CRMs and offers CTI screen popups to agents, providing them with caller information, such as name and phone number, before connecting to the call. This helps agents personalize calls and improve customer experience."
+          />
+          <meta
+            property="og:image"
+            content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
+          />
+          <meta property="og:url" content="https://dotpotit.com/contact_center_services/cti" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="Telephony Integration (CTI) | Dotpot iT" />
+          <meta
+            name="twitter:description"
+            content="Dotpot IT integrates with various CRMs and offers CTI screen popups to agents, providing them with caller information, such as name and phone number, before connecting to the call. This helps agents personalize calls and improve customer experience."
+          />
+          <meta
+            name="twitter:image"
+            content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
+          />
+        </Helmet>
 
       <Navbar />
       <div className="px-3 min-h-screen pt-[15vh] bg-background-500">
@@ -95,9 +90,9 @@ const Cti = () => {
               </p>
             </div>
           </div>
-          <p className="text-textColor-500 flex flex-col gap-2 px-5 font-bold">
+          <h2 className="text-textColor-500 flex flex-col gap-2 px-5 font-bold">
             Application of CTI:
-          </p>
+          </h2>
           <div className="px-5 text-textColor-500">
             <ul className="list-disc p-5 pb-5">
               <li>
