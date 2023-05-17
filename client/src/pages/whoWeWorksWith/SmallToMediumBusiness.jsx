@@ -72,39 +72,37 @@ const WebsiteDesign = () => {
   return (
     <div className="bg-background-500">
       <Helmet>
-        <title>Medium Business | Dotpot iT</title>
-        <meta
-          name="description"
-          content="Our IT company can help medium-sized businesses to streamline their operations, increase efficiency, and gain a competitive advantage through customized software solutions and expert IT consulting services."
-        />
-        <link
-          rel="canonical"
-          href="https://www.dotpotit.com/who-we-works-with/small-and-medium-business"
-        />
-        <meta property="og:title" content="Medium Business | Dotpot iT" />
-        <meta
-          property="og:description"
-          content="Our IT company can help medium-sized businesses to streamline their operations, increase efficiency, and gain a competitive advantage through customized software solutions and expert IT consulting services."
-        />
-        <meta
-          property="og:image"
-          content="https://www.dotpotit.com/assets/logo-492dab11.png"
-        />
-        <meta
-          property="og:url"
-          content="https://www.dotpotit.com/who-we-works-with/startup-business"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Medium Business | Dotpot iT" />
-        <meta
-          name="twitter:description"
-          content="Our IT company can help medium-sized businesses to streamline their operations, increase efficiency, and gain a competitive advantage through customized software solutions and expert IT consulting services."
-        />
-        <meta
-          name="twitter:image"
-          content="https://www.dotpotit.com/assets/logo-492dab11.png"
-        />
-      </Helmet>
+          <title>Start Up Business | Dotpot iT</title>
+          <meta
+            name="description"
+            content="As an IT company, your expertise can be invaluable to startup businesses looking to establish a strong digital presence."
+          />
+          <link rel="canonical" href="https://dotpotit.com/who-we-works-with/startup-business" />
+          <meta property="og:title" content="Start Up Business | Dotpot iT" />
+          <meta
+            property="og:description"
+            content="As an IT company, your expertise can be invaluable to startup businesses looking to establish a strong digital presence."
+          />
+          <meta
+            property="og:image"
+            content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
+          />
+          <meta
+            name="keywords"
+            content="Software development, New business, Business idea"
+          />
+          <meta property="og:url" content="https://dotpotit.com/who-we-works-with/startup-business" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="Start Up Business | Dotpot iT" />
+          <meta
+            name="twitter:description"
+            content="As an IT company, your expertise can be invaluable to startup businesses looking to establish a strong digital presence."
+          />
+          <meta
+            name="twitter:image"
+            content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
+          />
+        </Helmet>
       <Navbar />
       <div
         className={` md:pt-[15vh] pt-[15vh] ${

@@ -56,39 +56,37 @@ const AgenciesBusiness = () => {
   return (
     <div className="bg-background-500">
       <Helmet>
-        <title>Agencies Business | Dotpot iT</title>
-        <meta
-          name="description"
-          content="We can assist Agencies Business with tailored IT solutions to optimize their operations and boost productivity."
-        />
-        <link
-          rel="canonical"
-          href="https://www.dotpotit.com/who-we-works-with/agencies-business"
-        />
-        <meta property="og:title" content="Agencies Business | Dotpot iT" />
-        <meta
-          property="og:description"
-          content="We can assist Agencies Business with tailored IT solutions to optimize their operations and boost productivity."
-        />
-        <meta
-          property="og:image"
-          content="https://www.dotpotit.com/assets/logo-492dab11.png"
-        />
-        <meta
-          property="og:url"
-          content="https://www.dotpotit.com/key-features/website-design"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Agencies Business | Dotpot iT" />
-        <meta
-          name="twitter:description"
-          content="We can assist Agencies Business with tailored IT solutions to optimize their operations and boost productivity."
-        />
-        <meta
-          name="twitter:image"
-          content="https://www.dotpotit.com/assets/logo-492dab11.png"
-        />
-      </Helmet>
+          <title>Agencies Business | Dotpot iT</title>
+          <meta
+            name="description"
+            content="As an IT company, we can provide a range of services to help agencies and businesses achieve their goals."
+          />
+          <link rel="canonical" href="https://dotpotit.com/who-we-works-with/agencies-business" />
+          <meta property="og:title" content="Agencies Business | Dotpot iT" />
+          <meta
+            property="og:description"
+            content="As an IT company, we can provide a range of services to help agencies and businesses achieve their goals."
+          />
+          <meta
+            property="og:image"
+            content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
+          />
+          <meta
+            name="keywords"
+            content="Software development, Agencies Business, growth strategy agency"
+          />
+          <meta property="og:url" content="https://dotpotit.com/who-we-works-with/agencies-business" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="Agencies Business | Dotpot iT" />
+          <meta
+            name="twitter:description"
+            content="As an IT company, we can provide a range of services to help agencies and businesses achieve their goals."
+          />
+          <meta
+            name="twitter:image"
+            content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
+          />
+        </Helmet>
       <Navbar />
       <div
         className={` md:pt-[15vh] pt-[15vh] ${
@@ -264,7 +262,7 @@ export default AgenciesBusiness;
 
 const navigationData = [
   {
-    title: "Enterprise Business",
-    link: "/who-we-works-with/enterprise-business",
+    title: "Agencies Business",
+    link: "/who-we-works-with/agencies-business",
   },
 ];

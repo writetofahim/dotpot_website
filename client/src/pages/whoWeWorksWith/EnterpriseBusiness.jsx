@@ -56,39 +56,37 @@ const WebsiteDesign = () => {
   return (
     <div className="bg-background-500">
       <Helmet>
-        <title>Enterprise Business | Dotpot iT</title>
-        <meta
-          name="description"
-          content="We can help enterprise businesses improve their performance and achieve their goals through our expertise in software development and IT services."
-        />
-        <link
-          rel="canonical"
-          href="https://www.dotpotit.com/who-we-works-with/enterprise-business"
-        />
-        <meta property="og:title" content="Enterprise Business | Dotpot iT" />
-        <meta
-          property="og:description"
-          content="We can help enterprise businesses improve their performance and achieve their goals through our expertise in software development and IT services."
-        />
-        <meta
-          property="og:image"
-          content="https://www.dotpotit.com/assets/logo-492dab11.png"
-        />
-        <meta
-          property="og:url"
-          content="https://www.dotpotit.com/key-features/website-design"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Website Design | Dotpot iT" />
-        <meta
-          name="twitter:description"
-          content="We can help enterprise businesses improve their performance and achieve their goals through our expertise in software development and IT services."
-        />
-        <meta
-          name="twitter:image"
-          content="https://www.dotpotit.com/assets/logo-492dab11.png"
-        />
-      </Helmet>
+          <title>Enterprise Business | Dotpot iT</title>
+          <meta
+            name="description"
+            content="As an IT company, your software development and IT services can help enterprise businesses improve efficiency, productivity, and security."
+          />
+          <link rel="canonical" href="https://dotpotit.com/who-we-works-with/enterprise-business" />
+          <meta property="og:title" content="Enterprise Business | Dotpot iT" />
+          <meta
+            property="og:description"
+            content="As an IT company, your software development and IT services can help enterprise businesses improve efficiency, productivity, and security."
+          />
+          <meta
+            property="og:image"
+            content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
+          />
+          <meta
+            name="keywords"
+            content="Software development, business accounts, Enterprise Business"
+          />
+          <meta property="og:url" content="https://dotpotit.com/who-we-works-with/enterprise-business" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="Enterprise Business | Dotpot iT" />
+          <meta
+            name="twitter:description"
+            content="As an IT company, your software development and IT services can help enterprise businesses improve efficiency, productivity, and security."
+          />
+          <meta
+            name="twitter:image"
+            content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
+          />
+        </Helmet>
       <Navbar />
       <div
         className={` md:pt-[15vh] pt-[15vh] ${
