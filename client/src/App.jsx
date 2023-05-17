@@ -2,11 +2,11 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import AcceptCookiesPopup from "./components/AcceptCookiesPopup/AcceptCookiesPopup";
 import ChatPopup from "./components/ChatPopup/ChatPopup";
-import Loading from "./components/Loading/Loading";
+import Faq from "./pages/FAQ/Faq";
 import ResetPassword from "./pages/ResetPassword/ResetPassword";
 import AboutUs from "./pages/about/AboutUs";
 import Apply from "./pages/applyJob/Apply";
@@ -65,10 +65,9 @@ import EnterpriseBusiness from "./pages/whoWeWorksWith/EnterpriseBusiness";
 import SmallToMediumBusiness from "./pages/whoWeWorksWith/SmallToMediumBusiness";
 import StartupBusiness from "./pages/whoWeWorksWith/StartupBusiness";
 import Terms_Conditions from "./terms_conditions/Terms_Conditions";
-import Faq from "./pages/FAQ/Faq";
 
 function App() {
-  const [loading, isLoading] = useState(true);
+  // const [loading, isLoading] = useState(true);
   useEffect(() => {
     const getColors = async () => {
       const response = await axios.get(
@@ -83,18 +82,19 @@ function App() {
     getColors();
   }, []);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      // console.log("This will run after 1 second!");
-      isLoading(false);
-    }, 3000);
-    return () => clearTimeout(timer);
-  }, []);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     // console.log("This will run after 1 second!");
+  //     isLoading(false);
+  //   }, 3000);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   // console.log(loading);
   return (
-    <div className={`relative ${loading && "h-screen overflow-hidden"}`}>
-      {loading && <Loading />}
+    // <div className={`relative ${loading && "h-screen overflow-hidden"}`}>
+    <div className={`relative`}>
+      {/* {loading && <Loading />} */}
       <AcceptCookiesPopup />
       <ChatPopup />
       <Routes>
