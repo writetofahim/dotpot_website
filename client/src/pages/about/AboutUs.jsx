@@ -47,6 +47,10 @@ const AboutUs = () => {
             property="og:image"
             content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
           />
+          <meta
+            name="keywords"
+            content="web development, AI development, game development, app development, blockchain development, IT support, custom software development, full-stack web development, machine learning development, Unity game development, eCommerce development, agile software development, cloud-based solutions, expert developers, affordable web development, professional game development, AI chatbot integration, web design and development, cross-platform app development, virtual and augmented reality development, chat support for customers, blockchain consulting services, IT infrastructure support, cybersecurity services, software testing and quality assurance, responsive web design, scalable solutions, database management services, UX/UI design services, website maintenance and support"
+          />
           <meta property="og:url" content="https://dotpotit.com/about" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content="About Us | Dotpot iT" />
