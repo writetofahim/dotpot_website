@@ -75,7 +75,7 @@ function App() {
         "https://dotpotit.com/api/colors/selected"
       );
       const theme = response.data.data[0];
-      console.log(theme);
+      // console.log(theme);
       document.getElementsByTagName(
         "html"
       )[0].className = `theme-${theme.name}`;

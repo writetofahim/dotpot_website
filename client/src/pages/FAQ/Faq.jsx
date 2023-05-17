@@ -48,7 +48,7 @@ const Faq = () => {
         </h1>
         <div className="flex flex-col py-10 w-3/4 ">
           {faqs.map((faq) => (
-            <div
+            <div key={faq.id}
               onClick={() => handleClick(faq.id)}
               className="cursor-pointer mb-4"
             >

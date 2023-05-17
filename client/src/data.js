@@ -1537,6 +1537,10 @@ export const footerData = {
           title: "White Paper",
           link: "/white-paper",
         },
+        {
+          title: "FAQ",
+          link: "/faq",
+        },
       ],
     },
     {

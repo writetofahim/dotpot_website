@@ -13,7 +13,7 @@ import ImageViewModal from "./ImageViewModal";
 
 const socket = io(import.meta.env.REACT_APP_SOCKET_PATH);
 // const socket = io("http://localhost:8800")
-console.log("socket", socket);
+// console.log("socket", socket);
 
 // const data = [
 //   { name: "DotpotiT", message: "Hi there!", timestamp: "11:30 AM" },
@@ -80,7 +80,7 @@ const ChatPopup = () => {
       }
     };
     loadMessages();
-    console.log("Load messages");
+    // console.log("Load messages");
   }, [setIsChatPopupOpen, randomValue]);
 
   const handleOpen = async () => {

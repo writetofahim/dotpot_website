@@ -53,7 +53,7 @@ export const MobileMenu = (props) => {
             {props.links.map((item, index) => (
               <li
                 onClick={() => window.scrollTo(0, 0)}
-                className="hover:text-secondary-500"
+                className="hover:text-secondary-500 text-buttonText-500"
               >
                 <Link to={item.link}>{item.title}</Link>
               </li>
@@ -83,7 +83,7 @@ const Footer = () => {
   useEffect(() => {
     axios.get("/info").then((response) => {
       setCompanyInfo(response.data[0]);
-      console.log(response.data[0]);
+      // console.log(response.data[0]);
     });
     return () => {};
   }, []);
