@@ -53,6 +53,10 @@ const PortfolioDevelopment = () => {
           rel="canonical"
           href="https://www.dotpotit.com/web-development/portfolio-website"
         />
+        <meta
+          name="keywords"
+          content="Software development Company Tailored web solutions, Stunning visuals, User-friendly experience, Cutting-edge technologies"
+        />
         <meta property="og:title" content="Portfolio Development | Dotpot iT" />
         <meta
           property="og:description"
@@ -79,6 +83,7 @@ const PortfolioDevelopment = () => {
           name="twitter:image"
           content="https://www.dotpotit.com/assets/logo-492dab11.png"
         />
+        <meta property="og:type" content="website" />
       </Helmet>
       <Navbar />
 
@@ -114,7 +119,7 @@ const PortfolioDevelopment = () => {
                         </div>
                         <img
                           src={retail}
-                          alt=""
+                          alt={"retail image"}
                           className="w-full md:w-1/2 lg:w-1/2"
                         />
                       </div>
@@ -172,7 +177,7 @@ const PortfolioDevelopment = () => {
                           <img
                             className="w-4/5 mx-auto"
                             src={illustration}
-                            alt=""
+                            alt={title}
                           />
                         </div>
                       )}

@@ -227,7 +227,7 @@ const Blog = () => {
         <meta property="og:url" content="https://dotpotit.com/blog" />
         <meta
           property="og:image"
-          content="https://dotpotit.com/assets/logo-492dab11.png"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
         <meta name="twitter:title" content="Dotpot iT - Blog" />
         <meta
@@ -236,7 +236,7 @@ const Blog = () => {
         />
         <meta
           name="twitter:image"
-          content="https://dotpotit.com/assets/logo-492dab11.png"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
       </Helmet>
       <Navbar />

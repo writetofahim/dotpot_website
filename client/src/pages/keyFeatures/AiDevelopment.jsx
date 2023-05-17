@@ -79,13 +79,14 @@ const AiDevelopment = () => {
           content="Our AI solutions transform businesses with automation and intelligence"
         />
         <meta
-          property="og:image"
-          content="https://www.dotpotit.com/assets/logo-492dab11.png"
-        />
-        <meta
           property="og:url"
           content="https://www.dotpotit.com/key-features/ai-development"
         />
+        <meta
+          name="keywords"
+          content="Software Development Company, Machine learning development, Unity game development, eCommerce development"
+        />
+
         <meta property="og:type" content="website" />
         <meta
           property="og:image"
@@ -98,7 +99,7 @@ const AiDevelopment = () => {
           content="Our AI solutions transform businesses with automation and intelligence"
         />
         <meta
-          property="og:image"
+          name="twitter:image"
           content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
       </Helmet>
@@ -138,7 +139,7 @@ const AiDevelopment = () => {
                         </div>
                         <img
                           src={aidevelopment}
-                          alt=""
+                          alt={"Ai Development"}
                           className="w-full md:w-1/2 lg:w-1/2"
                         />
                       </div>
@@ -196,7 +197,7 @@ const AiDevelopment = () => {
                           <img
                             className="w-4/5 mx-auto"
                             src={illustration}
-                            alt=""
+                            alt={title}
                           />
                         </div>
                       )}
@@ -226,7 +227,7 @@ const AiDevelopment = () => {
                       <img
                         className="w-64  mx-auto pb-14"
                         src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"
-                        alt=""
+                        alt={"Colored line"}
                       />
                       <div className="flex flex-col md:flex-col lg:flex-row items-center justify-center">
                         <div className="text-center md:text-center lg:text-left w-full lg:w-1/2 px-3 pb-10">
@@ -301,7 +302,7 @@ const AiDevelopment = () => {
                     <img
                       className="w-64 mx-auto"
                       src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"
-                      alt=""
+                      alt={"Colored line"}
                     />
                     <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
                       Dotpot iT offers affordable AI Development services that

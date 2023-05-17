@@ -58,6 +58,11 @@ const WebsiteDesign = () => {
           rel="canonical"
           href="https://dotpotit.com/key-features/website-design"
         />
+        <meta property="og:type" content="website" />
+        <meta
+          name="keywords"
+          content="Software Development Company, E-Commerce Website Design, Agency Website Design, Blog Website Design"
+        />
         <meta property="og:title" content="Website Design | Dotpot iT" />
         <meta
           property="og:description"
@@ -65,7 +70,7 @@ const WebsiteDesign = () => {
         />
         <meta
           property="og:image"
-          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
         <meta
           property="og:url"
@@ -79,7 +84,7 @@ const WebsiteDesign = () => {
         />
         <meta
           name="twitter:image"
-          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
       </Helmet>
       <Navbar />
@@ -119,7 +124,7 @@ const WebsiteDesign = () => {
                         </div>
                         <img
                           src={coverweb}
-                          alt=""
+                          alt="web development"
                           className="w-full md:w-1/2 lg:w-1/2"
                         />
                       </div>
@@ -177,7 +182,7 @@ const WebsiteDesign = () => {
                           <img
                             className="w-4/5 mx-auto"
                             src={illustration}
-                            alt=""
+                            alt={title}
                           />
                         </div>
                       )}
@@ -207,7 +212,7 @@ const WebsiteDesign = () => {
                       <img
                         className="w-64  mx-auto pb-14"
                         src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"
-                        alt=""
+                        alt="colored line"
                       />
                       <div className="flex flex-col md:flex-col lg:flex-row items-center justify-center">
                         <div className="text-center md:text-center lg:text-left w-full lg:w-1/2 px-3 pb-10">

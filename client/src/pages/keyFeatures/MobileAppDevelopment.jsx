@@ -135,6 +135,11 @@ const MobileAppDevelopment = () => {
           href="https://dotpotit.com/key-features/mobile-app-development"
         />
         <meta
+          name="keywords"
+          content="Software Development Company, Android App Development, iOS App Development, Flutter Development"
+        />
+        <meta property="og:type" content="website" />
+        <meta
           property="og:title"
           content="Mobile App Development | Dotpot iT"
         />
@@ -144,7 +149,7 @@ const MobileAppDevelopment = () => {
         />
         <meta
           property="og:image"
-          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
         <meta
           property="og:url"
@@ -199,7 +204,7 @@ const MobileAppDevelopment = () => {
                         </div>
                         <img
                           src={mobileapp}
-                          alt=""
+                          alt="mobile application"
                           className="w-full md:w-1/2 lg:w-1/2"
                         />
                       </div>
@@ -259,7 +264,7 @@ const MobileAppDevelopment = () => {
                             <img
                               className="w-4/5 mx-auto"
                               src={illustration}
-                              alt=""
+                              alt={title}
                             />
                           </div>
                         )}
@@ -290,7 +295,7 @@ const MobileAppDevelopment = () => {
                       <img
                         className="w-64  mx-auto pb-14"
                         src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"
-                        alt=""
+                        alt="colored line"
                       />
                       <div className="flex flex-col md:flex-col lg:flex-row items-center justify-center">
                         <div className="text-center md:text-center lg:text-left w-full lg:w-1/2 px-3 pb-10">
@@ -385,7 +390,7 @@ const MobileAppDevelopment = () => {
                     <img
                       className="w-64 mx-auto"
                       src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"
-                      alt=""
+                      alt="colored line"
                     />
                     <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
                       Dotpot iT provides top-notch mobile app development

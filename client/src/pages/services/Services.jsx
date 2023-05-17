@@ -29,13 +29,14 @@ const Services = () => {
         />
         <link rel="canonical" href="https://www.dotpotit.com/services" />
         <meta property="og:title" content="About Us | Dotpot iT" />
+
         <meta
           property="og:description"
           content="Learn about Dotpot iT, a leading IT company providing innovative solutions for businesses."
         />
         <meta
           property="og:image"
-          content="https://i.ibb.co/CncFVCL/dotpot.gif"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
         <meta property="og:url" content="https://dotpotit.com/about" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -44,9 +45,10 @@ const Services = () => {
           name="twitter:description"
           content="Learn about Dotpot iT, a leading IT company providing innovative solutions for businesses."
         />
+        <meta property="og:type" content="website" />
         <meta
           name="twitter:image"
-          content="https://i.ibb.co/CncFVCL/dotpot.gif"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
       </Helmet>
       <Navbar />

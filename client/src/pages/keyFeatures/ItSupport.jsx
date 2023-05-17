@@ -65,6 +65,11 @@ const ItSupport = () => {
           rel="canonical"
           href="https://dotpotit.com/key-features/it-support"
         />
+        <meta property="og:type" content="website" />
+        <meta
+          name="keywords"
+          content="Software Development Company, Customized solutions, Cross-Platform App Development, User Experience"
+        />
         <meta property="og:title" content="It Support | Dotpot iT" />
         <meta
           property="og:description"
@@ -72,7 +77,7 @@ const ItSupport = () => {
         />
         <meta
           property="og:image"
-          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
         <meta
           property="og:url"
@@ -86,7 +91,7 @@ const ItSupport = () => {
         />
         <meta
           name="twitter:image"
-          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
       </Helmet>
       <Navbar />
@@ -125,7 +130,7 @@ const ItSupport = () => {
                         </div>
                         <img
                           src={itsupport}
-                          alt=""
+                          alt="it support"
                           className="w-full md:w-1/2 lg:w-1/2"
                         />
                       </div>
@@ -183,7 +188,7 @@ const ItSupport = () => {
                           <img
                             className="w-4/5 mx-auto"
                             src={illustration}
-                            alt=""
+                            alt={title}
                           />
                         </div>
                       )}
@@ -212,7 +217,7 @@ const ItSupport = () => {
                     <img
                       className="w-64 mx-auto"
                       src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"
-                      alt=""
+                      alt="colored line"
                     />
                     <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
                       Dotpot iT provides top-notch IT support services that

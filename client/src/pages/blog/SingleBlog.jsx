@@ -58,23 +58,27 @@ const SingleBlog = () => {
         <title>{data?.title}</title>
         <meta
           name="description"
-          content={`${slicedString} Read more at ${data?.url}.`}
+          content={`${slicedString} Read more at http://dotpotit.com/blog/${data?.url}.`}
         />
         <meta
           name="keywords"
           content="Dotpot iT, blog, articles, news, real estate, real estate app"
         />
-        <link rel="canonical" href={`${data?.url}`} />
+        <link rel="canonical" href={`http://dotpotit.com/blog/${data?._id}`} />
+
         <meta property="og:title" content={`${data?.title}`} />
         <meta
           property="og:description"
           content={`${slicedString} Read more at ${data?.url}.`}
         />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content={`${data?.url}`} />
+        <meta
+          property="og:url"
+          content={`http://dotpotit.com/blog/${data?._id}`}
+        />
         <meta
           property="og:image"
-          content="https://dotpotit.com/assets/blogs/real-estate-app-1683109447717.png"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
         <meta name="twitter:title" content={`${data?.title}`} />
         <meta
@@ -83,7 +87,7 @@ const SingleBlog = () => {
         />
         <meta
           name="twitter:image"
-          content={`${import.meta.env.REACT_APP_SERVER_PATH}/${data?.image}`}
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
       </Helmet>
 

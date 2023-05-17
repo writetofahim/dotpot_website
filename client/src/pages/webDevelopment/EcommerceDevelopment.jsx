@@ -69,8 +69,12 @@ const EcommerceDevelopment = () => {
           content="Learn about E-Commerce website Development Dotpot iT, a leading IT company providing innovative solutions for businesses."
         />
         <meta
+          name="keywords"
+          content="Software development Company Tailored web solutions, Stunning visuals, User-friendly experience, Cutting-edge technologies"
+        />
+        <meta
           property="og:image"
-          content="	https://www.dotpotit.com/assets/logo-492dab11.png"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
         <meta
           property="og:url"
@@ -87,8 +91,9 @@ const EcommerceDevelopment = () => {
         />
         <meta
           name="twitter:image"
-          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
+        <meta property="og:type" content="website" />
       </Helmet>
       <Navbar />
 
@@ -125,7 +130,7 @@ const EcommerceDevelopment = () => {
                         </div>
                         <img
                           src={retail}
-                          alt=""
+                          alt="retail business"
                           className="w-full md:w-1/2 lg:w-1/2"
                         />
                       </div>
@@ -183,7 +188,7 @@ const EcommerceDevelopment = () => {
                           <img
                             className="w-4/5 mx-auto"
                             src={illustration}
-                            alt=""
+                            alt={title}
                           />
                         </div>
                       )}

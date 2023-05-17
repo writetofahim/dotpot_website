@@ -144,6 +144,10 @@ const LandingPageDevelopment = () => {
           href="https://www.dotpotit.com/web-development/landing-page"
         />
         <meta
+          name="keywords"
+          content="Software development Company, custom landing pages, high conversion rates, lead generation, customized web solutions"
+        />
+        <meta
           property="og:title"
           content="Landing Page Development | Dotpot iT"
         />
@@ -170,8 +174,9 @@ const LandingPageDevelopment = () => {
         />
         <meta
           name="twitter:image"
-          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
+        <meta property="og:type" content="website" />
       </Helmet>
       <Navbar />
 
@@ -206,7 +211,7 @@ const LandingPageDevelopment = () => {
                         </div>
                         <img
                           src={retail}
-                          alt=""
+                          alt="retail image"
                           className="w-full md:w-1/2 lg:w-1/2"
                         />
                       </div>
@@ -264,7 +269,7 @@ const LandingPageDevelopment = () => {
                           <img
                             className="w-4/5 mx-auto"
                             src={illustration}
-                            alt=""
+                            alt={title}
                           />
                         </div>
                       )}

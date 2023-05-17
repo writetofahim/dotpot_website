@@ -103,6 +103,10 @@ const BlogDevelopment = () => {
           rel="canonical"
           href="https://www.dotpotit.com/web-development/blog-website"
         />
+        <meta
+          name="keywords"
+          content="Software Development Company, Blog site development, E-commerce integration, User-friendly websites"
+        />
         <meta property="og:title" content="Blog Site Development| Dotpot iT" />
         <meta
           property="og:description"
@@ -110,7 +114,7 @@ const BlogDevelopment = () => {
         />
         <meta
           property="og:image"
-          content="	https://www.dotpotit.com/assets/logo-492dab11.png"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
         <meta
           property="og:url"
@@ -127,8 +131,9 @@ const BlogDevelopment = () => {
         />
         <meta
           name="twitter:image"
-          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
+        <meta property="og:type" content="website" />
       </Helmet>
       <Navbar />
 
@@ -165,7 +170,7 @@ const BlogDevelopment = () => {
                         </div>
                         <img
                           src={retail}
-                          alt=""
+                          alt="retail "
                           className="w-full md:w-1/2 lg:w-1/2"
                         />
                       </div>
@@ -223,7 +228,7 @@ const BlogDevelopment = () => {
                           <img
                             className="w-4/5 mx-auto"
                             src={illustration}
-                            alt=""
+                            alt={title}
                           />
                         </div>
                       )}

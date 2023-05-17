@@ -122,16 +122,21 @@ const BlockchainDevelopment = () => {
           href="https://dotpotit.com/key-features/blockchain-development"
         />
         <meta
+          name="keywords"
+          content="Software Development Company, Blockchain Wallet Development, Blockchain Exchange Development"
+        />
+        <meta
           property="og:title"
           content="Blockchain Development | Dotpot iT"
         />
+        <meta property="og:type" content="website" />
         <meta
           property="og:description"
           content="Hire The Expert Development Team of Blockchain Technology"
         />
         <meta
           property="og:image"
-          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
         <meta
           property="og:url"
@@ -148,7 +153,7 @@ const BlockchainDevelopment = () => {
         />
         <meta
           name="twitter:image"
-          content="https://www.dotpotit.com/assets/logo-492dab11.png"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
       </Helmet>
       <Navbar />
@@ -186,7 +191,7 @@ const BlockchainDevelopment = () => {
                         </div>
                         <img
                           src={blockchaindevelopment}
-                          alt=""
+                          alt={"blockchain Development"}
                           className="w-full md:w-1/2 lg:w-1/2"
                         />
                       </div>
@@ -246,7 +251,7 @@ const BlockchainDevelopment = () => {
                             <img
                               className="w-4/5 mx-auto"
                               src={illustration}
-                              alt=""
+                              alt={title}
                             />
                           </div>
                         )}
@@ -277,7 +282,7 @@ const BlockchainDevelopment = () => {
                       <img
                         className="w-64  mx-auto pb-14"
                         src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"
-                        alt=""
+                        alt="colored line"
                       />
                       <div className="flex flex-col md:flex-col lg:flex-row items-center justify-center">
                         <div className="text-center md:text-center lg:text-left w-full lg:w-1/2 px-3 pb-10">
@@ -342,7 +347,7 @@ const BlockchainDevelopment = () => {
                     <img
                       className="w-64 mx-auto"
                       src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"
-                      alt=""
+                      alt="colored line"
                     />
                     <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
                       Dotpot iT provides top-notch Blockchain Development
