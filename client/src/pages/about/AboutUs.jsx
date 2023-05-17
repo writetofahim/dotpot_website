@@ -35,31 +35,30 @@ const AboutUs = () => {
           <title>About Us | Dotpot iT</title>
           <meta
             name="description"
-            content="Dotpot iT is a leading IT company that offers a wide range of IT products and services. From app development and web development to game development, AI development, and blockchain development, we provide solutions that meet the unique needs of our clients. We also offer contact center support and tech support to help businesses optimize their operations and achieve their goals. With our expertise and commitment to excellence, Dotpot iT is the ideal partner for businesses looking to stay ahead in the rapidly-evolving world of technology."
+            content="Dotpot iT is a leading IT company providing a wide range of services, including app development, web development, game development, AI development, and more. We offer comprehensive solutions to help businesses optimize operations and stay ahead in the evolving world of technology."
           />
+          <link rel="canonical" href="https://dotpotit.com/about" />
           <meta property="og:title" content="About Us | Dotpot iT" />
           <meta
             property="og:description"
-            content="Dotpot iT is a leading IT company that offers a wide range of IT products and services. From app development and web development to game development, AI development, and blockchain development, we provide solutions that meet the unique needs of our clients. We also offer contact center support and tech support to help businesses optimize their operations and achieve their goals. With our expertise and commitment to excellence, Dotpot iT is the ideal partner for businesses looking to stay ahead in the rapidly-evolving world of technology."
+            content="Dotpot iT is a leading IT company providing a wide range of services, including app development, web development, game development, AI development, and more. We offer comprehensive solutions to help businesses optimize operations and stay ahead in the evolving world of technology."
           />
           <meta
             property="og:image"
-            content="https://dotpotit.com/api/uploads/blogs/logo_primary-1683973589433.png"
+            content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
           />
           <meta property="og:url" content="https://dotpotit.com/about" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content="About Us | Dotpot iT" />
           <meta
             name="twitter:description"
-            content="Dotpot iT is a leading IT company that offers a wide range of IT products and services. From app development and web development to game development, AI development, and blockchain development, we provide solutions that meet the unique needs of our clients. We also offer contact center support and tech support to help businesses optimize their operations and achieve their goals. With our expertise and commitment to excellence, Dotpot iT is the ideal partner for businesses looking to stay ahead in the rapidly-evolving world of technology."
+            content="Dotpot iT is a leading IT company providing a wide range of services, including app development, web development, game development, AI development, and more. We offer comprehensive solutions to help businesses optimize operations and stay ahead in the evolving world of technology."
           />
           <meta
             name="twitter:image"
-            content="https://dotpotit.com/api/uploads/blogs/logo_primary-1683973589433.png"
+            content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
           />
-          <link rel="canonical" href="https://dotpotit.com/about" />
         </Helmet>
-
         <Particle />
 
         <NavigatorComponent navigationData={navigationData} />

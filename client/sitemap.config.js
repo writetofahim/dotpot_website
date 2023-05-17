@@ -8,7 +8,7 @@ async function generateSitemap() {
   const urls = await getAllUrls();
 
   // Create a new sitemap stream
-  const stream = new SitemapStream({ hostname: "https://example.com" }); // Replace with your app's URL
+  const stream = new SitemapStream({ hostname: "https://dotpotit.com" }); // Replace with your app's URL
 
   // Create a writable stream
   const writeStream = fs.createWriteStream("./public/sitemap.xml");
