@@ -223,32 +223,32 @@ const Navbar = () => {
       icon: "https://cdn-icons-png.flaticon.com/512/2058/2058768.png",
       submenu: [
         {
-          to: "/key-features/it-support",
+          to: "/key-features/it-support/#cloud-computing",
           title: "Cloud Computing",
           icon: "https://cdn-icons-png.flaticon.com/512/2318/2318786.png",
         },
         {
-          to: "/key-features/it-support",
+          to: "/key-features/it-support/#database-administration",
           title: "Database Administration",
           icon: "https://cdn-icons-png.flaticon.com/512/3025/3025358.png",
         },
         {
-          to: "/key-features/it-support",
+          to: "/key-features/it-support/#cybersecurity",
           title: "Cybersecurity ",
           icon: "https://cdn-icons-png.flaticon.com/512/2273/2273136.png",
         },
         {
-          to: "/key-features/it-support",
+          to: "/key-features/it-support/#it-consulting",
           title: "IT Consulting",
           icon: "https://cdn-icons-png.flaticon.com/512/5689/5689422.png",
         },
         {
-          to: "/key-features/it-support",
+          to: "/key-features/it-support/#project-management",
           title: "Project Management",
           icon: "https://cdn-icons-png.flaticon.com/512/5956/5956597.png",
         },
         {
-          to: "/key-features/it-support",
+          to: "/key-features/it-support/#technical-support",
           title: "Technical Support",
           icon: "https://cdn-icons-png.flaticon.com/512/4233/4233839.png",
         },

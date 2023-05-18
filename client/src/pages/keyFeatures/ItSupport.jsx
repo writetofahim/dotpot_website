@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
+import { useLocation } from "react-router-dom";
 import ReactVisibilitySensor from "react-visibility-sensor";
 import appmaintenance from "../../assets/img/appmaintenance.png";
 import appstore from "../../assets/img/appstore.png";
@@ -16,43 +17,98 @@ import { useScrollToTop } from "../../hooks/useScrollToTop";
 const ItSupport = () => {
   const worksData = [
     {
-      id: 1,
-      title: "Customized solutions",
+      id: 2,
+      title: "Cloud Computing",
       description:
-        "Dotpot iT offers customized IT solutions that are tailored to meet the specific needs and budget of each client. Our team works closely with you to assess your IT infrastructure and design a solution that improves efficiency and productivity. Our customized solutions can include network optimization, cybersecurity solutions, cloud migration, data backup and recovery, and more. We offer flexible support options that range from one-time fixes to ongoing maintenance and support, providing you with the most value for your investment.",
+        "Cloud computing delivers computing services over the internet, providing flexible and scalable access to storage, databases, software, and applications. It offers businesses cost efficiency and the ability to scale resources as needed, allowing them to focus on core activities while relying on reliable cloud service providers.",
       illustration: customizedsolutions,
+      sectionId: "cloud-computing",
     },
     {
-      id: 2,
+      id: 3,
+      title: "Database Administration",
+      description:
+        "Database administration involves managing and maintaining databases within an organization. It includes tasks like designing databases, ensuring data integrity and security, optimizing performance, and troubleshooting. Database administrators play a crucial role in efficient data storage, retrieval, and manipulation in various applications and systems.",
+      illustration: customizedsolutions,
+      sectionId: "database-administration",
+    },
+    {
+      id: 4,
+      title: "Cybersecurity",
+      description:
+        "Dotpot iT's cybersecurity service safeguards your digital assets and protects your business from online threats. We assess your security measures, identify vulnerabilities, and implement robust solutions. From advanced threat detection to secure network configurations and data encryption, our comprehensive cybersecurity strategies keep your business secure in the digital world.",
+      illustration: customizedsolutions,
+      sectionId: "cybersecurity",
+    },
+    {
+      id: 5,
+      title: "IT Consulting",
+      description:
+        "Dotpot iT provides top-notch IT consulting services to help businesses leverage technology for strategic advantage. Our experienced consultants offer tailored recommendations and insights to optimize IT infrastructure, streamline operations, and drive growth. Whether it's technology adoption, digital transformation, or IT project management, we deliver effective solutions that maximize your investments.",
+      illustration: customizedsolutions,
+      sectionId: "it-consulting",
+    },
+    {
+      id: 6,
+      title: "Project Management",
+      description:
+        "Dotpot iT offers comprehensive project management services to ensure successful execution of your IT initiatives. Our skilled project managers utilize industry-standard methodologies and best practices to plan, execute, and monitor projects. With effective communication, stakeholder engagement, and risk management, we deliver projects on time and within budget.",
+      illustration: customizedsolutions,
+      sectionId: "project-management",
+    },
+    {
+      id: 7,
+      title: "Technical Support",
+      description:
+        "Dotpot iT provides reliable technical support services to ensure smooth operation and optimal performance of your IT systems. Our experienced team is available to troubleshoot issues and provide timely solutions. With flexible support options and knowledgeable experts, we minimize downtime and disruptions to keep your business running smoothly.",
+      illustration: customizedsolutions,
+      sectionId: "technical-support",
+    },
+    {
+      id: 8,
       title: "Cross-Platform App Development",
       description:
         "Dotpot iT offers cross-platform app development services that are cost-effective, provide a consistent user experience, have faster time to market, are easy to maintain and update, achieve native-like performance, and can be customized to meet your specific business needs. We use a range of development tools to create a mobile application that engages your customers and helps your business grow.",
       illustration: crossplatform,
+      sectionId: "app-development",
     },
     {
-      id: 3,
+      id: 9,
       title: "User Experience",
       description:
         "Dotpot iT offers User Experience (UX) services to help businesses create a seamless and intuitive user interface for their customers. We conduct user research, usability testing, information architecture, interaction design, visual design, and accessibility to improve the overall user experience. Our goal is to help businesses enhance customer satisfaction and drive business growth by providing a great user experience.",
       illustration: userexperience,
+      sectionId: "user-experience",
     },
     {
-      id: 4,
+      id: 10,
       title: "App Maintenance and Support",
       description:
         "Dotpot iT provides App Maintenance and Support services that include regular updates, bug fixing, performance optimization, security updates, technical and user support, and app store optimization. These services help keep your app up to date, secure, and running smoothly while also improving user satisfaction and increasing popularity.",
       illustration: appmaintenance,
+      sectionId: "app-support",
     },
     {
-      id: 5,
+      id: 11,
       title: "App Store Optimization (ASO)",
       description:
         "Dotpot iT provides App Store Optimization (ASO) services to improve the visibility and download rates of mobile apps. Our ASO experts can analyze your app's performance, conduct keyword research, optimize your app listing, analyze competitor apps, and conduct A/B testing to determine the most effective strategies. By optimizing your app for the app store, we can attract more potential users and drive more downloads.",
       illustration: appstore,
+      sectionId: "app-store",
     },
   ];
 
   useScrollToTop();
+
+  const location = useLocation();
+  const fragment = location.hash.substring(1);
+
+  useEffect(() => {
+    if (fragment) {
+      const locationElement = document.getElementById(fragment);
+      locationElement.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [fragment]);
   return (
     <div className="bg-background-500">
       <Helmet>
@@ -117,7 +173,7 @@ const ItSupport = () => {
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
                         <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
-                          <h2 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
+                          <h2 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500 mt-5">
                             IT Support
                           </h2>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
@@ -142,59 +198,62 @@ const ItSupport = () => {
           </div>
 
           {/* body */}
-          <div className="container mx-auto w-full overflow-hidden">
+          <div className="container mx-auto w-full overflow-hidden mt-24">
             <>
               <div className={`flex flex-col gap-5`}>
-                {worksData.map(({ id, title, description, illustration }) => (
-                  <div
-                    className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
-                    key={id}
-                  >
+                {worksData.map(
+                  ({ id, title, description, illustration, sectionId }) => (
                     <div
-                      className={`w-full md:w-1/2 lg:w-1/2 ${
-                        id % 2 === 0 && "order-2"
-                      } `}
+                      className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
+                      key={id}
+                      id={sectionId}
                     >
+                      <div
+                        className={`w-full md:w-1/2 lg:w-1/2 ${
+                          id % 2 === 0 && "order-2"
+                        } `}
+                      >
+                        <ReactVisibilitySensor partialVisibility>
+                          {({ isVisible }) => (
+                            <div
+                              className={` ${
+                                isVisible
+                                  ? "opacity-100 translate-y-0"
+                                  : "translate-y-20 opacity-0"
+                              } duration-1000 `}
+                            >
+                              <h1 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
+                                {title}
+                              </h1>
+                              <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">
+                                {description}
+                              </p>
+                            </div>
+                          )}
+                        </ReactVisibilitySensor>
+                      </div>
                       <ReactVisibilitySensor partialVisibility>
                         {({ isVisible }) => (
                           <div
-                            className={` ${
+                            className={`w-full md:w-1/2 lg:w-1/2 ${
+                              id % 2 === 0 && "order-1"
+                            } ${
                               isVisible
                                 ? "opacity-100 translate-y-0"
                                 : "translate-y-20 opacity-0"
                             } duration-1000 `}
                           >
-                            <h1 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
-                              {title}
-                            </h1>
-                            <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">
-                              {description}
-                            </p>
+                            <img
+                              className="w-4/5 mx-auto"
+                              src={illustration}
+                              alt={title}
+                            />
                           </div>
                         )}
                       </ReactVisibilitySensor>
                     </div>
-                    <ReactVisibilitySensor partialVisibility>
-                      {({ isVisible }) => (
-                        <div
-                          className={`w-full md:w-1/2 lg:w-1/2 ${
-                            id % 2 === 0 && "order-1"
-                          } ${
-                            isVisible
-                              ? "opacity-100 translate-y-0"
-                              : "translate-y-20 opacity-0"
-                          } duration-1000 `}
-                        >
-                          <img
-                            className="w-4/5 mx-auto"
-                            src={illustration}
-                            alt={title}
-                          />
-                        </div>
-                      )}
-                    </ReactVisibilitySensor>
-                  </div>
-                ))}
+                  )
+                )}
               </div>
             </>
           </div>

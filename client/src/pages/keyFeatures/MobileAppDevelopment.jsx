@@ -113,7 +113,6 @@ const MobileAppDevelopment = () => {
   useScrollToTop();
   const location = useLocation();
   const fragment = location.hash.substring(1);
-  console.log("fragment", fragment);
 
   useEffect(() => {
     if (fragment) {
