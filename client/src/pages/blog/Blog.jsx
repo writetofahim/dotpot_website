@@ -212,7 +212,7 @@ const Blog = () => {
   return (
     <>
       <Helmet>
-        <title>Dotpot iT - Blog</title>
+        <title>Dotpot iT - Blog | A Leading Software Company</title>
         <meta
           name="description"
           content="Read the latest articles and news from Dotpot iT's blog. We cover a wide range of topics, including app development, web development, game development, AI development, and blockchain development. We also share tips and advice on how businesses can use technology to improve their operations and achieve their goals."
@@ -332,7 +332,8 @@ const FirstBlog = ({ title, body, image, _id, tags, createdAt, index }) => {
         <div className="p-5">
           <img
             onClick={() => navigate(`/blog/${_id}`)}
-            className="w-full object-cover h-[400px] relative z-10 rounded-xl cursor-pointer"
+            // className="w-full object-cover h-[400px] relative z-10 rounded-xl cursor-pointer"
+            className="w-full aspect-video relative z-10 rounded-xl cursor-pointer"
             src={`${import.meta.env.REACT_APP_SERVER_PATH}/${image}`}
             alt=""
           />
@@ -414,7 +415,7 @@ const BlogCard3 = ({ title, body, image, _id, tags, createdAt, index }) => {
     <div className="md:flex items-center gap-4">
       <div className="md:w-[45%] w-full relative">
         <div
-          className={`absolute top-0 left-0 w-[calc(100%_-_30px)] h-[200px] rounded-xl bg-gradient-to-r ${
+          className={`absolute top-0 left-0 w-[calc(100%_-_30px)] h-[160px] rounded-xl bg-gradient-to-r ${
             index % 2 === 0
               ? "from-[#4289ff] to-[#01fdd6]"
               : "from-[#f9a242] to-[#fe4f5f] "
@@ -424,7 +425,7 @@ const BlogCard3 = ({ title, body, image, _id, tags, createdAt, index }) => {
         <div className="p-4">
           <img
             onClick={() => navigate(`/blog/${_id}`)}
-            className="md:w-[300px] w-full object-cover h-[200px] relative z-10 rounded-xl cursor-pointer"
+            className="w-full aspect-video relative z-10 rounded-xl cursor-pointer"
             src={`${import.meta.env.REACT_APP_SERVER_PATH}/${image}`}
             alt=""
           />

@@ -32,7 +32,7 @@ const AboutUs = () => {
       <Navbar />
       <div className="w-full pt-[15vh]">
         <Helmet>
-          <title>About Us | Dotpot iT</title>
+          <title>About Us | Dotpot iT A Leading Software Company</title>
           <meta
             name="description"
             content="Dotpot iT is a leading IT company providing a wide range of services, including app development, web development, game development, AI development, and more. We offer comprehensive solutions to help businesses optimize operations and stay ahead in the evolving world of technology."

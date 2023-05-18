@@ -48,38 +48,49 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Dotpot iT || Help Business Successful Online</title>
+        <title>
+          Dotpot iT || iT company with Web Development, AI Development, Game
+          Development, App Development, Blockchain Development, and IT Support
+        </title>
         <meta
           name="description"
-          content="Learn about Dotpot iT, a leading IT company providing innovative solutions for businesses."
+          content="Dotpot iT is a leading IT company providing a wide range of services, including app development, web development, game development, AI development, and more. We offer comprehensive solutions to help businesses optimize operations and stay ahead in the evolving world of technology."
         />
         <link rel="canonical" href="https://dotpotit.com/" />
         <meta
           property="og:title"
-          content="Dotpot iT || Help Business Successful Online"
+          content="Dotpot iT | iT company with Web Development, AI Development, Game
+          Development, App Development, Blockchain Development, and IT Support"
         />
         <meta
           property="og:description"
-          content="Learn about Dotpot iT, a leading IT company providing innovative solutions for businesses."
+          content="Dotpot iT is a leading IT company providing a wide range of services, including app development, web development, game development, AI development, and more. We offer comprehensive solutions to help businesses optimize operations and stay ahead in the evolving world of technology."
+        />
+        <meta
+          name="keywords"
+          content="Software Development, Web Development, AI Development, Game Development"
         />
         <meta
           property="og:image"
-          content="https://i.ibb.co/CncFVCL/dotpot.gif"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
-        <meta property="og:url" content="https://dotpotit.com/about" />
+        <meta property="og:url" content="https://dotpotit.com" />
+        <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Dotpot iT || Help Business Successful Online"
+          content="Dotpot iT || iT company with Web Development, AI Development, Game
+          Development, App Development, Blockchain Development, and IT Support"
         />
         <meta
           name="twitter:description"
-          content="Learn about Dotpot iT, a leading IT company providing innovative solutions for businesses."
+          content="Dotpot iT is a leading IT company providing a wide range of services, including app development, web development, game development, AI development, and more. We offer comprehensive solutions to help businesses optimize operations and stay ahead in the evolving world of technology."
         />
         <meta
           name="twitter:image"
-          content="https://i.ibb.co/CncFVCL/dotpot.gif"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
+        <meta property="og:type" content="website" />
       </Helmet>
       <Navbar />
       <Hero />
