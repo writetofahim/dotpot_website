@@ -2,7 +2,10 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import parse from "react-html-parser";
 import ReactVisibilitySensor from "react-visibility-sensor";
-import retail from "../../assets/img/blog_site.png";
+import blogpagecover from "../../assets/img/blogpagecover.png";
+import blogoverview from "../../assets/img/blogoverview.png";
+import benifite from "../../assets/img/benifite.png";
+import choice from "../../assets/img/choice.png";
 import Footer from "../../components/Footer/Footer";
 import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
@@ -17,7 +20,7 @@ const BlogDevelopment = () => {
       title: "Overview",
       description:
         "Dotpot IT offers professional blog site development services with a focus on user experience and engagement. We offer customizable packages starting from $1000 to fit every budget and meet unique requirements. Contact us today to start sharing your message with the world.",
-      illustration: retail,
+      illustration: blogoverview,
     },
     {
       id: 2,
@@ -81,14 +84,14 @@ const BlogDevelopment = () => {
         <br />
         
       </li>`,
-      illustration: retail,
+      illustration: benifite,
     },
     {
       id: 3,
       title: "Why we wil be your best choice?",
       description:
         "Dotpot iT designs custom, user-friendly blog websites optimized for SEO and user experience, helping businesses establish a strong online presence and drive revenue.",
-      illustration: retail,
+      illustration: choice,
     },
   ];
   return (
@@ -169,8 +172,8 @@ const BlogDevelopment = () => {
                           </p>
                         </div>
                         <img
-                          src={retail}
-                          alt="retail "
+                          src={blogpagecover}
+                          alt="Blog Site Development Image"
                           className="w-full md:w-1/2 lg:w-1/2"
                         />
                       </div>

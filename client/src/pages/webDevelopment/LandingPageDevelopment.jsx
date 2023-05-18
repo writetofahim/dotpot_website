@@ -2,10 +2,11 @@ import parse from "html-react-parser";
 import React from "react";
 import { Helmet } from "react-helmet";
 import ReactVisibilitySensor from "react-visibility-sensor";
-import retail from "../../assets/img/landing_page.png";
-import benefites from "../../assets/img/web_development/Zakir_benefites_of_working_with_Dotpot_iT_for_website_developme_04558361-d3e0-49a2-a9a7-84b8946c262e.png";
-import overview from "../../assets/img/web_development/Zakir_overview_of_web_landing_page_6d4efaf1-483e-481d-b78a-2f36f37463d3.png";
-import whyWe from "../../assets/img/web_development/Zakir_why_we_will_be_your_best_choice_illustration_9b54b4e5-8156-4000-9b52-a82ad73d1fbe.png";
+import landingpageovewcover from "../../assets/img/landingpageovewcover.png";
+import landingpageoverview from "../../assets/img/landingpageoverview.png";
+import benifite from "../../assets/img/benifite.png";
+import choice from "../../assets/img/choice.png";
+import smarttechnology from "../../assets/img/smarttechnology.png";
 import Footer from "../../components/Footer/Footer";
 import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
@@ -20,7 +21,7 @@ const LandingPageDevelopment = () => {
       title: "Overview",
       description:
         "Dotpot iT creates custom landing pages optimized for high conversion rates and lead generation. Their team provides top-notch services using the latest technologies and best practices, from conceptualization to ongoing support. Contact them today to take your online marketing to the next level.",
-      illustration: overview,
+      illustration: landingpageoverview,
     },
     {
       id: 2,
@@ -86,14 +87,14 @@ const LandingPageDevelopment = () => {
         <br />
         
       </li>`,
-      illustration: benefites,
+      illustration: benifite,
     },
     {
       id: 3,
       title: "Why we wil be your best choice?",
       description:
         "Dotpot iT offers custom blog website design solutions for engagement and revenue. Our team creates visually stunning and user-friendly sites optimized for SEO and mobile responsiveness. Trust us for high-quality design and exceptional service.",
-      illustration: whyWe,
+      illustration: choice,
     },
     {
       id: 4,
@@ -128,7 +129,7 @@ const LandingPageDevelopment = () => {
       <strong className="font-semibold">Axios:</strong>
       <br />
       </li>`,
-      illustration: retail,
+      illustration: smarttechnology,
     },
   ];
   return (
@@ -210,8 +211,8 @@ const LandingPageDevelopment = () => {
                           </p>
                         </div>
                         <img
-                          src={retail}
-                          alt="retail image"
+                          src={landingpageovewcover}
+                          alt="Landing Page Image"
                           className="w-full md:w-1/2 lg:w-1/2"
                         />
                       </div>
