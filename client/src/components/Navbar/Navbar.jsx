@@ -180,37 +180,37 @@ const Navbar = () => {
       icon: "https://cdn-icons-png.flaticon.com/512/1693/1693746.png",
       submenu: [
         {
-          to: "/industries-we-serve/ai",
+          to: "/key-features/ai-development/#object-recognition",
           title: "Object Recognition",
           icon: "https://cdn-icons-png.flaticon.com/512/8654/8654854.png",
         },
         {
-          to: "/key-features/ai-development",
+          to: "/key-features/ai-development/#text-to-speech",
           title: "Text to speech",
           icon: "https://cdn-icons-png.flaticon.com/512/6805/6805674.png",
         },
         {
-          to: "/industries-we-serve/ai",
+          to: "/key-features/ai-development/#business-intelligence",
           title: "Business Intelligence",
           icon: "https://cdn-icons-png.flaticon.com/512/7458/7458531.png",
         },
         {
-          to: "/key-features/ai-development",
+          to: "/key-features/ai-development/#data-forecasting",
           title: "Data Forecasting",
           icon: "https://cdn-icons-png.flaticon.com/512/9299/9299890.png",
         },
         {
-          to: "/industries-we-serve/ai",
+          to: "/key-features/ai-development/#natural-language-processing",
           title: "Natural Language Processing",
           icon: "https://cdn-icons-png.flaticon.com/512/545/545245.png",
         },
         {
-          to: "/key-features/ai-development",
+          to: "/key-features/ai-development/#data-analytics",
           title: "Data Analytics",
           icon: "https://cdn-icons-png.flaticon.com/512/2782/2782058.png",
         },
         {
-          to: "/key-features/ai-development",
+          to: "/key-features/ai-development/#recommendation-engine",
           title: "Recommendation Engine",
           icon: "https://cdn-icons-png.flaticon.com/512/7766/7766894.png",
         },

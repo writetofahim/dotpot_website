@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import ReactVisibilitySensor from "react-visibility-sensor";
-import NLP from "../../assets/img/NLP.png";
 import aidevelopment from "../../assets/img/aidevelopment.png";
+import businessIntelligence from "../../assets/img/aidevelopment/businessintelligence.png";
+import dataanalytics from "../../assets/img/aidevelopment/dataanalytics.png";
+import dataforcasting from "../../assets/img/aidevelopment/dataforcasting.png";
+import naturalLanguageProcessing from "../../assets/img/aidevelopment/naturallanguageprocessing.png";
+import objectRecognition from "../../assets/img/aidevelopment/objectRecognition.png";
+import recommendationengine from "../../assets/img/aidevelopment/recommendationengine.png";
+import textToSpeech from "../../assets/img/aidevelopment/texttospeech.png";
 import customizedsolutions from "../../assets/img/customizedsolutions.png";
 import datacience from "../../assets/img/datacience.png";
 import intelligentautomation from "../../assets/img/intelligentautomation.png";
 import machinelearning from "../../assets/img/machinelearning.png";
 import predictiveanalytics from "../../assets/img/predictiveanalytics.png";
+
+import { useLocation } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
@@ -17,50 +25,115 @@ import { useScrollToTop } from "../../hooks/useScrollToTop";
 const AiDevelopment = () => {
   const worksData = [
     {
-      id: 1,
+      id: 2,
+      title: "Object Recognition",
+      description:
+        "Object recognition is a computer vision technology that involves identifying and classifying objects within digital images or video streams. It uses machine learning algorithms to analyze visual patterns and features, enabling computers to understand and interpret the content of images. Object recognition has numerous applications, including autonomous vehicles, surveillance systems, augmented reality, and image-based search engines. By accurately detecting and recognizing objects, this technology enables advanced automation, intelligent decision-making, and enhanced user experiences in various domains.",
+      illustration: objectRecognition,
+      sectionId: "object-recognition",
+    },
+    {
+      id: 3,
+      title: "Text to Speech",
+      description:
+        "Text-to-speech is a technology that converts written text into spoken words. It enables computers and devices to generate human-like speech, allowing users to listen to text-based content. Text-to-speech systems find applications in accessibility, language learning, voice assistants, and audio narration. By providing a voice to written content, this technology enhances user engagement, convenience, and inclusivity.",
+      illustration: textToSpeech,
+      sectionId: "text-to-speech",
+    },
+    {
+      id: 4,
+      title: "Business Intelligence",
+      description:
+        "Business intelligence involves the collection, analysis, and presentation of data to support informed decision-making and strategic planning within an organization. It encompasses various techniques, tools, and processes for gathering data from multiple sources, transforming it into meaningful insights, and delivering actionable information to stakeholders. Business intelligence helps businesses gain a competitive edge, optimize operations, identify trends, and make data-driven decisions.",
+      illustration: businessIntelligence,
+      sectionId: "business-intelligence",
+    },
+    {
+      id: 5,
+      title: "Data Forecasting",
+      description:
+        "Data forecasting is a process of predicting future outcomes based on historical data patterns and statistical models. It involves analyzing past data trends, identifying patterns, and using mathematical algorithms to estimate future values. Data forecasting finds applications in sales forecasting, demand planning, financial projections, and resource optimization. By leveraging data-driven predictions, businesses can make proactive decisions, anticipate market changes, and optimize resource allocation.",
+      illustration: dataforcasting,
+      sectionId: "data-forecasting",
+    },
+    {
+      id: 6,
+      title: "Natural Language Processing",
+      description:
+        "Natural Language Processing (NLP) is a branch of artificial intelligence that focuses on the interaction between computers and human language. It involves the processing and analysis of text and speech data to understand and derive meaning from human language. NLP enables applications such as chatbots, language translation, sentiment analysis, and text summarization. By enabling computers to comprehend and respond to human language, NLP facilitates enhanced communication and automation.",
+      illustration: naturalLanguageProcessing,
+      sectionId: "natural-language-processing",
+    },
+    {
+      id: 7,
+      title: "Data Analytics",
+      description:
+        "Data analytics is the process of examining and interpreting data sets to uncover meaningful insights and patterns. It involves applying statistical and mathematical techniques to analyze large volumes of data and extract valuable information. Data analytics provides businesses with the ability to gain actionable insights, make data-driven decisions, and identify opportunities for optimization and growth. It plays a crucial role in various domains, including marketing, finance, healthcare, and operations.",
+      illustration: dataanalytics,
+      sectionId: "data-analytics",
+    },
+    {
+      id: 8,
+      title: "Recommendation Engine",
+      description:
+        "A recommendation engine is an algorithmic system that analyzes user data and behavior to provide personalized recommendations. It is widely used in e-commerce platforms, streaming services, social media, and content platforms. Recommendation engines leverage machine learning and data mining techniques to understand user preferences, identify similar items or content, and generate tailored recommendations. By suggesting relevant and personalized options, recommendation engines enhance user experiences, engagement, and satisfaction.",
+      illustration: recommendationengine,
+      sectionId: "recommendation-engine",
+    },
+    {
+      id: 9,
       title: "Machine Learning",
       description:
         "Unlock the power of your data with Dotpot iT's Machine Learning services. Build predictive models, automate processes, and personalize experiences to drive growth with our experts. Optimize resource allocation, improve decision-making, and stay ahead of the competition. Contact us today to learn more. ",
       illustration: machinelearning,
+      sectionId: "machine-learning",
     },
     {
-      id: 2,
-      title: "Natural Language Processing (NLP)",
-      description:
-        "Revolutionize the way you interact with customers using Dotpot iT's NLP services. Build chatbots, automate support, and extract insights with advanced techniques. Improve response times, increase satisfaction, and reduce costs. Contact us to learn more.",
-      illustration: NLP,
-    },
-    {
-      id: 3,
+      id: 10,
       title: "Predictive Analytics",
       description:
         "Dotpot iT's Predictive Analytics services help you forecast trends, optimize resource allocation, and improve decision-making with advanced machine learning algorithms. Stay ahead of the curve and drive business success with accurate predictions from our team of experts. Contact us today to learn more.",
       illustration: predictiveanalytics,
+      sectionId: "predictive-analytics",
     },
     {
-      id: 4,
+      id: 11,
       title: "Custom Solution",
       description:
         "At Dotpot iT, we offer Custom Solutions services to help you meet your specific business requirements. Our experts work closely with you to develop tailored solutions using advanced technologies such as machine learning, artificial intelligence, and data science. Let us help you optimize your business processes, increase efficiency, and drive growth. Contact us today to learn more.",
       illustration: customizedsolutions,
+      sectionId: "custom-solution",
     },
     {
-      id: 5,
+      id: 12,
       title: "Intelligent Automation",
       description:
         "Dotpot iT's Intelligent Automation services help you automate routine tasks, reduce costs, and increase efficiency using advanced technologies like RPA, ML, and AI. Let us help you transform your business today.",
       illustration: intelligentautomation,
+      sectionId: "intelligent-automation",
     },
     {
-      id: 6,
+      id: 13,
       title: "Data Science",
       description:
         "Dotpot iT's Data Science services help you unlock insights from your data, make informed decisions, and drive business growth with advanced techniques and algorithms. Let us help you transform your business with the power of data science.",
       illustration: datacience,
+      sectionId: "data-science",
     },
   ];
 
   useScrollToTop();
+
+  const location = useLocation();
+  const fragment = location.hash.substring(1);
+
+  useEffect(() => {
+    if (fragment) {
+      const locationElement = document.getElementById(fragment);
+      locationElement?.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [fragment]);
+
   return (
     <div className="bg-background-500">
       <Helmet>
@@ -154,56 +227,59 @@ const AiDevelopment = () => {
           <div className="container mx-auto w-full overflow-hidden">
             <>
               <div className={`flex flex-col gap-5`}>
-                {worksData.map(({ id, title, description, illustration }) => (
-                  <div
-                    className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
-                    key={id}
-                  >
+                {worksData.map(
+                  ({ id, title, description, illustration, sectionId }) => (
                     <div
-                      className={`w-full md:w-1/2 lg:w-1/2 ${
-                        id % 2 === 0 && "order-2"
-                      } `}
+                      className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
+                      key={id}
+                      id={sectionId}
                     >
+                      <div
+                        className={`w-full md:w-1/2 lg:w-1/2 ${
+                          id % 2 === 0 && "order-2"
+                        } `}
+                      >
+                        <ReactVisibilitySensor partialVisibility>
+                          {({ isVisible }) => (
+                            <div
+                              className={` ${
+                                isVisible
+                                  ? "opacity-100 translate-y-0"
+                                  : "translate-y-20 opacity-0"
+                              } duration-1000 `}
+                            >
+                              <h1 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
+                                {title}
+                              </h1>
+                              <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">
+                                {description}
+                              </p>
+                            </div>
+                          )}
+                        </ReactVisibilitySensor>
+                      </div>
                       <ReactVisibilitySensor partialVisibility>
                         {({ isVisible }) => (
                           <div
-                            className={` ${
+                            className={`w-full md:w-1/2 lg:w-1/2 ${
+                              id % 2 === 0 && "order-1"
+                            } ${
                               isVisible
                                 ? "opacity-100 translate-y-0"
                                 : "translate-y-20 opacity-0"
                             } duration-1000 `}
                           >
-                            <h1 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
-                              {title}
-                            </h1>
-                            <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">
-                              {description}
-                            </p>
+                            <img
+                              className="w-4/5 mx-auto"
+                              src={illustration}
+                              alt={title}
+                            />
                           </div>
                         )}
                       </ReactVisibilitySensor>
                     </div>
-                    <ReactVisibilitySensor partialVisibility>
-                      {({ isVisible }) => (
-                        <div
-                          className={`w-full md:w-1/2 lg:w-1/2 ${
-                            id % 2 === 0 && "order-1"
-                          } ${
-                            isVisible
-                              ? "opacity-100 translate-y-0"
-                              : "translate-y-20 opacity-0"
-                          } duration-1000 `}
-                        >
-                          <img
-                            className="w-4/5 mx-auto"
-                            src={illustration}
-                            alt={title}
-                          />
-                        </div>
-                      )}
-                    </ReactVisibilitySensor>
-                  </div>
-                ))}
+                  )
+                )}
               </div>
             </>
           </div>
