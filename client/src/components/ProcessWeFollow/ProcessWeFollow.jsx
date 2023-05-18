@@ -34,9 +34,9 @@ const ProcessWeFollow = () => {
   return (
     <div className="processWeFollow w-full overflow-hidden py-10 md:flex md:flex-col md:justify-center bg-primary-100">
       <div className="p-5 mt-5 w-full md:max-w-[1400px] self-center flex gap-10 flex-wrap items-center justify-center">
-        <h1 className="text-3xl md:text-5xl text-center font-bold w-full mb-5 text-textColor-500">
+        <h2 className="text-3xl md:text-5xl text-center font-bold w-full mb-5 text-textColor-500">
           Process We Follow
-        </h1>
+        </h2>
         {/* {
                     processWeFollowData.map((item, index) => {
                         return (
@@ -46,7 +46,7 @@ const ProcessWeFollow = () => {
                 } */}
         <img
           src={processLg}
-          alt=""
+          alt="process we follow"
           className="md:w-3/4 lg:2/3 hidden md:block"
         />
         {/* <img
@@ -54,7 +54,7 @@ const ProcessWeFollow = () => {
           alt=""
           className="md:w-3/4 lg:2/3 hidden md:block"
         /> */}
-        <img src={processSm} alt="" className="block md:hidden" />
+        <img src={processSm} alt="process we follow" className="block md:hidden" />
       </div>
     </div>
   );

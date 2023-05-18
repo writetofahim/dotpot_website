@@ -59,9 +59,9 @@ const PartnershipModels = () => {
   return (
     <div className="w-full overflow-hidden pt-10 pb-20 md:flex md:flex-col md:justify-center flex-wrap ">
       <div className="p-3 md:p-5 mt-5 w-full md:max-w-[1400px] self-center backdrop-blur-sm">
-        <h1 className="mt-10 text-3xl md:text-5xl text-center font-bold w-full text-textColor-500">
+        <h2 className="mt-10 text-3xl md:text-5xl text-center font-bold w-full text-textColor-500">
           Partnership Models
-        </h1>
+        </h2>
         <p className="text-md text-center text-gray-400 font-bold mt-2">
           Dotpot iT offers partnership models to build long-term relationships
           with clients.

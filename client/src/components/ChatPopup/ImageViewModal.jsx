@@ -34,7 +34,7 @@ export default function BasicModal({ selectedImage, openModal, setOpenModal }) {
 
                     </div>
                     <div className='flex justify-center items-center lg:w-3/5 w-full mx-auto'>
-                        <img src={selectedImage} alt="" />
+                        <img src={selectedImage} alt="selected img" />
                     </div>
                 </Box>
             </Modal>

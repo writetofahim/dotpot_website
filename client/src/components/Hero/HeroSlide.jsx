@@ -60,9 +60,9 @@ export const SingleSlide = (props) => {
     <div className="w-full h-full flex items-center justify-center">
       <div className="md:max-w-[1200px] lg:container flex flex-col-reverse md:flex-row justify-evenly items-center">
         <div className="left mt-5 md:mt-0 flex-1 h-full flex flex-col items-center md:items-start justify-center pl-0 md:pl-10 backdrop-blur-sm">
-          {/* <h1 className="text-3xl md:text-5xl text-center md:text-left font-bold mb-2">
+          {/* <h2 className="text-3xl md:text-5xl text-center md:text-left font-bold mb-2">
             {props.title}
-          </h1> */}
+          </h2> */}
           <Typed
             className="text-3xl md:text-5xl text-center md:text-left font-bold mb-2 text-textColor-500"
             strings={[props.title]}
@@ -75,9 +75,9 @@ export const SingleSlide = (props) => {
           </p>
           <div className="flex justify-center md:justify-start gap-5 items-center mb-5">
             {/* <div className="pr-5 border-r border-gray-300">
-                  <h1 className="text-4xl text-textColor-500 font-bold">
+                  <h2 className="text-4xl text-textColor-500 font-bold">
                     #1
-                  </h1>
+                  </h2>
                 </div> */}
             <p className="md:w-2/3 w-4/5 text-sm md:text-xl text-center md:text-left text-textColor-500">
               {props.description}

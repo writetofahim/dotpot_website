@@ -165,7 +165,7 @@ const CustomizeYourService = () => {
     return (
         <div className='w-full h-[100vh] md:h-auto bg-background-500 overflow-hidden py-10 md:flex md:flex-col md:items-center'>
             <div className="container p-0 md:p-5">
-                <h1 className="mt-10 text-5xl md:text-6xl font-bold text-textColor-500 px-5">Cutomize Your Service</h1>
+                <h2 className="mt-10 text-5xl md:text-6xl font-bold text-textColor-500 px-5">Cutomize Your Service</h2>
 
 
                 {/* Main Section */}
@@ -195,7 +195,7 @@ const CustomizeYourService = () => {
                                 {
                                     technology.id !== null && (
                                         <div className='flex'>
-                                            <h1 className="text-sm">Selected services</h1>
+                                            <h2 className="text-sm">Selected services</h2>
                                             <div className="w-full flex items-center gap-3">
                                                 {
                                                     <div key={technology} className="flex items-center gap-2 py-1 px-2 border  cursor-pointer hover:border-secondary-500 hover:text-textColor-500 hover:scale-110 transition-all"

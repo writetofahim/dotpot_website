@@ -27,7 +27,7 @@ const NavbarJob = () => {
         <nav className="w-full flex justify-between items-center p-4 z-999 bg-background-500" id="nav">
             <div className="md:flex-[0.5] flex-initial justify-center items-center">
                 <Link to='/'>
-                    <img src={logo} alt="" className="w-60" />
+                    <img src={logo} alt="logo" className="w-60" />
                 </Link>
                 {/* <p className="text-gray-500 hover:text-primary-400 hidden md:hidden lg:block italic">We make your Business Successfull</p> */}
             </div>

@@ -44,7 +44,7 @@ const TechnologiesTab = (props) => {
             >
               <img
                 src={obj.img}
-                alt=""
+                alt="technology tab"
                 className="h-[70px] w-[70px] object-contain"
               />
             </div>

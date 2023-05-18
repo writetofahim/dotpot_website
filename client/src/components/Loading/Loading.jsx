@@ -7,11 +7,11 @@ const Loading = () => {
       {/* <img src={high} alt="" className="w-[60%] md:w-[40%]" /> */}
       <img
         src="https://i.gifer.com/origin/d3/d3f472b06590a25cb4372ff289d81711_w200.gif"
-        alt=""
+        alt="loading"
       />
       <img
         src="https://i.ibb.co/CncFVCL/dotpot.gif"
-        alt=""
+        alt="loading"
         className="w-1/2 md:w-2/5"
       />
       <Typed

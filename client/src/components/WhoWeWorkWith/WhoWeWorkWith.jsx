@@ -28,7 +28,7 @@ export const Card = (props) => {
       <div className="flex flex-col gap-5 items-center justify-center">
         <img
           src={props.icon}
-          alt=""
+          alt="icon"
           className="w-[50px] md:w-[80px] md:h-[80px] h-[50px] object-contain"
         />
         <h3 className="text-md md:text-xl font-bold text-center text-gray-400">
@@ -60,7 +60,7 @@ const WhoWeWorkWith = () => {
     <div className="whoWeWorWith w-full min-h-[60vh] overflow-hidden py-10 md:flex md:flex-col md:justify-center md:items-center bg-primary-100 ">
       <div className="mt-5 w-full md:max-w-[1400px]  flex flex-col lg:flex-row md:flex-row gap-5 items-center">
         <div className="left w-1/1 md:w-1/3 lg:2/3 h-max p-5 text-left">
-          <h1 className="text-3xl md:text-5xl text-center md:text-left font-bold mb-5 text-textColor-500">
+          <h2 className="text-3xl md:text-5xl text-center md:text-left font-bold mb-5 text-textColor-500">
             <Typed
               className="text-3xl md:text-4xl text-center md:text-left font-bold mb-2"
               strings={[whoDoWeWorkData.title]}
@@ -68,7 +68,7 @@ const WhoWeWorkWith = () => {
               backSpeed={50}
               loop
             />
-          </h1>
+          </h2>
           <p className="text-justify text-md md:text-lg text-textColor-500">
             {whoDoWeWorkData.desc}
           </p>

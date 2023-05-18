@@ -90,7 +90,7 @@ export const SingleSlide = (props) => {
             src={`${import.meta.env.REACT_APP_SERVER_PATH}/${
               props.client_image
             }`}
-            alt=""
+            alt="client img"
             className="md:rounded-tl-xl md:rounded-bl-xl aspect-square object-cover md:h-full "
           />
         </div>

@@ -193,7 +193,7 @@ const ChatPopup = () => {
                 src={
                   "https://myadhp.aadharhousing.com/csr_portal/public/images/crm-main.gif"
                 }
-                alt=""
+                alt="chat gif"
               />
               <p className="text-sm text-center mb-2 text-textColor-500">
                 Dotpot iT Customer Support
@@ -215,7 +215,7 @@ const ChatPopup = () => {
                         ? "https://cdn-icons-png.flaticon.com/512/2706/2706962.png"
                         : "https://cdn-icons-png.flaticon.com/512/1077/1077012.png"
                     }
-                    alt=""
+                    alt="chat img"
                   />
                 </div>
                 <div className={`w-[75%] flex flex-col my-2`}>
@@ -262,7 +262,7 @@ const ChatPopup = () => {
                           src={`${import.meta.env.REACT_APP_SERVER_PATH}/${
                             message.attachment
                           }`}
-                          alt=""
+                          alt="chat attachment"
                         />
                       )
                     )}

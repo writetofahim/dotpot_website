@@ -452,9 +452,9 @@ const CustomizeService = () => {
 
       <div className="container">
         <div className="backdrop-blur-sm">
-          <h1 className="text-3xl md:text-5xl text-center  font-bold text-textColor-500">
+          <h2 className="text-3xl md:text-5xl text-center  font-bold text-textColor-500">
             Customize Your Services
-          </h1>
+          </h2>
           <p className="text-center text-lg font-bold text-gray-400 my-5">
             Use our tool to select your desired product and services and receive
             an estimated quote.
@@ -501,7 +501,7 @@ const CustomizeService = () => {
                   (item?.technologies?.length > 0 ||
                     item?.addons?.length > 0) && (
                     <div key={index} className="flex items-center gap-2 mt-1">
-                      <img src={item.icon} alt="" className="w-7 h-7" />
+                      <img src={item.icon} alt="custom img" className="w-7 h-7" />
                       <p className="text-textColor-500">:</p>
                       <div className="border-r-gray-500 flex flex-wrap items-center gap-2 cursor-pointer">
                         {item.technologies.map((tech, index) => (
