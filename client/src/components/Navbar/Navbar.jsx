@@ -15,7 +15,7 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { HiMenuAlt4 } from "react-icons/hi";
 import { IoIosArrowDown } from "react-icons/io";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import axios from "../../utils/axiosInstance";
 import CommonModal from "../CommonModal/CommonModal";
@@ -342,6 +342,29 @@ const Navbar = () => {
     },
   ];
 
+  const [isServiceActive, setIsServiceActive] = useState(false);
+
+  const currentLocation = useLocation();
+
+  useEffect(() => {
+    const submenuTo = services.flatMap((service) =>
+      service.submenu.map((sub) => sub.to)
+    );
+    const selectedPagePath = submenuTo
+      .map((to) => {
+        if (to.indexOf("#") > -1) {
+          return to.slice(0, to.indexOf("#"));
+        }
+        return to;
+      })
+      .find((to) => to.includes(currentLocation.pathname));
+    if (selectedPagePath === currentLocation.pathname) {
+      setIsServiceActive(true);
+    } else {
+      setIsServiceActive(false);
+    }
+  }, [currentLocation.pathname]);
+
   return (
     <>
       {open && (
@@ -406,7 +429,9 @@ const Navbar = () => {
             <div className={"relative w-max"}>
               <li
                 ref={serviceButtonRef}
-                className={` mx-4 cursor-pointer uppercase font-bold text-lg hover:scale-110 lg:text-gray-400 hover:text-secondary-400 flex gap-2 items-center`}
+                className={` mx-4 cursor-pointer uppercase font-bold text-lg hover:scale-110 lg:text-gray-400 hover:text-secondary-400 flex gap-2 items-center ${
+                  isServiceActive && "lg:text-secondary-400 text-white"
+                }`}
                 onClick={() => setIsSubmenuOpen((p) => !p)}
                 onMouseEnter={() => setIsSubmenuOpen((p) => !p)}
               >
