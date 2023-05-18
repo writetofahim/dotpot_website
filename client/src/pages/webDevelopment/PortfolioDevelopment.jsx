@@ -3,7 +3,10 @@ import { Helmet } from "react-helmet";
 import parse from "react-html-parser";
 import ReactVisibilitySensor from "react-visibility-sensor";
 import overview from "../../assets/img/portfolio/overview.png";
-import retail from "../../assets/img/portfolioDev.png";
+import portfolio from "../../assets/img/portfolio.svg";
+import engaging from "../../assets/img/engaging.svg";
+import professional from "../../assets/img/professional.svg";
+import userFriendly from "../../assets/img/userFriendly.svg";
 import Footer from "../../components/Footer/Footer";
 import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
@@ -24,30 +27,30 @@ const PortfolioDevelopment = () => {
       id: 2,
       title: "User-friendly Portfolio Navigation",
       description: `User-friendly portfolio navigation is organizing a portfolio website to be easy to navigate and improve user experience by quickly finding information.`,
-      illustration: retail,
+      illustration: userFriendly,
     },
     {
       id: 3,
       title: "Professional Portfolio Development",
       description:
         "Professional portfolio development involves creating a high-quality collection of work samples and showcasing them in a visually appealing and organized manner.",
-      illustration: retail,
+      illustration: professional,
     },
     {
       id: 4,
       title: "Engaging Portfolio Design",
       description:
         "Engaging portfolio design involves creating a visually attractive and interactive layout for showcasing work samples that captivates and retains the viewer's attention.",
-      illustration: retail,
+      illustration: engaging,
     },
   ];
   return (
     <div className="bg-background-500">
       <Helmet>
-        <title>Portfolio Development| Dotpot iT a leading it company</title>
+        <title>Portfolio Development| Dotpot iT a leading it Company</title>
         <meta
           name="description"
-          content="Learn about Portfolio Development iT, a leading IT company providing innovative solutions for businesses.visit website for details"
+          content="Dotpot iT provides modern and attractive Portfolio web development service to showcase your skills "
         />
         <link
           rel="canonical"
@@ -109,18 +112,18 @@ const PortfolioDevelopment = () => {
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
                         <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
-                          <h1 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
+                          <h2 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
                             Portfolio Development
-                          </h1>
+                          </h2>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
                             Showcasing Your Skills: Building a Strong Portfolio
                             by Us
                           </p>
                         </div>
                         <img
-                          src={retail}
-                          alt={"retail image"}
-                          className="w-full md:w-1/2 lg:w-1/2"
+                          src={portfolio}
+                          alt={"portfolio image"}
+                          className="w-[90%] md:w-1/2 lg:w-1/2"
                         />
                       </div>
                     </div>
