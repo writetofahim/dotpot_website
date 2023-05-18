@@ -49,7 +49,7 @@ const Home = () => {
     <>
       <Helmet>
         <title>
-          Dotpot iT || iT company with Web Development, AI Development, Game
+          Dotpot iT | iT company with Web Development, AI Development, Game
           Development, App Development, Blockchain Development, and IT Support
         </title>
         <meta

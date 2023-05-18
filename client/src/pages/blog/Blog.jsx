@@ -39,7 +39,7 @@ const BlogCard = (props) => {
         <img
           className="object-cover w-full lg:mx-6 lg:w-1/2 rounded-xl h-72 lg:h-96"
           src={`${import.meta.env.REACT_APP_SERVER_PATH}/${props.image}`}
-          alt=""
+          alt="dotpot it logo | software developer company website"
         />
 
         <div className="lg:w-1/2 lg:mt-0 lg:mx-6 ">
@@ -258,7 +258,10 @@ const Blog = () => {
                             ))
                         }
                     </div> */}
-          <div className="container lg:grid lg:grid-cols-2 grid-cols-1 gap-5 lg:space-y-0 space-y-5 md:gap-10 justify-center lg:p-5 p-3 flex-wrap text-textColor-500">
+          <di
+            v
+            className="container lg:grid lg:grid-cols-2 grid-cols-1 gap-5 lg:space-y-0 space-y-5 md:gap-10 justify-center lg:p-5 p-3 flex-wrap text-textColor-500"
+          >
             {data && <FirstBlog {...data[0]} />}
             {data &&
               data
@@ -266,7 +269,7 @@ const Blog = () => {
                 .map((item, index) => (
                   <BlogCard3 key={item._id + index} {...item} index={index} />
                 ))}
-          </div>
+          </di>
 
           {/* Pagination Start */}
           <div className="flex justify-center mt-5 mb-5">
@@ -335,7 +338,7 @@ const FirstBlog = ({ title, body, image, _id, tags, createdAt, index }) => {
             // className="w-full object-cover h-[400px] relative z-10 rounded-xl cursor-pointer"
             className="w-full aspect-video relative z-10 rounded-xl cursor-pointer"
             src={`${import.meta.env.REACT_APP_SERVER_PATH}/${image}`}
-            alt=""
+            alt={title}
           />
         </div>
 
@@ -351,9 +354,21 @@ const FirstBlog = ({ title, body, image, _id, tags, createdAt, index }) => {
         <p className="my-3 text-textColor-500">
           {moment(new Date(createdAt)).format("MMM Do YY")}
         </p>
-        <p className="my-3 text-textColor-500">{slicedString}...</p>
+        <p className="my-3 text-textColor-500">
+          {slicedString}...{" "}
+          <Link
+            className="text-secondary-300 cursor-pointer hover:text-secondary-600"
+            to={`/blog/${_id}`}
+          >
+            Read more
+          </Link>{" "}
+        </p>
         <div className="flex items-center gap-2">
-          <img className="w-4 " src={dotpotiTLogo} alt="" />
+          <img
+            className="w-4 "
+            src={dotpotiTLogo}
+            alt="dotpot it logo | software developer company website"
+          />
           <p className="font-bold">Dotpot iT</p>
         </div>
       </div>
@@ -415,7 +430,7 @@ const BlogCard3 = ({ title, body, image, _id, tags, createdAt, index }) => {
     <div className="md:flex items-center gap-4">
       <div className="md:w-[45%] w-full relative">
         <div
-          className={`absolute top-0 left-0 w-[calc(100%_-_30px)] h-[160px] rounded-xl bg-gradient-to-r ${
+          className={`absolute top-0 left-0 w-[calc(100%_-_30px)] md:h-[16vh] h-[160px] rounded-xl bg-gradient-to-r ${
             index % 2 === 0
               ? "from-[#4289ff] to-[#01fdd6]"
               : "from-[#f9a242] to-[#fe4f5f] "
@@ -427,7 +442,7 @@ const BlogCard3 = ({ title, body, image, _id, tags, createdAt, index }) => {
             onClick={() => navigate(`/blog/${_id}`)}
             className="w-full aspect-video relative z-10 rounded-xl cursor-pointer"
             src={`${import.meta.env.REACT_APP_SERVER_PATH}/${image}`}
-            alt=""
+            alt={title}
           />
         </div>
       </div>
@@ -441,9 +456,21 @@ const BlogCard3 = ({ title, body, image, _id, tags, createdAt, index }) => {
         <p className="my-3 text-slate-500">
           {moment(new Date(createdAt)).format("MMM Do YY")}
         </p>
-        <p className="my-3 text-slate-500">{slicedString}...</p>
+        <p className="my-3 text-slate-500">
+          {slicedString}...{" "}
+          <Link
+            className="text-secondary-300 cursor-pointer hover:text-secondary-600"
+            to={`/blog/${_id}`}
+          >
+            Read more
+          </Link>
+        </p>
         <div className="flex items-center gap-2">
-          <img className="w-4 " src={dotpotiTLogo} alt="" />
+          <img
+            className="w-4 "
+            src={dotpotiTLogo}
+            alt="dotpot it logo | software developer company website"
+          />
           <p className="font-bold">Dotpot iT</p>
         </div>
       </div>

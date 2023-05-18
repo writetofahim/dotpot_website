@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { FaSpinner } from "react-icons/fa";
 import { RxPerson } from "react-icons/rx";
 import { Link, useNavigate } from "react-router-dom";
@@ -120,7 +121,7 @@ const Register = () => {
               <input
                 name="username"
                 type="text"
-                className="block w-full py-3 text-gray-700 bg-background-500 border rounded-lg px-11 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300"
+                className="block w-full py-3 text-gray-700 bg-background-500 border rounded-lg px-11 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300"
                 placeholder="Full Name"
                 required
               />
@@ -147,7 +148,7 @@ const Register = () => {
               <input
                 name="email"
                 type="email"
-                className="block w-full py-3 text-gray-700 bg-background-500 border rounded-lg px-11 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300"
+                className="block w-full py-3 text-gray-700 bg-background-500 border rounded-lg px-11 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300"
                 placeholder="Email address"
                 required
               />
@@ -174,7 +175,7 @@ const Register = () => {
               <input
                 name="password"
                 type="password"
-                className="block w-full py-3 text-gray-700 bg-background-500 border rounded-lg px-11 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300"
+                className="block w-full py-3 text-gray-700 bg-background-500 border rounded-lg px-11 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300"
                 placeholder="Password"
                 required
               />
@@ -201,7 +202,7 @@ const Register = () => {
               <input
                 name="confirmPassword"
                 type="password"
-                className="block w-full py-3 text-gray-700 bg-background-500 border rounded-lg px-11 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300"
+                className="block w-full py-3 text-gray-700 bg-background-500 border rounded-lg px-11 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300"
                 placeholder="Confirm Password"
                 required
               />
