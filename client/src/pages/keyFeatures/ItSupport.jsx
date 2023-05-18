@@ -2,6 +2,12 @@ import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { useLocation } from "react-router-dom";
 import ReactVisibilitySensor from "react-visibility-sensor";
+import cloudcomputing from "../../assets/img/itsupport/cloudcomputing.png";
+import database from "../../assets/img/itsupport/database.png";
+import cybersequrity from "../../assets/img/itsupport/cybersequrity.png";
+import itcouncil from "../../assets/img/itsupport/itcouncil.png";
+import projectmanagement from "../../assets/img/itsupport/projectmanagement.png";
+import technicalsupport from "../../assets/img/itsupport/technicalsupport.png";
 import appmaintenance from "../../assets/img/appmaintenance.png";
 import appstore from "../../assets/img/appstore.png";
 import crossplatform from "../../assets/img/crossplatform.png";
@@ -21,7 +27,7 @@ const ItSupport = () => {
       title: "Cloud Computing",
       description:
         "Cloud computing delivers computing services over the internet, providing flexible and scalable access to storage, databases, software, and applications. It offers businesses cost efficiency and the ability to scale resources as needed, allowing them to focus on core activities while relying on reliable cloud service providers.",
-      illustration: customizedsolutions,
+      illustration: cloudcomputing,
       sectionId: "cloud-computing",
     },
     {
@@ -29,7 +35,7 @@ const ItSupport = () => {
       title: "Database Administration",
       description:
         "Database administration involves managing and maintaining databases within an organization. It includes tasks like designing databases, ensuring data integrity and security, optimizing performance, and troubleshooting. Database administrators play a crucial role in efficient data storage, retrieval, and manipulation in various applications and systems.",
-      illustration: customizedsolutions,
+      illustration: database,
       sectionId: "database-administration",
     },
     {
@@ -37,7 +43,7 @@ const ItSupport = () => {
       title: "Cybersecurity",
       description:
         "Dotpot iT's cybersecurity service safeguards your digital assets and protects your business from online threats. We assess your security measures, identify vulnerabilities, and implement robust solutions. From advanced threat detection to secure network configurations and data encryption, our comprehensive cybersecurity strategies keep your business secure in the digital world.",
-      illustration: customizedsolutions,
+      illustration: cybersequrity,
       sectionId: "cybersecurity",
     },
     {
@@ -45,7 +51,7 @@ const ItSupport = () => {
       title: "IT Consulting",
       description:
         "Dotpot iT provides top-notch IT consulting services to help businesses leverage technology for strategic advantage. Our experienced consultants offer tailored recommendations and insights to optimize IT infrastructure, streamline operations, and drive growth. Whether it's technology adoption, digital transformation, or IT project management, we deliver effective solutions that maximize your investments.",
-      illustration: customizedsolutions,
+      illustration: itcouncil,
       sectionId: "it-consulting",
     },
     {
@@ -53,7 +59,7 @@ const ItSupport = () => {
       title: "Project Management",
       description:
         "Dotpot iT offers comprehensive project management services to ensure successful execution of your IT initiatives. Our skilled project managers utilize industry-standard methodologies and best practices to plan, execute, and monitor projects. With effective communication, stakeholder engagement, and risk management, we deliver projects on time and within budget.",
-      illustration: customizedsolutions,
+      illustration: projectmanagement,
       sectionId: "project-management",
     },
     {
@@ -61,7 +67,7 @@ const ItSupport = () => {
       title: "Technical Support",
       description:
         "Dotpot iT provides reliable technical support services to ensure smooth operation and optimal performance of your IT systems. Our experienced team is available to troubleshoot issues and provide timely solutions. With flexible support options and knowledgeable experts, we minimize downtime and disruptions to keep your business running smoothly.",
-      illustration: customizedsolutions,
+      illustration: technicalsupport,
       sectionId: "technical-support",
     },
     {
@@ -173,9 +179,9 @@ const ItSupport = () => {
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
                         <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
-                          <h2 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500 mt-5">
+                          <h1 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500 mt-5">
                             IT Support
-                          </h2>
+                          </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
                             Dotpot iT offers reliable IT support for businesses
                             of all sizes. Our experienced team provides fast and
