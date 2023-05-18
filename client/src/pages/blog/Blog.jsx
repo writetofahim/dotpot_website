@@ -426,11 +426,12 @@ const BlogCard3 = ({ title, body, image, _id, tags, createdAt, index }) => {
   const parsedArray = ReactHtmlParser(body);
   const parsedString = renderToString(parsedArray); // convert array to string of HTML
   const slicedString = stripTags(parsedString).slice(0, 100);
+
   return (
     <div className="md:flex items-center gap-4">
       <div className="md:w-[45%] w-full relative">
         <div
-          className={`absolute top-0 left-0 w-[calc(100%_-_30px)] md:h-[16vh] h-[160px] rounded-xl bg-gradient-to-r ${
+          className={`absolute top-0 left-0 w-[calc(100%_-_30px)] aspect-video rounded-xl bg-gradient-to-r ${
             index % 2 === 0
               ? "from-[#4289ff] to-[#01fdd6]"
               : "from-[#f9a242] to-[#fe4f5f] "
