@@ -2,7 +2,10 @@ import parse from "html-react-parser";
 import React from "react";
 import { Helmet } from "react-helmet";
 import ReactVisibilitySensor from "react-visibility-sensor";
-import retail from "../../assets/img/ecommarceweb.png";
+import ecommarcecover from "../../assets/img/ecommarcecover.png";
+import ecomovervoew from "../../assets/img/ecomovervoew.png";
+import benifite from "../../assets/img/benifite.png";
+import choice from "../../assets/img/choice.png";
 import Footer from "../../components/Footer/Footer";
 import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
@@ -16,7 +19,7 @@ const Retail = () => {
       title: "Overview",
       description:
         "Dotpot is a web design and development agency specializing in Retail & E-Commerce businesses. They offer customized web solutions, including design, development, e-commerce development, and maintenance. Their team uses modern technology to create visually appealing, user-friendly, and responsive websites optimized for search engines. Dotpot aims to enhance online visibility, user experience, and customer engagement for their clients.",
-      illustration: retail,
+      illustration: ecomovervoew,
     },
     {
       id: 2,
@@ -83,14 +86,14 @@ const Retail = () => {
         
       </li>
 `,
-      illustration: retail,
+      illustration: benifite,
     },
     {
       id: 3,
       title: "Why we wil be your best choice?",
       description:
         "Dotpot iT offers world-class blog website design solutions that drive engagement and revenue. Our experienced team creates custom, visually stunning, and user-friendly blog websites optimized for search engine rankings, mobile responsiveness, and user experience. Trust us to exceed your expectations with high-quality design solutions and exceptional customer service. Let Dotpot iT help you establish a strong online presence with a professional blog website design.",
-      illustration: retail,
+      illustration: choice,
     },
   ];
   useScrollToTop();
@@ -102,10 +105,7 @@ const Retail = () => {
           name="description"
           content="Dotpot is a web design and development agency focused on Retail & E-Commerce. They provide tailored web solutions, from design and development to e-commerce and maintenance. With modern tech, they create visually appealing, user-friendly, and SEO-optimized sites, aiming to boost online visibility, engagement, and user experience."
         />
-        <link
-          rel="canonical"
-          href="https://dotpotit.com/industries-we-serve/retail-ecommerce"
-        />
+        <link rel="canonical" href="https://dotpotit.com/industries-we-serve/retail-ecommerce" />
         <meta property="og:title" content="Retail, Ecommerce | Dotpot iT" />
         <meta
           property="og:description"
@@ -120,10 +120,7 @@ const Retail = () => {
           content="Software development company, Retail & E-Commerce businesses, e-commerce development."
         />
         <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content="https://dotpotit.com/industries-we-serve/retail-ecommerce"
-        />
+        <meta property="og:url" content="https://dotpotit.com/industries-we-serve/retail-ecommerce" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Retail, Ecommerce | Dotpot iT" />
         <meta
@@ -138,9 +135,8 @@ const Retail = () => {
       <Navbar />
 
       <div
-        className={` pt-[15vh] ${
-          window.innerWidth > 1280 ? "md:pt-[11vh]" : "md:pt-[15vh]"
-        } `}
+        className={` pt-[15vh] ${window.innerWidth > 1280 ? "md:pt-[11vh]" : "md:pt-[15vh]"
+          } `}
       >
         <NavigatorComponent navigationData={navigationData} />
         <div>
@@ -150,11 +146,10 @@ const Retail = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`mt-10 mb-16 ${
-                      isVisible
-                        ? "opacity-100 translate-y-0"
-                        : "translate-y-20 opacity-0"
-                    } duration-1000 `}
+                    className={`mt-10 mb-16 ${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 `}
                   >
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
@@ -163,17 +158,11 @@ const Retail = () => {
                             Retail & E-Commerce
                           </h1>
                           <h2 className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            Dotpot is a web design and development agency
-                            focused on Retail & E-Commerce. They provide
-                            tailored web solutions, from design and development
-                            to e-commerce and maintenance. With modern tech,
-                            they create visually appealing, user-friendly, and
-                            SEO-optimized sites, aiming to boost online
-                            visibility, engagement, and user experience.
+                          Dotpot is a web design and development agency focused on Retail & E-Commerce. They provide tailored web solutions, from design and development to e-commerce and maintenance. With modern tech, they create visually appealing, user-friendly, and SEO-optimized sites, aiming to boost online visibility, engagement, and user experience.
                           </h2>
                         </div>
                         <img
-                          src={retail}
+                          src={ecommarcecover}
                           alt="Retail & E-Commerce Image"
                           className="w-full md:w-1/2 lg:w-1/2"
                         />
@@ -195,18 +184,16 @@ const Retail = () => {
                     className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
                   >
                     <div
-                      className={`w-full md:w-1/2 lg:w-1/2 ${
-                        id % 2 === 0 && "order-2"
-                      } `}
+                      className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
+                        } `}
                     >
                       <ReactVisibilitySensor partialVisibility>
                         {({ isVisible }) => (
                           <div
-                            className={` ${
-                              isVisible
-                                ? "opacity-100 translate-y-0"
-                                : "translate-y-20 opacity-0"
-                            } duration-1000 `}
+                            className={` ${isVisible
+                              ? "opacity-100 translate-y-0"
+                              : "translate-y-20 opacity-0"
+                              } duration-1000 `}
                           >
                             <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
                               {title}
@@ -221,13 +208,11 @@ const Retail = () => {
                     <ReactVisibilitySensor partialVisibility>
                       {({ isVisible }) => (
                         <div
-                          className={`w-full md:w-1/2 lg:w-1/2 ${
-                            id % 2 === 0 && "order-1"
-                          } ${
-                            isVisible
+                          className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
+                            } ${isVisible
                               ? "opacity-100 translate-y-0"
                               : "translate-y-20 opacity-0"
-                          } duration-1000 `}
+                            } duration-1000 `}
                         >
                           <img
                             className="w-4/5 mx-auto"
