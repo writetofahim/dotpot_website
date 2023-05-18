@@ -2,7 +2,9 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import parse from "react-html-parser";
 import ReactVisibilitySensor from "react-visibility-sensor";
-import retail from "../../assets/img/EC.png";
+import ecommarcecover from "../../assets/img/ecommarcecover.png";
+import ecomovervoew from "../../assets/img/ecomovervoew.png";
+import benifite from "../../assets/img/benifite.png";
 import Footer from "../../components/Footer/Footer";
 import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
@@ -17,7 +19,7 @@ const EcommerceDevelopment = () => {
       title: "Overview",
       description:
         "Dotpot IT offers budget-friendly E-Commerce website development services focused on user experience. Their team provides guidance throughout the process and post-launch support.",
-      illustration: retail,
+      illustration: ecomovervoew,
     },
     {
       id: 2,
@@ -44,7 +46,7 @@ const EcommerceDevelopment = () => {
         We provide full support from initial consultation to post-launch maintenance and updates for your peace of mind.
 
       </li>`,
-      illustration: retail,
+      illustration: benifite,
     },
   ];
   return (
@@ -129,7 +131,7 @@ const EcommerceDevelopment = () => {
                           </p>
                         </div>
                         <img
-                          src={retail}
+                          src={ecommarcecover}
                           alt="retail business"
                           className="w-full md:w-1/2 lg:w-1/2"
                         />
