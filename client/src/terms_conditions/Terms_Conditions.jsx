@@ -10,7 +10,7 @@ const Terms_Conditions = () => {
   return (
     <div className="w-full">
       <Helmet>
-        <title>Terms and Condition | Dotpot iT</title>
+        <title>Terms and Condition | Dotpot iT a leading it company</title>
         <meta
           name="description"
           content="Learn about Dotpot iT, a leading IT company providing innovative solutions for businesses."

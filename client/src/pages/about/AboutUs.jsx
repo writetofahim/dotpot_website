@@ -11,11 +11,8 @@ import Typed from "react-typed";
 import ContactInfo from "../../components/ContactInfo/ContactInfo";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
-import PartnershipModels from "../../components/PartnershipModels/PartnershipModels";
-import ProcessWeFollow from "../../components/ProcessWeFollow/ProcessWeFollow";
 import RecentWorks from "../../components/RecentWorks/RecentWorks";
 import SocialMedia from "../../components/SocialMedia/SocialMedia";
-import WhoWeWorkWith from "../../components/WhoWeWorkWith/WhoWeWorkWith";
 
 import Particle from "../../components/Hero/Particle";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
@@ -32,20 +29,20 @@ const AboutUs = () => {
       <Navbar />
       <div className="w-full pt-[15vh]">
         <Helmet>
-          <title>About Us | Dotpot iT A Leading Software Company</title>
+          <title>About Us | Dotpot iT A iT company</title>
           <meta
             name="description"
-            content="Dotpot iT is a leading IT company providing a wide range of services, including app development, web development, game development, AI development, and more. We offer comprehensive solutions to help businesses optimize operations and stay ahead in the evolving world of technology."
+            content="Dotpot iT provides web development, AI, game, app, and blockchain development, along with comprehensive IT support services. Contact us now."
           />
           <link rel="canonical" href="https://dotpotit.com/about" />
           <meta property="og:title" content="About Us | Dotpot iT" />
           <meta
             property="og:description"
-            content="Dotpot iT is a leading IT company providing a wide range of services, including app development, web development, game development, AI development, and more. We offer comprehensive solutions to help businesses optimize operations and stay ahead in the evolving world of technology."
+            content="Dotpot iT provides web development, AI, game, app, and blockchain development, along with comprehensive IT support services. Contact us now."
           />
           <meta
             name="keywords"
-            content="Machine learning development, Unity game development, eCommerce development, agile software development, cloud-based solutions"
+            content="it company, web development, app development, it supports"
           />
           <meta
             property="og:image"
@@ -57,7 +54,7 @@ const AboutUs = () => {
           <meta name="twitter:title" content="About Us | Dotpot iT" />
           <meta
             name="twitter:description"
-            content="Dotpot iT is a leading IT company providing a wide range of services, including app development, web development, game development, AI development, and more. We offer comprehensive solutions to help businesses optimize operations and stay ahead in the evolving world of technology."
+            content="Dotpot iT provides web development, AI, game, app, and blockchain development, along with comprehensive IT support services. Contact us now."
           />
           <meta
             name="twitter:image"
@@ -75,9 +72,9 @@ const AboutUs = () => {
 
         <ContactInfo />
 
-        <ProcessWeFollow />
-        <PartnershipModels />
-        <WhoWeWorkWith />
+        {/* <ProcessWeFollow /> */}
+        {/* <PartnershipModels /> */}
+        {/* <WhoWeWorkWith /> */}
         <RecentWorks />
         <SocialMedia />
         {/* <GoogleMap /> */}

@@ -11,13 +11,19 @@ const Logistics = () => {
   return (
     <div>
       <Helmet>
-        <title>Logistics & Distribution | Dotpot iT</title>
+        <title>Logistics & Distribution | Dotpot iT a leading it company</title>
         <meta
           name="description"
           content="Revolutionize your logistics & distribution business with Dotpot IT's customized web solutions. Streamline operations for optimal efficiency and exponential growth. "
         />
-        <link rel="canonical" href="https://dotpotit.com/industries-we-serve/logistics" />
-        <meta property="og:title" content="Logistics & Distribution | Dotpot iT" />
+        <link
+          rel="canonical"
+          href="https://dotpotit.com/industries-we-serve/logistics"
+        />
+        <meta
+          property="og:title"
+          content="Logistics & Distribution | Dotpot iT"
+        />
         <meta
           property="og:description"
           content="Revolutionize your logistics & distribution business with Dotpot IT's customized web solutions. Streamline operations for optimal efficiency and exponential growth. "
@@ -31,9 +37,15 @@ const Logistics = () => {
           content="Software development company, Supply Chain Management, Warehousing Solutions."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://dotpotit.com/industries-we-serve/logistics" />
+        <meta
+          property="og:url"
+          content="https://dotpotit.com/industries-we-serve/logistics"
+        />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Logistics & Distribution | Dotpot iT" />
+        <meta
+          name="twitter:title"
+          content="Logistics & Distribution | Dotpot iT"
+        />
         <meta
           name="twitter:description"
           content="Revolutionize your logistics & distribution business with Dotpot IT's customized web solutions. Streamline operations for optimal efficiency and exponential growth. "
@@ -52,7 +64,9 @@ const Logistics = () => {
               Logistics & Distribution
             </h1>
             <h2 className="text-lg text-gray-400 text-center mb-10">
-            Revolutionize your logistics & distribution business with Dotpot IT's customized web solutions. Streamline operations for optimal efficiency and exponential growth. 
+              Revolutionize your logistics & distribution business with Dotpot
+              IT's customized web solutions. Streamline operations for optimal
+              efficiency and exponential growth.
             </h2>
           </div>
           <div className="max-w-4xl mx-auto p-4">

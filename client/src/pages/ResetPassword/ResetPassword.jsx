@@ -51,7 +51,7 @@ const ResetPassword = () => {
   return (
     <>
       <Helmet>
-        <title>Reset Password | Dotpot iT</title>
+        <title>Reset Password | Dotpot iT a leading it company</title>
         <meta
           name="description"
           content="Get Top-notch, Extensively, Innovative Mobile App Solution By Us"

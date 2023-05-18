@@ -15,13 +15,16 @@ const Web3 = () => {
   return (
     <div>
       <div className="">
-      <Helmet>
-          <title>Web3 Development | Dotpot iT</title>
+        <Helmet>
+          <title>Web3 Development | Dotpot iT a leading it company</title>
           <meta
             name="description"
             content="Experience the future with DotpotIT's innovative web3 solutions. Harness the power of blockchain and decentralized technologies for your business success. "
           />
-          <link rel="canonical" href="https://dotpotit.com/industries-we-serve/web3" />
+          <link
+            rel="canonical"
+            href="https://dotpotit.com/industries-we-serve/web3"
+          />
           <meta property="og:title" content="Web3 Development | Dotpot iT" />
           <meta
             property="og:description"
@@ -36,7 +39,10 @@ const Web3 = () => {
             content="Software development company, Blockchain development, Decentralized applications (dApps)."
           />
           <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://dotpotit.com/industries-we-serve/web3" />
+          <meta
+            property="og:url"
+            content="https://dotpotit.com/industries-we-serve/web3"
+          />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content="Web3 Development | Dotpot iT" />
           <meta
@@ -75,7 +81,9 @@ const Web3 = () => {
                     Web3 Development
                   </h1>
                   <h2 className="text-textColor-500 flex flex-col gap-5 p-5 text-center">
-                  Experience the future with DotpotIT's innovative web3 solutions. Harness the power of blockchain and decentralized technologies for your business success. 
+                    Experience the future with DotpotIT's innovative web3
+                    solutions. Harness the power of blockchain and decentralized
+                    technologies for your business success.
                   </h2>
                 </div>
                 {/* points */}

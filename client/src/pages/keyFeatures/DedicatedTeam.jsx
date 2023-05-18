@@ -88,7 +88,7 @@ const DedicatedTeam = () => {
   return (
     <div className="bg-background-500">
       <Helmet>
-        <title>Dedicated Team | Dotpot iT</title>
+        <title>Dedicated Team | Dotpot iT a leading it company</title>
         <meta
           name="description"
           content="Empower your business with our dedicated team"

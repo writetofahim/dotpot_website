@@ -11,13 +11,19 @@ const education = () => {
   return (
     <div>
       <Helmet>
-        <title>Education & E-Learning | Dotpot iT</title>
+        <title>Education & E-Learning | Dotpot iT a leading it company</title>
         <meta
           name="description"
           content="Transform your healthcare and fitness business with Dotpot IT's web development services. Revolutionize your online presence for success."
         />
-        <link rel="canonical" href="https://dotpotit.com/industries-we-serve/education" />
-        <meta property="og:title" content="Education & E-Learning | Dotpot iT" />
+        <link
+          rel="canonical"
+          href="https://dotpotit.com/industries-we-serve/education"
+        />
+        <meta
+          property="og:title"
+          content="Education & E-Learning | Dotpot iT"
+        />
         <meta
           property="og:description"
           content="Transform your healthcare and fitness business with Dotpot IT's web development services."
@@ -31,9 +37,15 @@ const education = () => {
           content="Software development company, Education & E-Learning industry, E-Learning website solutions, learning management system integration."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://dotpotit.com/industries-we-serve/education" />
+        <meta
+          property="og:url"
+          content="https://dotpotit.com/industries-we-serve/education"
+        />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Education & E-Learning | Dotpot iT" />
+        <meta
+          name="twitter:title"
+          content="Education & E-Learning | Dotpot iT"
+        />
         <meta
           name="twitter:description"
           content="Transform your healthcare and fitness business with Dotpot IT's web development services. Revolutionize your online presence for success."
@@ -52,7 +64,9 @@ const education = () => {
               Education & E-Learning
             </h1>
             <h2 className="text-lg text-gray-400 text-center mb-10">
-              Transform your healthcare and fitness business with Dotpot IT's web development services. Revolutionize your online presence for success.
+              Transform your healthcare and fitness business with Dotpot IT's
+              web development services. Revolutionize your online presence for
+              success.
             </h2>
           </div>
           <div className="max-w-4xl mx-auto p-4">

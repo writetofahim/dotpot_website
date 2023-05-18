@@ -47,7 +47,7 @@ const ContactCenterSupport = () => {
   return (
     <div className="bg-background-500">
       <Helmet>
-        <title>Contact Center Support | Dotpot iT</title>
+        <title>Contact Center Support | Dotpot iT a leading it company</title>
         <meta
           name="description"
           content="We're a top provider of Contact Center Solutions. Optimize your Productivity with us"

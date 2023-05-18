@@ -11,34 +11,43 @@ const EmailMarketing = () => {
   return (
     <div>
       <Helmet>
-          <title>Email Marketing | Dotpot iT</title>
-          <meta
-            name="description"
-            content="Dotpot IT CC's email routing module enables incoming emails to be efficiently distributed to the appropriate agents based on the CC admin's policies."
-          />
-          <meta name="keywords" content="software development company, email marketing, mail" />
-          <link rel="canonical" href="https://dotpotit.com/contact_center_services/email-marketing" />
-          <meta property="og:title" content="Email Marketing | Dotpot iT" />
-          <meta
-            property="og:description"
-            content="Dotpot IT CC's email routing module enables incoming emails to be efficiently distributed to the appropriate agents based on the CC admin's policies."
-          />
-          <meta
-            property="og:image"
-            content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
-          />
-          <meta property="og:url" content="https://dotpotit.com/contact_center_services/email-marketing" />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Email Marketing | Dotpot iT" />
-          <meta
-            name="twitter:description"
-            content="Dotpot IT CC's email routing module enables incoming emails to be efficiently distributed to the appropriate agents based on the CC admin's policies."
-          />
-          <meta
-            name="twitter:image"
-            content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
-          />
-        </Helmet>
+        <title>Email Marketing | Dotpot iT a leading it company</title>
+        <meta
+          name="description"
+          content="Dotpot IT CC's email routing module enables incoming emails to be efficiently distributed to the appropriate agents based on the CC admin's policies."
+        />
+        <meta
+          name="keywords"
+          content="software development company, email marketing, mail"
+        />
+        <link
+          rel="canonical"
+          href="https://dotpotit.com/contact_center_services/email-marketing"
+        />
+        <meta property="og:title" content="Email Marketing | Dotpot iT" />
+        <meta
+          property="og:description"
+          content="Dotpot IT CC's email routing module enables incoming emails to be efficiently distributed to the appropriate agents based on the CC admin's policies."
+        />
+        <meta
+          property="og:image"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
+        />
+        <meta
+          property="og:url"
+          content="https://dotpotit.com/contact_center_services/email-marketing"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Email Marketing | Dotpot iT" />
+        <meta
+          name="twitter:description"
+          content="Dotpot IT CC's email routing module enables incoming emails to be efficiently distributed to the appropriate agents based on the CC admin's policies."
+        />
+        <meta
+          name="twitter:image"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
+        />
+      </Helmet>
 
       <Navbar />
       <div className="px-3 min-h-screen pt-[15vh] bg-background-500">

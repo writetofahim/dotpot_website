@@ -72,14 +72,20 @@ const HireDedicatedModel = () => {
   useScrollToTop();
   return (
     <div>
-    <Helmet>
-        <title>Hire-dedicated-model | Dotpot iT</title>
+      <Helmet>
+        <title>Hire-dedicated-model | Dotpot iT a leading it company</title>
         <meta
           name="description"
           content="Learn about hire-dedicated-model Dotpot iT, a leading IT company providing innovative solutions for businesses."
         />
-        <meta name="keywords" content="software development company, dedicated mode, it company" />
-        <link rel="canonical" href="https://dotpotit.com/partnership_model/hire-dedicated-model" />
+        <meta
+          name="keywords"
+          content="software development company, dedicated mode, it company"
+        />
+        <link
+          rel="canonical"
+          href="https://dotpotit.com/partnership_model/hire-dedicated-model"
+        />
         <meta property="og:title" content="Hire-dedicated-model | Dotpot iT" />
         <meta
           property="og:description"
@@ -89,7 +95,10 @@ const HireDedicatedModel = () => {
           property="og:image"
           content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
-        <meta property="og:url" content="https://dotpotit.com/partnership_model/hire-dedicated-model" />
+        <meta
+          property="og:url"
+          content="https://dotpotit.com/partnership_model/hire-dedicated-model"
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Hire-dedicated-model | Dotpot iT" />
         <meta

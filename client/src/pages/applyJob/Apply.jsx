@@ -100,16 +100,16 @@ const Apply = () => {
   return (
     <>
       <Helmet>
-        <title>Apply | Dotpot iT A Leading Software Company</title>
+        <title>Apply | Dotpot iT A Leading it Company</title>
         <meta
           name="description"
-          content="Dotpot iT is a leading IT company providing a wide range of services, including app development, web development, game development, AI development, and more. We offer comprehensive solutions to help businesses optimize operations and stay ahead in the evolving world of technology."
+          content="Dotpot iT provides web development, AI, game, app, and blockchain development, along with comprehensive IT support services. Contact us now."
         />
         <link rel="canonical" href="https://dotpotit.com/apply" />
         <meta property="og:title" content="Apply | Dotpot iT" />
         <meta
           property="og:description"
-          content="Dotpot iT is a leading IT company providing a wide range of services, including app development, web development, game development, AI development, and more. We offer comprehensive solutions to help businesses optimize operations and stay ahead in the evolving world of technology."
+          content="Dotpot iT provides web development, AI, game, app, and blockchain development, along with comprehensive IT support services. Contact us now."
         />
         <meta
           property="og:image"
@@ -117,14 +117,14 @@ const Apply = () => {
         />
         <meta
           name="keywords"
-          content="web development, AI development, game development, app development, blockchain development, IT support, custom software development, full-stack web development, machine learning development, Unity game development, eCommerce development, agile software development, cloud-based solutions, expert developers, affordable web development, professional game development, AI chatbot integration, web design and development, cross-platform app development, virtual and augmented reality development, chat support for customers, blockchain consulting services, IT infrastructure support, cybersecurity services, software testing and quality assurance, responsive web design, scalable solutions, database management services, UX/UI design services, website maintenance and support"
+          content="web development, AI development, game development, app development, IT support"
         />
         <meta property="og:url" content="https://dotpotit.com/about" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="About Us | Dotpot iT" />
         <meta
           name="twitter:description"
-          content="Dotpot iT is a leading IT company providing a wide range of services, including app development, web development, game development, AI development, and more. We offer comprehensive solutions to help businesses optimize operations and stay ahead in the evolving world of technology."
+          content="Dotpot iT provides web development, AI, game, app, and blockchain development, along with comprehensive IT support services. Contact us now."
         />
         <meta
           name="twitter:image"

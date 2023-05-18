@@ -11,12 +11,15 @@ const Travel = () => {
   return (
     <div className="">
       <Helmet>
-        <title>Travel & Hospitality | Dotpot iT</title>
+        <title>Travel & Hospitality | Dotpot iT a leading it company</title>
         <meta
           name="description"
           content="Experience the ultimate travel companion - DotpotiT's state-of-the-art app. Simplify your journey with our cutting-edge features and seamless user experience."
         />
-        <link rel="canonical" href="https://dotpotit.com/industries-we-serve/travel" />
+        <link
+          rel="canonical"
+          href="https://dotpotit.com/industries-we-serve/travel"
+        />
         <meta property="og:title" content="Travel & Hospitality | Dotpot iT" />
         <meta
           property="og:description"
@@ -31,7 +34,10 @@ const Travel = () => {
           content="Software development company, Hotel bookings, Travel accommodations."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://dotpotit.com/industries-we-serve/travel" />
+        <meta
+          property="og:url"
+          content="https://dotpotit.com/industries-we-serve/travel"
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Travel & Hospitality | Dotpot iT" />
         <meta
@@ -51,10 +57,16 @@ const Travel = () => {
             Travel & Hospitality
           </h1>
           <h2 className="text-lg text-gray-400 text-center mb-10">
-            Experience the ultimate travel companion - DotpotiT's state-of-the-art app. Simplify your journey with our cutting-edge features and seamless user experience.
+            Experience the ultimate travel companion - DotpotiT's
+            state-of-the-art app. Simplify your journey with our cutting-edge
+            features and seamless user experience.
           </h2>
           <div className="border-b border-border container mx-auto">
-            <img className="md:w-1/2 mx-auto " src={travel} alt="Travel & Hospitality Image" />
+            <img
+              className="md:w-1/2 mx-auto "
+              src={travel}
+              alt="Travel & Hospitality Image"
+            />
           </div>
           <div className="container  mx-auto flex flex-col mb-10 my-10">
             <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">

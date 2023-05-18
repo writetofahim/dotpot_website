@@ -11,12 +11,15 @@ const SocialNetworking = () => {
   return (
     <div className="">
       <Helmet>
-        <title>Social Networking | Dotpot iT</title>
+        <title>Social Networking | Dotpot iT a leading it company</title>
         <meta
           name="description"
           content="Connect with your audience like never before using DotpotIT's social networking solutions. Engage, interact, and cultivate a thriving online community."
         />
-        <link rel="canonical" href="https://dotpotit.com/industries-we-serve/social-networking" />
+        <link
+          rel="canonical"
+          href="https://dotpotit.com/industries-we-serve/social-networking"
+        />
         <meta property="og:title" content="Social Networking | Dotpot iT" />
         <meta
           property="og:description"
@@ -31,7 +34,10 @@ const SocialNetworking = () => {
           content="Software development company, Social media marketing, Online community building."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://dotpotit.com/industries-we-serve/social-networking" />
+        <meta
+          property="og:url"
+          content="https://dotpotit.com/industries-we-serve/social-networking"
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Social Networking | Dotpot iT" />
         <meta
@@ -51,10 +57,16 @@ const SocialNetworking = () => {
             Social Networking
           </h1>
           <h2 className="text-lg  text-center mb-10 text-gray-400">
-            Connect with your audience like never before using DotpotIT's social networking solutions. Engage, interact, and cultivate a thriving online community.
+            Connect with your audience like never before using DotpotIT's social
+            networking solutions. Engage, interact, and cultivate a thriving
+            online community.
           </h2>
           <div className="container mx-auto">
-            <img className="md:w-1/2 mx-auto mb-10" src={sn} alt="Social Networking Image" />
+            <img
+              className="md:w-1/2 mx-auto mb-10"
+              src={sn}
+              alt="Social Networking Image"
+            />
           </div>
           <div className="container  mx-auto flex flex-col py-10">
             <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block ">

@@ -11,12 +11,15 @@ const OnDemand = () => {
   return (
     <div className="">
       <Helmet>
-        <title>On Demand Solutions | Dotpot iT</title>
+        <title>On Demand Solutions | Dotpot iT a leading it company</title>
         <meta
           name="description"
           content="Unlock instant solutions at your fingertips with On Demand Solutions. Seamlessly streamline tasks and access services anytime, anywhere for ultimate convenience. "
         />
-        <link rel="canonical" href="https://dotpotit.com/industries-we-serve/on-demand-solution" />
+        <link
+          rel="canonical"
+          href="https://dotpotit.com/industries-we-serve/on-demand-solution"
+        />
         <meta property="og:title" content="On Demand Solutions | Dotpot iT" />
         <meta
           property="og:description"
@@ -31,7 +34,10 @@ const OnDemand = () => {
           content="Software development company, On-demand services, Instant solutions."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://dotpotit.com/industries-we-serve/on-demand-solution" />
+        <meta
+          property="og:url"
+          content="https://dotpotit.com/industries-we-serve/on-demand-solution"
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="On Demand Solutions | Dotpot iT" />
         <meta
@@ -51,10 +57,16 @@ const OnDemand = () => {
             On Demand Solutions
           </h1>
           <h2 className="text-lg text-center mb-10 text-gray-400">
-            Unlock instant solutions at your fingertips with On Demand Solutions. Seamlessly streamline tasks and access services anytime, anywhere for ultimate convenience.
+            Unlock instant solutions at your fingertips with On Demand
+            Solutions. Seamlessly streamline tasks and access services anytime,
+            anywhere for ultimate convenience.
           </h2>
           <div className="border-b container border-border mx-auto">
-            <img className="md:w-1/2 mx-auto " src={od} alt="On Demand Solutions Image" />
+            <img
+              className="md:w-1/2 mx-auto "
+              src={od}
+              alt="On Demand Solutions Image"
+            />
           </div>
           <div className="container  mx-auto flex flex-col mb-10 my-10">
             <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">

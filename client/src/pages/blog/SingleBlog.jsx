@@ -106,9 +106,9 @@ const SingleBlog = () => {
                   alt=""
                 />
                 <div className="md:w-5/5">
-                  <h3 className="my-5 text-3xl font-bold text-left text-textColor-500">
+                  <h1 className="my-5 text-3xl font-bold text-left text-textColor-500">
                     {data?.title}
-                  </h3>
+                  </h1>
                   <p className="text-textColor-500">{data?.date}</p>
                   {data?.tags.map((item, index) => (
                     <p

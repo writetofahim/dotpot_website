@@ -2,9 +2,9 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import parse from "react-html-parser";
 import ReactVisibilitySensor from "react-visibility-sensor";
+import benifite from "../../assets/img/benifite.png";
 import ecommarcecover from "../../assets/img/ecommarcecover.png";
 import ecomovervoew from "../../assets/img/ecomovervoew.png";
-import benifite from "../../assets/img/benifite.png";
 import Footer from "../../components/Footer/Footer";
 import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
@@ -52,7 +52,9 @@ const EcommerceDevelopment = () => {
   return (
     <div className="bg-background-500">
       <Helmet>
-        <title>E-Commerce website Development | Dotpot iT</title>
+        <title>
+          E-Commerce website Development | Dotpot iT a leading it company
+        </title>
         <meta
           name="description"
           content="Learn about E-Commerce website Development iT, a leading IT company providing innovative solutions for businesses.visit website for details"
@@ -121,9 +123,9 @@ const EcommerceDevelopment = () => {
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
                         <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
-                          <h2 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
+                          <h1 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
                             E-Commerce website Development
-                          </h2>
+                          </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
                             Dotpot IT offers E-commerce website development
                             services from design to maintenance, so you can

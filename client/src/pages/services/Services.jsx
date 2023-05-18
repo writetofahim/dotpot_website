@@ -22,7 +22,7 @@ const Services = () => {
   return (
     <div className="full">
       <Helmet>
-        <title>Services | Dotpot iT</title>
+        <title>Services | Dotpot iT a leading it company</title>
         <meta
           name="description"
           content="Learn about Dotpot iT, a leading IT company providing innovative solutions for businesses."

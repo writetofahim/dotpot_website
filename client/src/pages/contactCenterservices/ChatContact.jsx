@@ -11,7 +11,7 @@ const ChatContact = () => {
   return (
     <div>
       <Helmet>
-        <title>Web Chat Support | Dotpot iT</title>
+        <title>Web Chat Support | Dotpot iT a leading it company</title>
         <meta
           name="description"
           content="The Dotpot IT contact center system integrates a powerful web chat module, empowering businesses with exceptional customer service."

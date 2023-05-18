@@ -64,15 +64,26 @@ const OnSiteDevelopment = () => {
   useScrollToTop();
   return (
     <div>
-    <Helmet>
-        <title>On-site-development-model | Dotpot iT</title>
+      <Helmet>
+        <title>
+          On-site-development-model | Dotpot iT a leading it company
+        </title>
         <meta
           name="description"
           content="Learn about on site development Dotpot iT, a leading IT company providing innovative solutions for businesses."
         />
-        <meta name="keywords" content="software development company, it company" />
-        <link rel="canonical" href="https://dotpotit.com/partnership_model/on-site-development-model" />
-        <meta property="og:title" content="On-site-development-model | Dotpot iT" />
+        <meta
+          name="keywords"
+          content="software development company, it company"
+        />
+        <link
+          rel="canonical"
+          href="https://dotpotit.com/partnership_model/on-site-development-model"
+        />
+        <meta
+          property="og:title"
+          content="On-site-development-model | Dotpot iT"
+        />
         <meta
           property="og:description"
           content="Learn about on site development Dotpot iT, a leading IT company providing innovative solutions for businesses."
@@ -81,9 +92,15 @@ const OnSiteDevelopment = () => {
           property="og:image"
           content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
-        <meta property="og:url" content="https://dotpotit.com/partnership_model/on-site-development-model" />
+        <meta
+          property="og:url"
+          content="https://dotpotit.com/partnership_model/on-site-development-model"
+        />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="On-site-development-model | Dotpot iT" />
+        <meta
+          name="twitter:title"
+          content="On-site-development-model | Dotpot iT"
+        />
         <meta
           name="twitter:description"
           content="Learn about on site development Dotpot iT, a leading IT company providing innovative solutions for businesses."

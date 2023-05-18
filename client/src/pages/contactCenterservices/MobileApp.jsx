@@ -11,34 +11,43 @@ const MobileApp = () => {
   return (
     <div>
       <Helmet>
-          <title>Mobile App for Contact center support | Dotpot iT</title>
-          <meta
-            name="description"
-            content="Dotpot IT's contact center system enables contact center agents to be mobile through the use of a mobile application. "
-          />
-          <meta name="keywords" content="software development company, mobile app development, mobile app" />
-          <link rel="canonical" href="/contact_center_services/mobile-app" />
-          <meta property="og:title" content="Mobile App for Contact center support | Dotpot iT" />
-          <meta
-            property="og:description"
-            content="Dotpot IT's contact center system enables contact center agents to be mobile through the use of a mobile application. "
-          />
-          <meta
-            property="og:image"
-            content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
-          />
-          <meta property="og:url" content="/contact_center_services/mobile-app" />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Mobile App for Contact center support | Dotpot iT" />
-          <meta
-            name="twitter:description"
-            content="Dotpot IT's contact center system enables contact center agents to be mobile through the use of a mobile application. "
-          />
-          <meta
-            name="twitter:image"
-            content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
-          />
-        </Helmet>
+        <title>Mobile App | Dotpot iT a leading it company</title>
+        <meta
+          name="description"
+          content="Dotpot IT's contact center system enables contact center agents to be mobile through the use of a mobile application. "
+        />
+        <meta
+          name="keywords"
+          content="software development company, mobile app development, mobile app"
+        />
+        <link rel="canonical" href="/contact_center_services/mobile-app" />
+        <meta
+          property="og:title"
+          content="Mobile App for Contact center support | Dotpot iT"
+        />
+        <meta
+          property="og:description"
+          content="Dotpot IT's contact center system enables contact center agents to be mobile through the use of a mobile application. "
+        />
+        <meta
+          property="og:image"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
+        />
+        <meta property="og:url" content="/contact_center_services/mobile-app" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Mobile App for Contact center support | Dotpot iT"
+        />
+        <meta
+          name="twitter:description"
+          content="Dotpot IT's contact center system enables contact center agents to be mobile through the use of a mobile application. "
+        />
+        <meta
+          name="twitter:image"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
+        />
+      </Helmet>
 
       <Navbar />
       <div className="px-3 min-h-screen pt-[15vh] pb-10 bg-background-500">

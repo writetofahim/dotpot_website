@@ -21,12 +21,15 @@ const Gaming = () => {
   return (
     <div>
       <Helmet>
-        <title>Game Development | Dotpot iT</title>
+        <title>Game Development | Dotpot iT a leading it company</title>
         <meta
           name="description"
           content="Revolutionize gaming experience with Dotpot IT's cutting-edge development. Elevate gameplay and immerse yourself in a new era of gaming innovation."
         />
-        <link rel="canonical" href="https://dotpotit.com/industries-we-serve/gaming" />
+        <link
+          rel="canonical"
+          href="https://dotpotit.com/industries-we-serve/gaming"
+        />
         <meta property="og:title" content="Game Development | Dotpot iT" />
         <meta
           property="og:description"
@@ -41,7 +44,10 @@ const Gaming = () => {
           content="Software development company, Game design and development, Interactive gaming solutions"
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://dotpotit.com/industries-we-serve/gaming" />
+        <meta
+          property="og:url"
+          content="https://dotpotit.com/industries-we-serve/gaming"
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Game Development | Dotpot iT" />
         <meta
@@ -80,7 +86,9 @@ const Gaming = () => {
                 Game Development
               </h1>
               <h2 className="text-center text-textColor-500">
-                Revolutionize gaming experience with Dotpot IT's cutting-edge development. Elevate gameplay and immerse yourself in a new era of gaming innovation.
+                Revolutionize gaming experience with Dotpot IT's cutting-edge
+                development. Elevate gameplay and immerse yourself in a new era
+                of gaming innovation.
               </h2>
               {/* slider */}
               <div className="md:flex gap-5  justify-center border-b border-border pb-5">

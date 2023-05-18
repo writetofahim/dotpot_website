@@ -11,7 +11,7 @@ const Collections = () => {
   return (
     <div>
       <Helmet>
-        <title>Collection | Dotpot iT</title>
+        <title>Collection | Dotpot iT a leading it company</title>
         <meta
           name="description"
           content="Dotpot IT offers automated dialing solutions for efficient debtor contact and increased debt recovery rates."

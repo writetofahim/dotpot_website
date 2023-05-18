@@ -56,7 +56,7 @@ const CyberSecurity = () => {
   return (
     <div className="bg-background-500">
       <Helmet>
-        <title>Cyber Security | Dotpot iT</title>
+        <title>Cyber Security | Dotpot iT a leading it company</title>
         <meta
           name="description"
           content="Our Cyber Security provides the state of the earth security services for our customer's data"

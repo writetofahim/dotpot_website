@@ -84,7 +84,7 @@ const Login = () => {
   return (
     <>
       <Helmet>
-        <title>Login | Dotpot iT</title>
+        <title>Login | Dotpot iT a leading it company</title>
         <meta
           name="description"
           content="Get Top-notch, Extensively, Innovative Mobile App Solution By Us"

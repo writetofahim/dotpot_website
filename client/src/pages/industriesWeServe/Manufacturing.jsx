@@ -15,13 +15,16 @@ const Manufacturing = () => {
   return (
     <div>
       <div className="">
-      <Helmet>
-          <title>Manufacturing | Dotpot iT</title>
+        <Helmet>
+          <title>Manufacturing | Dotpot iT a leading it company</title>
           <meta
             name="description"
             content="Optimize manufacturing processes with DotpotIT's custom software solutions. Boost productivity, reduce costs, and drive efficiency for your business success. "
           />
-          <link rel="canonical" href="https://dotpotit.com/industries-we-serve/manufacturing" />
+          <link
+            rel="canonical"
+            href="https://dotpotit.com/industries-we-serve/manufacturing"
+          />
           <meta property="og:title" content="Manufacturing | Dotpot iT" />
           <meta
             property="og:description"
@@ -36,7 +39,10 @@ const Manufacturing = () => {
             content="Software development company, Manufacturing software solutions, Process optimization for manufacturing"
           />
           <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://dotpotit.com/industries-we-serve/manufacturing" />
+          <meta
+            property="og:url"
+            content="https://dotpotit.com/industries-we-serve/manufacturing"
+          />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content="Manufacturing | Dotpot iT" />
           <meta
@@ -75,7 +81,9 @@ const Manufacturing = () => {
                     Manufacturing
                   </h1>
                   <h2 className="text-textColor-500 flex flex-col gap-5 p-5 text-center">
-                  Optimize manufacturing processes with DotpotIT's custom software solutions. Boost productivity, reduce costs, and drive efficiency for your business success.
+                    Optimize manufacturing processes with DotpotIT's custom
+                    software solutions. Boost productivity, reduce costs, and
+                    drive efficiency for your business success.
                   </h2>
                 </div>
                 {/* points */}

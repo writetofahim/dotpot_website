@@ -11,12 +11,15 @@ const FoodAndRestaurant = () => {
   return (
     <div className="">
       <Helmet>
-        <title>Food & Restaurants | Dotpot iT</title>
+        <title>Food & Restaurants | Dotpot iT a leading it company</title>
         <meta
           name="description"
           content="Indulge in our innovative Food & Restaurant solutions, crafted with passion and precision to satisfy your cravings. Elevate your dining experience today. "
         />
-        <link rel="canonical" href="https://dotpotit.com/industries-we-serve/food-and-restaurant" />
+        <link
+          rel="canonical"
+          href="https://dotpotit.com/industries-we-serve/food-and-restaurant"
+        />
         <meta property="og:title" content="Food & Restaurants | Dotpot iT" />
         <meta
           property="og:description"
@@ -31,7 +34,10 @@ const FoodAndRestaurant = () => {
           content="Software development company, Fine dining experiences, Culinary delights."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://dotpotit.com/industries-we-serve/food-and-restaurant" />
+        <meta
+          property="og:url"
+          content="https://dotpotit.com/industries-we-serve/food-and-restaurant"
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Food & Restaurants | Dotpot iT" />
         <meta
@@ -51,10 +57,16 @@ const FoodAndRestaurant = () => {
             Food & Restaurants
           </h1>
           <h2 className="text-lg text-gray-400 text-center mb-10">
-            Indulge in our innovative Food & Restaurant solutions, crafted with passion and precision to satisfy your cravings. Elevate your dining experience today.
+            Indulge in our innovative Food & Restaurant solutions, crafted with
+            passion and precision to satisfy your cravings. Elevate your dining
+            experience today.
           </h2>
           <div className="border-b border-border container mx-auto">
-            <img className="md:w-1/2 mx-auto " src={food} alt="Food & Restaurants Image" />
+            <img
+              className="md:w-1/2 mx-auto "
+              src={food}
+              alt="Food & Restaurants Image"
+            />
           </div>
           <div className="container  mx-auto flex flex-col mb-10 my-10">
             <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">

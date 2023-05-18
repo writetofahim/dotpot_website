@@ -16,12 +16,15 @@ const Ai = () => {
     <div>
       <div className="">
         <Helmet>
-          <title>AI Development | Dotpot iT</title>
+          <title>AI Development | Dotpot iT a leading it company</title>
           <meta
             name="description"
             content="Leverage DotpotIT's AI solutions for business growth. Automate operations, analyze data, and elevate customer experiences with chatbots and virtual assistants. "
           />
-          <link rel="canonical" href="https://dotpotit.com/industries-we-serve/ai" />
+          <link
+            rel="canonical"
+            href="https://dotpotit.com/industries-we-serve/ai"
+          />
           <meta property="og:title" content="AI Development | Dotpot iT" />
           <meta
             property="og:description"
@@ -36,7 +39,10 @@ const Ai = () => {
             content="Software development company, Artificial intelligence solutions, AI development services."
           />
           <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://dotpotit.com/industries-we-serve/ai" />
+          <meta
+            property="og:url"
+            content="https://dotpotit.com/industries-we-serve/ai"
+          />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content="AI Development | Dotpot iT" />
           <meta
@@ -75,7 +81,9 @@ const Ai = () => {
                     AI Development
                   </h1>
                   <h2 className="text-gray-400 flex flex-col gap-5 p-5 items-center">
-                    Leverage DotpotIT's AI solutions for business growth. Automate operations, analyze data, and elevate customer experiences with chatbots and virtual assistants.
+                    Leverage DotpotIT's AI solutions for business growth.
+                    Automate operations, analyze data, and elevate customer
+                    experiences with chatbots and virtual assistants.
                   </h2>
                 </div>
                 {/* points */}

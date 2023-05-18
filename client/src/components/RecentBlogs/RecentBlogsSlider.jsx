@@ -86,7 +86,7 @@ export const SingleSlide = (props) => {
       <Link to={`/blog/${props._id}`}>
         <img
           src={`${import.meta.env.REACT_APP_SERVER_PATH}/${props.image}`}
-          alt=""
+          alt={props.title}
           className="rounded-tl-xl rounded-tr-xl w-full aspect-video object-cover bg-secondary-100"
         />
       </Link>

@@ -56,7 +56,7 @@ const Register = () => {
   return (
     <>
       <Helmet>
-        <title>Registration | Dotpot iT</title>
+        <title>Registration | Dotpot iT a leading it company</title>
         <meta
           name="description"
           content="Get Top-notch, Extensively, Innovative Mobile App Solution By Us"

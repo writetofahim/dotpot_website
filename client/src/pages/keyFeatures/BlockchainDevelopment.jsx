@@ -112,7 +112,7 @@ const BlockchainDevelopment = () => {
   return (
     <div className="bg-background-500">
       <Helmet>
-        <title>Blockchain Development | Dotpot iT</title>
+        <title>Blockchain Development | Dotpot iT a leading it company</title>
         <meta
           name="description"
           content="Hire The Expert Development Team of Blockchain Technology"
@@ -179,9 +179,9 @@ const BlockchainDevelopment = () => {
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
                         <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
-                          <h2 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
+                          <h1 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
                             Blockchain Development
-                          </h2>
+                          </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
                             Transform the future with Dotpot iT - Your expert
                             partner for custom blockchain solutions. Build

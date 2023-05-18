@@ -124,7 +124,7 @@ const MobileAppDevelopment = () => {
   return (
     <div className="bg-background-500">
       <Helmet>
-        <title>Mobile App Development | Dotpot iT</title>
+        <title>Mobile App Development | Dotpot iT a leading it company</title>
         <meta
           name="description"
           content="Get Top-notch, Extensively, Innovative Mobile App Solution By Us"
@@ -288,9 +288,9 @@ const MobileAppDevelopment = () => {
                           : "translate-y-20 opacity-0"
                       } duration-1000 p-3 text-textColor-500`}
                     >
-                      <h1 className="lg:text-3xl md:text-3xl text-xl font-bold text-center">
+                      <h2 className="lg:text-3xl md:text-3xl text-xl font-bold text-center">
                         Technologies We Use
-                      </h1>
+                      </h2>
                       <img
                         className="w-64  mx-auto pb-14"
                         src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"
@@ -383,9 +383,9 @@ const MobileAppDevelopment = () => {
                         : "translate-y-20 opacity-0"
                     } duration-1000 p-3 text-textColor-500`}
                   >
-                    <h1 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
+                    <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
                       Why Dotpot iT
-                    </h1>
+                    </h2>
                     <img
                       className="w-64 mx-auto"
                       src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"

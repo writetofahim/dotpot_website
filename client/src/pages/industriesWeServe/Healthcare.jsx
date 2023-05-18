@@ -11,12 +11,15 @@ const Healthcare = () => {
   return (
     <div>
       <Helmet>
-        <title>Healthcare & Fitness | Dotpot iT</title>
+        <title>Healthcare & Fitness | Dotpot iT a leading it company</title>
         <meta
           name="description"
           content="Revolutionize your healthcare and fitness business with Dotpot IT's cutting-edge web development services. Boost your online presence for unparalleled success and growth."
         />
-        <link rel="canonical" href="https://dotpotit.com/industries-we-serve/healthcare" />
+        <link
+          rel="canonical"
+          href="https://dotpotit.com/industries-we-serve/healthcare"
+        />
         <meta property="og:title" content="Healthcare & Fitness | Dotpot iT" />
         <meta
           property="og:description"
@@ -31,7 +34,10 @@ const Healthcare = () => {
           content="Software development company, Wellness, Health management."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://dotpotit.com/industries-we-serve/healthcare" />
+        <meta
+          property="og:url"
+          content="https://dotpotit.com/industries-we-serve/healthcare"
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Healthcare & Fitness | Dotpot iT" />
         <meta

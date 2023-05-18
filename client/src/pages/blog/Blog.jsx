@@ -212,16 +212,16 @@ const Blog = () => {
   return (
     <>
       <Helmet>
-        <title>Dotpot iT - Blog | A Leading Software Company</title>
+        <title>Dotpot iT - Blog | A Leading it Company</title>
         <meta
           name="description"
-          content="Read the latest articles and news from Dotpot iT's blog. We cover a wide range of topics, including app development, web development, game development, AI development, and blockchain development. We also share tips and advice on how businesses can use technology to improve their operations and achieve their goals."
+          content="Read the latest articles and news from Dotpot iT's blog. Gain the insights of latest trends on tech."
         />
         <link rel="canonical" href="https://dotpotit.com/blog" />
         <meta property="og:title" content="Dotpot iT - Blog" />
         <meta
           property="og:description"
-          content="Read the latest articles and news from Dotpot iT's blog. We cover a wide range of topics, including app development, web development, game development, AI development, and blockchain development. We also share tips and advice on how businesses can use technology to improve their operations and achieve their goals."
+          content="Read the latest articles and news from Dotpot iT's blog. Gain the insights of latest trends on tech."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://dotpotit.com/blog" />
@@ -232,7 +232,7 @@ const Blog = () => {
         <meta name="twitter:title" content="Dotpot iT - Blog" />
         <meta
           name="twitter:description"
-          content="Read the latest articles and news from Dotpot iT's blog. We cover a wide range of topics, including app development, web development, game development, AI development, and blockchain development. We also share tips and advice on how businesses can use technology to improve their operations and achieve their goals."
+          content="Read the latest articles and news from Dotpot iT's blog. Gain the insights of latest trends on tech."
         />
         <meta
           name="twitter:image"

@@ -53,15 +53,26 @@ const FixedPrice = () => {
   useScrollToTop();
   return (
     <div>
-    <Helmet>
-        <title>Fixed Price Partnership Model | Dotpot iT</title>
+      <Helmet>
+        <title>
+          Fixed Price Partnership Model | Dotpot iT a leading it company
+        </title>
         <meta
           name="description"
           content="Learn about Fixed Price Partnership Model Dotpot iT, a leading IT company providing innovative solutions for businesses."
         />
-        <meta name="keywords" content="software development company, partnership model, fixed price model" />
-        <link rel="canonical" href="https://dotpotit.com/partnership_model/fixed-price-model" />
-        <meta property="og:title" content="Fixed Price Partnership Model | Dotpot iT" />
+        <meta
+          name="keywords"
+          content="software development company, partnership model, fixed price model"
+        />
+        <link
+          rel="canonical"
+          href="https://dotpotit.com/partnership_model/fixed-price-model"
+        />
+        <meta
+          property="og:title"
+          content="Fixed Price Partnership Model | Dotpot iT"
+        />
         <meta
           property="og:description"
           content="Learn about Fixed Price Partnership Model Dotpot iT, a leading IT company providing innovative solutions for businesses."
@@ -70,9 +81,15 @@ const FixedPrice = () => {
           property="og:image"
           content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
-        <meta property="og:url" content="https://dotpotit.com/partnership_model/fixed-price-model" />
+        <meta
+          property="og:url"
+          content="https://dotpotit.com/partnership_model/fixed-price-model"
+        />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Fixed Price Partnership Model | Dotpot iT" />
+        <meta
+          name="twitter:title"
+          content="Fixed Price Partnership Model | Dotpot iT"
+        />
         <meta
           name="twitter:description"
           content="Learn about Fixed Price Partnership Model Dotpot iT, a leading IT company providing innovative solutions for businesses."

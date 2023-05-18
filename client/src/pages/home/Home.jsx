@@ -49,22 +49,20 @@ const Home = () => {
     <>
       <Helmet>
         <title>
-          Dotpot iT | iT company with Web Development, AI Development, Game
-          Development, App Development, Blockchain Development, and IT Support
+          Dotpot iT | It Company with Web, AI, Game, App development service
         </title>
         <meta
           name="description"
-          content="Dotpot iT is a leading IT company providing a wide range of services, including app development, web development, game development, AI development, and more. We offer comprehensive solutions to help businesses optimize operations and stay ahead in the evolving world of technology."
+          content="Dotpot iT provides web development, AI, game, app, and blockchain development, along with comprehensive IT support services. Contact us now."
         />
         <link rel="canonical" href="https://dotpotit.com/" />
         <meta
           property="og:title"
-          content="Dotpot iT | iT company with Web Development, AI Development, Game
-          Development, App Development, Blockchain Development, and IT Support"
+          content="Dotpot iT | It Company with Web, AI, Game, App development service"
         />
         <meta
           property="og:description"
-          content="Dotpot iT is a leading IT company providing a wide range of services, including app development, web development, game development, AI development, and more. We offer comprehensive solutions to help businesses optimize operations and stay ahead in the evolving world of technology."
+          content="Dotpot iT provides web development, AI, game, app, and blockchain development, along with comprehensive IT support services. Contact us now."
         />
         <meta
           name="keywords"
@@ -79,12 +77,11 @@ const Home = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Dotpot iT || iT company with Web Development, AI Development, Game
-          Development, App Development, Blockchain Development, and IT Support"
+          content="Dotpot iT | It Company with Web, AI, Game, App development service"
         />
         <meta
           name="twitter:description"
-          content="Dotpot iT is a leading IT company providing a wide range of services, including app development, web development, game development, AI development, and more. We offer comprehensive solutions to help businesses optimize operations and stay ahead in the evolving world of technology."
+          content="Dotpot iT provides web development, AI, game, app, and blockchain development, along with comprehensive IT support services. Contact us now."
         />
         <meta
           name="twitter:image"

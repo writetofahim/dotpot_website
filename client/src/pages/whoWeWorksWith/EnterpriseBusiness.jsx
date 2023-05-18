@@ -56,37 +56,43 @@ const WebsiteDesign = () => {
   return (
     <div className="bg-background-500">
       <Helmet>
-          <title>Enterprise Business | Dotpot iT</title>
-          <meta
-            name="description"
-            content="As an IT company, your software development and IT services can help enterprise businesses improve efficiency, productivity, and security."
-          />
-          <link rel="canonical" href="https://dotpotit.com/who-we-works-with/enterprise-business" />
-          <meta property="og:title" content="Enterprise Business | Dotpot iT" />
-          <meta
-            property="og:description"
-            content="As an IT company, your software development and IT services can help enterprise businesses improve efficiency, productivity, and security."
-          />
-          <meta
-            property="og:image"
-            content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
-          />
-          <meta
-            name="keywords"
-            content="Software development, business accounts, Enterprise Business"
-          />
-          <meta property="og:url" content="https://dotpotit.com/who-we-works-with/enterprise-business" />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Enterprise Business | Dotpot iT" />
-          <meta
-            name="twitter:description"
-            content="As an IT company, your software development and IT services can help enterprise businesses improve efficiency, productivity, and security."
-          />
-          <meta
-            name="twitter:image"
-            content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
-          />
-        </Helmet>
+        <title>Enterprise Business | Dotpot iT a leading it company</title>
+        <meta
+          name="description"
+          content="As an IT company, your software development and IT services can help enterprise businesses improve efficiency, productivity, and security."
+        />
+        <link
+          rel="canonical"
+          href="https://dotpotit.com/who-we-works-with/enterprise-business"
+        />
+        <meta property="og:title" content="Enterprise Business | Dotpot iT" />
+        <meta
+          property="og:description"
+          content="As an IT company, your software development and IT services can help enterprise businesses improve efficiency, productivity, and security."
+        />
+        <meta
+          property="og:image"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
+        />
+        <meta
+          name="keywords"
+          content="Software development, business accounts, Enterprise Business"
+        />
+        <meta
+          property="og:url"
+          content="https://dotpotit.com/who-we-works-with/enterprise-business"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Enterprise Business | Dotpot iT" />
+        <meta
+          name="twitter:description"
+          content="As an IT company, your software development and IT services can help enterprise businesses improve efficiency, productivity, and security."
+        />
+        <meta
+          name="twitter:image"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
+        />
+      </Helmet>
       <Navbar />
       <div
         className={` md:pt-[15vh] pt-[15vh] ${
@@ -110,9 +116,9 @@ const WebsiteDesign = () => {
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
                         <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
-                          <h2 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
+                          <h1 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
                             Enterprise Business
-                          </h2>
+                          </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
                             As an IT company, your software development and IT
                             services can help enterprise businesses improve

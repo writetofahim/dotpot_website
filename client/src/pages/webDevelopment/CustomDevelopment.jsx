@@ -72,7 +72,7 @@ const CustomDevelopment = () => {
   return (
     <div className="bg-background-500">
       <Helmet>
-        <title>Custom Development | Dotpot iT</title>
+        <title>Custom Development | Dotpot iT a leading it company</title>
         <meta
           name="description"
           content="Learn about Custom DevelopmentDotpot iT, a leading IT company providing innovative solutions for businesses.visit website for details"
@@ -136,9 +136,9 @@ const CustomDevelopment = () => {
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
                         <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
-                          <h2 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
+                          <h1 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
                             Custom Web Design & Development
-                          </h2>
+                          </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
                             Dotpot iT has you covered! Our talented team of
                             designers and developers will bring your vision to

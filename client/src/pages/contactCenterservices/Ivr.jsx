@@ -11,34 +11,51 @@ const Ivr = () => {
   return (
     <div>
       <Helmet>
-          <title>Interactive Voice Response (IVR) | Dotpot iT</title>
-          <meta
-            name="description"
-            content="Interactive Voice Response (IVR) is a technology that enables automated voice-based interactions between computers and humans. With IVR, callers can use their voice or keypad inputs to complete various steps and reach their desired destination without the need for human assistance. "
-          />
-          <meta name="keywords" content="software development company, ivr, call ivr, interactive voice response" />
-          <link rel="canonical" href="https://dotpotit.com/contact_center_services/ivr" />
-          <meta property="og:title" content="Interactive Voice Response (IVR) | Dotpot iT" />
-          <meta
-            property="og:description"
-            content="Interactive Voice Response (IVR) is a technology that enables automated voice-based interactions between computers and humans. With IVR, callers can use their voice or keypad inputs to complete various steps and reach their desired destination without the need for human assistance. "
-          />
-          <meta
-            property="og:image"
-            content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
-          />
-          <meta property="og:url" content="https://dotpotit.com/contact_center_services/ivr" />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Interactive Voice Response (IVR) | Dotpot iT" />
-          <meta
-            name="twitter:description"
-            content="Interactive Voice Response (IVR) is a technology that enables automated voice-based interactions between computers and humans. With IVR, callers can use their voice or keypad inputs to complete various steps and reach their desired destination without the need for human assistance. "
-          />
-          <meta
-            name="twitter:image"
-            content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
-          />
-        </Helmet>
+        <title>
+          Interactive Voice Response (IVR) | Dotpot iT a leading it company
+        </title>
+        <meta
+          name="description"
+          content="Interactive Voice Response (IVR) is a technology that enables automated voice-based interactions between computers and humans. With IVR, callers can use their voice or keypad inputs to complete various steps and reach their desired destination without the need for human assistance. "
+        />
+        <meta
+          name="keywords"
+          content="software development company, ivr, call ivr, interactive voice response"
+        />
+        <link
+          rel="canonical"
+          href="https://dotpotit.com/contact_center_services/ivr"
+        />
+        <meta
+          property="og:title"
+          content="Interactive Voice Response (IVR) | Dotpot iT"
+        />
+        <meta
+          property="og:description"
+          content="Interactive Voice Response (IVR) is a technology that enables automated voice-based interactions between computers and humans. With IVR, callers can use their voice or keypad inputs to complete various steps and reach their desired destination without the need for human assistance. "
+        />
+        <meta
+          property="og:image"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
+        />
+        <meta
+          property="og:url"
+          content="https://dotpotit.com/contact_center_services/ivr"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Interactive Voice Response (IVR) | Dotpot iT"
+        />
+        <meta
+          name="twitter:description"
+          content="Interactive Voice Response (IVR) is a technology that enables automated voice-based interactions between computers and humans. With IVR, callers can use their voice or keypad inputs to complete various steps and reach their desired destination without the need for human assistance. "
+        />
+        <meta
+          name="twitter:image"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
+        />
+      </Helmet>
 
       <Navbar />
       <div className="px-3 min-h-screen pt-[15vh] pb-10 bg-background-500">

@@ -64,7 +64,7 @@ const AiDevelopment = () => {
   return (
     <div className="bg-background-500">
       <Helmet>
-        <title>AI Development | Dotpot iT</title>
+        <title>AI Development | Dotpot iT a leading it company</title>
         <meta
           name="description"
           content="Our AI solutions transform businesses with automation and intelligence"
