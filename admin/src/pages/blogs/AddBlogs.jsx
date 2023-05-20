@@ -1,50 +1,56 @@
 import React, { useContext, useEffect, useState } from "react";
+import { FaSpinner } from "react-icons/fa";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import BlogTags from "./BlogTags";
-import axios from "../../utils/axiosInstance";
-import { AuthContext } from "../../contexts/AuthContext";
-import { FaSpinner } from "react-icons/fa"
 import { useSearchParams } from "react-router-dom";
 import CommonSnackbar from "../../components/ComonSnackbar";
+import { AuthContext } from "../../contexts/AuthContext";
+import axios from "../../utils/axiosInstance";
 import postLogger from "../../utils/postLogger";
+import BlogTags from "./BlogTags";
 
 const AddBlogs = () => {
   const [content, setContent] = useState("");
   const [tags, setTags] = useState([]);
   const [file, setFile] = useState(null);
   const [title, setTitle] = useState("");
+  const [summary, setSummary] = useState("");
+
   const [loading, setLoading] = useState(false);
   const { user } = useContext(AuthContext);
   const [searchParams] = useSearchParams();
-  const blogId = searchParams.get("id");
-  const [message, setMessage] = useState("");
 
+  const blogId = searchParams.get("id");
+
+  const [message, setMessage] = useState("");
   const [snackbar, setSnackbar] = useState(false);
 
   useEffect(() => {
     if (blogId) {
-      axios.get(`/blog/${blogId}`)
-        .then(res => {
+      axios
+        .get(`/blog/${blogId}`)
+        .then((res) => {
           setTitle(res.data.title);
           setContent(res.data.body);
           setTags(res.data.tags);
+          setSummary(res.data.summary);
 
           const preview = document.getElementById("preview");
           const imageDiv = document.getElementById("imageDiv");
           const image = new Image();
-          image.src = import.meta.env.REACT_APP_SERVER_PATH + "/" + res.data.image;
+          image.src =
+            import.meta.env.REACT_APP_SERVER_PATH + "/" + res.data.image;
           imageDiv.classList.remove("hidden");
           preview.innerHTML = "";
           preview.appendChild(image);
-          postLogger({level:"info", message:res})
+          postLogger({ level: "info", message: res });
         })
-        .catch(err => {
+        .catch((err) => {
           console.log(err);
-          postLogger({level:"error", message:err})
-        })
+          postLogger({ level: "error", message: err });
+        });
     }
-  }, [])
+  }, []);
 
   function handleChange(value) {
     setContent(value);
@@ -75,8 +81,9 @@ const AddBlogs = () => {
       author: user._id,
       body: content,
       tags,
-      isPublished: true
-    }
+      summary,
+      isPublished: true,
+    };
 
     try {
       if (file) {
@@ -88,35 +95,34 @@ const AddBlogs = () => {
         newPost.image = attachment;
         if (blogId) {
           const { data: d } = await axios.patch(`/blog/${blogId}`, newPost);
-          console.log(d)
-          setMessage("Blog Updated Successfully!")
+          console.log(d);
+          setMessage("Blog Updated Successfully!");
         } else {
           const { data } = await axios.post("/blog", newPost);
           console.log(newPost);
           console.log(data);
-          setMessage("Blog Posted Successfully!")
+          setMessage("Blog Posted Successfully!");
           handleReset();
         }
         setLoading(false);
         setSnackbar(true);
-
       }
       if (!file && blogId) {
         const { data: d } = await axios.patch(`/blog/${blogId}`, newPost);
-        setMessage("Blog Updated Successfully!")
+        setMessage("Blog Updated Successfully!");
         setLoading(false);
         setSnackbar(true);
       }
-
     } catch (error) {
       console.log(error);
       setLoading(false);
     }
-  }
+  };
 
   const handleReset = () => {
-    setTitle("")
+    setTitle("");
     setContent("");
+    setSummary("");
     setTags([]);
     setFile(null);
     document.getElementById("pic").value = "";
@@ -124,16 +130,38 @@ const AddBlogs = () => {
     if (imageDiv) {
       imageDiv.classList.add("hidden");
     }
-  }
-
+  };
 
   return (
     <div className="w-3/4 mx-auto py-5 ">
-      {snackbar && <CommonSnackbar message={message} open={snackbar} setOpen={setSnackbar} />}
-      <h2 className="text-xl text-center mb-5">{blogId ? "Edit" : "Add"} Blog</h2>
+      {snackbar && (
+        <CommonSnackbar
+          message={message}
+          open={snackbar}
+          setOpen={setSnackbar}
+        />
+      )}
+      <h2 className="text-xl text-center mb-5">
+        {blogId ? "Edit" : "Add"} Blog
+      </h2>
       <form onSubmit={handlePostSubmit}>
         <label className="block text-gray-700 font-bold mb-2">Title</label>
-        <input value={title} onChange={(e) => setTitle(e.target.value)} className="mb-5 w-full" type="text" placeholder="Title" />
+        <input
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          className="mb-5 w-full"
+          type="text"
+          placeholder="Title"
+        />
+        <label className="block text-gray-700 font-bold mb-2">
+          Blog Summary
+        </label>
+        <textarea
+          value={summary}
+          onChange={(e) => setSummary(e.target.value)}
+          className="mb-5 w-full"
+          placeholder="Write a summary of the blog"
+        ></textarea>
         <div>
           <div className="mb-4">
             <label className="block text-gray-700 font-bold mb-2">
@@ -165,7 +193,6 @@ const AddBlogs = () => {
           value={content}
           onChange={handleChange}
         />
-
         <div className="mt-14 flex justify-center gap-5">
           <button
             type="submit"

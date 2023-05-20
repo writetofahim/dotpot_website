@@ -10,6 +10,7 @@ The desc property of the blog object is parsed using parse to render any HTML ta
 This component also renders Navbar, RecentBlogs, and Footer.
  */
 
+import moment from "moment";
 import React, { useEffect, useState } from "react";
 import { renderToString } from "react-dom/server";
 import { Helmet } from "react-helmet";
@@ -22,9 +23,10 @@ import striptags from "striptags";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
-import RecentBlogs from "../../components/RecentBlogs/RecentBlogs";
 import axios from "../../utils/axiosInstance";
 import postLogger from "../../utils/postLogger";
+import NewBlogs from "./NewBlogs";
+import NextBlog from "./NextBlog";
 
 const SingleBlog = () => {
   const { id } = useParams();
@@ -92,7 +94,8 @@ const SingleBlog = () => {
       </Helmet>
 
       <Navbar />
-      <div className="bg-background-500">
+      {/* previous single blog start */}
+      {/* <div className="bg-background-500">
         <div className="w-full md:p-[15vh] pt-[15vh] ">
           <NavigatorComponent navigationData={navigationData} />
           {data && (
@@ -126,8 +129,109 @@ const SingleBlog = () => {
             </div>
           )}
         </div>
+      </div> */}
+      {/* previous single blog end */}
+
+      <div className="bg-background-500">
+        <div className="container mx-auto pt-[15vh] ">
+          <NavigatorComponent navigationData={navigationData} />
+          {data && (
+            <div className="full flex ">
+              <div className="container flex flex-col items-start p-4 md:p-6 text-justify">
+                <span
+                  className="text-textColor-500"
+                  style={{ fontFamily: `Times New Roman` }}
+                >
+                  {moment(new Date(data?.createdAt)).format(
+                    "MMMM Do YYYY, h:mm:ss a"
+                  )}
+                </span>
+                <h1
+                  className="my-3 md:text-5xl text-xl font-bold text-textColor-500"
+                  style={{
+                    fontFamily: `Times New Roman`,
+                    textAlign: "left",
+                  }}
+                >
+                  {data?.title}
+                </h1>
+                {/* content highligh text */}
+
+                <div className="mt-3 w-full flex items-center">
+                  <img
+                    className="w-full"
+                    src={`${import.meta.env.REACT_APP_SERVER_PATH}/${
+                      data?.image
+                    }`}
+                    alt={data?.title}
+                  />
+                </div>
+                <div className="md:flex gap-10 md:mt-16 mt-10">
+                  <div className="md:w-[10%] w-full">
+                    {/* author information start */}
+                    {/* <div className="mt-3 flex gap-2 items-center">
+                      <img
+                        className="w-8"
+                        src={dotpotiTLogo}
+                        alt="Dotpot iT logo"
+                      />
+                      <h1>Dotpot iT</h1>
+                    </div> */}
+                    {/* author information end */}
+                  </div>
+                  <div className="md:w-[65%] w-full">
+                    <p className="text-textColor-500">{data?.date}</p>
+                    <div className=" text-textColor-500 gap-2">
+                      <div className="flex gap-2 mb-2 md:text-xl text-base mt-3">
+                        <span
+                          className="md:text-7xl text-4xl font-bold -mt-2"
+                          style={{ fontFamily: `Times New Roman` }}
+                        >
+                          {data?.summary?.slice(0, 1)}
+                        </span>
+                        <p className="italic">{data?.summary?.slice(1)}</p>
+                      </div>
+                      <span className="md:text-xl text-base mt-7 inline-block">
+                        {parse(data?.body)}
+                      </span>
+                    </div>
+                    <div className="my-5 border-t border-textColor-500 "></div>
+                    <div>
+                      <p className="mb-3 text-bold text-xl font-bold text-textColor-500">
+                        Tags
+                      </p>
+                      <div className="flex gap-2 items-center flex-wrap">
+                        {data?.tags.map((item, index) => (
+                          <p
+                            key={index}
+                            className="inline px-3 py-1 border border-border rounded-full mr-2 text-textColor-500 hover:text-textColor-500 transition-all"
+                          >
+                            {item}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="md:w-[25%] w-full mt-5">
+                    {/* <NewRecentBlogs currentBlogId={id} /> */}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+          <div className="w-full mt-5 md:px-6 px-4">
+            <NewBlogs currentBlogId={id} isRelatedBlog={false} />
+          </div>
+          <div className="w-full mt-5 md:px-6 px-4">
+            <NextBlog currentBlogId={id} />
+          </div>
+          <div className="w-full mt-5 md:px-6 px-4 mb-5">
+            <NewBlogs currentBlogId={id} isRelatedBlog={true} />
+          </div>
+        </div>
       </div>
-      <RecentBlogs />
+
+      {/* <RecentBlogs /> */}
       {/* <ChatPopup /> */}
       <Footer />
     </>
