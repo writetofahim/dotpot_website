@@ -314,27 +314,27 @@ const Navbar = () => {
       icon: "https://cdn-icons-png.flaticon.com/512/6581/6581049.png",
       submenu: [
         {
-          to: "/industries-we-serve/gaming",
+          to: "/industries-we-serve/gaming/#unity-3D",
           title: "Unity 3D",
           icon: "https://img.icons8.com/ios/256/unity.png",
         },
         {
-          to: "/industries-we-serve/gaming",
+          to: "/industries-we-serve/gaming/#metaverse",
           title: "Metaverse",
           icon: "https://img.icons8.com/external-ddara-lineal-ddara/256/external-metaverse-metaverse-ddara-lineal-ddara-3.png",
         },
         {
-          to: "/industries-we-serve/gaming",
+          to: "/industries-we-serve/gaming/#unreal-engine",
           title: "Unreal Engine",
           icon: "https://img.icons8.com/ios-filled/256/unreal-engine.png",
         },
         {
-          to: "/industries-we-serve/gaming",
+          to: "/industries-we-serve/gaming/#augmented-reality",
           title: "Augmented Reality",
           icon: "https://img.icons8.com/cotton/256/augmented-reality-1-1.png",
         },
         {
-          to: "/industries-we-serve/gaming",
+          to: "/industries-we-serve/gaming/#casual-games",
           title: "Casual Games",
           icon: "https://img.icons8.com/wired/256/games-folder.png",
         },
