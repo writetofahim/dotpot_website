@@ -5,7 +5,7 @@
  * It also sets a hero image and a button link to the Contact Us page.
  */
 
-import React from "react";
+import React, { useState } from 'react';
 import { Helmet } from "react-helmet";
 import Typed from "react-typed";
 import ContactInfo from "../../components/ContactInfo/ContactInfo";
@@ -17,13 +17,25 @@ import SocialMedia from "../../components/SocialMedia/SocialMedia";
 import Particle from "../../components/Hero/Particle";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import AboutHero from './../../components/AboutHero/AboutHero';
+import Contact from './../contact/Contact';
+
+import { Link } from "react-router-dom";
+import { FaInfoCircle } from "react-icons/fa"
+import { RiTeamFill } from "react-icons/ri"
+import ReactVisibilitySensor from 'react-visibility-sensor';
+import whoweare from '../../assets/img/about/whoweare.png';
+import ourgoal from '../../assets/img/about/ourgoal.png';
+import originstory from '../../assets/img/about/originstory.png';
+import GetAQuote from '../../components/GetAQuote/GetAQuote';
 
 const AboutUs = () => {
   useScrollToTop();
 
-  const heroImg =
-    "https://www.hyperlinkinfosystem.com/assets/uploads/banner/1634022694.png";
-  const button = { title: "Contact Us", link: "/contact" };
+  // const heroImg =
+  //   "https://www.hyperlinkinfosystem.com/assets/uploads/banner/1634022694.png";
+  // const button = { title: "Contact Us", link: "/contact" };
+
   return (
     <>
       <Navbar />
@@ -63,22 +75,20 @@ const AboutUs = () => {
           <meta property="og:type" content="website" />
         </Helmet>
         <Particle />
-
         <NavigatorComponent navigationData={navigationData} />
         <AboutSection />
 
         {/* <AboutHero heading="About Dotpot iT" text="A fast growing IT complay" heroImg={heroImg} button={button} /> */}
         {/* <OurPartnersSlider /> */}
-
-        <ContactInfo />
-
+        {/* <ContactInfo /> */}
         {/* <ProcessWeFollow /> */}
         {/* <PartnershipModels /> */}
         {/* <WhoWeWorkWith /> */}
-        <RecentWorks />
-        <SocialMedia />
+        {/* <RecentWorks /> */}
+        {/* <SocialMedia /> */}
         {/* <GoogleMap /> */}
         {/* <ChatPopup /> */}
+
         <Footer />
       </div>
     </>
@@ -88,30 +98,153 @@ const AboutUs = () => {
 export default AboutUs;
 
 const AboutSection = () => {
+  const [activeItem, setActiveItem] = useState('about');
+
+  const handleItemClick = (item) => {
+    setActiveItem(item);
+  };
+
   return (
-    <div className="w-full flex items-center justify-center p-2 bg-background-500 rounded-all py-10">
-      <div className="container p-3 md:p-5 flex flex-col items-center gap-5">
-        <h1>
-          <Typed
-            className="text-center text-3xl md:text-5xl font-bold text-textColor-500"
-            strings={["Who We Are?"]}
-            typeSpeed={100}
-          />
-        </h1>
-        {/* <h1 className="text-center text-gray-600 text-3xl md:text-5xl font-bold">Who We Are ? </h1> */}
-        <p className="w-full md:w-2/3 text-center text-lg md:text-xl text-textColor-500">
-          Dotpot iT is a leading IT company that offers a wide range of IT
-          products and services. From app development and web development to
-          game development, AI development, and blockchain development, we
-          provide solutions that meet the unique needs of our clients. We also
-          offer contact center support and tech support to help businesses
-          optimize their operations and achieve their goals. With our expertise
-          and commitment to excellence, Dotpot iT is the ideal partner for
-          businesses looking to stay ahead in the rapidly-evolving world of
-          technology.
-        </p>
+    <div>
+      {/* Who We Are? */}
+      <div className="">
+        <div className='container mx-auto'>
+          <ReactVisibilitySensor partialVisibility>
+            {({ isVisible }) => (
+              <>
+                <div
+                  className={`mt-10 mb-16 ${isVisible
+                    ? "opacity-100 translate-y-0"
+                    : "translate-y-20 opacity-0"
+                    } duration-1000 `}
+                >
+                  <div className="container mx-auto">
+                    <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
+                      <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-12">
+                        <h1 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
+                          Who We Are?
+                        </h1>
+                        <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
+                          Dotpot iT is a leading IT company that offers a wide range of IT products and services. From app development and web development to game development, AI development, and blockchain development, we provide solutions that meet the unique needs of our clients. We also offer contact center support and tech support to help businesses optimize their operations and achieve their goals. With our expertise and commitment to excellence, Dotpot iT is the ideal partner forbusinesses looking to stay ahead in the rapidly-evolving world of technology.
+                        </p>
+                      </div>
+                      <img
+                        src={whoweare}
+                        alt="Who We Are Image"
+                        className="w-full md:w-1/2 lg:w-1/2 p-5"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </>
+            )}
+          </ReactVisibilitySensor>
+        </div>
+      </div>
+
+      {/* Our Goal */}
+      <div className="bg-primary-100">
+        <div className='container mx-auto'>
+          <ReactVisibilitySensor partialVisibility>
+            {({ isVisible }) => (
+              <>
+                <div
+                  className={`mt-10 mb-16 ${isVisible
+                    ? "opacity-100 translate-y-0"
+                    : "translate-y-20 opacity-0"
+                    } duration-1000 `}
+                >
+                  <div className="container mx-auto">
+                    <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
+                      <img
+                        src={ourgoal}
+                        alt="Who We Are Image"
+                        className="w-full md:w-1/2 lg:w-1/2 p-5"
+                      />
+                      <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-12">
+                        <h1 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
+                          Our Goal
+                        </h1>
+                        <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
+                          Dotpot iT's goal as an iT company is to provide innovative solutions, drive digital transformation, deliver exceptional user experiences, foster collaborative partnerships, and stay agile and adaptive in a fast-paced industry. By achieving these goals, Dotpot iT aims to make a positive impact, empower businesses, and help clients succeed in the digital era.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </>
+            )}
+          </ReactVisibilitySensor>
+        </div>
+      </div>
+
+      {/* Origin Story */}
+      <div className="">
+        <div className='container mx-auto'>
+          <ReactVisibilitySensor partialVisibility>
+            {({ isVisible }) => (
+              <>
+                <div
+                  className={`mt-10 mb-16 ${isVisible
+                    ? "opacity-100 translate-y-0"
+                    : "translate-y-20 opacity-0"
+                    } duration-1000 `}
+                >
+                  <div className="container mx-auto">
+                    <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
+                      <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-12">
+                        <h1 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
+                          Origin Story
+                        </h1>
+                        <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
+                          Dotpot iT began its journey in January 2023 with a focus on utilizing the latest technology. With over 900 satisfied users, the company has quickly established itself as an innovative force in the industry. Its origin story is rooted in passion, expertise, and a commitment to delivering exceptional solutions. By staying ahead of the curve and working with cutting-edge technology, Dotpot iT has gained recognition and is poised to make a lasting impact in the digital realm.
+                        </p>
+                      </div>
+                      <img
+                        src={originstory}
+                        alt="Origin Story Image"
+                        className="w-full md:w-1/2 lg:w-1/2 p-5"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </>
+            )}
+          </ReactVisibilitySensor>
+        </div>
+      </div>
+
+      {/* Get in Touch */}
+      <div className="bg-primary-100">
+        <GetAQuote />
       </div>
     </div>
+
+
+
+    // <div className="w-full flex items-center justify-center p-2 bg-background-500 rounded-all py-10">
+    //   <div className="container p-3 md:p-5 flex flex-col items-center gap-5">
+    //     <h1>
+    //       <Typed
+    //         className="text-center text-3xl md:text-5xl font-bold text-textColor-500"
+    //         strings={["Who We Are?"]}
+    //         typeSpeed={100}
+    //       />
+    //     </h1>
+    //     {/* <h1 className="text-center text-gray-600 text-3xl md:text-5xl font-bold">Who We Are ? </h1> */}
+    //     <p className="w-full md:w-2/3 text-center text-lg md:text-xl text-textColor-500">
+    //       Dotpot iT is a leading IT company that offers a wide range of IT
+    //       products and services. From app development and web development to
+    //       game development, AI development, and blockchain development, we
+    //       provide solutions that meet the unique needs of our clients. We also
+    //       offer contact center support and tech support to help businesses
+    //       optimize their operations and achieve their goals. With our expertise
+    //       and commitment to excellence, Dotpot iT is the ideal partner for
+    //       businesses looking to stay ahead in the rapidly-evolving world of
+    //       technology.
+    //     </p>
+    //   </div>
+    // </div>
   );
 };
 
