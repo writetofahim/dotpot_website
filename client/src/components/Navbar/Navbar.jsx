@@ -261,47 +261,47 @@ const Navbar = () => {
       icon: "https://cdn-icons-png.flaticon.com/512/1687/1687136.png",
       submenu: [
         {
-          to: "/contact_center_services/cti",
+          to: "/key-features/contact-center-support/#cti",
           title: "CTI",
           icon: "https://cdn-icons-png.flaticon.com/512/2991/2991793.png",
         },
         {
-          to: "/contact_center_services/email-marketing",
+          to: "/key-features/contact-center-support/#email-marketing",
           title: "Email Marketing",
           icon: "https://cdn-icons-png.flaticon.com/512/10244/10244391.png",
         },
         {
-          to: "/contact_center_services/chat",
+          to: "/key-features/contact-center-support/#chat-support",
           title: "Chat",
           icon: "https://cdn-icons-png.flaticon.com/512/589/589708.png",
         },
         {
-          to: "/contact_center_services/pd",
+          to: "/key-features/contact-center-support/#pd",
           title: "Predictive Dialer",
           icon: "https://img.icons8.com/windows/256/phone-contact.png",
         },
         {
-          to: "/contact_center_services/mobile-app",
+          to: "/key-features/contact-center-support/#mobile-app",
           title: "Mobile App Module",
           icon: "https://img.icons8.com/ios-glyphs/256/medical-mobile-app.png",
         },
         {
-          to: "/contact_center_services/collection",
+          to: "/key-features/contact-center-support/#collection",
           title: "Collection",
           icon: "https://cdn-icons-png.flaticon.com/512/2103/2103533.png",
         },
         {
-          to: "/contact_center_services/customer-service",
+          to: "/key-features/contact-center-support/#training",
           title: "Customer Service",
           icon: "https://cdn-icons-png.flaticon.com/512/950/950299.png",
         },
         {
-          to: "/contact_center_services/ivr",
+          to: "/key-features/contact-center-support/#ivr",
           title: "IVR",
           icon: "https://cdn-icons-png.flaticon.com/512/1998/1998178.png",
         },
         {
-          to: "/contact_center_services/acd",
+          to: "/key-features/contact-center-support/#acd",
           title: "ACD",
           icon: "https://img.icons8.com/external-tal-revivo-regular-tal-revivo/256/external-acd-file-extension-is-a-file-format-associated-to-a-sony-music-editing-software-audio-regular-tal-revivo.png",
         },
@@ -310,31 +310,31 @@ const Navbar = () => {
     {
       _id: 7,
       title: "Game Development",
-      to: "/industries-we-serve/gaming/",
+      to: "/industries-we-serve/gaming",
       icon: "https://cdn-icons-png.flaticon.com/512/6581/6581049.png",
       submenu: [
         {
-          to: "/industries-we-serve/gaming/#unity-3D",
+          to: "/industries-we-serve/gaming",
           title: "Unity 3D",
           icon: "https://img.icons8.com/ios/256/unity.png",
         },
         {
-          to: "/industries-we-serve/gaming/#metaverse",
+          to: "/industries-we-serve/gaming",
           title: "Metaverse",
           icon: "https://img.icons8.com/external-ddara-lineal-ddara/256/external-metaverse-metaverse-ddara-lineal-ddara-3.png",
         },
         {
-          to: "/industries-we-serve/gaming/#unreal-engine",
+          to: "/industries-we-serve/gaming",
           title: "Unreal Engine",
           icon: "https://img.icons8.com/ios-filled/256/unreal-engine.png",
         },
         {
-          to: "/industries-we-serve/gaming/#augmented-reality",
+          to: "/industries-we-serve/gaming",
           title: "Augmented Reality",
           icon: "https://img.icons8.com/cotton/256/augmented-reality-1-1.png",
         },
         {
-          to: "/industries-we-serve/gaming/#casual-games",
+          to: "/industries-we-serve/gaming",
           title: "Casual Games",
           icon: "https://img.icons8.com/wired/256/games-folder.png",
         },
