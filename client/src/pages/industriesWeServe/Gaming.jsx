@@ -1,25 +1,76 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
-import eaGame from "../../assets/img/eaGame.png";
-import gameHero from "../../assets/img/gameHero.jpg";
-import gameSoft from "../../assets/img/gameSoft.jpg";
-import teamwork from "../../assets/img/teamwork.png";
-import unreal from "../../assets/img/unreal.png";
+import { useLocation } from "react-router-dom";
+import ReactVisibilitySensor from "react-visibility-sensor";
+import gamingcover from "../../assets/img/gamedevelopment/gamingcover.png";
+import unity3d from "../../assets/img/gamedevelopment/unity3d.png";
+import metaverse from "../../assets/img/gamedevelopment/metaverse.png";
+import unrealengine from "../../assets/img/gamedevelopment/unrealengine.png";
+import augmentedreality from "../../assets/img/gamedevelopment/augmentedreality.png";
+import casualgame from "../../assets/img/gamedevelopment/casualgame.png";
 import Footer from "../../components/Footer/Footer";
+import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import GameSlider from "./GameSlider";
 
 const Gaming = () => {
-  useScrollToTop();
-  const gameData = [
-    { image: gameSoft, title: "game soft" },
-    { image: eaGame, title: "ea" },
+  const worksData = [
+    {
+      id: 2,
+      title: "Unity 3D",
+      description:
+        "Dotpot iT is a company specializing in Unity 3D game development. They offer services such as game design consultation, programming, 3D modeling, testing, and post-release support. With their expertise, Dotpot helps developers create immersive and engaging games for multiple platforms.",
+      illustration: unity3d,
+      sectionId: "unity-3D",
+    },
+    {
+      id: 3,
+      title: "Metaverse",
+      description:
+        "Dotpot iT specializes in metaverse game development, offering services that encompass game design consultation, programming, VR/AR integration, user-generated content, quality assurance, and post-release support. They assist developers in creating immersive and interconnected virtual worlds for players to explore and interact with.",
+      illustration: metaverse,
+      sectionId: "metaverse",
+    },
+    {
+      id: 4,
+      title: "Unreal Engine",
+      description:
+        "Dotpot iT specializes in Unreal Engine game development, providing services such as game design consultation, programming, 3D modeling, quality assurance, and post-release support. Their expertise helps developers create visually stunning and immersive games using the power of Unreal Engine.",
+      illustration: unrealengine,
+      sectionId: "unreal-engine",
+    },
+    {
+      id: 5,
+      title: "Augmented Reality",
+      description:
+        "Dotpot iT specializes in augmented reality (AR) development, offering services such as consultation, programming, asset creation, quality assurance, and post-release support. Their expertise helps developers create immersive and interactive AR experiences that push the boundaries of reality and virtual content integration.",
+      illustration: augmentedreality,
+      sectionId: "augmented-reality",
+    },
+    {
+      id: 6,
+      title: "Casual Games",
+      description:
+        "Dotpot iT specializes in casual game development, offering services such as game design consultation, programming, visual design, quality assurance, and post-release support. Their expertise helps developers create engaging and visually appealing casual games that cater to a wide audience.",
+      illustration: casualgame,
+      sectionId: "casual-games",
+    },
   ];
 
+  useScrollToTop();
+
+  const location = useLocation();
+  const fragment = location.hash.substring(1);
+
+  useEffect(() => {
+    if (fragment) {
+      const locationElement = document.getElementById(fragment);
+      locationElement.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [fragment]);
   return (
-    <div>
+    <div className="bg-background-500">
       <Helmet>
         <title>Game Development | Dotpot iT a leading it company</title>
         <meta
@@ -59,171 +110,146 @@ const Gaming = () => {
           content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
       </Helmet>
+
       <Navbar />
-
-      {/* <div>
-          <div className="relative">
-            <div class="absolute top-0 -left-4 w-52 h-52  bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-            <div className=" bg-slate-400 w-72 h-32 bg-transparent  "></div>
+      <div
+        className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
+          } `}
+      >
+        <NavigatorComponent navigationData={navigationData} />
+        <div>
+          {/* Banner */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`mt-10 mb-16 ${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 `}
+                  >
+                    <div className="container mx-auto">
+                      <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
+                        <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
+                          <h1 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500 mt-5">
+                            Game Development
+                          </h1>
+                          <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
+                            Revolutionize gaming experience with Dotpot IT's cutting-edge development. Elevate gameplay and immerse yourself in a new era of gaming innovation.
+                          </p>
+                        </div>
+                        <img
+                          src={gamingcover}
+                          alt="Game Development Image"
+                          className="w-full md:w-1/2 lg:w-1/2"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </>
+              )}
+            </ReactVisibilitySensor>
           </div>
-        </div>  */}
 
-      <div className="">
-        <section className="relative w-full overflow-hidden overflow-x-clip bg-slate-50 bg-gradient-to-t from-slate-50 to-slate-100 dark1:bg-[#0B1120] dark1:bg-none">
-          <div className="absolute right-[28%] top-0 hidden h-[150px] w-[200px] rotate-12 rounded-3xl bg-gradient-to-l from-blue-600 to-sky-400 opacity-20 blur-3xl filter dark1:block dark1:opacity-30 lg:top-44 lg:-right-20 lg:h-72 lg:w-[350px] xl:h-80 xl:w-[500px]"></div>
-          <div className="absolute bottom-44 -left-64 hidden h-[150px] w-[900px] -rotate-45 rounded-3xl bg-gradient-to-r from-violet-600 to-indigo-800 opacity-30 blur-3xl filter dark1:block lg:bottom-24 lg:-left-20 lg:h-28 lg:w-[250px] lg:-rotate-12 lg:opacity-20 xl:h-40 xl:w-[400px]"></div>
-          <div className="absolute left-[28%] top-28 hidden rotate-12 rounded-3xl bg-sky-800 opacity-90 blur-3xl filter dark1:opacity-30 lg:h-32 lg:w-[450px] dark1:lg:block xl:h-44 xl:w-[600px]"></div>
-          <div className="absolute h-16 w-[600px] rotate-[-40deg] rounded-3xl bg-sky-400 opacity-10 blur-2xl filter dark1:hidden lg:bottom-24 lg:-left-28 lg:h-12 lg:w-[600px] lg:opacity-30 lg:blur-2xl xl:-left-40 xl:h-4 xl:w-[700px] xl:opacity-100"></div>
-          <div className="absolute h-14 w-[600px] rotate-[-40deg] rounded-3xl bg-purple-400 opacity-30 blur-2xl filter dark1:hidden lg:bottom-20 lg:-left-28 lg:h-10 lg:w-[600px] lg:opacity-20 lg:blur-xl xl:-left-40 xl:h-2 xl:w-[800px] xl:opacity-100"></div>
-          <div className="absolute hidden h-16 w-[600px] rotate-[-40deg] rounded-3xl bg-sky-400 opacity-10 blur-2xl filter dark1:hidden lg:top-24 lg:-right-28 lg:block lg:h-12 lg:w-[600px] lg:opacity-30 lg:blur-2xl xl:-right-40 xl:h-4 xl:w-[700px] xl:opacity-100"></div>
-          <div className="absolute hidden h-14 w-[600px] rotate-[-40deg] rounded-3xl bg-purple-400 opacity-30 blur-2xl filter dark1:hidden lg:top-20 lg:-right-28 lg:block lg:h-10 lg:w-[600px] lg:opacity-20 lg:blur-xl xl:-right-40 xl:h-2 xl:w-[800px] xl:opacity-100"></div>
-
-          {/* main container */}
-          <div className="bg-background-500">
-            <div className="pt-[15vh] pb-10 container mx-auto">
-              <NavigatorComponent navigationData={navigationData} />
-              <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center ">
-                Game Development
-              </h1>
-              <h2 className="text-center text-textColor-500">
-                Revolutionize gaming experience with Dotpot IT's cutting-edge
-                development. Elevate gameplay and immerse yourself in a new era
-                of gaming innovation.
-              </h2>
-              {/* slider */}
-              <div className="md:flex gap-5  justify-center border-b border-border pb-5">
-                <div className=" w-full md:w-2/5 h-82 mx-auto m-10">
-                  <GameSlider gameData={gameData} />
-                </div>
-
-                <div className="md:w-2/5 h-82 mx-auto rounded-lg  mt-10 p-5 flex flex-col justify-center items-center">
-                  <h2 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
-                    Our Game Development{" "}
-                    <span className="text-textColor-500">Service</span>
-                  </h2>
-                  <p className="text-center text-textColor-500">
-                    Dotpot provides game development services, handling
-                    everything from game design to programming and testing. They
-                    focus on user engagement and offer ongoing support.
-                  </p>
-                </div>
+          {/* body */}
+          <div className="container mx-auto w-full overflow-hidden mt-24">
+            <>
+              <div className={`flex flex-col gap-5`}>
+                {worksData.map(
+                  ({ id, title, description, illustration, sectionId }) => (
+                    <div
+                      className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
+                      key={id}
+                      id={sectionId}
+                    >
+                      <div
+                        className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
+                          } `}
+                      >
+                        <ReactVisibilitySensor partialVisibility>
+                          {({ isVisible }) => (
+                            <div
+                              className={` ${isVisible
+                                ? "opacity-100 translate-y-0"
+                                : "translate-y-20 opacity-0"
+                                } duration-1000 `}
+                            >
+                              <h1 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
+                                {title}
+                              </h1>
+                              <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">
+                                {description}
+                              </p>
+                            </div>
+                          )}
+                        </ReactVisibilitySensor>
+                      </div>
+                      <ReactVisibilitySensor partialVisibility>
+                        {({ isVisible }) => (
+                          <div
+                            className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
+                              } ${isVisible
+                                ? "opacity-100 translate-y-0"
+                                : "translate-y-20 opacity-0"
+                              } duration-1000 `}
+                          >
+                            <img
+                              className="w-4/5 mx-auto"
+                              src={illustration}
+                              alt={title}
+                            />
+                          </div>
+                        )}
+                      </ReactVisibilitySensor>
+                    </div>
+                  )
+                )}
               </div>
-
-              <div className="mt-5 md:flex gap-5 px-5 w-full flex-row-reverse justify-evenly">
-                <div>
-                  <img
-                    className="w-[450px] mx-auto mb-5 rounded-md"
-                    src={teamwork}
-                    alt="Experienced team Image"
-                  />
-                </div>
-                <div className="rounded-lg w-full md:w-[590px] border border-border bordwe p-5 flex flex-col justify-center items-center">
-                  <h2 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
-                    Experienced <span className="text-textColor-500">team</span>
-                  </h2>
-                  <p className="text-center text-textColor-500">
-                    Our team consists of skilled game developers and designers
-                    with vast experience.
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-5 md:flex gap-5 px-5 w-full  justify-evenly">
-                <div>
-                  <img
-                    className="w-[450px] mx-auto mb-5 rounded-md"
-                    src={unreal}
-                    alt="Cutting-edge game development Image"
-                  />
-                </div>
-                <div className="rounded-lg w-full md:w-[590px] border border-border p-5 flex flex-col justify-center items-center">
-                  <h2 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
-                    Cutting-edge game{" "}
-                    <span className="text-textColor-500">development </span>
-                  </h2>
-                  <p className="text-center text-textColor-500">
-                    We use innovative technologies and tools for advanced game
-                    development.
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-5 md:flex gap-5 px-5 w-full flex-row-reverse justify-evenly">
-                <div>
-                  <img
-                    className="w-[450px] mx-auto mb-5 rounded-md"
-                    src={
-                      "https://www.xfire.com/wp-content/uploads/2021/10/Netflix-Twitter-Facebook-Outage-Squid-Game-Meme-Guns.jpg"
-                    }
-                    alt="CAcross different platforms"
-                  />
-                </div>
-                <div className="rounded-lg w-full md:w-[590px] border border-border p-5 flex flex-col justify-center items-center">
-                  <h2 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
-                    Across different{" "}
-                    <span className="text-textColor-500">platforms</span>
-                  </h2>
-                  <p className="text-center text-textColor-500">
-                    We develop games for mobile, PC, and consoles, across
-                    multiple platforms.
-                  </p>
-                </div>
-              </div>
-
-              <div className="py-5 md:flex gap-5 px-5 w-full  justify-evenly">
-                <div>
-                  <img
-                    className="w-[450px] mx-auto mb-5 rounded-md"
-                    src={gameHero}
-                    alt="Customized game design Image"
-                  />
-                </div>
-                <div className="rounded-lg w-full md:w-[590px] border border-border p-5 flex flex-col justify-center items-center">
-                  <h2 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
-                    Customized game{" "}
-                    <span className="text-textColor-500">design</span>
-                  </h2>
-                  <p className="text-center text-textColor-500">
-                    Tailored games to fit client requirements with personalized
-                    design and development.
-                  </p>
-                </div>
-              </div>
-
-              {/* <div className="w-96 absolute top-32">
-              <div class="absolute top-0 -left-4 w-52 h-52  bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-              <div class="absolute top-0 -right-4 w-52 h-52  bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-              <div class="absolute -bottom-8 left-20 w-52 h-52  bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-            </div>
-
-            <div className="w-96 absolute right-0 top-32">
-              <div class="absolute top-0 -left-4 w-52 h-52  bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-              <div class="absolute top-0 -right-4 w-52 h-52  bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-              <div class="absolute -bottom-8 left-20 w-52 h-52  bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-            </div>
-
-            <div className="w-96 absolute right-0 bottom-32">
-              <div class="absolute top-0 -left-4 w-52 h-52  bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-              <div class="absolute top-0 -right-4 w-52 h-52  bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-              <div class="absolute -bottom-8 left-20 w-52 h-52  bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-            </div>
-
-            <div className="w-96 absolute ">
-              <div class="absolute top-0 -left-4 w-52 h-52  bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-              <div class="absolute top-0 -right-4 w-52 h-52  bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-              <div class="absolute -bottom-8 left-20 w-52 h-52  bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-            </div> */}
-            </div>
+            </>
           </div>
-        </section>
+
+          {/* Why Dotpot iT */}
+          <div className="py-16 bg-primary-100">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 p-3 text-textColor-500`}
+                  >
+                    <h1 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
+                      Why Dotpot iT
+                    </h1>
+                    <img
+                      className="w-64 mx-auto"
+                      src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"
+                      alt="colored line"
+                    />
+                    <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
+                    Dotpot iT is an excellent choice for game development due to their expertise in IT support services and commitment to delivering innovative solutions. With a dedicated team, they provide comprehensive support throughout the development process, ensuring seamless operations and exceptional customer service. Choose Dotpot iT to leverage their knowledge and experience for successful game development.
+                    </p>
+                  </div>
+                </>
+              )}
+            </ReactVisibilitySensor>
+          </div>
+
+          {/* Get in Touch */}
+          <div className="">
+            <GetAQuote />
+          </div>
+        </div>
       </div>
-
       <Footer />
     </div>
   );
 };
 
 export default Gaming;
+
 const navigationData = [
   { title: "Services", link: "/services" },
   {
