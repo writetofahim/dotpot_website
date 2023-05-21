@@ -1,0 +1,13 @@
+/* waveform.css */
+
+.waveform-container {
+    width: 100%;
+    height: 200px;
+  }
+  
+  .waveform-play-pause {
+    margin-top: 10px;
+  }
+  
+  /* Add any additional styles for the waveform player */
+  

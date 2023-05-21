@@ -109,6 +109,7 @@ const AddBlogs = () => {
         newPost.audio = resFiles[0].filename;
         setAudioFile(null);
       }
+      console.log(newPost);
       if (blogId) {
         console.log("uploading full blog");
         const response = await axios.patch(`/blog/${blogId}`, newPost);
@@ -209,10 +210,17 @@ const AddBlogs = () => {
           <UploadAudio
             selectedFile={audioFile}
             setSelectedFile={setAudioFile}
-            prevAudio={uploadedAudio}
+            prevAudio={
+              uploadedAudio &&
+              `${import.meta.env.REACT_APP_SERVER_PATH}/${uploadedAudio}`
+            }
           />
         </div>
-        <Editor value={body} setValue={setBody} />
+        <Editor
+          initialValue={body}
+          setValue={setBody}
+          isEditMode={blogId ? true : false}
+        />
         <div className="mt-14 flex justify-center gap-5">
           <button
             type="submit"

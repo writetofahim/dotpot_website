@@ -13,11 +13,12 @@ const NewBlogs = ({ currentBlogId, isRelatedBlog }) => {
   // Data Fetching
   useEffect(() => {
     const url = isRelatedBlog
-      ? `/blog/recent/${currentBlogId}`
+      ? `/blog/related/${currentBlogId}?limit=5`
       : "/blog?limit=6";
     axios
       .get(url)
       .then((response) => {
+        console.log("isRelatedBlog", isRelatedBlog, response);
         const filtered = response.data.blogs.filter(
           (b) => b._id !== currentBlogId
         );

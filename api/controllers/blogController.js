@@ -89,26 +89,28 @@ const updateBlog = async (req, res) => {
 };
 
 const findRelatedBlogs = async (req, res) => {
-  const blogId = req.params.blogId; // Assuming you have the current blog post's ID
-  const limit = parseInt(req.query.limit) || 5; // Default limit is 5 if not specified in query params
+  const blogId = req.params.blogId;
+  const limit = parseInt(req.query.limit) || 5;
 
   try {
-    // Find the current blog post by ID
     const currentBlog = await Blog.findById(blogId);
 
     if (!currentBlog) {
       return res.status(404).json({ error: "Blog post not found" });
     }
 
-    // Extract the tags from the current blog post
     const tags = currentBlog.tags;
 
-    // Find related blogs by matching any one tag
-    const relatedBlogs = await Blog.find({ tags: { $in: tags } })
-      .limit(limit) // Set the limit based on the query param or default to 5
+    const relatedBlogs = await Blog.find({
+      tags: { $in: tags },
+      _id: { $ne: blogId },
+    })
+      .limit(limit)
       .exec();
 
-    res.status(200).json({ relatedBlogs });
+    res.status(200).json({
+      blogs: relatedBlogs,
+    });
   } catch (error) {
     console.error("Error finding related blogs:", error);
     res.status(500).json({ error: "Internal server error" });

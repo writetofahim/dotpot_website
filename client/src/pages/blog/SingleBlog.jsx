@@ -27,6 +27,7 @@ import axios from "../../utils/axiosInstance";
 import postLogger from "../../utils/postLogger";
 import NewBlogs from "./NewBlogs";
 import NextBlog from "./NextBlog";
+import WaveformPlayer from "./WaveformPlayer";
 
 const SingleBlog = () => {
   const { id } = useParams();
@@ -166,6 +167,7 @@ const SingleBlog = () => {
                     alt={data?.title}
                   />
                 </div>
+
                 <div className="md:flex gap-10 md:mt-16 mt-10">
                   <div className="md:w-[10%] w-full">
                     {/* author information start */}
@@ -180,8 +182,23 @@ const SingleBlog = () => {
                     {/* author information end */}
                   </div>
                   <div className="md:w-[65%] w-full">
+                    {/* listen the article start*/}
+
+                    {data?.audio && (
+                      <div className="w-full ">
+                        <div className="w-full">
+                          <WaveformPlayer
+                            audioUrl={`${
+                              import.meta.env.REACT_APP_SERVER_PATH
+                            }/${data.audio}`}
+                          />
+                        </div>
+                      </div>
+                    )}
+
+                    {/* listen the article end*/}
                     <p className="text-textColor-500">{data?.date}</p>
-                    <div className=" text-textColor-500 gap-2">
+                    <div className=" text-textColor-500 gap-2 mt-20">
                       <div className="flex gap-2 mb-2 md:text-xl text-base mt-3">
                         <span
                           className="md:text-7xl text-4xl font-bold -mt-2"

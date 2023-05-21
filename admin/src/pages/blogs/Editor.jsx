@@ -1,25 +1,28 @@
 import "quill/dist/quill.snow.css";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useQuill } from "react-quilljs";
 
-function HtmlEditor({ value, setValue, isEditMode }) {
+function HtmlEditor({ initialValue, setValue, isEditMode }) {
   const { quill, quillRef } = useQuill();
-  //   const [value, setValue] = useState();
+  const [isInitialValueSet, setIsInitialValueSet] = useState(false);
+  const [editMode, setEditMode] = useState(isEditMode);
 
-  React.useEffect(() => {
-    if (quill && isEditMode) {
-      console.log("editMode");
-      quillRef.current.firstChild.innerHTML = value;
+  useEffect(() => {
+    if (quill && editMode && initialValue) {
+      quill.clipboard.dangerouslyPasteHTML(initialValue);
+      setIsInitialValueSet(true);
     }
-  }, [isEditMode]);
+  }, [quill, editMode, initialValue]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (quill) {
       quill.on("text-change", () => {
         setValue(quillRef.current.firstChild.innerHTML);
+        setEditMode(false);
       });
     }
   }, [quill]);
+
   return (
     <div className="mt-16">
       <div style={{ width: "100%", height: "500px" }}>
@@ -28,4 +31,5 @@ function HtmlEditor({ value, setValue, isEditMode }) {
     </div>
   );
 }
+
 export default HtmlEditor;

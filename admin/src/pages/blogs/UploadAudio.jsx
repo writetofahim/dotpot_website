@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const UploadAudio = ({ prevAudio, selectedFile, setSelectedFile }) => {
   //   const [selectedFile, setSelectedFile] = useState(null);
   const [audioUrl, setAudioUrl] = useState(null);
+  const audioInputRef = useRef(null);
 
   useEffect(() => {
     setAudioUrl(prevAudio);
@@ -23,6 +24,7 @@ const UploadAudio = ({ prevAudio, selectedFile, setSelectedFile }) => {
   const handleRemove = () => {
     setAudioUrl(null);
     setSelectedFile(null);
+    audioInputRef.current.value = null;
   };
 
   return (
@@ -32,6 +34,7 @@ const UploadAudio = ({ prevAudio, selectedFile, setSelectedFile }) => {
       </label>
       <input
         id="blog-audio"
+        ref={audioInputRef}
         type="file"
         accept="audio/*"
         onChange={handleFileChange}

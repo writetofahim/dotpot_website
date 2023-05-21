@@ -74,8 +74,9 @@ function App() {
         return response;
       },
       (error) => {
+        console.log(error);
         if (error?.response?.status === 401) {
-          logout(); // call the logout function from your context
+          return logout(); // call the logout function from your context
         }
         return Promise.reject(error);
       }
