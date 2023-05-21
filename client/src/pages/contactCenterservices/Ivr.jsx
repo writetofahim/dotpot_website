@@ -16,7 +16,7 @@ const Ivr = () => {
         </title>
         <meta
           name="description"
-          content="Interactive Voice Response (IVR) is a technology that enables automated voice-based interactions between computers and humans. With IVR, callers can use their voice or keypad inputs to complete various steps and reach their desired destination without the need for human assistance. "
+          content="Dotpot iT is providing Interactive Voice Response for our clients. "
         />
         <meta
           name="keywords"
@@ -32,7 +32,7 @@ const Ivr = () => {
         />
         <meta
           property="og:description"
-          content="Interactive Voice Response (IVR) is a technology that enables automated voice-based interactions between computers and humans. With IVR, callers can use their voice or keypad inputs to complete various steps and reach their desired destination without the need for human assistance. "
+          content="Dotpot iT is providing Interactive Voice Response for our clients. "
         />
         <meta
           property="og:image"
@@ -49,7 +49,7 @@ const Ivr = () => {
         />
         <meta
           name="twitter:description"
-          content="Interactive Voice Response (IVR) is a technology that enables automated voice-based interactions between computers and humans. With IVR, callers can use their voice or keypad inputs to complete various steps and reach their desired destination without the need for human assistance. "
+          content="Dotpot iT is providing Interactive Voice Response for our clients. "
         />
         <meta
           name="twitter:image"
@@ -62,7 +62,7 @@ const Ivr = () => {
         <NavigatorComponent navigationData={navigationData} />
         <div className="container mx-auto">
           <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center">
-            Interactive Voice Response (IVR)
+            Interactive Voice Response (IVR) by Dotpot iT
           </h1>
           <div className="text-textColor-500 flex flex-col gap-5 p-5">
             <p className="text-justify">

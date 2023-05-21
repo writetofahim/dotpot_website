@@ -452,7 +452,11 @@ const Navbar = () => {
                     key={i}
                     className="px-5 flex group/item gap-2 items-center w-full hover:scale-105 duration-100 cursor-pointer relative lg:text-gray-400"
                   >
-                    <img width={20} src={service.icon} alt="" />
+                    <img
+                      width={20}
+                      src={service.icon}
+                      alt="Navbar Item Dropdown"
+                    />
                     <Submenu
                       service={service}
                       selectedSubmenu={selectedSubmenu}

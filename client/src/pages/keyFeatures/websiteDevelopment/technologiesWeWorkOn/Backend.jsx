@@ -1,9 +1,9 @@
 import React from "react";
-import nodeJS from '../../../../assets/img/icon/webBackend/nodejs.png'
-import express from '../../../../assets/img/icon/webBackend/expressJS.png'
-import laravel from '../../../../assets/img/icon/webBackend/laravel.png'
-import dj from '../../../../assets/img/icon/webBackend/dj.jpg'
-import aspNet from '../../../../assets/img/icon/webBackend/aspNet.png'
+import aspNet from "../../../../assets/img/icon/webBackend/aspNet.png";
+import dj from "../../../../assets/img/icon/webBackend/dj.jpg";
+import express from "../../../../assets/img/icon/webBackend/expressJS.png";
+import laravel from "../../../../assets/img/icon/webBackend/laravel.png";
+import nodeJS from "../../../../assets/img/icon/webBackend/nodejs.png";
 
 const Backend = () => {
   const data = [
@@ -23,7 +23,11 @@ const Backend = () => {
                 key={index}
                 className="mt-10 md:w-[100px] md:h-[100px] p-2 rounded-full md:rounded-lg shadow flex items-center justify-center hover:border hover:border-purple-500 hover:scale-110 hover:shadow-xl transition-all glassmorphism"
               >
-                <img src={item.icon} alt="" className="h-[50px] w-[50px]" />
+                <img
+                  src={item.icon}
+                  alt="Technology Name"
+                  className="h-[50px] w-[50px]"
+                />
               </div>
             );
           })}

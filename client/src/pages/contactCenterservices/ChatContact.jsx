@@ -14,7 +14,7 @@ const ChatContact = () => {
         <title>Web Chat Support | Dotpot iT a leading it company</title>
         <meta
           name="description"
-          content="The Dotpot IT contact center system integrates a powerful web chat module, empowering businesses with exceptional customer service."
+          content="Get in touch with us for your IT needs. Contact us for website development, mobile app development, and more."
         />
         <meta
           name="keywords"
@@ -27,7 +27,7 @@ const ChatContact = () => {
         <meta property="og:title" content="Web Chat Support | Dotpot iT" />
         <meta
           property="og:description"
-          content="The Dotpot IT contact center system integrates a powerful web chat module, empowering businesses with exceptional customer service."
+          content="Get in touch with us for your IT needs. Contact us for website development, mobile app development, and more."
         />
         <meta
           property="og:image"
@@ -41,7 +41,7 @@ const ChatContact = () => {
         <meta name="twitter:title" content="Web Chat Support | Dotpot iT" />
         <meta
           name="twitter:description"
-          content="The Dotpot IT contact center system integrates a powerful web chat module, empowering businesses with exceptional customer service."
+          content="Get in touch with us for your IT needs. Contact us for website development, mobile app development, and more."
         />
         <meta
           name="twitter:image"

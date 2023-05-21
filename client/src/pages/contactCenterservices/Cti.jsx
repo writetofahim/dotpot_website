@@ -12,11 +12,11 @@ const Cti = () => {
     <div>
       <Helmet>
         <title>
-          Telephony Integration (CTI) | Dotpot iT a leading it company
+          Computer Telephony Integration (CTI) | Dotpot iT a leading it company
         </title>
         <meta
           name="description"
-          content="Dotpot IT integrates with various CRMs and offers CTI screen popups to agents, providing them with caller information, such as name and phone number, before connecting to the call. This helps agents personalize calls and improve customer experience."
+          content="Dotpot IT offers Computer Telephony Integration for efficient debtor contact and increased debt recovery rates."
         />
         <meta
           name="keywords"
@@ -32,7 +32,7 @@ const Cti = () => {
         />
         <meta
           property="og:description"
-          content="Dotpot IT integrates with various CRMs and offers CTI screen popups to agents, providing them with caller information, such as name and phone number, before connecting to the call. This helps agents personalize calls and improve customer experience."
+          content="Dotpot IT offers Computer Telephony Integration for efficient debtor contact and increased debt recovery rates."
         />
         <meta
           property="og:image"
@@ -49,7 +49,7 @@ const Cti = () => {
         />
         <meta
           name="twitter:description"
-          content="Dotpot IT integrates with various CRMs and offers CTI screen popups to agents, providing them with caller information, such as name and phone number, before connecting to the call. This helps agents personalize calls and improve customer experience."
+          content="Dotpot IT offers Computer Telephony Integration for efficient debtor contact and increased debt recovery rates."
         />
         <meta
           name="twitter:image"

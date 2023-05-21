@@ -107,11 +107,11 @@ const Home = () => {
       <RecentBlogs />
       <OurTeam />
       <SocialMedia />
+      <TrustpilotBox />
       <OurPartnersSlider />
       {/* <GoogleMap /> */}
       {/* <ChatPopup /> */}
       {/* <TrustBox /> */}
-      <TrustpilotBox />
       <Footer />
     </>
   );

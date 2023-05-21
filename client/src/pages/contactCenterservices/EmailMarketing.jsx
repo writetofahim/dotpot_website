@@ -54,7 +54,7 @@ const EmailMarketing = () => {
         <NavigatorComponent navigationData={navigationData} />
         <div className="container mx-auto">
           <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center">
-            Email Marketing
+            Email Marketing by Dotpot iT
           </h1>
           <div className="text-textColor-500 flex flex-col gap-5 p-5">
             <p className="text-center">
