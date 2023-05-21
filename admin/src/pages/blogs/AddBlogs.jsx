@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
-import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { useSearchParams } from "react-router-dom";
 import CommonSnackbar from "../../components/ComonSnackbar";
@@ -8,13 +7,19 @@ import { AuthContext } from "../../contexts/AuthContext";
 import axios from "../../utils/axiosInstance";
 import postLogger from "../../utils/postLogger";
 import BlogTags from "./BlogTags";
+import Editor from "./Editor";
+import UploadAudio from "./UploadAudio";
 
 const AddBlogs = () => {
-  const [content, setContent] = useState("");
-  const [tags, setTags] = useState([]);
-  const [file, setFile] = useState(null);
   const [title, setTitle] = useState("");
+  const [body, setBody] = useState("");
+  const [tags, setTags] = useState([]);
   const [summary, setSummary] = useState("");
+
+  const [imageFile, setImageFile] = useState(null);
+  const [audioFile, setAudioFile] = useState(null);
+
+  const [uploadedAudio, setUploadedAudio] = useState(null);
 
   const [loading, setLoading] = useState(false);
   const { user } = useContext(AuthContext);
@@ -31,9 +36,11 @@ const AddBlogs = () => {
         .get(`/blog/${blogId}`)
         .then((res) => {
           setTitle(res.data.title);
-          setContent(res.data.body);
+          setBody(res.data.body);
           setTags(res.data.tags);
           setSummary(res.data.summary);
+
+          setUploadedAudio(res.data.audio);
 
           const preview = document.getElementById("preview");
           const imageDiv = document.getElementById("imageDiv");
@@ -52,9 +59,6 @@ const AddBlogs = () => {
     }
   }, []);
 
-  function handleChange(value) {
-    setContent(value);
-  }
   function handleChangeImage(event) {
     const file = event.target.files[0];
     const reader = new FileReader();
@@ -68,63 +72,74 @@ const AddBlogs = () => {
       preview.innerHTML = "";
       preview.appendChild(image);
     };
-    setFile(file);
+    setImageFile(file);
   }
 
   const handlePostSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    let attachment;
+    console.log("Handle submit called");
 
     const newPost = {
       title,
       author: user._id,
-      body: content,
+      body: body,
       tags,
       summary,
       isPublished: true,
     };
 
     try {
-      if (file) {
+      if (imageFile) {
+        console.log("Uploading image");
         const formData = new FormData();
-        formData.append("file", file);
+        formData.append("file", imageFile);
         const { data: resFiles } = await axios.post("/upload/blogs", formData);
-        attachment = resFiles[0].filename;
-        setFile(null);
-        newPost.image = attachment;
-        if (blogId) {
-          const { data: d } = await axios.patch(`/blog/${blogId}`, newPost);
-          console.log(d);
-          setMessage("Blog Updated Successfully!");
-        } else {
-          const { data } = await axios.post("/blog", newPost);
-          console.log(newPost);
-          console.log(data);
-          setMessage("Blog Posted Successfully!");
-          handleReset();
-        }
-        setLoading(false);
-        setSnackbar(true);
+        newPost.image = resFiles[0].filename;
+        setImageFile(null);
       }
-      if (!file && blogId) {
-        const { data: d } = await axios.patch(`/blog/${blogId}`, newPost);
+      if (audioFile) {
+        console.log("Uploading audio...");
+        const audioFormData = new FormData();
+        audioFormData.append("audioFile", audioFile);
+        const { data: resFiles } = await axios.post(
+          "/upload/audio",
+          audioFormData
+        );
+        newPost.audio = resFiles[0].filename;
+        setAudioFile(null);
+      }
+      if (blogId) {
+        console.log("uploading full blog");
+        const response = await axios.patch(`/blog/${blogId}`, newPost);
+        console.log(response);
         setMessage("Blog Updated Successfully!");
-        setLoading(false);
         setSnackbar(true);
+        setLoading(false);
+      } else {
+        console.log("adding full blog");
+        const response = await axios.post("/blog", newPost);
+        console.log(response);
+        setMessage("Blog Posted Successfully!");
+        setSnackbar(true);
+        handleReset();
+        setLoading(false);
       }
     } catch (error) {
       console.log(error);
+    } finally {
+      console.log("finally called");
       setLoading(false);
     }
   };
 
   const handleReset = () => {
     setTitle("");
-    setContent("");
+    setBody("");
     setSummary("");
     setTags([]);
-    setFile(null);
+    setImageFile(null);
+    setAudioFile(null);
     document.getElementById("pic").value = "";
     const imageDiv = document.getElementById("imageDiv");
     if (imageDiv) {
@@ -152,6 +167,7 @@ const AddBlogs = () => {
           className="mb-5 w-full"
           type="text"
           placeholder="Title"
+          required
         />
         <label className="block text-gray-700 font-bold mb-2">
           Blog Summary
@@ -161,6 +177,7 @@ const AddBlogs = () => {
           onChange={(e) => setSummary(e.target.value)}
           className="mb-5 w-full"
           placeholder="Write a summary of the blog"
+          required
         ></textarea>
         <div>
           <div className="mb-4">
@@ -177,22 +194,25 @@ const AddBlogs = () => {
               required
             />
           </div>
-          <div className="mb-5">
-            <BlogTags tags={tags} setTags={setTags} />
-          </div>
           <div id="imageDiv" className="hidden">
-            <div className="w-52 h-52 bg-gray-300 rounded-md flex items-center justify-center mx-auto mb-5">
+            <div className="w-full bg-gray-100 rounded-md flex items-center justify-center mx-auto mb-5">
               <div className="" id="preview"></div>
             </div>
           </div>
+          <div className="mb-5">
+            <BlogTags
+              tags={tags}
+              setTags={setTags}
+              isEditMode={blogId ? true : false}
+            />
+          </div>
+          <UploadAudio
+            selectedFile={audioFile}
+            setSelectedFile={setAudioFile}
+            prevAudio={uploadedAudio}
+          />
         </div>
-
-        <ReactQuill
-          placeholder="Write something..."
-          className="h-80"
-          value={content}
-          onChange={handleChange}
-        />
+        <Editor value={body} setValue={setBody} />
         <div className="mt-14 flex justify-center gap-5">
           <button
             type="submit"

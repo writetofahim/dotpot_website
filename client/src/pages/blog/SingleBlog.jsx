@@ -191,7 +191,7 @@ const SingleBlog = () => {
                         </span>
                         <p className="italic">{data?.summary?.slice(1)}</p>
                       </div>
-                      <span className="md:text-xl text-base mt-7 inline-block">
+                      <span className="md:text-xl text-base mt-7 inline-block tracking-wide">
                         {parse(data?.body)}
                       </span>
                     </div>

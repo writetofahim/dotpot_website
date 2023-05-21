@@ -69,6 +69,10 @@ const updateBlog = async (req, res) => {
     const selected = await Blog.findById(req.params.id);
     await removeFile(selected.image);
   }
+  if (req.body.audio) {
+    const selected = await Blog.findById(req.params.id);
+    await removeFile(selected.audio);
+  }
   try {
     const blog = await Blog.findByIdAndUpdate(req.params.id, req.body, {
       new: true,

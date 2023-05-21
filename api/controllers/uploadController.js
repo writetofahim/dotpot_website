@@ -19,12 +19,23 @@ const removeAnyFile = (req, res) => {
   fs.unlink(filePath, (error) => {
     if (error) {
       console.log(error);
-      res.status(500).send({ error: "File remove failed" });
+      res.status(500).send({ success: false, error: "File remove failed" });
     } else {
-      res.send({ error: "File removed Successful" });
+      res.send({ success: true, message: "File removed Successful" });
     }
   });
 };
+
+/**
+ * Controller for uploading audio files.
+ * Endpoint: POST /api/audio/upload
+ * Expected Request:
+ *   - Form Data: audioFile (audio file to be uploaded)
+ * Response:
+ *   - Success: 200 OK with the audioUrl of the uploaded file
+ *   - Error: 400 Bad Request if no audio file is provided or if the file format is invalid
+ *           500 Internal Server Error if an error occurs during the upload process
+ */
 
 // Export the controller function
 module.exports = {

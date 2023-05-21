@@ -111,6 +111,7 @@ const Home = () => {
       {/* <GoogleMap /> */}
       {/* <ChatPopup /> */}
       {/* <TrustBox /> */}
+      <TrustpilotBox />
       <Footer />
     </>
   );
@@ -135,15 +136,39 @@ export const TrustBox = () => {
       className="trustpilot-widget" // Renamed this to className.
       // [ long list of data attributes...]
       data-locale="en-US"
-      data-template-id="YOUR_TEMPLATE_ID"
-      data-businessunit-id="YOUR_BUSINESS_UNIT_ID"
+      data-template-id="5419b6a8b0d04a076446a9ad"
+      data-businessunit-id="64629248c3fdd6cd235af790"
     >
       <a
         href="https://www.trustpilot.com/review/dotpotit.com"
         target="_blank"
         rel="noopener"
       >
-        {" "}
+        Trustpilot
+      </a>
+    </div>
+  );
+};
+
+const TrustpilotBox = () => {
+  return (
+    <div
+      className="trustpilot-widget my-10"
+      data-locale="en-US"
+      data-template-id="5419b6a8b0d04a076446a9ad"
+      data-businessunit-id="64629248c3fdd6cd235af790"
+      data-style-height="24px"
+      data-style-width="100%"
+      data-theme="light"
+      data-min-review-count="10"
+      data-without-reviews-preferred-string-id="1"
+      data-style-alignment="center"
+    >
+      <a
+        href="https://www.trustpilot.com/review/dotpotit.com"
+        target="_blank"
+        rel="noopener"
+      >
         Trustpilot
       </a>
     </div>
