@@ -118,39 +118,39 @@ function App() {
         {/* Services Pages */}
 
         {/* Contact Center Service Pages */}
-        <Route path="/contact_center_services/cti" element={<Cti />} />
+        <Route path="/contact-center-services/cti" element={<Cti />} />
         <Route
-          path="/contact_center_services/email-marketing"
+          path="/contact-center-services/email-marketing"
           element={<EmailMarketing />}
         />
-        <Route path="/contact_center_services/chat" element={<ChatContact />} />
-        <Route path="/contact_center_services/pd" element={<Pd />} />
+        <Route path="/contact-center-services/chat" element={<ChatContact />} />
+        <Route path="/contact-center-services/pd" element={<Pd />} />
         <Route
-          path="/contact_center_services/mobile-app"
+          path="/contact-center-services/mobile-app"
           element={<MobileApp />}
         />
         <Route
-          path="/contact_center_services/collection"
+          path="/contact-center-services/collection"
           element={<Collections />}
         />
         <Route
-          path="/contact_center_services/customer-service"
+          path="/contact-center-services/customer-service"
           element={<CustomerService />}
         />
-        <Route path="/contact_center_services/ivr" element={<Ivr />} />
-        <Route path="/contact_center_services/acd" element={<Acd />} />
+        <Route path="/contact-center-services/ivr" element={<Ivr />} />
+        <Route path="/contact-center-services/acd" element={<Acd />} />
 
         {/* Partnership Model Pages */}
         <Route
-          path="/partnership_model/fixed-price-model"
+          path="/partnership-model/fixed-price-model"
           element={<FixedPrice />}
         />
         <Route
-          path="/partnership_model/hire-dedicated-model"
+          path="/partnership-model/hire-dedicated-model"
           element={<HireDedicatedModel />}
         />
         <Route
-          path="/partnership_model/on-site-development-model"
+          path="/partnership-model/on-site-development-model"
           element={<OnSiteDevelopment />}
         />
 

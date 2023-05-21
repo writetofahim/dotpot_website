@@ -67,7 +67,7 @@ const FixedPrice = () => {
         />
         <link
           rel="canonical"
-          href="https://dotpotit.com/partnership_model/fixed-price-model"
+          href="https://dotpotit.com/partnership-model/fixed-price-model"
         />
         <meta
           property="og:title"
@@ -83,7 +83,7 @@ const FixedPrice = () => {
         />
         <meta
           property="og:url"
-          content="https://dotpotit.com/partnership_model/fixed-price-model"
+          content="https://dotpotit.com/partnership-model/fixed-price-model"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -406,6 +406,6 @@ const navigationData = [
   { title: "Services", link: "/services" },
   {
     title: "Fixed Price",
-    link: "/partnership_model/fixed-price-model",
+    link: "/partnership-model/fixed-price-model",
   },
 ];

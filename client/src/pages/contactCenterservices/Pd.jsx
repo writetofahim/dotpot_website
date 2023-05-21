@@ -22,7 +22,7 @@ const Pd = () => {
         />
         <link
           rel="canonical"
-          href="https://dotpotit.com/contact_center_services/pd"
+          href="https://dotpotit.com/contact-center-services/pd"
         />
         <meta
           property="og:title"
@@ -38,7 +38,7 @@ const Pd = () => {
         />
         <meta
           property="og:url"
-          content="https://dotpotit.com/contact_center_services/pd"
+          content="https://dotpotit.com/contact-center-services/pd"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -266,6 +266,6 @@ const navigationData = [
   { title: "Services", link: "/services" },
   {
     title: "Predictive Dialer",
-    link: "/contact_center_services/pd",
+    link: "/contact-center-services/pd",
   },
 ];

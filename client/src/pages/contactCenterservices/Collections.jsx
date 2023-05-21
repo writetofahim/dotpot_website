@@ -22,7 +22,7 @@ const Collections = () => {
         />
         <link
           rel="canonical"
-          href="https://dotpotit.com/contact_center_services/collection"
+          href="https://dotpotit.com/contact-center-services/collection"
         />
         <meta property="og:title" content="Collection | Dotpot iT" />
         <meta
@@ -35,7 +35,7 @@ const Collections = () => {
         />
         <meta
           property="og:url"
-          content="https://dotpotit.com/contact_center_services/collection"
+          content="https://dotpotit.com/contact-center-services/collection"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Collection | Dotpot iT" />
@@ -112,6 +112,6 @@ const navigationData = [
   { title: "Services", link: "/services" },
   {
     title: "Collections",
-    link: "/contact_center_services/collection",
+    link: "/contact-center-services/collection",
   },
 ];

@@ -20,7 +20,7 @@ const MobileApp = () => {
           name="keywords"
           content="software development company, mobile app development, mobile app"
         />
-        <link rel="canonical" href="/contact_center_services/mobile-app" />
+        <link rel="canonical" href="/contact-center-services/mobile-app" />
         <meta
           property="og:title"
           content="Mobile App for Contact center support | Dotpot iT"
@@ -33,7 +33,7 @@ const MobileApp = () => {
           property="og:image"
           content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
-        <meta property="og:url" content="/contact_center_services/mobile-app" />
+        <meta property="og:url" content="/contact-center-services/mobile-app" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
@@ -121,5 +121,5 @@ export default MobileApp;
 
 const navigationData = [
   { title: "Services", link: "/services" },
-  { title: "Mobile App Development", link: "/contact_center_services/cti" },
+  { title: "Mobile App Development", link: "/contact-center-services/cti" },
 ];

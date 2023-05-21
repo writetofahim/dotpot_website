@@ -84,7 +84,7 @@ const HireDedicatedModel = () => {
         />
         <link
           rel="canonical"
-          href="https://dotpotit.com/partnership_model/hire-dedicated-model"
+          href="https://dotpotit.com/partnership-model/hire-dedicated-model"
         />
         <meta property="og:title" content="Hire-dedicated-model | Dotpot iT" />
         <meta
@@ -97,7 +97,7 @@ const HireDedicatedModel = () => {
         />
         <meta
           property="og:url"
-          content="https://dotpotit.com/partnership_model/hire-dedicated-model"
+          content="https://dotpotit.com/partnership-model/hire-dedicated-model"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Hire-dedicated-model | Dotpot iT" />
@@ -420,6 +420,6 @@ const navigationData = [
   { title: "Services", link: "/services" },
   {
     title: "Hire Dedicated Partnership Model",
-    link: "/partnership_model/hire-dedicated-model",
+    link: "/partnership-model/hire-dedicated-model",
   },
 ];

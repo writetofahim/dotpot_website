@@ -24,7 +24,7 @@ const Cti = () => {
         />
         <link
           rel="canonical"
-          href="https://dotpotit.com/contact_center_services/cti"
+          href="https://dotpotit.com/contact-center-services/cti"
         />
         <meta
           property="og:title"
@@ -40,7 +40,7 @@ const Cti = () => {
         />
         <meta
           property="og:url"
-          content="https://dotpotit.com/contact_center_services/cti"
+          content="https://dotpotit.com/contact-center-services/cti"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -161,5 +161,5 @@ const Cti = () => {
 export default Cti;
 const navigationData = [
   { title: "Services", link: "/services" },
-  { title: "CTI", link: "/contact_center_services/cti" },
+  { title: "CTI", link: "/contact-center-services/cti" },
 ];

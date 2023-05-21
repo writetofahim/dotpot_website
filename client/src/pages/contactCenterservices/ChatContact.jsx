@@ -22,7 +22,7 @@ const ChatContact = () => {
         />
         <link
           rel="canonical"
-          href="https://dotpotit.com/contact_center_services/chat"
+          href="https://dotpotit.com/contact-center-services/chat"
         />
         <meta property="og:title" content="Web Chat Support | Dotpot iT" />
         <meta
@@ -35,7 +35,7 @@ const ChatContact = () => {
         />
         <meta
           property="og:url"
-          content="https://dotpotit.com/contact_center_services/chat"
+          content="https://dotpotit.com/contact-center-services/chat"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Web Chat Support | Dotpot iT" />
@@ -135,6 +135,6 @@ const navigationData = [
   { title: "Services", link: "/services" },
   {
     title: "Chat",
-    link: "/contact_center_services/chat",
+    link: "/contact-center-services/chat",
   },
 ];

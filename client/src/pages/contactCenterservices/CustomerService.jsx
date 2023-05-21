@@ -22,7 +22,7 @@ const CustomerService = () => {
         />
         <link
           rel="canonical"
-          href="https://dotpotit.com/contact_center_services/customer-service"
+          href="https://dotpotit.com/contact-center-services/customer-service"
         />
         <meta property="og:title" content="Customer Service | Dotpot iT" />
         <meta
@@ -35,7 +35,7 @@ const CustomerService = () => {
         />
         <meta
           property="og:url"
-          content="https://dotpotit.com/contact_center_services/customer-service"
+          content="https://dotpotit.com/contact-center-services/customer-service"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Customer Service | Dotpot iT" />
@@ -99,6 +99,6 @@ const navigationData = [
   { title: "Services", link: "/services" },
   {
     title: "Customer Service",
-    link: "/contact_center_services/customer-service",
+    link: "/contact-center-services/customer-service",
   },
 ];

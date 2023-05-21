@@ -22,7 +22,7 @@ const EmailMarketing = () => {
         />
         <link
           rel="canonical"
-          href="https://dotpotit.com/contact_center_services/email-marketing"
+          href="https://dotpotit.com/contact-center-services/email-marketing"
         />
         <meta property="og:title" content="Email Marketing | Dotpot iT" />
         <meta
@@ -35,7 +35,7 @@ const EmailMarketing = () => {
         />
         <meta
           property="og:url"
-          content="https://dotpotit.com/contact_center_services/email-marketing"
+          content="https://dotpotit.com/contact-center-services/email-marketing"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Email Marketing | Dotpot iT" />
@@ -110,6 +110,6 @@ const navigationData = [
   { title: "Services", link: "/services" },
   {
     title: "Email Marketing",
-    link: "/contact_center_services/email-marketing",
+    link: "/contact-center-services/email-marketing",
   },
 ];

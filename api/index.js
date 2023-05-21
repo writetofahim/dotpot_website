@@ -147,7 +147,7 @@ app.use("/api/hero", c_heroRoutes);
 app.use("/api/industry_we_serve", c_industryWeServeRoutes);
 app.use("/api/info", c_infoRoutes);
 app.use("/api/key_feature", c_keyFeatureRouters);
-app.use("/api/partnership_model", c_partnershipModelRoutes);
+app.use("/api/partnership-model", c_partnershipModelRoutes);
 app.use("/api/who_we_work_with", c_whoWeWorkWithRoutes);
 app.use("/api/colors", colorRoutes);
 

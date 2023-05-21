@@ -1577,27 +1577,27 @@ export const footerData = {
       links: [
         {
           title: "Mobile App",
-          link: "/contact_center_services/mobile-app",
+          link: "/contact-center-services/mobile-app",
         },
         {
           title: "ACD",
-          link: "/contact_center_services/acd",
+          link: "/contact-center-services/acd",
         },
         {
           title: "CTI",
-          link: "/contact_center_services/cti",
+          link: "/contact-center-services/cti",
         },
         {
           title: "IVR",
-          link: "/contact_center_services/ivr",
+          link: "/contact-center-services/ivr",
         },
         {
           title: "Email",
-          link: "/contact_center_services/email-marketing",
+          link: "/contact-center-services/email-marketing",
         },
         {
           title: "Web Chat",
-          link: "/contact_center_services/chat",
+          link: "/contact-center-services/chat",
         },
       ],
     },

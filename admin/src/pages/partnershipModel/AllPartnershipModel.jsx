@@ -1,8 +1,8 @@
-import axios from '../../utils/axiosInstance';
-import * as React from 'react';
-import { Link } from 'react-router-dom';
-import PartnershipModelTableRow from './PartnershipModelTableRow';
-import postLogger from '../../utils/postLogger';
+import axios from "../../utils/axiosInstance";
+import * as React from "react";
+import { Link } from "react-router-dom";
+import PartnershipModelTableRow from "./PartnershipModelTableRow";
+import postLogger from "../../utils/postLogger";
 
 export default function AllClientsReview() {
   const [data, setData] = React.useState([]);
@@ -11,14 +11,14 @@ export default function AllClientsReview() {
 
   const fetchData = async (page) => {
     try {
-      const response = await axios.get(`/partnership_model?page=${page}`);
+      const response = await axios.get(`/partnership-model?page=${page}`);
       setData(response.data.partnershipModels);
       setTotalPages(response.data.totalPages);
       console.log(data);
-      postLogger({level:"info", message:response})
+      postLogger({ level: "info", message: response });
     } catch (error) {
       console.error(error);
-      postLogger({level:"error", message:error})
+      postLogger({ level: "error", message: error });
     }
   };
 
@@ -35,22 +35,24 @@ export default function AllClientsReview() {
   };
 
   return (
-    <div className='lg:p-5 p-3'>
+    <div className="lg:p-5 p-3">
       <div className="relative overflow-x-auto">
         <Link to="/admin/partnership-model/add-partnership-model">
-          <button className="m-2 px-3 py-2 bg-green-400 text-white font-bold cursor-pointer rounded-lg hover:scale-105 hover:shadow-xl transition-all">Add New Partnership Model</button>
+          <button className="m-2 px-3 py-2 bg-green-400 text-white font-bold cursor-pointer rounded-lg hover:scale-105 hover:shadow-xl transition-all">
+            Add New Partnership Model
+          </button>
         </Link>
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
               <th scope="col" className="px-6 py-3">
-              Icon
+                Icon
               </th>
               <th scope="col" className="px-6 py-3">
-              Title
+                Title
               </th>
               <th scope="col" className="px-6 py-3">
-              Description
+                Description
               </th>
               <th scope="col" className="px-6 py-3">
                 Action
@@ -59,15 +61,22 @@ export default function AllClientsReview() {
           </thead>
           <tbody>
             {data?.map((partner) => (
-              <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700" key={partner._id}>
-                <PartnershipModelTableRow partner={partner} setData={setData} data={data} />
+              <tr
+                className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                key={partner._id}
+              >
+                <PartnershipModelTableRow
+                  partner={partner}
+                  setData={setData}
+                  data={data}
+                />
               </tr>
             ))}
           </tbody>
         </table>
       </div>
 
-      <div className='flex justify-center mt-5'>
+      <div className="flex justify-center mt-5">
         <nav aria-label="Page navigation example ">
           <ul className="inline-flex -space-x-px">
             <li>
@@ -83,8 +92,11 @@ export default function AllClientsReview() {
               <li key={index}>
                 <button
                   onClick={() => setPage(index + 1)}
-                  className={`px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white ${index + 1 === page ? 'text-blue-600 border-blue-600 bg-blue-50' : ''
-                    }`}
+                  className={`px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white ${
+                    index + 1 === page
+                      ? "text-blue-600 border-blue-600 bg-blue-50"
+                      : ""
+                  }`}
                 >
                   {index + 1}
                 </button>

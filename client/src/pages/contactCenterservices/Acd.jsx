@@ -24,7 +24,7 @@ const Acd = () => {
         />
         <link
           rel="canonical"
-          href="https://dotpotit.com/contact_center_services/acd"
+          href="https://dotpotit.com/contact-center-services/acd"
         />
         <meta property="og:title" content="Automatic Call Distribution" />
         <meta
@@ -37,7 +37,7 @@ const Acd = () => {
         />
         <meta
           property="og:url"
-          content="https://dotpotit.com/contact_center_services/acd"
+          content="https://dotpotit.com/contact-center-services/acd"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Automatic Call Distribution" />
@@ -164,6 +164,6 @@ const navigationData = [
   { title: "Services", link: "/services" },
   {
     title: "ACD",
-    link: "/contact_center_services/acd",
+    link: "/contact-center-services/acd",
   },
 ];

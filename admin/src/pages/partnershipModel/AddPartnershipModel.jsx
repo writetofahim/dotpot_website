@@ -21,17 +21,17 @@ const AddPartnershipModel = () => {
   useEffect(() => {
     if (partnershipModelId) {
       axios
-        .get(`/partnership_model/${partnershipModelId}`)
+        .get(`/partnership-model/${partnershipModelId}`)
         .then((res) => {
           setTitle(res.data.title);
           setDescription(res.data.description);
           setIcon(res.data.icon);
           setLink(res.data.link);
-          postLogger({level:"info", message:res})
+          postLogger({ level: "info", message: res });
         })
         .catch((err) => {
           console.log(err);
-          postLogger({level:"error", message:err})
+          postLogger({ level: "error", message: err });
         });
     }
   }, [partnershipModelId]);
@@ -41,32 +41,38 @@ const AddPartnershipModel = () => {
     setIsLoading(true);
     try {
       if (partnershipModelId) {
-        await axios.put(`/partnership_model/${partnershipModelId}`, {
+        await axios.put(`/partnership-model/${partnershipModelId}`, {
           title,
           description,
           icon,
-          link
+          link,
         });
         setMessage("Update Successful!");
         setSnackbar(true);
-        postLogger({level:"info", message:"Partnership model updated successfully from admin panel"})
+        postLogger({
+          level: "info",
+          message: "Partnership model updated successfully from admin panel",
+        });
       } else {
-        await axios.post("/partnership_model", {
+        await axios.post("/partnership-model", {
           title,
           description,
           icon,
-          link
+          link,
         });
         setMessage("Add Successful!");
         setSnackbar(true);
         setTitle("");
         setDescription("");
         setIcon("");
-        postLogger({level:"info", message:"Partnership model added successfully from admin panel"})
+        postLogger({
+          level: "info",
+          message: "Partnership model added successfully from admin panel",
+        });
       }
     } catch (err) {
       alert("Error creating industry.");
-      postLogger({level:"error", message:err})
+      postLogger({ level: "error", message: err });
     }
     setIsLoading(false);
   };
@@ -80,7 +86,9 @@ const AddPartnershipModel = () => {
           setOpen={setSnackbar}
         />
       )}
-      <h1 className="text-center my-3">{partnershipModelId ? "Update":"Add"} Partnership Model</h1>
+      <h1 className="text-center my-3">
+        {partnershipModelId ? "Update" : "Add"} Partnership Model
+      </h1>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label className="block text-gray-700 font-bold mb-2" htmlFor="title">

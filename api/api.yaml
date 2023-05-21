@@ -3568,7 +3568,7 @@ paths:
         - BearerAuth: []
 
 
-  /api/partnership_model:
+  /api/partnership-model:
     get:
       summary: Get all partnership models
       tags:
@@ -3598,7 +3598,7 @@ paths:
       security:
         - BearerAuth: []
 
-  /api/partnership_model/{id}:
+  /api/partnership-model/{id}:
     get:
       summary: Get a single partnership model by ID
       tags:

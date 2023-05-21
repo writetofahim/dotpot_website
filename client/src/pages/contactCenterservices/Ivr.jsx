@@ -24,7 +24,7 @@ const Ivr = () => {
         />
         <link
           rel="canonical"
-          href="https://dotpotit.com/contact_center_services/ivr"
+          href="https://dotpotit.com/contact-center-services/ivr"
         />
         <meta
           property="og:title"
@@ -40,7 +40,7 @@ const Ivr = () => {
         />
         <meta
           property="og:url"
-          content="https://dotpotit.com/contact_center_services/ivr"
+          content="https://dotpotit.com/contact-center-services/ivr"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -140,6 +140,6 @@ const navigationData = [
   { title: "Services", link: "/services" },
   {
     title: "Customer Service",
-    link: "/contact_center_services/ivr",
+    link: "/contact-center-services/ivr",
   },
 ];
