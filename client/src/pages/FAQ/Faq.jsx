@@ -4,6 +4,7 @@ import { BsPlusLg } from "react-icons/bs";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import { BiMinus } from "react-icons/bi";
 
 const Faq = () => {
   const [activeFaqId, setActiveFaqId] = useState(null);
@@ -123,16 +124,18 @@ const Faq = () => {
               className="cursor-pointer mb-4"
             >
               <div
-                className={`w-full flex justify-between items-center py-4 px-5 text-xl text-buttonText-500  ${
+                className={`w-full flex justify-between items-center py-4 px-5 text-xl text-textColor-500  ${
                   faq.id === activeFaqId
                     ? "bg-primary-200 hover:bg-primary-200"
-                    : "bg-secondary-500 hover:bg-secondary-600"
+                    : "border hover:bg-secondary-100"
                 } `}
               >
-                <button className="text-base font-bold text-buttonText-500 lg:text-xl">
+                <button className="text-base font-bold text-textColor-500 lg:text-xl">
                   {faq.question}
                 </button>
-                <BsPlusLg />
+                {faq.id === activeFaqId ? <BiMinus /> : <BsPlusLg className="text-sm"/>}
+                
+                
               </div>
               <div
                 className={`${
