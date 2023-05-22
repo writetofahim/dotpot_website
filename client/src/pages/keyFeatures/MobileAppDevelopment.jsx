@@ -127,7 +127,7 @@ const MobileAppDevelopment = () => {
         <title>Mobile App Development | Dotpot iT a leading it company</title>
         <meta
           name="description"
-          content="Get Top-notch, Extensively, Innovative Mobile App Solution By Us"
+          content="Dotpot iT provides mobile app development services for native Android, IOS and Hybrid mobile applications"
         />
         <link
           rel="canonical"
@@ -144,7 +144,7 @@ const MobileAppDevelopment = () => {
         />
         <meta
           property="og:description"
-          content="Get Top-notch, Extensively, Innovative Mobile App Solution By Us"
+          content="Dotpot iT provides mobile app development services for native Android, IOS and Hybrid mobile applications"
         />
         <meta
           property="og:image"
@@ -161,7 +161,7 @@ const MobileAppDevelopment = () => {
         />
         <meta
           name="twitter:description"
-          content="Get Top-notch, Extensively, Innovative Mobile App Solution By Us"
+          content="Dotpot iT provides mobile app development services for native Android, IOS and Hybrid mobile applications"
         />
         <meta
           name="twitter:image"

@@ -78,7 +78,7 @@ const Web3 = () => {
                 {/* cover */}
                 <div className="w-full mx-auto px-5 h-52">
                   <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center ">
-                    Web3 Development
+                    Web3 Development by Dotpot iT
                   </h1>
                   <h2 className="text-textColor-500 flex flex-col gap-5 p-5 text-center">
                     Experience the future with DotpotIT's innovative web3

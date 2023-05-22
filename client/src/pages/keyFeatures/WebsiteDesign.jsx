@@ -52,7 +52,7 @@ const WebsiteDesign = () => {
         <title>Website Design | Dotpot iT a leading it company</title>
         <meta
           name="description"
-          content="Custom, responsive website designs improve user experience"
+          content="Dtpot iT provides Custom, responsive website designs to improve user experience"
         />
         <link
           rel="canonical"
@@ -66,7 +66,7 @@ const WebsiteDesign = () => {
         <meta property="og:title" content="Website Design | Dotpot iT" />
         <meta
           property="og:description"
-          content="Custom, responsive website designs improve user experience"
+          content="Dtpot iT provides Custom, responsive website designs to improve user experience"
         />
         <meta
           property="og:image"
@@ -80,7 +80,7 @@ const WebsiteDesign = () => {
         <meta name="twitter:title" content="Website Design | Dotpot iT" />
         <meta
           name="twitter:description"
-          content="Custom, responsive website designs improve user experience"
+          content="Dtpot iT provides Custom, responsive website designs to improve user experience"
         />
         <meta
           name="twitter:image"

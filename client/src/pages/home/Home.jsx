@@ -118,7 +118,6 @@ const Home = () => {
                   "@type": "Service",
                   "name": "Web Development"
                 },
-                },
                 {
                   "@type": "Service",
                   "name": "MERN App Development"

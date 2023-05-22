@@ -52,7 +52,7 @@ const WebsiteDevelopment = () => {
         <title>Website Development | Dotpot iT</title>
         <meta
           name="description"
-          content="This roadmap outlines the emerging trends and effective strategies for web and CMS development"
+          content="Dtpot iT provides Custom, responsive website designs & website Development to improve user experience"
         />
         <meta property="og:title" content="Website Development | Dotpot iT" />
         <meta
@@ -66,7 +66,7 @@ const WebsiteDevelopment = () => {
         <meta property="og:type" content="website" />
         <meta
           property="og:description"
-          content="This roadmap outlines the emerging trends and effective strategies for web and CMS development"
+          content="Dtpot iT provides Custom, responsive website designs & website Development to improve user experience"
         />
         <meta
           property="og:image"
@@ -80,7 +80,7 @@ const WebsiteDevelopment = () => {
         <meta name="twitter:title" content="Website Development | Dotpot iT" />
         <meta
           name="twitter:description"
-          content="This roadmap outlines the emerging trends and effective strategies for web and CMS development"
+          content="Dtpot iT provides Custom, responsive website designs & website Development to improve user experience"
         />
         <meta
           name="twitter:image"
