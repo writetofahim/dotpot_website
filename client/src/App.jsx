@@ -112,7 +112,7 @@ function App() {
         <Route path="/blog" element={<Blogs />} />
         <Route path="/blog/:id" element={<SingleBlog />} />
         <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
-        <Route path="/terms_conditions" element={<Terms_Conditions />} />
+        <Route path="/terms-conditions" element={<Terms_Conditions />} />
         <Route path="/white-paper" element={<WhitePaper />} />
 
         {/* Services Pages */}

@@ -1037,7 +1037,7 @@ export const jobPageData = {
         min: 20000,
         max: 100000,
       },
-      benefits: ["good salary", "Nice Enviroment"],
+      benefits: ["good salary", "Nice Environment"],
       des: "GEICO is seeking an experienced Mid/Senior Engineers with a passion for building high performance, low-latency platforms and applications. You will help drive our insurance business transformation as we redefine experience for our customers. Our Mid/Senior Engineer is a key member of the engineering staff working across Business Services Engineering, Data Engineering, Platform Engineering, and Infrastructure Engineering to ensure that we provide a fiction-less experience to our customers, maintain the highest standards of protection and availability. Our team thrives and succeeds in delivering high quality technology products and services in a hyper-growth environment where priorities shift quickly. The ideal candidate has broad and deep technical knowledge, typically ranging from front-end UIs through back-end systems and all points in between.",
       responsibilities: [
         "Manage the complete software development process from conception to deployment.",
@@ -1531,7 +1531,7 @@ export const footerData = {
         },
         {
           title: "Terms & Conditions",
-          link: "/terms_conditions",
+          link: "/terms-conditions",
         },
         {
           title: "White Paper",
