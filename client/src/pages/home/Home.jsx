@@ -88,6 +88,77 @@ const Home = () => {
           content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
         <meta property="og:type" content="website" />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Dotpot iT",
+              "url": "https://www.dotpotit.com/",
+              "logo": "https://dotpotit.com/api/uploads/blogs/logo_primary-1683973589433.png",
+              "description": "Dotpot iT is an IT company providing web design, web development, mobile app development, AI/ML development, and IT support services.",
+              "sameAs": [
+                "https://www.facebook.com/dotpotit",
+                "https://twitter.com/dotpotit",
+                "https://www.linkedin.com/company/dotpotit/"
+              ],
+              "contactPoint": [
+                {
+                  "@type": "ContactPoint",
+                  "telephone": "+8801817176192",
+                  "contactType": "customer support"
+                }
+              ],
+              "service": [
+                {
+                  "@type": "Service",
+                  "name": "Web Design"
+                },
+                {
+                  "@type": "Service",
+                  "name": "Web Development"
+                },
+                },
+                {
+                  "@type": "Service",
+                  "name": "MERN App Development"
+                },
+                {
+                  "@type": "Service",
+                  "name": "React App Development"
+                },
+                {
+                  "@type": "Service",
+                  "name": "E-Commerce Website Development"
+                },
+                {
+                  "@type": "Service",
+                  "name": "Android App Development"
+                },
+                {
+                  "@type": "Service",
+                  "name": "IOS App Development"
+                },
+                {
+                  "@type": "Service",
+                  "name": "Mobile App Development"
+                },
+                {
+                  "@type": "Service",
+                  "name": "AI/ML Development"
+                },
+                {
+                  "@type": "Service",
+                  "name": "IT Support"
+                }
+                {
+                  "@type": "Service",
+                  "name": "Contact Center Support"
+                }
+              ]
+            }
+          `}
+        </script>
       </Helmet>
       <Navbar />
       <Hero />

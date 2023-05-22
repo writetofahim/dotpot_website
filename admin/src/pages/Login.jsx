@@ -113,7 +113,7 @@ const Login = () => {
               <input
                 type="password"
                 name="password"
-                className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300"
+                className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-primary-300"
                 placeholder="Password"
                 required
               />
