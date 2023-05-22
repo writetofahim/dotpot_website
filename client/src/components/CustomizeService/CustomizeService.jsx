@@ -501,7 +501,11 @@ const CustomizeService = () => {
                   (item?.technologies?.length > 0 ||
                     item?.addons?.length > 0) && (
                     <div key={index} className="flex items-center gap-2 mt-1">
-                      <img src={item.icon} alt="custom img" className="w-7 h-7" />
+                      <img
+                        src={item.icon}
+                        alt="custom img"
+                        className="w-7 h-7"
+                      />
                       <p className="text-textColor-500">:</p>
                       <div className="border-r-gray-500 flex flex-wrap items-center gap-2 cursor-pointer">
                         {item.technologies.map((tech, index) => (
@@ -609,19 +613,28 @@ const CustomizeService = () => {
                 )}
               </button>
             ) : (
+              // <button
+              //   disabled={isSubmitting}
+              //   onClick={() => navigate("/login")}
+              //   className={`flex items-center gap-2 absolute bottom-2 right-2 px-3 py-2 rounded-full hover:shadow text-white bg-secondary-400 hover:bg-secondary-300 hover:scale-105 hover:font-bold transition-all disabled:secondary-100 ${
+              //     isSubmitting && "cursor-not-allowed"
+              //   }`}
+              // >
+              //   Login To Confirm
+              //   {isSubmitting ? (
+              //     <FaSpinner className="animate-spin" />
+              //   ) : (
+              //     <AiOutlineDoubleRight />
+              //   )}
+              // </button>
               <button
                 disabled={isSubmitting}
-                onClick={() => navigate("/login")}
+                onClick={() => navigate("/confirmation")}
                 className={`flex items-center gap-2 absolute bottom-2 right-2 px-3 py-2 rounded-full hover:shadow text-white bg-secondary-400 hover:bg-secondary-300 hover:scale-105 hover:font-bold transition-all disabled:secondary-100 ${
                   isSubmitting && "cursor-not-allowed"
                 }`}
               >
-                Login To Confirm
-                {isSubmitting ? (
-                  <FaSpinner className="animate-spin" />
-                ) : (
-                  <AiOutlineDoubleRight />
-                )}
+                Order Now
               </button>
             )}
 

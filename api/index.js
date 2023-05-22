@@ -139,6 +139,7 @@ app.use("/api/team_member", teamMemberRoutes);
 app.use("/api/work", workRoutes);
 app.use("/api/order", orderRoutes);
 app.use("/api/upload", uploadRoutes);
+app.use("/api/send-email", require("./routes/emailRoutes"));
 
 // Components
 app.use("/api/client_response", c_client_responseRoutes);

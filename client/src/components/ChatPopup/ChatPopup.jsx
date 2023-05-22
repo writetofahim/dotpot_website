@@ -181,8 +181,13 @@ const ChatPopup = () => {
       {isChatPopupOpen && (
         <div className="z-[800] fixed bottom-[10vh] right-2 bg-background-500 border-t border-border w-80 max-h-100 rounded-xl overflow-hidden shadow-xl transition-all">
           <div className="flex justify-between px-4 py-1.5 border border-border bg-primary-400 text-textColor-500">
-            <h2 className="text-lg font-medium text-buttonText-500">Dotpot iT</h2>
-            <button className="text-buttonText-500 text-3xl" onClick={handleClose}>
+            <h2 className="text-lg font-medium text-buttonText-500">
+              Dotpot iT
+            </h2>
+            <button
+              className="text-buttonText-500 text-3xl"
+              onClick={handleClose}
+            >
               <AiOutlineCloseCircle />
             </button>
           </div>

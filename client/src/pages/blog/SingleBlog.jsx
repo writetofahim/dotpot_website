@@ -153,7 +153,9 @@ const SingleBlog = () => {
                     {data?.title}
                   </h1>
                   {/* content summary start*/}
-                  <p className="md:text-2xl text-lg mb-5">{data?.summary}</p>
+                  <p className="md:text-2xl text-lg mb-5 text-textColor-500">
+                    {data?.summary}
+                  </p>
                   {/* content summary end*/}
                   <div className="mt-3 w-full flex items-center">
                     <img

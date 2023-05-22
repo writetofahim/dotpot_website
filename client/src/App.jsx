@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import AcceptCookiesPopup from "./components/AcceptCookiesPopup/AcceptCookiesPopup";
 import ChatPopup from "./components/ChatPopup/ChatPopup";
+import Confirmation from "./pages/Confirmation/Confirmation";
 import Faq from "./pages/FAQ/Faq";
 import ResetPassword from "./pages/ResetPassword/ResetPassword";
 import AboutUs from "./pages/about/AboutUs";
@@ -114,6 +115,7 @@ function App() {
         <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
         <Route path="/terms-conditions" element={<Terms_Conditions />} />
         <Route path="/white-paper" element={<WhitePaper />} />
+        <Route path="/confirmation" element={<Confirmation />} />
 
         {/* Services Pages */}
 
