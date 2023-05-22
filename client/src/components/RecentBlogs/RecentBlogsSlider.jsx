@@ -15,7 +15,7 @@ import { Stack } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import { BsArrowRight } from "react-icons/bs";
 import { GrNext, GrPrevious } from "react-icons/gr";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import axios from "../../utils/axiosInstance";
 import postLogger from "../../utils/postLogger";
@@ -81,6 +81,7 @@ var settings = {
 };
 
 export const SingleSlide = (props) => {
+  const navigate = useNavigate();
   return (
     <div className="mx-5 mb-20 rounded-lg shadow-xl">
       <Link to={`/blog/${props.slug}`}>
@@ -103,7 +104,8 @@ export const SingleSlide = (props) => {
 
             <div
               key={index}
-              className="border border-border  rounded-full px-2 "
+              className="border border-border  rounded-full px-2 hover:underline cursor-pointer"
+              onClick={() => navigate(`/blog?tags=${tag}`)}
             >
               <p className="text-textColor-500 text-xs p-1 ">{tag}</p>
             </div>

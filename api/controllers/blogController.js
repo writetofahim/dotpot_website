@@ -11,6 +11,7 @@ const getAllBlogs = async (req, res) => {
   const page = parseInt(req.query.page) || 1;
   const limit = parseInt(req.query.limit) || 10;
   const tags = req.query.tags ? req.query.tags.split(",") : [];
+  console.log(tags);
 
   try {
     let query = {};

@@ -18,7 +18,7 @@ import {
   default as ReactHtmlParser,
   default as parse,
 } from "react-html-parser";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import striptags from "striptags";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
@@ -32,6 +32,8 @@ import WaveformPlayer from "./WaveformPlayer";
 const SingleBlog = () => {
   const { slug } = useParams();
   const [data, setData] = useState(null);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -135,11 +137,13 @@ const SingleBlog = () => {
 
       <div className="bg-background-500">
         <div className="container mx-auto pt-[15vh] ">
-          <NavigatorComponent navigationData={navigationData} />
+          <div className="md:-ml-4 md:pl-0 pl-2">
+            <NavigatorComponent navigationData={navigationData} />
+          </div>
           {data && (
             <>
-              <div className="full flex">
-                <div className="container flex flex-col items-start p-4 md:p-6 text-justify">
+              <div className="full flex p-[20px]">
+                <div className="container flex flex-col items-start text-justify">
                   <span className="text-textColor-500 blog-content-font text-xl">
                     {moment(new Date(data?.createdAt)).format(
                       "MMMM Do YYYY, h:mm:ss a"
@@ -149,7 +153,7 @@ const SingleBlog = () => {
                     {data?.title}
                   </h1>
                   {/* content summary start*/}
-                  <p className="text-2xl mb-5">{data?.summary}</p>
+                  <p className="md:text-2xl text-lg mb-5">{data?.summary}</p>
                   {/* content summary end*/}
                   <div className="mt-3 w-full flex items-center">
                     <img
@@ -201,20 +205,21 @@ const SingleBlog = () => {
                         </span>
                         <p className="italic">{data?.summary?.slice(1)}</p>
                       </div> */}
-                        <span className="md:text-2xl text-base mt-7 inline-block first-letter-large blog-content-font">
+                        <span className="md:text-2xl text-xl mt-7 inline-block first-letter-large blog-content-font">
                           {parse(data?.body)}
                         </span>
                       </div>
                       <div className="my-5 border-t border-textColor-500 "></div>
                       <div>
-                        <p className="mb-3 text-bold text-xl font-bold text-textColor-500">
+                        <p className="mb-3 text-bold text-xl font-bold text-textColor-500 blog-content-font">
                           Tags
                         </p>
                         <div className="flex gap-2 items-center flex-wrap">
                           {data?.tags.map((item, index) => (
                             <p
+                              onClick={() => navigate(`/blog?tags=${item}`)}
                               key={index}
-                              className="inline px-3 py-1 border border-border rounded-full mr-2 text-textColor-500 hover:text-textColor-500 transition-all"
+                              className="inline px-3 py-1 border border-border rounded-full mr-2 text-textColor-500 hover:text-textColor-500 transition-all hover:underline cursor-pointer"
                             >
                               {item}
                             </p>

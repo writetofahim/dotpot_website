@@ -15,7 +15,7 @@ import {
   AiOutlineDoubleRight,
   AiOutlineFieldTime,
 } from "react-icons/ai";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import axios from "../../utils/axiosInstance";
@@ -184,9 +184,18 @@ const Blog = () => {
   const [page, setPage] = React.useState(1);
   const [totalPages, setTotalPages] = React.useState(1);
 
-  const fetchData = async (page) => {
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const tags = queryParams.get("tags");
+
+  const fetchData = async (page, tags = "") => {
     try {
-      const response = await axios.get(`/blog?page=${page}`);
+      let url = `/blog?page=${page}`;
+      if (tags) {
+        url += `&tags=${tags}`;
+      }
+      console.log(url);
+      const response = await axios.get(url);
       postLogger({ level: "info", message: response });
       console.log("blog data", response.data);
       setData(response.data.blogs);
@@ -198,8 +207,8 @@ const Blog = () => {
   };
 
   React.useEffect(() => {
-    fetchData(page);
-  }, [page]);
+    fetchData(page, tags);
+  }, [page, tags]);
 
   const handlePrevPage = () => {
     setPage(page - 1);
@@ -245,12 +254,21 @@ const Blog = () => {
       <div className="w-full pt-[15vh] bg-background-500">
         <NavigatorComponent navigationData={navigationData} />
         <div className="w-full flex flex-col items-center justify-center bg-background-500">
-          <h1 className="text-6xl mt-10 mb-2 font-bold text-textColor-500">
-            Blogs
-          </h1>
-          <p className="text-lg mb-10 px-4 text-textColor-500">
-            Follow our blog to get all the latest tech news
-          </p>
+          {tags ? (
+            <div className="mb-16 ">
+              <p className="text-3xl font-bold text-center">{tags} </p>
+            </div>
+          ) : (
+            <>
+              <h1 className="text-6xl mt-10 mb-2 font-bold text-textColor-500">
+                Blogs
+              </h1>
+              <p className="text-lg mb-10 px-4 text-textColor-500">
+                Follow our blog to get all the latest tech news
+              </p>
+            </>
+          )}
+
           {/* <div className="container flex gap-5 md:gap-10 justify-center p-5 flex-wrap">
                         {
                             data && data.map((item, index) => (
