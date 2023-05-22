@@ -75,7 +75,7 @@ const Gaming = () => {
         <title>Game Development | Dotpot iT a leading it company</title>
         <meta
           name="description"
-          content="Revolutionize gaming experience with Dotpot IT's cutting-edge development. Elevate gameplay and immerse yourself in a new era of gaming innovation."
+          content="Dotpot iT provide cutting edge game development service for it's customers."
         />
         <link
           rel="canonical"
@@ -84,7 +84,7 @@ const Gaming = () => {
         <meta property="og:title" content="Game Development | Dotpot iT" />
         <meta
           property="og:description"
-          content="Revolutionize gaming experience with Dotpot IT's cutting-edge development. Elevate gameplay and immerse yourself in a new era of gaming innovation."
+          content="Dotpot iT provide cutting edge game development service for it's customers."
         />
         <meta
           property="og:image"
@@ -92,7 +92,7 @@ const Gaming = () => {
         />
         <meta
           name="keywords"
-          content="Software development company, Game design and development, Interactive gaming solutions"
+          content="Game Development, Software Development, it company"
         />
         <meta property="og:type" content="website" />
         <meta
@@ -103,7 +103,7 @@ const Gaming = () => {
         <meta name="twitter:title" content="Game Development | Dotpot iT" />
         <meta
           name="twitter:description"
-          content="Revolutionize gaming experience with Dotpot IT's cutting-edge development. Elevate gameplay and immerse yourself in a new era of gaming innovation."
+          content="Dotpot iT provide cutting edge game development service for it's customers."
         />
         <meta
           name="twitter:image"

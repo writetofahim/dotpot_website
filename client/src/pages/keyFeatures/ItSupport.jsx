@@ -129,7 +129,7 @@ const ItSupport = () => {
         <meta property="og:type" content="website" />
         <meta
           name="keywords"
-          content="Software Development Company, Customized solutions, Cross-Platform App Development, User Experience"
+          content="iT support, iT consulting, Software Support"
         />
         <meta property="og:title" content="It Support | Dotpot iT" />
         <meta

@@ -135,7 +135,7 @@ const MobileAppDevelopment = () => {
         />
         <meta
           name="keywords"
-          content="Software Development Company, Android App Development, iOS App Development, Flutter Development"
+          content="Mobile App Development, iT company, Android App Development, iOS App Development, Flutter Development"
         />
         <meta property="og:type" content="website" />
         <meta
