@@ -19,6 +19,7 @@ import originstory from "../../assets/img/about/originstory.png";
 import ourgoal from "../../assets/img/about/ourgoal.png";
 import whoweare from "../../assets/img/about/whoweare.png";
 import GetAQuote from "../../components/GetAQuote/GetAQuote";
+import OurDevelopmentJourney from "../../components/OurDevelopmentJourney/OurDevelopmentJourney";
 
 const AboutUs = () => {
   useScrollToTop();
@@ -234,8 +235,13 @@ const AboutSection = () => {
         </div>
       </div>
 
-      {/* Get in Touch */}
+      {/* Our Journey */}
       <div className="bg-primary-100">
+        <OurDevelopmentJourney />
+      </div>
+
+      {/* Get in Touch */}
+      <div className="">
         <GetAQuote />
       </div>
     </div>
