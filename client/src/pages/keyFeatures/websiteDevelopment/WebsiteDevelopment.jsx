@@ -110,9 +110,9 @@ const WebsiteDevelopment = () => {
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
                         <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
-                          <h2 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
-                            Website Development
-                          </h2>
+                          <h1 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
+                            Website Development Service By Dotpot iT
+                          </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
                             Website development is the process of building
                             interactive and functional websites using technical
@@ -160,9 +160,9 @@ const WebsiteDevelopment = () => {
                                 : "translate-y-20 opacity-0"
                             } duration-1000 `}
                           >
-                            <h1 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
+                            <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
                               {title}
-                            </h1>
+                            </h2>
                             <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">
                               {description}
                             </p>
@@ -208,9 +208,9 @@ const WebsiteDevelopment = () => {
                           : "translate-y-20 opacity-0"
                       } duration-1000 p-3 text-textColor-500`}
                     >
-                      <h1 className="lg:text-3xl md:text-3xl text-xl font-bold text-center">
+                      <h2 className="lg:text-3xl md:text-3xl text-xl font-bold text-center">
                         Technologies We Use
-                      </h1>
+                      </h2>
                       <img
                         className="w-64  mx-auto pb-14"
                         src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"
@@ -353,9 +353,9 @@ const WebsiteDevelopment = () => {
                         : "translate-y-20 opacity-0"
                     } duration-1000 p-3 text-textColor-500`}
                   >
-                    <h1 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
+                    <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
                       Why Dotpot iT
-                    </h1>
+                    </h2>
                     <img
                       className="w-64 mx-auto"
                       src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"

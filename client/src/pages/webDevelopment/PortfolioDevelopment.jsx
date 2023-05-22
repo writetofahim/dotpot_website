@@ -2,9 +2,9 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import parse from "react-html-parser";
 import ReactVisibilitySensor from "react-visibility-sensor";
-import overview from "../../assets/img/portfolio/overview.png";
-import portfolio from "../../assets/img/portfolio.svg";
 import engaging from "../../assets/img/engaging.svg";
+import portfolio from "../../assets/img/portfolio.svg";
+import overview from "../../assets/img/portfolio/overview.png";
 import professional from "../../assets/img/professional.svg";
 import userFriendly from "../../assets/img/userFriendly.svg";
 import Footer from "../../components/Footer/Footer";
@@ -112,9 +112,9 @@ const PortfolioDevelopment = () => {
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
                         <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
-                          <h2 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
-                            Portfolio Development
-                          </h2>
+                          <h1 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
+                            Portfolio Development With Dotpot iT
+                          </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
                             Showcasing Your Skills: Building a Strong Portfolio
                             by Us
@@ -156,9 +156,9 @@ const PortfolioDevelopment = () => {
                                 : "translate-y-20 opacity-0"
                             } duration-1000 `}
                           >
-                            <h1 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
+                            <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
                               {title}
-                            </h1>
+                            </h2>
                             <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">
                               {parse(description)}
                             </p>
@@ -201,9 +201,9 @@ const PortfolioDevelopment = () => {
       {/* <div className="pt-[15vh] pb-10 container mx-auto">
         <NavigatorComponent navigationData={navigationData} />
         <div>
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 text-textColor-500 text-center">
+          <h2 className="text-3xl md:text-5xl font-extrabold mb-2 text-textColor-500 text-center">
             Portfolio Development
-          </h1>
+          </h2>
           <p className="text-lg text-gray-400 text-center mt-3 mb-10">
             Showcasing Your Skills: Building a Strong Portfolio by Us
           </p>

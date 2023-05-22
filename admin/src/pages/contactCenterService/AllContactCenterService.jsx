@@ -18,10 +18,10 @@ const AllContactCenterService = () => {
       const response = await axios.get("/contact_center_service");
       setData(response.data);
       console.log(response.data);
-      postLogger({level:"info", message:response})
+      postLogger({ level: "info", message: response });
     } catch (error) {
       console.error(error);
-      postLogger({level:"error", message:error})
+      postLogger({ level: "error", message: error });
     }
   };
 
@@ -32,7 +32,7 @@ const AllContactCenterService = () => {
     const response = await axios.delete(`/contact_center_service/${id}`);
     if (response.status === 200) {
       setData((existing) => existing.filter((d) => d._id !== id));
-      postLogger({level:"info", message:response})
+      postLogger({ level: "info", message: response });
     }
   };
   const deleteService = (id) => {
@@ -77,7 +77,7 @@ const AllContactCenterService = () => {
               key={service._id}
             >
               <td className="px-6 py-4">
-                <img className="w-24" src={service.icon} alt="" />
+                <img className="w-24" src={service.icon} alt={service.title} />
               </td>
               <td className="px-6 py-4">{service.title}</td>
               <td className="px-6 py-4">{service.link}</td>

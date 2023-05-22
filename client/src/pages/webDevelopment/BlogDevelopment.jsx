@@ -2,9 +2,9 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import parse from "react-html-parser";
 import ReactVisibilitySensor from "react-visibility-sensor";
-import blogpagecover from "../../assets/img/blogpagecover.png";
-import blogoverview from "../../assets/img/blogoverview.png";
 import benifite from "../../assets/img/benifite.png";
+import blogoverview from "../../assets/img/blogoverview.png";
+import blogpagecover from "../../assets/img/blogpagecover.png";
 import choice from "../../assets/img/choice.png";
 import Footer from "../../components/Footer/Footer";
 import GetAQuote from "../../components/GetAQuote/GetAQuote";
@@ -163,7 +163,7 @@ const BlogDevelopment = () => {
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
                         <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
                           <h1 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
-                            Blog Site Development
+                            Blog Site Development With Dotpot iT
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
                             "Developing a successful blog site is not just about
@@ -207,9 +207,9 @@ const BlogDevelopment = () => {
                                 : "translate-y-20 opacity-0"
                             } duration-1000 `}
                           >
-                            <h1 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
+                            <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
                               {title}
-                            </h1>
+                            </h2>
                             <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">
                               {parse(description)}
                             </p>

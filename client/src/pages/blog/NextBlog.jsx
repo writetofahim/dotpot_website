@@ -74,7 +74,7 @@ const NextBlog = ({ currentBlogId }) => {
                   src={`${import.meta.env.REACT_APP_SERVER_PATH}/${
                     blog?.image
                   }`}
-                  alt=""
+                  alt={blog.title}
                 />
               </Link>
             </div>

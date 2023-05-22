@@ -24,12 +24,12 @@ const Hero = () => {
     axios
       .get("/hero")
       .then((response) => {
-        setHeroData(response.data)
-        postLogger({level:"info", message:response})
+        setHeroData(response.data);
+        postLogger({ level: "info", message: response });
       })
       .catch((error) => {
-        console.error(error)
-        postLogger({level:"error", message:error})
+        console.error(error);
+        postLogger({ level: "error", message: error });
       });
   }, []);
 
@@ -93,10 +93,10 @@ const Hero = () => {
           const newArray = heroData.filter((obj) => obj._id !== hero._id);
           setHeroData(newArray);
         }
-        postLogger({level:"info", message:response})
+        postLogger({ level: "info", message: response });
       } catch (error) {
         console.log(error);
-        postLogger({level:"error", message:error})
+        postLogger({ level: "error", message: error });
       }
     }
   };
@@ -110,7 +110,6 @@ const Hero = () => {
 
   // Handle form submission
   const handleSubmit = async (event) => {
-    
     event.preventDefault();
     // form submission logic
     if (formButton == "Save") {
@@ -130,10 +129,10 @@ const Hero = () => {
           attachment = resFiles[0].filename;
           setFile(null);
           image = attachment;
-          postLogger({level:"info", message:resFiles})
+          postLogger({ level: "info", message: resFiles });
         }
-      } catch(err) {
-        postLogger({level:"error", message:err})
+      } catch (err) {
+        postLogger({ level: "error", message: err });
       }
       axios
         .post(`/hero`, {
@@ -146,12 +145,12 @@ const Hero = () => {
           button_text: document.getElementById("button_text").value,
         })
         .then((response) => {
-          console.log(response)
-          postLogger({level:"info", message:response})
+          console.log(response);
+          postLogger({ level: "info", message: response });
         })
         .catch((error) => {
-          console.error(error)
-          postLogger({level:"error", message:error})
+          console.error(error);
+          postLogger({ level: "error", message: error });
         });
       setFormData({
         title: "",
@@ -176,13 +175,12 @@ const Hero = () => {
             "/upload/blogs",
             formData
           );
-          
-          
+
           attachment = resFiles[0].filename;
           setFile(null);
           image = attachment;
           console.log("uploaded image", image);
-          postLogger({level:"info", message:resFiles})
+          postLogger({ level: "info", message: resFiles });
         }
       } catch {}
       axios
@@ -196,12 +194,12 @@ const Hero = () => {
           button_text: document.getElementById("button_text").value,
         })
         .then((response) => {
-          console.log(response)
-          postLogger({level:"info", message:response})
+          console.log(response);
+          postLogger({ level: "info", message: response });
         })
         .catch((error) => {
-          console.error(error)
-          postLogger({level:"error", message:error})
+          console.error(error);
+          postLogger({ level: "error", message: error });
         });
       setFormData({
         title: "",
@@ -233,11 +231,11 @@ const Hero = () => {
               <img
                 className="opacity-50 absolute inset-0 w-full h-full object-cover"
                 src={`${import.meta.env.REACT_APP_SERVER_PATH}/${hero.image}`}
-                alt=""
+                alt={hero.title}
               />
-              <h1 className="text-lg w-full font-bold z-10 relative">
+              <h2 className="text-lg w-full font-bold z-10 relative">
                 {hero.title}
-              </h1>
+              </h2>
               <div className="flex gap-2 absolute top-1 right-1">
                 <button onClick={() => handleClick(hero)}>
                   <FaEdit className="hover:scale-125 transition-all duration-200 ease-in-out" />
@@ -341,12 +339,12 @@ const Hero = () => {
                 src={`${import.meta.env.REACT_APP_SERVER_PATH}/${
                   formData.image
                 }`}
-                alt=""
+                alt="Hero Image"
               />
             </div>
           </div>
         </div>
-        
+
         {/* img input */}
         <input
           type="file"

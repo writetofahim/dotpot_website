@@ -42,7 +42,7 @@ const ClientsReviewTableRow = ({ clientsReview, setData, data }) => {
               ? client_image
               : `${import.meta.env.REACT_APP_SERVER_PATH}/${client_image}`
           }
-          alt=""
+          alt="Client Image"
         />
       </td>
       <td className="px-6 py-4">{client_name}</td>

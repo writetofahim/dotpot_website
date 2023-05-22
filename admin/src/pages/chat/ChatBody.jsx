@@ -104,77 +104,77 @@ const ChatBody = ({ selectedChatId }) => {
           src={
             "https://www.freecodecamp.org/news/content/images/2020/05/loading-animation.gif"
           }
-          alt=""
+          alt="Loader animation"
         />
         <img
           className="w-60 self-start"
           src={
             "https://www.freecodecamp.org/news/content/images/2020/05/loading-animation.gif"
           }
-          alt=""
+          alt="Loading animation"
         />
         <img
           className="w-60 self-end"
           src={
             "https://www.freecodecamp.org/news/content/images/2020/05/loading-animation.gif"
           }
-          alt=""
+          alt="Loading animation"
         />
         <img
           className="w-60 self-start"
           src={
             "https://www.freecodecamp.org/news/content/images/2020/05/loading-animation.gif"
           }
-          alt=""
+          alt="Loading animation"
         />
         <img
           className="w-60 self-end"
           src={
             "https://www.freecodecamp.org/news/content/images/2020/05/loading-animation.gif"
           }
-          alt=""
+          alt="Loading animation"
         />
         <img
           className="w-60 self-start"
           src={
             "https://www.freecodecamp.org/news/content/images/2020/05/loading-animation.gif"
           }
-          alt=""
+          alt="Loading animation"
         />
         <img
           className="w-60 self-end"
           src={
             "https://www.freecodecamp.org/news/content/images/2020/05/loading-animation.gif"
           }
-          alt=""
+          alt="Loading animation"
         />
         <img
           className="w-60 self-start"
           src={
             "https://www.freecodecamp.org/news/content/images/2020/05/loading-animation.gif"
           }
-          alt=""
+          alt="Loading animation"
         />
         <img
           className="w-60 self-end"
           src={
             "https://www.freecodecamp.org/news/content/images/2020/05/loading-animation.gif"
           }
-          alt=""
+          alt="Loading animation"
         />
         <img
           className="w-60 self-start"
           src={
             "https://www.freecodecamp.org/news/content/images/2020/05/loading-animation.gif"
           }
-          alt=""
+          alt="Loading animation"
         />
         <img
           className="w-60 self-end"
           src={
             "https://www.freecodecamp.org/news/content/images/2020/05/loading-animation.gif"
           }
-          alt=""
+          alt="Loading animation"
         />
       </div>
     );

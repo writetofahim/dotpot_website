@@ -6,11 +6,11 @@ import { BsArrowRight } from "react-icons/bs";
 import { SlOptionsVertical } from "react-icons/sl";
 import { TfiLocationPin } from "react-icons/tfi";
 import { Link } from "react-router-dom";
+import Footer from "../../components/Footer/Footer";
 import NavbarJob from "../../components/NavbarJob/NavbarJob";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 import axios from "../../utils/axiosInstance";
 import postLogger from "../../utils/postLogger";
-import Footer from '../../components/Footer/Footer'
 
 import desktopImg from "../../assets/img/applyjob/Home page herov2_desktop.png";
 // import mobileImg from "../../assets/img/applyjob/Home page herov2_mobile.png";
@@ -26,7 +26,9 @@ export const JobCard = (props) => {
     <>
       {/* For Large screen */}
       <div
-        className={`"cursor-pointer job-card w-full p-5 border border-border rounded-xl hover:border border-border-primary-500 text-gray-400 gap-1 hidden md:block md:hover:scale-105 md:hover:shadow-xl transition-all" ${props.activeJob?._id===props._id? 'ring-4':''}`}
+        className={`"cursor-pointer job-card w-full p-5 border border-border rounded-xl hover:border border-border-primary-500 text-gray-400 gap-1 hidden md:block md:hover:scale-105 md:hover:shadow-xl transition-all" ${
+          props.activeJob?._id === props._id ? "ring-4" : ""
+        }`}
         onClick={() => handelChick(props._id)}
       >
         <div className="flex justify-between items-center">
@@ -147,14 +149,14 @@ const ApplyJob = () => {
       .get("/job")
       .then((response) => {
         setData(response.data.jobs);
-        setActiveJob(data[0])
+        setActiveJob(data[0]);
         postLogger({ level: "info", message: response });
       })
       .catch((error) => {
         console.error(error);
         postLogger({ level: "error", message: error });
       });
-    }, []);
+  }, []);
 
   return (
     <>
@@ -196,49 +198,54 @@ const ApplyJob = () => {
       <div className="w-full flex items-center justify-center bg-background-500 mb-10">
         <div className="w-full max-w-[1400px] container  px-5">
           {/* new design */}
-            <div className="relative ">
-              <div className="h-[350px]  ">
-                <img
-                  className="w-full h-[350px] object-cover"
-                  src={desktopImg}
-                  alt=""
-                />
-                <div className="backdrop-blur-sm py-10 md:backdrop-blur-none w-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-8 md:px-14">
-                  <h1 className="text-5xl font-bold text-buttonText-500">
-                    Welcome
-                  </h1>
-                  <p className="text-xl font-semibold text-buttonText-500">
-                    Create the future you want
-                  </p>
-                  <div>
-                    <div className="md:flex gap-1 items-center mt-7">
-                      <div className="rounded-sm w-full md:w-2/5 bg-background-500 flex items-center h-12 my-3 px-2">
-                        <SearchIcon className="text-gray-300" />
-                        <input
-                          className="outline-none w-full"
-                          type="text"
-                          placeholder="Search by job title or keyword"
-                        />
-                      </div>
-                      <button className=" h-12 bg-secondary-500 text-buttonText-500 font-semibold px-3 rounded-sm hover:bg-secondary-400">
-                        Find Jobs
-                      </button>
+          <div className="relative ">
+            <div className="h-[350px]  ">
+              <img
+                className="w-full h-[350px] object-cover"
+                src={desktopImg}
+                alt="Apply Job Banner Image"
+              />
+              <div className="backdrop-blur-sm py-10 md:backdrop-blur-none w-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-8 md:px-14">
+                <h1 className="text-5xl font-bold text-buttonText-500">
+                  Welcome
+                </h1>
+                <p className="text-xl font-semibold text-buttonText-500">
+                  Create the future you want
+                </p>
+                <div>
+                  <div className="md:flex gap-1 items-center mt-7">
+                    <div className="rounded-sm w-full md:w-2/5 bg-background-500 flex items-center h-12 my-3 px-2">
+                      <SearchIcon className="text-gray-300" />
+                      <input
+                        className="outline-none w-full"
+                        type="text"
+                        placeholder="Search by job title or keyword"
+                      />
                     </div>
+                    <button className=" h-12 bg-secondary-500 text-buttonText-500 font-semibold px-3 rounded-sm hover:bg-secondary-400">
+                      Find Jobs
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
           {/* new design ends */}
-          <h1 className={activeJob? 'text-center text-4xl my-10 font-bold  text-gray-400 transition-all':'text-4xl my-10 font-bold  text-gray-400'}>
-                Available Jobs
-              </h1>
+          <h2
+            className={
+              activeJob
+                ? "text-center text-4xl my-10 font-bold  text-gray-400 transition-all"
+                : "text-4xl my-10 font-bold  text-gray-400"
+            }
+          >
+            Available Jobs
+          </h2>
           <div className="w-full flex flex-col md:flex-row justify-between gap-5">
-          
             {/* Left sidebar */}
             <div className="left md:w-2/5 flex flex-col gap-5 ">
               {data &&
-                data.map((item, index) => ( 
-                    <JobCard
+                data.map((item, index) => (
+                  <JobCard
                     key={index}
                     {...item}
                     setId={setId}
@@ -250,7 +257,9 @@ const ApplyJob = () => {
 
             {/* Right sidebar */}
             <div
-              className={`"right md:w-3/5 sticky top-20 rounded-xl shadow-xl overflow-hidden border border-border" ${activeJob? 'block transition-all duration-1000':'hidden'}`}
+              className={`"right md:w-3/5 sticky top-20 rounded-xl shadow-xl overflow-hidden border border-border" ${
+                activeJob ? "block transition-all duration-1000" : "hidden"
+              }`}
               id="jobDetails"
             >
               {activeJob !== null && (
@@ -364,8 +373,7 @@ const ApplyJob = () => {
           </div>
         </div>
       </div>
-      <Footer/>
-
+      <Footer />
     </>
   );
 };

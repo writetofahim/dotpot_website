@@ -11,35 +11,37 @@ heroImg: a string representing the URL of the hero image.
 
 **/
 
-import React from 'react'
-import { BsArrowRight } from 'react-icons/bs'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { BsArrowRight } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const AboutHero = (props) => {
-    return (
-        <div className="w-full pt-[10vh] flex items-center justify-center">
-            <div className='container flex flex-col-reverse md:flex-row items-center justify-center gap-5'>
-
-                {/* Left Side */}
-                <div className="left flex-2 h-full flex flex-col justify-center p-5">
-                    <h2 className="text-3xl md:text-5xl  font-bold mb-2">
-                        {props.heading}
-                    </h2>
-                    <p className='mb-5 text-2xl text-gray-400'>{props.text}</p>
-                    <Link to={props.button.link}>
-                        <button variant="contained" className='bg-primary-500 px-10 py-3 text-white rounded-sm hover:bg-secondary-500 font-bold mt-2 flex items-center gap-3'>
-                            {props.button.title} <BsArrowRight />
-                        </button>
-                    </Link>
-                </div>
-
-                {/* Right Side */}
-                <div className="right flex-2 flex items-end justify-center ">
-                    <img src={props.heroImg} alt='hero img'/>
-                </div>
-            </div>
+  return (
+    <div className="w-full pt-[10vh] flex items-center justify-center">
+      <div className="container flex flex-col-reverse md:flex-row items-center justify-center gap-5">
+        {/* Left Side */}
+        <div className="left flex-2 h-full flex flex-col justify-center p-5">
+          <h2 className="text-3xl md:text-5xl  font-bold mb-2">
+            {props.heading}
+          </h2>
+          <p className="mb-5 text-2xl text-gray-400">{props.text}</p>
+          <Link to={props.button.link}>
+            <button
+              variant="contained"
+              className="bg-primary-500 px-10 py-3 text-white rounded-sm hover:bg-secondary-500 font-bold mt-2 flex items-center gap-3"
+            >
+              {props.button.title} <BsArrowRight />
+            </button>
+          </Link>
         </div>
-    )
-}
 
-export default AboutHero
+        {/* Right Side */}
+        <div className="right flex-2 flex items-end justify-center ">
+          <img src={props.heroImg} alt={props.heading} />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default AboutHero;

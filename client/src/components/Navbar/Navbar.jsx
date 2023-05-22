@@ -388,7 +388,7 @@ const Navbar = () => {
                 src={`${import.meta.env.REACT_APP_SERVER_PATH}/${
                   companyInfo.primary_logo
                 }`}
-                alt="logo"
+                alt="Dotpot iT logo"
                 className="w-60"
               />
             </Link>

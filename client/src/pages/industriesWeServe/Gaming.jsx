@@ -2,12 +2,12 @@ import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { useLocation } from "react-router-dom";
 import ReactVisibilitySensor from "react-visibility-sensor";
-import gamingcover from "../../assets/img/gamedevelopment/gamingcover.png";
-import unity3d from "../../assets/img/gamedevelopment/unity3d.png";
-import metaverse from "../../assets/img/gamedevelopment/metaverse.png";
-import unrealengine from "../../assets/img/gamedevelopment/unrealengine.png";
 import augmentedreality from "../../assets/img/gamedevelopment/augmentedreality.png";
 import casualgame from "../../assets/img/gamedevelopment/casualgame.png";
+import gamingcover from "../../assets/img/gamedevelopment/gamingcover.png";
+import metaverse from "../../assets/img/gamedevelopment/metaverse.png";
+import unity3d from "../../assets/img/gamedevelopment/unity3d.png";
+import unrealengine from "../../assets/img/gamedevelopment/unrealengine.png";
 import Footer from "../../components/Footer/Footer";
 import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
@@ -113,8 +113,9 @@ const Gaming = () => {
 
       <Navbar />
       <div
-        className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
-          } `}
+        className={` md:pt-[15vh] pt-[15vh] ${
+          window.innerWidth > 1280 && "md:pt-[11vh]"
+        } `}
       >
         <NavigatorComponent navigationData={navigationData} />
         <div>
@@ -124,10 +125,11 @@ const Gaming = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`mt-10 mb-16 ${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 `}
+                    className={`mt-10 mb-16 ${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                    } duration-1000 `}
                   >
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
@@ -136,7 +138,9 @@ const Gaming = () => {
                             Game Development
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            Revolutionize gaming experience with Dotpot IT's cutting-edge development. Elevate gameplay and immerse yourself in a new era of gaming innovation.
+                            Revolutionize gaming experience with Dotpot IT's
+                            cutting-edge development. Elevate gameplay and
+                            immerse yourself in a new era of gaming innovation.
                           </p>
                         </div>
                         <img
@@ -164,20 +168,22 @@ const Gaming = () => {
                       id={sectionId}
                     >
                       <div
-                        className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
-                          } `}
+                        className={`w-full md:w-1/2 lg:w-1/2 ${
+                          id % 2 === 0 && "order-2"
+                        } `}
                       >
                         <ReactVisibilitySensor partialVisibility>
                           {({ isVisible }) => (
                             <div
-                              className={` ${isVisible
-                                ? "opacity-100 translate-y-0"
-                                : "translate-y-20 opacity-0"
-                                } duration-1000 `}
+                              className={` ${
+                                isVisible
+                                  ? "opacity-100 translate-y-0"
+                                  : "translate-y-20 opacity-0"
+                              } duration-1000 `}
                             >
-                              <h1 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
+                              <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
                                 {title}
-                              </h1>
+                              </h2>
                               <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">
                                 {description}
                               </p>
@@ -188,11 +194,13 @@ const Gaming = () => {
                       <ReactVisibilitySensor partialVisibility>
                         {({ isVisible }) => (
                           <div
-                            className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
-                              } ${isVisible
+                            className={`w-full md:w-1/2 lg:w-1/2 ${
+                              id % 2 === 0 && "order-1"
+                            } ${
+                              isVisible
                                 ? "opacity-100 translate-y-0"
                                 : "translate-y-20 opacity-0"
-                              } duration-1000 `}
+                            } duration-1000 `}
                           >
                             <img
                               className="w-4/5 mx-auto"
@@ -215,21 +223,29 @@ const Gaming = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 p-3 text-textColor-500`}
+                    className={`${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                    } duration-1000 p-3 text-textColor-500`}
                   >
-                    <h1 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
+                    <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
                       Why Dotpot iT
-                    </h1>
+                    </h2>
                     <img
                       className="w-64 mx-auto"
                       src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"
                       alt="colored line"
                     />
                     <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
-                    Dotpot iT is an excellent choice for game development due to their expertise in IT support services and commitment to delivering innovative solutions. With a dedicated team, they provide comprehensive support throughout the development process, ensuring seamless operations and exceptional customer service. Choose Dotpot iT to leverage their knowledge and experience for successful game development.
+                      Dotpot iT is an excellent choice for game development due
+                      to their expertise in IT support services and commitment
+                      to delivering innovative solutions. With a dedicated team,
+                      they provide comprehensive support throughout the
+                      development process, ensuring seamless operations and
+                      exceptional customer service. Choose Dotpot iT to leverage
+                      their knowledge and experience for successful game
+                      development.
                     </p>
                   </div>
                 </>

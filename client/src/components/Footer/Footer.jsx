@@ -109,7 +109,7 @@ const Footer = () => {
                 src={`${import.meta.env.REACT_APP_SERVER_PATH}/${
                   companyInfo.secondary_logo
                 }`}
-                alt="logo"
+                alt="Dotpot iT Logo"
                 className="w-[250px]"
               />
             </Link>
@@ -173,7 +173,7 @@ const Footer = () => {
               src={`${import.meta.env.REACT_APP_SERVER_PATH}/${
                 companyInfo.secondary_logo
               }`}
-              alt="logo"
+              alt="Dotpot iT Logo"
               className="w-4/5"
             />
           </Link>

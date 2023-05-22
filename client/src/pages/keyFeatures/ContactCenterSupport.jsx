@@ -219,7 +219,7 @@ const ContactCenterSupport = () => {
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
                         <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
                           <h2 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
-                            Contact Center Support
+                            Contact Center Support With Dotpot iT
                           </h2>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
                             Dotpot offers Contact Center Support services for
@@ -315,9 +315,9 @@ const ContactCenterSupport = () => {
                         : "translate-y-20 opacity-0"
                     } duration-1000 p-3 text-textColor-500`}
                   >
-                    <h1 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
+                    <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
                       Why Dotpot iT
-                    </h1>
+                    </h2>
                     <img
                       className="w-64 mx-auto"
                       src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"

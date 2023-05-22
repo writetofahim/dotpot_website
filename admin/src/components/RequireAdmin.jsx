@@ -1,4 +1,3 @@
-
 /*
 This component, RequireAdmin, is used to restrict access to routes for non-admin users. 
 It checks the user's role from the AuthContext and redirects to the login page if the user is not an admin. 
@@ -14,11 +13,13 @@ const RequireAdmin = ({ children }) => {
   const location = useLocation();
 
   if (loading) {
-    return <h1>Loading...</h1>
+    return <h2>Loading...</h2>;
   }
 
   if (!user && !loading) {
-    return <Navigate to="/admin/login" state={{ from: location }} replace></Navigate>
+    return (
+      <Navigate to="/admin/login" state={{ from: location }} replace></Navigate>
+    );
   }
   return children;
 };

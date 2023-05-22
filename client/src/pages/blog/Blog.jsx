@@ -392,7 +392,7 @@ const BlogCard2 = ({ title, body, image, _id, tags, createdAt, index }) => {
             index === 0 ? "lg:h-[450px]" : "lg:h-[250px]"
           } h-[250px] w-full object-cover object-top`}
           src={`${import.meta.env.REACT_APP_SERVER_PATH}/${image}`}
-          alt=""
+          alt={title}
         />
       </div>
       <div className="flex flex-wrap gap-2 mt-3">

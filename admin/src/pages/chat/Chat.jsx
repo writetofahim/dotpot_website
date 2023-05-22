@@ -66,7 +66,7 @@ const Chat = () => {
             src={
               "https://i.pinimg.com/originals/e3/1b/75/e31b752875679b64fce009922f9f0dda.gif"
             }
-            alt=""
+            alt="Conversation Image"
           />
         </div>
       )}

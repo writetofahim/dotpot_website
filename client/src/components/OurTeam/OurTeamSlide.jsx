@@ -92,7 +92,7 @@ export const SingleSlide = (props) => {
       <div className="mx-5 mb-20 rounded-lg p-5 bg-background-500 flex items-center flex-col shadow-xl cursor-pointer border-primary-400 hover:border hover:scale-x-105 transition-all">
         <img
           src={`${import.meta.env.REACT_APP_SERVER_PATH}/${props.image}`}
-          alt="team img"
+          alt={props.name}
           className=" w-2/5 aspect-square object-contain rounded-full"
         />
 

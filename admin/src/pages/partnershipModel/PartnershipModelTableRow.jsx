@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { RiDeleteBinLine } from "react-icons/ri";
 import { AiOutlineEdit } from "react-icons/ai";
-import axios from "../../utils/axiosInstance";
-import DeleteModal from "../../components/DeleteModal";
+import { RiDeleteBinLine } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
+import DeleteModal from "../../components/DeleteModal";
+import axios from "../../utils/axiosInstance";
 import postLogger from "../../utils/postLogger";
 
 const PartnershipModelTableRow = ({ partner, setData, data }) => {
@@ -32,7 +32,7 @@ const PartnershipModelTableRow = ({ partner, setData, data }) => {
         scope="row"
         className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
       >
-        <img src={icon} alt="" className="w-16" />
+        <img src={icon} alt={title} className="w-16" />
       </th>
       <td className="px-6 py-4">{title}</td>
       <td className="px-6 py-4">{description}</td>

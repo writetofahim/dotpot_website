@@ -27,7 +27,11 @@ const MessageBody = ({ message }) => {
   return (
     <div className={`flex my-2 ${alignment} `}>
       <div className="flex flex-col items-center">
-        <img src={avatarURL} alt="avatar" className="w-8 h-8 rounded-full" />
+        <img
+          src={avatarURL}
+          alt="User avatar"
+          className="w-8 h-8 rounded-full"
+        />
         <span className="text-xs mt-1">{isVisitor ? "Visitor" : "Admin"}</span>
       </div>
       <div

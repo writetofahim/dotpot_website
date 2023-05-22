@@ -1,17 +1,16 @@
 import React from "react";
-import wordpress from '../../../../assets/img/icon/cms/wordpress.png'
-import drupal from '../../../../assets/img/icon/cms/drupal.png'
-import joomla from '../../../../assets/img/icon/cms/joomla.png'
-import shopify from '../../../../assets/img/icon/cms/shopify.png'
-import wix from '../../../../assets/img/icon/cms/wix.png'
-
+import drupal from "../../../../assets/img/icon/cms/drupal.png";
+import joomla from "../../../../assets/img/icon/cms/joomla.png";
+import shopify from "../../../../assets/img/icon/cms/shopify.png";
+import wix from "../../../../assets/img/icon/cms/wix.png";
+import wordpress from "../../../../assets/img/icon/cms/wordpress.png";
 
 const Cms = () => {
   const data = [
     { icon: wordpress },
     { icon: drupal },
     { icon: joomla },
-    { icon: shopify},
+    { icon: shopify },
     { icon: wix },
   ];
   return (
@@ -24,7 +23,11 @@ const Cms = () => {
                 key={index}
                 className="mt-10 md:w-[100px] md:h-[100px] p-2 rounded-full md:rounded-lg shadow flex items-center justify-center hover:border hover:border-purple-500 hover:scale-110 hover:shadow-xl transition-all glassmorphism"
               >
-                <img src={item.icon} alt="" className="h-[50px] w-[50px]" />
+                <img
+                  src={item.icon}
+                  alt="Cms icon Image"
+                  className="h-[50px] w-[50px]"
+                />
               </div>
             );
           })}

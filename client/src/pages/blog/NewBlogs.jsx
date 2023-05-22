@@ -65,7 +65,7 @@ const NewBlogs = ({ currentBlogId, isRelatedBlog }) => {
                       src={`${import.meta.env.REACT_APP_SERVER_PATH}/${
                         blog?.image
                       }`}
-                      alt=""
+                      alt={blog.title}
                     />
                   </Link>
                   <span className="text-sm text-textColor-500">

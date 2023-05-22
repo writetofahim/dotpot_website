@@ -62,7 +62,7 @@ const ChatItem = ({ chat, getChatList, setSelectedChatId, selectedChatId }) => {
         <img
           className="rounded-full p-1 w-10 aspect-square object-contain border"
           src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png"
-          alt=""
+          alt="User Avatar"
         />
       </div>
       <div className="w-full">

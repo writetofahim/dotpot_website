@@ -2,17 +2,16 @@ import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { useLocation } from "react-router-dom";
 import ReactVisibilitySensor from "react-visibility-sensor";
-import cloudcomputing from "../../assets/img/itsupport/cloudcomputing.png";
-import database from "../../assets/img/itsupport/database.png";
-import cybersequrity from "../../assets/img/itsupport/cybersequrity.png";
-import itcouncil from "../../assets/img/itsupport/itcouncil.png";
-import projectmanagement from "../../assets/img/itsupport/projectmanagement.png";
-import technicalsupport from "../../assets/img/itsupport/technicalsupport.png";
 import appmaintenance from "../../assets/img/appmaintenance.png";
 import appstore from "../../assets/img/appstore.png";
 import crossplatform from "../../assets/img/crossplatform.png";
-import customizedsolutions from "../../assets/img/customizedsolutions.png";
 import itsupport from "../../assets/img/itsupport.png";
+import cloudcomputing from "../../assets/img/itsupport/cloudcomputing.png";
+import cybersequrity from "../../assets/img/itsupport/cybersequrity.png";
+import database from "../../assets/img/itsupport/database.png";
+import itcouncil from "../../assets/img/itsupport/itcouncil.png";
+import projectmanagement from "../../assets/img/itsupport/projectmanagement.png";
+import technicalsupport from "../../assets/img/itsupport/technicalsupport.png";
 import userexperience from "../../assets/img/userexperience.png";
 import Footer from "../../components/Footer/Footer";
 import GetAQuote from "../../components/GetAQuote/GetAQuote";
@@ -180,7 +179,7 @@ const ItSupport = () => {
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
                         <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
                           <h1 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500 mt-5">
-                            IT Support
+                            IT Support By Dotpot iT
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
                             Dotpot iT offers reliable IT support for businesses
@@ -228,9 +227,9 @@ const ItSupport = () => {
                                   : "translate-y-20 opacity-0"
                               } duration-1000 `}
                             >
-                              <h1 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
+                              <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
                                 {title}
-                              </h1>
+                              </h2>
                               <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">
                                 {description}
                               </p>
@@ -276,9 +275,9 @@ const ItSupport = () => {
                         : "translate-y-20 opacity-0"
                     } duration-1000 p-3 text-textColor-500`}
                   >
-                    <h1 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
+                    <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
                       Why Dotpot iT
-                    </h1>
+                    </h2>
                     <img
                       className="w-64 mx-auto"
                       src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"

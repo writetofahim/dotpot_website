@@ -174,7 +174,7 @@ const Theme = () => {
                   key={i}
                   className="md:w-[350px] h-[230px] w-full"
                   src="https://ionic.io/blog/wp-content/uploads/2018/03/skeleton.gif"
-                  alt=""
+                  alt="Themes"
                 />
               ))}
             </div>
@@ -185,7 +185,9 @@ const Theme = () => {
               <div
                 key={color.name}
                 onClick={() => handleChangeTheme(color._id)}
-                style={{backgroundColor:Object.values(color.colors.background)}}
+                style={{
+                  backgroundColor: Object.values(color.colors.background),
+                }}
                 className={`md:w-[350px] w-full rounded-md  ${
                   color?.selected
                     ? " border-blue-600"

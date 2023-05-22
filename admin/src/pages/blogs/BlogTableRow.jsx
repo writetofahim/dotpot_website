@@ -52,7 +52,7 @@ const TableRow = ({ blog, setData, data }) => {
       >
         <img
           src={`${import.meta.env.REACT_APP_SERVER_PATH}/${image}`}
-          alt=""
+          alt={title}
           className="w-1/5"
         />
       </th>
