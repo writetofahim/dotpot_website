@@ -41,7 +41,7 @@ const NewBlogs = ({ currentBlogId, isRelatedBlog }) => {
         <p className="text-textColor-500">No blogs found!</p>
       )}
       <div className="md:grid grid-cols-5 gap-10 md:space-y-0 space-y-14">
-        {data.splice(1, 6)?.map((blog) => {
+        {data.splice(isRelatedBlog ? 0 : 1, 6)?.map((blog) => {
           const parsedArray = ReactHtmlParser(blog?.body);
           const parsedString = renderToString(parsedArray); // convert array to string of HTML
           const slicedString = striptags(parsedString).slice(0, 90);
@@ -57,7 +57,7 @@ const NewBlogs = ({ currentBlogId, isRelatedBlog }) => {
                   } duration-1000`}
                 >
                   <Link
-                    to={`/blog/${blog._id}`}
+                    to={`/blog/${blog.slug}`}
                     className="font-bold mt-3 text-lg hover:underline"
                   >
                     <img
@@ -72,8 +72,8 @@ const NewBlogs = ({ currentBlogId, isRelatedBlog }) => {
                     {moment(new Date(blog?.createdAt)).format("MMMM Do YYYY")}
                   </span>
                   <Link
-                    to={`/blog/${blog._id}`}
-                    className="font-bold text-md leading-5 hover:underline mt-3 mb-3 block text-textColor-500"
+                    to={`/blog/${blog.slug}`}
+                    className="font-bold text-xl leading-5 hover:underline mt-3 mb-3 block text-textColor-500 blog-content-font"
                   >
                     {blog.title}
                   </Link>

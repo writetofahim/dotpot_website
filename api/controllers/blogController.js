@@ -1,32 +1,34 @@
 const Blog = require("../models/Blog");
 const { removeFile } = require("../utilities/removeFile");
+const mongoose = require("mongoose");
+
 /**
  * Controller function to retrieve a paginated list of all blogs
  * @param {object} req - The Express request object
  * @param {object} res - The Express response object
  */
 const getAllBlogs = async (req, res) => {
-  // Get the current page number from the query parameters, default to 1 if not specified
   const page = parseInt(req.query.page) || 1;
-  // Get the number of blogs to display per page from the query parameters, default to 10 if not specified
   const limit = parseInt(req.query.limit) || 10;
+  const tags = req.query.tags ? req.query.tags.split(",") : [];
 
   try {
-    // Get the total number of blogs in the database
-    const totalBlogs = await Blog.countDocuments({});
-    // Calculate the total number of pages based on the limit and total number of blogs
+    let query = {};
+    if (tags.length > 0) {
+      // Add a query condition to filter blogs by tags (case-insensitive)
+      query = { tags: { $in: tags.map((tag) => new RegExp(tag, "i")) } };
+    }
+
+    const totalBlogs = await Blog.countDocuments(query);
     const totalPages = Math.ceil(totalBlogs / limit);
-    // Calculate the starting index of the blogs to retrieve
     const startIndex = (page - 1) * limit;
-    // Calculate the ending index of the blogs to retrieve
     const endIndex = page * limit;
 
-    // Retrieve the blogs from the database based on the pagination parameters
-    const blogs = await Blog.find({})
+    const blogs = await Blog.find(query)
       .sort({ createdAt: -1 })
       .skip(startIndex)
       .limit(limit);
-    // Send the blogs as a response along with metadata about the pagination
+
     res.json({
       totalBlogs,
       totalPages,
@@ -34,15 +36,20 @@ const getAllBlogs = async (req, res) => {
       blogs,
     });
   } catch (err) {
-    // If there's an error, log it to the console and send a 500 response
     console.log(err);
     res.status(500).send({ error: "Server error" });
   }
 };
 
 const getBlogById = async (req, res) => {
+  const { id } = req.params;
   try {
-    const blog = await Blog.findById(req.params.id);
+    let blog;
+    if (mongoose.Types.ObjectId.isValid(id)) {
+      blog = await Blog.findById(req.params.id);
+    } else {
+      blog = await Blog.findOne({ slug: req.params.id });
+    }
     if (!blog) {
       return res.status(404).send("Blog post not found");
     }
@@ -88,6 +95,7 @@ const updateBlog = async (req, res) => {
   }
 };
 
+// Controller function to find related blogs based on tags
 const findRelatedBlogs = async (req, res) => {
   const blogId = req.params.blogId;
   const limit = parseInt(req.query.limit) || 5;
@@ -101,8 +109,9 @@ const findRelatedBlogs = async (req, res) => {
 
     const tags = currentBlog.tags;
 
+    // Query for related blogs with case-insensitive tag matching
     const relatedBlogs = await Blog.find({
-      tags: { $in: tags },
+      tags: { $in: tags.map((tag) => new RegExp(tag, "i")) },
       _id: { $ne: blogId },
     })
       .limit(limit)

@@ -110,7 +110,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<Services />} />
         <Route path="/blog" element={<Blogs />} />
-        <Route path="/blog/:id" element={<SingleBlog />} />
+        <Route path="/blog/:slug" element={<SingleBlog />} />
         <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
         <Route path="/terms-conditions" element={<Terms_Conditions />} />
         <Route path="/white-paper" element={<WhitePaper />} />

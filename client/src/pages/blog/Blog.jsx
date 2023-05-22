@@ -322,7 +322,16 @@ const Blog = () => {
 
 export default Blog;
 
-const FirstBlog = ({ title, body, image, _id, tags, createdAt, index }) => {
+const FirstBlog = ({
+  title,
+  body,
+  image,
+  _id,
+  tags,
+  createdAt,
+  index,
+  slug,
+}) => {
   const parsedArray = ReactHtmlParser(body);
   const parsedString = renderToString(parsedArray); // convert array to string of HTML
   const slicedString = stripTags(parsedString).slice(0, 600);
@@ -334,7 +343,7 @@ const FirstBlog = ({ title, body, image, _id, tags, createdAt, index }) => {
 
         <div className="p-5">
           <img
-            onClick={() => navigate(`/blog/${_id}`)}
+            onClick={() => navigate(`/blog/${slug}`)}
             // className="w-full object-cover h-[400px] relative z-10 rounded-xl cursor-pointer"
             className="w-full aspect-video relative z-10 rounded-xl cursor-pointer"
             src={`${import.meta.env.REACT_APP_SERVER_PATH}/${image}`}
@@ -346,7 +355,7 @@ const FirstBlog = ({ title, body, image, _id, tags, createdAt, index }) => {
       </div>
       <div className="md:w-[55%] w-full p-4">
         <h3
-          onClick={() => navigate(`/blog/${_id}`)}
+          onClick={() => navigate(`/blog/${slug}`)}
           className="text-xl font-bold hover:underline cursor-pointer"
         >
           {title}
@@ -358,7 +367,7 @@ const FirstBlog = ({ title, body, image, _id, tags, createdAt, index }) => {
           {slicedString}...{" "}
           <Link
             className="text-secondary-300 cursor-pointer hover:text-secondary-600"
-            to={`/blog/${_id}`}
+            to={`/blog/${slug}`}
           >
             Read more
           </Link>{" "}
@@ -376,12 +385,21 @@ const FirstBlog = ({ title, body, image, _id, tags, createdAt, index }) => {
   );
 };
 
-const BlogCard2 = ({ title, body, image, _id, tags, createdAt, index }) => {
+const BlogCard2 = ({
+  title,
+  body,
+  image,
+  _id,
+  tags,
+  createdAt,
+  index,
+  slug,
+}) => {
   const navigate = useNavigate();
 
   return (
     <div
-      onClick={() => navigate(`/blog/${_id}`)}
+      onClick={() => navigate(`/blog/${slug}`)}
       className={`${
         index === 0 ? "col-span-3" : ""
       } p-3 bg-background-500 rounded-xl shadow-lg cursor-pointer group`}
@@ -420,7 +438,16 @@ const BlogCard2 = ({ title, body, image, _id, tags, createdAt, index }) => {
   );
 };
 
-const BlogCard3 = ({ title, body, image, _id, tags, createdAt, index }) => {
+const BlogCard3 = ({
+  title,
+  body,
+  image,
+  _id,
+  tags,
+  createdAt,
+  index,
+  slug,
+}) => {
   const navigate = useNavigate();
 
   const parsedArray = ReactHtmlParser(body);
@@ -440,7 +467,7 @@ const BlogCard3 = ({ title, body, image, _id, tags, createdAt, index }) => {
 
         <div className="p-4">
           <img
-            onClick={() => navigate(`/blog/${_id}`)}
+            onClick={() => navigate(`/blog/${slug}`)}
             className="w-full aspect-video relative z-10 rounded-xl cursor-pointer"
             src={`${import.meta.env.REACT_APP_SERVER_PATH}/${image}`}
             alt={title}
@@ -449,7 +476,7 @@ const BlogCard3 = ({ title, body, image, _id, tags, createdAt, index }) => {
       </div>
       <div className="md:w-[55%] w-full p-4">
         <h3
-          onClick={() => navigate(`/blog/${_id}`)}
+          onClick={() => navigate(`/blog/${slug}`)}
           className="text-lg font-bold hover:underline cursor-pointer"
         >
           {title}
@@ -461,7 +488,7 @@ const BlogCard3 = ({ title, body, image, _id, tags, createdAt, index }) => {
           {slicedString}...{" "}
           <Link
             className="text-secondary-300 cursor-pointer hover:text-secondary-600"
-            to={`/blog/${_id}`}
+            to={`/blog/${slug}`}
           >
             Read more
           </Link>

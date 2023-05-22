@@ -54,7 +54,7 @@ const NextBlog = ({ currentBlogId }) => {
                 )}
               </span>
               <Link
-                to={`/blog/${blog._id}`}
+                to={`/blog/${blog.slug}`}
                 className="font-bold md:text-5xl text-2xl hover:underline mt-3 mb-3 block text-textColor-500 "
                 style={{ fontFamily: `Times New Roman` }}
               >
@@ -66,7 +66,7 @@ const NextBlog = ({ currentBlogId }) => {
             </div>
             <div className="md:w-1/2 w-full">
               <Link
-                to={`/blog/${blog._id}`}
+                to={`/blog/${blog.slug}`}
                 className="font-bold mt-3 text-lg hover:underline"
               >
                 <img

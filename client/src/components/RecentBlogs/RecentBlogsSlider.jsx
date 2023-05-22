@@ -83,7 +83,7 @@ var settings = {
 export const SingleSlide = (props) => {
   return (
     <div className="mx-5 mb-20 rounded-lg shadow-xl">
-      <Link to={`/blog/${props._id}`}>
+      <Link to={`/blog/${props.slug}`}>
         <img
           src={`${import.meta.env.REACT_APP_SERVER_PATH}/${props.image}`}
           alt={props.title}
@@ -110,7 +110,7 @@ export const SingleSlide = (props) => {
           ))}
         </Stack>
         <p className="mt-2 text-white">{props.date}</p>
-        <Link to={`/blog/${props._id}`}>
+        <Link to={`/blog/${props.slug}`}>
           <h3 className="text-xl font-bold text-gray-400 my-2 h-[80px] cursor-pointer">
             {props.title.slice(0, 45)}...
           </h3>

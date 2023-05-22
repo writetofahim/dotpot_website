@@ -29,7 +29,6 @@ const BlogSchema = new mongoose.Schema(
     },
     audio: {
       type: String,
-      required: true,
     },
     isPublished: {
       type: Boolean,

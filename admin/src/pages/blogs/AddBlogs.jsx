@@ -10,6 +10,18 @@ import BlogTags from "./BlogTags";
 import Editor from "./Editor";
 import UploadAudio from "./UploadAudio";
 
+const INITIAL_VALUE = {
+  title: "",
+  slug: "",
+  author: "",
+  body: "",
+  tags: [],
+  categories: [],
+  image: "",
+  audio: "",
+  isPublish: true,
+};
+
 const AddBlogs = () => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
@@ -35,6 +47,7 @@ const AddBlogs = () => {
       axios
         .get(`/blog/${blogId}`)
         .then((res) => {
+          console.log(res.data);
           setTitle(res.data.title);
           setBody(res.data.body);
           setTags(res.data.tags);
@@ -59,6 +72,15 @@ const AddBlogs = () => {
     }
   }, []);
 
+  const createSlug = (title) => {
+    const trimmedTitle = title.trim();
+    const slug = trimmedTitle
+      .toLowerCase()
+      .replace(/\s+/g, "-") // Replace spaces with dashes
+      .replace(/[^\w-]+/g, ""); // Remove non-word characters (except dashes)
+    return slug;
+  };
+
   function handleChangeImage(event) {
     const file = event.target.files[0];
     const reader = new FileReader();
@@ -82,6 +104,7 @@ const AddBlogs = () => {
 
     const newPost = {
       title,
+      slug: createSlug(title),
       author: user._id,
       body: body,
       tags,

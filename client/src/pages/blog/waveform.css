@@ -8,6 +8,19 @@
   .waveform-play-pause {
     margin-top: 10px;
   }
-  
+
+  .first-letter-large::first-letter 
+    {
+      font-size: 5em;
+      font-weight: bold;
+      float: left;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      margin-top: 30px;
+    }
+   /* blog page font change  */
+  .blog-content-font{
+    font-family: 'Times New Roman', Times, serif;
+  }
   /* Add any additional styles for the waveform player */
   

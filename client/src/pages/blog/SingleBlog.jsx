@@ -30,17 +30,17 @@ import NextBlog from "./NextBlog";
 import WaveformPlayer from "./WaveformPlayer";
 
 const SingleBlog = () => {
-  const { id } = useParams();
+  const { slug } = useParams();
   const [data, setData] = useState(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [id]);
+  }, [slug]);
 
   // Data Fetching
   useEffect(() => {
     axios
-      .get(`/blog/${id}`)
+      .get(`/blog/${slug}`)
       .then((response) => {
         setData(response.data);
         postLogger({ level: "info", message: response.data });
@@ -49,7 +49,7 @@ const SingleBlog = () => {
         console.error(error);
         postLogger({ level: "error", message: error });
       });
-  }, [id]);
+  }, [slug]);
 
   const parsedArray = ReactHtmlParser(data?.body);
   const parsedString = renderToString(parsedArray); // convert array to string of HTML
@@ -67,7 +67,7 @@ const SingleBlog = () => {
           name="keywords"
           content="Dotpot iT, blog, articles, news, real estate, real estate app"
         />
-        <link rel="canonical" href={`http://dotpotit.com/blog/${data?._id}`} />
+        <link rel="canonical" href={`http://dotpotit.com/blog/${data?.slug}`} />
 
         <meta property="og:title" content={`${data?.title}`} />
         <meta
@@ -77,7 +77,7 @@ const SingleBlog = () => {
         <meta property="og:type" content="article" />
         <meta
           property="og:url"
-          content={`http://dotpotit.com/blog/${data?._id}`}
+          content={`http://dotpotit.com/blog/${data?.slug}`}
         />
         <meta
           property="og:image"
@@ -137,41 +137,34 @@ const SingleBlog = () => {
         <div className="container mx-auto pt-[15vh] ">
           <NavigatorComponent navigationData={navigationData} />
           {data && (
-            <div className="full flex ">
-              <div className="container flex flex-col items-start p-4 md:p-6 text-justify">
-                <span
-                  className="text-textColor-500"
-                  style={{ fontFamily: `Times New Roman` }}
-                >
-                  {moment(new Date(data?.createdAt)).format(
-                    "MMMM Do YYYY, h:mm:ss a"
-                  )}
-                </span>
-                <h1
-                  className="my-3 md:text-5xl text-xl font-bold text-textColor-500"
-                  style={{
-                    fontFamily: `Times New Roman`,
-                    textAlign: "left",
-                  }}
-                >
-                  {data?.title}
-                </h1>
-                {/* content highligh text */}
+            <>
+              <div className="full flex">
+                <div className="container flex flex-col items-start p-4 md:p-6 text-justify">
+                  <span className="text-textColor-500 blog-content-font text-xl">
+                    {moment(new Date(data?.createdAt)).format(
+                      "MMMM Do YYYY, h:mm:ss a"
+                    )}
+                  </span>
+                  <h1 className="my-3 md:text-5xl text-xl font-bold text-textColor-500 blog-content-font">
+                    {data?.title}
+                  </h1>
+                  {/* content summary start*/}
+                  <p className="text-2xl mb-5">{data?.summary}</p>
+                  {/* content summary end*/}
+                  <div className="mt-3 w-full flex items-center">
+                    <img
+                      className="w-full"
+                      src={`${import.meta.env.REACT_APP_SERVER_PATH}/${
+                        data?.image
+                      }`}
+                      alt={data?.title}
+                    />
+                  </div>
 
-                <div className="mt-3 w-full flex items-center">
-                  <img
-                    className="w-full"
-                    src={`${import.meta.env.REACT_APP_SERVER_PATH}/${
-                      data?.image
-                    }`}
-                    alt={data?.title}
-                  />
-                </div>
-
-                <div className="md:flex gap-10 md:mt-16 mt-10">
-                  <div className="md:w-[10%] w-full">
-                    {/* author information start */}
-                    {/* <div className="mt-3 flex gap-2 items-center">
+                  <div className="md:flex gap-10 md:mt-16 mt-10">
+                    <div className="md:w-[15%] w-full">
+                      {/* author information start */}
+                      {/* <div className="mt-3 flex gap-2 items-center">
                       <img
                         className="w-8"
                         src={dotpotiTLogo}
@@ -179,27 +172,27 @@ const SingleBlog = () => {
                       />
                       <h1>Dotpot iT</h1>
                     </div> */}
-                    {/* author information end */}
-                  </div>
-                  <div className="md:w-[65%] w-full">
-                    {/* listen the article start*/}
+                      {/* author information end */}
+                    </div>
+                    <div className="md:w-[55%] w-full">
+                      {/* listen the article start*/}
 
-                    {data?.audio && (
-                      <div className="w-full ">
-                        <div className="w-full">
-                          <WaveformPlayer
-                            audioUrl={`${
-                              import.meta.env.REACT_APP_SERVER_PATH
-                            }/${data.audio}`}
-                          />
+                      {data?.audio && (
+                        <div className="w-full ">
+                          <div className="w-full">
+                            <WaveformPlayer
+                              audioUrl={`${
+                                import.meta.env.REACT_APP_SERVER_PATH
+                              }/${data.audio}`}
+                            />
+                          </div>
                         </div>
-                      </div>
-                    )}
+                      )}
 
-                    {/* listen the article end*/}
-                    <p className="text-textColor-500">{data?.date}</p>
-                    <div className=" text-textColor-500 gap-2 mt-20">
-                      <div className="flex gap-2 mb-2 md:text-xl text-base mt-3">
+                      {/* listen the article end*/}
+                      <p className="text-textColor-500">{data?.date}</p>
+                      <div className=" text-textColor-500 gap-2 mt-20">
+                        {/* <div className="flex gap-2 mb-2 md:text-xl text-base mt-3">
                         <span
                           className="md:text-7xl text-4xl font-bold -mt-2"
                           style={{ fontFamily: `Times New Roman` }}
@@ -207,44 +200,45 @@ const SingleBlog = () => {
                           {data?.summary?.slice(0, 1)}
                         </span>
                         <p className="italic">{data?.summary?.slice(1)}</p>
+                      </div> */}
+                        <span className="md:text-2xl text-base mt-7 inline-block first-letter-large blog-content-font">
+                          {parse(data?.body)}
+                        </span>
                       </div>
-                      <span className="md:text-xl text-base mt-7 inline-block tracking-wide">
-                        {parse(data?.body)}
-                      </span>
-                    </div>
-                    <div className="my-5 border-t border-textColor-500 "></div>
-                    <div>
-                      <p className="mb-3 text-bold text-xl font-bold text-textColor-500">
-                        Tags
-                      </p>
-                      <div className="flex gap-2 items-center flex-wrap">
-                        {data?.tags.map((item, index) => (
-                          <p
-                            key={index}
-                            className="inline px-3 py-1 border border-border rounded-full mr-2 text-textColor-500 hover:text-textColor-500 transition-all"
-                          >
-                            {item}
-                          </p>
-                        ))}
+                      <div className="my-5 border-t border-textColor-500 "></div>
+                      <div>
+                        <p className="mb-3 text-bold text-xl font-bold text-textColor-500">
+                          Tags
+                        </p>
+                        <div className="flex gap-2 items-center flex-wrap">
+                          {data?.tags.map((item, index) => (
+                            <p
+                              key={index}
+                              className="inline px-3 py-1 border border-border rounded-full mr-2 text-textColor-500 hover:text-textColor-500 transition-all"
+                            >
+                              {item}
+                            </p>
+                          ))}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="md:w-[25%] w-full mt-5">
-                    {/* <NewRecentBlogs currentBlogId={id} /> */}
+                    <div className="md:w-[30%] w-full mt-5">
+                      {/* <NewRecentBlogs currentBlogId={id} /> */}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+              <div className="w-full mt-5 md:px-6 px-4">
+                <NewBlogs currentBlogId={data?._id} isRelatedBlog={false} />
+              </div>
+              <div className="w-full mt-5 md:px-6 px-4">
+                <NextBlog currentBlogId={data?._id} />
+              </div>
+              <div className="w-full mt-5 md:px-6 px-4 mb-5">
+                <NewBlogs currentBlogId={data?._id} isRelatedBlog={true} />
+              </div>
+            </>
           )}
-          <div className="w-full mt-5 md:px-6 px-4">
-            <NewBlogs currentBlogId={id} isRelatedBlog={false} />
-          </div>
-          <div className="w-full mt-5 md:px-6 px-4">
-            <NextBlog currentBlogId={id} />
-          </div>
-          <div className="w-full mt-5 md:px-6 px-4 mb-5">
-            <NewBlogs currentBlogId={id} isRelatedBlog={true} />
-          </div>
         </div>
       </div>
 
