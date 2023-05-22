@@ -11,9 +11,7 @@ import NavbarJob from "../../components/NavbarJob/NavbarJob";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 import axios from "../../utils/axiosInstance";
 import postLogger from "../../utils/postLogger";
-
 import desktopImg from "../../assets/img/applyjob/Home page herov2_desktop.png";
-// import mobileImg from "../../assets/img/applyjob/Home page herov2_mobile.png";
 import SearchIcon from "@mui/icons-material/Search";
 
 export const JobCard = (props) => {
@@ -142,6 +140,9 @@ const ApplyJob = () => {
   const [id, setId] = useState(null);
   const [data, setData] = useState(null);
   const [activeJob, setActiveJob] = useState(null);
+  const [foundJobs, setFoundJobs] = useState("[]");
+  const [saveArr, setSaveArr] = useState("[]");
+  const [SearchData, setSearchData] = useState("");
 
   // Data Fetching
   useEffect(() => {
@@ -149,7 +150,7 @@ const ApplyJob = () => {
       .get("/job")
       .then((response) => {
         setData(response.data.jobs);
-        setActiveJob(data[0]);
+        setSaveArr(response.data.jobs);
         postLogger({ level: "info", message: response });
       })
       .catch((error) => {
@@ -158,6 +159,34 @@ const ApplyJob = () => {
       });
   }, []);
 
+  useEffect(() => {
+    setActiveJob(data && data[0]);
+  }, [data]);
+
+  const handleChange = (e) => {
+    const {value} = e.target
+    setSearchData(value)
+    performSearch(value)
+    console.log( value.length)
+    if(value.length<=0){
+      setData(saveArr)
+    }
+    
+  };
+  const performSearch = (value)=>{
+    console.log("value is ",value)
+    const foundJobs = data?.filter(obj=> obj.title.toLowerCase().includes(value.toLowerCase()))
+    setFoundJobs (foundJobs)
+    // console.log(foundJobs)
+    if(foundJobs.length > 0){
+      console.log('length of data',foundJobs.length, 'and the data is',foundJobs)
+      setData(foundJobs)
+    }else{
+      console.log("no data found")
+    }
+  }
+
+  // console.log(data)
   return (
     <>
       <NavbarJob />
@@ -203,12 +232,12 @@ const ApplyJob = () => {
               <img
                 className="w-full h-[350px] object-cover"
                 src={desktopImg}
-                alt="Apply Job Banner Image"
+                alt="Cover photo for apply jobs"
               />
               <div className="backdrop-blur-sm py-10 md:backdrop-blur-none w-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-8 md:px-14">
-                <h1 className="text-5xl font-bold text-buttonText-500">
+                <h2 className="text-5xl font-bold text-buttonText-500">
                   Welcome
-                </h1>
+                </h2>
                 <p className="text-xl font-semibold text-buttonText-500">
                   Create the future you want
                 </p>
@@ -219,7 +248,9 @@ const ApplyJob = () => {
                       <input
                         className="outline-none w-full"
                         type="text"
-                        placeholder="Search by job title or keyword"
+                        placeholder="Search by job title. 'e.g. Ui/Ux designer or Web Developer'"
+                        value={SearchData}
+                        onChange={handleChange}
                       />
                     </div>
                     <button className=" h-12 bg-secondary-500 text-buttonText-500 font-semibold px-3 rounded-sm hover:bg-secondary-400">
@@ -244,7 +275,7 @@ const ApplyJob = () => {
             {/* Left sidebar */}
             <div className="left md:w-2/5 flex flex-col gap-5 ">
               {data &&
-                data.map((item, index) => (
+                data?.map((item, index) => (
                   <JobCard
                     key={index}
                     {...item}

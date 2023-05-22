@@ -24,7 +24,7 @@ const NavbarJob = () => {
 
 
     return (
-        <nav className="w-full flex justify-between items-center p-4 z-999 bg-background-500" id="nav">
+        <nav className="container w-full mx-auto flex justify-between items-center p-4 z-999 bg-background-500" id="nav">
             <div className="md:flex-[0.5] flex-initial justify-center items-center">
                 <Link to='/'>
                     <img src={logo} alt="logo" className="w-60" />
@@ -33,13 +33,17 @@ const NavbarJob = () => {
             </div>
             <ul className="md:flex hidden list-none flex-row justify-between items-center flex-initial">
                 <Link to="/apply">
-                    <li className="mx-4 cursor-pointer uppercase text-white md:text-gray-400 text-xl hover:text-primary-400" onClick={() => setToggleMenu(false)}>All Jobs</li>
+                    <li className="mx-4 cursor-pointer   text-xl hover:text-primary-400 uppercase text-textColor-500 px-3 py-1 rounded-sm" onClick={() => setToggleMenu(false)}>All Jobs</li>
                 </Link>
-                {/* <Link to='/login' target="_blank">
+                <Link to="/">
+                <li className="  text-xl hover:text-primary-400 uppercase text-textColor-500 px-3 py-1 rounded-sm">Home
+                </li>
+            </Link>
+                <Link to='/login' target="_blank">
                     <li className="bg-primary-500 py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-primary-400 text-white">
                         Login
                     </li>
-                </Link> */}
+                </Link>
             </ul>
             <div className="flex relative md:hidden">
                 {!toggleMenu && (
@@ -48,8 +52,8 @@ const NavbarJob = () => {
 
                 {toggleMenu && (
                     <ul
-                        className="z-10 fixed -top-0 -right-2 p-3 w-[70vw] h-screen shadow-2xl md:hidden list-none
-                flex flex-col justify-start items-center rounded-md glassmorphism text-gray-500 hover:text-primary-400 animate-slide-in"
+                        className="z-10 fixed -top-0 -right-2 p-3 w-[70vw] h-screen shadow-2xl lg:hidden list-none
+                        flex flex-col justify-start items-center rounded-lg bg-primary-100/70 backdrop-blur-3xl text-gray-500 animate-slide-in"
                     >
                         <li className="text-xl w-full my-2"><AiOutlineClose onClick={() => setToggleMenu(false)} /></li>
                         <Link to="/">
