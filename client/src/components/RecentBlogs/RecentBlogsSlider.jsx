@@ -118,7 +118,7 @@ export const SingleSlide = (props) => {
           </h3>
         </Link>
         <Link
-          to={`/blog/${props._id}`}
+          to={`/blog/${props.slug}`}
           className=" font-bold hover:text-secondary-500 text-gray-400 flex items-center gap-2"
         >
           Read More <BsArrowRight />

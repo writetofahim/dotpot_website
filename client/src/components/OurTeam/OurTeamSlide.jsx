@@ -124,13 +124,15 @@ function OurTeamSlide() {
       });
   }, []);
 
-  // console.log(data)
+  // console.log(data);
 
   return (
     <div className="w-full my-2">
       <Slider {...settings} className="py-2 px-3">
         {data &&
-          data.map((item, index) => <SingleSlide key={index} {...item} />)}
+          data
+            .sort((a, b) => a.sr - b.sr)
+            .map((item, index) => <SingleSlide key={index} {...item} />)}
       </Slider>
     </div>
   );

@@ -494,7 +494,7 @@ const CustomizeService = () => {
           {/* Right container */}
           <div className="pt-10 p-3 md:p-5 border border-border rounded-xl flex-[0.8] min-h-[40vh] pb-10 shadow-xl relative  customizeServiceRight bg-primary-100/50 backdrop-blur-sm">
             {/* Top Section */}
-            <div className="mt-10">
+            <div className="">
               <p className=" text-textColor-500 ">Selected items: </p>
               {order.map(
                 (item, index) =>
@@ -519,7 +519,7 @@ const CustomizeService = () => {
                               alt={tech.title}
                               className="h-5 w-5"
                             />
-                            <p className="text-textColor-500">{tech.cost}$</p>
+                            {/* <p className="text-textColor-500">{tech.cost}$</p> */}
                             <GrFormClose
                               className="hover:text-textColor-500"
                               onClick={() =>
@@ -539,7 +539,7 @@ const CustomizeService = () => {
                               alt={addon.title}
                               className="h-5 w-5"
                             />
-                            <p className="text-textColor-500">{addon.cost}$</p>
+                            {/* <p className="text-textColor-500">{addon.cost}$</p> */}
                             <GrFormClose
                               className="hover:text-secondary-400"
                               onClick={() => removeAddons(item._id, addon._id)}
@@ -552,12 +552,12 @@ const CustomizeService = () => {
               )}
             </div>
 
-            <div className="absolute top-1 right-1 flex flex-col items-center text-gradient bg-gradient-to-r from-[#6e3aff] via-[#26f8ff] to-[#4366ff]">
+            {/* <div className="absolute top-1 right-1 flex flex-col items-center text-gradient bg-gradient-to-r from-[#6e3aff] via-[#26f8ff] to-[#4366ff]">
               <p className="text-sm lg:text-textColor-500">Estimated Cost</p>
               <p className="text-3xl  font-bold lg:text-textColor-500">
                 {price}$
               </p>
-            </div>
+            </div> */}
             {/* End of Top Section */}
 
             {/* Show technology section */}
