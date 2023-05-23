@@ -37,7 +37,7 @@ export const JobCard = (props) => {
           <div className="ritht flex items-center justify-center">
             {love ? (
               <AiFillHeart
-                className="text-textColor-500 text-2xl"
+                className="text-red-600 text-2xl"
                 onClick={() => setLove(!love)}
               />
             ) : (
