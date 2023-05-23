@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const NavigatorComponent = ({ navigationData }) => {
-  console.log(navigationData);
+  // console.log(navigationData);
   return (
     <div className="container pt-4 md:pt-2 lg:pt-2 mx-auto pb-3 md:px-5 px-1 flex items-center">
       <div className="w-max flex text-xl backdrop-blur-lg">
