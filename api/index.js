@@ -96,21 +96,21 @@ app.use("/uploads/blogs", express.static(__dirname + "/uploads/blogs"));
 app.use("/uploads/response", express.static(__dirname + "/uploads/response"));
 
 const server = http.createServer(app);
-// const io = new Server(server, {
-//   cors: {
-//     origin: [
-//       "http://localhost:5173",
-//       "http://localhost:5174",
-//       "http://dotpotit.com",
-//       "http://dotpotit.com/admin",
-//       "https://dotpotit.com",
-//       "https://dotpotit.com/admin",
-//       "https://dotpot-admin.vercel.app",
-//     ],
-//     methods: ["GET", "POST"],
-//   },
-// });
-const io = require("socket.io")(server);
+const io = new Server(server, {
+  cors: {
+    origin: [
+      "http://localhost:5173",
+      "http://localhost:5174",
+      "http://dotpotit.com",
+      "http://dotpotit.com/admin",
+      "https://dotpotit.com",
+      "https://dotpotit.com/admin",
+      "https://dotpot-admin.vercel.app",
+    ],
+    methods: ["GET", "POST"],
+  },
+});
+// const io = require("socket.io")(server);
 
 global.io = io;
 
