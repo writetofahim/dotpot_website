@@ -33,20 +33,20 @@ const AboutUs = () => {
       <Navbar />
       <div className="w-full pt-[15vh]">
         <Helmet>
-          <title>About Us | Dotpot iT A iT company</title>
+          <title>About Us | Dotpot iT leading iT company</title>
           <meta
             name="description"
-            content="Dotpot iT provides web development, AI, game, app, and blockchain development, along with comprehensive IT support services. Contact us now."
+            content="Dotpot iT provides website design, web development, AI, game, app, and blockchain development, along with comprehensive IT support services. Contact us now."
           />
           <link rel="canonical" href="https://dotpotit.com/about" />
           <meta property="og:title" content="About Us | Dotpot iT" />
           <meta
             property="og:description"
-            content="Dotpot iT provides web development, AI, game, app, and blockchain development, along with comprehensive IT support services. Contact us now."
+            content="Dotpot iT provides website design, web development, AI, game, app, and blockchain development, along with comprehensive IT support services. Contact us now."
           />
           <meta
             name="keywords"
-            content="it company, web development, app development, it supports"
+            content="it company, Website, web development, app development, it supports"
           />
           <meta
             property="og:image"
@@ -58,7 +58,7 @@ const AboutUs = () => {
           <meta name="twitter:title" content="About Us | Dotpot iT" />
           <meta
             name="twitter:description"
-            content="Dotpot iT provides web development, AI, game, app, and blockchain development, along with comprehensive IT support services. Contact us now."
+            content="Dotpot iT provides website design, web development, AI, game, app, and blockchain development, along with comprehensive IT support services. Contact us now."
           />
           <meta
             name="twitter:image"
