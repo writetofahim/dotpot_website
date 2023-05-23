@@ -68,3 +68,48 @@
   -webkit-background-clip: text;
   color: transparent;
 }
+
+/* reset initial style of tailwind css */
+
+.reset-styles h1 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 1.2;
+}
+
+.reset-styles h2 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.reset-styles h3 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.reset-styles h4 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.reset-styles h5 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.reset-styles h6 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.2;
+}
+  

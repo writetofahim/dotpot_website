@@ -18,8 +18,16 @@ import {
   default as ReactHtmlParser,
   default as parse,
 } from "react-html-parser";
-import { useNavigate, useParams } from "react-router-dom";
+import { BiLink } from "react-icons/bi";
+import {
+  FaFacebook,
+  FaFacebookF,
+  FaLinkedinIn,
+  FaTwitter,
+} from "react-icons/fa";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import striptags from "striptags";
+import dotpotiTLogo from "../../assets/img/icon.png";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
@@ -32,6 +40,7 @@ import WaveformPlayer from "./WaveformPlayer";
 const SingleBlog = () => {
   const { slug } = useParams();
   const [data, setData] = useState(null);
+  const [showToast, setShowToast] = useState(false);
 
   const navigate = useNavigate();
 
@@ -56,6 +65,21 @@ const SingleBlog = () => {
   const parsedArray = ReactHtmlParser(data?.body);
   const parsedString = renderToString(parsedArray); // convert array to string of HTML
   const slicedString = striptags(parsedString).slice(0, 160);
+
+  const handleShowToast = () => {
+    setShowToast(true);
+    setTimeout(() => {
+      setShowToast(false);
+    }, 3000); // Hide the toast after 3 seconds
+  };
+
+  const url = window.location.href;
+  const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+    url
+  )}`;
+  const twitterShareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
+    url
+  )}`;
 
   return (
     <>
@@ -135,7 +159,7 @@ const SingleBlog = () => {
       </div> */}
       {/* previous single blog end */}
 
-      <div className="bg-background-500">
+      <div className="bg-background-500 relative">
         <div className="container mx-auto pt-[15vh] ">
           <div className="md:-ml-4 md:pl-0 pl-2">
             <NavigatorComponent navigationData={navigationData} />
@@ -168,16 +192,56 @@ const SingleBlog = () => {
                   </div>
 
                   <div className="md:flex gap-10 md:mt-16 mt-10">
-                    <div className="md:w-[15%] w-full">
+                    <div className="md:w-[15%] w-full relative">
+                      {showToast && (
+                        <div className="absolute top-20 left-0 bg-textColor-500 text-buttonText-500 text-xs py-2 px-4 rounded">
+                          Link copied
+                        </div>
+                      )}
                       {/* author information start */}
-                      {/* <div className="mt-3 flex gap-2 items-center">
-                      <img
-                        className="w-8"
-                        src={dotpotiTLogo}
-                        alt="Dotpot iT logo"
-                      />
-                      <h1>Dotpot iT</h1>
-                    </div> */}
+                      <div className="mt-3 mb-5">
+                        <img
+                          className="w-8 hidden"
+                          src={dotpotiTLogo}
+                          alt="Dotpot iT logo"
+                        />
+                        <Link
+                          to={"/"}
+                          className="font-bold underline cursor-pointer text-textColor-500"
+                        >
+                          Dotpot iT
+                        </Link>
+                        <div className="flex gap-3 mt-3">
+                          <button
+                            onClick={() => {
+                              navigator.clipboard.writeText(
+                                "https://www.dotpotit.com"
+                              );
+                              handleShowToast();
+                            }}
+                          >
+                            <BiLink />
+                          </button>
+                          <a
+                            href={"https://www.facebook.com/dotpotit"}
+                            target="_blank"
+                          >
+                            <FaFacebookF />
+                          </a>
+                          <a
+                            href={"https://twitter.com/dotpotit"}
+                            target="_blank"
+                          >
+                            <FaTwitter />
+                          </a>
+                          <a
+                            href={"https://www.linkedin.com/company/dotpotit"}
+                            target="_blank"
+                          >
+                            <FaLinkedinIn />
+                          </a>
+                        </div>
+                      </div>
                       {/* author information end */}
                     </div>
                     <div className="md:w-[55%] w-full">
@@ -207,9 +271,13 @@ const SingleBlog = () => {
                         </span>
                         <p className="italic">{data?.summary?.slice(1)}</p>
                       </div> */}
-                        <span className="md:text-2xl text-xl mt-7 inline-block first-letter-large blog-content-font">
-                          {parse(data?.body)}
-                        </span>
+                        <div className="md:text-2xl text-xl mt-7 inline-block blog-content-font ">
+                          <div className="reset-styles">
+                            <div className="first-letter-large">
+                              {parse(data?.body)}
+                            </div>
+                          </div>
+                        </div>
                       </div>
                       <div className="my-5 border-t border-textColor-500 "></div>
                       <div>
@@ -228,6 +296,35 @@ const SingleBlog = () => {
                           ))}
                         </div>
                       </div>
+                      {/* social media share start */}
+                      <p className="mb-3 text-bold text-xl font-bold text-textColor-500 blog-content-font mt-5">
+                        Share on
+                      </p>
+                      <div className="flex flex-wrap space-x-4 ">
+                        <a
+                          href={facebookShareUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center bg-textColor-500 text-buttonText-500 px-4 py-2 rounded hover:bg-textColor-500 duration-300"
+                        >
+                          <FaFacebook className="mr-2" />
+                          Facebook
+                        </a>
+                        <a
+                          href={twitterShareUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center bg-textColor-500 text-buttonText-500 px-4 py-2 rounded hover:bg-textColor-500 duration-300"
+                        >
+                          <FaTwitter className="mr-2" />
+                          Twitter
+                        </a>
+                      </div>
+                      {/* social media share end */}
+
+                      {/* comment section start */}
+
+                      {/* comment section end */}
                     </div>
                     <div className="md:w-[30%] w-full mt-5">
                       {/* <NewRecentBlogs currentBlogId={id} /> */}

@@ -93,7 +93,7 @@ export const SingleSlide = (props) => {
       </Link>
       <div className=" bg-background-500 rounded-bl-xl rounded-br-xl shadow p-5 flex flex-col">
         <Stack direction="row" className="flex flex-wrap gap-1">
-          {props.tags.map((tag, index) => (
+          {props.tags.slice(0, 2).map((tag, index) => (
             // <Chip
             //   label={tag}
             //   color="secondary"
@@ -113,9 +113,9 @@ export const SingleSlide = (props) => {
         </Stack>
         <p className="mt-2 text-white">{props.date}</p>
         <Link to={`/blog/${props.slug}`}>
-          <h3 className="text-xl font-bold text-gray-400 my-2 h-[80px] cursor-pointer">
-            {props.title.slice(0, 45)}...
-          </h3>
+          <h1 className="text-xl font-bold text-gray-400 my-2 h-[80px] cursor-pointer">
+            {props.title.split(" ").slice(0, 8).join(" ")}
+          </h1>
         </Link>
         <Link
           to={`/blog/${props.slug}`}

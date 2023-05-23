@@ -11,7 +11,15 @@ import axios from "../../utils/axiosInstance";
 import postLogger from "../../utils/postLogger";
 import ImageViewModal from "./ImageViewModal";
 
-const socket = io(import.meta.env.REACT_APP_SOCKET_PATH);
+const socket = io(import.meta.env.REACT_APP_SOCKET_PATH, {
+  reconnectionDelay: 1000,
+  reconnection: true,
+  reconnectionAttemps: 10,
+  transports: ["websocket"],
+  agent: false,
+  upgrade: false,
+  rejectUnauthorized: false,
+});
 // const socket = io("http://localhost:8800")
 // console.log("socket", socket);
 
@@ -61,6 +69,7 @@ const ChatPopup = () => {
       }
       messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
     });
+    console.log(socket);
   }, []);
 
   useEffect(() => {

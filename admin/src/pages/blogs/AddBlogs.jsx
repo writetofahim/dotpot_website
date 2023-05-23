@@ -77,7 +77,8 @@ const AddBlogs = () => {
     const slug = trimmedTitle
       .toLowerCase()
       .replace(/\s+/g, "-") // Replace spaces with dashes
-      .replace(/[^\w-]+/g, ""); // Remove non-word characters (except dashes)
+      .replace(/[^\w-]+/g, "") // Remove non-word characters (except dashes)
+      .slice(0, 40); // Limit the slug length to 40 characters
     return slug;
   };
 

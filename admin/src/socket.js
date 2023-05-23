@@ -1,7 +1,15 @@
 import { io } from "socket.io-client";
 
 console.log("io path", import.meta.env.REACT_APP_SOCKET_PATH);
-const socket = io.connect(import.meta.env.REACT_APP_SOCKET_PATH);
+const socket = io.connect(import.meta.env.REACT_APP_SOCKET_PATH, {
+  reconnectionDelay: 1000,
+  reconnection: true,
+  reconnectionAttemps: 10,
+  transports: ["websocket"],
+  agent: false,
+  upgrade: false,
+  rejectUnauthorized: false,
+});
 
 // listen for connection events
 socket.on("connect", () => {
