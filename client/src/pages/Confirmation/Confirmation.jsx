@@ -10,6 +10,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import RangeSlider from "../../components/Range/RangeSlider";
 import { AuthContext } from "../../contexts/AuthContext";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import axios from "../../utils/axiosInstance";
 
 const Confirmation = () => {
   const [selectedBudget, setSelectedBudget] = useState(1000);
@@ -40,13 +41,7 @@ const Confirmation = () => {
       console.log("requestBody", requestBody);
 
       // Make an HTTP POST request to the backend
-      await fetch("http://localhost:8800/api/send-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(requestBody),
-      });
+      await axios.post("/send-email", requestBody);
 
       // Reset form and show success message
       e.target.reset();
