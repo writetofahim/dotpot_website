@@ -280,16 +280,7 @@ const AboutSection = () => {
                           Origin Story
                         </h2>
                         <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                          Dotpot iT began its journey in January 2023 with a
-                          focus on utilizing the latest technology. With over
-                          900 satisfied users, the company has quickly
-                          established itself as an innovative force in the
-                          industry. Its origin story is rooted in passion,
-                          expertise, and a commitment to delivering exceptional
-                          solutions. By staying ahead of the curve and working
-                          with cutting-edge technology, Dotpot iT has gained
-                          recognition and is poised to make a lasting impact in
-                          the digital realm.
+                          Dotpot iT began its journey in January 2023 with a focus on utilizing the latest technology. With over 900 satisfied users, the company has quickly established itself as an innovative force in the industry. Its origin story is rooted in passion, expertise, and a commitment to delivering exceptional solutions. By staying ahead of the curve and working with <a href="https://www.techopedia.com/definition/26589/cutting-edge-technology" target="_blank">cutting-edge technology,</a> Dotpot iT has gained recognition and is poised to make a lasting impact in the digital realm.
                         </p>
                       </div>
                       <img

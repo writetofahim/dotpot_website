@@ -58,7 +58,7 @@ const OurDevelopmentJourney = () => {
                             <h2 className='font-bold'>Human Resource Management</h2>
                             <h2 className="ml-auto font-thin">2023</h2>
                         </div>
-                        <p className='lg:text-base md:text-sm text-xs text-gray-400 text-justify'>Human Resource Management: Built with PHP and Laravel, launching in May 2023. Streamlines HR processes, automates tasks, and enhances employee management. Empowering organizations to optimize human capital and improve operational efficiency.</p>
+                        <p className='lg:text-base md:text-sm text-xs text-gray-400 text-justify'><a href="https://www.adp.com/resources/articles-and-insights/articles/h/human-resource-management.aspx#:~:text=Human%20resource%20management%20is%20the,and%20development%2C%20and%20employee%20relations." target="_blank">Human Resource Management:</a> Built with PHP and Laravel, launching in May 2023. Streamlines HR processes, automates tasks, and enhances employee management. Empowering organizations to optimize human capital and improve operational efficiency.</p>
                     </div>
                 </div>
             </div>

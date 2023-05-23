@@ -12,6 +12,7 @@ import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import parse from "react-html-parser";
 
 const WebsiteDesign = () => {
   const worksData = [
@@ -40,7 +41,7 @@ const WebsiteDesign = () => {
       id: 4,
       title: "Custom Web App Design",
       description:
-        "Dotpot iT offers cutting-edge custom web app design solutions to streamline operations and improve productivity. Our experienced team crafts highly functional, visually appealing, and scalable web apps using the latest technologies and frameworks. We work closely with clients to understand their requirements and deliver exceptional results that exceed expectations. Trust us to provide reliable and secure design solutions that protect your data. Contact us to take your business to the next level with a custom web app design.",
+        `Dotpot iT offers cutting-edge <a href="https://www.midis.eu/en/blog/our-blog-1/what-is-custom-web-application-development-36#:~:text=A%20custom%20web%20application%20is,way%20to%20solve%20a%20problem." target="_blank">custom web app design</a> solutions to streamline operations and improve productivity. Our experienced team crafts highly functional, visually appealing, and scalable web apps using the latest technologies and frameworks. We work closely with clients to understand their requirements and deliver exceptional results that exceed expectations. Trust us to provide reliable and secure design solutions that protect your data. Contact us to take your business to the next level with a custom web app design.`,
       illustration: customappweb,
     },
   ];
@@ -89,9 +90,8 @@ const WebsiteDesign = () => {
       </Helmet>
       <Navbar />
       <div
-        className={` md:pt-[15vh] pt-[15vh] ${
-          window.innerWidth > 1280 && "md:pt-[11vh]"
-        } `}
+        className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
+          } `}
       >
         <NavigatorComponent navigationData={navigationData} />
         <div>
@@ -101,11 +101,10 @@ const WebsiteDesign = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`mt-10 mb-16 ${
-                      isVisible
-                        ? "opacity-100 translate-y-0"
-                        : "translate-y-20 opacity-0"
-                    } duration-1000 `}
+                    className={`mt-10 mb-16 ${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 `}
                   >
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
@@ -114,7 +113,7 @@ const WebsiteDesign = () => {
                             Website Design Service By Dotpot iT
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            Website design is the process of creating the visual
+                            <a href="https://www.pagecloud.com/blog/web-design-guide" target="_blank">Website design</a> is the process of creating the visual
                             layout and user interface of a website, with a focus
                             on enhancing the user experience and achieving
                             business goals. It involves technical expertise,
@@ -145,24 +144,22 @@ const WebsiteDesign = () => {
                     key={id}
                   >
                     <div
-                      className={`w-full md:w-1/2 lg:w-1/2 ${
-                        id % 2 === 0 && "order-2"
-                      } `}
+                      className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
+                        } `}
                     >
                       <ReactVisibilitySensor partialVisibility>
                         {({ isVisible }) => (
                           <div
-                            className={` ${
-                              isVisible
-                                ? "opacity-100 translate-y-0"
-                                : "translate-y-20 opacity-0"
-                            } duration-1000 `}
+                            className={` ${isVisible
+                              ? "opacity-100 translate-y-0"
+                              : "translate-y-20 opacity-0"
+                              } duration-1000 `}
                           >
                             <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
                               {title}
                             </h2>
                             <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">
-                              {description}
+                              {parse(description)}
                             </p>
                           </div>
                         )}
@@ -171,13 +168,11 @@ const WebsiteDesign = () => {
                     <ReactVisibilitySensor partialVisibility>
                       {({ isVisible }) => (
                         <div
-                          className={`w-full md:w-1/2 lg:w-1/2 ${
-                            id % 2 === 0 && "order-1"
-                          } ${
-                            isVisible
+                          className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
+                            } ${isVisible
                               ? "opacity-100 translate-y-0"
                               : "translate-y-20 opacity-0"
-                          } duration-1000 `}
+                            } duration-1000 `}
                         >
                           <img
                             className="w-4/5 mx-auto"
@@ -200,11 +195,10 @@ const WebsiteDesign = () => {
                 {({ isVisible }) => (
                   <>
                     <div
-                      className={`${
-                        isVisible
-                          ? "opacity-100 translate-y-0"
-                          : "translate-y-20 opacity-0"
-                      } duration-1000 p-3 text-textColor-500`}
+                      className={`${isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                        } duration-1000 p-3 text-textColor-500`}
                     >
                       <h2 className="lg:text-3xl md:text-3xl text-xl font-bold text-center">
                         Technologies We Use
@@ -345,11 +339,10 @@ const WebsiteDesign = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`${
-                      isVisible
-                        ? "opacity-100 translate-y-0"
-                        : "translate-y-20 opacity-0"
-                    } duration-1000 p-3 text-textColor-500`}
+                    className={`${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 p-3 text-textColor-500`}
                   >
                     <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
                       Why Dotpot iT

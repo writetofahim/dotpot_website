@@ -1,15 +1,55 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import cc from "../../assets/img/cc.png";
+import ReactVisibilitySensor from "react-visibility-sensor";
+import webchatcover from "../../assets/img/contactcentersupport/webchatcover.png";
+import agencyweb from "../../assets/img/agencyweb.png";
+import blogweb from "../../assets/img/blogweb.png";
+import customappweb from "../../assets/img/customappweb.png";
+import ecommarceweb from "../../assets/img/ecommarceweb.png";
 import Footer from "../../components/Footer/Footer";
+import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import parse from "react-html-parser";
 
 const ChatContact = () => {
+  // Chat Data
+  const worksData = [
+    {
+      id: 1,
+      title: "Improve customer experience",
+      description:
+        `Dotpot IT's Chat module enables personalized chat experiences and access to <a href="https://www.richpanel.com/blog/multi-channel-customer-service" target="_blank">multichannel customer interactions</a> Engage with customers in real-time across various platforms, personalize assistance based on customer data, and leverage features like co-browsing and file sharing. Optimize efficiency with advanced routing and gain valuable insights through real-time monitoring and reporting.`,
+      illustration: ecommarceweb,
+    },
+    {
+      id: 2,
+      title: "Increase revenue",
+      description:
+        "Dotpot IT's Chat module enables just-in-time online engagement, leading to increased sales and reduced non-sale calls. Proactively assist website visitors at the right moment, address concerns, and provide personalized support. Streamline the support process and drive sales conversion rates with real-time chat assistance.",
+      illustration: agencyweb,
+    },
+    {
+      id: 3,
+      title: "Deliver fast and accurate",
+      description:
+        "Dotpot IT's Chat module ensures chat sessions are delivered to the right agent through queue-specific and skill-based routing. Optimize response times, enhance customer satisfaction, and streamline the chat handling process with intelligent routing capabilities.",
+      illustration: blogweb,
+    },
+    {
+      id: 4,
+      title: "ACD Based Web Chat Routing",
+      description:
+        "Dotpot IT CC's Web Chat module uses the same ACD system as the CC solution for routing chat sessions. Chat sessions are treated as calls and distributed to agents based on admin policy, making monitoring and analysis simple.",
+      illustration: customappweb,
+    },
+  ];
+
   useScrollToTop();
+
   return (
-    <div>
+    <div className="bg-background-500">
       <Helmet>
         <title>Web Chat Support | Dotpot iT a leading it company</title>
         <meta
@@ -48,82 +88,138 @@ const ChatContact = () => {
           content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
       </Helmet>
+
       <Navbar />
-      <div className="px-3 min-h-screen pt-[15vh] pb-10 bg-background-500">
+
+      <div
+        className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
+          } `}
+      >
         <NavigatorComponent navigationData={navigationData} />
-        <div className="container mx-auto">
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center">
-            Web Chat Support
-          </h1>
-          <div className="text-textColor-500 flex flex-col gap-5 p-5">
-            <p className="text-justify">
-              The Dotpot IT contact center system features a robust web chat
-              module that meets the evolving needs of customers. By integrating
-              this module with the contact center solution, businesses can
-              achieve a healthy return on investment. The Dotpot IT Chat module
-              enables businesses to offer more than just basic call center
-              services to their online visitors, providing a seamless customer
-              experience across multiple channels. With the Dotpot IT contact
-              center system, businesses can stay ahead of the curve and deliver
-              exceptional customer service, no matter how customers choose to
-              engage.
-            </p>
-            <p className="text-justify">
-              The rise of digital consumers has fueled demand for real-time
-              online interaction channels. The Dotpot IT Chat module delivers a
-              sophisticated interaction platform that meets the needs of today's
-              online customers, enabling businesses to deliver exceptional
-              customer experiences in real-time. With the Dotpot IT Chat module,
-              businesses can stay ahead of the curve and meet the evolving
-              demands of their customers, no matter how they choose to engage.
-            </p>
+        <div>
+          {/* Banner */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`mt-10 mb-16 ${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 `}
+                  >
+                    <div className="container mx-auto">
+                      <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
+                        <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
+                          <h1 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
+                            Web Chat Support
+                          </h1>
+                          <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
+                            Dotpot IT's contact center system includes a powerful <a href="https://freescout.net/module/chat/" target="_blank">web chat module</a> that meets the evolving needs of customers. By integrating this module, businesses can provide a seamless customer experience across multiple channels and achieve a healthy return on investment. Stay ahead of the curve and deliver exceptional customer service with Dotpot IT's contact center system.
+                          </p>
+                        </div>
+                        <img
+                          src={webchatcover}
+                          alt="Web Chat Image"
+                          className="w-full md:w-1/2 lg:w-1/2"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </>
+              )}
+            </ReactVisibilitySensor>
           </div>
-          <div className="container mx-auto p-5">
-            <img
-              className="md:w-1/2 mx-auto "
-              src={cc}
-              alt="Customer service"
-            />
+
+          {/* body */}
+          <div className="container mx-auto w-full overflow-hidden">
+            <>
+              <div className={`flex flex-col gap-5`}>
+                {worksData.map(({ id, title, description, illustration }) => (
+                  <div
+                    className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
+                    key={id}
+                  >
+                    <div
+                      className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
+                        } `}
+                    >
+                      <ReactVisibilitySensor partialVisibility>
+                        {({ isVisible }) => (
+                          <div
+                            className={` ${isVisible
+                              ? "opacity-100 translate-y-0"
+                              : "translate-y-20 opacity-0"
+                              } duration-1000 `}
+                          >
+                            <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
+                              {title}
+                            </h2>
+                            <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">
+                              {parse(description)}
+                            </p>
+                          </div>
+                        )}
+                      </ReactVisibilitySensor>
+                    </div>
+                    <ReactVisibilitySensor partialVisibility>
+                      {({ isVisible }) => (
+                        <div
+                          className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
+                            } ${isVisible
+                              ? "opacity-100 translate-y-0"
+                              : "translate-y-20 opacity-0"
+                            } duration-1000 `}
+                        >
+                          <img
+                            className="w-4/5 mx-auto"
+                            src={illustration}
+                            alt={title}
+                          />
+                        </div>
+                      )}
+                    </ReactVisibilitySensor>
+                  </div>
+                ))}
+              </div>
+            </>
           </div>
-          <div className="md:my-6 block md:flex gap-10 sm:my-5">
-            <div className="bg-background-500 rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5 text-textColor-500">
-              <h2 className="text-lg font-bold mb-2">
-                Improve customer experience
-              </h2>
-              <p className="text-justify">
-                The Dotpot IT Chat module enables personalized chat experiences
-                by providing access to multichannel customer interactions.
-              </p>
-            </div>
-            <div className="bg-background-500 rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5 text-textColor-500">
-              <h2 className="text-lg font-bold mb-2">Increase revenue</h2>
-              <p className=" text-justify">
-                Just-in-time online engagement with the Dotpot IT Chat module
-                can increase sales and reduce non-sale calls.
-              </p>
-            </div>
-            <div className="bg-background-500 rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5 text-textColor-500">
-              <h2 className="text-lg font-bold mb-2">
-                Deliver fast and accurate
-              </h2>
-              <p className="text-justify">
-                Ensure chat sessions are delivered to the right agent with
-                queue-specific and skill-based routing using the Dotpot IT Chat
-                module.
-              </p>
-            </div>
+
+          {/* Why Dotpot iT */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 p-3 text-textColor-500`}
+                  >
+                    <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
+                      Why Dotpot iT
+                    </h2>
+                    <img
+                      className="w-64 mx-auto"
+                      src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"
+                      alt=""
+                    />
+                    <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
+                      Dotpot iT provides state-of-the-art web chat solutions for effective communication and enhanced customer engagement. With our expertise and exceptional support, we offer tailored web chat services that seamlessly integrate with your business, maximizing productivity and customer satisfaction. Trust Dotpot iT to deliver innovative web chat technology that drives success for your business.
+                    </p>
+                  </div>
+                </>
+              )}
+            </ReactVisibilitySensor>
           </div>
-          <div className="text-textColor-500 flex flex-col gap-5 p-5">
-            <p className="font-bold">ACD Based Web Chat Routing</p>
-            <p className="text-gray-700 text-justify">
-              Dotpot IT CC's Web Chat module uses the same ACD system as the CC
-              solution for routing chat sessions. Chat sessions are treated as
-              calls and distributed to agents based on admin policy, making
-              monitoring and analysis simple.
-            </p>
+
+          {/* Get in Touch */}
+          <div className="">
+            <GetAQuote />
           </div>
         </div>
       </div>
+
       <Footer />
     </div>
   );

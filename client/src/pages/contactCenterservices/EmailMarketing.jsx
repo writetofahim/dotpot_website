@@ -1,15 +1,55 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import em from "../../assets/img/em.jpg";
+import ReactVisibilitySensor from "react-visibility-sensor";
+import emailmarketingcover from "../../assets/img/contactcentersupport/emailmarketingcover.png";
+import agencyweb from "../../assets/img/agencyweb.png";
+import blogweb from "../../assets/img/blogweb.png";
+import customappweb from "../../assets/img/customappweb.png";
+import ecommarceweb from "../../assets/img/ecommarceweb.png";
 import Footer from "../../components/Footer/Footer";
+import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import parse from "react-html-parser";
 
 const EmailMarketing = () => {
+  // Email Marketing Data
+  const worksData = [
+    {
+      id: 1,
+      title: "Facility to add notes to each email",
+      description:
+        `Dotpot IT's <a href="https://www.litmus.com/blog/email-modules-and-modular-email/" target="_blank">email handling module</a> allows CC agents to add notes to emails at any stage, ensuring effective communication and coordination. Enhance productivity and streamline workflows with the ability to include relevant annotations directly within email threads.`,
+      illustration: ecommarceweb,
+    },
+    {
+      id: 2,
+      title: "Reports on mail sent/receive",
+      description:
+        "Dotpot IT's email module records all sent and received emails, offering detailed reports and filtering tools for easy retrieval of information. Gain insights into email metrics and efficiently manage your email communications.",
+      illustration: agencyweb,
+    },
+    {
+      id: 3,
+      title: "Email filtering",
+      description:
+        "Dotpot IT's email module offers advanced filtering options for incoming and outgoing emails. Set up filters based on agent groups or policy factors to efficiently manage email routing and adhere to organizational guidelines. Streamline your email workflow with our powerful email filtering feature.",
+      illustration: blogweb,
+    },
+    {
+      id: 4,
+      title: "Sending/Receiving Emails with attachment",
+      description:
+        "Agents can attach one or multiple files to any email message, and send it to the recipient. The email module also allows agents to receive incoming mail with attachments.",
+      illustration: customappweb,
+    },
+  ];
+
   useScrollToTop();
+
   return (
-    <div>
+    <div className="bg-background-500">
       <Helmet>
         <title>Email Marketing | Dotpot iT a leading it company</title>
         <meta
@@ -50,55 +90,136 @@ const EmailMarketing = () => {
       </Helmet>
 
       <Navbar />
-      <div className="px-3 min-h-screen pt-[15vh] bg-background-500">
+
+      <div
+        className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
+          } `}
+      >
         <NavigatorComponent navigationData={navigationData} />
-        <div className="container mx-auto">
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center">
-            Email Marketing by Dotpot iT
-          </h1>
-          <div className="text-textColor-500 flex flex-col gap-5 p-5">
-            <p className="text-center">
-              Dotpot IT CC's email routing module enables incoming emails to be
-              efficiently distributed to the appropriate agents based on the CC
-              admin's policies.
-            </p>
+        <div>
+          {/* Banner */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`mt-10 mb-16 ${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 `}
+                  >
+                    <div className="container mx-auto">
+                      <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
+                        <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
+                          <h1 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
+                          Email Marketing by Dotpot iT
+                          </h1>
+                          <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
+                          Dotpot IT's CC's <a href="https://www.webservio.com/email-management/email-routing-services.html" target="_blank">email routing module</a> efficiently directs incoming emails to the appropriate agents based on admin policies, streamlining your email management and enhancing productivity. Customize rules and criteria for routing, minimize response times, and provide exceptional customer service with our innovative solution.
+                          </p>
+                        </div>
+                        <img
+                          src={emailmarketingcover}
+                          alt="Email Marketing Image"
+                          className="w-full md:w-1/2 lg:w-1/2"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </>
+              )}
+            </ReactVisibilitySensor>
           </div>
-          <div className="container mx-auto">
-            <img
-              className="md:w-1/2 mx-auto "
-              src={em}
-              alt="Customer service"
-            />
+
+          {/* body */}
+          <div className="container mx-auto w-full overflow-hidden">
+            <>
+              <div className={`flex flex-col gap-5`}>
+                {worksData.map(({ id, title, description, illustration }) => (
+                  <div
+                    className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
+                    key={id}
+                  >
+                    <div
+                      className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
+                        } `}
+                    >
+                      <ReactVisibilitySensor partialVisibility>
+                        {({ isVisible }) => (
+                          <div
+                            className={` ${isVisible
+                              ? "opacity-100 translate-y-0"
+                              : "translate-y-20 opacity-0"
+                              } duration-1000 `}
+                          >
+                            <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
+                              {title}
+                            </h2>
+                            <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">
+                              {parse(description)}
+                            </p>
+                          </div>
+                        )}
+                      </ReactVisibilitySensor>
+                    </div>
+                    <ReactVisibilitySensor partialVisibility>
+                      {({ isVisible }) => (
+                        <div
+                          className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
+                            } ${isVisible
+                              ? "opacity-100 translate-y-0"
+                              : "translate-y-20 opacity-0"
+                            } duration-1000 `}
+                        >
+                          <img
+                            className="w-4/5 mx-auto"
+                            src={illustration}
+                            alt={title}
+                          />
+                        </div>
+                      )}
+                    </ReactVisibilitySensor>
+                  </div>
+                ))}
+              </div>
+            </>
           </div>
-          <div className="text-textColor-500 flex flex-col gap-5 p-5">
-            <h2 className="font-bold">Facility to add notes to each email</h2>
-            <p className="text-justify text-textColor-500">
-              CC agents can add notes to emails at any stage, including while
-              it's being sent or queued, using Dotpot IT's email handling
-              module.
-            </p>
-            <h2 className="font-bold">Reports on mail sent/receive</h2>
-            <p className="text-justify text-textColor-500">
-              The email module records all sent/received emails, with statistics
-              and filtering tools for easy retrieval of information in the
-              future.
-            </p>
-            <p className="font-bold">Email filtering</p>
-            <p className="text-justify text-textColor-500">
-              Incoming and outgoing mails may be filtered based on agent groups
-              or other policy factors.
-            </p>
-            <h2 className="font-bold">
-              Sending/Receiving Emails with attachment
-            </h2>
-            <p className="text-justify pb-5 text-textColor-500">
-              Agents can attach one or multiple files to any email message, and
-              send it to the recipient. The email module also allows agents to
-              receive incoming mail with attachments.
-            </p>
+
+          {/* Why Dotpot iT */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 p-3 text-textColor-500`}
+                  >
+                    <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
+                      Why Dotpot iT
+                    </h2>
+                    <img
+                      className="w-64 mx-auto"
+                      src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"
+                      alt=""
+                    />
+                    <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
+                    Dotpot iT offers cutting-edge Email Marketing services for effective communication and customer engagement. With our expertise and outstanding support, we provide customized Email Marketing solutions that seamlessly integrate with your business, boosting productivity and customer satisfaction. Trust Dotpot iT to deliver innovative Email Marketing technology that drives success for your business.
+                    </p>
+                  </div>
+                </>
+              )}
+            </ReactVisibilitySensor>
+          </div>
+
+          {/* Get in Touch */}
+          <div className="">
+            <GetAQuote />
           </div>
         </div>
       </div>
+
       <Footer />
     </div>
   );

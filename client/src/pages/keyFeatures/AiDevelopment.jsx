@@ -21,6 +21,7 @@ import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import parse from "react-html-parser";
 
 const AiDevelopment = () => {
   const worksData = [
@@ -28,7 +29,7 @@ const AiDevelopment = () => {
       id: 2,
       title: "Object Recognition",
       description:
-        "Object recognition is a computer vision technology that involves identifying and classifying objects within digital images or video streams. It uses machine learning algorithms to analyze visual patterns and features, enabling computers to understand and interpret the content of images. Object recognition has numerous applications, including autonomous vehicles, surveillance systems, augmented reality, and image-based search engines. By accurately detecting and recognizing objects, this technology enables advanced automation, intelligent decision-making, and enhanced user experiences in various domains.",
+        `<a href="https://www.mathworks.com/solutions/image-video-processing/object-recognition.html#:~:text=Object%20recognition%20is%20a%20computer,%2C%20scenes%2C%20and%20visual%20details." target="_blank">Object recognition</a> is a computer vision technology that involves identifying and classifying objects within digital images or video streams. It uses machine learning algorithms to analyze visual patterns and features, enabling computers to understand and interpret the content of images. Object recognition has numerous applications, including autonomous vehicles, surveillance systems, augmented reality, and image-based search engines. By accurately detecting and recognizing objects, this technology enables advanced automation, intelligent decision-making, and enhanced user experiences in various domains.`,
       illustration: objectRecognition,
       sectionId: "object-recognition",
     },
@@ -179,9 +180,8 @@ const AiDevelopment = () => {
 
       <Navbar />
       <div
-        className={` md:pt-[15vh] pt-[15vh] ${
-          window.innerWidth > 1280 && "md:pt-[11vh]"
-        } `}
+        className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
+          } `}
       >
         <NavigatorComponent navigationData={navigationData} />
         <div>
@@ -191,11 +191,10 @@ const AiDevelopment = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`mt-10 mb-16 ${
-                      isVisible
-                        ? "opacity-100 translate-y-0"
-                        : "translate-y-20 opacity-0"
-                    } duration-1000 `}
+                    className={`mt-10 mb-16 ${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 `}
                   >
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
@@ -204,7 +203,7 @@ const AiDevelopment = () => {
                             AI Development With Dotpot iT
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            Transform Your Business with Advanced AI Solutions.
+                            Transform Your Business with Advanced <a href="https://www.webservio.com/email-management/email-routing-services.html" target="_blank">AI</a> Solutions.
                             Discover the Power of Machine Learning, Natural
                             Language Processing, and More with Dotpot iT. Unlock
                             New Opportunities and Drive Growth Today!
@@ -235,24 +234,22 @@ const AiDevelopment = () => {
                       id={sectionId}
                     >
                       <div
-                        className={`w-full md:w-1/2 lg:w-1/2 ${
-                          id % 2 === 0 && "order-2"
-                        } `}
+                        className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
+                          } `}
                       >
                         <ReactVisibilitySensor partialVisibility>
                           {({ isVisible }) => (
                             <div
-                              className={` ${
-                                isVisible
-                                  ? "opacity-100 translate-y-0"
-                                  : "translate-y-20 opacity-0"
-                              } duration-1000 `}
+                              className={` ${isVisible
+                                ? "opacity-100 translate-y-0"
+                                : "translate-y-20 opacity-0"
+                                } duration-1000 `}
                             >
                               <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
                                 {title}
                               </h2>
                               <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">
-                                {description}
+                                {parse(description)}
                               </p>
                             </div>
                           )}
@@ -261,13 +258,11 @@ const AiDevelopment = () => {
                       <ReactVisibilitySensor partialVisibility>
                         {({ isVisible }) => (
                           <div
-                            className={`w-full md:w-1/2 lg:w-1/2 ${
-                              id % 2 === 0 && "order-1"
-                            } ${
-                              isVisible
+                            className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
+                              } ${isVisible
                                 ? "opacity-100 translate-y-0"
                                 : "translate-y-20 opacity-0"
-                            } duration-1000 `}
+                              } duration-1000 `}
                           >
                             <img
                               className="w-4/5 mx-auto"
@@ -291,11 +286,10 @@ const AiDevelopment = () => {
                 {({ isVisible }) => (
                   <>
                     <div
-                      className={`${
-                        isVisible
-                          ? "opacity-100 translate-y-0"
-                          : "translate-y-20 opacity-0"
-                      } duration-1000 p-3 text-textColor-500`}
+                      className={`${isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                        } duration-1000 p-3 text-textColor-500`}
                     >
                       <h2 className="lg:text-3xl md:text-3xl text-xl font-bold text-center">
                         Technologies We Use
@@ -366,11 +360,10 @@ const AiDevelopment = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`${
-                      isVisible
-                        ? "opacity-100 translate-y-0"
-                        : "translate-y-20 opacity-0"
-                    } duration-1000 p-3 text-textColor-500`}
+                    className={`${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 p-3 text-textColor-500`}
                   >
                     <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
                       Why Dotpot iT

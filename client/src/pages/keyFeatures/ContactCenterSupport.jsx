@@ -24,6 +24,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import parse from "react-html-parser";
 
 const ContactCenterSupport = () => {
   const worksData = [
@@ -119,7 +120,7 @@ const ContactCenterSupport = () => {
       id: 13,
       title: "Ticketing System",
       description:
-        "Our Ticketing System enables businesses to manage customer inquiries and complaints by creating and tracking tickets through their life cycle. With our ticketing system, businesses can easily assign tickets to the right agents, monitor ticket status, and ensure timely resolution of customer issues.",
+        `Our <a href="https://www.liveagent.com/academy/what-is-ticketing-system/" target="_blank">Ticketing System</a> enables businesses to manage customer inquiries and complaints by creating and tracking tickets through their life cycle. With our ticketing system, businesses can easily assign tickets to the right agents, monitor ticket status, and ensure timely resolution of customer issues.`,
       illustration: ticketingsystem,
       sectionId: "ticket",
     },
@@ -197,9 +198,8 @@ const ContactCenterSupport = () => {
       </Helmet>
       <Navbar />
       <div
-        className={`md:pt-[15vh] pt-[15vh] ${
-          window.innerWidth > 1280 && "md:pt-[11vh]"
-        } `}
+        className={`md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
+          } `}
       >
         <NavigatorComponent navigationData={navigationData} />
         <div>
@@ -209,11 +209,10 @@ const ContactCenterSupport = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`mt-10 mb-16 ${
-                      isVisible
-                        ? "opacity-100 translate-y-0"
-                        : "translate-y-20 opacity-0"
-                    } duration-1000 `}
+                    className={`mt-10 mb-16 ${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 `}
                   >
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
@@ -222,7 +221,7 @@ const ContactCenterSupport = () => {
                             Contact Center Support With Dotpot iT
                           </h2>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            Dotpot offers Contact Center Support services for
+                            Dotpot offers <a href="https://www.timedoctor.com/blog/contact-center-services/" target="_blank">Contact Center Support</a> services for
                             businesses to improve their customer service
                             operations with multi-channel support, help desk
                             management, and advanced analytics for enhanced
@@ -254,24 +253,22 @@ const ContactCenterSupport = () => {
                       id={sectionId}
                     >
                       <div
-                        className={`w-full md:w-1/2 lg:w-1/2 ${
-                          id % 2 === 0 && "order-2"
-                        } `}
+                        className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
+                          } `}
                       >
                         <ReactVisibilitySensor partialVisibility>
                           {({ isVisible }) => (
                             <div
-                              className={` ${
-                                isVisible
-                                  ? "opacity-100 translate-y-0"
-                                  : "translate-y-20 opacity-0"
-                              } duration-1000 `}
+                              className={` ${isVisible
+                                ? "opacity-100 translate-y-0"
+                                : "translate-y-20 opacity-0"
+                                } duration-1000 `}
                             >
                               <h1 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
                                 {title}
                               </h1>
                               <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">
-                                {description}
+                                {parse(description)}
                               </p>
                             </div>
                           )}
@@ -280,13 +277,11 @@ const ContactCenterSupport = () => {
                       <ReactVisibilitySensor partialVisibility>
                         {({ isVisible }) => (
                           <div
-                            className={`w-full md:w-1/2 lg:w-1/2 ${
-                              id % 2 === 0 && "order-1"
-                            } ${
-                              isVisible
+                            className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
+                              } ${isVisible
                                 ? "opacity-100 translate-y-0"
                                 : "translate-y-20 opacity-0"
-                            } duration-1000 `}
+                              } duration-1000 `}
                           >
                             <img
                               className="w-4/5 mx-auto"
@@ -309,11 +304,10 @@ const ContactCenterSupport = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`${
-                      isVisible
-                        ? "opacity-100 translate-y-0"
-                        : "translate-y-20 opacity-0"
-                    } duration-1000 p-3 text-textColor-500`}
+                    className={`${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 p-3 text-textColor-500`}
                   >
                     <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
                       Why Dotpot iT

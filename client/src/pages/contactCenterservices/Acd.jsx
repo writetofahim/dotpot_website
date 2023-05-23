@@ -1,15 +1,55 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import acd from "../../assets/img/acd.png";
+import ReactVisibilitySensor from "react-visibility-sensor";
+import acdcover from "../../assets/img/contactcentersupport/acdcover.png";
+import skillsbasedrouting from "../../assets/img/contactcentersupport/skillsbasedrouting.png";
+import callerpiority from "../../assets/img/contactcentersupport/callerpiority.png";
+import findlastcall from "../../assets/img/contactcentersupport/findlastcall.png";
+import roundrobin from "../../assets/img/contactcentersupport/roundrobin.png";
 import Footer from "../../components/Footer/Footer";
+import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import parse from "react-html-parser";
 
 const Acd = () => {
+  // ACD Data
+  const worksData = [
+    {
+      id: 1,
+      title: "Skills-Based Routing",
+      description:
+        `<a href="https://www.ringcentral.com/contact-center/skills-based-routing.html" target="_blank">An agent can be assigned to receive calls from multiple skills/companies.</a>An agent can be assigned to receive calls from multiple skills/companies. Dotpot IT contact center system allows categorization of agents based on skills or length of service. The system finds available high priority agents to pass the calls.`,
+      illustration: skillsbasedrouting,
+    },
+    {
+      id: 2,
+      title: "Caller Priority",
+      description:
+        "Dotpot iT is a leading tech company that specializes in cutting-edge website design solutions for businesses. Our custom-made designs help businesses establish a unique online presence, drive engagement, and generate revenue. With years of experience, our talented team of designers and developers craft highly functional and visually appealing websites that exceed our clients' expectations. Trust us to transform your online presence and take your business to the next level.",
+      illustration: callerpiority,
+    },
+    {
+      id: 3,
+      title: "Find Last Call Agent",
+      description:
+        "If a caller calls for the second time the ACD engine attempts to transfer the call to the agent who had handled the caller’s previous call.",
+      illustration: findlastcall,
+    },
+    {
+      id: 4,
+      title: "Round Robin",
+      description:
+        "The Round Robin feature ensures that the incoming calls to your call center are distributed to the agents on the basis of covering all agents on duty in a cyclic order.",
+      illustration: roundrobin,
+    },
+  ];
+
   useScrollToTop();
+
   return (
-    <div>
+    <div className="bg-background-500">
       <Helmet>
         <title>
           Automatic Call Distribution | Dotpot it leading it Company
@@ -50,109 +90,139 @@ const Acd = () => {
           content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
       </Helmet>
+
       <Navbar />
-      <div className="px-3 min-h-screen pt-[15vh] pb-10 bg-background-500">
+
+      <div
+        className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
+          } `}
+      >
         <NavigatorComponent navigationData={navigationData} />
-        <div className="container mx-auto">
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center">
-            Automatic Call Distribution (ACD)
-          </h1>
-          <div className="text-textColor-500 flex flex-col gap-5 p-5">
-            <p className="text-justify">
-              Dotpot IT Automatic Call Distribution (ACD) is a technology that
-              allows contact centers to distribute inbound calls, emails and
-              chat messages to agents based on call arrival time, priority,
-              customer needs, and agent skill set. Instead of simply sending
-              inbound requests to an available agent, ACD system categorizes
-              calls/messages and then automatically and intelligently routes the
-              same to appropriate agent with relevant skillset to help the
-              customer.
-            </p>
+        <div>
+          {/* Banner */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`mt-10 mb-16 ${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 `}
+                  >
+                    <div className="container mx-auto">
+                      <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
+                        <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
+                          <h1 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
+                            Automatic Call Distribution (ACD)
+                          </h1>
+                          <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
+                            Dotpot IT <a href="https://www.ringcentral.com/contact-center/automatic-call-distribution.html" target="_blank">Automatic Call Distribution (ACD)</a> is a technology that allows contact centers to distribute inbound calls, emails and chat messages to agents based on call arrival time, priority, customer needs, and agent skill set. Instead of simply sending inbound requests to an available agent, ACD system categorizes calls/messages and then automatically and intelligently routes the same to appropriate agent with relevant skillset to help the
+                            customer.
+                          </p>
+                        </div>
+                        <img
+                          src={acdcover}
+                          alt="ACD Image"
+                          className="w-full md:w-1/2 lg:w-1/2"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </>
+              )}
+            </ReactVisibilitySensor>
           </div>
-          <div className="mb-5 container mx-auto">
-            <img className="md:w-1/2 mx-auto " src={acd} alt="ACD Image" />
+
+          {/* body */}
+          <div className="container mx-auto w-full overflow-hidden">
+            <>
+              <div className={`flex flex-col gap-5`}>
+                {worksData.map(({ id, title, description, illustration }) => (
+                  <div
+                    className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
+                    key={id}
+                  >
+                    <div
+                      className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
+                        } `}
+                    >
+                      <ReactVisibilitySensor partialVisibility>
+                        {({ isVisible }) => (
+                          <div
+                            className={` ${isVisible
+                              ? "opacity-100 translate-y-0"
+                              : "translate-y-20 opacity-0"
+                              } duration-1000 `}
+                          >
+                            <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
+                              {title}
+                            </h2>
+                            <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">
+                              {parse(description)}
+                            </p>
+                          </div>
+                        )}
+                      </ReactVisibilitySensor>
+                    </div>
+                    <ReactVisibilitySensor partialVisibility>
+                      {({ isVisible }) => (
+                        <div
+                          className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
+                            } ${isVisible
+                              ? "opacity-100 translate-y-0"
+                              : "translate-y-20 opacity-0"
+                            } duration-1000 `}
+                        >
+                          <img
+                            className="w-4/5 mx-auto"
+                            src={illustration}
+                            alt={title}
+                          />
+                        </div>
+                      )}
+                    </ReactVisibilitySensor>
+                  </div>
+                ))}
+              </div>
+            </>
           </div>
-          <div className="md:my-6 block md:flex gap-1 sm:my-5">
-            <div className="bg-background-500 rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
-              <h2 className="text-lg font-bold mb-2 text-textColor-500">
-                Skills-Based Routing
-              </h2>
-              <p className="text-textColor-500 text-justify">
-                An agent can be assigned to receive calls from multiple
-                skills/companies. Dotpot IT contact center system allows
-                categorization of agents based on skills or length of service.
-                The system finds available high priority agents to pass the
-                calls.
-              </p>
-            </div>
-            <div className="bg-background-500 rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
-              <h2 className="text-lg font-bold mb-2 text-textColor-500">
-                Caller Priority
-              </h2>
-              <p className="text-textColor-500 text-justify">
-                While every customer is important, certain instances may require
-                the need to prioritize specific incoming calls based on status,
-                size, and urgency. gPlex system allows setting call priorities
-                to ensure your contact center’s most valued calls are always
-                answered first.
-              </p>
-            </div>
-            <div className="bg-background-500 rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
-              <h2 className="text-lg font-bold mb-2 text-textColor-500">
-                Find Last Call Agent
-              </h2>
-              <p className="text-textColor-500 text-justify">
-                If a caller calls for the second time the ACD engine attempts to
-                transfer the call to the agent who had handled the caller’s
-                previous call.
-              </p>
-            </div>
+
+          {/* Why Dotpot iT */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 p-3 text-textColor-500`}
+                  >
+                    <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
+                      Why Dotpot iT
+                    </h2>
+                    <img
+                      className="w-64 mx-auto"
+                      src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"
+                      alt=""
+                    />
+                    <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
+                      Dotpot iT offers advanced Automatic Call Distribution (ACD) solutions. We prioritize efficiency and customer satisfaction, routing calls intelligently and reducing wait times. With our experienced team and exceptional service, we provide high-quality ACD systems tailored to your needs. Choose Dotpot iT for innovative call handling that helps your business thrive.
+                    </p>
+                  </div>
+                </>
+              )}
+            </ReactVisibilitySensor>
           </div>
-          <div className="md:my-6 block md:flex gap-10">
-            <div className="bg-background-500 rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
-              <h2 className="text-lg font-bold mb-2 text-textColor-500">
-                Round Robin
-              </h2>
-              <p className="text-textColor-500 text-justify">
-                The Round Robin feature ensures that the incoming calls to your
-                call center are distributed to the agents on the basis of
-                covering all agents on duty in a cyclic order.
-              </p>
-            </div>
-            <div className="bg-background-500 rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
-              <h2 className="text-lg font-bold mb-2 text-textColor-500">
-                Longest Idle Agent
-              </h2>
-              <p className="text-textColor-500 text-justify">
-                Longest Idle Agent feature is designed to ensure that incoming
-                calls are routed to the agent (among the set of appropriate type
-                of agent for that caller) who has been idle for the longest
-                time.
-              </p>
-            </div>
-            <div className="bg-background-500 rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
-              <h2 className="text-lg font-bold mb-2 text-textColor-500">
-                Random
-              </h2>
-              <p className="text-textColor-500 text-justify">
-                Random call distribution is the most basic form of ACD. This
-                type of call distribution may only be applicable where
-                sufficient agents are available on duty compared to the rate of
-                call flow i.e. there is hardly call waiting in the queue.
-              </p>
-            </div>
-          </div>
-          <div className="text-textColor-500 flex flex-col gap-5 p-5 mb-5">
-            <p className="text-justify">
-              Dotpot IT skill-based ACD quickly matches callers in the queue to
-              the agents who can best help them. That means efficient call
-              resolution, happy customers, and money saved for your
-              multi-channel contact center. The ACD system is the “core” of the
-              Dotpot IT platform.
-            </p>
+
+          {/* Get in Touch */}
+          <div className="">
+            <GetAQuote />
           </div>
         </div>
       </div>
+
       <Footer />
     </div>
   );

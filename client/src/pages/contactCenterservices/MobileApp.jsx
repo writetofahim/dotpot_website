@@ -1,15 +1,62 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import ma from "../../assets/img/ma.png";
+import ReactVisibilitySensor from "react-visibility-sensor";
+import mobileappcover from "../../assets/img/contactcentersupport/mobileappcover.png";
+import agencyweb from "../../assets/img/agencyweb.png";
+import blogweb from "../../assets/img/blogweb.png";
+import customappweb from "../../assets/img/customappweb.png";
+import ecommarceweb from "../../assets/img/ecommarceweb.png";
 import Footer from "../../components/Footer/Footer";
+import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import parse from "react-html-parser";
 
 const MobileApp = () => {
+  // Mobile App Data
+  const worksData = [
+    {
+      id: 1,
+      title: "Mobile Agent Availability",
+      description:
+        "With the Mobile App Module, contact center agents can update their availability status and manage their schedules directly from their mobile devices. This feature allows for seamless coordination and ensures that agents are accessible and ready to handle customer interactions.",
+      illustration: ecommarceweb,
+    },
+    {
+      id: 2,
+      title: "Customer Information Access",
+      description:
+        `The Mobile App Module provides agents with instant <a href="https://www.ibm.com/docs/en/cdfsp/7.6.1?topic=capabilities-controlling-access-customer-information" target="_blank">access to customer information,</a> including contact details, interaction history, and preferences. This allows agents to provide personalized and tailored service to customers, enhancing the overall customer experience.`,
+      illustration: agencyweb,
+    },
+    {
+      id: 3,
+      title: "Collaboration and Internal Messaging",
+      description:
+        "The Mobile App Module facilitates internal communication and collaboration among contact center agents. Agents can exchange messages, seek assistance from colleagues, and share relevant information, promoting teamwork and knowledge sharing.",
+      illustration: blogweb,
+    },
+    {
+      id: 4,
+      title: "Supervisor Support",
+      description:
+        "The Mobile App Module also includes features that benefit supervisors and managers. They can monitor agent activities, track performance metrics, and provide real-time guidance and support to agents through the mobile interface.",
+      illustration: customappweb,
+    },
+    {
+      id: 5,
+      title: "Multichannel Support",
+      description:
+        "The Mobile App Module supports multichannel communication, allowing agents to handle voice calls, chats, emails, and other customer interactions from a single mobile interface. This versatility enables agents to provide consistent and efficient service across various communication channels.",
+      illustration: customappweb,
+    },
+  ];
+
   useScrollToTop();
+
   return (
-    <div>
+    <div className="bg-background-500">
       <Helmet>
         <title>Mobile App | Dotpot iT a leading it company</title>
         <meta
@@ -50,68 +97,136 @@ const MobileApp = () => {
       </Helmet>
 
       <Navbar />
-      <div className="px-3 min-h-screen pt-[15vh] pb-10 bg-background-500">
+
+      <div
+        className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
+          } `}
+      >
         <NavigatorComponent navigationData={navigationData} />
-        <div className="container mx-auto">
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center">
-            Mobile App Module
-          </h1>
-          <div className="text-textColor-500 flex flex-col gap-5 p-5">
-            <p className="text-justify">
-              Dotpot IT's contact center system enables contact center agents to
-              be mobile through the use of a mobile application. This feature is
-              particularly useful for enterprise customers as it provides them
-              with access to customized services. With our mobile apps, agents
-              can easily access the features they need to serve customers
-              efficiently.
-            </p>
+        <div>
+          {/* Banner */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`mt-10 mb-16 ${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 `}
+                  >
+                    <div className="container mx-auto">
+                      <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
+                        <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
+                          <h1 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
+                            Mobile App Module
+                          </h1>
+                          <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
+                            Go mobile with Dotpot IT's contact center system. Our <a href="https://docs.oracle.com/cd/E26401_01/doc.122/e64384/T656045T656056.htm" target="_blank">mobile application</a> empowers contact center agents to deliver exceptional customer service on the go. With easy access to customized services, agents can efficiently serve customers anytime, anywhere. Experience the convenience and efficiency of our mobile app for contact center excellence.
+                          </p>
+                        </div>
+                        <img
+                          src={mobileappcover}
+                          alt="Mobile App Image"
+                          className="w-full md:w-1/2 lg:w-1/2"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </>
+              )}
+            </ReactVisibilitySensor>
           </div>
-          <div className="mb-5 container mx-auto">
-            <img
-              className="md:w-1/6 md:h-50 mx-auto mb-6"
-              src={ma}
-              alt="Customer service"
-            />
+
+          {/* body */}
+          <div className="container mx-auto w-full overflow-hidden">
+            <>
+              <div className={`flex flex-col gap-5`}>
+                {worksData.map(({ id, title, description, illustration }) => (
+                  <div
+                    className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
+                    key={id}
+                  >
+                    <div
+                      className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
+                        } `}
+                    >
+                      <ReactVisibilitySensor partialVisibility>
+                        {({ isVisible }) => (
+                          <div
+                            className={` ${isVisible
+                              ? "opacity-100 translate-y-0"
+                              : "translate-y-20 opacity-0"
+                              } duration-1000 `}
+                          >
+                            <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
+                              {title}
+                            </h2>
+                            <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">
+                              {parse(description)}
+                            </p>
+                          </div>
+                        )}
+                      </ReactVisibilitySensor>
+                    </div>
+                    <ReactVisibilitySensor partialVisibility>
+                      {({ isVisible }) => (
+                        <div
+                          className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
+                            } ${isVisible
+                              ? "opacity-100 translate-y-0"
+                              : "translate-y-20 opacity-0"
+                            } duration-1000 `}
+                        >
+                          <img
+                            className="w-4/5 mx-auto"
+                            src={illustration}
+                            alt={title}
+                          />
+                        </div>
+                      )}
+                    </ReactVisibilitySensor>
+                  </div>
+                ))}
+              </div>
+            </>
           </div>
-          <h2 className="text-gray-400 font-bold flex flex-col gap-2 px-5">
-            Major Features:
-          </h2>
-          <div className="px-5">
-            <ul className="list-disc p-5 text-textColor-500">
-              <li className="ml-2">User authentication through TPIN</li>
-              <li className="ml-2">Multiple accounts balance enquiry</li>
-              <li className="ml-2">Auto Debit instruction</li>
-              <li className="ml-2">Lost/Replace card request</li>
-              <li className="ml-2">Fund transfer</li>
-              <li className="ml-2">E-Statement request</li>
-              <li className="ml-2">Cheque book request</li>
-              <li className="ml-2">Stop cheque</li>
-              <li className="ml-2">Direct dial to contact center</li>
-              <li className="ml-2">Branch/ATM locator</li>
-              <li className="ml-2">Utility bill payment</li>
-              <li className="ml-2">More customized features</li>
-            </ul>
+
+          {/* Why Dotpot iT */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 p-3 text-textColor-500`}
+                  >
+                    <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
+                      Why Dotpot iT
+                    </h2>
+                    <img
+                      className="w-64 mx-auto"
+                      src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"
+                      alt=""
+                    />
+                    <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
+                      Dotpot iT delivers cutting-edge Mobile App solutions for seamless communication and enhanced user engagement. With our expertise and exceptional support, we provide customized Mobile App services that integrate perfectly with your business, maximizing productivity and user satisfaction. Trust Dotpot iT to provide innovative Mobile App technology that drives success for your business.
+                    </p>
+                  </div>
+                </>
+              )}
+            </ReactVisibilitySensor>
           </div>
-          <div className="text-textColor-500 flex flex-col gap-5 p-5">
-            <p className="text-justify mb-5">
-              The banking industry has been rapidly evolving with the help of
-              technology, and several services have been introduced to
-              facilitate customer convenience. With the increasing need for
-              secure and easy access to banking services, user authentication
-              through TPIN has become a popular method of verification.
-              Customers can also check the balances of their multiple accounts,
-              set up auto-debit instructions, request for lost or replacement
-              cards, and transfer funds effortlessly. Additionally, they can
-              request e-statements, cheque books, stop cheques, and easily
-              locate nearby branches and ATMs. The utility bill payment feature
-              has also made it easy for customers to pay their bills from the
-              comfort of their homes. With the ability to provide more
-              customized features, the banking industry is making it easier for
-              customers to manage their finances with ease.
-            </p>
+
+          {/* Get in Touch */}
+          <div className="">
+            <GetAQuote />
           </div>
         </div>
       </div>
+
       <Footer />
     </div>
   );

@@ -1,15 +1,55 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import cti from "../../assets/img/cti.png";
+import ReactVisibilitySensor from "react-visibility-sensor";
+import cticover from "../../assets/img/contactcentersupport/cticover.png";
+import agencyweb from "../../assets/img/agencyweb.png";
+import blogweb from "../../assets/img/blogweb.png";
+import customappweb from "../../assets/img/customappweb.png";
+import ecommarceweb from "../../assets/img/ecommarceweb.png";
 import Footer from "../../components/Footer/Footer";
+import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import parse from "react-html-parser";
 
 const Cti = () => {
+  // CTI Data
+  const worksData = [
+    {
+      id: 1,
+      title: "Integrated CRM",
+      description:
+        `Our CTI solution seamlessly integrates with <a href="https://www.salesforce.com/crm/crm-integration/#:~:text=CRM%20integration%20connects%20each%20application,of%20your%20business%20and%20customers." target="_blank">Customer Relationship Management (CRM)</a> software, allowing you to access and manage customer information during calls. This integration streamlines your workflow and enhances the efficiency of your customer interactions.`,
+      illustration: ecommarceweb,
+    },
+    {
+      id: 2,
+      title: "Collaborative Screen Pops",
+      description:
+        "With collaborative screen pops, relevant customer information automatically appears on the agent's screen when a call is received. This feature provides agents with real-time data, enabling them to personalize their interactions and provide a superior customer experience.",
+      illustration: agencyweb,
+    },
+    {
+      id: 3,
+      title: "Call Whisper",
+      description:
+        "Call whisper functionality allows supervisors or managers to provide guidance or additional information to agents during live calls without the customer hearing it. This feature facilitates training and coaching, enabling agents to handle calls effectively and improve their performance.",
+      illustration: blogweb,
+    },
+    {
+      id: 4,
+      title: "Call Analytics and Reporting",
+      description:
+        "With our Computer Telephony Integration (CTI) solutions, you can gain insights into call volume, agent performance, call duration, and other key metrics. These insights help you identify areas for improvement and make data-driven decisions to enhance your call center operations. Choose Dotpot iT for advanced CTI solutions that drive efficiency and improve customer experiences.",
+      illustration: customappweb,
+    },
+  ];
+
   useScrollToTop();
+
   return (
-    <div>
+    <div className="bg-background-500">
       <Helmet>
         <title>
           Computer Telephony Integration (CTI) | Dotpot iT a leading it company
@@ -58,101 +98,136 @@ const Cti = () => {
       </Helmet>
 
       <Navbar />
-      <div className="px-3 min-h-screen pt-[15vh] bg-background-500">
+
+      <div
+        className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
+          } `}
+      >
         <NavigatorComponent navigationData={navigationData} />
-        <div className="container mx-auto">
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center">
-            Computer Telephony Integration (CTI)
-          </h1>
-          <div className="text-textColor-500 flex flex-col gap-5 p-5">
-            <p className="text-justify">
-              Dotpot IT integrates with various CRMs and offers CTI screen
-              popups to agents, providing them with caller information, such as
-              name and phone number, before connecting to the call. This helps
-              agents personalize calls and improve customer experience.
-            </p>
+        <div>
+          {/* Banner */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`mt-10 mb-16 ${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 `}
+                  >
+                    <div className="container mx-auto">
+                      <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
+                        <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
+                          <h1 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
+                            Computer Telephony Integration (CTI)
+                          </h1>
+                          <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
+                            Dotpot IT <a href="https://www.nice.com/glossary/what-is-contact-center-cti-computer-telephony-integration#:~:text=Computer%20telephony%20integration%20(CTI)%20means,more%20control%20over%20call%20management." target="_blank">integrates with various CRMs and offers CTI</a> screen popups to agents, providing them with caller information, such as name and phone number, before connecting to the call. This helps agents personalize calls and improve customer experience.
+                          </p>
+                        </div>
+                        <img
+                          src={cticover}
+                          alt="CTI Image"
+                          className="w-full md:w-1/2 lg:w-1/2"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </>
+              )}
+            </ReactVisibilitySensor>
           </div>
-          <div className="border-b border-border container mx-auto">
-            <img
-              className="md:w-1/2 mx-auto "
-              src={cti}
-              alt="Customer service"
-            />
+
+          {/* body */}
+          <div className="container mx-auto w-full overflow-hidden">
+            <>
+              <div className={`flex flex-col gap-5`}>
+                {worksData.map(({ id, title, description, illustration }) => (
+                  <div
+                    className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
+                    key={id}
+                  >
+                    <div
+                      className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
+                        } `}
+                    >
+                      <ReactVisibilitySensor partialVisibility>
+                        {({ isVisible }) => (
+                          <div
+                            className={` ${isVisible
+                              ? "opacity-100 translate-y-0"
+                              : "translate-y-20 opacity-0"
+                              } duration-1000 `}
+                          >
+                            <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
+                              {title}
+                            </h2>
+                            <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">
+                              {parse(description)}
+                            </p>
+                          </div>
+                        )}
+                      </ReactVisibilitySensor>
+                    </div>
+                    <ReactVisibilitySensor partialVisibility>
+                      {({ isVisible }) => (
+                        <div
+                          className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
+                            } ${isVisible
+                              ? "opacity-100 translate-y-0"
+                              : "translate-y-20 opacity-0"
+                            } duration-1000 `}
+                        >
+                          <img
+                            className="w-4/5 mx-auto"
+                            src={illustration}
+                            alt={title}
+                          />
+                        </div>
+                      )}
+                    </ReactVisibilitySensor>
+                  </div>
+                ))}
+              </div>
+            </>
           </div>
-          <div className="md:my-6 block md:flex gap-1 sm:my-5">
-            <div className="bg-background-500 rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
-              <h2 className="text-lg font-bold mb-2 text-textColor-500">
-                Integrated CRM
-              </h2>
-              <p className="text-textColor-500 text-justify">
-                Pop up contacts from CRM or built-in address book with Dotpot
-                IT.
-              </p>
-            </div>
-            <div className="bg-background-500 rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
-              <h2 className="text-lg font-bold mb-2 text-textColor-500">
-                Collaborative Screen Pops
-              </h2>
-              <p className="text-textColor-500 text-justify">
-                Popup contacts from your others contacts.
-              </p>
-            </div>
-            <div className="bg-background-500 rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
-              <h2 className="text-lg font-bold mb-2 text-textColor-500">
-                Call Whisper
-              </h2>
-              <p className="text-textColor-500 text-justify">
-                Hear who is calling you, and even decide to take the call or
-                not.
-              </p>
-            </div>
+
+          {/* Why Dotpot iT */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 p-3 text-textColor-500`}
+                  >
+                    <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
+                      Why Dotpot iT
+                    </h2>
+                    <img
+                      className="w-64 mx-auto"
+                      src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"
+                      alt=""
+                    />
+                    <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
+                      Dotpot iT offers advanced Computer Telephony Integration (CTI) solutions for efficient call handling. With our expertise and exceptional service, we provide tailored CTI systems that seamlessly integrate telephony and computer systems, enhancing productivity and customer satisfaction. Choose Dotpot iT for innovative CTI technology that helps your business thrive.
+                    </p>
+                  </div>
+                </>
+              )}
+            </ReactVisibilitySensor>
           </div>
-          <h2 className="text-textColor-500 flex flex-col gap-2 px-5 font-bold">
-            Application of CTI:
-          </h2>
-          <div className="px-5 text-textColor-500">
-            <ul className="list-disc p-5 pb-5">
-              <li>
-                Screen popups can give agents access to contextual details about
-                callers the moment the phone rings.
-              </li>
-              <li>
-                CTI can also authenticate a call, screening its number against a
-                database. These prospect and numbers are often stored in
-                external CRM tool e.g. Salesforce.
-              </li>
-              <li>
-                CTI tools may be used to route incoming calls to the right
-                agent. Calls can be routed based on a variety of factors
-                including time-of-day, agent’s skills, and even based on which
-                marketing promotion or search keyword triggered a call in the
-                first place.
-              </li>
-              <li>
-                It can provide interactive voice response (IVR) to inbound
-                callers, enabling them to provide input information on
-                self-service basis.
-              </li>
-              <li>CTIs can log and record calls in third party CRM tools.</li>
-              <li>
-                It can handle call forwarding and call transferring functions.
-              </li>
-              <li>It can display waiting live calls in a queue.</li>
-              <li>
-                CTIs can help outbound reps/sales development reps dial more
-                prospects using features like autodialing, click-to-call,
-                predictive dialing and more.
-              </li>
-              <li>
-                It can also be used to trigger various applications based on
-                inbound calls. This can be used to assist agents and help them
-                sell more or provide better customer service based on callers’
-                intent.
-              </li>
-            </ul>
+
+          {/* Get in Touch */}
+          <div className="">
+            <GetAQuote />
           </div>
         </div>
       </div>
+
       <Footer />
     </div>
   );

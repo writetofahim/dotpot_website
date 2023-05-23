@@ -17,6 +17,7 @@ import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import parse from "react-html-parser";
 
 const BlockchainDevelopment = () => {
   const worksData = [
@@ -90,7 +91,7 @@ const BlockchainDevelopment = () => {
       id: 9,
       title: "Blockchain Integration ",
       description:
-        "Dotpot iT offers Blockchain Integration services to help businesses integrate blockchain technology into their existing systems. Our experienced developers can help you connect your systems to a blockchain network, enabling increased security, transparency, and efficiency. Contact us to learn more about how we can help you integrate blockchain technology into your business processes.",
+        `Dotpot iT offers <a href="https://medium.com/swlh/blockchain-integration-a-step-by-step-guide-7371f49c72e1" target="_blank">Blockchain Integration</a> services to help businesses integrate blockchain technology into their existing systems. Our experienced developers can help you connect your systems to a blockchain network, enabling increased security, transparency, and efficiency. Contact us to learn more about how we can help you integrate blockchain technology into your business processes.`,
       illustration: blockchainintegration,
       sectionId: "blockchain",
     },
@@ -158,9 +159,8 @@ const BlockchainDevelopment = () => {
       </Helmet>
       <Navbar />
       <div
-        className={` md:pt-[15vh] pt-[15vh] ${
-          window.innerWidth > 1280 && "md:pt-[11vh]"
-        } `}
+        className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
+          } `}
       >
         <NavigatorComponent navigationData={navigationData} />
         <div>
@@ -170,11 +170,10 @@ const BlockchainDevelopment = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`mt-10 mb-16 ${
-                      isVisible
-                        ? "opacity-100 translate-y-0"
-                        : "translate-y-20 opacity-0"
-                    } duration-1000 `}
+                    className={`mt-10 mb-16 ${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 `}
                   >
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
@@ -184,7 +183,7 @@ const BlockchainDevelopment = () => {
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
                             Transform the future with Dotpot iT - Your expert
-                            partner for custom blockchain solutions. Build
+                            partner for custom <a href="https://www.coursera.org/articles/blockchain-developer" target="_blank">blockchain solutions.</a> Build
                             secure and transparent systems with our cutting-edge
                             development services.
                           </p>
@@ -214,24 +213,22 @@ const BlockchainDevelopment = () => {
                       key={id}
                     >
                       <div
-                        className={`w-full md:w-1/2 lg:w-1/2 ${
-                          id % 2 === 0 && "order-2"
-                        } `}
+                        className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
+                          } `}
                       >
                         <ReactVisibilitySensor partialVisibility>
                           {({ isVisible }) => (
                             <div
-                              className={` ${
-                                isVisible
-                                  ? "opacity-100 translate-y-0"
-                                  : "translate-y-20 opacity-0"
-                              } duration-1000 `}
+                              className={` ${isVisible
+                                ? "opacity-100 translate-y-0"
+                                : "translate-y-20 opacity-0"
+                                } duration-1000 `}
                             >
                               <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
                                 {title}
                               </h2>
                               <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">
-                                {description}
+                                {parse(description)}
                               </p>
                             </div>
                           )}
@@ -240,13 +237,11 @@ const BlockchainDevelopment = () => {
                       <ReactVisibilitySensor partialVisibility>
                         {({ isVisible }) => (
                           <div
-                            className={`w-full md:w-1/2 lg:w-1/2 ${
-                              id % 2 === 0 && "order-1"
-                            } ${
-                              isVisible
+                            className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
+                              } ${isVisible
                                 ? "opacity-100 translate-y-0"
                                 : "translate-y-20 opacity-0"
-                            } duration-1000 `}
+                              } duration-1000 `}
                           >
                             <img
                               className="w-4/5 mx-auto"
@@ -270,11 +265,10 @@ const BlockchainDevelopment = () => {
                 {({ isVisible }) => (
                   <>
                     <div
-                      className={`${
-                        isVisible
-                          ? "opacity-100 translate-y-0"
-                          : "translate-y-20 opacity-0"
-                      } duration-1000 p-3 text-textColor-500`}
+                      className={`${isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                        } duration-1000 p-3 text-textColor-500`}
                     >
                       <h2 className="lg:text-3xl md:text-3xl text-xl font-bold text-center">
                         Technologies We Use
@@ -335,11 +329,10 @@ const BlockchainDevelopment = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`${
-                      isVisible
-                        ? "opacity-100 translate-y-0"
-                        : "translate-y-20 opacity-0"
-                    } duration-1000 p-3 text-textColor-500`}
+                    className={`${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 p-3 text-textColor-500`}
                   >
                     <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
                       Why Dotpot iT

@@ -1,15 +1,55 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import ivr from "../../assets/img/ivr.png";
+import ReactVisibilitySensor from "react-visibility-sensor";
+import ivrcover from "../../assets/img/contactcentersupport/ivrcover.png";
+import agencyweb from "../../assets/img/agencyweb.png";
+import blogweb from "../../assets/img/blogweb.png";
+import customappweb from "../../assets/img/customappweb.png";
+import ecommarceweb from "../../assets/img/ecommarceweb.png";
 import Footer from "../../components/Footer/Footer";
+import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import parse from "react-html-parser";
 
 const Ivr = () => {
+  // IVR Data
+  const worksData = [
+    {
+      id: 1,
+      title: "Call Routing",
+      description:
+        `Dotpot iT's IVR service efficiently <a href="https://www.mitel.com/features-benefits/call-routing#:~:text=Call%20routing%20is%20a%20call,end%20picks%20up%20the%20call." target="_blank">routes incoming calls</a> to the appropriate department or agent based on caller input or predefined criteria. This ensures that callers are directed to the most suitable resource, reducing wait times and improving customer satisfaction.`,
+      illustration: ecommarceweb,
+    },
+    {
+      id: 2,
+      title: "Customized Call Flows",
+      description:
+        "Dotpot iT allows businesses to create and customize call flows within the IVR system. This ensures that callers are guided through a personalized sequence of options and prompts based on their specific needs, providing a tailored and efficient customer experience.",
+      illustration: agencyweb,
+    },
+    {
+      id: 3,
+      title: "Voice Recognition",
+      description:
+        "Dotpot iT incorporates advanced voice recognition technology into its IVR system. This enables callers to interact with the system using natural speech, enhancing usability and reducing the need for keypad inputs.",
+      illustration: blogweb,
+    },
+    {
+      id: 4,
+      title: "Outbound IVR",
+      description:
+        "Dotpot iT's IVR service also supports outbound calling, allowing businesses to automate outbound interactions such as appointment reminders, payment reminders, surveys, and notifications. This helps streamline communication and enhances customer engagement.",
+      illustration: customappweb,
+    },
+  ];
+
   useScrollToTop();
+
   return (
-    <div>
+    <div className="bg-background-500">
       <Helmet>
         <title>
           Interactive Voice Response (IVR) | Dotpot iT a leading it company
@@ -58,77 +98,136 @@ const Ivr = () => {
       </Helmet>
 
       <Navbar />
-      <div className="px-3 min-h-screen pt-[15vh] pb-10 bg-background-500">
+
+      <div
+        className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
+          } `}
+      >
         <NavigatorComponent navigationData={navigationData} />
-        <div className="container mx-auto">
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center">
-            Interactive Voice Response (IVR) by Dotpot iT
-          </h1>
-          <div className="text-textColor-500 flex flex-col gap-5 p-5">
-            <p className="text-justify">
-              Interactive Voice Response (IVR) is a technology that enables
-              automated voice-based interactions between computers and humans.
-              With IVR, callers can use their voice or keypad inputs to complete
-              various steps and reach their desired destination without the need
-              for human assistance. IVR is particularly valuable in situations
-              where call volumes are high or when live agents are not available
-              to handle calls.
-            </p>
+        <div>
+          {/* Banner */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`mt-10 mb-16 ${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 `}
+                  >
+                    <div className="container mx-auto">
+                      <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
+                        <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
+                          <h1 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
+                            Interactive Voice Response (IVR) by Dotpot iT
+                          </h1>
+                          <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
+                            IVR is an automated voice-based technology that facilitates efficient interactions between computers and humans. With <a href="https://en.wikipedia.org/wiki/Interactive_voice_response" target="_blank">IVR,</a> callers can use voice or keypad inputs to navigate through options and reach their desired destination without human intervention. This technology is beneficial for managing high call volumes and situations where live agents are unavailable.
+                          </p>
+                        </div>
+                        <img
+                          src={ivrcover}
+                          alt="IVR Image"
+                          className="w-full md:w-1/2 lg:w-1/2"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </>
+              )}
+            </ReactVisibilitySensor>
           </div>
-          <div className="mb-5 container mx-auto">
-            <img className="md:w-1/2 mx-auto mb-5" src={ivr} alt="IVR Image" />
+
+          {/* body */}
+          <div className="container mx-auto w-full overflow-hidden">
+            <>
+              <div className={`flex flex-col gap-5`}>
+                {worksData.map(({ id, title, description, illustration }) => (
+                  <div
+                    className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
+                    key={id}
+                  >
+                    <div
+                      className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
+                        } `}
+                    >
+                      <ReactVisibilitySensor partialVisibility>
+                        {({ isVisible }) => (
+                          <div
+                            className={` ${isVisible
+                              ? "opacity-100 translate-y-0"
+                              : "translate-y-20 opacity-0"
+                              } duration-1000 `}
+                          >
+                            <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
+                              {title}
+                            </h2>
+                            <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">
+                              {parse(description)}
+                            </p>
+                          </div>
+                        )}
+                      </ReactVisibilitySensor>
+                    </div>
+                    <ReactVisibilitySensor partialVisibility>
+                      {({ isVisible }) => (
+                        <div
+                          className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
+                            } ${isVisible
+                              ? "opacity-100 translate-y-0"
+                              : "translate-y-20 opacity-0"
+                            } duration-1000 `}
+                        >
+                          <img
+                            className="w-4/5 mx-auto"
+                            src={illustration}
+                            alt={title}
+                          />
+                        </div>
+                      )}
+                    </ReactVisibilitySensor>
+                  </div>
+                ))}
+              </div>
+            </>
           </div>
-          <div className="md:my-6 block md:flex gap-1 sm:my-5">
-            <div className="bg-background-500 rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
-              <h2 className="text-lg font-bold mb-2 text-textColor-500">
-                Easy Edit and Upload
-              </h2>
-              <p className="text-textColor-500 text-justify">
-                With the flexible IVR module of Dotpot IT, you have the ability
-                to create and modify voice menus for call routing at any given
-                time. The Multiple IVR feature lets you offer multiple services
-                to your callers. Plus, various tools within the Dotpot IT
-                administrative panel are available to assist you in creating
-                your IVR menu.
-              </p>
-            </div>
-            <div className="bg-background-500 rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
-              <h2 className="text-lg font-bold mb-2 text-textColor-500">
-                Design Own IVR
-              </h2>
-              <p className="text-textColor-500 text-justify">
-                Dotpot IT system provides you with the ability to create an IVR
-                system that is customized to your business requirements. The
-                process is straightforward and user-friendly, allowing you to
-                design your IVR with ease.
-              </p>
-            </div>
-            <div className="bg-background-500 rounded-lg shadow-lg p-6 hover:bg-primary-100 transition-all duration-300w-full md:w-1/3 mx-5 hover:scale-105 md:my-0 my-5">
-              <h2 className="text-lg font-bold mb-2 text-textColor-500">
-                Responsive IVR
-              </h2>
-              <p className="text-textColor-500 text-justify">
-                IVR systems are now commonly employed for making outbound calls
-                to perform various time-sensitive tasks, such as providing or
-                collecting information regarding appointments, overdue bills,
-                and other important events or activities.
-              </p>
-            </div>
+
+          {/* Why Dotpot iT */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 p-3 text-textColor-500`}
+                  >
+                    <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
+                      Why Dotpot iT
+                    </h2>
+                    <img
+                      className="w-64 mx-auto"
+                      src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"
+                      alt=""
+                    />
+                    <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
+                      Dotpot iT delivers cutting-edge Interactive Voice Response (IVR) solutions for efficient and exceptional customer service. With our expertise and outstanding support, we provide customized IVR services that seamlessly integrate with your business, maximizing productivity and ensuring customer satisfaction. Trust Dotpot iT to provide innovative IVR technology that drives success for your customer service operations.
+                    </p>
+                  </div>
+                </>
+              )}
+            </ReactVisibilitySensor>
           </div>
-          <div className="text-textColor-500 flex flex-col gap-5 p-5 mb-5">
-            <p className="text-justify">
-              By offering customers the option to choose between self-service
-              and agent-assisted support, an IVR system can significantly lower
-              your cost per call. With our IVR software, your agents can
-              concentrate on handling more intricate cases while customers can
-              easily resolve simple issues like account inquiries or bill
-              payments on their own. This dual benefit not only frees up your
-              agents but also provides a more efficient and satisfying customer
-              experience.
-            </p>
+
+          {/* Get in Touch */}
+          <div className="">
+            <GetAQuote />
           </div>
         </div>
       </div>
+
       <Footer />
     </div>
   );

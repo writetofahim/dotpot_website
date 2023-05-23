@@ -11,6 +11,7 @@ import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import parse from "react-html-parser";
 
 const FixedPrice = () => {
   const worksData = [
@@ -27,9 +28,7 @@ const FixedPrice = () => {
     {
       id: 2,
       title: "Benefits of a Fixed Price",
-      description: `👍The client has a clear understanding of the project's cost
-        upfront, enabling them to budget and plan accordingly and client bears minimal risk since they only pay the agreed-upon
-        fixed price, even if unexpected issues or changes arise.`,
+      description: `👍The client has a clear understanding of the project's cost upfront, enabling them to budget and plan accordingly and client bears minimal risk since they only pay the agreed-upon fixed price, even if unexpected issues or changes arise.`,
       illustration: benifit,
     },
     {
@@ -41,12 +40,8 @@ const FixedPrice = () => {
     {
       id: 4,
       title: "summary",
-      description: `👍The Fixed Price Partnership Model is a collaborative
-        approach that allows Dotpot iT to provide customized IT solutions
-        that meet the specific needs of the client, with a clear
-        understanding of the project's scope, timeline, and cost. It
-        facilitates certainty of cost, reduced risk, clear project
-        requirements, predictable timeline, and higher quality output`,
+      description: `👍The Fixed Price Partnership Model is a <a href="https://www.collinsdictionary.com/dictionary/english/collaborative-approach" target="_blank">collaborative
+      approach</a> that allows Dotpot iT to provide customized IT solutions that meet the specific needs of the client, with a clear understanding of the project's scope, timeline, and cost. It facilitates certainty of cost, reduced risk, clear project requirements, predictable timeline, and higher quality output`,
       illustration: summuryfix,
     },
   ];
@@ -102,9 +97,8 @@ const FixedPrice = () => {
       <Navbar />
       <div className="bg-background-500">
         <div
-          className={` md:pt-[15vh] pt-[15vh] ${
-            window.innerWidth > 1280 && "md:pt-[11vh]"
-          } `}
+          className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
+            } `}
         >
           <NavigatorComponent navigationData={navigationData} />
           <div>
@@ -114,11 +108,10 @@ const FixedPrice = () => {
                 {({ isVisible }) => (
                   <>
                     <div
-                      className={`mt-10 mb-16 ${
-                        isVisible
-                          ? "opacity-100 translate-y-0"
-                          : "translate-y-20 opacity-0"
-                      } duration-1000 `}
+                      className={`mt-10 mb-16 ${isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                        } duration-1000 `}
                     >
                       <div className="container mx-auto">
                         <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
@@ -127,12 +120,7 @@ const FixedPrice = () => {
                               Fixed Price
                             </h1>
                             <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                              👍In a Fixed Price Partnership Model, Dotpot iT
-                              and the client agree upon a fixed price for a
-                              specific project or set of services. This model is
-                              beneficial for clients who have a clear
-                              understanding of their project requirements and
-                              want to know the exact cost upfront
+                              👍In a <a href="https://easternpeak.com/definition/fixed-cost-model/" target="_blank">Fixed Price Partnership Model,</a> Dotpot iT and the client agree upon a fixed price for a specific project or set of services. This model is beneficial for clients who have a clear understanding of their project requirements and want to know the exact cost upfront
                             </p>
                           </div>
                           <img
@@ -158,24 +146,22 @@ const FixedPrice = () => {
                       className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
                     >
                       <div
-                        className={`w-full md:w-1/2 lg:w-1/2 ${
-                          id % 2 === 0 && "order-2"
-                        } `}
+                        className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
+                          } `}
                       >
                         <ReactVisibilitySensor partialVisibility>
                           {({ isVisible }) => (
                             <div
-                              className={` ${
-                                isVisible
-                                  ? "opacity-100 translate-y-0"
-                                  : "translate-y-20 opacity-0"
-                              } duration-1000 `}
+                              className={` ${isVisible
+                                ? "opacity-100 translate-y-0"
+                                : "translate-y-20 opacity-0"
+                                } duration-1000 `}
                             >
                               <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
                                 {title}
                               </h2>
                               <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">
-                                {description}
+                                {parse(description)}
                               </p>
                             </div>
                           )}
@@ -184,13 +170,11 @@ const FixedPrice = () => {
                       <ReactVisibilitySensor partialVisibility>
                         {({ isVisible }) => (
                           <div
-                            className={`w-full md:w-1/2 lg:w-1/2 ${
-                              id % 2 === 0 && "order-1"
-                            } ${
-                              isVisible
+                            className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
+                              } ${isVisible
                                 ? "opacity-100 translate-y-0"
                                 : "translate-y-20 opacity-0"
-                            } duration-1000 `}
+                              } duration-1000 `}
                           >
                             <img
                               className="w-4/5 mx-auto"
@@ -356,11 +340,10 @@ const FixedPrice = () => {
                 {({ isVisible }) => (
                   <>
                     <div
-                      className={`${
-                        isVisible
-                          ? "opacity-100 translate-y-0"
-                          : "translate-y-20 opacity-0"
-                      } duration-1000 p-3 text-textColor-500`}
+                      className={`${isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                        } duration-1000 p-3 text-textColor-500`}
                     >
                       <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
                         Why Dotpot iT

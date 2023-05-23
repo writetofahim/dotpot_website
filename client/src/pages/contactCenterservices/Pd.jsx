@@ -1,15 +1,55 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import pd from "../../assets/img/pd.png";
+import ReactVisibilitySensor from "react-visibility-sensor";
+import pdcover from "../../assets/img/contactcentersupport/pdcover.png";
+import agencyweb from "../../assets/img/agencyweb.png";
+import blogweb from "../../assets/img/blogweb.png";
+import customappweb from "../../assets/img/customappweb.png";
+import ecommarceweb from "../../assets/img/ecommarceweb.png";
 import Footer from "../../components/Footer/Footer";
+import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import parse from "react-html-parser";
 
 const Pd = () => {
+      // PD Data
+      const worksData = [
+        {
+          id: 1,
+          title: "Limitless Opportunities",
+          description:
+            "Unlock endless possibilities with Dotpot IT's Predictive Dialer. Say goodbye to costly manual call campaigns as our advanced technology ensures calls are efficiently directed to desired numbers, optimizing agent availability and saving valuable call center time. Embrace the power of predictive dialing for unparalleled productivity in your contact center.",
+          illustration: ecommarceweb,
+        },
+        {
+          id: 2,
+          title: "Increased Agent Efficiency",
+          description:
+            `Boost <a href="https://quiq.com/blog/how-call-centers-can-better-report-agent-efficiency/" target="_blank">agent efficiency</a> with Dotpot IT's predictive dialer. Our sophisticated algorithm predicts agent availability, ensuring more time spent interacting with live individuals. By optimizing the dialing process based on factors like wrap-up time and schedules, our system maximizes productivity without compromising customer interactions. Experience increased efficiency and exceptional customer service with our predictive dialer solution.`,
+          illustration: agencyweb,
+        },
+        {
+          id: 3,
+          title: "Intelligent Call Supperession",
+          description:
+            "Elevate call center productivity with Dotpot IT's predictive dialer's intelligent call suppression. Our smart dialing algorithm filters out unproductive calls like answering machines and busy tones, enabling agents to focus on live contacts. Experience enhanced efficiency and superior customer experiences with our advanced feature.",
+          illustration: blogweb,
+        },
+        {
+          id: 4,
+          title: "Auto Scheduler",
+          description:
+            "Maximize campaign effectiveness with Dotpot IT's predictive dialer. Our system allows contact center managers to schedule and run multiple campaigns during specific time windows, optimizing outcomes. Effortlessly manage campaigns and increase productivity with our advanced predictive dialer.",
+          illustration: customappweb,
+        },
+      ];
+
   useScrollToTop();
+
   return (
-    <div>
+    <div className="bg-background-500">
       <Helmet>
         <title>Predictive Dialer | Dotpot iT an it company</title>
         <meta
@@ -54,207 +94,138 @@ const Pd = () => {
           content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
       </Helmet>
+
       <Navbar />
-      <div className="px-3 min-h-screen pt-[15vh] pb-10 bg-background-500">
+      
+      <div
+        className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
+          } `}
+      >
         <NavigatorComponent navigationData={navigationData} />
-        <div className="container mx-auto">
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center">
-            Predictive Dialer
-          </h1>
-          <div className="text-textColor-500 flex flex-col gap-5 p-5">
-            <p className="text-justify">
-              Dotpot IT's Predictive Dialer is a state-of-the-art automated
-              dialing solution that is specifically designed for contact center
-              environments. With this advanced technology, contact center
-              systems can easily establish an automatic outbound calling
-              procedure to support multiple call campaigns or lead generation
-              efforts. The module features a sophisticated self-correcting and
-              self-learning statistical dialing algorithm that efficiently dials
-              telephone numbers from a linked database in batches. Additionally,
-              the system is equipped with intelligent call screening that
-              eliminates unproductive calls such as answering machines, fax
-              tones, disconnected numbers, and busy tones, forwarding only the
-              live connected calls to customer service agents. Ultimately, this
-              technology helps to minimize agent idle time and boost the overall
-              productivity of contact centers.
-            </p>
+        <div>
+          {/* Banner */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`mt-10 mb-16 ${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 `}
+                  >
+                    <div className="container mx-auto">
+                      <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
+                        <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
+                          <h1 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
+                          Predictive Dialer
+                          </h1>
+                          <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
+                          Boost contact center efficiency with Dotpot IT's <a href="https://www.ringcentral.com/predictive-dialer.html#:~:text=A%20predictive%20dialer%20is%20a,lead%20after%20an%20unanswered%20call." target="_blank">Predictive Dialer.</a> Our state-of-the-art automated dialing solution streamlines outbound call campaigns and lead generation efforts. Featuring a self-learning algorithm and intelligent call screening, it optimizes agent productivity by eliminating unproductive calls. Minimize idle time and maximize results with our advanced Predictive Dialer.
+                          </p>
+                        </div>
+                        <img
+                          src={pdcover}
+                          alt="PD Image"
+                          className="w-full md:w-1/2 lg:w-1/2"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </>
+              )}
+            </ReactVisibilitySensor>
           </div>
-          <div className="container mx-auto mb-5">
-            <img
-              className="md:w-1/2 mx-auto "
-              src={pd}
-              alt="Customer service"
-            />
+
+          {/* body */}
+          <div className="container mx-auto w-full overflow-hidden">
+            <>
+              <div className={`flex flex-col gap-5`}>
+                {worksData.map(({ id, title, description, illustration }) => (
+                  <div
+                    className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
+                    key={id}
+                  >
+                    <div
+                      className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
+                        } `}
+                    >
+                      <ReactVisibilitySensor partialVisibility>
+                        {({ isVisible }) => (
+                          <div
+                            className={` ${isVisible
+                              ? "opacity-100 translate-y-0"
+                              : "translate-y-20 opacity-0"
+                              } duration-1000 `}
+                          >
+                            <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
+                              {title}
+                            </h2>
+                            <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">
+                            {parse(description)}
+                            </p>
+                          </div>
+                        )}
+                      </ReactVisibilitySensor>
+                    </div>
+                    <ReactVisibilitySensor partialVisibility>
+                      {({ isVisible }) => (
+                        <div
+                          className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
+                            } ${isVisible
+                              ? "opacity-100 translate-y-0"
+                              : "translate-y-20 opacity-0"
+                            } duration-1000 `}
+                        >
+                          <img
+                            className="w-4/5 mx-auto"
+                            src={illustration}
+                            alt={title}
+                          />
+                        </div>
+                      )}
+                    </ReactVisibilitySensor>
+                  </div>
+                ))}
+              </div>
+            </>
           </div>
-          <div className="text-textColor-500 flex flex-col gap-5 p-5">
-            <h2 className="font-bold">
-              Features and Benefit of Dotpot IT Predictive Dialer
-            </h2>
-            <p className="text-justify">
-              The Dotpot IT predictive dialer can significantly enhance the
-              amount of time that call center agents spend interacting with live
-              individuals. By utilizing an advanced algorithm, the dialer can
-              anticipate when agents will become free and automatically initiate
-              calls to contacts. The algorithm of the predictive dialer
-              considers various factors such as wrap-up time, schedules, average
-              handling time, and average number of contacts to optimize the
-              dialing process for maximum efficiency.
-            </p>
-            <h2 className="font-bold">Limitless Opportunities</h2>
-            <p className="text-justify">
-              Manual call campaigns can prove to be a costly affair for call
-              centers as they lack mechanisms to prevent calls from being
-              directed to undesired destination numbers. However, the Dotpot IT
-              predictive dialer can assist in overcoming this challenge and
-              eliminate wastage of expensive call center time. The predictive
-              dialer can self-correct and optimize calls by predicting agent
-              availability and targeting contacts accordingly, making it a
-              valuable tool for manual call campaigns.
-            </p>
-            <h2 className="font-bold">Increased Agent Efficiency</h2>
-            <p className="text-justify">
-              By utilizing a sophisticated algorithm, the Dotpot IT predictive
-              dialer can significantly enhance the amount of time that call
-              center agents spend interacting with live individuals. The system
-              predicts the availability of agents to take calls at any given
-              time and makes outbound calls to target contacts accordingly. The
-              algorithm considers factors such as wrap-up time, schedules,
-              average handling time, and average number of contacts to optimize
-              the dialing process and achieve maximum efficiency. The result is
-              a system that can dramatically increase agent productivity while
-              maintaining high-quality customer interactions.
-            </p>
-            <h2 className="font-bold">Intelligent Call Supperession</h2>
-            <p className="text-justify">
-              The Dotpot IT predictive dialer incorporates a smart dialing
-              algorithm that effectively filters out unnecessary and
-              unproductive calls such as answering machines, fax tones,
-              disconnected numbers, and busy tones. By screening out these
-              calls, the system enhances call center productivity and boosts
-              overall system efficiency. This feature ensures that call center
-              agents can focus on meaningful conversations with live contacts,
-              maximizing their productivity and delivering a better customer
-              experience.
-            </p>
-            <h2 className="font-bold">Make Your Own Campaign</h2>
-            <p className="text-justify">
-              Achieving a maximum return on investment (ROI) is possible with
-              the flawless implementation of your campaign plans. With the
-              Dotpot IT predictive dialer, you can effortlessly design multiple
-              campaigns and choose from various smart options available to
-              ensure impeccable implementation. The system offers a range of
-              tools and features that enable you to create tailored campaigns
-              that deliver the desired outcomes. By utilizing the smart options
-              available, you can optimize your campaigns to achieve the highest
-              possible ROI.
-            </p>
-            <h2 className="font-bold">Auto Scheduler</h2>
-            <p className="text-justify">
-              The Dotpot IT predictive dialer system provides contact center
-              managers with the flexibility to set up multiple campaigns to run
-              during specific time windows of their choice. The system will
-              automatically execute the scheduled campaigns, provided that the
-              required number of agents is available to take calls for each
-              campaign. This feature enables managers to optimize their campaign
-              schedules and ensures that campaigns are run at the most effective
-              times, increasing the chances of achieving desired outcomes. With
-              the Dotpot IT predictive dialer, contact center managers can
-              manage multiple campaigns effortlessly and maximize their
-              productivity.
-            </p>
-            <h2 className="font-bold">Connect With A Large Audience</h2>
-            <p className="text-justify">
-              With the Dotpot IT predictive dialer, businesses can contact a
-              large number of potential customers with a minimal number of
-              agents in a short period of time. The system enables businesses to
-              target both new and existing customers with appropriate types of
-              campaigns, thereby increasing the effectiveness of resources
-              invested in marketing campaigns. This feature allows businesses to
-              optimize their outreach efforts and maximize their impact, while
-              reducing the amount of time and resources required to achieve
-              desired outcomes. By utilizing the Dotpot IT predictive dialer,
-              businesses can enhance their marketing strategies and drive better
-              results with minimal investment.
-            </p>
-            <h2 className="font-bold">Announcement/Robo-Calls</h2>
-            <p className="text-justify">
-              The Dotpot IT predictive dialer enables you to configure and
-              deliver pre-recorded messages (also known as robo-calls) to your
-              target audience when the call recipient answers such calls. This
-              feature streamlines the process of delivering important messages
-              and enables businesses to communicate with their customers in a
-              timely and effective manner. By leveraging the power of
-              pre-recorded messages, businesses can reach a large audience in a
-              short period of time, without the need for human intervention.
-              With the Dotpot IT predictive dialer, businesses can simplify
-              their outreach efforts and ensure that their messages reach the
-              right audience at the right time.
-            </p>
-            <h2 className="font-bold">Drop Voice Mail</h2>
-            <p className="text-justify">
-              In the event that the called party does not answer, the Dotpot IT
-              predictive dialer system can automatically deliver a pre-recorded
-              message to the customer's voicemail. This feature ensures that
-              important messages are still delivered to customers, even if they
-              are not available to answer the call. By leveraging this
-              functionality, businesses can increase the reach and impact of
-              their marketing campaigns, without the need for manual follow-up.
-              With the Dotpot IT predictive dialer, businesses can streamline
-              their outreach efforts and ensure that their messages are
-              delivered to the intended audience, regardless of whether or not
-              they are able to answer the call.
-            </p>
-            <h2 className="font-bold">Feedback And Survey Calls</h2>
-            <p className="text-justify">
-              The Dotpot IT predictive dialer system allows you to conduct
-              regular or special surveys and gather feedback from your
-              customers, regarding events, opinions, services, and products.
-              This feature provides businesses with valuable insights into
-              customer preferences, needs, and pain points, enabling them to
-              improve their offerings and enhance customer satisfaction. With
-              the Dotpot IT predictive dialer, businesses can efficiently and
-              effectively gather customer feedback and leverage it to optimize
-              their strategies and offerings. By leveraging this functionality,
-              businesses can stay ahead of the competition and ensure that they
-              are meeting the evolving needs of their customers.
-            </p>
-            <h2 className="font-bold">Smart Reports</h2>
-            <p className="text-justify">
-              Dotpot IT PD system provides valuable reports and statistics that
-              enable businesses to gain insights into campaign performance and
-              customer behavior. By analyzing this data, businesses can optimize
-              their strategies, improve outcomes, and stay ahead of the
-              competition.
-            </p>
-            <h2 className="font-bold">Monitoring Via Live Dashboard</h2>
-            <p className="text-justify">
-              The Dotpot IT predictive dialer system features a smart dashboard
-              that captures and displays real-time contact center activities.
-              This feature enables contact center managers to easily monitor
-              ongoing activities, such as in-progress calls, waiting calls,
-              connected calls, and system issues. By leveraging this
-              functionality, contact center managers can stay up-to-date with
-              ongoing activities and take proactive measures to address any
-              issues that arise. With the Dotpot IT predictive dialer,
-              businesses can streamline their operations and ensure that they
-              are delivering exceptional customer service, every step of the
-              way.
-            </p>
-            <p className="text-justify">
-              The Dotpot IT predictive dialer system can be utilized to run
-              various call campaigns, including telemarketing, sales,
-              collections, surveys, and more, at optimum levels with low total
-              cost, ease-of-use, and deployment flexibility. This feature
-              minimizes the number of unwanted calls and improves call
-              connectivity ratio, resulting in increased productivity and
-              efficiency of contact center operations. By leveraging the Dotpot
-              IT predictive dialer system, businesses can streamline their call
-              center operations and optimize their campaigns, while minimizing
-              costs and maximizing results.
-            </p>
+
+          {/* Why Dotpot iT */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 p-3 text-textColor-500`}
+                  >
+                    <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
+                      Why Dotpot iT
+                    </h2>
+                    <img
+                      className="w-64 mx-auto"
+                      src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"
+                      alt=""
+                    />
+                    <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
+                    Dotpot iT offers cutting-edge Predictive Dialer solutions for efficient call handling and increased agent productivity. With our expertise and outstanding support, we provide customized Predictive Dialer services that seamlessly integrate with your business, optimizing outcomes and enhancing customer satisfaction. Trust Dotpot iT to deliver innovative Predictive Dialer technology that drives success for your business.
+                    </p>
+                  </div>
+                </>
+              )}
+            </ReactVisibilitySensor>
+          </div>
+
+          {/* Get in Touch */}
+          <div className="">
+            <GetAQuote />
           </div>
         </div>
       </div>
+
       <Footer />
     </div>
   );

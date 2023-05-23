@@ -12,6 +12,7 @@ import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import parse from "react-html-parser";
 
 const CyberSecurity = () => {
   const worksData = [
@@ -26,7 +27,7 @@ const CyberSecurity = () => {
       id: 2,
       title: "Risk Assessment",
       description:
-        "Dotpot IT conducts a comprehensive risk assessment of your organization's IT infrastructure to identify vulnerabilities, threats, and risks. Based on the assessment, they provide customized security solutions that meet your organization's specific needs.",
+        `Dotpot IT conducts a comprehensive <a href="https://safetyculture.com/topics/risk-assessment/" target="_blank">risk assessment</a> of your organization's IT infrastructure to identify vulnerabilities, threats, and risks. Based on the assessment, they provide customized security solutions that meet your organization's specific needs.`,
       illustration: riskassessment,
     },
     {
@@ -122,7 +123,7 @@ const CyberSecurity = () => {
                             Cyber Security With Dotpot iT
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            A dedicated cyber security team is responsible for
+                            A dedicated <a href="https://www.checkpoint.com/cyber-hub/cyber-security/what-is-cybersecurity/" target="_blank">cyber security</a> team is responsible for
                             identifying and responding to cyber threats. It is
                             led by a CISO and includes professionals with
                             diverse skill sets. The team collaborates with other
@@ -171,7 +172,7 @@ const CyberSecurity = () => {
                               {title}
                             </h2>
                             <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">
-                              {description}
+                            {parse(description)}
                             </p>
                           </div>
                         )}

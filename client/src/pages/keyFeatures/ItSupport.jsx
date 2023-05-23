@@ -18,6 +18,7 @@ import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import parse from "react-html-parser";
 
 const ItSupport = () => {
   const worksData = [
@@ -25,7 +26,7 @@ const ItSupport = () => {
       id: 2,
       title: "Cloud Computing",
       description:
-        "Cloud computing delivers computing services over the internet, providing flexible and scalable access to storage, databases, software, and applications. It offers businesses cost efficiency and the ability to scale resources as needed, allowing them to focus on core activities while relying on reliable cloud service providers.",
+        `<a href="https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-cloud-computing#:~:text=Simply%20put%2C%20cloud%20computing%20is,resources%2C%20and%20economies%20of%20scale." target="_blank">Cloud computing</a> delivers computing services over the internet, providing flexible and scalable access to storage, databases, software, and applications. It offers businesses cost efficiency and the ability to scale resources as needed, allowing them to focus on core activities while relying on reliable cloud service providers.`,
       illustration: cloudcomputing,
       sectionId: "cloud-computing",
     },
@@ -89,7 +90,7 @@ const ItSupport = () => {
       id: 10,
       title: "App Maintenance and Support",
       description:
-        "Dotpot iT provides App Maintenance and Support services that include regular updates, bug fixing, performance optimization, security updates, technical and user support, and app store optimization. These services help keep your app up to date, secure, and running smoothly while also improving user satisfaction and increasing popularity.",
+        `Dotpot iT provides <a href="https://synoptek.com/insights/it-blogs/application-development-maintenance/#:~:text=Application%20maintenance%20is%20the%20continuous,the%20best%20of%20their%20abilities." target="_blank">App Maintenance and Support</a> services that include regular updates, bug fixing, performance optimization, security updates, technical and user support, and app store optimization. These services help keep your app up to date, secure, and running smoothly while also improving user satisfaction and increasing popularity.`,
       illustration: appmaintenance,
       sectionId: "app-support",
     },
@@ -157,9 +158,8 @@ const ItSupport = () => {
       </Helmet>
       <Navbar />
       <div
-        className={` md:pt-[15vh] pt-[15vh] ${
-          window.innerWidth > 1280 && "md:pt-[11vh]"
-        } `}
+        className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
+          } `}
       >
         <NavigatorComponent navigationData={navigationData} />
         <div>
@@ -169,11 +169,10 @@ const ItSupport = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`mt-10 mb-16 ${
-                      isVisible
+                    className={`mt-10 mb-16 ${isVisible
                         ? "opacity-100 translate-y-0"
                         : "translate-y-20 opacity-0"
-                    } duration-1000 `}
+                      } duration-1000 `}
                   >
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
@@ -214,24 +213,22 @@ const ItSupport = () => {
                       id={sectionId}
                     >
                       <div
-                        className={`w-full md:w-1/2 lg:w-1/2 ${
-                          id % 2 === 0 && "order-2"
-                        } `}
+                        className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
+                          } `}
                       >
                         <ReactVisibilitySensor partialVisibility>
                           {({ isVisible }) => (
                             <div
-                              className={` ${
-                                isVisible
+                              className={` ${isVisible
                                   ? "opacity-100 translate-y-0"
                                   : "translate-y-20 opacity-0"
-                              } duration-1000 `}
+                                } duration-1000 `}
                             >
                               <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
                                 {title}
                               </h2>
                               <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">
-                                {description}
+                                {parse(description)}
                               </p>
                             </div>
                           )}
@@ -240,13 +237,11 @@ const ItSupport = () => {
                       <ReactVisibilitySensor partialVisibility>
                         {({ isVisible }) => (
                           <div
-                            className={`w-full md:w-1/2 lg:w-1/2 ${
-                              id % 2 === 0 && "order-1"
-                            } ${
-                              isVisible
+                            className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
+                              } ${isVisible
                                 ? "opacity-100 translate-y-0"
                                 : "translate-y-20 opacity-0"
-                            } duration-1000 `}
+                              } duration-1000 `}
                           >
                             <img
                               className="w-4/5 mx-auto"
@@ -269,11 +264,10 @@ const ItSupport = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`${
-                      isVisible
+                    className={`${isVisible
                         ? "opacity-100 translate-y-0"
                         : "translate-y-20 opacity-0"
-                    } duration-1000 p-3 text-textColor-500`}
+                      } duration-1000 p-3 text-textColor-500`}
                   >
                     <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
                       Why Dotpot iT
