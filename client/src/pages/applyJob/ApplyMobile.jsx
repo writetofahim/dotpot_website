@@ -107,7 +107,7 @@ const ApplyMobile = () => {
               </div>
 
               {/* // Bottom Section */}
-              <div className="p-5 w-full text-gray-500 h-[70vh] overflow-scroll">
+              <div className="p-5 w-full text-gray-500  ">
                 <h3 className="text-xl font-bold">Job Details</h3>
                 <p className="">{job.type}</p>
                 <Divider className="py-3" />
