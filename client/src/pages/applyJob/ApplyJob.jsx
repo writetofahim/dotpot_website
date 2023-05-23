@@ -222,7 +222,6 @@ const ApplyJob = () => {
           content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
         />
       </Helmet>
-      {/* <JobSearchbar /> */}
 
       <div className="w-full flex items-center justify-center bg-background-500 mb-10">
         <div className="w-full max-w-[1400px] container  px-5">
@@ -262,7 +261,7 @@ const ApplyJob = () => {
             </div>
           </div>
           {/* new design ends */}
-          <h2
+          <h1
             className={
               activeJob
                 ? "text-center text-4xl my-10 font-bold  text-gray-400 transition-all"
@@ -270,7 +269,7 @@ const ApplyJob = () => {
             }
           >
             Available Jobs
-          </h2>
+          </h1>
           <div className="w-full flex flex-col md:flex-row justify-between gap-5">
             {/* Left sidebar */}
             <div className="left md:w-2/5 flex flex-col gap-5 ">
