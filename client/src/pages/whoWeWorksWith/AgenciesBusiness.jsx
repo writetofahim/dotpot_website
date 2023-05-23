@@ -20,7 +20,7 @@ const AgenciesBusiness = () => {
       id: 1,
       title: "Customized Solutions",
       description:
-        `We specialize in creating <a href="https://inspeerity.com/blog/custom-software-development" target="_blank">customized software solutions</a> that are tailored to the specific needs of our clients. This means that agencies and businesses can get software that is designed to meet their unique requirements, which can help them achieve their goals more efficiently.`,
+        `We specialize in creating <a href="https://inspeerity.com/blog/custom-software-development" target="_blank" rel="nofollow">customized software solutions</a> that are tailored to the specific needs of our clients. This means that agencies and businesses can get software that is designed to meet their unique requirements, which can help them achieve their goals more efficiently.`,
       illustration: Agencies_02,
     },
     {
@@ -119,7 +119,7 @@ const AgenciesBusiness = () => {
                             Agencies Business
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            As an IT company, we can provide a range of services to help <a href="https://marketbusinessnews.com/financial-glossary/agency-definition/" target="_blank">agencies and businesses</a> achieve their goals.
+                            As an IT company, we can provide a range of services to help <a href="https://marketbusinessnews.com/financial-glossary/agency-definition/" target="_blank" rel="nofollow">agencies and businesses</a> achieve their goals.
                             Our software development expertise allows us to
                             create customized solutions tailored to meet
                             specific needs, such as streamlining operations,

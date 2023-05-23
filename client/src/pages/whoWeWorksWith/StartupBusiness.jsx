@@ -48,7 +48,7 @@ const WebsiteDesign = () => {
       id: 5,
       title: "Strategic Partnership",
       description:
-        `By partnering with your IT company, startups can benefit from a <a href="https://www.indeed.com/career-advice/career-development/strategic-partnerships" target="_blank">strategic</a> advisor who can provide insights and guidance on technology investments, security, and other IT-related issues. Your IT company can serve as a trusted partner that helps the startup achieve its long-term goals.`,
+        `By partnering with your IT company, startups can benefit from a <a href="https://www.indeed.com/career-advice/career-development/strategic-partnerships" target="_blank" rel="nofollow">strategic</a> advisor who can provide insights and guidance on technology investments, security, and other IT-related issues. Your IT company can serve as a trusted partner that helps the startup achieve its long-term goals.`,
       illustration: startup06,
     },
   ];
@@ -115,7 +115,7 @@ const WebsiteDesign = () => {
                             Start Up Business
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            As an IT company, your expertise can be invaluable to <a href="https://www.investopedia.com/terms/s/startup.asp" target="_blank">startup businesses</a> looking to establish a strong digital presence. Your team of skilled professionals can provide a range of services, such as developing custom software solutions, designing and launching a website or mobile app, setting up cloud infrastructure, and providing ongoing technical support.
+                            As an IT company, your expertise can be invaluable to <a href="https://www.investopedia.com/terms/s/startup.asp" target="_blank" rel="nofollow">startup businesses</a> looking to establish a strong digital presence. Your team of skilled professionals can provide a range of services, such as developing custom software solutions, designing and launching a website or mobile app, setting up cloud infrastructure, and providing ongoing technical support.
                           </p>
                         </div>
                         <img

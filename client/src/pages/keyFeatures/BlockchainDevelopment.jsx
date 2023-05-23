@@ -91,7 +91,7 @@ const BlockchainDevelopment = () => {
       id: 9,
       title: "Blockchain Integration ",
       description:
-        `Dotpot iT offers <a href="https://medium.com/swlh/blockchain-integration-a-step-by-step-guide-7371f49c72e1" target="_blank">Blockchain Integration</a> services to help businesses integrate blockchain technology into their existing systems. Our experienced developers can help you connect your systems to a blockchain network, enabling increased security, transparency, and efficiency. Contact us to learn more about how we can help you integrate blockchain technology into your business processes.`,
+        `Dotpot iT offers <a href="https://medium.com/swlh/blockchain-integration-a-step-by-step-guide-7371f49c72e1" target="_blank" rel="nofollow">Blockchain Integration</a> services to help businesses integrate blockchain technology into their existing systems. Our experienced developers can help you connect your systems to a blockchain network, enabling increased security, transparency, and efficiency. Contact us to learn more about how we can help you integrate blockchain technology into your business processes.`,
       illustration: blockchainintegration,
       sectionId: "blockchain",
     },
@@ -183,7 +183,7 @@ const BlockchainDevelopment = () => {
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
                             Transform the future with Dotpot iT - Your expert
-                            partner for custom <a href="https://www.coursera.org/articles/blockchain-developer" target="_blank">blockchain solutions.</a> Build
+                            partner for custom <a href="https://www.coursera.org/articles/blockchain-developer" target="_blank" rel="nofollow">blockchain solutions.</a> Build
                             secure and transparent systems with our cutting-edge
                             development services.
                           </p>

@@ -37,7 +37,7 @@ const Gaming = () => {
       id: 4,
       title: "Unreal Engine",
       description:
-        `Dotpot iT specializes in <a href="https://www.unrealengine.com/en-US" target="_blank">Unreal Engine game development,</a> providing services such as game design consultation, programming, 3D modeling, quality assurance, and post-release support. Their expertise helps developers create visually stunning and immersive games using the power of Unreal Engine.`,
+        `Dotpot iT specializes in <a href="https://www.unrealengine.com/en-US" target="_blank" rel="nofollow">Unreal Engine game development,</a> providing services such as game design consultation, programming, 3D modeling, quality assurance, and post-release support. Their expertise helps developers create visually stunning and immersive games using the power of Unreal Engine.`,
       illustration: unrealengine,
       sectionId: "unreal-engine",
     },
@@ -137,7 +137,7 @@ const Gaming = () => {
                             Game Development
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            Revolutionize <a href="https://www.freecodecamp.org/news/what-is-game-development/" target="_blank">gaming</a> experience with Dotpot IT's
+                            Revolutionize <a href="https://www.freecodecamp.org/news/what-is-game-development/" target="_blank" rel="nofollow">gaming</a> experience with Dotpot IT's
                             cutting-edge development. Elevate gameplay and
                             immerse yourself in a new era of gaming innovation.
                           </p>

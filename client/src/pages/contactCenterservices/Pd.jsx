@@ -2,10 +2,10 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import ReactVisibilitySensor from "react-visibility-sensor";
 import pdcover from "../../assets/img/contactcentersupport/pdcover.png";
-import agencyweb from "../../assets/img/agencyweb.png";
-import blogweb from "../../assets/img/blogweb.png";
-import customappweb from "../../assets/img/customappweb.png";
-import ecommarceweb from "../../assets/img/ecommarceweb.png";
+import callerpiority from "../../assets/img/contactcentersupport/callerpiority.png";
+import Fixed_Price4 from "../../assets/img/Fixed_Price4.png";
+import proactiveapproach from "../../assets/img/proactiveapproach.png";
+import Enterprise_Business_01 from "../../assets/img/Enterprise_Business_01.png";
 import Footer from "../../components/Footer/Footer";
 import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
@@ -21,28 +21,28 @@ const Pd = () => {
           title: "Limitless Opportunities",
           description:
             "Unlock endless possibilities with Dotpot IT's Predictive Dialer. Say goodbye to costly manual call campaigns as our advanced technology ensures calls are efficiently directed to desired numbers, optimizing agent availability and saving valuable call center time. Embrace the power of predictive dialing for unparalleled productivity in your contact center.",
-          illustration: ecommarceweb,
+          illustration: Enterprise_Business_01,
         },
         {
           id: 2,
           title: "Increased Agent Efficiency",
           description:
-            `Boost <a href="https://quiq.com/blog/how-call-centers-can-better-report-agent-efficiency/" target="_blank">agent efficiency</a> with Dotpot IT's predictive dialer. Our sophisticated algorithm predicts agent availability, ensuring more time spent interacting with live individuals. By optimizing the dialing process based on factors like wrap-up time and schedules, our system maximizes productivity without compromising customer interactions. Experience increased efficiency and exceptional customer service with our predictive dialer solution.`,
-          illustration: agencyweb,
+            `Boost <a href="https://quiq.com/blog/how-call-centers-can-better-report-agent-efficiency/" target="_blank" rel="nofollow">agent efficiency</a> with Dotpot IT's predictive dialer. Our sophisticated algorithm predicts agent availability, ensuring more time spent interacting with live individuals. By optimizing the dialing process based on factors like wrap-up time and schedules, our system maximizes productivity without compromising customer interactions. Experience increased efficiency and exceptional customer service with our predictive dialer solution.`,
+          illustration: Fixed_Price4,
         },
         {
           id: 3,
           title: "Intelligent Call Supperession",
           description:
             "Elevate call center productivity with Dotpot IT's predictive dialer's intelligent call suppression. Our smart dialing algorithm filters out unproductive calls like answering machines and busy tones, enabling agents to focus on live contacts. Experience enhanced efficiency and superior customer experiences with our advanced feature.",
-          illustration: blogweb,
+          illustration: callerpiority,
         },
         {
           id: 4,
           title: "Auto Scheduler",
           description:
             "Maximize campaign effectiveness with Dotpot IT's predictive dialer. Our system allows contact center managers to schedule and run multiple campaigns during specific time windows, optimizing outcomes. Effortlessly manage campaigns and increase productivity with our advanced predictive dialer.",
-          illustration: customappweb,
+          illustration: proactiveapproach,
         },
       ];
 
@@ -121,7 +121,7 @@ const Pd = () => {
                           Predictive Dialer
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                          Boost contact center efficiency with Dotpot IT's <a href="https://www.ringcentral.com/predictive-dialer.html#:~:text=A%20predictive%20dialer%20is%20a,lead%20after%20an%20unanswered%20call." target="_blank">Predictive Dialer.</a> Our state-of-the-art automated dialing solution streamlines outbound call campaigns and lead generation efforts. Featuring a self-learning algorithm and intelligent call screening, it optimizes agent productivity by eliminating unproductive calls. Minimize idle time and maximize results with our advanced Predictive Dialer.
+                          Boost contact center efficiency with Dotpot IT's <a href="https://www.ringcentral.com/predictive-dialer.html#:~:text=A%20predictive%20dialer%20is%20a,lead%20after%20an%20unanswered%20call." target="_blank" rel="nofollow">Predictive Dialer.</a> Our state-of-the-art automated dialing solution streamlines outbound call campaigns and lead generation efforts. Featuring a self-learning algorithm and intelligent call screening, it optimizes agent productivity by eliminating unproductive calls. Minimize idle time and maximize results with our advanced Predictive Dialer.
                           </p>
                         </div>
                         <img

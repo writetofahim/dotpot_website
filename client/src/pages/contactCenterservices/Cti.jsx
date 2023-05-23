@@ -2,10 +2,10 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import ReactVisibilitySensor from "react-visibility-sensor";
 import cticover from "../../assets/img/contactcentersupport/cticover.png";
+import callerpiority from "../../assets/img/contactcentersupport/callerpiority.png";
+import crm from "../../assets/img/contactcentersupport/crm.png";
 import agencyweb from "../../assets/img/agencyweb.png";
-import blogweb from "../../assets/img/blogweb.png";
-import customappweb from "../../assets/img/customappweb.png";
-import ecommarceweb from "../../assets/img/ecommarceweb.png";
+import call2 from "../../assets/img/call2.png";
 import Footer from "../../components/Footer/Footer";
 import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
@@ -20,8 +20,8 @@ const Cti = () => {
       id: 1,
       title: "Integrated CRM",
       description:
-        `Our CTI solution seamlessly integrates with <a href="https://www.salesforce.com/crm/crm-integration/#:~:text=CRM%20integration%20connects%20each%20application,of%20your%20business%20and%20customers." target="_blank">Customer Relationship Management (CRM)</a> software, allowing you to access and manage customer information during calls. This integration streamlines your workflow and enhances the efficiency of your customer interactions.`,
-      illustration: ecommarceweb,
+        `Our CTI solution seamlessly integrates with <a href="https://www.salesforce.com/crm/crm-integration/#:~:text=CRM%20integration%20connects%20each%20application,of%20your%20business%20and%20customers." target="_blank" rel="nofollow">Customer Relationship Management (CRM)</a> software, allowing you to access and manage customer information during calls. This integration streamlines your workflow and enhances the efficiency of your customer interactions.`,
+      illustration: crm,
     },
     {
       id: 2,
@@ -35,14 +35,14 @@ const Cti = () => {
       title: "Call Whisper",
       description:
         "Call whisper functionality allows supervisors or managers to provide guidance or additional information to agents during live calls without the customer hearing it. This feature facilitates training and coaching, enabling agents to handle calls effectively and improve their performance.",
-      illustration: blogweb,
+      illustration: callerpiority,
     },
     {
       id: 4,
       title: "Call Analytics and Reporting",
       description:
         "With our Computer Telephony Integration (CTI) solutions, you can gain insights into call volume, agent performance, call duration, and other key metrics. These insights help you identify areas for improvement and make data-driven decisions to enhance your call center operations. Choose Dotpot iT for advanced CTI solutions that drive efficiency and improve customer experiences.",
-      illustration: customappweb,
+      illustration: call2,
     },
   ];
 
@@ -123,7 +123,7 @@ const Cti = () => {
                             Computer Telephony Integration (CTI)
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            Dotpot IT <a href="https://www.nice.com/glossary/what-is-contact-center-cti-computer-telephony-integration#:~:text=Computer%20telephony%20integration%20(CTI)%20means,more%20control%20over%20call%20management." target="_blank">integrates with various CRMs and offers CTI</a> screen popups to agents, providing them with caller information, such as name and phone number, before connecting to the call. This helps agents personalize calls and improve customer experience.
+                            Dotpot IT <a href="https://www.nice.com/glossary/what-is-contact-center-cti-computer-telephony-integration#:~:text=Computer%20telephony%20integration%20(CTI)%20means,more%20control%20over%20call%20management." target="_blank" rel="nofollow">integrates with various CRMs and offers CTI</a> screen popups to agents, providing them with caller information, such as name and phone number, before connecting to the call. This helps agents personalize calls and improve customer experience.
                           </p>
                         </div>
                         <img

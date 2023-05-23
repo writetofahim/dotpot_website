@@ -2,10 +2,9 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import ReactVisibilitySensor from "react-visibility-sensor";
 import ivrcover from "../../assets/img/contactcentersupport/ivrcover.png";
-import agencyweb from "../../assets/img/agencyweb.png";
-import blogweb from "../../assets/img/blogweb.png";
-import customappweb from "../../assets/img/customappweb.png";
-import ecommarceweb from "../../assets/img/ecommarceweb.png";
+import pd from "../../assets/img/pd.png";
+import voiceresponse from "../../assets/img/customersupport/voiceresponse.png";
+import callerpiority from "../../assets/img/contactcentersupport/callerpiority.png";
 import Footer from "../../components/Footer/Footer";
 import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
@@ -20,29 +19,29 @@ const Ivr = () => {
       id: 1,
       title: "Call Routing",
       description:
-        `Dotpot iT's IVR service efficiently <a href="https://www.mitel.com/features-benefits/call-routing#:~:text=Call%20routing%20is%20a%20call,end%20picks%20up%20the%20call." target="_blank">routes incoming calls</a> to the appropriate department or agent based on caller input or predefined criteria. This ensures that callers are directed to the most suitable resource, reducing wait times and improving customer satisfaction.`,
-      illustration: ecommarceweb,
+        `Dotpot iT's IVR service efficiently <a href="https://www.mitel.com/features-benefits/call-routing#:~:text=Call%20routing%20is%20a%20call,end%20picks%20up%20the%20call." target="_blank" rel="nofollow">routes incoming calls</a> to the appropriate department or agent based on caller input or predefined criteria. This ensures that callers are directed to the most suitable resource, reducing wait times and improving customer satisfaction.`,
+      illustration: callerpiority,
     },
     {
       id: 2,
       title: "Customized Call Flows",
       description:
         "Dotpot iT allows businesses to create and customize call flows within the IVR system. This ensures that callers are guided through a personalized sequence of options and prompts based on their specific needs, providing a tailored and efficient customer experience.",
-      illustration: agencyweb,
+      illustration: pd,
     },
     {
       id: 3,
       title: "Voice Recognition",
       description:
         "Dotpot iT incorporates advanced voice recognition technology into its IVR system. This enables callers to interact with the system using natural speech, enhancing usability and reducing the need for keypad inputs.",
-      illustration: blogweb,
+      illustration: voiceresponse,
     },
     {
       id: 4,
       title: "Outbound IVR",
       description:
         "Dotpot iT's IVR service also supports outbound calling, allowing businesses to automate outbound interactions such as appointment reminders, payment reminders, surveys, and notifications. This helps streamline communication and enhances customer engagement.",
-      illustration: customappweb,
+      illustration: ivrcover,
     },
   ];
 
@@ -123,7 +122,7 @@ const Ivr = () => {
                             Interactive Voice Response (IVR) by Dotpot iT
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            IVR is an automated voice-based technology that facilitates efficient interactions between computers and humans. With <a href="https://en.wikipedia.org/wiki/Interactive_voice_response" target="_blank">IVR,</a> callers can use voice or keypad inputs to navigate through options and reach their desired destination without human intervention. This technology is beneficial for managing high call volumes and situations where live agents are unavailable.
+                            IVR is an automated voice-based technology that facilitates efficient interactions between computers and humans. With <a href="https://en.wikipedia.org/wiki/Interactive_voice_response" target="_blank" rel="nofollow">IVR,</a> callers can use voice or keypad inputs to navigate through options and reach their desired destination without human intervention. This technology is beneficial for managing high call volumes and situations where live agents are unavailable.
                           </p>
                         </div>
                         <img

@@ -2,10 +2,10 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import ReactVisibilitySensor from "react-visibility-sensor";
 import mobileappcover from "../../assets/img/contactcentersupport/mobileappcover.png";
-import agencyweb from "../../assets/img/agencyweb.png";
-import blogweb from "../../assets/img/blogweb.png";
-import customappweb from "../../assets/img/customappweb.png";
-import ecommarceweb from "../../assets/img/ecommarceweb.png";
+import Here_Dedicated_2 from "../../assets/img/Here_Dedicated_2.png";
+import Here_Dedicated_3 from "../../assets/img/Here_Dedicated_3.png";
+import Medium_Business_01 from "../../assets/img/Medium_Business_01.png";
+import mobileappmodule from "../../assets/img/mobileappmodule.png";
 import Footer from "../../components/Footer/Footer";
 import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
@@ -21,35 +21,28 @@ const MobileApp = () => {
       title: "Mobile Agent Availability",
       description:
         "With the Mobile App Module, contact center agents can update their availability status and manage their schedules directly from their mobile devices. This feature allows for seamless coordination and ensures that agents are accessible and ready to handle customer interactions.",
-      illustration: ecommarceweb,
+      illustration: mobileappmodule,
     },
     {
       id: 2,
       title: "Customer Information Access",
       description:
-        `The Mobile App Module provides agents with instant <a href="https://www.ibm.com/docs/en/cdfsp/7.6.1?topic=capabilities-controlling-access-customer-information" target="_blank">access to customer information,</a> including contact details, interaction history, and preferences. This allows agents to provide personalized and tailored service to customers, enhancing the overall customer experience.`,
-      illustration: agencyweb,
+        `The Mobile App Module provides agents with instant <a href="https://www.ibm.com/docs/en/cdfsp/7.6.1?topic=capabilities-controlling-access-customer-information" target="_blank" rel="nofollow">access to customer information,</a> including contact details, interaction history, and preferences. This allows agents to provide personalized and tailored service to customers, enhancing the overall customer experience.`,
+      illustration: Here_Dedicated_2,
     },
     {
       id: 3,
       title: "Collaboration and Internal Messaging",
       description:
         "The Mobile App Module facilitates internal communication and collaboration among contact center agents. Agents can exchange messages, seek assistance from colleagues, and share relevant information, promoting teamwork and knowledge sharing.",
-      illustration: blogweb,
+      illustration: Here_Dedicated_3,
     },
     {
       id: 4,
       title: "Supervisor Support",
       description:
         "The Mobile App Module also includes features that benefit supervisors and managers. They can monitor agent activities, track performance metrics, and provide real-time guidance and support to agents through the mobile interface.",
-      illustration: customappweb,
-    },
-    {
-      id: 5,
-      title: "Multichannel Support",
-      description:
-        "The Mobile App Module supports multichannel communication, allowing agents to handle voice calls, chats, emails, and other customer interactions from a single mobile interface. This versatility enables agents to provide consistent and efficient service across various communication channels.",
-      illustration: customappweb,
+      illustration: Medium_Business_01,
     },
   ];
 
@@ -122,7 +115,7 @@ const MobileApp = () => {
                             Mobile App Module
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            Go mobile with Dotpot IT's contact center system. Our <a href="https://docs.oracle.com/cd/E26401_01/doc.122/e64384/T656045T656056.htm" target="_blank">mobile application</a> empowers contact center agents to deliver exceptional customer service on the go. With easy access to customized services, agents can efficiently serve customers anytime, anywhere. Experience the convenience and efficiency of our mobile app for contact center excellence.
+                            Go mobile with Dotpot IT's contact center system. Our <a href="https://docs.oracle.com/cd/E26401_01/doc.122/e64384/T656045T656056.htm" target="_blank" rel="nofollow">mobile application</a> empowers contact center agents to deliver exceptional customer service on the go. With easy access to customized services, agents can efficiently serve customers anytime, anywhere. Experience the convenience and efficiency of our mobile app for contact center excellence.
                           </p>
                         </div>
                         <img

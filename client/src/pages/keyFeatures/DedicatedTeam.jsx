@@ -31,7 +31,7 @@ const DedicatedTeam = () => {
       id: 2,
       title: "Agile Methodology",
       description:
-        `Dotpot's team follows the <a href="https://www.wrike.com/project-management-guide/faq/what-is-agile-methodology-in-project-management/" target="_blank">agile methodology,</a> which emphasizes collaboration, flexibility, and continuous improvement. This approach allows them to quickly respond to changes and deliver the project's requirements efficiently.`,
+        `Dotpot's team follows the <a href="https://www.wrike.com/project-management-guide/faq/what-is-agile-methodology-in-project-management/" target="_blank" rel="nofollow">agile methodology,</a> which emphasizes collaboration, flexibility, and continuous improvement. This approach allows them to quickly respond to changes and deliver the project's requirements efficiently.`,
       illustration: agile,
     },
     {
@@ -45,7 +45,7 @@ const DedicatedTeam = () => {
       id: 4,
       title: "Quality Assurance",
       description:
-        `Dotpot's team has a dedicated <a href="https://www.techtarget.com/searchsoftwarequality/definition/quality-assurance" target="_blank">quality assurance</a> team that ensures that the project's quality meets the highest standards. They conduct regular testing and review to identify and address any issues that may arise.`,
+        `Dotpot's team has a dedicated <a href="https://www.techtarget.com/searchsoftwarequality/definition/quality-assurance" target="_blank" rel="nofollow">quality assurance</a> team that ensures that the project's quality meets the highest standards. They conduct regular testing and review to identify and address any issues that may arise.`,
       illustration: quality,
     },
     {

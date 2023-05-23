@@ -136,7 +136,7 @@ const HireDedicatedModel = () => {
                               Hire Dedicated
                             </h1>
                             <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                              🚀Dotpot iT is a rapidly growing technology company that offers a wide range of IT services, including software development, mobile app development, web development, and digital marketing. To keep up with the demand for its services, the company needs a team of skilled professionals who can work together to deliver high-quality solutions to its clients. This is where <a href="https://www.matellio.com/blog/everything-you-need-to-know-about-dedicated-hiring-model/" target="_blank">hiring a dedicated model</a> comes in
+                              🚀Dotpot iT is a rapidly growing technology company that offers a wide range of IT services, including software development, mobile app development, web development, and digital marketing. To keep up with the demand for its services, the company needs a team of skilled professionals who can work together to deliver high-quality solutions to its clients. This is where <a href="https://www.matellio.com/blog/everything-you-need-to-know-about-dedicated-hiring-model/" target="_blank" rel="nofollow">hiring a dedicated model</a> comes in
                             </p>
                           </div>
                           <img
@@ -371,7 +371,7 @@ const HireDedicatedModel = () => {
                       />
                       <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
                         Dotpot iT offers affordable web design services using the latest technologies. With a focus on delivering visually appealing and user-friendly websites, they
-                        specialize in e-commerce platforms such as <a href="https://www.mageplaza.com/blog/shopify-vs-woocommerce-vs-magento.html" target="_blank">Shopify, WooCommerce, and Magento.</a> Their experienced team is committed to providing high-quality design solutions that exceed clients' expectations and exceptional customer service throughout the process. Choose Dotpot iT for innovative web design that helps your business thrive.
+                        specialize in e-commerce platforms such as <a href="https://www.mageplaza.com/blog/shopify-vs-woocommerce-vs-magento.html" target="_blank" rel="nofollow">Shopify, WooCommerce, and Magento.</a> Their experienced team is committed to providing high-quality design solutions that exceed clients' expectations and exceptional customer service throughout the process. Choose Dotpot iT for innovative web design that helps your business thrive.
                       </p>
                     </div>
                   </>

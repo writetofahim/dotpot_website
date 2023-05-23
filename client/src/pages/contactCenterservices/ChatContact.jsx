@@ -2,10 +2,10 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import ReactVisibilitySensor from "react-visibility-sensor";
 import webchatcover from "../../assets/img/contactcentersupport/webchatcover.png";
-import agencyweb from "../../assets/img/agencyweb.png";
-import blogweb from "../../assets/img/blogweb.png";
-import customappweb from "../../assets/img/customappweb.png";
-import ecommarceweb from "../../assets/img/ecommarceweb.png";
+import Fixed_Price4 from "../../assets/img/Fixed_Price4.png";
+import onsite_dev from "../../assets/img/onsite_dev.png";
+import Medium_Business_07 from "../../assets/img/Medium_Business_07.png";
+import communication from "../../assets/img/communication.png";
 import Footer from "../../components/Footer/Footer";
 import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
@@ -20,29 +20,29 @@ const ChatContact = () => {
       id: 1,
       title: "Improve customer experience",
       description:
-        `Dotpot IT's Chat module enables personalized chat experiences and access to <a href="https://www.richpanel.com/blog/multi-channel-customer-service" target="_blank">multichannel customer interactions</a> Engage with customers in real-time across various platforms, personalize assistance based on customer data, and leverage features like co-browsing and file sharing. Optimize efficiency with advanced routing and gain valuable insights through real-time monitoring and reporting.`,
-      illustration: ecommarceweb,
+        `Dotpot IT's Chat module enables personalized chat experiences and access to <a href="https://www.richpanel.com/blog/multi-channel-customer-service" target="_blank" rel="nofollow">multichannel customer interactions</a> Engage with customers in real-time across various platforms, personalize assistance based on customer data, and leverage features like co-browsing and file sharing. Optimize efficiency with advanced routing and gain valuable insights through real-time monitoring and reporting.`,
+      illustration: communication,
     },
     {
       id: 2,
       title: "Increase revenue",
       description:
         "Dotpot IT's Chat module enables just-in-time online engagement, leading to increased sales and reduced non-sale calls. Proactively assist website visitors at the right moment, address concerns, and provide personalized support. Streamline the support process and drive sales conversion rates with real-time chat assistance.",
-      illustration: agencyweb,
+      illustration: Fixed_Price4,
     },
     {
       id: 3,
       title: "Deliver fast and accurate",
       description:
         "Dotpot IT's Chat module ensures chat sessions are delivered to the right agent through queue-specific and skill-based routing. Optimize response times, enhance customer satisfaction, and streamline the chat handling process with intelligent routing capabilities.",
-      illustration: blogweb,
+      illustration: onsite_dev,
     },
     {
       id: 4,
       title: "ACD Based Web Chat Routing",
       description:
         "Dotpot IT CC's Web Chat module uses the same ACD system as the CC solution for routing chat sessions. Chat sessions are treated as calls and distributed to agents based on admin policy, making monitoring and analysis simple.",
-      illustration: customappweb,
+      illustration: Medium_Business_07,
     },
   ];
 
@@ -115,7 +115,7 @@ const ChatContact = () => {
                             Web Chat Support
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            Dotpot IT's contact center system includes a powerful <a href="https://freescout.net/module/chat/" target="_blank">web chat module</a> that meets the evolving needs of customers. By integrating this module, businesses can provide a seamless customer experience across multiple channels and achieve a healthy return on investment. Stay ahead of the curve and deliver exceptional customer service with Dotpot IT's contact center system.
+                            Dotpot IT's contact center system includes a powerful <a href="https://freescout.net/module/chat/" target="_blank" rel="nofollow">web chat module</a> that meets the evolving needs of customers. By integrating this module, businesses can provide a seamless customer experience across multiple channels and achieve a healthy return on investment. Stay ahead of the curve and deliver exceptional customer service with Dotpot IT's contact center system.
                           </p>
                         </div>
                         <img

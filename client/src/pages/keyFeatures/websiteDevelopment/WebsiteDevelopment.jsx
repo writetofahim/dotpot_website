@@ -20,7 +20,7 @@ const WebsiteDevelopment = () => {
       id: 1,
       title: "E-Commerce Website Development",
       description:
-        `Dotpot iT is a tech company that <a href="https://www.bigcommerce.com/articles/ecommerce-website-development/" target="_blank">developments e-commerce websites</a> for businesses worldwide. Our custom strategies optimize sales and revenue by creating visually appealing and user-friendly websites. We specialize in Shopify, WooCommerce, and Magento platforms and provide exceptional customer service and support. Contact us to learn how we can help your e-commerce business thrive.`,
+        `Dotpot iT is a tech company that <a href="https://www.bigcommerce.com/articles/ecommerce-website-development/" target="_blank" rel="nofollow">developments e-commerce websites</a> for businesses worldwide. Our custom strategies optimize sales and revenue by creating visually appealing and user-friendly websites. We specialize in Shopify, WooCommerce, and Magento platforms and provide exceptional customer service and support. Contact us to learn how we can help your e-commerce business thrive.`,
       illustration: ecommarceweb,
     },
     {
@@ -113,7 +113,7 @@ const WebsiteDevelopment = () => {
                             Website Development Service By Dotpot iT
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            <a href="https://www.wix.com/blog/2023/01/website-development/?utm_source=google&utm_medium=cpc&utm_campaign=15541610090^134848741670&experiment_id=^^568798457213^^_DSA&gclid=Cj0KCQjwyLGjBhDKARIsAFRNgW-T68-ChtjboTwn3I3sPHBQWNwzhkukMHu_Y6_5xUiZIl1PFPQ9BdwaArAOEALw_wcB" target="_blank">Website development</a> is the process of building
+                            <a href="https://www.wix.com/blog/2023/01/website-development/?utm_source=google&utm_medium=cpc&utm_campaign=15541610090^134848741670&experiment_id=^^568798457213^^_DSA&gclid=Cj0KCQjwyLGjBhDKARIsAFRNgW-T68-ChtjboTwn3I3sPHBQWNwzhkukMHu_Y6_5xUiZIl1PFPQ9BdwaArAOEALw_wcB" target="_blank" rel="nofollow">Website development</a> is the process of building
                             interactive and functional websites using technical
                             skills and programming expertise. It includes
                             creating user interfaces, managing web content, and

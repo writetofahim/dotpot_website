@@ -26,7 +26,7 @@ const ItSupport = () => {
       id: 2,
       title: "Cloud Computing",
       description:
-        `<a href="https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-cloud-computing#:~:text=Simply%20put%2C%20cloud%20computing%20is,resources%2C%20and%20economies%20of%20scale." target="_blank">Cloud computing</a> delivers computing services over the internet, providing flexible and scalable access to storage, databases, software, and applications. It offers businesses cost efficiency and the ability to scale resources as needed, allowing them to focus on core activities while relying on reliable cloud service providers.`,
+        `<a href="https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-cloud-computing#:~:text=Simply%20put%2C%20cloud%20computing%20is,resources%2C%20and%20economies%20of%20scale." target="_blank" rel="nofollow">Cloud computing</a> delivers computing services over the internet, providing flexible and scalable access to storage, databases, software, and applications. It offers businesses cost efficiency and the ability to scale resources as needed, allowing them to focus on core activities while relying on reliable cloud service providers.`,
       illustration: cloudcomputing,
       sectionId: "cloud-computing",
     },
@@ -90,7 +90,7 @@ const ItSupport = () => {
       id: 10,
       title: "App Maintenance and Support",
       description:
-        `Dotpot iT provides <a href="https://synoptek.com/insights/it-blogs/application-development-maintenance/#:~:text=Application%20maintenance%20is%20the%20continuous,the%20best%20of%20their%20abilities." target="_blank">App Maintenance and Support</a> services that include regular updates, bug fixing, performance optimization, security updates, technical and user support, and app store optimization. These services help keep your app up to date, secure, and running smoothly while also improving user satisfaction and increasing popularity.`,
+        `Dotpot iT provides <a href="https://synoptek.com/insights/it-blogs/application-development-maintenance/#:~:text=Application%20maintenance%20is%20the%20continuous,the%20best%20of%20their%20abilities." target="_blank" rel="nofollow">App Maintenance and Support</a> services that include regular updates, bug fixing, performance optimization, security updates, technical and user support, and app store optimization. These services help keep your app up to date, secure, and running smoothly while also improving user satisfaction and increasing popularity.`,
       illustration: appmaintenance,
       sectionId: "app-support",
     },

@@ -40,7 +40,7 @@ const FixedPrice = () => {
     {
       id: 4,
       title: "summary",
-      description: `👍The Fixed Price Partnership Model is a <a href="https://www.collinsdictionary.com/dictionary/english/collaborative-approach" target="_blank">collaborative
+      description: `👍The Fixed Price Partnership Model is a <a href="https://www.collinsdictionary.com/dictionary/english/collaborative-approach" target="_blank" rel="nofollow">collaborative
       approach</a> that allows Dotpot iT to provide customized IT solutions that meet the specific needs of the client, with a clear understanding of the project's scope, timeline, and cost. It facilitates certainty of cost, reduced risk, clear project requirements, predictable timeline, and higher quality output`,
       illustration: summuryfix,
     },
@@ -120,7 +120,7 @@ const FixedPrice = () => {
                               Fixed Price
                             </h1>
                             <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                              👍In a <a href="https://easternpeak.com/definition/fixed-cost-model/" target="_blank">Fixed Price Partnership Model,</a> Dotpot iT and the client agree upon a fixed price for a specific project or set of services. This model is beneficial for clients who have a clear understanding of their project requirements and want to know the exact cost upfront
+                              👍In a <a href="https://easternpeak.com/definition/fixed-cost-model/" target="_blank" rel="nofollow">Fixed Price Partnership Model,</a> Dotpot iT and the client agree upon a fixed price for a specific project or set of services. This model is beneficial for clients who have a clear understanding of their project requirements and want to know the exact cost upfront
                             </p>
                           </div>
                           <img

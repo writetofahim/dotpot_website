@@ -20,7 +20,7 @@ const Acd = () => {
       id: 1,
       title: "Skills-Based Routing",
       description:
-        `<a href="https://www.ringcentral.com/contact-center/skills-based-routing.html" target="_blank">An agent can be assigned to receive calls from multiple skills/companies.</a>An agent can be assigned to receive calls from multiple skills/companies. Dotpot IT contact center system allows categorization of agents based on skills or length of service. The system finds available high priority agents to pass the calls.`,
+        `<a href="https://www.ringcentral.com/contact-center/skills-based-routing.html" target="_blank" rel="nofollow">An agent can be assigned to receive calls from multiple skills/companies.</a>An agent can be assigned to receive calls from multiple skills/companies. Dotpot IT contact center system allows categorization of agents based on skills or length of service. The system finds available high priority agents to pass the calls.`,
       illustration: skillsbasedrouting,
     },
     {
@@ -117,7 +117,7 @@ const Acd = () => {
                             Automatic Call Distribution (ACD)
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            Dotpot IT <a href="https://www.ringcentral.com/contact-center/automatic-call-distribution.html" target="_blank">Automatic Call Distribution (ACD)</a> is a technology that allows contact centers to distribute inbound calls, emails and chat messages to agents based on call arrival time, priority, customer needs, and agent skill set. Instead of simply sending inbound requests to an available agent, ACD system categorizes calls/messages and then automatically and intelligently routes the same to appropriate agent with relevant skillset to help the
+                            Dotpot IT <a href="https://www.ringcentral.com/contact-center/automatic-call-distribution.html" target="_blank" rel="nofollow">Automatic Call Distribution (ACD)</a> is a technology that allows contact centers to distribute inbound calls, emails and chat messages to agents based on call arrival time, priority, customer needs, and agent skill set. Instead of simply sending inbound requests to an available agent, ACD system categorizes calls/messages and then automatically and intelligently routes the same to appropriate agent with relevant skillset to help the
                             customer.
                           </p>
                         </div>

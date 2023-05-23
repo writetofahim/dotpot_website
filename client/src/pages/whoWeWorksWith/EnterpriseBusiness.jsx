@@ -27,7 +27,7 @@ const WebsiteDesign = () => {
       id: 2,
       title: "IT support and maintenance",
       description:
-        `By providing comprehensive <a href="https://illumo.digital/software/support/" target="_blank">IT support and maintenance services,</a> your company can ensure that enterprise businesses' systems are always up and running. This can help minimize downtime and prevent costly disruptions.`,
+        `By providing comprehensive <a href="https://illumo.digital/software/support/" target="_blank" rel="nofollow">IT support and maintenance services,</a> your company can ensure that enterprise businesses' systems are always up and running. This can help minimize downtime and prevent costly disruptions.`,
       illustration: Enterprise_Business_03,
     },
     {
@@ -119,7 +119,7 @@ const WebsiteDesign = () => {
                             Enterprise Business
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            As an IT company, your software development and IT services can help <a href="https://www.clearvoice.com/resources/what-is-an-enterprise-business/" target="_blank">enterprise businesses</a> improve efficiency, productivity, and security. By providing cutting-edge solutions and technology, you can help these businesses stay competitive in their markets and achieve their goals.
+                            As an IT company, your software development and IT services can help <a href="https://www.clearvoice.com/resources/what-is-an-enterprise-business/" target="_blank" rel="nofollow">enterprise businesses</a> improve efficiency, productivity, and security. By providing cutting-edge solutions and technology, you can help these businesses stay competitive in their markets and achieve their goals.
                           </p>
                         </div>
                         <img

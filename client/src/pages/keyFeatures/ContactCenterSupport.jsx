@@ -120,7 +120,7 @@ const ContactCenterSupport = () => {
       id: 13,
       title: "Ticketing System",
       description:
-        `Our <a href="https://www.liveagent.com/academy/what-is-ticketing-system/" target="_blank">Ticketing System</a> enables businesses to manage customer inquiries and complaints by creating and tracking tickets through their life cycle. With our ticketing system, businesses can easily assign tickets to the right agents, monitor ticket status, and ensure timely resolution of customer issues.`,
+        `Our <a href="https://www.liveagent.com/academy/what-is-ticketing-system/" target="_blank" rel="nofollow">Ticketing System</a> enables businesses to manage customer inquiries and complaints by creating and tracking tickets through their life cycle. With our ticketing system, businesses can easily assign tickets to the right agents, monitor ticket status, and ensure timely resolution of customer issues.`,
       illustration: ticketingsystem,
       sectionId: "ticket",
     },
@@ -221,7 +221,7 @@ const ContactCenterSupport = () => {
                             Contact Center Support With Dotpot iT
                           </h2>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            Dotpot offers <a href="https://www.timedoctor.com/blog/contact-center-services/" target="_blank">Contact Center Support</a> services for
+                            Dotpot offers <a href="https://www.timedoctor.com/blog/contact-center-services/" target="_blank" rel="nofollow">Contact Center Support</a> services for
                             businesses to improve their customer service
                             operations with multi-channel support, help desk
                             management, and advanced analytics for enhanced

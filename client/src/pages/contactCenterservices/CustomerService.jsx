@@ -2,10 +2,10 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import ReactVisibilitySensor from "react-visibility-sensor";
 import cscover from "../../assets/img/contactcentersupport/cscover.png";
-import agencyweb from "../../assets/img/agencyweb.png";
-import blogweb from "../../assets/img/blogweb.png";
-import customappweb from "../../assets/img/customappweb.png";
-import ecommarceweb from "../../assets/img/ecommarceweb.png";
+import callerpiority from "../../assets/img/contactcentersupport/callerpiority.png";
+import voiceresponse from "../../assets/img/customersupport/voiceresponse.png";
+import Medium_Business_07 from "../../assets/img/Medium_Business_07.png";
+import ticketingsystem from "../../assets/img/ticketingsystem.png";
 import Footer from "../../components/Footer/Footer";
 import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
@@ -20,29 +20,29 @@ const CustomerService = () => {
       id: 1,
       title: "Ticketing System",
       description:
-        `Dotpot iT offers a <a href="https://www.customerservicemanager.com/what-is-a-ticketing-system-in-customer-service/" target="_blank">ticketing system</a> that allows customer service agents to manage and track customer inquiries and issues in a structured and organized manner. This ensures timely resolution, reduces response times, and enhances overall customer satisfaction.`,
-      illustration: ecommarceweb,
+        `Dotpot iT offers a <a href="https://www.customerservicemanager.com/what-is-a-ticketing-system-in-customer-service/" target="_blank" rel="nofollow">ticketing system</a> that allows customer service agents to manage and track customer inquiries and issues in a structured and organized manner. This ensures timely resolution, reduces response times, and enhances overall customer satisfaction.`,
+      illustration: ticketingsystem,
     },
     {
       id: 2,
       title: "Call Routing and Queuing",
       description:
         "Dotpot iT enables intelligent call routing and queuing, ensuring that customer calls are directed to the most appropriate agents based on their skills, availability, and priority. This optimizes call handling and minimizes customer wait times.",
-      illustration: agencyweb,
+      illustration: callerpiority,
     },
     {
       id: 3,
       title: "Live Chat Support",
       description:
         "Dotpot iT enables live chat functionality, allowing customers to have real-time conversations with customer service agents. This instant messaging feature provides quick responses, resolves issues promptly, and enhances customer satisfaction.",
-      illustration: blogweb,
+      illustration: Medium_Business_07,
     },
     {
       id: 4,
       title: "Virtual Assistant and Chatbots",
       description:
-        `Dotpot iT incorporates <a href="https://elearningindustry.com/what-is-the-distinction-between-a-chatbot-and-a-virtual-assistant" target="_blank">virtual assistant and chatbot</a> technologies to provide automated and personalized customer support. These AI-powered tools can handle routine inquiries, provide instant responses, and escalate complex issues to human agents when needed.`,
-      illustration: customappweb,
+        `Dotpot iT incorporates <a href="https://elearningindustry.com/what-is-the-distinction-between-a-chatbot-and-a-virtual-assistant" target="_blank" rel="nofollow">virtual assistant and chatbot</a> technologies to provide automated and personalized customer support. These AI-powered tools can handle routine inquiries, provide instant responses, and escalate complex issues to human agents when needed.`,
+      illustration: voiceresponse,
     },
   ];
 

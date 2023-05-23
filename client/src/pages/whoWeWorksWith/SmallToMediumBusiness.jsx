@@ -22,7 +22,7 @@ const WebsiteDesign = () => {
       id: 1,
       title: "Customized Software Solutions",
       description:
-        `Our <a href="https://www.businessnewsdaily.com/5175-custom-software-development.html" target="_blank">custom software development</a> services can help medium-sized businesses to streamline their processes, automate tasks, and improve communication. We work closely with our clients to understand their business needs and create software that addresses those specific challenges.`,
+        `Our <a href="https://www.businessnewsdaily.com/5175-custom-software-development.html" target="_blank" rel="nofollow">custom software development</a> services can help medium-sized businesses to streamline their processes, automate tasks, and improve communication. We work closely with our clients to understand their business needs and create software that addresses those specific challenges.`,
       illustration: Medium_Business_02,
     },
     {
@@ -135,7 +135,7 @@ const WebsiteDesign = () => {
                             Medium Business
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            As an IT company that specializes in software development and IT services, we understand the unique challenges that <a href="https://www.gartner.com/en/information-technology/glossary/smbs-small-and-midsize-businesses" target="_blank">medium-sized businesses</a> face. That's why we offer a range of solutions that can help these businesses improve their operations, increase productivity, and ultimately, grow their bottom line.One way we help medium-sized businesses is by providing custom software development services that are tailored to their specific needs. We work closely with our clients to understand their business processes, identify pain points, and develop solutions that address these challenges. Whether it's a web-based application or a mobile app, we can build software that helps streamline operations, improve communication, and increase efficiency.
+                            As an IT company that specializes in software development and IT services, we understand the unique challenges that <a href="https://www.gartner.com/en/information-technology/glossary/smbs-small-and-midsize-businesses" target="_blank" rel="nofollow">medium-sized businesses</a> face. That's why we offer a range of solutions that can help these businesses improve their operations, increase productivity, and ultimately, grow their bottom line.One way we help medium-sized businesses is by providing custom software development services that are tailored to their specific needs. We work closely with our clients to understand their business processes, identify pain points, and develop solutions that address these challenges. Whether it's a web-based application or a mobile app, we can build software that helps streamline operations, improve communication, and increase efficiency.
                           </p>
                         </div>
                         <img

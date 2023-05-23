@@ -29,7 +29,7 @@ const OnSiteDevelopment = () => {
     {
       id: 2,
       title: "Enhanced collaboration",
-      description: `👥Working on-site allows for more <a href="https://www.atlassian.com/work-management/project-collaboration/collaborative-culture/build-collaborative-communication#:~:text=Collaborative%20communication%20means%20seamlessly%20exchanging,report%20that%20it%20isn't." target="_blank">effective communication and
+      description: `👥Working on-site allows for more <a href="https://www.atlassian.com/work-management/project-collaboration/collaborative-culture/build-collaborative-communication#:~:text=Collaborative%20communication%20means%20seamlessly%20exchanging,report%20that%20it%20isn't." target="_blank" rel="nofollow">effective communication and
       collaboration</a> between the client and Dotpot iT team. This helps to ensure that the project meets the client's specific needs and requirements.`,
       illustration: enhence,
     },
@@ -135,7 +135,7 @@ const OnSiteDevelopment = () => {
                               On Site Development With Dotpot iT
                             </h1>
                             <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                              An <a href="https://diceus.com/what-is-onsite-offshore-model/" target="_blank">on-site partnership model</a> is a collaborative business relationship where Dotpot iT provides dedicated IT resources to work alongside a client's team at their location. This model is beneficial for clients who require more control over their IT projects and prefer to work with a team that is physically present and accessible
+                              An <a href="https://diceus.com/what-is-onsite-offshore-model/" target="_blank" rel="nofollow">on-site partnership model</a> is a collaborative business relationship where Dotpot iT provides dedicated IT resources to work alongside a client's team at their location. This model is beneficial for clients who require more control over their IT projects and prefer to work with a team that is physically present and accessible
                             </p>
                           </div>
                           <img

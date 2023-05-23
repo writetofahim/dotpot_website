@@ -29,7 +29,7 @@ const AiDevelopment = () => {
       id: 2,
       title: "Object Recognition",
       description:
-        `<a href="https://www.mathworks.com/solutions/image-video-processing/object-recognition.html#:~:text=Object%20recognition%20is%20a%20computer,%2C%20scenes%2C%20and%20visual%20details." target="_blank">Object recognition</a> is a computer vision technology that involves identifying and classifying objects within digital images or video streams. It uses machine learning algorithms to analyze visual patterns and features, enabling computers to understand and interpret the content of images. Object recognition has numerous applications, including autonomous vehicles, surveillance systems, augmented reality, and image-based search engines. By accurately detecting and recognizing objects, this technology enables advanced automation, intelligent decision-making, and enhanced user experiences in various domains.`,
+        `<a href="https://www.mathworks.com/solutions/image-video-processing/object-recognition.html#:~:text=Object%20recognition%20is%20a%20computer,%2C%20scenes%2C%20and%20visual%20details." target="_blank" rel="nofollow">Object recognition</a> is a computer vision technology that involves identifying and classifying objects within digital images or video streams. It uses machine learning algorithms to analyze visual patterns and features, enabling computers to understand and interpret the content of images. Object recognition has numerous applications, including autonomous vehicles, surveillance systems, augmented reality, and image-based search engines. By accurately detecting and recognizing objects, this technology enables advanced automation, intelligent decision-making, and enhanced user experiences in various domains.`,
       illustration: objectRecognition,
       sectionId: "object-recognition",
     },
@@ -203,7 +203,7 @@ const AiDevelopment = () => {
                             AI Development With Dotpot iT
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            Transform Your Business with Advanced <a href="https://www.webservio.com/email-management/email-routing-services.html" target="_blank">AI</a> Solutions.
+                            Transform Your Business with Advanced <a href="https://www.webservio.com/email-management/email-routing-services.html" target="_blank" rel="nofollow">AI</a> Solutions.
                             Discover the Power of Machine Learning, Natural
                             Language Processing, and More with Dotpot iT. Unlock
                             New Opportunities and Drive Growth Today!

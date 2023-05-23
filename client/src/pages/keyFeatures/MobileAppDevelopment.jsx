@@ -105,7 +105,7 @@ const MobileAppDevelopment = () => {
       id: 11,
       title: "App Store Optimization (ASO)",
       description:
-        `Dotpot iT's <a href="https://appradar.com/academy/what-is-app-store-optimization-aso" target="_blank">App Store Optimization (ASO)</a> service boosts your mobile app's visibility and downloads with thorough keyword research, metadata optimization, visual design, and ratings management. Contact us today to learn more about our ASO services and increase your app's success.`,
+        `Dotpot iT's <a href="https://appradar.com/academy/what-is-app-store-optimization-aso" target="_blank" rel="nofollow">App Store Optimization (ASO)</a> service boosts your mobile app's visibility and downloads with thorough keyword research, metadata optimization, visual design, and ratings management. Contact us today to learn more about our ASO services and increase your app's success.`,
       illustration: appstore,
       sectionId: "optimization",
     },
@@ -195,7 +195,7 @@ const MobileAppDevelopment = () => {
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
                             Bring your app vision to life with Dotpot iT. Our
-                            expert team will work with you to create a custom <a href="https://www.techtarget.com/searchapparchitecture/definition/mobile-application-development" target="_blank">mobile app</a> that meets your unique needs. Contact us
+                            expert team will work with you to create a custom <a href="https://www.techtarget.com/searchapparchitecture/definition/mobile-application-development" target="_blank" rel="nofollow">mobile app</a> that meets your unique needs. Contact us
                             today!
                           </p>
                         </div>

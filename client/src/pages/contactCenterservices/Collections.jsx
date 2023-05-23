@@ -2,10 +2,10 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import ReactVisibilitySensor from "react-visibility-sensor";
 import collectioncover from "../../assets/img/contactcentersupport/collectioncover.png";
-import agencyweb from "../../assets/img/agencyweb.png";
-import blogweb from "../../assets/img/blogweb.png";
-import customappweb from "../../assets/img/customappweb.png";
-import ecommarceweb from "../../assets/img/ecommarceweb.png";
+import helpdesk from "../../assets/img/helpdesk.png";
+import compliance from "../../assets/img/compliance.png";
+import clientcentric from "../../assets/img/clientcentric.png";
+import payment from "../../assets/img/payment.png";
 import Footer from "../../components/Footer/Footer";
 import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
@@ -21,28 +21,28 @@ const Collections = () => {
       title: "Payment Reminder Notifications",
       description:
         "Dotpot iT can send automated payment reminder notifications to debtors via SMS or email. These reminders help in prompt payment and reduce the chances of accounts becoming delinquent.",
-      illustration: ecommarceweb,
+      illustration: payment,
     },
     {
       id: 2,
       title: "Skip Tracing Services",
       description:
-        `Dotpot iT offers <a href="https://www.billgosling.com/blog/what-is-skip-tracing" target="_blank">skip tracing services</a> to locate debtors who have changed their contact information or gone off the grid. This service helps collection agencies in finding and contacting debtors for repayment.`,
-      illustration: agencyweb,
+        `Dotpot iT offers <a href="https://www.billgosling.com/blog/what-is-skip-tracing" target="_blank" rel="nofollow">skip tracing services</a> to locate debtors who have changed their contact information or gone off the grid. This service helps collection agencies in finding and contacting debtors for repayment.`,
+      illustration: helpdesk,
     },
     {
       id: 3,
       title: "Compliance Management",
       description:
         "Dotpot iT ensures compliance with debt collection regulations by providing features such as call monitoring, call scripting, and compliance tracking. This helps collection agencies adhere to legal requirements and maintain ethical collection practices.",
-      illustration: blogweb,
+      illustration: compliance,
     },
     {
       id: 4,
       title: "Debtor Communication Management",
       description:
         "Dotpot iT helps manage debtor communications by centralizing and organizing all interactions, including calls, emails, and SMS messages, in a unified platform. This streamlines communication and ensures consistency in debt collection efforts.",
-      illustration: customappweb,
+      illustration: clientcentric,
     },
   ];
 
@@ -115,7 +115,7 @@ const Collections = () => {
                             Collections
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            Optimize your debt collection efforts with Dotpot IT's automated dialing solutions. Contact more debtors each day and increase recovery rates by connecting with live individuals. Benefit from real-time and historical reporting to determine the best times for contact. Say goodbye to wasted time and resources on <a href="https://go4customer.com/glossary/m/what-is-manual-dialer" target="_blank">manual dialing</a> and focus on maximizing live connections for effective debt collection.
+                            Optimize your debt collection efforts with Dotpot IT's automated dialing solutions. Contact more debtors each day and increase recovery rates by connecting with live individuals. Benefit from real-time and historical reporting to determine the best times for contact. Say goodbye to wasted time and resources on <a href="https://go4customer.com/glossary/m/what-is-manual-dialer" target="_blank" rel="nofollow">manual dialing</a> and focus on maximizing live connections for effective debt collection.
                           </p>
                         </div>
                         <img

@@ -41,7 +41,7 @@ const WebsiteDesign = () => {
       id: 4,
       title: "Custom Web App Design",
       description:
-        `Dotpot iT offers cutting-edge <a href="https://www.midis.eu/en/blog/our-blog-1/what-is-custom-web-application-development-36#:~:text=A%20custom%20web%20application%20is,way%20to%20solve%20a%20problem." target="_blank">custom web app design</a> solutions to streamline operations and improve productivity. Our experienced team crafts highly functional, visually appealing, and scalable web apps using the latest technologies and frameworks. We work closely with clients to understand their requirements and deliver exceptional results that exceed expectations. Trust us to provide reliable and secure design solutions that protect your data. Contact us to take your business to the next level with a custom web app design.`,
+        `Dotpot iT offers cutting-edge <a href="https://www.midis.eu/en/blog/our-blog-1/what-is-custom-web-application-development-36#:~:text=A%20custom%20web%20application%20is,way%20to%20solve%20a%20problem." target="_blank" rel="nofollow">custom web app design</a> solutions to streamline operations and improve productivity. Our experienced team crafts highly functional, visually appealing, and scalable web apps using the latest technologies and frameworks. We work closely with clients to understand their requirements and deliver exceptional results that exceed expectations. Trust us to provide reliable and secure design solutions that protect your data. Contact us to take your business to the next level with a custom web app design.`,
       illustration: customappweb,
     },
   ];
@@ -113,7 +113,7 @@ const WebsiteDesign = () => {
                             Website Design Service By Dotpot iT
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            <a href="https://www.pagecloud.com/blog/web-design-guide" target="_blank">Website design</a> is the process of creating the visual
+                            <a href="https://www.pagecloud.com/blog/web-design-guide" target="_blank" rel="nofollow">Website design</a> is the process of creating the visual
                             layout and user interface of a website, with a focus
                             on enhancing the user experience and achieving
                             business goals. It involves technical expertise,

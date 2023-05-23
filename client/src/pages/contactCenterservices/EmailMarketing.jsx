@@ -4,8 +4,8 @@ import ReactVisibilitySensor from "react-visibility-sensor";
 import emailmarketingcover from "../../assets/img/contactcentersupport/emailmarketingcover.png";
 import agencyweb from "../../assets/img/agencyweb.png";
 import blogweb from "../../assets/img/blogweb.png";
-import customappweb from "../../assets/img/customappweb.png";
-import ecommarceweb from "../../assets/img/ecommarceweb.png";
+import experience from "../../assets/img/experience.png";
+import texttospeech from "../../assets/img/texttospeech.png";
 import Footer from "../../components/Footer/Footer";
 import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
@@ -20,8 +20,8 @@ const EmailMarketing = () => {
       id: 1,
       title: "Facility to add notes to each email",
       description:
-        `Dotpot IT's <a href="https://www.litmus.com/blog/email-modules-and-modular-email/" target="_blank">email handling module</a> allows CC agents to add notes to emails at any stage, ensuring effective communication and coordination. Enhance productivity and streamline workflows with the ability to include relevant annotations directly within email threads.`,
-      illustration: ecommarceweb,
+        `Dotpot IT's <a href="https://www.litmus.com/blog/email-modules-and-modular-email/" target="_blank" rel="nofollow">email handling module</a> allows CC agents to add notes to emails at any stage, ensuring effective communication and coordination. Enhance productivity and streamline workflows with the ability to include relevant annotations directly within email threads.`,
+      illustration: texttospeech,
     },
     {
       id: 2,
@@ -42,7 +42,7 @@ const EmailMarketing = () => {
       title: "Sending/Receiving Emails with attachment",
       description:
         "Agents can attach one or multiple files to any email message, and send it to the recipient. The email module also allows agents to receive incoming mail with attachments.",
-      illustration: customappweb,
+      illustration: experience,
     },
   ];
 
@@ -115,7 +115,7 @@ const EmailMarketing = () => {
                           Email Marketing by Dotpot iT
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                          Dotpot IT's CC's <a href="https://www.webservio.com/email-management/email-routing-services.html" target="_blank">email routing module</a> efficiently directs incoming emails to the appropriate agents based on admin policies, streamlining your email management and enhancing productivity. Customize rules and criteria for routing, minimize response times, and provide exceptional customer service with our innovative solution.
+                          Dotpot IT's CC's <a href="https://www.webservio.com/email-management/email-routing-services.html" target="_blank" rel="nofollow">email routing module</a> efficiently directs incoming emails to the appropriate agents based on admin policies, streamlining your email management and enhancing productivity. Customize rules and criteria for routing, minimize response times, and provide exceptional customer service with our innovative solution.
                           </p>
                         </div>
                         <img
