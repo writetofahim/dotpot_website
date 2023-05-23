@@ -276,10 +276,7 @@ const Blog = () => {
                             ))
                         }
                     </div> */}
-          <di
-            v
-            className="container lg:grid lg:grid-cols-2 grid-cols-1 gap-5 lg:space-y-0 space-y-5 md:gap-10 justify-center lg:p-5 p-3 flex-wrap text-textColor-500"
-          >
+          <div className="container lg:grid lg:grid-cols-2 grid-cols-1 gap-5 lg:space-y-0 space-y-5 md:gap-10 justify-center lg:p-5 p-3 flex-wrap text-textColor-500">
             {data && <FirstBlog {...data[0]} />}
             {data &&
               data
@@ -287,7 +284,7 @@ const Blog = () => {
                 .map((item, index) => (
                   <BlogCard3 key={item._id + index} {...item} index={index} />
                 ))}
-          </di>
+          </div>
 
           {/* Pagination Start */}
           <div className="flex justify-center mt-5 mb-5">

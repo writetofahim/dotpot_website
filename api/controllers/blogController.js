@@ -144,6 +144,77 @@ const deleteBlog = async (req, res) => {
   }
 };
 
+/**
+ * @description Controller function to add a comment to a blog
+ * @route POST /api/blog/add-comment
+ * @access Public
+ * @param {Object} req - The request object
+ * @param {Object} res - The response object
+ * @body {string} req.body.blogId - The ID of the blog
+ * @body {string} req.body.username - The username of the commenter
+ * @body {string} req.body.content - The content of the comment
+ */
+const addComment = async (req, res) => {
+  try {
+    const { blogId, username, content } = req.body;
+
+    // Find the blog by its ID
+    const blog = await Blog.findById(blogId);
+
+    // Check if the blog exists
+    if (!blog) {
+      return res.status(404).json({ message: "Blog not found" });
+    }
+
+    // Create a new comment object
+    const newComment = {
+      username,
+      content,
+    };
+
+    // Add the comment to the blog's comments array
+    blog.comments.push(newComment);
+
+    // Save the updated blog
+    await blog.save();
+
+    res
+      .status(201)
+      .json({ message: "Comment added successfully", comment: newComment });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server Error" });
+  }
+};
+
+// Controller function to add a like to a blog
+const addLike = async (req, res) => {
+  try {
+    const { blogId } = req.body;
+
+    // Find the blog by its ID
+    const blog = await Blog.findById(blogId);
+
+    // Check if the blog exists
+    if (!blog) {
+      return res.status(404).json({ message: "Blog not found" });
+    }
+
+    // Increment the likes count
+    blog.likes += 1;
+
+    // Save the updated blog
+    await blog.save();
+
+    res
+      .status(200)
+      .json({ message: "Like added successfully", likes: blog.likes });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server Error" });
+  }
+};
+
 module.exports = {
   getAllBlogs,
   getBlogById,
@@ -151,4 +222,6 @@ module.exports = {
   updateBlog,
   deleteBlog,
   findRelatedBlogs,
+  addComment,
+  addLike,
 };

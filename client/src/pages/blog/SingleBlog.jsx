@@ -33,6 +33,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import axios from "../../utils/axiosInstance";
 import postLogger from "../../utils/postLogger";
+import CommentSection from "./CommentSection";
 import NewBlogs from "./NewBlogs";
 import NextBlog from "./NextBlog";
 import WaveformPlayer from "./WaveformPlayer";
@@ -296,6 +297,14 @@ const SingleBlog = () => {
                           ))}
                         </div>
                       </div>
+
+                      {/* comment section start */}
+                      <CommentSection
+                        comments={data?.comments || []}
+                        blogId={data?._id}
+                      />
+
+                      {/* comment section end */}
                       {/* social media share start */}
                       <p className="mb-3 text-bold text-xl font-bold text-textColor-500 blog-content-font mt-5">
                         Share on
@@ -321,10 +330,6 @@ const SingleBlog = () => {
                         </a>
                       </div>
                       {/* social media share end */}
-
-                      {/* comment section start */}
-
-                      {/* comment section end */}
                     </div>
                     <div className="md:w-[30%] w-full mt-5">
                       {/* <NewRecentBlogs currentBlogId={id} /> */}

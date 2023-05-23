@@ -1,5 +1,20 @@
 const mongoose = require("mongoose");
 
+const CommentSchema = new mongoose.Schema({
+  username: {
+    type: String,
+    required: true,
+  },
+  content: {
+    type: String,
+    required: true,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+});
+
 const BlogSchema = new mongoose.Schema(
   {
     title: {
@@ -36,6 +51,11 @@ const BlogSchema = new mongoose.Schema(
     summary: {
       type: String,
     },
+    likes: {
+      type: Number,
+      default: 0,
+    },
+    comments: [CommentSchema], // Use the modified CommentSchema
   },
   {
     timestamps: true,

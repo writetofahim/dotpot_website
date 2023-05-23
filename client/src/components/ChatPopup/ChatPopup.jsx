@@ -5,21 +5,12 @@ import { AiOutlineCloseCircle, AiOutlineSend } from "react-icons/ai";
 import { FaComments, FaSpinner } from "react-icons/fa";
 import { GrAttachment } from "react-icons/gr";
 import { HiOutlineDownload } from "react-icons/hi";
-import { io } from "socket.io-client";
 import { AuthContext } from "../../contexts/AuthContext";
+import socket from "../../socket";
 import axios from "../../utils/axiosInstance";
 import postLogger from "../../utils/postLogger";
 import ImageViewModal from "./ImageViewModal";
 
-const socket = io(import.meta.env.REACT_APP_SOCKET_PATH, {
-  reconnectionDelay: 1000,
-  reconnection: true,
-  reconnectionAttemps: 10,
-  transports: ["websocket"],
-  agent: false,
-  upgrade: false,
-  rejectUnauthorized: false,
-});
 // const socket = io("http://localhost:8800")
 // console.log("socket", socket);
 
@@ -69,7 +60,6 @@ const ChatPopup = () => {
       }
       messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
     });
-    console.log(socket);
   }, []);
 
   useEffect(() => {
