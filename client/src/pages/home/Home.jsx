@@ -149,7 +149,7 @@ const Home = () => {
                 {
                   "@type": "Service",
                   "name": "IT Support"
-                }
+                },
                 {
                   "@type": "Service",
                   "name": "Contact Center Support"
