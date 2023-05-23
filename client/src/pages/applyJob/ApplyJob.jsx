@@ -78,32 +78,15 @@ export const JobCard = (props) => {
       </div>
 
       {/* For Small Device */}
-      <Link to={`/applym/${props._id}`}>
-        <div
-          className="job-card w-full p-5 border border-border rounded-xl hover:border border-border-primary-500 text-gray-400 gap-1  md:hidden"
-          onClick={() => props.setId(props._id)}
-        >
+      <div
+        className="relative job-card w-full p-5 border border-border rounded-xl hover:border border-border-primary-500 text-gray-400 gap-1  md:hidden"
+        onClick={() => props.setId(props._id)}
+      >
+        <Link to={`/applym/${props._id}`}>
           <div className="flex justify-between items-center">
             <h3 className="font-bold hover:underline cursor-pointer text-xl">
               {props.title}
             </h3>
-
-            <div className="ritht flex items-center justify-center">
-              {love ? (
-                <AiFillHeart
-                  className="text-textColor-500 text-2xl"
-                  onClick={() => setLove(!love)}
-                />
-              ) : (
-                <AiOutlineHeart
-                  className="text-textColor-500 text-2xl"
-                  onClick={() => setLove(!love)}
-                />
-              )}
-              <div className="cursor-pointer p-5 rounded-full hover:bg-primary-100">
-                <SlOptionsVertical />
-              </div>
-            </div>
           </div>
           <div className="flex items-center">
             <p className="mr-3">{props.company}</p>
@@ -129,8 +112,25 @@ export const JobCard = (props) => {
               </div>
             ))}
           </div>
-        </div>
-      </Link>
+        </Link>
+        <div onClick={(e)=>e.stopPropagation()} className="ritht flex items-center justify-center absolute top-2 right-0 ">
+              {love ? (
+                <AiFillHeart
+                  className="text-red-500 text-2xl"
+                  onClick={() => setLove(!love)}
+                />
+              ) : (
+                <AiOutlineHeart
+                  className="text-red-500 text-2xl"
+                  onClick={() => setLove(!love)}
+                />
+              )}
+              <div onClick={(e) => e.stopPropagation()} className="cursor-pointer p-5 rounded-full hover:bg-primary-100">
+                <SlOptionsVertical />
+              </div>
+            </div>
+
+      </div>
     </>
   );
 };
@@ -164,27 +164,50 @@ const ApplyJob = () => {
   }, [data]);
 
   const handleChange = (e) => {
-    const {value} = e.target
-    setSearchData(value)
-    performSearch(value)
-    console.log( value.length)
-    if(value.length<=0){
-      setData(saveArr)
+    const { value } = e.target;
+    performSearch(value);
+    setSearchData(value);
+    if (value.length <= 0) {
+      setData(saveArr);
     }
-    
   };
-  const performSearch = (value)=>{
-    console.log("value is ",value)
-    const foundJobs = data?.filter(obj=> obj.title.toLowerCase().includes(value.toLowerCase()))
-    setFoundJobs (foundJobs)
-    // console.log(foundJobs)
-    if(foundJobs.length > 0){
-      console.log('length of data',foundJobs.length, 'and the data is',foundJobs)
-      setData(foundJobs)
-    }else{
-      console.log("no data found")
+  // const performSearch = (value) => {
+  //   const foundJobs = data?.filter((obj) =>
+  //     obj.title.toLowerCase().includes(value.toLowerCase())
+  //   );
+  //   setFoundJobs(foundJobs);
+  //   if (foundJobs.length > 0) {
+  //     console.log(
+  //       "length of data",
+  //       foundJobs.length,
+  //       "and the data is",
+  //       foundJobs
+  //     );
+  //     setData(foundJobs);
+  //   } else {
+  //     console.log("no data found");
+  //     setData(saveArr);
+  //   }
+  // };
+
+  const performSearch = (value) => {
+    const lowercasedValue = value.toLowerCase();
+    const foundJobs = data?.filter((obj) =>
+      obj.title.toLowerCase().includes(lowercasedValue)
+    );
+  
+    if (foundJobs && foundJobs.length > 0) {
+      console.log("Length of data:", foundJobs.length);
+      console.log("Data found:", foundJobs);
+      setData(foundJobs);
+    } else {
+      console.log("No data found");
+      setData(saveArr);
     }
-  }
+  
+    setFoundJobs(foundJobs || []);
+  };
+  
 
   // console.log(data)
   return (
@@ -233,7 +256,7 @@ const ApplyJob = () => {
                 src={desktopImg}
                 alt="Cover photo for apply jobs"
               />
-              <div className="backdrop-blur-sm py-10 md:backdrop-blur-none w-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-8 md:px-14">
+              <div className="backdrop-blur-sm py-10 md:backdrop-blur-none w-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-3 md:px-14">
                 <h2 className="text-5xl font-bold text-buttonText-500">
                   Welcome
                 </h2>
@@ -245,9 +268,9 @@ const ApplyJob = () => {
                     <div className="rounded-sm w-full md:w-2/5 bg-background-500 flex items-center h-12 my-3 px-2">
                       <SearchIcon className="text-gray-300" />
                       <input
-                        className="outline-none w-full"
+                        className="outline-none w-full text-sm"
                         type="text"
-                        placeholder="Search by job title. 'e.g. Ui/Ux designer or Web Developer'"
+                        placeholder="Search by job title. e.g. Ui/Ux designer"
                         value={SearchData}
                         onChange={handleChange}
                       />
