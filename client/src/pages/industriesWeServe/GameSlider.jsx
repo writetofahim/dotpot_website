@@ -1,10 +1,6 @@
 import React from "react";
-import Slider from "react-slick";
 import { GrNext, GrPrevious } from "react-icons/gr";
-import { BsArrowRight } from "react-icons/bs";
-import { sliderData } from "../../data";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import Slider from "react-slick";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -39,21 +35,21 @@ var settings = {
   //   prevArrow: <SamplePrevArrow />,
 };
 
-
 export const SingleSlide = (props) => {
-
   return (
     <div className="w-full h-full flex items-center justify-center">
-
       <div className="w-4/5">
-        <img src={props.image} alt={props.title} className=" rounded-lg" />
+        <img
+          src={props.image}
+          alt="Game Slider Image"
+          className=" rounded-lg"
+        />
       </div>
     </div>
   );
 };
 
 function GameSlider({ gameData: gameData }) {
-    
   return (
     <div className=" ">
       <Slider {...settings} className="">

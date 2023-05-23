@@ -170,7 +170,7 @@ const TechnologyCard = (props) => {
     >
       <img
         src={props.icon}
-        alt={props.title}
+        alt="Technology Image"
         className="w-[25px] h-[25px] object-contain"
       />
 
@@ -274,7 +274,7 @@ const AddonsCard = (props) => {
     >
       <img
         src={props.icon}
-        alt={props.title}
+        alt="Addon Service Image"
         className="w-[25px] h-[25px] object-contain"
       />
       {!isSelect ? (

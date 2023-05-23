@@ -357,7 +357,7 @@ const WebsiteDesign = () => {
                     <img
                       className="w-64 mx-auto"
                       src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"
-                      alt=""
+                      alt="Separator Image"
                     />
                     <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
                       Dotpot iT offers affordable web design services using the

@@ -75,7 +75,7 @@ function OurPartnersSlider() {
             >
               <img
                 src={`${import.meta.env.REACT_APP_SERVER_PATH}/${item.logo}`}
-                alt={item.title}
+                alt="Partner Name"
                 className="h-[100px] max-w-[130px] object-contain"
               />
             </div>

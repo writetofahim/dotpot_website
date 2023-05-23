@@ -33,7 +33,8 @@ const Submenu = ({
               className="w-[200px] hover:text-secondary-400 flex gap-2 items-center"
             >
               {" "}
-              <img className="w-4 " src={item.icon} alt="menu" /> {item.title}
+              <img className="w-4 " src={item.icon} alt={item.title} />{" "}
+              {item.title}
             </Link>
           ))}
         </div>
