@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import parse from "react-html-parser";
 import ReactVisibilitySensor from "react-visibility-sensor";
 import compliance from "../../assets/img/compliance.png";
 import comprehensivesecurity from "../../assets/img/comprehensivesecurity.png";
@@ -12,7 +13,6 @@ import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import parse from "react-html-parser";
 
 const CyberSecurity = () => {
   const worksData = [
@@ -26,8 +26,7 @@ const CyberSecurity = () => {
     {
       id: 2,
       title: "Risk Assessment",
-      description:
-        `Dotpot IT conducts a comprehensive <a href="https://safetyculture.com/topics/risk-assessment/" target="_blank" rel="nofollow">risk assessment</a> of your organization's IT infrastructure to identify vulnerabilities, threats, and risks. Based on the assessment, they provide customized security solutions that meet your organization's specific needs.`,
+      description: `Dotpot IT conducts a comprehensive <a href="https://safetyculture.com/topics/risk-assessment/" target="_blank" rel="nofollow">risk assessment</a> of your organization's IT infrastructure to identify vulnerabilities, threats, and risks. Based on the assessment, they provide customized security solutions that meet your organization's specific needs.`,
       illustration: riskassessment,
     },
     {
@@ -57,6 +56,21 @@ const CyberSecurity = () => {
   return (
     <div className="bg-background-500">
       <Helmet>
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "http://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Dotpot iT",
+              "telephone": "+880 1817 176 192",
+              "email": [
+                "help@dotpotit.com",
+                "hr@dotpotit.com",
+                "marketing@dotpotit.com"
+              ]
+            }
+          `}
+        </script>
         <title>Cyber Security | Dotpot iT a leading it company</title>
         <meta
           name="description"
@@ -123,13 +137,20 @@ const CyberSecurity = () => {
                             Cyber Security With Dotpot iT
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            A dedicated <a href="https://www.checkpoint.com/cyber-hub/cyber-security/what-is-cybersecurity/" target="_blank" rel="nofollow">cyber security</a> team is responsible for
-                            identifying and responding to cyber threats. It is
-                            led by a CISO and includes professionals with
-                            diverse skill sets. The team collaborates with other
-                            teams and external stakeholders, updates their
-                            skills and knowledge, and has a well-defined
-                            incident response plan.
+                            A dedicated{" "}
+                            <a
+                              href="https://www.checkpoint.com/cyber-hub/cyber-security/what-is-cybersecurity/"
+                              target="_blank"
+                              rel="nofollow"
+                            >
+                              cyber security
+                            </a>{" "}
+                            team is responsible for identifying and responding
+                            to cyber threats. It is led by a CISO and includes
+                            professionals with diverse skill sets. The team
+                            collaborates with other teams and external
+                            stakeholders, updates their skills and knowledge,
+                            and has a well-defined incident response plan.
                           </p>
                         </div>
                         <img
@@ -172,7 +193,7 @@ const CyberSecurity = () => {
                               {title}
                             </h2>
                             <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">
-                            {parse(description)}
+                              {parse(description)}
                             </p>
                           </div>
                         )}

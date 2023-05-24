@@ -33,6 +33,21 @@ const AboutUs = () => {
       <Navbar />
       <div className="w-full pt-[15vh]">
         <Helmet>
+          <script type="application/ld+json">
+            {`
+            {
+              "@context": "http://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Dotpot iT",
+              "telephone": "+880 1817 176 192",
+              "email": [
+                "help@dotpotit.com",
+                "hr@dotpotit.com",
+                "marketing@dotpotit.com"
+              ]
+            }
+          `}
+          </script>
           <title>About Us | Dotpot iT leading iT company</title>
           <meta
             name="description"

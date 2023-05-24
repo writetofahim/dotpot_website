@@ -12,14 +12,12 @@ import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 
-
 const Retail = () => {
   const worksData = [
     {
       id: 1,
       title: "Overview",
-      description:
-        `Dotpot is a web design and development agency specializing in <a href="https://www.shopify.com/blog/ecommerce-website-development" target="_blank" rel="nofollow">Retail & E-Commerce</a> businesses. They offer customized web solutions, including design, development, e-commerce development, and maintenance. Their team uses modern technology to create visually appealing, user-friendly, and responsive websites optimized for search engines. Dotpot aims to enhance online visibility, user experience, and customer engagement for their clients.`,
+      description: `Dotpot is a web design and development agency specializing in <a href="https://www.shopify.com/blog/ecommerce-website-development" target="_blank" rel="nofollow">Retail & E-Commerce</a> businesses. They offer customized web solutions, including design, development, e-commerce development, and maintenance. Their team uses modern technology to create visually appealing, user-friendly, and responsive websites optimized for search engines. Dotpot aims to enhance online visibility, user experience, and customer engagement for their clients.`,
       illustration: ecomovervoew,
     },
     {
@@ -101,6 +99,21 @@ const Retail = () => {
   return (
     <div className="bg-background-500">
       <Helmet>
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "http://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Dotpot iT",
+              "telephone": "+880 1817 176 192",
+              "email": [
+                "help@dotpotit.com",
+                "hr@dotpotit.com",
+                "marketing@dotpotit.com"
+              ]
+            }
+          `}
+        </script>
         <title>Retail, Ecommerce | Dotpot iT a leading it company</title>
         <meta
           name="description"
@@ -142,8 +155,9 @@ const Retail = () => {
       <Navbar />
 
       <div
-        className={` pt-[15vh] ${window.innerWidth > 1280 ? "md:pt-[11vh]" : "md:pt-[15vh]"
-          } `}
+        className={` pt-[15vh] ${
+          window.innerWidth > 1280 ? "md:pt-[11vh]" : "md:pt-[15vh]"
+        } `}
       >
         <NavigatorComponent navigationData={navigationData} />
         <div>
@@ -153,10 +167,11 @@ const Retail = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`mt-10 mb-16 ${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 `}
+                    className={`mt-10 mb-16 ${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                    } duration-1000 `}
                   >
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
@@ -197,16 +212,18 @@ const Retail = () => {
                     className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
                   >
                     <div
-                      className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
-                        } `}
+                      className={`w-full md:w-1/2 lg:w-1/2 ${
+                        id % 2 === 0 && "order-2"
+                      } `}
                     >
                       <ReactVisibilitySensor partialVisibility>
                         {({ isVisible }) => (
                           <div
-                            className={` ${isVisible
-                              ? "opacity-100 translate-y-0"
-                              : "translate-y-20 opacity-0"
-                              } duration-1000 `}
+                            className={` ${
+                              isVisible
+                                ? "opacity-100 translate-y-0"
+                                : "translate-y-20 opacity-0"
+                            } duration-1000 `}
                           >
                             <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
                               {title}
@@ -221,11 +238,13 @@ const Retail = () => {
                     <ReactVisibilitySensor partialVisibility>
                       {({ isVisible }) => (
                         <div
-                          className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
-                            } ${isVisible
+                          className={`w-full md:w-1/2 lg:w-1/2 ${
+                            id % 2 === 0 && "order-1"
+                          } ${
+                            isVisible
                               ? "opacity-100 translate-y-0"
                               : "translate-y-20 opacity-0"
-                            } duration-1000 `}
+                          } duration-1000 `}
                         >
                           <img
                             className="w-4/5 mx-auto"

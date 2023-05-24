@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import parse from "react-html-parser";
 import ReactVisibilitySensor from "react-visibility-sensor";
 import coveron from "../../assets/img/On_Site_Development_1.png";
 import capabilities from "../../assets/img/On_Site_Development_2.png";
@@ -12,7 +13,6 @@ import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import parse from "react-html-parser";
 
 const OnSiteDevelopment = () => {
   const worksData = [
@@ -64,6 +64,21 @@ const OnSiteDevelopment = () => {
   return (
     <div>
       <Helmet>
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "http://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Dotpot iT",
+              "telephone": "+880 1817 176 192",
+              "email": [
+                "help@dotpotit.com",
+                "hr@dotpotit.com",
+                "marketing@dotpotit.com"
+              ]
+            }
+          `}
+        </script>
         <title>
           On-site-development-model | Dotpot iT a leading it company
         </title>
@@ -112,8 +127,9 @@ const OnSiteDevelopment = () => {
       <Navbar />
       <div className="bg-background-500">
         <div
-          className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
-            } `}
+          className={` md:pt-[15vh] pt-[15vh] ${
+            window.innerWidth > 1280 && "md:pt-[11vh]"
+          } `}
         >
           <NavigatorComponent navigationData={navigationData} />
           <div>
@@ -123,10 +139,11 @@ const OnSiteDevelopment = () => {
                 {({ isVisible }) => (
                   <>
                     <div
-                      className={`mt-10 mb-16 ${isVisible
+                      className={`mt-10 mb-16 ${
+                        isVisible
                           ? "opacity-100 translate-y-0"
                           : "translate-y-20 opacity-0"
-                        } duration-1000 `}
+                      } duration-1000 `}
                     >
                       <div className="container mx-auto">
                         <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
@@ -135,7 +152,21 @@ const OnSiteDevelopment = () => {
                               On Site Development With Dotpot iT
                             </h1>
                             <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                              An <a href="https://diceus.com/what-is-onsite-offshore-model/" target="_blank" rel="nofollow">on-site partnership model</a> is a collaborative business relationship where Dotpot iT provides dedicated IT resources to work alongside a client's team at their location. This model is beneficial for clients who require more control over their IT projects and prefer to work with a team that is physically present and accessible
+                              An{" "}
+                              <a
+                                href="https://diceus.com/what-is-onsite-offshore-model/"
+                                target="_blank"
+                                rel="nofollow"
+                              >
+                                on-site partnership model
+                              </a>{" "}
+                              is a collaborative business relationship where
+                              Dotpot iT provides dedicated IT resources to work
+                              alongside a client's team at their location. This
+                              model is beneficial for clients who require more
+                              control over their IT projects and prefer to work
+                              with a team that is physically present and
+                              accessible
                             </p>
                           </div>
                           <img
@@ -161,16 +192,18 @@ const OnSiteDevelopment = () => {
                       className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
                     >
                       <div
-                        className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
-                          } `}
+                        className={`w-full md:w-1/2 lg:w-1/2 ${
+                          id % 2 === 0 && "order-2"
+                        } `}
                       >
                         <ReactVisibilitySensor partialVisibility>
                           {({ isVisible }) => (
                             <div
-                              className={` ${isVisible
+                              className={` ${
+                                isVisible
                                   ? "opacity-100 translate-y-0"
                                   : "translate-y-20 opacity-0"
-                                } duration-1000 `}
+                              } duration-1000 `}
                             >
                               <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
                                 {title}
@@ -185,11 +218,13 @@ const OnSiteDevelopment = () => {
                       <ReactVisibilitySensor partialVisibility>
                         {({ isVisible }) => (
                           <div
-                            className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
-                              } ${isVisible
+                            className={`w-full md:w-1/2 lg:w-1/2 ${
+                              id % 2 === 0 && "order-1"
+                            } ${
+                              isVisible
                                 ? "opacity-100 translate-y-0"
                                 : "translate-y-20 opacity-0"
-                              } duration-1000 `}
+                            } duration-1000 `}
                           >
                             <img
                               className="w-4/5 mx-auto"
@@ -355,10 +390,11 @@ const OnSiteDevelopment = () => {
                 {({ isVisible }) => (
                   <>
                     <div
-                      className={`${isVisible
+                      className={`${
+                        isVisible
                           ? "opacity-100 translate-y-0"
                           : "translate-y-20 opacity-0"
-                        } duration-1000 p-3 text-textColor-500`}
+                      } duration-1000 p-3 text-textColor-500`}
                     >
                       <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
                         Why Dotpot iT

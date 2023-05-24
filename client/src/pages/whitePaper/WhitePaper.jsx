@@ -10,6 +10,21 @@ const WhitePaper = () => {
   return (
     <div className="w-full">
       <Helmet>
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "http://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Dotpot iT",
+              "telephone": "+880 1817 176 192",
+              "email": [
+                "help@dotpotit.com",
+                "hr@dotpotit.com",
+                "marketing@dotpotit.com"
+              ]
+            }
+          `}
+        </script>
         <title>White Paper | Dotpot iT a leading it company</title>
         <meta
           name="description"

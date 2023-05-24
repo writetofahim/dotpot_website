@@ -1,16 +1,16 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import parse from "react-html-parser";
 import ReactVisibilitySensor from "react-visibility-sensor";
-import ivrcover from "../../assets/img/contactcentersupport/ivrcover.png";
-import pd from "../../assets/img/pd.png";
-import voiceresponse from "../../assets/img/customersupport/voiceresponse.png";
 import callerpiority from "../../assets/img/contactcentersupport/callerpiority.png";
+import ivrcover from "../../assets/img/contactcentersupport/ivrcover.png";
+import voiceresponse from "../../assets/img/customersupport/voiceresponse.png";
+import pd from "../../assets/img/pd.png";
 import Footer from "../../components/Footer/Footer";
 import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import parse from "react-html-parser";
 
 const Ivr = () => {
   // IVR Data
@@ -18,8 +18,7 @@ const Ivr = () => {
     {
       id: 1,
       title: "Call Routing",
-      description:
-        `Dotpot iT's IVR service efficiently <a href="https://www.mitel.com/features-benefits/call-routing#:~:text=Call%20routing%20is%20a%20call,end%20picks%20up%20the%20call." target="_blank" rel="nofollow">routes incoming calls</a> to the appropriate department or agent based on caller input or predefined criteria. This ensures that callers are directed to the most suitable resource, reducing wait times and improving customer satisfaction.`,
+      description: `Dotpot iT's IVR service efficiently <a href="https://www.mitel.com/features-benefits/call-routing#:~:text=Call%20routing%20is%20a%20call,end%20picks%20up%20the%20call." target="_blank" rel="nofollow">routes incoming calls</a> to the appropriate department or agent based on caller input or predefined criteria. This ensures that callers are directed to the most suitable resource, reducing wait times and improving customer satisfaction.`,
       illustration: callerpiority,
     },
     {
@@ -50,6 +49,21 @@ const Ivr = () => {
   return (
     <div className="bg-background-500">
       <Helmet>
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "http://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Dotpot iT",
+              "telephone": "+880 1817 176 192",
+              "email": [
+                "help@dotpotit.com",
+                "hr@dotpotit.com",
+                "marketing@dotpotit.com"
+              ]
+            }
+          `}
+        </script>
         <title>
           Interactive Voice Response (IVR) | Dotpot iT a leading it company
         </title>
@@ -99,8 +113,9 @@ const Ivr = () => {
       <Navbar />
 
       <div
-        className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
-          } `}
+        className={` md:pt-[15vh] pt-[15vh] ${
+          window.innerWidth > 1280 && "md:pt-[11vh]"
+        } `}
       >
         <NavigatorComponent navigationData={navigationData} />
         <div>
@@ -110,10 +125,11 @@ const Ivr = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`mt-10 mb-16 ${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 `}
+                    className={`mt-10 mb-16 ${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                    } duration-1000 `}
                   >
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
@@ -122,7 +138,21 @@ const Ivr = () => {
                             Interactive Voice Response (IVR) by Dotpot iT
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            IVR is an automated voice-based technology that facilitates efficient interactions between computers and humans. With <a href="https://en.wikipedia.org/wiki/Interactive_voice_response" target="_blank" rel="nofollow">IVR,</a> callers can use voice or keypad inputs to navigate through options and reach their desired destination without human intervention. This technology is beneficial for managing high call volumes and situations where live agents are unavailable.
+                            IVR is an automated voice-based technology that
+                            facilitates efficient interactions between computers
+                            and humans. With{" "}
+                            <a
+                              href="https://en.wikipedia.org/wiki/Interactive_voice_response"
+                              target="_blank"
+                              rel="nofollow"
+                            >
+                              IVR,
+                            </a>{" "}
+                            callers can use voice or keypad inputs to navigate
+                            through options and reach their desired destination
+                            without human intervention. This technology is
+                            beneficial for managing high call volumes and
+                            situations where live agents are unavailable.
                           </p>
                         </div>
                         <img
@@ -148,16 +178,18 @@ const Ivr = () => {
                     key={id}
                   >
                     <div
-                      className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
-                        } `}
+                      className={`w-full md:w-1/2 lg:w-1/2 ${
+                        id % 2 === 0 && "order-2"
+                      } `}
                     >
                       <ReactVisibilitySensor partialVisibility>
                         {({ isVisible }) => (
                           <div
-                            className={` ${isVisible
-                              ? "opacity-100 translate-y-0"
-                              : "translate-y-20 opacity-0"
-                              } duration-1000 `}
+                            className={` ${
+                              isVisible
+                                ? "opacity-100 translate-y-0"
+                                : "translate-y-20 opacity-0"
+                            } duration-1000 `}
                           >
                             <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
                               {title}
@@ -172,11 +204,13 @@ const Ivr = () => {
                     <ReactVisibilitySensor partialVisibility>
                       {({ isVisible }) => (
                         <div
-                          className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
-                            } ${isVisible
+                          className={`w-full md:w-1/2 lg:w-1/2 ${
+                            id % 2 === 0 && "order-1"
+                          } ${
+                            isVisible
                               ? "opacity-100 translate-y-0"
                               : "translate-y-20 opacity-0"
-                            } duration-1000 `}
+                          } duration-1000 `}
                         >
                           <img
                             className="w-4/5 mx-auto"
@@ -198,10 +232,11 @@ const Ivr = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 p-3 text-textColor-500`}
+                    className={`${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                    } duration-1000 p-3 text-textColor-500`}
                   >
                     <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
                       Why Dotpot iT
@@ -212,7 +247,14 @@ const Ivr = () => {
                       alt=""
                     />
                     <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
-                      Dotpot iT delivers cutting-edge Interactive Voice Response (IVR) solutions for efficient and exceptional customer service. With our expertise and outstanding support, we provide customized IVR services that seamlessly integrate with your business, maximizing productivity and ensuring customer satisfaction. Trust Dotpot iT to provide innovative IVR technology that drives success for your customer service operations.
+                      Dotpot iT delivers cutting-edge Interactive Voice Response
+                      (IVR) solutions for efficient and exceptional customer
+                      service. With our expertise and outstanding support, we
+                      provide customized IVR services that seamlessly integrate
+                      with your business, maximizing productivity and ensuring
+                      customer satisfaction. Trust Dotpot iT to provide
+                      innovative IVR technology that drives success for your
+                      customer service operations.
                     </p>
                   </div>
                 </>

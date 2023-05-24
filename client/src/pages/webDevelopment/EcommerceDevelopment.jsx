@@ -17,8 +17,7 @@ const EcommerceDevelopment = () => {
     {
       id: 1,
       title: "Overview",
-      description:
-        `Dotpot IT offers budget-friendly <a href="https://www.shopify.com/blog/ecommerce-website-development" target="_blank" rel="nofollow">E-Commerce website development</a> services focused on user experience. Their team provides guidance throughout the process and post-launch support.`,
+      description: `Dotpot IT offers budget-friendly <a href="https://www.shopify.com/blog/ecommerce-website-development" target="_blank" rel="nofollow">E-Commerce website development</a> services focused on user experience. Their team provides guidance throughout the process and post-launch support.`,
       illustration: ecomovervoew,
     },
     {
@@ -52,6 +51,21 @@ const EcommerceDevelopment = () => {
   return (
     <div className="bg-background-500">
       <Helmet>
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "http://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Dotpot iT",
+              "telephone": "+880 1817 176 192",
+              "email": [
+                "help@dotpotit.com",
+                "hr@dotpotit.com",
+                "marketing@dotpotit.com"
+              ]
+            }
+          `}
+        </script>
         <title>
           E-Commerce website Development | Dotpot iT a leading it company
         </title>
@@ -102,8 +116,9 @@ const EcommerceDevelopment = () => {
       <Navbar />
 
       <div
-        className={` pt-[15vh] ${window.innerWidth > 1280 ? "md:pt-[11vh]" : "md:pt-[15vh]"
-          } `}
+        className={` pt-[15vh] ${
+          window.innerWidth > 1280 ? "md:pt-[11vh]" : "md:pt-[15vh]"
+        } `}
       >
         <NavigatorComponent navigationData={navigationData} />
         <div>
@@ -113,10 +128,11 @@ const EcommerceDevelopment = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`mt-10 mb-16 ${isVisible
+                    className={`mt-10 mb-16 ${
+                      isVisible
                         ? "opacity-100 translate-y-0"
                         : "translate-y-20 opacity-0"
-                      } duration-1000 `}
+                    } duration-1000 `}
                   >
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
@@ -153,16 +169,18 @@ const EcommerceDevelopment = () => {
                     className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
                   >
                     <div
-                      className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
-                        } `}
+                      className={`w-full md:w-1/2 lg:w-1/2 ${
+                        id % 2 === 0 && "order-2"
+                      } `}
                     >
                       <ReactVisibilitySensor partialVisibility>
                         {({ isVisible }) => (
                           <div
-                            className={` ${isVisible
+                            className={` ${
+                              isVisible
                                 ? "opacity-100 translate-y-0"
                                 : "translate-y-20 opacity-0"
-                              } duration-1000 `}
+                            } duration-1000 `}
                           >
                             <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
                               {title}
@@ -177,11 +195,13 @@ const EcommerceDevelopment = () => {
                     <ReactVisibilitySensor partialVisibility>
                       {({ isVisible }) => (
                         <div
-                          className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
-                            } ${isVisible
+                          className={`w-full md:w-1/2 lg:w-1/2 ${
+                            id % 2 === 0 && "order-1"
+                          } ${
+                            isVisible
                               ? "opacity-100 translate-y-0"
                               : "translate-y-20 opacity-0"
-                            } duration-1000 `}
+                          } duration-1000 `}
                         >
                           <img
                             className="w-4/5 mx-auto"
@@ -197,10 +217,11 @@ const EcommerceDevelopment = () => {
               <ReactVisibilitySensor partialVisibility>
                 {({ isVisible }) => (
                   <p
-                    className={`text-gray-400 lg:px-5 text-center pb-2 w-1/2 mx-auto mt-16 ${isVisible
+                    className={`text-gray-400 lg:px-5 text-center pb-2 w-1/2 mx-auto mt-16 ${
+                      isVisible
                         ? "opacity-100 translate-y-0"
                         : "translate-y-20 opacity-0"
-                      } duration-1000  `}
+                    } duration-1000  `}
                   >
                     Ready to take your E-Commerce website to the next level?
                     Contact us today to learn more about our E-Commerce website

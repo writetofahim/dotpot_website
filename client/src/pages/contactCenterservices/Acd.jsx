@@ -1,17 +1,17 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import parse from "react-html-parser";
 import ReactVisibilitySensor from "react-visibility-sensor";
 import acdcover from "../../assets/img/contactcentersupport/acdcover.png";
-import skillsbasedrouting from "../../assets/img/contactcentersupport/skillsbasedrouting.png";
 import callerpiority from "../../assets/img/contactcentersupport/callerpiority.png";
 import findlastcall from "../../assets/img/contactcentersupport/findlastcall.png";
 import roundrobin from "../../assets/img/contactcentersupport/roundrobin.png";
+import skillsbasedrouting from "../../assets/img/contactcentersupport/skillsbasedrouting.png";
 import Footer from "../../components/Footer/Footer";
 import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import parse from "react-html-parser";
 
 const Acd = () => {
   // ACD Data
@@ -19,8 +19,7 @@ const Acd = () => {
     {
       id: 1,
       title: "Skills-Based Routing",
-      description:
-        `<a href="https://www.ringcentral.com/contact-center/skills-based-routing.html" target="_blank" rel="nofollow">An agent can be assigned to receive calls from multiple skills/companies.</a>An agent can be assigned to receive calls from multiple skills/companies. Dotpot IT contact center system allows categorization of agents based on skills or length of service. The system finds available high priority agents to pass the calls.`,
+      description: `<a href="https://www.ringcentral.com/contact-center/skills-based-routing.html" target="_blank" rel="nofollow">An agent can be assigned to receive calls from multiple skills/companies.</a>An agent can be assigned to receive calls from multiple skills/companies. Dotpot IT contact center system allows categorization of agents based on skills or length of service. The system finds available high priority agents to pass the calls.`,
       illustration: skillsbasedrouting,
     },
     {
@@ -51,6 +50,21 @@ const Acd = () => {
   return (
     <div className="bg-background-500">
       <Helmet>
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "http://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Dotpot iT",
+              "telephone": "+880 1817 176 192",
+              "email": [
+                "help@dotpotit.com",
+                "hr@dotpotit.com",
+                "marketing@dotpotit.com"
+              ]
+            }
+          `}
+        </script>
         <title>
           Automatic Call Distribution | Dotpot it leading it Company
         </title>
@@ -94,8 +108,9 @@ const Acd = () => {
       <Navbar />
 
       <div
-        className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
-          } `}
+        className={` md:pt-[15vh] pt-[15vh] ${
+          window.innerWidth > 1280 && "md:pt-[11vh]"
+        } `}
       >
         <NavigatorComponent navigationData={navigationData} />
         <div>
@@ -105,10 +120,11 @@ const Acd = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`mt-10 mb-16 ${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 `}
+                    className={`mt-10 mb-16 ${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                    } duration-1000 `}
                   >
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
@@ -117,8 +133,23 @@ const Acd = () => {
                             Automatic Call Distribution (ACD)
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            Dotpot IT <a href="https://www.ringcentral.com/contact-center/automatic-call-distribution.html" target="_blank" rel="nofollow">Automatic Call Distribution (ACD)</a> is a technology that allows contact centers to distribute inbound calls, emails and chat messages to agents based on call arrival time, priority, customer needs, and agent skill set. Instead of simply sending inbound requests to an available agent, ACD system categorizes calls/messages and then automatically and intelligently routes the same to appropriate agent with relevant skillset to help the
-                            customer.
+                            Dotpot IT{" "}
+                            <a
+                              href="https://www.ringcentral.com/contact-center/automatic-call-distribution.html"
+                              target="_blank"
+                              rel="nofollow"
+                            >
+                              Automatic Call Distribution (ACD)
+                            </a>{" "}
+                            is a technology that allows contact centers to
+                            distribute inbound calls, emails and chat messages
+                            to agents based on call arrival time, priority,
+                            customer needs, and agent skill set. Instead of
+                            simply sending inbound requests to an available
+                            agent, ACD system categorizes calls/messages and
+                            then automatically and intelligently routes the same
+                            to appropriate agent with relevant skillset to help
+                            the customer.
                           </p>
                         </div>
                         <img
@@ -144,16 +175,18 @@ const Acd = () => {
                     key={id}
                   >
                     <div
-                      className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
-                        } `}
+                      className={`w-full md:w-1/2 lg:w-1/2 ${
+                        id % 2 === 0 && "order-2"
+                      } `}
                     >
                       <ReactVisibilitySensor partialVisibility>
                         {({ isVisible }) => (
                           <div
-                            className={` ${isVisible
-                              ? "opacity-100 translate-y-0"
-                              : "translate-y-20 opacity-0"
-                              } duration-1000 `}
+                            className={` ${
+                              isVisible
+                                ? "opacity-100 translate-y-0"
+                                : "translate-y-20 opacity-0"
+                            } duration-1000 `}
                           >
                             <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
                               {title}
@@ -168,11 +201,13 @@ const Acd = () => {
                     <ReactVisibilitySensor partialVisibility>
                       {({ isVisible }) => (
                         <div
-                          className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
-                            } ${isVisible
+                          className={`w-full md:w-1/2 lg:w-1/2 ${
+                            id % 2 === 0 && "order-1"
+                          } ${
+                            isVisible
                               ? "opacity-100 translate-y-0"
                               : "translate-y-20 opacity-0"
-                            } duration-1000 `}
+                          } duration-1000 `}
                         >
                           <img
                             className="w-4/5 mx-auto"
@@ -194,10 +229,11 @@ const Acd = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 p-3 text-textColor-500`}
+                    className={`${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                    } duration-1000 p-3 text-textColor-500`}
                   >
                     <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
                       Why Dotpot iT
@@ -208,7 +244,13 @@ const Acd = () => {
                       alt=""
                     />
                     <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
-                      Dotpot iT offers advanced Automatic Call Distribution (ACD) solutions. We prioritize efficiency and customer satisfaction, routing calls intelligently and reducing wait times. With our experienced team and exceptional service, we provide high-quality ACD systems tailored to your needs. Choose Dotpot iT for innovative call handling that helps your business thrive.
+                      Dotpot iT offers advanced Automatic Call Distribution
+                      (ACD) solutions. We prioritize efficiency and customer
+                      satisfaction, routing calls intelligently and reducing
+                      wait times. With our experienced team and exceptional
+                      service, we provide high-quality ACD systems tailored to
+                      your needs. Choose Dotpot iT for innovative call handling
+                      that helps your business thrive.
                     </p>
                   </div>
                 </>

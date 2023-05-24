@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import parse from "react-html-parser";
 import ReactVisibilitySensor from "react-visibility-sensor";
 import SEO from "../../assets/img/SEO.png";
 import customwebdd from "../../assets/img/customwebdd.png";
@@ -14,7 +15,6 @@ import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import parse from "react-html-parser";
 
 const CustomDevelopment = () => {
   const worksData = [
@@ -35,15 +35,13 @@ const CustomDevelopment = () => {
     {
       id: 3,
       title: "User-Friendly Experience",
-      description:
-        `At Dotpot iT, we're all about <a href="https://www.productplan.com/glossary/user-experience/#:~:text=Definition%3A%20User%20Experience%20refers%20to,the%20content%20displayed%20is%20etc." target="_blank" rel="nofollow">user-friendly experiences.</a> 🙌 With intuitive navigation, seamless interactions, and responsive designs, we ensure a smooth journey for your visitors. 💡 We prioritize accessibility and optimization for all devices, enhancing user satisfaction and engagement. 🚀🌈 Let's create a website that keeps them coming back for more!`,
+      description: `At Dotpot iT, we're all about <a href="https://www.productplan.com/glossary/user-experience/#:~:text=Definition%3A%20User%20Experience%20refers%20to,the%20content%20displayed%20is%20etc." target="_blank" rel="nofollow">user-friendly experiences.</a> 🙌 With intuitive navigation, seamless interactions, and responsive designs, we ensure a smooth journey for your visitors. 💡 We prioritize accessibility and optimization for all devices, enhancing user satisfaction and engagement. 🚀🌈 Let's create a website that keeps them coming back for more!`,
       illustration: userexperience,
     },
     {
       id: 4,
       title: "Responsive Design",
-      description:
-        `At Dotpot iT, we prioritize responsive design. 📱💻 Your website will look great and work seamlessly on any device. From smartphones to desktops, we ensure an optimal user experience. Let's create a <a href="https://www.smashingmagazine.com/2011/01/guidelines-for-responsive-web-design/" target="_blank" rel="nofollow">responsive website</a> that leaves a lasting impression!`,
+      description: `At Dotpot iT, we prioritize responsive design. 📱💻 Your website will look great and work seamlessly on any device. From smartphones to desktops, we ensure an optimal user experience. Let's create a <a href="https://www.smashingmagazine.com/2011/01/guidelines-for-responsive-web-design/" target="_blank" rel="nofollow">responsive website</a> that leaves a lasting impression!`,
       illustration: prioritizeresponsive,
     },
     {
@@ -73,6 +71,21 @@ const CustomDevelopment = () => {
   return (
     <div className="bg-background-500">
       <Helmet>
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "http://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Dotpot iT",
+              "telephone": "+880 1817 176 192",
+              "email": [
+                "help@dotpotit.com",
+                "hr@dotpotit.com",
+                "marketing@dotpotit.com"
+              ]
+            }
+          `}
+        </script>
         <title>Custom Development | Dotpot iT a leading it company</title>
         <meta
           name="description"
@@ -116,8 +129,9 @@ const CustomDevelopment = () => {
       </Helmet>
       <Navbar />
       <div
-        className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
-          } `}
+        className={` md:pt-[15vh] pt-[15vh] ${
+          window.innerWidth > 1280 && "md:pt-[11vh]"
+        } `}
       >
         <NavigatorComponent navigationData={navigationData} />
         <div>
@@ -127,10 +141,11 @@ const CustomDevelopment = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`mt-10 mb-16 ${isVisible
+                    className={`mt-10 mb-16 ${
+                      isVisible
                         ? "opacity-100 translate-y-0"
                         : "translate-y-20 opacity-0"
-                      } duration-1000 `}
+                    } duration-1000 `}
                   >
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
@@ -171,16 +186,18 @@ const CustomDevelopment = () => {
                     className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
                   >
                     <div
-                      className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
-                        } `}
+                      className={`w-full md:w-1/2 lg:w-1/2 ${
+                        id % 2 === 0 && "order-2"
+                      } `}
                     >
                       <ReactVisibilitySensor partialVisibility>
                         {({ isVisible }) => (
                           <div
-                            className={` ${isVisible
+                            className={` ${
+                              isVisible
                                 ? "opacity-100 translate-y-0"
                                 : "translate-y-20 opacity-0"
-                              } duration-1000 `}
+                            } duration-1000 `}
                           >
                             <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
                               {title}
@@ -195,11 +212,13 @@ const CustomDevelopment = () => {
                     <ReactVisibilitySensor partialVisibility>
                       {({ isVisible }) => (
                         <div
-                          className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
-                            } ${isVisible
+                          className={`w-full md:w-1/2 lg:w-1/2 ${
+                            id % 2 === 0 && "order-1"
+                          } ${
+                            isVisible
                               ? "opacity-100 translate-y-0"
                               : "translate-y-20 opacity-0"
-                            } duration-1000 `}
+                          } duration-1000 `}
                         >
                           <img
                             className="w-4/5 mx-auto"
@@ -364,10 +383,11 @@ const CustomDevelopment = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`${isVisible
+                    className={`${
+                      isVisible
                         ? "opacity-100 translate-y-0"
                         : "translate-y-20 opacity-0"
-                      } duration-1000 p-3 text-textColor-500`}
+                    } duration-1000 p-3 text-textColor-500`}
                   >
                     <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
                       Why Dotpot iT

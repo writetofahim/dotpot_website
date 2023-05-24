@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
+import parse from "react-html-parser";
 import { useLocation } from "react-router-dom";
 import ReactVisibilitySensor from "react-visibility-sensor";
 import augmentedreality from "../../assets/img/gamedevelopment/augmentedreality.png";
@@ -13,7 +14,6 @@ import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import parse from "react-html-parser";
 
 const Gaming = () => {
   const worksData = [
@@ -36,8 +36,7 @@ const Gaming = () => {
     {
       id: 4,
       title: "Unreal Engine",
-      description:
-        `Dotpot iT specializes in <a href="https://www.unrealengine.com/en-US" target="_blank" rel="nofollow">Unreal Engine game development,</a> providing services such as game design consultation, programming, 3D modeling, quality assurance, and post-release support. Their expertise helps developers create visually stunning and immersive games using the power of Unreal Engine.`,
+      description: `Dotpot iT specializes in <a href="https://www.unrealengine.com/en-US" target="_blank" rel="nofollow">Unreal Engine game development,</a> providing services such as game design consultation, programming, 3D modeling, quality assurance, and post-release support. Their expertise helps developers create visually stunning and immersive games using the power of Unreal Engine.`,
       illustration: unrealengine,
       sectionId: "unreal-engine",
     },
@@ -74,6 +73,21 @@ const Gaming = () => {
   return (
     <div className="bg-background-500">
       <Helmet>
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "http://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Dotpot iT",
+              "telephone": "+880 1817 176 192",
+              "email": [
+                "help@dotpotit.com",
+                "hr@dotpotit.com",
+                "marketing@dotpotit.com"
+              ]
+            }
+          `}
+        </script>
         <title>Game Development | Dotpot iT a leading it company</title>
         <meta
           name="description"
@@ -115,8 +129,9 @@ const Gaming = () => {
 
       <Navbar />
       <div
-        className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
-          } `}
+        className={` md:pt-[15vh] pt-[15vh] ${
+          window.innerWidth > 1280 && "md:pt-[11vh]"
+        } `}
       >
         <NavigatorComponent navigationData={navigationData} />
         <div>
@@ -126,10 +141,11 @@ const Gaming = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`mt-10 mb-16 ${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 `}
+                    className={`mt-10 mb-16 ${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                    } duration-1000 `}
                   >
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
@@ -138,9 +154,17 @@ const Gaming = () => {
                             Game Development
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            Revolutionize <a href="https://www.freecodecamp.org/news/what-is-game-development/" target="_blank" rel="nofollow">gaming</a> experience with Dotpot IT's
-                            cutting-edge development. Elevate gameplay and
-                            immerse yourself in a new era of gaming innovation.
+                            Revolutionize{" "}
+                            <a
+                              href="https://www.freecodecamp.org/news/what-is-game-development/"
+                              target="_blank"
+                              rel="nofollow"
+                            >
+                              gaming
+                            </a>{" "}
+                            experience with Dotpot IT's cutting-edge
+                            development. Elevate gameplay and immerse yourself
+                            in a new era of gaming innovation.
                           </p>
                         </div>
                         <img
@@ -168,16 +192,18 @@ const Gaming = () => {
                       id={sectionId}
                     >
                       <div
-                        className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
-                          } `}
+                        className={`w-full md:w-1/2 lg:w-1/2 ${
+                          id % 2 === 0 && "order-2"
+                        } `}
                       >
                         <ReactVisibilitySensor partialVisibility>
                           {({ isVisible }) => (
                             <div
-                              className={` ${isVisible
-                                ? "opacity-100 translate-y-0"
-                                : "translate-y-20 opacity-0"
-                                } duration-1000 `}
+                              className={` ${
+                                isVisible
+                                  ? "opacity-100 translate-y-0"
+                                  : "translate-y-20 opacity-0"
+                              } duration-1000 `}
                             >
                               <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
                                 {title}
@@ -192,11 +218,13 @@ const Gaming = () => {
                       <ReactVisibilitySensor partialVisibility>
                         {({ isVisible }) => (
                           <div
-                            className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
-                              } ${isVisible
+                            className={`w-full md:w-1/2 lg:w-1/2 ${
+                              id % 2 === 0 && "order-1"
+                            } ${
+                              isVisible
                                 ? "opacity-100 translate-y-0"
                                 : "translate-y-20 opacity-0"
-                              } duration-1000 `}
+                            } duration-1000 `}
                           >
                             <img
                               className="w-4/5 mx-auto"
@@ -219,10 +247,11 @@ const Gaming = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 p-3 text-textColor-500`}
+                    className={`${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                    } duration-1000 p-3 text-textColor-500`}
                   >
                     <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
                       Why Dotpot iT

@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import parse from "react-html-parser";
 import ReactVisibilitySensor from "react-visibility-sensor";
 import Enterprise_Business_01 from "../../assets/img/Enterprise_Business_01.png";
 import Enterprise_Business_02 from "../../assets/img/Enterprise_Business_02.png";
@@ -12,7 +13,6 @@ import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import parse from "react-html-parser";
 
 const WebsiteDesign = () => {
   const worksData = [
@@ -26,8 +26,7 @@ const WebsiteDesign = () => {
     {
       id: 2,
       title: "IT support and maintenance",
-      description:
-        `By providing comprehensive <a href="https://illumo.digital/software/support/" target="_blank" rel="nofollow">IT support and maintenance services,</a> your company can ensure that enterprise businesses' systems are always up and running. This can help minimize downtime and prevent costly disruptions.`,
+      description: `By providing comprehensive <a href="https://illumo.digital/software/support/" target="_blank" rel="nofollow">IT support and maintenance services,</a> your company can ensure that enterprise businesses' systems are always up and running. This can help minimize downtime and prevent costly disruptions.`,
       illustration: Enterprise_Business_03,
     },
     {
@@ -57,6 +56,21 @@ const WebsiteDesign = () => {
   return (
     <div className="bg-background-500">
       <Helmet>
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "http://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Dotpot iT",
+              "telephone": "+880 1817 176 192",
+              "email": [
+                "help@dotpotit.com",
+                "hr@dotpotit.com",
+                "marketing@dotpotit.com"
+              ]
+            }
+          `}
+        </script>
         <title>Enterprise Business | Dotpot iT a leading it company</title>
         <meta
           name="description"
@@ -96,8 +110,9 @@ const WebsiteDesign = () => {
       </Helmet>
       <Navbar />
       <div
-        className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
-          } `}
+        className={` md:pt-[15vh] pt-[15vh] ${
+          window.innerWidth > 1280 && "md:pt-[11vh]"
+        } `}
       >
         <NavigatorComponent navigationData={navigationData} />
         <div>
@@ -107,10 +122,11 @@ const WebsiteDesign = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`mt-10 mb-16 ${isVisible
+                    className={`mt-10 mb-16 ${
+                      isVisible
                         ? "opacity-100 translate-y-0"
                         : "translate-y-20 opacity-0"
-                      } duration-1000 `}
+                    } duration-1000 `}
                   >
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
@@ -119,7 +135,19 @@ const WebsiteDesign = () => {
                             Enterprise Business
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            As an IT company, your software development and IT services can help <a href="https://www.clearvoice.com/resources/what-is-an-enterprise-business/" target="_blank" rel="nofollow">enterprise businesses</a> improve efficiency, productivity, and security. By providing cutting-edge solutions and technology, you can help these businesses stay competitive in their markets and achieve their goals.
+                            As an IT company, your software development and IT
+                            services can help{" "}
+                            <a
+                              href="https://www.clearvoice.com/resources/what-is-an-enterprise-business/"
+                              target="_blank"
+                              rel="nofollow"
+                            >
+                              enterprise businesses
+                            </a>{" "}
+                            improve efficiency, productivity, and security. By
+                            providing cutting-edge solutions and technology, you
+                            can help these businesses stay competitive in their
+                            markets and achieve their goals.
                           </p>
                         </div>
                         <img
@@ -145,16 +173,18 @@ const WebsiteDesign = () => {
                     className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
                   >
                     <div
-                      className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
-                        } `}
+                      className={`w-full md:w-1/2 lg:w-1/2 ${
+                        id % 2 === 0 && "order-2"
+                      } `}
                     >
                       <ReactVisibilitySensor partialVisibility>
                         {({ isVisible }) => (
                           <div
-                            className={` ${isVisible
+                            className={` ${
+                              isVisible
                                 ? "opacity-100 translate-y-0"
                                 : "translate-y-20 opacity-0"
-                              } duration-1000 `}
+                            } duration-1000 `}
                           >
                             <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
                               {title}
@@ -169,11 +199,13 @@ const WebsiteDesign = () => {
                     <ReactVisibilitySensor partialVisibility>
                       {({ isVisible }) => (
                         <div
-                          className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
-                            } ${isVisible
+                          className={`w-full md:w-1/2 lg:w-1/2 ${
+                            id % 2 === 0 && "order-1"
+                          } ${
+                            isVisible
                               ? "opacity-100 translate-y-0"
                               : "translate-y-20 opacity-0"
-                            } duration-1000 `}
+                          } duration-1000 `}
                         >
                           <img
                             className="w-4/5 mx-auto"
@@ -195,10 +227,11 @@ const WebsiteDesign = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`${isVisible
+                    className={`${
+                      isVisible
                         ? "opacity-100 translate-y-0"
                         : "translate-y-20 opacity-0"
-                      } duration-1000 p-3 text-textColor-500`}
+                    } duration-1000 p-3 text-textColor-500`}
                   >
                     <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
                       Why Dotpot iT

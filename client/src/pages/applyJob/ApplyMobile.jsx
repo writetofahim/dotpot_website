@@ -35,6 +35,21 @@ const ApplyMobile = () => {
     <div className="w-full">
       <NavbarJob />
       <Helmet>
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "http://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Dotpot iT",
+              "telephone": "+880 1817 176 192",
+              "email": [
+                "help@dotpotit.com",
+                "hr@dotpotit.com",
+                "marketing@dotpotit.com"
+              ]
+            }
+          `}
+        </script>
         <title>Apply | Dotpot iT A Leading it Company</title>
         <meta
           name="description"

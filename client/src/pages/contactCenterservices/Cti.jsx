@@ -1,17 +1,17 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import parse from "react-html-parser";
 import ReactVisibilitySensor from "react-visibility-sensor";
-import cticover from "../../assets/img/contactcentersupport/cticover.png";
-import callerpiority from "../../assets/img/contactcentersupport/callerpiority.png";
-import crm from "../../assets/img/contactcentersupport/crm.png";
 import agencyweb from "../../assets/img/agencyweb.png";
 import call2 from "../../assets/img/call2.png";
+import callerpiority from "../../assets/img/contactcentersupport/callerpiority.png";
+import crm from "../../assets/img/contactcentersupport/crm.png";
+import cticover from "../../assets/img/contactcentersupport/cticover.png";
 import Footer from "../../components/Footer/Footer";
 import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import parse from "react-html-parser";
 
 const Cti = () => {
   // CTI Data
@@ -19,8 +19,7 @@ const Cti = () => {
     {
       id: 1,
       title: "Integrated CRM",
-      description:
-        `Our CTI solution seamlessly integrates with <a href="https://www.salesforce.com/crm/crm-integration/#:~:text=CRM%20integration%20connects%20each%20application,of%20your%20business%20and%20customers." target="_blank" rel="nofollow">Customer Relationship Management (CRM)</a> software, allowing you to access and manage customer information during calls. This integration streamlines your workflow and enhances the efficiency of your customer interactions.`,
+      description: `Our CTI solution seamlessly integrates with <a href="https://www.salesforce.com/crm/crm-integration/#:~:text=CRM%20integration%20connects%20each%20application,of%20your%20business%20and%20customers." target="_blank" rel="nofollow">Customer Relationship Management (CRM)</a> software, allowing you to access and manage customer information during calls. This integration streamlines your workflow and enhances the efficiency of your customer interactions.`,
       illustration: crm,
     },
     {
@@ -51,6 +50,21 @@ const Cti = () => {
   return (
     <div className="bg-background-500">
       <Helmet>
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "http://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Dotpot iT",
+              "telephone": "+880 1817 176 192",
+              "email": [
+                "help@dotpotit.com",
+                "hr@dotpotit.com",
+                "marketing@dotpotit.com"
+              ]
+            }
+          `}
+        </script>
         <title>
           Computer Telephony Integration (CTI) | Dotpot iT a leading it company
         </title>
@@ -100,8 +114,9 @@ const Cti = () => {
       <Navbar />
 
       <div
-        className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
-          } `}
+        className={` md:pt-[15vh] pt-[15vh] ${
+          window.innerWidth > 1280 && "md:pt-[11vh]"
+        } `}
       >
         <NavigatorComponent navigationData={navigationData} />
         <div>
@@ -111,10 +126,11 @@ const Cti = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`mt-10 mb-16 ${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 `}
+                    className={`mt-10 mb-16 ${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                    } duration-1000 `}
                   >
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
@@ -123,7 +139,18 @@ const Cti = () => {
                             Computer Telephony Integration (CTI)
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            Dotpot IT <a href="https://www.nice.com/glossary/what-is-contact-center-cti-computer-telephony-integration#:~:text=Computer%20telephony%20integration%20(CTI)%20means,more%20control%20over%20call%20management." target="_blank" rel="nofollow">integrates with various CRMs and offers CTI</a> screen popups to agents, providing them with caller information, such as name and phone number, before connecting to the call. This helps agents personalize calls and improve customer experience.
+                            Dotpot IT{" "}
+                            <a
+                              href="https://www.nice.com/glossary/what-is-contact-center-cti-computer-telephony-integration#:~:text=Computer%20telephony%20integration%20(CTI)%20means,more%20control%20over%20call%20management."
+                              target="_blank"
+                              rel="nofollow"
+                            >
+                              integrates with various CRMs and offers CTI
+                            </a>{" "}
+                            screen popups to agents, providing them with caller
+                            information, such as name and phone number, before
+                            connecting to the call. This helps agents
+                            personalize calls and improve customer experience.
                           </p>
                         </div>
                         <img
@@ -149,16 +176,18 @@ const Cti = () => {
                     key={id}
                   >
                     <div
-                      className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
-                        } `}
+                      className={`w-full md:w-1/2 lg:w-1/2 ${
+                        id % 2 === 0 && "order-2"
+                      } `}
                     >
                       <ReactVisibilitySensor partialVisibility>
                         {({ isVisible }) => (
                           <div
-                            className={` ${isVisible
-                              ? "opacity-100 translate-y-0"
-                              : "translate-y-20 opacity-0"
-                              } duration-1000 `}
+                            className={` ${
+                              isVisible
+                                ? "opacity-100 translate-y-0"
+                                : "translate-y-20 opacity-0"
+                            } duration-1000 `}
                           >
                             <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
                               {title}
@@ -173,11 +202,13 @@ const Cti = () => {
                     <ReactVisibilitySensor partialVisibility>
                       {({ isVisible }) => (
                         <div
-                          className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
-                            } ${isVisible
+                          className={`w-full md:w-1/2 lg:w-1/2 ${
+                            id % 2 === 0 && "order-1"
+                          } ${
+                            isVisible
                               ? "opacity-100 translate-y-0"
                               : "translate-y-20 opacity-0"
-                            } duration-1000 `}
+                          } duration-1000 `}
                         >
                           <img
                             className="w-4/5 mx-auto"
@@ -199,10 +230,11 @@ const Cti = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 p-3 text-textColor-500`}
+                    className={`${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                    } duration-1000 p-3 text-textColor-500`}
                   >
                     <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
                       Why Dotpot iT
@@ -213,7 +245,13 @@ const Cti = () => {
                       alt=""
                     />
                     <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
-                      Dotpot iT offers advanced Computer Telephony Integration (CTI) solutions for efficient call handling. With our expertise and exceptional service, we provide tailored CTI systems that seamlessly integrate telephony and computer systems, enhancing productivity and customer satisfaction. Choose Dotpot iT for innovative CTI technology that helps your business thrive.
+                      Dotpot iT offers advanced Computer Telephony Integration
+                      (CTI) solutions for efficient call handling. With our
+                      expertise and exceptional service, we provide tailored CTI
+                      systems that seamlessly integrate telephony and computer
+                      systems, enhancing productivity and customer satisfaction.
+                      Choose Dotpot iT for innovative CTI technology that helps
+                      your business thrive.
                     </p>
                   </div>
                 </>

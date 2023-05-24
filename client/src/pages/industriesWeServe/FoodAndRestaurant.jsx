@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import parse from "react-html-parser";
 import ReactVisibilitySensor from "react-visibility-sensor";
 import agencyweb from "../../assets/img/agencyweb.png";
 import blogweb from "../../assets/img/blogweb.png";
@@ -11,15 +12,13 @@ import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import parse from "react-html-parser";
 
 const FoodAndRestaurant = () => {
   const worksData = [
     {
       id: 1,
       title: "Online Ordering and Delivery Systems",
-      description:
-        `Dotpot IT can develop customized <a href="https://codecanyon.net/item/woofood-online-delivery-for-woocommerce/20404478?gclid=Cj0KCQjwyLGjBhDKARIsAFRNgW86lRXN4Yy_A7Xn-rwfpHGf0vxYdc9MpWzcA3_enm0ZcVr-5dKxEuYaArn5EALw_wcB" target="_blank" rel="nofollow">online ordering systems</a> that allow customers to browse menus, place orders, and choose delivery or pickup options. Integration with payment gateways and delivery tracking features can streamline the ordering and delivery process.`,
+      description: `Dotpot IT can develop customized <a href="https://codecanyon.net/item/woofood-online-delivery-for-woocommerce/20404478?gclid=Cj0KCQjwyLGjBhDKARIsAFRNgW86lRXN4Yy_A7Xn-rwfpHGf0vxYdc9MpWzcA3_enm0ZcVr-5dKxEuYaArn5EALw_wcB" target="_blank" rel="nofollow">online ordering systems</a> that allow customers to browse menus, place orders, and choose delivery or pickup options. Integration with payment gateways and delivery tracking features can streamline the ordering and delivery process.`,
       illustration: ecommarceweb,
     },
     {
@@ -39,15 +38,13 @@ const FoodAndRestaurant = () => {
     {
       id: 4,
       title: "Online Reviews and Ratings Integration",
-      description:
-        `Dotpot IT can integrate online review and rating platforms into restaurant websites, enabling customers to leave feedback and share their dining experiences. This helps restaurants build trust, improve their reputation, and engage with their customers.`,
+      description: `Dotpot IT can integrate online review and rating platforms into restaurant websites, enabling customers to leave feedback and share their dining experiences. This helps restaurants build trust, improve their reputation, and engage with their customers.`,
       illustration: customappweb,
     },
     {
       id: 5,
       title: "Website Maintenance and Support",
-      description:
-        `Dotpot IT offers ongoing website maintenance and support services to ensure that restaurant websites are up-to-date, secure, and fully functional. This includes regular updates, performance monitoring, and technical support to provide a smooth online experience for customers.`,
+      description: `Dotpot IT offers ongoing website maintenance and support services to ensure that restaurant websites are up-to-date, secure, and fully functional. This includes regular updates, performance monitoring, and technical support to provide a smooth online experience for customers.`,
       illustration: customappweb,
     },
   ];
@@ -57,6 +54,21 @@ const FoodAndRestaurant = () => {
   return (
     <div className="bg-background-500">
       <Helmet>
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "http://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Dotpot iT",
+              "telephone": "+880 1817 176 192",
+              "email": [
+                "help@dotpotit.com",
+                "hr@dotpotit.com",
+                "marketing@dotpotit.com"
+              ]
+            }
+          `}
+        </script>
         <title>Food & Restaurants | Dotpot iT a leading it company</title>
         <meta
           name="description"
@@ -96,7 +108,9 @@ const FoodAndRestaurant = () => {
         />
       </Helmet>
       <Navbar />
-      <div className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
+      <div
+        className={` md:pt-[15vh] pt-[15vh] ${
+          window.innerWidth > 1280 && "md:pt-[11vh]"
         } `}
       >
         <NavigatorComponent navigationData={navigationData} />
@@ -107,10 +121,11 @@ const FoodAndRestaurant = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`mt-10 mb-16 ${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 `}
+                    className={`mt-10 mb-16 ${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                    } duration-1000 `}
                   >
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
@@ -119,7 +134,16 @@ const FoodAndRestaurant = () => {
                             Food & Restaurants
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            Indulge in our innovative <a href="https://www.adalot.com/en/guide-restaurant-website-development/" target="_blank" rel="nofollow">Food & Restaurant solutions,</a> crafted with passion and precision to satisfy your cravings. Elevate your dining experience today.
+                            Indulge in our innovative{" "}
+                            <a
+                              href="https://www.adalot.com/en/guide-restaurant-website-development/"
+                              target="_blank"
+                              rel="nofollow"
+                            >
+                              Food & Restaurant solutions,
+                            </a>{" "}
+                            crafted with passion and precision to satisfy your
+                            cravings. Elevate your dining experience today.
                           </p>
                         </div>
                         <img
@@ -145,16 +169,18 @@ const FoodAndRestaurant = () => {
                     key={id}
                   >
                     <div
-                      className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
-                        } `}
+                      className={`w-full md:w-1/2 lg:w-1/2 ${
+                        id % 2 === 0 && "order-2"
+                      } `}
                     >
                       <ReactVisibilitySensor partialVisibility>
                         {({ isVisible }) => (
                           <div
-                            className={` ${isVisible
-                              ? "opacity-100 translate-y-0"
-                              : "translate-y-20 opacity-0"
-                              } duration-1000 `}
+                            className={` ${
+                              isVisible
+                                ? "opacity-100 translate-y-0"
+                                : "translate-y-20 opacity-0"
+                            } duration-1000 `}
                           >
                             <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
                               {title}
@@ -169,11 +195,13 @@ const FoodAndRestaurant = () => {
                     <ReactVisibilitySensor partialVisibility>
                       {({ isVisible }) => (
                         <div
-                          className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
-                            } ${isVisible
+                          className={`w-full md:w-1/2 lg:w-1/2 ${
+                            id % 2 === 0 && "order-1"
+                          } ${
+                            isVisible
                               ? "opacity-100 translate-y-0"
                               : "translate-y-20 opacity-0"
-                            } duration-1000 `}
+                          } duration-1000 `}
                         >
                           <img
                             className="w-4/5 mx-auto"
@@ -195,10 +223,11 @@ const FoodAndRestaurant = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 p-3 text-textColor-500`}
+                    className={`${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                    } duration-1000 p-3 text-textColor-500`}
                   >
                     <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
                       Why Dotpot iT
@@ -209,7 +238,15 @@ const FoodAndRestaurant = () => {
                       alt="Separator Image"
                     />
                     <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
-                      Dotpot IT is the top choice for Food & Restaurants businesses. With their expertise in web design and development, they create visually appealing and user-friendly websites. They offer online ordering systems, menu management solutions, table reservation systems, and more. Dotpot IT focuses on user experience and provides ongoing maintenance and support. They help businesses enhance their online presence and deliver exceptional digital experiences.
+                      Dotpot IT is the top choice for Food & Restaurants
+                      businesses. With their expertise in web design and
+                      development, they create visually appealing and
+                      user-friendly websites. They offer online ordering
+                      systems, menu management solutions, table reservation
+                      systems, and more. Dotpot IT focuses on user experience
+                      and provides ongoing maintenance and support. They help
+                      businesses enhance their online presence and deliver
+                      exceptional digital experiences.
                     </p>
                   </div>
                 </>

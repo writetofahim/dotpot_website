@@ -1,32 +1,28 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import parse from "react-html-parser";
 import ReactVisibilitySensor from "react-visibility-sensor";
 import agencyweb from "../../assets/img/agencyweb.png";
-import blogweb from "../../assets/img/blogweb.png";
 import coverweb from "../../assets/img/coverweb.png";
-import customappweb from "../../assets/img/customappweb.png";
 import ecommarceweb from "../../assets/img/ecommarceweb.png";
 import Footer from "../../components/Footer/Footer";
 import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import parse from "react-html-parser";
 
 const Web3 = () => {
   const worksData = [
     {
       id: 1,
       title: "Customized web3 solutions",
-      description:
-        `Dotpot IT offers customized Web3 solutions tailored to meet your specific needs. Our expertise includes decentralized applications, smart contracts, tokenization, DeFi integration, and blockchain consulting. We leverage the power of Web3 technologies to provide transparent, secure, and innovative solutions for your business.`,
+      description: `Dotpot IT offers customized Web3 solutions tailored to meet your specific needs. Our expertise includes decentralized applications, smart contracts, tokenization, DeFi integration, and blockchain consulting. We leverage the power of Web3 technologies to provide transparent, secure, and innovative solutions for your business.`,
       illustration: ecommarceweb,
     },
     {
       id: 2,
       title: "Blockchain for Security and Transparency",
-      description:
-        `Dotpot IT utilizes blockchain technology to enhance <a href="https://hashstudioz.com/blog/how-does-blockchain-technology-ensure-transparency-in-cryptocurrency-trade/" target="_blank" rel="nofollow">security and transparency.</a> With immutable data storage, secure transactions, decentralization, and smart contracts, we provide solutions that ensure data integrity, eliminate fraud risks, and promote transparent processes.`,
+      description: `Dotpot IT utilizes blockchain technology to enhance <a href="https://hashstudioz.com/blog/how-does-blockchain-technology-ensure-transparency-in-cryptocurrency-trade/" target="_blank" rel="nofollow">security and transparency.</a> With immutable data storage, secure transactions, decentralization, and smart contracts, we provide solutions that ensure data integrity, eliminate fraud risks, and promote transparent processes.`,
       illustration: agencyweb,
     },
     {
@@ -50,6 +46,21 @@ const Web3 = () => {
   return (
     <div className="bg-background-500">
       <Helmet>
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "http://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Dotpot iT",
+              "telephone": "+880 1817 176 192",
+              "email": [
+                "help@dotpotit.com",
+                "hr@dotpotit.com",
+                "marketing@dotpotit.com"
+              ]
+            }
+          `}
+        </script>
         <title>Web3 Development | Dotpot iT a leading it company</title>
         <meta
           name="description"
@@ -89,7 +100,9 @@ const Web3 = () => {
         />
       </Helmet>
       <Navbar />
-      <div className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
+      <div
+        className={` md:pt-[15vh] pt-[15vh] ${
+          window.innerWidth > 1280 && "md:pt-[11vh]"
         } `}
       >
         <NavigatorComponent navigationData={navigationData} />
@@ -100,10 +113,11 @@ const Web3 = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`mt-10 mb-16 ${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 `}
+                    className={`mt-10 mb-16 ${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                    } duration-1000 `}
                   >
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
@@ -112,7 +126,16 @@ const Web3 = () => {
                             Web3 Development by Dotpot iT
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            Experience the future with DotpotIT's innovative <a href="https://www.novel.com/web3-solutions" target="_blank" rel="nofollow">web3 solutions.</a> Harness the power of blockchain and decentralized technologies for your business success.
+                            Experience the future with DotpotIT's innovative{" "}
+                            <a
+                              href="https://www.novel.com/web3-solutions"
+                              target="_blank"
+                              rel="nofollow"
+                            >
+                              web3 solutions.
+                            </a>{" "}
+                            Harness the power of blockchain and decentralized
+                            technologies for your business success.
                           </p>
                         </div>
                         <img
@@ -138,16 +161,18 @@ const Web3 = () => {
                     key={id}
                   >
                     <div
-                      className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
-                        } `}
+                      className={`w-full md:w-1/2 lg:w-1/2 ${
+                        id % 2 === 0 && "order-2"
+                      } `}
                     >
                       <ReactVisibilitySensor partialVisibility>
                         {({ isVisible }) => (
                           <div
-                            className={` ${isVisible
-                              ? "opacity-100 translate-y-0"
-                              : "translate-y-20 opacity-0"
-                              } duration-1000 `}
+                            className={` ${
+                              isVisible
+                                ? "opacity-100 translate-y-0"
+                                : "translate-y-20 opacity-0"
+                            } duration-1000 `}
                           >
                             <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
                               {title}
@@ -162,11 +187,13 @@ const Web3 = () => {
                     <ReactVisibilitySensor partialVisibility>
                       {({ isVisible }) => (
                         <div
-                          className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
-                            } ${isVisible
+                          className={`w-full md:w-1/2 lg:w-1/2 ${
+                            id % 2 === 0 && "order-1"
+                          } ${
+                            isVisible
                               ? "opacity-100 translate-y-0"
                               : "translate-y-20 opacity-0"
-                            } duration-1000 `}
+                          } duration-1000 `}
                         >
                           <img
                             className="w-4/5 mx-auto"
@@ -188,10 +215,11 @@ const Web3 = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 p-3 text-textColor-500`}
+                    className={`${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                    } duration-1000 p-3 text-textColor-500`}
                   >
                     <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
                       Why Dotpot iT
@@ -202,7 +230,22 @@ const Web3 = () => {
                       alt="Separator Image"
                     />
                     <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
-                      Dotpot IT is at the forefront of web design and development solutions for the travel industry in the era of Web 3. With our deep expertise in this emerging technology, we create visually captivating and immersive websites that cater to the unique needs of the travel market. Dotpot IT offers a range of cutting-edge services, including decentralized itinerary management systems, AI-powered advanced search functionalities, virtual reality experiences, and blockchain-based travel agent profiles. By prioritizing seamless user experiences and leveraging the power of Web 3 technologies, we provide ongoing maintenance and support to ensure optimal website performance. Dotpot IT empowers travel companies to embrace the decentralized web, elevate their online presence, and deliver exceptional digital experiences in this dynamic industry.
+                      Dotpot IT is at the forefront of web design and
+                      development solutions for the travel industry in the era
+                      of Web 3. With our deep expertise in this emerging
+                      technology, we create visually captivating and immersive
+                      websites that cater to the unique needs of the travel
+                      market. Dotpot IT offers a range of cutting-edge services,
+                      including decentralized itinerary management systems,
+                      AI-powered advanced search functionalities, virtual
+                      reality experiences, and blockchain-based travel agent
+                      profiles. By prioritizing seamless user experiences and
+                      leveraging the power of Web 3 technologies, we provide
+                      ongoing maintenance and support to ensure optimal website
+                      performance. Dotpot IT empowers travel companies to
+                      embrace the decentralized web, elevate their online
+                      presence, and deliver exceptional digital experiences in
+                      this dynamic industry.
                     </p>
                   </div>
                 </>

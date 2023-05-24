@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet";
+import { BiMinus } from "react-icons/bi";
 import { BsPlusLg } from "react-icons/bs";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import { BiMinus } from "react-icons/bi";
 
 const Faq = () => {
   const [activeFaqId, setActiveFaqId] = useState(null);
@@ -81,6 +81,21 @@ const Faq = () => {
     <div className="h-full">
       <Navbar />
       <Helmet>
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "http://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Dotpot iT",
+              "telephone": "+880 1817 176 192",
+              "email": [
+                "help@dotpotit.com",
+                "hr@dotpotit.com",
+                "marketing@dotpotit.com"
+              ]
+            }
+          `}
+        </script>
         <title>FAQ | Dotpot iT a leading it company</title>
         <meta
           name="description"
@@ -133,9 +148,11 @@ const Faq = () => {
                 <button className="text-base font-bold text-textColor-500 lg:text-xl">
                   {faq.question}
                 </button>
-                {faq.id === activeFaqId ? <BiMinus /> : <BsPlusLg className="text-sm"/>}
-                
-                
+                {faq.id === activeFaqId ? (
+                  <BiMinus />
+                ) : (
+                  <BsPlusLg className="text-sm" />
+                )}
               </div>
               <div
                 className={`${

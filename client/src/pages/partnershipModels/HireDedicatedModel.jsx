@@ -73,6 +73,21 @@ const HireDedicatedModel = () => {
   return (
     <div>
       <Helmet>
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "http://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Dotpot iT",
+              "telephone": "+880 1817 176 192",
+              "email": [
+                "help@dotpotit.com",
+                "hr@dotpotit.com",
+                "marketing@dotpotit.com"
+              ]
+            }
+          `}
+        </script>
         <title>Hire-dedicated-model | Dotpot iT a leading it company</title>
         <meta
           name="description"
@@ -113,8 +128,9 @@ const HireDedicatedModel = () => {
       <Navbar />
       <div className="bg-background-500">
         <div
-          className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
-            } `}
+          className={` md:pt-[15vh] pt-[15vh] ${
+            window.innerWidth > 1280 && "md:pt-[11vh]"
+          } `}
         >
           <NavigatorComponent navigationData={navigationData} />
           <div>
@@ -124,10 +140,11 @@ const HireDedicatedModel = () => {
                 {({ isVisible }) => (
                   <>
                     <div
-                      className={`mt-10 mb-16 ${isVisible
+                      className={`mt-10 mb-16 ${
+                        isVisible
                           ? "opacity-100 translate-y-0"
                           : "translate-y-20 opacity-0"
-                        } duration-1000 `}
+                      } duration-1000 `}
                     >
                       <div className="container mx-auto">
                         <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
@@ -136,7 +153,23 @@ const HireDedicatedModel = () => {
                               Hire Dedicated
                             </h1>
                             <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                              🚀Dotpot iT is a rapidly growing technology company that offers a wide range of IT services, including software development, mobile app development, web development, and digital marketing. To keep up with the demand for its services, the company needs a team of skilled professionals who can work together to deliver high-quality solutions to its clients. This is where <a href="https://www.matellio.com/blog/everything-you-need-to-know-about-dedicated-hiring-model/" target="_blank" rel="nofollow">hiring a dedicated model</a> comes in
+                              🚀Dotpot iT is a rapidly growing technology
+                              company that offers a wide range of IT services,
+                              including software development, mobile app
+                              development, web development, and digital
+                              marketing. To keep up with the demand for its
+                              services, the company needs a team of skilled
+                              professionals who can work together to deliver
+                              high-quality solutions to its clients. This is
+                              where{" "}
+                              <a
+                                href="https://www.matellio.com/blog/everything-you-need-to-know-about-dedicated-hiring-model/"
+                                target="_blank"
+                                rel="nofollow"
+                              >
+                                hiring a dedicated model
+                              </a>{" "}
+                              comes in
                             </p>
                           </div>
                           <img
@@ -162,16 +195,18 @@ const HireDedicatedModel = () => {
                       className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
                     >
                       <div
-                        className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
-                          } `}
+                        className={`w-full md:w-1/2 lg:w-1/2 ${
+                          id % 2 === 0 && "order-2"
+                        } `}
                       >
                         <ReactVisibilitySensor partialVisibility>
                           {({ isVisible }) => (
                             <div
-                              className={` ${isVisible
+                              className={` ${
+                                isVisible
                                   ? "opacity-100 translate-y-0"
                                   : "translate-y-20 opacity-0"
-                                } duration-1000 `}
+                              } duration-1000 `}
                             >
                               <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
                                 {title}
@@ -186,11 +221,13 @@ const HireDedicatedModel = () => {
                       <ReactVisibilitySensor partialVisibility>
                         {({ isVisible }) => (
                           <div
-                            className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
-                              } ${isVisible
+                            className={`w-full md:w-1/2 lg:w-1/2 ${
+                              id % 2 === 0 && "order-1"
+                            } ${
+                              isVisible
                                 ? "opacity-100 translate-y-0"
                                 : "translate-y-20 opacity-0"
-                              } duration-1000 `}
+                            } duration-1000 `}
                           >
                             <img
                               className="w-4/5 mx-auto"
@@ -356,10 +393,11 @@ const HireDedicatedModel = () => {
                 {({ isVisible }) => (
                   <>
                     <div
-                      className={`${isVisible
+                      className={`${
+                        isVisible
                           ? "opacity-100 translate-y-0"
                           : "translate-y-20 opacity-0"
-                        } duration-1000 p-3 text-textColor-500`}
+                      } duration-1000 p-3 text-textColor-500`}
                     >
                       <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
                         Why Dotpot iT
@@ -370,8 +408,22 @@ const HireDedicatedModel = () => {
                         alt="Separator Line"
                       />
                       <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
-                        Dotpot iT offers affordable web design services using the latest technologies. With a focus on delivering visually appealing and user-friendly websites, they
-                        specialize in e-commerce platforms such as <a href="https://www.mageplaza.com/blog/shopify-vs-woocommerce-vs-magento.html" target="_blank" rel="nofollow">Shopify, WooCommerce, and Magento.</a> Their experienced team is committed to providing high-quality design solutions that exceed clients' expectations and exceptional customer service throughout the process. Choose Dotpot iT for innovative web design that helps your business thrive.
+                        Dotpot iT offers affordable web design services using
+                        the latest technologies. With a focus on delivering
+                        visually appealing and user-friendly websites, they
+                        specialize in e-commerce platforms such as{" "}
+                        <a
+                          href="https://www.mageplaza.com/blog/shopify-vs-woocommerce-vs-magento.html"
+                          target="_blank"
+                          rel="nofollow"
+                        >
+                          Shopify, WooCommerce, and Magento.
+                        </a>{" "}
+                        Their experienced team is committed to providing
+                        high-quality design solutions that exceed clients'
+                        expectations and exceptional customer service throughout
+                        the process. Choose Dotpot iT for innovative web design
+                        that helps your business thrive.
                       </p>
                     </div>
                   </>

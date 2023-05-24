@@ -1,17 +1,17 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import parse from "react-html-parser";
 import ReactVisibilitySensor from "react-visibility-sensor";
+import clientcentric from "../../assets/img/clientcentric.png";
+import compliance from "../../assets/img/compliance.png";
 import collectioncover from "../../assets/img/contactcentersupport/collectioncover.png";
 import helpdesk from "../../assets/img/helpdesk.png";
-import compliance from "../../assets/img/compliance.png";
-import clientcentric from "../../assets/img/clientcentric.png";
 import payment from "../../assets/img/payment.png";
 import Footer from "../../components/Footer/Footer";
 import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import parse from "react-html-parser";
 
 const Collections = () => {
   // Collection Data
@@ -26,8 +26,7 @@ const Collections = () => {
     {
       id: 2,
       title: "Skip Tracing Services",
-      description:
-        `Dotpot iT offers <a href="https://www.billgosling.com/blog/what-is-skip-tracing" target="_blank" rel="nofollow">skip tracing services</a> to locate debtors who have changed their contact information or gone off the grid. This service helps collection agencies in finding and contacting debtors for repayment.`,
+      description: `Dotpot iT offers <a href="https://www.billgosling.com/blog/what-is-skip-tracing" target="_blank" rel="nofollow">skip tracing services</a> to locate debtors who have changed their contact information or gone off the grid. This service helps collection agencies in finding and contacting debtors for repayment.`,
       illustration: helpdesk,
     },
     {
@@ -51,6 +50,21 @@ const Collections = () => {
   return (
     <div className="bg-background-500">
       <Helmet>
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "http://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Dotpot iT",
+              "telephone": "+880 1817 176 192",
+              "email": [
+                "help@dotpotit.com",
+                "hr@dotpotit.com",
+                "marketing@dotpotit.com"
+              ]
+            }
+          `}
+        </script>
         <title>Collection | Dotpot iT a leading it company</title>
         <meta
           name="description"
@@ -92,8 +106,9 @@ const Collections = () => {
       <Navbar />
 
       <div
-        className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
-          } `}
+        className={` md:pt-[15vh] pt-[15vh] ${
+          window.innerWidth > 1280 && "md:pt-[11vh]"
+        } `}
       >
         <NavigatorComponent navigationData={navigationData} />
         <div>
@@ -103,10 +118,11 @@ const Collections = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`mt-10 mb-16 ${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 `}
+                    className={`mt-10 mb-16 ${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                    } duration-1000 `}
                   >
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
@@ -115,7 +131,22 @@ const Collections = () => {
                             Collections
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            Optimize your debt collection efforts with Dotpot IT's automated dialing solutions. Contact more debtors each day and increase recovery rates by connecting with live individuals. Benefit from real-time and historical reporting to determine the best times for contact. Say goodbye to wasted time and resources on <a href="https://go4customer.com/glossary/m/what-is-manual-dialer" target="_blank" rel="nofollow">manual dialing</a> and focus on maximizing live connections for effective debt collection.
+                            Optimize your debt collection efforts with Dotpot
+                            IT's automated dialing solutions. Contact more
+                            debtors each day and increase recovery rates by
+                            connecting with live individuals. Benefit from
+                            real-time and historical reporting to determine the
+                            best times for contact. Say goodbye to wasted time
+                            and resources on{" "}
+                            <a
+                              href="https://go4customer.com/glossary/m/what-is-manual-dialer"
+                              target="_blank"
+                              rel="nofollow"
+                            >
+                              manual dialing
+                            </a>{" "}
+                            and focus on maximizing live connections for
+                            effective debt collection.
                           </p>
                         </div>
                         <img
@@ -141,16 +172,18 @@ const Collections = () => {
                     key={id}
                   >
                     <div
-                      className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
-                        } `}
+                      className={`w-full md:w-1/2 lg:w-1/2 ${
+                        id % 2 === 0 && "order-2"
+                      } `}
                     >
                       <ReactVisibilitySensor partialVisibility>
                         {({ isVisible }) => (
                           <div
-                            className={` ${isVisible
-                              ? "opacity-100 translate-y-0"
-                              : "translate-y-20 opacity-0"
-                              } duration-1000 `}
+                            className={` ${
+                              isVisible
+                                ? "opacity-100 translate-y-0"
+                                : "translate-y-20 opacity-0"
+                            } duration-1000 `}
                           >
                             <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
                               {title}
@@ -165,11 +198,13 @@ const Collections = () => {
                     <ReactVisibilitySensor partialVisibility>
                       {({ isVisible }) => (
                         <div
-                          className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
-                            } ${isVisible
+                          className={`w-full md:w-1/2 lg:w-1/2 ${
+                            id % 2 === 0 && "order-1"
+                          } ${
+                            isVisible
                               ? "opacity-100 translate-y-0"
                               : "translate-y-20 opacity-0"
-                            } duration-1000 `}
+                          } duration-1000 `}
                         >
                           <img
                             className="w-4/5 mx-auto"
@@ -191,10 +226,11 @@ const Collections = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 p-3 text-textColor-500`}
+                    className={`${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                    } duration-1000 p-3 text-textColor-500`}
                   >
                     <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
                       Why Dotpot iT
@@ -205,7 +241,13 @@ const Collections = () => {
                       alt=""
                     />
                     <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
-                      Dotpot iT delivers cutting-edge solutions for efficient and effective collection services. With our expertise and exceptional support, we provide customized services that integrate perfectly with your business, maximizing productivity and ensuring customer satisfaction. Trust Dotpot iT to provide innovative technology that drives success for your collection service operations.
+                      Dotpot iT delivers cutting-edge solutions for efficient
+                      and effective collection services. With our expertise and
+                      exceptional support, we provide customized services that
+                      integrate perfectly with your business, maximizing
+                      productivity and ensuring customer satisfaction. Trust
+                      Dotpot iT to provide innovative technology that drives
+                      success for your collection service operations.
                     </p>
                   </div>
                 </>

@@ -1,17 +1,17 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import parse from "react-html-parser";
 import ReactVisibilitySensor from "react-visibility-sensor";
-import webchatcover from "../../assets/img/contactcentersupport/webchatcover.png";
 import Fixed_Price4 from "../../assets/img/Fixed_Price4.png";
-import onsite_dev from "../../assets/img/onsite_dev.png";
 import Medium_Business_07 from "../../assets/img/Medium_Business_07.png";
 import communication from "../../assets/img/communication.png";
+import webchatcover from "../../assets/img/contactcentersupport/webchatcover.png";
+import onsite_dev from "../../assets/img/onsite_dev.png";
 import Footer from "../../components/Footer/Footer";
 import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import parse from "react-html-parser";
 
 const ChatContact = () => {
   // Chat Data
@@ -19,8 +19,7 @@ const ChatContact = () => {
     {
       id: 1,
       title: "Improve customer experience",
-      description:
-        `Dotpot IT's Chat module enables personalized chat experiences and access to <a href="https://www.richpanel.com/blog/multi-channel-customer-service" target="_blank" rel="nofollow">multichannel customer interactions</a> Engage with customers in real-time across various platforms, personalize assistance based on customer data, and leverage features like co-browsing and file sharing. Optimize efficiency with advanced routing and gain valuable insights through real-time monitoring and reporting.`,
+      description: `Dotpot IT's Chat module enables personalized chat experiences and access to <a href="https://www.richpanel.com/blog/multi-channel-customer-service" target="_blank" rel="nofollow">multichannel customer interactions</a> Engage with customers in real-time across various platforms, personalize assistance based on customer data, and leverage features like co-browsing and file sharing. Optimize efficiency with advanced routing and gain valuable insights through real-time monitoring and reporting.`,
       illustration: communication,
     },
     {
@@ -51,6 +50,21 @@ const ChatContact = () => {
   return (
     <div className="bg-background-500">
       <Helmet>
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "http://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Dotpot iT",
+              "telephone": "+880 1817 176 192",
+              "email": [
+                "help@dotpotit.com",
+                "hr@dotpotit.com",
+                "marketing@dotpotit.com"
+              ]
+            }
+          `}
+        </script>
         <title>Web Chat Support | Dotpot iT a leading it company</title>
         <meta
           name="description"
@@ -92,8 +106,9 @@ const ChatContact = () => {
       <Navbar />
 
       <div
-        className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
-          } `}
+        className={` md:pt-[15vh] pt-[15vh] ${
+          window.innerWidth > 1280 && "md:pt-[11vh]"
+        } `}
       >
         <NavigatorComponent navigationData={navigationData} />
         <div>
@@ -103,10 +118,11 @@ const ChatContact = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`mt-10 mb-16 ${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 `}
+                    className={`mt-10 mb-16 ${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                    } duration-1000 `}
                   >
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
@@ -115,7 +131,22 @@ const ChatContact = () => {
                             Web Chat Support
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            Dotpot IT's contact center system includes a powerful <a href="https://freescout.net/module/chat/" target="_blank" rel="nofollow">web chat module</a> that meets the evolving needs of customers. By integrating this module, businesses can provide a seamless customer experience across multiple channels and achieve a healthy return on investment. Stay ahead of the curve and deliver exceptional customer service with Dotpot IT's contact center system.
+                            Dotpot IT's contact center system includes a
+                            powerful{" "}
+                            <a
+                              href="https://freescout.net/module/chat/"
+                              target="_blank"
+                              rel="nofollow"
+                            >
+                              web chat module
+                            </a>{" "}
+                            that meets the evolving needs of customers. By
+                            integrating this module, businesses can provide a
+                            seamless customer experience across multiple
+                            channels and achieve a healthy return on investment.
+                            Stay ahead of the curve and deliver exceptional
+                            customer service with Dotpot IT's contact center
+                            system.
                           </p>
                         </div>
                         <img
@@ -141,16 +172,18 @@ const ChatContact = () => {
                     key={id}
                   >
                     <div
-                      className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
-                        } `}
+                      className={`w-full md:w-1/2 lg:w-1/2 ${
+                        id % 2 === 0 && "order-2"
+                      } `}
                     >
                       <ReactVisibilitySensor partialVisibility>
                         {({ isVisible }) => (
                           <div
-                            className={` ${isVisible
-                              ? "opacity-100 translate-y-0"
-                              : "translate-y-20 opacity-0"
-                              } duration-1000 `}
+                            className={` ${
+                              isVisible
+                                ? "opacity-100 translate-y-0"
+                                : "translate-y-20 opacity-0"
+                            } duration-1000 `}
                           >
                             <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
                               {title}
@@ -165,11 +198,13 @@ const ChatContact = () => {
                     <ReactVisibilitySensor partialVisibility>
                       {({ isVisible }) => (
                         <div
-                          className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
-                            } ${isVisible
+                          className={`w-full md:w-1/2 lg:w-1/2 ${
+                            id % 2 === 0 && "order-1"
+                          } ${
+                            isVisible
                               ? "opacity-100 translate-y-0"
                               : "translate-y-20 opacity-0"
-                            } duration-1000 `}
+                          } duration-1000 `}
                         >
                           <img
                             className="w-4/5 mx-auto"
@@ -191,10 +226,11 @@ const ChatContact = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 p-3 text-textColor-500`}
+                    className={`${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                    } duration-1000 p-3 text-textColor-500`}
                   >
                     <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
                       Why Dotpot iT
@@ -205,7 +241,13 @@ const ChatContact = () => {
                       alt=""
                     />
                     <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
-                      Dotpot iT provides state-of-the-art web chat solutions for effective communication and enhanced customer engagement. With our expertise and exceptional support, we offer tailored web chat services that seamlessly integrate with your business, maximizing productivity and customer satisfaction. Trust Dotpot iT to deliver innovative web chat technology that drives success for your business.
+                      Dotpot iT provides state-of-the-art web chat solutions for
+                      effective communication and enhanced customer engagement.
+                      With our expertise and exceptional support, we offer
+                      tailored web chat services that seamlessly integrate with
+                      your business, maximizing productivity and customer
+                      satisfaction. Trust Dotpot iT to deliver innovative web
+                      chat technology that drives success for your business.
                     </p>
                   </div>
                 </>

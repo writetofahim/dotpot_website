@@ -12,7 +12,6 @@ import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 
-
 const BlogDevelopment = () => {
   useScrollToTop();
   const worksData = [
@@ -90,14 +89,28 @@ const BlogDevelopment = () => {
     {
       id: 3,
       title: "Why we wil be your best choice?",
-      description:
-        `Dotpot iT designs custom, user-friendly blog websites optimized for <a href="https://www.bluehost.com/blog/an-overview-of-seo/?psafe_param=1&utm_campaign=affiliate-link_searchgenericpromo_PPC&utm_source=direct&utm_medium=affiliate&utm_affiliate=searchgenericpromo&irpid=100&clickid=P99C100S570N0B5578A2D4499E0000V161&pb=signup_searchgenericpromo&siteid=100&channelid=P99C100S570N0B5578A2D4499E0000V161&gclid=Cj0KCQjwyLGjBhDKARIsAFRNgW83ElP9UsjkeggBgVgMKK5z1i8fRBebhtpCL0yrQ2mtY5HJoBmgWAkaAkFKEALw_wcB&gclsrc=aw.ds" target="_blank" rel="nofollow">SEO</a> and user experience, helping businesses establish a strong online presence and drive revenue.`,
+      description: `Dotpot iT designs custom, user-friendly blog websites optimized for <a href="https://www.bluehost.com/blog/an-overview-of-seo/?psafe_param=1&utm_campaign=affiliate-link_searchgenericpromo_PPC&utm_source=direct&utm_medium=affiliate&utm_affiliate=searchgenericpromo&irpid=100&clickid=P99C100S570N0B5578A2D4499E0000V161&pb=signup_searchgenericpromo&siteid=100&channelid=P99C100S570N0B5578A2D4499E0000V161&gclid=Cj0KCQjwyLGjBhDKARIsAFRNgW83ElP9UsjkeggBgVgMKK5z1i8fRBebhtpCL0yrQ2mtY5HJoBmgWAkaAkFKEALw_wcB&gclsrc=aw.ds" target="_blank" rel="nofollow">SEO</a> and user experience, helping businesses establish a strong online presence and drive revenue.`,
       illustration: choice,
     },
   ];
   return (
     <div className="bg-background-500">
       <Helmet>
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "http://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Dotpot iT",
+              "telephone": "+880 1817 176 192",
+              "email": [
+                "help@dotpotit.com",
+                "hr@dotpotit.com",
+                "marketing@dotpotit.com"
+              ]
+            }
+          `}
+        </script>
         <title>Blog Site Development | Dotpot iT a leading it company</title>
         <meta
           name="description"
@@ -142,8 +155,9 @@ const BlogDevelopment = () => {
       <Navbar />
 
       <div
-        className={` pt-[15vh] ${window.innerWidth > 1280 ? "md:pt-[11vh]" : "md:pt-[15vh]"
-          } `}
+        className={` pt-[15vh] ${
+          window.innerWidth > 1280 ? "md:pt-[11vh]" : "md:pt-[15vh]"
+        } `}
       >
         <NavigatorComponent navigationData={navigationData} />
         <div>
@@ -153,10 +167,11 @@ const BlogDevelopment = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`mt-10 mb-16 ${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 `}
+                    className={`mt-10 mb-16 ${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                    } duration-1000 `}
                   >
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
@@ -193,16 +208,18 @@ const BlogDevelopment = () => {
                     className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
                   >
                     <div
-                      className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
-                        } `}
+                      className={`w-full md:w-1/2 lg:w-1/2 ${
+                        id % 2 === 0 && "order-2"
+                      } `}
                     >
                       <ReactVisibilitySensor partialVisibility>
                         {({ isVisible }) => (
                           <div
-                            className={` ${isVisible
-                              ? "opacity-100 translate-y-0"
-                              : "translate-y-20 opacity-0"
-                              } duration-1000 `}
+                            className={` ${
+                              isVisible
+                                ? "opacity-100 translate-y-0"
+                                : "translate-y-20 opacity-0"
+                            } duration-1000 `}
                           >
                             <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
                               {title}
@@ -217,11 +234,13 @@ const BlogDevelopment = () => {
                     <ReactVisibilitySensor partialVisibility>
                       {({ isVisible }) => (
                         <div
-                          className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
-                            } ${isVisible
+                          className={`w-full md:w-1/2 lg:w-1/2 ${
+                            id % 2 === 0 && "order-1"
+                          } ${
+                            isVisible
                               ? "opacity-100 translate-y-0"
                               : "translate-y-20 opacity-0"
-                            } duration-1000 `}
+                          } duration-1000 `}
                         >
                           <img
                             className="w-4/5 mx-auto"

@@ -1,17 +1,17 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import parse from "react-html-parser";
 import ReactVisibilitySensor from "react-visibility-sensor";
-import mobileappcover from "../../assets/img/contactcentersupport/mobileappcover.png";
 import Here_Dedicated_2 from "../../assets/img/Here_Dedicated_2.png";
 import Here_Dedicated_3 from "../../assets/img/Here_Dedicated_3.png";
 import Medium_Business_01 from "../../assets/img/Medium_Business_01.png";
+import mobileappcover from "../../assets/img/contactcentersupport/mobileappcover.png";
 import mobileappmodule from "../../assets/img/mobileappmodule.png";
 import Footer from "../../components/Footer/Footer";
 import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import parse from "react-html-parser";
 
 const MobileApp = () => {
   // Mobile App Data
@@ -26,8 +26,7 @@ const MobileApp = () => {
     {
       id: 2,
       title: "Customer Information Access",
-      description:
-        `The Mobile App Module provides agents with instant <a href="https://www.ibm.com/docs/en/cdfsp/7.6.1?topic=capabilities-controlling-access-customer-information" target="_blank" rel="nofollow">access to customer information,</a> including contact details, interaction history, and preferences. This allows agents to provide personalized and tailored service to customers, enhancing the overall customer experience.`,
+      description: `The Mobile App Module provides agents with instant <a href="https://www.ibm.com/docs/en/cdfsp/7.6.1?topic=capabilities-controlling-access-customer-information" target="_blank" rel="nofollow">access to customer information,</a> including contact details, interaction history, and preferences. This allows agents to provide personalized and tailored service to customers, enhancing the overall customer experience.`,
       illustration: Here_Dedicated_2,
     },
     {
@@ -51,6 +50,21 @@ const MobileApp = () => {
   return (
     <div className="bg-background-500">
       <Helmet>
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "http://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Dotpot iT",
+              "telephone": "+880 1817 176 192",
+              "email": [
+                "help@dotpotit.com",
+                "hr@dotpotit.com",
+                "marketing@dotpotit.com"
+              ]
+            }
+          `}
+        </script>
         <title>Mobile App | Dotpot iT a leading it company</title>
         <meta
           name="description"
@@ -92,8 +106,9 @@ const MobileApp = () => {
       <Navbar />
 
       <div
-        className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
-          } `}
+        className={` md:pt-[15vh] pt-[15vh] ${
+          window.innerWidth > 1280 && "md:pt-[11vh]"
+        } `}
       >
         <NavigatorComponent navigationData={navigationData} />
         <div>
@@ -103,10 +118,11 @@ const MobileApp = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`mt-10 mb-16 ${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 `}
+                    className={`mt-10 mb-16 ${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                    } duration-1000 `}
                   >
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
@@ -115,7 +131,21 @@ const MobileApp = () => {
                             Mobile App Module
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            Go mobile with Dotpot IT's contact center system. Our <a href="https://docs.oracle.com/cd/E26401_01/doc.122/e64384/T656045T656056.htm" target="_blank" rel="nofollow">mobile application</a> empowers contact center agents to deliver exceptional customer service on the go. With easy access to customized services, agents can efficiently serve customers anytime, anywhere. Experience the convenience and efficiency of our mobile app for contact center excellence.
+                            Go mobile with Dotpot IT's contact center system.
+                            Our{" "}
+                            <a
+                              href="https://docs.oracle.com/cd/E26401_01/doc.122/e64384/T656045T656056.htm"
+                              target="_blank"
+                              rel="nofollow"
+                            >
+                              mobile application
+                            </a>{" "}
+                            empowers contact center agents to deliver
+                            exceptional customer service on the go. With easy
+                            access to customized services, agents can
+                            efficiently serve customers anytime, anywhere.
+                            Experience the convenience and efficiency of our
+                            mobile app for contact center excellence.
                           </p>
                         </div>
                         <img
@@ -141,16 +171,18 @@ const MobileApp = () => {
                     key={id}
                   >
                     <div
-                      className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
-                        } `}
+                      className={`w-full md:w-1/2 lg:w-1/2 ${
+                        id % 2 === 0 && "order-2"
+                      } `}
                     >
                       <ReactVisibilitySensor partialVisibility>
                         {({ isVisible }) => (
                           <div
-                            className={` ${isVisible
-                              ? "opacity-100 translate-y-0"
-                              : "translate-y-20 opacity-0"
-                              } duration-1000 `}
+                            className={` ${
+                              isVisible
+                                ? "opacity-100 translate-y-0"
+                                : "translate-y-20 opacity-0"
+                            } duration-1000 `}
                           >
                             <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
                               {title}
@@ -165,11 +197,13 @@ const MobileApp = () => {
                     <ReactVisibilitySensor partialVisibility>
                       {({ isVisible }) => (
                         <div
-                          className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
-                            } ${isVisible
+                          className={`w-full md:w-1/2 lg:w-1/2 ${
+                            id % 2 === 0 && "order-1"
+                          } ${
+                            isVisible
                               ? "opacity-100 translate-y-0"
                               : "translate-y-20 opacity-0"
-                            } duration-1000 `}
+                          } duration-1000 `}
                         >
                           <img
                             className="w-4/5 mx-auto"
@@ -191,10 +225,11 @@ const MobileApp = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 p-3 text-textColor-500`}
+                    className={`${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                    } duration-1000 p-3 text-textColor-500`}
                   >
                     <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
                       Why Dotpot iT
@@ -205,7 +240,13 @@ const MobileApp = () => {
                       alt=""
                     />
                     <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
-                      Dotpot iT delivers cutting-edge Mobile App solutions for seamless communication and enhanced user engagement. With our expertise and exceptional support, we provide customized Mobile App services that integrate perfectly with your business, maximizing productivity and user satisfaction. Trust Dotpot iT to provide innovative Mobile App technology that drives success for your business.
+                      Dotpot iT delivers cutting-edge Mobile App solutions for
+                      seamless communication and enhanced user engagement. With
+                      our expertise and exceptional support, we provide
+                      customized Mobile App services that integrate perfectly
+                      with your business, maximizing productivity and user
+                      satisfaction. Trust Dotpot iT to provide innovative Mobile
+                      App technology that drives success for your business.
                     </p>
                   </div>
                 </>

@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import parse from "react-html-parser";
 import ReactVisibilitySensor from "react-visibility-sensor";
 import agile from "../../assets/img/agile.png";
 import clientcentric from "../../assets/img/clientcentric.png";
@@ -16,7 +17,6 @@ import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import parse from "react-html-parser";
 
 const DedicatedTeam = () => {
   const worksData = [
@@ -30,8 +30,7 @@ const DedicatedTeam = () => {
     {
       id: 2,
       title: "Agile Methodology",
-      description:
-        `Dotpot's team follows the <a href="https://www.wrike.com/project-management-guide/faq/what-is-agile-methodology-in-project-management/" target="_blank" rel="nofollow">agile methodology,</a> which emphasizes collaboration, flexibility, and continuous improvement. This approach allows them to quickly respond to changes and deliver the project's requirements efficiently.`,
+      description: `Dotpot's team follows the <a href="https://www.wrike.com/project-management-guide/faq/what-is-agile-methodology-in-project-management/" target="_blank" rel="nofollow">agile methodology,</a> which emphasizes collaboration, flexibility, and continuous improvement. This approach allows them to quickly respond to changes and deliver the project's requirements efficiently.`,
       illustration: agile,
     },
     {
@@ -44,8 +43,7 @@ const DedicatedTeam = () => {
     {
       id: 4,
       title: "Quality Assurance",
-      description:
-        `Dotpot's team has a dedicated <a href="https://www.techtarget.com/searchsoftwarequality/definition/quality-assurance" target="_blank" rel="nofollow">quality assurance</a> team that ensures that the project's quality meets the highest standards. They conduct regular testing and review to identify and address any issues that may arise.`,
+      description: `Dotpot's team has a dedicated <a href="https://www.techtarget.com/searchsoftwarequality/definition/quality-assurance" target="_blank" rel="nofollow">quality assurance</a> team that ensures that the project's quality meets the highest standards. They conduct regular testing and review to identify and address any issues that may arise.`,
       illustration: quality,
     },
     {
@@ -89,6 +87,21 @@ const DedicatedTeam = () => {
   return (
     <div className="bg-background-500">
       <Helmet>
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "http://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Dotpot iT",
+              "telephone": "+880 1817 176 192",
+              "email": [
+                "help@dotpotit.com",
+                "hr@dotpotit.com",
+                "marketing@dotpotit.com"
+              ]
+            }
+          `}
+        </script>
         <title>Dedicated Team | Dotpot iT a leading it company</title>
         <meta
           name="description"
@@ -202,7 +215,7 @@ const DedicatedTeam = () => {
                               {title}
                             </h2>
                             <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">
-                            {parse(description)}
+                              {parse(description)}
                             </p>
                           </div>
                         )}

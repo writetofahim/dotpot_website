@@ -1,3 +1,4 @@
+import SearchIcon from "@mui/icons-material/Search";
 import { Divider } from "@mui/material";
 import React, { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
@@ -6,50 +7,49 @@ import { BsArrowRight } from "react-icons/bs";
 import { SlOptionsVertical } from "react-icons/sl";
 import { TfiLocationPin } from "react-icons/tfi";
 import { Link } from "react-router-dom";
+import desktopImg from "../../assets/img/applyjob/Home page herov2_desktop.png";
 import Footer from "../../components/Footer/Footer";
 import NavbarJob from "../../components/NavbarJob/NavbarJob";
+import { AuthContext } from "../../contexts/AuthContext";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 import axios from "../../utils/axiosInstance";
 import postLogger from "../../utils/postLogger";
-import desktopImg from "../../assets/img/applyjob/Home page herov2_desktop.png";
-import SearchIcon from "@mui/icons-material/Search";
-import { AuthContext } from "../../contexts/AuthContext";
 
 export const JobCard = (props) => {
   const [love, setLove] = useState(false);
-  const [exists, setExist]= useState(props.likes.includes(props.user?._id));
-  
+  const [exists, setExist] = useState(props.likes.includes(props.user?._id));
+
   const handelChick = (_id) => {
     props.setId(props._id);
     props.setActiveJob(props);
   };
-  const toggleLove=()=>{
-    if(props.user){
-        if(!exists){
-          axios
+  const toggleLove = () => {
+    if (props.user) {
+      if (!exists) {
+        axios
           .post(`/job/${props._id}/like`, { userId: props.user._id })
-          .then(response => {
+          .then((response) => {
             console.log(response.data); // Handle the response data
-            setExist(true)
+            setExist(true);
           })
-          .catch(error => {
+          .catch((error) => {
             console.error(error); // Handle the error
           });
-        }else{
-          axios
+      } else {
+        axios
           .post(`/job/${props._id}/unlike`, { userId: props.user._id })
-          .then(response => {
+          .then((response) => {
             console.log(response.data); // Handle the response data
           })
-          .catch(error => {
+          .catch((error) => {
             console.error(error); // Handle the error
           });
-        }
-      setExist(false)
-        }else{
-          alert('Please Login!')
-        }
-  }
+      }
+      setExist(false);
+    } else {
+      alert("Please Login!");
+    }
+  };
   return (
     <>
       {/* For Large screen */}
@@ -143,23 +143,28 @@ export const JobCard = (props) => {
             ))}
           </div>
         </Link>
-        <div onClick={(e)=>e.stopPropagation()} className="ritht flex items-center justify-center absolute top-2 right-0 ">
-              {exists ? (
-                <AiFillHeart
-                  className="text-red-500 text-2xl"
-                  onClick={() => toggleLove()}
-                />
-              ) : (
-                <AiOutlineHeart
-                  className="text-red-500 text-2xl"
-                  onClick={() => toggleLove()}
-                />
-              )}
-              <div onClick={(e) => e.stopPropagation()} className="cursor-pointer p-5 rounded-full hover:bg-primary-100">
-                <SlOptionsVertical />
-              </div>
-            </div>
-
+        <div
+          onClick={(e) => e.stopPropagation()}
+          className="ritht flex items-center justify-center absolute top-2 right-0 "
+        >
+          {exists ? (
+            <AiFillHeart
+              className="text-red-500 text-2xl"
+              onClick={() => toggleLove()}
+            />
+          ) : (
+            <AiOutlineHeart
+              className="text-red-500 text-2xl"
+              onClick={() => toggleLove()}
+            />
+          )}
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="cursor-pointer p-5 rounded-full hover:bg-primary-100"
+          >
+            <SlOptionsVertical />
+          </div>
+        </div>
       </div>
     </>
   );
@@ -211,12 +216,29 @@ const ApplyJob = () => {
       setData(saveArr);
     }
   };
-  const filteredJobs = data?.filter(job=>job.title.toLowerCase().includes(SearchData.toLowerCase()))
-  
+  const filteredJobs = data?.filter((job) =>
+    job.title.toLowerCase().includes(SearchData.toLowerCase())
+  );
+
   return (
     <>
       <NavbarJob />
       <Helmet>
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "http://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Dotpot iT",
+              "telephone": "+880 1817 176 192",
+              "email": [
+                "help@dotpotit.com",
+                "hr@dotpotit.com",
+                "marketing@dotpotit.com"
+              ]
+            }
+          `}
+        </script>
         <title>Apply | Dotpot iT A Leading it Company</title>
         <meta
           name="description"

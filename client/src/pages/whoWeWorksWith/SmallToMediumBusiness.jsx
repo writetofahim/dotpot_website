@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import parse from "react-html-parser";
 import ReactVisibilitySensor from "react-visibility-sensor";
 import Medium_Business_01 from "../../assets/img/Medium_Business_01.png";
 import Medium_Business_02 from "../../assets/img/Medium_Business_02.png";
@@ -14,15 +15,13 @@ import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import parse from "react-html-parser";
 
 const WebsiteDesign = () => {
   const worksData = [
     {
       id: 1,
       title: "Customized Software Solutions",
-      description:
-        `Our <a href="https://www.businessnewsdaily.com/5175-custom-software-development.html" target="_blank" rel="nofollow">custom software development</a> services can help medium-sized businesses to streamline their processes, automate tasks, and improve communication. We work closely with our clients to understand their business needs and create software that addresses those specific challenges.`,
+      description: `Our <a href="https://www.businessnewsdaily.com/5175-custom-software-development.html" target="_blank" rel="nofollow">custom software development</a> services can help medium-sized businesses to streamline their processes, automate tasks, and improve communication. We work closely with our clients to understand their business needs and create software that addresses those specific challenges.`,
       illustration: Medium_Business_02,
     },
     {
@@ -73,6 +72,21 @@ const WebsiteDesign = () => {
   return (
     <div className="bg-background-500">
       <Helmet>
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "http://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Dotpot iT",
+              "telephone": "+880 1817 176 192",
+              "email": [
+                "help@dotpotit.com",
+                "hr@dotpotit.com",
+                "marketing@dotpotit.com"
+              ]
+            }
+          `}
+        </script>
         <title>Start Up Business | Dotpot iT a leading it company</title>
         <meta
           name="description"
@@ -112,8 +126,9 @@ const WebsiteDesign = () => {
       </Helmet>
       <Navbar />
       <div
-        className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
-          } `}
+        className={` md:pt-[15vh] pt-[15vh] ${
+          window.innerWidth > 1280 && "md:pt-[11vh]"
+        } `}
       >
         <NavigatorComponent navigationData={navigationData} />
         <div>
@@ -123,10 +138,11 @@ const WebsiteDesign = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`mt-10 mb-16 ${isVisible
+                    className={`mt-10 mb-16 ${
+                      isVisible
                         ? "opacity-100 translate-y-0"
                         : "translate-y-20 opacity-0"
-                      } duration-1000 `}
+                    } duration-1000 `}
                   >
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
@@ -135,7 +151,29 @@ const WebsiteDesign = () => {
                             Medium Business
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            As an IT company that specializes in software development and IT services, we understand the unique challenges that <a href="https://www.gartner.com/en/information-technology/glossary/smbs-small-and-midsize-businesses" target="_blank" rel="nofollow">medium-sized businesses</a> face. That's why we offer a range of solutions that can help these businesses improve their operations, increase productivity, and ultimately, grow their bottom line.One way we help medium-sized businesses is by providing custom software development services that are tailored to their specific needs. We work closely with our clients to understand their business processes, identify pain points, and develop solutions that address these challenges. Whether it's a web-based application or a mobile app, we can build software that helps streamline operations, improve communication, and increase efficiency.
+                            As an IT company that specializes in software
+                            development and IT services, we understand the
+                            unique challenges that{" "}
+                            <a
+                              href="https://www.gartner.com/en/information-technology/glossary/smbs-small-and-midsize-businesses"
+                              target="_blank"
+                              rel="nofollow"
+                            >
+                              medium-sized businesses
+                            </a>{" "}
+                            face. That's why we offer a range of solutions that
+                            can help these businesses improve their operations,
+                            increase productivity, and ultimately, grow their
+                            bottom line.One way we help medium-sized businesses
+                            is by providing custom software development services
+                            that are tailored to their specific needs. We work
+                            closely with our clients to understand their
+                            business processes, identify pain points, and
+                            develop solutions that address these challenges.
+                            Whether it's a web-based application or a mobile
+                            app, we can build software that helps streamline
+                            operations, improve communication, and increase
+                            efficiency.
                           </p>
                         </div>
                         <img
@@ -160,16 +198,18 @@ const WebsiteDesign = () => {
                     className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
                   >
                     <div
-                      className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
-                        } `}
+                      className={`w-full md:w-1/2 lg:w-1/2 ${
+                        id % 2 === 0 && "order-2"
+                      } `}
                     >
                       <ReactVisibilitySensor partialVisibility>
                         {({ isVisible }) => (
                           <div
-                            className={` ${isVisible
+                            className={` ${
+                              isVisible
                                 ? "opacity-100 translate-y-0"
                                 : "translate-y-20 opacity-0"
-                              } duration-1000 `}
+                            } duration-1000 `}
                           >
                             <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
                               {title}
@@ -184,11 +224,13 @@ const WebsiteDesign = () => {
                     <ReactVisibilitySensor partialVisibility>
                       {({ isVisible }) => (
                         <div
-                          className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
-                            } ${isVisible
+                          className={`w-full md:w-1/2 lg:w-1/2 ${
+                            id % 2 === 0 && "order-1"
+                          } ${
+                            isVisible
                               ? "opacity-100 translate-y-0"
                               : "translate-y-20 opacity-0"
-                            } duration-1000 `}
+                          } duration-1000 `}
                         >
                           <img
                             className="w-4/5 mx-auto"
@@ -210,10 +252,11 @@ const WebsiteDesign = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`${isVisible
+                    className={`${
+                      isVisible
                         ? "opacity-100 translate-y-0"
                         : "translate-y-20 opacity-0"
-                      } duration-1000 p-3 text-textColor-500`}
+                    } duration-1000 p-3 text-textColor-500`}
                   >
                     <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
                       Why Dotpot iT

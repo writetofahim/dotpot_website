@@ -1,25 +1,23 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import parse from "react-html-parser";
 import ReactVisibilitySensor from "react-visibility-sensor";
 import agencyweb from "../../assets/img/agencyweb.png";
 import blogweb from "../../assets/img/blogweb.png";
 import coverweb from "../../assets/img/coverweb.png";
-import customappweb from "../../assets/img/customappweb.png";
 import ecommarceweb from "../../assets/img/ecommarceweb.png";
 import Footer from "../../components/Footer/Footer";
 import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import parse from "react-html-parser";
 
 const OnDemand = () => {
   const worksData = [
     {
       id: 1,
       title: "Overview",
-      description:
-        `DotpotiT: Your on-demand solution provider for quick, reliable, and customizable services. Transforming accessibility, delivering innovation, and empowering businesses to thrive in the digital landscape. Trust us for high-quality, affordable solutions that exceed expectations.`,
+      description: `DotpotiT: Your on-demand solution provider for quick, reliable, and customizable services. Transforming accessibility, delivering innovation, and empowering businesses to thrive in the digital landscape. Trust us for high-quality, affordable solutions that exceed expectations.`,
       illustration: ecommarceweb,
     },
     {
@@ -43,6 +41,21 @@ const OnDemand = () => {
   return (
     <div className="bg-background-500">
       <Helmet>
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "http://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Dotpot iT",
+              "telephone": "+880 1817 176 192",
+              "email": [
+                "help@dotpotit.com",
+                "hr@dotpotit.com",
+                "marketing@dotpotit.com"
+              ]
+            }
+          `}
+        </script>
         <title>On Demand Solutions | Dotpot iT a leading it company</title>
         <meta
           name="description"
@@ -82,7 +95,9 @@ const OnDemand = () => {
         />
       </Helmet>
       <Navbar />
-      <div className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
+      <div
+        className={` md:pt-[15vh] pt-[15vh] ${
+          window.innerWidth > 1280 && "md:pt-[11vh]"
         } `}
       >
         <NavigatorComponent navigationData={navigationData} />
@@ -93,10 +108,11 @@ const OnDemand = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`mt-10 mb-16 ${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 `}
+                    className={`mt-10 mb-16 ${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                    } duration-1000 `}
                   >
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
@@ -105,7 +121,16 @@ const OnDemand = () => {
                             On Demand Solutions
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            Unlock instant solutions at your fingertips with <a href="https://www.experian.co.uk/business/glossary/on-demand-software/#:~:text=On%2DDemand%20Software%2C%20often%20referred,your%20customers%20and%20application%20partners." target="_blank" rel="nofollow">On Demand Solutions</a>. Seamlessly streamline tasks and access services anytime, anywhere for ultimate convenience.
+                            Unlock instant solutions at your fingertips with{" "}
+                            <a
+                              href="https://www.experian.co.uk/business/glossary/on-demand-software/#:~:text=On%2DDemand%20Software%2C%20often%20referred,your%20customers%20and%20application%20partners."
+                              target="_blank"
+                              rel="nofollow"
+                            >
+                              On Demand Solutions
+                            </a>
+                            . Seamlessly streamline tasks and access services
+                            anytime, anywhere for ultimate convenience.
                           </p>
                         </div>
                         <img
@@ -131,16 +156,18 @@ const OnDemand = () => {
                     key={id}
                   >
                     <div
-                      className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
-                        } `}
+                      className={`w-full md:w-1/2 lg:w-1/2 ${
+                        id % 2 === 0 && "order-2"
+                      } `}
                     >
                       <ReactVisibilitySensor partialVisibility>
                         {({ isVisible }) => (
                           <div
-                            className={` ${isVisible
-                              ? "opacity-100 translate-y-0"
-                              : "translate-y-20 opacity-0"
-                              } duration-1000 `}
+                            className={` ${
+                              isVisible
+                                ? "opacity-100 translate-y-0"
+                                : "translate-y-20 opacity-0"
+                            } duration-1000 `}
                           >
                             <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
                               {title}
@@ -155,11 +182,13 @@ const OnDemand = () => {
                     <ReactVisibilitySensor partialVisibility>
                       {({ isVisible }) => (
                         <div
-                          className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
-                            } ${isVisible
+                          className={`w-full md:w-1/2 lg:w-1/2 ${
+                            id % 2 === 0 && "order-1"
+                          } ${
+                            isVisible
                               ? "opacity-100 translate-y-0"
                               : "translate-y-20 opacity-0"
-                            } duration-1000 `}
+                          } duration-1000 `}
                         >
                           <img
                             className="w-4/5 mx-auto"
@@ -181,10 +210,11 @@ const OnDemand = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 p-3 text-textColor-500`}
+                    className={`${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                    } duration-1000 p-3 text-textColor-500`}
                   >
                     <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
                       Why Dotpot iT
@@ -195,7 +225,21 @@ const OnDemand = () => {
                       alt="Separator Image"
                     />
                     <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
-                      Dotpot IT is the leading choice for on-demand service businesses in need of top-quality web design and development solutions. With their extensive expertise in this industry, they create visually captivating and user-friendly websites tailored to meet the specific needs of on-demand services. Dotpot IT offers a wide range of specialized services, including real-time order management systems, seamless payment integration, dynamic service scheduling, and customer feedback functionalities. They prioritize exceptional user experiences and provide ongoing maintenance and support to ensure optimal website performance. Dotpot IT empowers on-demand service providers to enhance their online presence and deliver outstanding digital experiences in this rapidly evolving sector.
+                      Dotpot IT is the leading choice for on-demand service
+                      businesses in need of top-quality web design and
+                      development solutions. With their extensive expertise in
+                      this industry, they create visually captivating and
+                      user-friendly websites tailored to meet the specific needs
+                      of on-demand services. Dotpot IT offers a wide range of
+                      specialized services, including real-time order management
+                      systems, seamless payment integration, dynamic service
+                      scheduling, and customer feedback functionalities. They
+                      prioritize exceptional user experiences and provide
+                      ongoing maintenance and support to ensure optimal website
+                      performance. Dotpot IT empowers on-demand service
+                      providers to enhance their online presence and deliver
+                      outstanding digital experiences in this rapidly evolving
+                      sector.
                     </p>
                   </div>
                 </>

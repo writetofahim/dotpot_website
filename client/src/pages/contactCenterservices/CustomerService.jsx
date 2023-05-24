@@ -1,17 +1,17 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import parse from "react-html-parser";
 import ReactVisibilitySensor from "react-visibility-sensor";
-import cscover from "../../assets/img/contactcentersupport/cscover.png";
-import callerpiority from "../../assets/img/contactcentersupport/callerpiority.png";
-import voiceresponse from "../../assets/img/customersupport/voiceresponse.png";
 import Medium_Business_07 from "../../assets/img/Medium_Business_07.png";
+import callerpiority from "../../assets/img/contactcentersupport/callerpiority.png";
+import cscover from "../../assets/img/contactcentersupport/cscover.png";
+import voiceresponse from "../../assets/img/customersupport/voiceresponse.png";
 import ticketingsystem from "../../assets/img/ticketingsystem.png";
 import Footer from "../../components/Footer/Footer";
 import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import parse from "react-html-parser";
 
 const CustomerService = () => {
   // Customer Service Data
@@ -19,8 +19,7 @@ const CustomerService = () => {
     {
       id: 1,
       title: "Ticketing System",
-      description:
-        `Dotpot iT offers a <a href="https://www.customerservicemanager.com/what-is-a-ticketing-system-in-customer-service/" target="_blank" rel="nofollow">ticketing system</a> that allows customer service agents to manage and track customer inquiries and issues in a structured and organized manner. This ensures timely resolution, reduces response times, and enhances overall customer satisfaction.`,
+      description: `Dotpot iT offers a <a href="https://www.customerservicemanager.com/what-is-a-ticketing-system-in-customer-service/" target="_blank" rel="nofollow">ticketing system</a> that allows customer service agents to manage and track customer inquiries and issues in a structured and organized manner. This ensures timely resolution, reduces response times, and enhances overall customer satisfaction.`,
       illustration: ticketingsystem,
     },
     {
@@ -40,8 +39,7 @@ const CustomerService = () => {
     {
       id: 4,
       title: "Virtual Assistant and Chatbots",
-      description:
-        `Dotpot iT incorporates <a href="https://elearningindustry.com/what-is-the-distinction-between-a-chatbot-and-a-virtual-assistant" target="_blank" rel="nofollow">virtual assistant and chatbot</a> technologies to provide automated and personalized customer support. These AI-powered tools can handle routine inquiries, provide instant responses, and escalate complex issues to human agents when needed.`,
+      description: `Dotpot iT incorporates <a href="https://elearningindustry.com/what-is-the-distinction-between-a-chatbot-and-a-virtual-assistant" target="_blank" rel="nofollow">virtual assistant and chatbot</a> technologies to provide automated and personalized customer support. These AI-powered tools can handle routine inquiries, provide instant responses, and escalate complex issues to human agents when needed.`,
       illustration: voiceresponse,
     },
   ];
@@ -51,6 +49,21 @@ const CustomerService = () => {
   return (
     <div className="bg-background-500">
       <Helmet>
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "http://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Dotpot iT",
+              "telephone": "+880 1817 176 192",
+              "email": [
+                "help@dotpotit.com",
+                "hr@dotpotit.com",
+                "marketing@dotpotit.com"
+              ]
+            }
+          `}
+        </script>
         <title>Customer Service | Dotpot iT a leading it company</title>
         <meta
           name="description"
@@ -92,8 +105,9 @@ const CustomerService = () => {
       <Navbar />
 
       <div
-        className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
-          } `}
+        className={` md:pt-[15vh] pt-[15vh] ${
+          window.innerWidth > 1280 && "md:pt-[11vh]"
+        } `}
       >
         <NavigatorComponent navigationData={navigationData} />
         <div>
@@ -103,10 +117,11 @@ const CustomerService = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`mt-10 mb-16 ${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 `}
+                    className={`mt-10 mb-16 ${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                    } duration-1000 `}
                   >
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
@@ -115,7 +130,14 @@ const CustomerService = () => {
                             Customer Service by Dotpot iT
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            Providing excellent customer service is crucial for building and enhancing relationships with customers. Regardless of the quality of the product or the skills of the staff, customers tend to recall their direct interactions with the company the most. At Dotpot IT CC, we prioritize delivering top-notch support services to ensure our customers receive the exceptional experience they deserve.
+                            Providing excellent customer service is crucial for
+                            building and enhancing relationships with customers.
+                            Regardless of the quality of the product or the
+                            skills of the staff, customers tend to recall their
+                            direct interactions with the company the most. At
+                            Dotpot IT CC, we prioritize delivering top-notch
+                            support services to ensure our customers receive the
+                            exceptional experience they deserve.
                           </p>
                         </div>
                         <img
@@ -141,16 +163,18 @@ const CustomerService = () => {
                     key={id}
                   >
                     <div
-                      className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
-                        } `}
+                      className={`w-full md:w-1/2 lg:w-1/2 ${
+                        id % 2 === 0 && "order-2"
+                      } `}
                     >
                       <ReactVisibilitySensor partialVisibility>
                         {({ isVisible }) => (
                           <div
-                            className={` ${isVisible
-                              ? "opacity-100 translate-y-0"
-                              : "translate-y-20 opacity-0"
-                              } duration-1000 `}
+                            className={` ${
+                              isVisible
+                                ? "opacity-100 translate-y-0"
+                                : "translate-y-20 opacity-0"
+                            } duration-1000 `}
                           >
                             <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
                               {title}
@@ -165,11 +189,13 @@ const CustomerService = () => {
                     <ReactVisibilitySensor partialVisibility>
                       {({ isVisible }) => (
                         <div
-                          className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
-                            } ${isVisible
+                          className={`w-full md:w-1/2 lg:w-1/2 ${
+                            id % 2 === 0 && "order-1"
+                          } ${
+                            isVisible
                               ? "opacity-100 translate-y-0"
                               : "translate-y-20 opacity-0"
-                            } duration-1000 `}
+                          } duration-1000 `}
                         >
                           <img
                             className="w-4/5 mx-auto"
@@ -191,10 +217,11 @@ const CustomerService = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 p-3 text-textColor-500`}
+                    className={`${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                    } duration-1000 p-3 text-textColor-500`}
                   >
                     <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
                       Why Dotpot iT
@@ -205,7 +232,13 @@ const CustomerService = () => {
                       alt=""
                     />
                     <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
-                      Dotpot iT offers advanced solutions for efficient and exceptional customer service. With our expertise and exceptional support, we provide customized services that seamlessly integrate with your business, maximizing productivity and ensuring customer satisfaction. Trust Dotpot iT to deliver cutting-edge technology that drives success for your customer service operations.
+                      Dotpot iT offers advanced solutions for efficient and
+                      exceptional customer service. With our expertise and
+                      exceptional support, we provide customized services that
+                      seamlessly integrate with your business, maximizing
+                      productivity and ensuring customer satisfaction. Trust
+                      Dotpot iT to deliver cutting-edge technology that drives
+                      success for your customer service operations.
                     </p>
                   </div>
                 </>

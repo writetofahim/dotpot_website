@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import parse from "react-html-parser";
 import ReactVisibilitySensor from "react-visibility-sensor";
 import Agencies_01 from "../../assets/img/Agencies_01.png";
 import Agencies_02 from "../../assets/img/Agencies_02.png";
@@ -12,15 +13,13 @@ import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import parse from "react-html-parser";
 
 const AgenciesBusiness = () => {
   const worksData = [
     {
       id: 1,
       title: "Customized Solutions",
-      description:
-        `We specialize in creating <a href="https://inspeerity.com/blog/custom-software-development" target="_blank" rel="nofollow">customized software solutions</a> that are tailored to the specific needs of our clients. This means that agencies and businesses can get software that is designed to meet their unique requirements, which can help them achieve their goals more efficiently.`,
+      description: `We specialize in creating <a href="https://inspeerity.com/blog/custom-software-development" target="_blank" rel="nofollow">customized software solutions</a> that are tailored to the specific needs of our clients. This means that agencies and businesses can get software that is designed to meet their unique requirements, which can help them achieve their goals more efficiently.`,
       illustration: Agencies_02,
     },
     {
@@ -57,6 +56,21 @@ const AgenciesBusiness = () => {
   return (
     <div className="bg-background-500">
       <Helmet>
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "http://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Dotpot iT",
+              "telephone": "+880 1817 176 192",
+              "email": [
+                "help@dotpotit.com",
+                "hr@dotpotit.com",
+                "marketing@dotpotit.com"
+              ]
+            }
+          `}
+        </script>
         <title>Agencies Business | Dotpot iT a leading it company</title>
         <meta
           name="description"
@@ -96,8 +110,9 @@ const AgenciesBusiness = () => {
       </Helmet>
       <Navbar />
       <div
-        className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
-          } `}
+        className={` md:pt-[15vh] pt-[15vh] ${
+          window.innerWidth > 1280 && "md:pt-[11vh]"
+        } `}
       >
         <NavigatorComponent navigationData={navigationData} />
         <div>
@@ -107,10 +122,11 @@ const AgenciesBusiness = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`mt-10 mb-16 ${isVisible
+                    className={`mt-10 mb-16 ${
+                      isVisible
                         ? "opacity-100 translate-y-0"
                         : "translate-y-20 opacity-0"
-                      } duration-1000 `}
+                    } duration-1000 `}
                   >
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
@@ -119,23 +135,31 @@ const AgenciesBusiness = () => {
                             Agencies Business
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            As an IT company, we can provide a range of services to help <a href="https://marketbusinessnews.com/financial-glossary/agency-definition/" target="_blank" rel="nofollow">agencies and businesses</a> achieve their goals.
-                            Our software development expertise allows us to
-                            create customized solutions tailored to meet
-                            specific needs, such as streamlining operations,
-                            increasing efficiency, and improving customer
-                            engagement. We can also offer IT consulting services
-                            to help identify areas for improvement and make
-                            recommendations for technology solutions. Our team
-                            of experts can assist with project management,
-                            quality assurance, and testing, ensuring that
-                            software is delivered on time and within budget.
-                            Additionally, we can provide ongoing maintenance and
-                            support services to keep software up-to-date and
-                            running smoothly. By partnering with us, agencies
-                            and businesses can leverage our technical expertise
-                            to gain a competitive edge, increase productivity,
-                            and drive growth.
+                            As an IT company, we can provide a range of services
+                            to help{" "}
+                            <a
+                              href="https://marketbusinessnews.com/financial-glossary/agency-definition/"
+                              target="_blank"
+                              rel="nofollow"
+                            >
+                              agencies and businesses
+                            </a>{" "}
+                            achieve their goals. Our software development
+                            expertise allows us to create customized solutions
+                            tailored to meet specific needs, such as
+                            streamlining operations, increasing efficiency, and
+                            improving customer engagement. We can also offer IT
+                            consulting services to help identify areas for
+                            improvement and make recommendations for technology
+                            solutions. Our team of experts can assist with
+                            project management, quality assurance, and testing,
+                            ensuring that software is delivered on time and
+                            within budget. Additionally, we can provide ongoing
+                            maintenance and support services to keep software
+                            up-to-date and running smoothly. By partnering with
+                            us, agencies and businesses can leverage our
+                            technical expertise to gain a competitive edge,
+                            increase productivity, and drive growth.
                           </p>
                         </div>
                         <img
@@ -160,16 +184,18 @@ const AgenciesBusiness = () => {
                     className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
                   >
                     <div
-                      className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
-                        } `}
+                      className={`w-full md:w-1/2 lg:w-1/2 ${
+                        id % 2 === 0 && "order-2"
+                      } `}
                     >
                       <ReactVisibilitySensor partialVisibility>
                         {({ isVisible }) => (
                           <div
-                            className={` ${isVisible
+                            className={` ${
+                              isVisible
                                 ? "opacity-100 translate-y-0"
                                 : "translate-y-20 opacity-0"
-                              } duration-1000 `}
+                            } duration-1000 `}
                           >
                             <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
                               {title}
@@ -184,11 +210,13 @@ const AgenciesBusiness = () => {
                     <ReactVisibilitySensor partialVisibility>
                       {({ isVisible }) => (
                         <div
-                          className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
-                            } ${isVisible
+                          className={`w-full md:w-1/2 lg:w-1/2 ${
+                            id % 2 === 0 && "order-1"
+                          } ${
+                            isVisible
                               ? "opacity-100 translate-y-0"
                               : "translate-y-20 opacity-0"
-                            } duration-1000 `}
+                          } duration-1000 `}
                         >
                           <img
                             className="w-4/5 mx-auto"
@@ -210,10 +238,11 @@ const AgenciesBusiness = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`${isVisible
+                    className={`${
+                      isVisible
                         ? "opacity-100 translate-y-0"
                         : "translate-y-20 opacity-0"
-                      } duration-1000 p-3 text-textColor-500`}
+                    } duration-1000 p-3 text-textColor-500`}
                   >
                     <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
                       Why Dotpot iT

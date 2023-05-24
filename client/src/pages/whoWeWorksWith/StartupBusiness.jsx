@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import parse from "react-html-parser";
 import ReactVisibilitySensor from "react-visibility-sensor";
 import startup01 from "../../assets/img/startup01.png";
 import startup02 from "../../assets/img/startup02.png";
@@ -12,7 +13,6 @@ import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import parse from "react-html-parser";
 
 const WebsiteDesign = () => {
   const worksData = [
@@ -47,8 +47,7 @@ const WebsiteDesign = () => {
     {
       id: 5,
       title: "Strategic Partnership",
-      description:
-        `By partnering with your IT company, startups can benefit from a <a href="https://www.indeed.com/career-advice/career-development/strategic-partnerships" target="_blank" rel="nofollow">strategic</a> advisor who can provide insights and guidance on technology investments, security, and other IT-related issues. Your IT company can serve as a trusted partner that helps the startup achieve its long-term goals.`,
+      description: `By partnering with your IT company, startups can benefit from a <a href="https://www.indeed.com/career-advice/career-development/strategic-partnerships" target="_blank" rel="nofollow">strategic</a> advisor who can provide insights and guidance on technology investments, security, and other IT-related issues. Your IT company can serve as a trusted partner that helps the startup achieve its long-term goals.`,
       illustration: startup06,
     },
   ];
@@ -57,6 +56,21 @@ const WebsiteDesign = () => {
   return (
     <div className="bg-background-500">
       <Helmet>
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "http://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Dotpot iT",
+              "telephone": "+880 1817 176 192",
+              "email": [
+                "help@dotpotit.com",
+                "hr@dotpotit.com",
+                "marketing@dotpotit.com"
+              ]
+            }
+          `}
+        </script>
         <title>Startup Business | Dotpot iT a leading it company</title>
         <meta
           name="description"
@@ -92,8 +106,9 @@ const WebsiteDesign = () => {
       </Helmet>
       <Navbar />
       <div
-        className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
-          } `}
+        className={` md:pt-[15vh] pt-[15vh] ${
+          window.innerWidth > 1280 && "md:pt-[11vh]"
+        } `}
       >
         <NavigatorComponent navigationData={navigationData} />
         <div>
@@ -103,10 +118,11 @@ const WebsiteDesign = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`mt-10 mb-16 ${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 `}
+                    className={`mt-10 mb-16 ${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                    } duration-1000 `}
                   >
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
@@ -115,7 +131,21 @@ const WebsiteDesign = () => {
                             Start Up Business
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            As an IT company, your expertise can be invaluable to <a href="https://www.investopedia.com/terms/s/startup.asp" target="_blank" rel="nofollow">startup businesses</a> looking to establish a strong digital presence. Your team of skilled professionals can provide a range of services, such as developing custom software solutions, designing and launching a website or mobile app, setting up cloud infrastructure, and providing ongoing technical support.
+                            As an IT company, your expertise can be invaluable
+                            to{" "}
+                            <a
+                              href="https://www.investopedia.com/terms/s/startup.asp"
+                              target="_blank"
+                              rel="nofollow"
+                            >
+                              startup businesses
+                            </a>{" "}
+                            looking to establish a strong digital presence. Your
+                            team of skilled professionals can provide a range of
+                            services, such as developing custom software
+                            solutions, designing and launching a website or
+                            mobile app, setting up cloud infrastructure, and
+                            providing ongoing technical support.
                           </p>
                         </div>
                         <img
@@ -141,16 +171,18 @@ const WebsiteDesign = () => {
                     className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
                   >
                     <div
-                      className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
-                        } `}
+                      className={`w-full md:w-1/2 lg:w-1/2 ${
+                        id % 2 === 0 && "order-2"
+                      } `}
                     >
                       <ReactVisibilitySensor partialVisibility>
                         {({ isVisible }) => (
                           <div
-                            className={` ${isVisible
-                              ? "opacity-100 translate-y-0"
-                              : "translate-y-20 opacity-0"
-                              } duration-1000 `}
+                            className={` ${
+                              isVisible
+                                ? "opacity-100 translate-y-0"
+                                : "translate-y-20 opacity-0"
+                            } duration-1000 `}
                           >
                             <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
                               {title}
@@ -165,11 +197,13 @@ const WebsiteDesign = () => {
                     <ReactVisibilitySensor partialVisibility>
                       {({ isVisible }) => (
                         <div
-                          className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
-                            } ${isVisible
+                          className={`w-full md:w-1/2 lg:w-1/2 ${
+                            id % 2 === 0 && "order-1"
+                          } ${
+                            isVisible
                               ? "opacity-100 translate-y-0"
                               : "translate-y-20 opacity-0"
-                            } duration-1000 `}
+                          } duration-1000 `}
                         >
                           <img
                             className="w-4/5 mx-auto"
@@ -191,10 +225,11 @@ const WebsiteDesign = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 p-3 text-textColor-500`}
+                    className={`${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                    } duration-1000 p-3 text-textColor-500`}
                   >
                     <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
                       Why Dotpot iT

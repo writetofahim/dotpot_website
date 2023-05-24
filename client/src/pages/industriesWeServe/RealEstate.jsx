@@ -1,25 +1,23 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import parse from "react-html-parser";
 import ReactVisibilitySensor from "react-visibility-sensor";
 import agencyweb from "../../assets/img/agencyweb.png";
 import blogweb from "../../assets/img/blogweb.png";
 import coverweb from "../../assets/img/coverweb.png";
-import customappweb from "../../assets/img/customappweb.png";
 import ecommarceweb from "../../assets/img/ecommarceweb.png";
 import Footer from "../../components/Footer/Footer";
 import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import parse from "react-html-parser";
 
 const RealEstate = () => {
   const worksData = [
     {
       id: 1,
       title: "Property Comparisons",
-      description:
-        ` Enable users to compare multiple properties side by side, facilitating decision-making by highlighting key features, prices, and specifications.`,
+      description: ` Enable users to compare multiple properties side by side, facilitating decision-making by highlighting key features, prices, and specifications.`,
       illustration: ecommarceweb,
     },
     {
@@ -39,8 +37,7 @@ const RealEstate = () => {
     {
       id: 4,
       title: "Virtual Tours and 3D Floor Plans",
-      description:
-        `Offer <a href="https://www.archilogic.com/insights/4-tips-for-creating-virtual-tours-of-3d-floor-plans" target="_blank" rel="nofollow">virtual tours or 3D floor plans</a> of select properties, allowing users to virtually explore the property's layout and visualize the space before scheduling an in-person visit.`,
+      description: `Offer <a href="https://www.archilogic.com/insights/4-tips-for-creating-virtual-tours-of-3d-floor-plans" target="_blank" rel="nofollow">virtual tours or 3D floor plans</a> of select properties, allowing users to virtually explore the property's layout and visualize the space before scheduling an in-person visit.`,
       illustration: blogweb,
     },
     {
@@ -57,6 +54,21 @@ const RealEstate = () => {
   return (
     <div className="bg-background-500">
       <Helmet>
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "http://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Dotpot iT",
+              "telephone": "+880 1817 176 192",
+              "email": [
+                "help@dotpotit.com",
+                "hr@dotpotit.com",
+                "marketing@dotpotit.com"
+              ]
+            }
+          `}
+        </script>
         <title>Real Estate | Dotpot iT a leading it company</title>
         <meta
           name="description"
@@ -96,7 +108,9 @@ const RealEstate = () => {
         />
       </Helmet>
       <Navbar />
-      <div className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
+      <div
+        className={` md:pt-[15vh] pt-[15vh] ${
+          window.innerWidth > 1280 && "md:pt-[11vh]"
         } `}
       >
         <NavigatorComponent navigationData={navigationData} />
@@ -107,10 +121,11 @@ const RealEstate = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`mt-10 mb-16 ${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 `}
+                    className={`mt-10 mb-16 ${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                    } duration-1000 `}
                   >
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
@@ -119,7 +134,16 @@ const RealEstate = () => {
                             Real Estate
                           </h1>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            Depend on our expertise - Customized <a href="https://inmotionrealestate.com/solutions/web-development/" target="_blank" rel="nofollow">real estate solutions</a> that cater to your specific requirements. Trust in our reliable services for success.
+                            Depend on our expertise - Customized{" "}
+                            <a
+                              href="https://inmotionrealestate.com/solutions/web-development/"
+                              target="_blank"
+                              rel="nofollow"
+                            >
+                              real estate solutions
+                            </a>{" "}
+                            that cater to your specific requirements. Trust in
+                            our reliable services for success.
                           </p>
                         </div>
                         <img
@@ -145,16 +169,18 @@ const RealEstate = () => {
                     key={id}
                   >
                     <div
-                      className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
-                        } `}
+                      className={`w-full md:w-1/2 lg:w-1/2 ${
+                        id % 2 === 0 && "order-2"
+                      } `}
                     >
                       <ReactVisibilitySensor partialVisibility>
                         {({ isVisible }) => (
                           <div
-                            className={` ${isVisible
-                              ? "opacity-100 translate-y-0"
-                              : "translate-y-20 opacity-0"
-                              } duration-1000 `}
+                            className={` ${
+                              isVisible
+                                ? "opacity-100 translate-y-0"
+                                : "translate-y-20 opacity-0"
+                            } duration-1000 `}
                           >
                             <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
                               {title}
@@ -169,11 +195,13 @@ const RealEstate = () => {
                     <ReactVisibilitySensor partialVisibility>
                       {({ isVisible }) => (
                         <div
-                          className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
-                            } ${isVisible
+                          className={`w-full md:w-1/2 lg:w-1/2 ${
+                            id % 2 === 0 && "order-1"
+                          } ${
+                            isVisible
                               ? "opacity-100 translate-y-0"
                               : "translate-y-20 opacity-0"
-                            } duration-1000 `}
+                          } duration-1000 `}
                         >
                           <img
                             className="w-4/5 mx-auto"
@@ -195,10 +223,11 @@ const RealEstate = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`${isVisible
-                      ? "opacity-100 translate-y-0"
-                      : "translate-y-20 opacity-0"
-                      } duration-1000 p-3 text-textColor-500`}
+                    className={`${
+                      isVisible
+                        ? "opacity-100 translate-y-0"
+                        : "translate-y-20 opacity-0"
+                    } duration-1000 p-3 text-textColor-500`}
                   >
                     <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
                       Why Dotpot iT
@@ -209,7 +238,19 @@ const RealEstate = () => {
                       alt="Separator Image"
                     />
                     <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
-                      Dotpot IT is the go-to choice for real estate businesses in need of exceptional web design and development solutions. With their deep industry knowledge, they create visually stunning and user-friendly websites that cater specifically to the needs of the real estate market. Dotpot IT offers a range of tailored services, including property listing management systems, advanced search features, virtual tours, and agent profiles. They prioritize seamless user experiences and provide ongoing maintenance and support to ensure optimal website performance. Dotpot IT empowers real estate companies to enhance their online presence and deliver exceptional digital experiences in this dynamic industry.
+                      Dotpot IT is the go-to choice for real estate businesses
+                      in need of exceptional web design and development
+                      solutions. With their deep industry knowledge, they create
+                      visually stunning and user-friendly websites that cater
+                      specifically to the needs of the real estate market.
+                      Dotpot IT offers a range of tailored services, including
+                      property listing management systems, advanced search
+                      features, virtual tours, and agent profiles. They
+                      prioritize seamless user experiences and provide ongoing
+                      maintenance and support to ensure optimal website
+                      performance. Dotpot IT empowers real estate companies to
+                      enhance their online presence and deliver exceptional
+                      digital experiences in this dynamic industry.
                     </p>
                   </div>
                 </>

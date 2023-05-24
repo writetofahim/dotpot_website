@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import parse from "react-html-parser";
 import ReactVisibilitySensor from "react-visibility-sensor";
 import benifit from "../../assets/img/Fixed_Price1.png";
 import projectscope from "../../assets/img/Fixed_Price3.png";
@@ -11,7 +12,6 @@ import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import parse from "react-html-parser";
 
 const FixedPrice = () => {
   const worksData = [
@@ -49,6 +49,21 @@ const FixedPrice = () => {
   return (
     <div>
       <Helmet>
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "http://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Dotpot iT",
+              "telephone": "+880 1817 176 192",
+              "email": [
+                "help@dotpotit.com",
+                "hr@dotpotit.com",
+                "marketing@dotpotit.com"
+              ]
+            }
+          `}
+        </script>
         <title>
           Fixed Price Partnership Model | Dotpot iT a leading it company
         </title>
@@ -97,8 +112,9 @@ const FixedPrice = () => {
       <Navbar />
       <div className="bg-background-500">
         <div
-          className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
-            } `}
+          className={` md:pt-[15vh] pt-[15vh] ${
+            window.innerWidth > 1280 && "md:pt-[11vh]"
+          } `}
         >
           <NavigatorComponent navigationData={navigationData} />
           <div>
@@ -108,10 +124,11 @@ const FixedPrice = () => {
                 {({ isVisible }) => (
                   <>
                     <div
-                      className={`mt-10 mb-16 ${isVisible
-                        ? "opacity-100 translate-y-0"
-                        : "translate-y-20 opacity-0"
-                        } duration-1000 `}
+                      className={`mt-10 mb-16 ${
+                        isVisible
+                          ? "opacity-100 translate-y-0"
+                          : "translate-y-20 opacity-0"
+                      } duration-1000 `}
                     >
                       <div className="container mx-auto">
                         <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
@@ -120,7 +137,19 @@ const FixedPrice = () => {
                               Fixed Price
                             </h1>
                             <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                              👍In a <a href="https://easternpeak.com/definition/fixed-cost-model/" target="_blank" rel="nofollow">Fixed Price Partnership Model,</a> Dotpot iT and the client agree upon a fixed price for a specific project or set of services. This model is beneficial for clients who have a clear understanding of their project requirements and want to know the exact cost upfront
+                              👍In a{" "}
+                              <a
+                                href="https://easternpeak.com/definition/fixed-cost-model/"
+                                target="_blank"
+                                rel="nofollow"
+                              >
+                                Fixed Price Partnership Model,
+                              </a>{" "}
+                              Dotpot iT and the client agree upon a fixed price
+                              for a specific project or set of services. This
+                              model is beneficial for clients who have a clear
+                              understanding of their project requirements and
+                              want to know the exact cost upfront
                             </p>
                           </div>
                           <img
@@ -146,16 +175,18 @@ const FixedPrice = () => {
                       className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
                     >
                       <div
-                        className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
-                          } `}
+                        className={`w-full md:w-1/2 lg:w-1/2 ${
+                          id % 2 === 0 && "order-2"
+                        } `}
                       >
                         <ReactVisibilitySensor partialVisibility>
                           {({ isVisible }) => (
                             <div
-                              className={` ${isVisible
-                                ? "opacity-100 translate-y-0"
-                                : "translate-y-20 opacity-0"
-                                } duration-1000 `}
+                              className={` ${
+                                isVisible
+                                  ? "opacity-100 translate-y-0"
+                                  : "translate-y-20 opacity-0"
+                              } duration-1000 `}
                             >
                               <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
                                 {title}
@@ -170,11 +201,13 @@ const FixedPrice = () => {
                       <ReactVisibilitySensor partialVisibility>
                         {({ isVisible }) => (
                           <div
-                            className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
-                              } ${isVisible
+                            className={`w-full md:w-1/2 lg:w-1/2 ${
+                              id % 2 === 0 && "order-1"
+                            } ${
+                              isVisible
                                 ? "opacity-100 translate-y-0"
                                 : "translate-y-20 opacity-0"
-                              } duration-1000 `}
+                            } duration-1000 `}
                           >
                             <img
                               className="w-4/5 mx-auto"
@@ -340,10 +373,11 @@ const FixedPrice = () => {
                 {({ isVisible }) => (
                   <>
                     <div
-                      className={`${isVisible
-                        ? "opacity-100 translate-y-0"
-                        : "translate-y-20 opacity-0"
-                        } duration-1000 p-3 text-textColor-500`}
+                      className={`${
+                        isVisible
+                          ? "opacity-100 translate-y-0"
+                          : "translate-y-20 opacity-0"
+                      } duration-1000 p-3 text-textColor-500`}
                     >
                       <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
                         Why Dotpot iT
