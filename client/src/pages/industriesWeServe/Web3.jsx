@@ -1,179 +1,219 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import blockchainSecurity from "../../assets/img/blockchainSecurity.jpg";
-import customWeb from "../../assets/img/customWeb.png";
-import nft from "../../assets/img/nft.png";
-import smart_Contracts from "../../assets/img/smart_Contracts.png";
-import web3Cover from "../../assets/img/web3Cover.png";
+import ReactVisibilitySensor from "react-visibility-sensor";
+import agencyweb from "../../assets/img/agencyweb.png";
+import blogweb from "../../assets/img/blogweb.png";
+import coverweb from "../../assets/img/coverweb.png";
+import customappweb from "../../assets/img/customappweb.png";
+import ecommarceweb from "../../assets/img/ecommarceweb.png";
 import Footer from "../../components/Footer/Footer";
+import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import parse from "react-html-parser";
 
 const Web3 = () => {
+  const worksData = [
+    {
+      id: 1,
+      title: "Customized web3 solutions",
+      description:
+        `Dotpot IT offers customized Web3 solutions tailored to meet your specific needs. Our expertise includes decentralized applications, smart contracts, tokenization, DeFi integration, and blockchain consulting. We leverage the power of Web3 technologies to provide transparent, secure, and innovative solutions for your business.`,
+      illustration: ecommarceweb,
+    },
+    {
+      id: 2,
+      title: "Blockchain for Security and Transparency",
+      description:
+        `Dotpot IT utilizes blockchain technology to enhance <a href="https://hashstudioz.com/blog/how-does-blockchain-technology-ensure-transparency-in-cryptocurrency-trade/" target="_blank" rel="nofollow">security and transparency.</a> With immutable data storage, secure transactions, decentralization, and smart contracts, we provide solutions that ensure data integrity, eliminate fraud risks, and promote transparent processes.`,
+      illustration: agencyweb,
+    },
+    {
+      id: 3,
+      title: "Efficient Apps and Smart Contracts",
+      description:
+        "Dotpot IT specializes in developing efficient Apps and smart contracts. Our expertise lies in automating processes, improving efficiency, and promoting transparency. With our solutions, businesses can streamline operations, reduce costs, and enhance trust in their transactions.",
+      illustration: agencyweb,
+    },
+    {
+      id: 4,
+      title: "NFT Integration",
+      description:
+        "Dotpot IT specializes in the integration of NFTs for digital art, collectibles, and gaming. We help artists tokenize their artwork, businesses create NFT-based collectibles, and game developers incorporate NFTs into their gaming ecosystems. Our solutions enhance authenticity, ownership, and trading opportunities in these industries.",
+      illustration: agencyweb,
+    },
+  ];
+
   useScrollToTop();
+
   return (
-    <div>
-      <div className="">
-        <Helmet>
-          <title>Web3 Development | Dotpot iT a leading it company</title>
-          <meta
-            name="description"
-            content="Experience the future with DotpotIT's innovative web3 solutions. Harness the power of blockchain and decentralized technologies for your business success. "
-          />
-          <link
-            rel="canonical"
-            href="https://dotpotit.com/industries-we-serve/web3"
-          />
-          <meta property="og:title" content="Web3 Development | Dotpot iT" />
-          <meta
-            property="og:description"
-            content="Experience the future with DotpotIT's innovative web3 solutions. Harness the power of blockchain and decentralized technologies for your business success. "
-          />
-          <meta
-            property="og:image"
-            content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
-          />
-          <meta
-            name="keywords"
-            content="Software development company, Blockchain development, Decentralized applications (dApps)."
-          />
-          <meta property="og:type" content="website" />
-          <meta
-            property="og:url"
-            content="https://dotpotit.com/industries-we-serve/web3"
-          />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Web3 Development | Dotpot iT" />
-          <meta
-            name="twitter:description"
-            content="Experience the future with DotpotIT's innovative web3 solutions. Harness the power of blockchain and decentralized technologies for your business success. "
-          />
-          <meta
-            name="twitter:image"
-            content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
-          />
-        </Helmet>
-        <Navbar />
-        <div className="">
-          <section className="relative w-full overflow-hidden overflow-x-clip bg-slate-50 bg-gradient-to-t from-slate-50 to-slate-100 dark1:bg-[#0B1120] dark1:bg-none">
-            <div className="absolute right-[28%] top-0 hidden h-[150px] w-[200px] rotate-12 rounded-3xl bg-gradient-to-l from-blue-600 to-sky-400 opacity-20 blur-3xl filter dark1:block dark1:opacity-30 lg:top-44 lg:-right-20 lg:h-72 lg:w-[350px] xl:h-80 xl:w-[500px]"></div>
-            <div className="absolute bottom-44 -left-64 hidden h-[150px] w-[900px] -rotate-45 rounded-3xl bg-gradient-to-r from-violet-600 to-indigo-800 opacity-30 blur-3xl filter dark1:block lg:bottom-24 lg:-left-20 lg:h-28 lg:w-[250px] lg:-rotate-12 lg:opacity-20 xl:h-40 xl:w-[400px]"></div>
-            <div className="absolute left-[28%] top-28 hidden rotate-12 rounded-3xl bg-sky-800 opacity-90 blur-3xl filter dark1:opacity-30 lg:h-32 lg:w-4/5 md:w-[450px] dark1:lg:block xl:h-44 xl:w-[600px]"></div>
-            <div className="absolute h-16 w-[600px] rotate-[-40deg] rounded-3xl bg-sky-400 opacity-10 blur-2xl filter dark1:hidden lg:bottom-24 lg:-left-28 lg:h-12 lg:w-[600px] lg:opacity-30 lg:blur-2xl xl:-left-40 xl:h-4 xl:w-[700px] xl:opacity-100"></div>
-            <div className="absolute h-14 w-[600px] rotate-[-40deg] rounded-3xl bg-purple-400 opacity-30 blur-2xl filter dark1:hidden lg:bottom-20 lg:-left-28 lg:h-10 lg:w-[600px] lg:opacity-20 lg:blur-xl xl:-left-40 xl:h-2 xl:w-[800px] xl:opacity-100"></div>
-            <div className="absolute hidden h-16 w-[600px] rotate-[-40deg] rounded-3xl bg-sky-400 opacity-10 blur-2xl filter dark1:hidden lg:top-24 lg:-right-28 lg:block lg:h-12 lg:w-[600px] lg:opacity-30 lg:blur-2xl xl:-right-40 xl:h-4 xl:w-[700px] xl:opacity-100"></div>
-            <div className="absolute hidden h-14 w-[600px] rotate-[-40deg] rounded-3xl bg-purple-400 opacity-30 blur-2xl filter dark1:hidden lg:top-20 lg:-right-28 lg:block lg:h-10 lg:w-[600px] lg:opacity-20 lg:blur-xl xl:-right-40 xl:h-2 xl:w-[800px] xl:opacity-100"></div>
-
-            <div className="bg-background-500">
-              <div className="container mx-auto pt-[15vh]">
-                <NavigatorComponent navigationData={navigationData} />
-                <div className="my-5">
-                  <img
-                    className="w-[400px] md:w-1/2 mx-auto px-5"
-                    src={web3Cover}
-                    alt="Web3 Development Image"
-                  />
-                </div>
-                {/* cover */}
-                <div className="w-full mx-auto px-5 h-52">
-                  <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center ">
-                    Web3 Development by Dotpot iT
-                  </h1>
-                  <h2 className="text-textColor-500 flex flex-col gap-5 p-5 text-center">
-                    Experience the future with DotpotIT's innovative web3
-                    solutions. Harness the power of blockchain and decentralized
-                    technologies for your business success.
-                  </h2>
-                </div>
-                {/* points */}
-                <div>
-                  <div className=" md:flex gap-5 px-5 w-full flex-row-reverse justify-evenly">
-                    <div>
-                      <img
-                        className="w-4/5 md:w-[450px] mx-auto mb-5 rounded-md"
-                        src={customWeb}
-                        alt="Customized web3 solutions Image"
-                      />
-                    </div>
-                    <div className="rounded-lg w-full md:w-[590px] border border-border p-5 flex flex-col justify-center items-center">
-                      <h2 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
-                        Customized web3
-                        <span className="text-textColor-500"> solutions</span>
-                      </h2>
-                      <p className="text-center text-textColor-500">
-                        Customized web3 solutions to meet the specific needs of
-                        each client.
-                      </p>
+    <div className="bg-background-500">
+      <Helmet>
+        <title>Web3 Development | Dotpot iT a leading it company</title>
+        <meta
+          name="description"
+          content="Experience the future with DotpotIT's innovative web3 solutions. Harness the power of blockchain and decentralized technologies for your business success. "
+        />
+        <link
+          rel="canonical"
+          href="https://dotpotit.com/industries-we-serve/web3"
+        />
+        <meta property="og:title" content="Web3 Development | Dotpot iT" />
+        <meta
+          property="og:description"
+          content="Experience the future with DotpotIT's innovative web3 solutions. Harness the power of blockchain and decentralized technologies for your business success. "
+        />
+        <meta
+          property="og:image"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
+        />
+        <meta
+          name="keywords"
+          content="Software development company, Blockchain development, Decentralized applications (dApps)."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://dotpotit.com/industries-we-serve/web3"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Web3 Development | Dotpot iT" />
+        <meta
+          name="twitter:description"
+          content="Experience the future with DotpotIT's innovative web3 solutions. Harness the power of blockchain and decentralized technologies for your business success. "
+        />
+        <meta
+          name="twitter:image"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
+        />
+      </Helmet>
+      <Navbar />
+      <div className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
+        } `}
+      >
+        <NavigatorComponent navigationData={navigationData} />
+        <div>
+          {/* Banner */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`mt-10 mb-16 ${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 `}
+                  >
+                    <div className="container mx-auto">
+                      <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
+                        <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
+                          <h1 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
+                            Web3 Development by Dotpot iT
+                          </h1>
+                          <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
+                            Experience the future with DotpotIT's innovative <a href="https://www.novel.com/web3-solutions" target="_blank" rel="nofollow">web3 solutions.</a> Harness the power of blockchain and decentralized technologies for your business success.
+                          </p>
+                        </div>
+                        <img
+                          src={coverweb}
+                          alt="web development"
+                          className="w-full md:w-1/2 lg:w-1/2"
+                        />
+                      </div>
                     </div>
                   </div>
+                </>
+              )}
+            </ReactVisibilitySensor>
+          </div>
 
-                  <div className="mt-5 md:flex gap-5 px-5 w-full  justify-evenly">
-                    <div>
-                      <img
-                        className="w-4/5 md:w-[450px] mx-auto mb-5 rounded-md"
-                        src={blockchainSecurity}
-                        alt="Blockchain for Security and Transparency Image"
-                      />
+          {/* body */}
+          <div className="container mx-auto w-full overflow-hidden">
+            <>
+              <div className={`flex flex-col gap-5`}>
+                {worksData.map(({ id, title, description, illustration }) => (
+                  <div
+                    className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
+                    key={id}
+                  >
+                    <div
+                      className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
+                        } `}
+                    >
+                      <ReactVisibilitySensor partialVisibility>
+                        {({ isVisible }) => (
+                          <div
+                            className={` ${isVisible
+                              ? "opacity-100 translate-y-0"
+                              : "translate-y-20 opacity-0"
+                              } duration-1000 `}
+                          >
+                            <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
+                              {title}
+                            </h2>
+                            <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">
+                              {parse(description)}
+                            </p>
+                          </div>
+                        )}
+                      </ReactVisibilitySensor>
                     </div>
-                    <div className="rounded-lg w-full md:w-[590px] border border-border p-5 flex flex-col justify-center items-center">
-                      <h2 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
-                        Blockchain for Security and
-                        <span className="text-textColor-500">
-                          {" "}
-                          Transparency{" "}
-                        </span>
-                      </h2>
-                      <p className="text-center text-textColor-500">
-                        Use of blockchain technology to enhance security and
-                        transparency
-                      </p>
-                    </div>
+                    <ReactVisibilitySensor partialVisibility>
+                      {({ isVisible }) => (
+                        <div
+                          className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
+                            } ${isVisible
+                              ? "opacity-100 translate-y-0"
+                              : "translate-y-20 opacity-0"
+                            } duration-1000 `}
+                        >
+                          <img
+                            className="w-4/5 mx-auto"
+                            src={illustration}
+                            alt={title}
+                          />
+                        </div>
+                      )}
+                    </ReactVisibilitySensor>
                   </div>
-
-                  <div className="mt-5 md:flex gap-5 px-5 w-full flex-row-reverse justify-evenly">
-                    <div>
-                      <img
-                        className="w-4/5 md:w-[450px] mx-auto mb-5 rounded-md"
-                        src={smart_Contracts}
-                        alt="Efficient dApps and Smart Contracts Image"
-                      />
-                    </div>
-                    <div className="rounded-lg w-full md:w-[590px] border border-border p-5 flex flex-col justify-center items-center">
-                      <h2 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
-                        Efficient dApps and Smart
-                        <span className="text-textColor-500"> Contracts</span>
-                      </h2>
-                      <p className="text-center text-textColor-500">
-                        Development of dApps and smart contracts for automation
-                        and efficiency.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="py-5 md:flex gap-5 px-5 w-full  justify-evenly">
-                    <div>
-                      <img
-                        className="w-4/5 md:w-[450px] mx-auto mb-5 rounded-md"
-                        src={nft}
-                        alt="NFT Integration Image"
-                      />
-                    </div>
-                    <div className="rounded-lg w-full md:w-[590px] border border-border p-5 flex flex-col justify-center items-center">
-                      <h3 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
-                        NFT
-                        <span className="text-textColor-500"> Integration</span>
-                      </h3>
-                      <p className="text-center text-textColor-500">
-                        Integration of NFTs for digital art, collectibles, and
-                        gaming.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
-            </div>
-          </section>
+            </>
+          </div>
+
+          {/* Why Dotpot iT */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 p-3 text-textColor-500`}
+                  >
+                    <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
+                      Why Dotpot iT
+                    </h2>
+                    <img
+                      className="w-64 mx-auto"
+                      src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"
+                      alt="Separator Image"
+                    />
+                    <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
+                      Dotpot IT is at the forefront of web design and development solutions for the travel industry in the era of Web 3. With our deep expertise in this emerging technology, we create visually captivating and immersive websites that cater to the unique needs of the travel market. Dotpot IT offers a range of cutting-edge services, including decentralized itinerary management systems, AI-powered advanced search functionalities, virtual reality experiences, and blockchain-based travel agent profiles. By prioritizing seamless user experiences and leveraging the power of Web 3 technologies, we provide ongoing maintenance and support to ensure optimal website performance. Dotpot IT empowers travel companies to embrace the decentralized web, elevate their online presence, and deliver exceptional digital experiences in this dynamic industry.
+                    </p>
+                  </div>
+                </>
+              )}
+            </ReactVisibilitySensor>
+          </div>
+
+          {/* Get in Touch */}
+          <div className="">
+            <GetAQuote />
+          </div>
         </div>
       </div>
       <Footer />

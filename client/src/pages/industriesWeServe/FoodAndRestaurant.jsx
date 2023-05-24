@@ -1,15 +1,61 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import food from "../../assets/img/food.png";
+import ReactVisibilitySensor from "react-visibility-sensor";
+import agencyweb from "../../assets/img/agencyweb.png";
+import blogweb from "../../assets/img/blogweb.png";
+import coverweb from "../../assets/img/coverweb.png";
+import customappweb from "../../assets/img/customappweb.png";
+import ecommarceweb from "../../assets/img/ecommarceweb.png";
 import Footer from "../../components/Footer/Footer";
+import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import parse from "react-html-parser";
 
 const FoodAndRestaurant = () => {
+  const worksData = [
+    {
+      id: 1,
+      title: "Online Ordering and Delivery Systems",
+      description:
+        `Dotpot IT can develop customized <a href="https://codecanyon.net/item/woofood-online-delivery-for-woocommerce/20404478?gclid=Cj0KCQjwyLGjBhDKARIsAFRNgW86lRXN4Yy_A7Xn-rwfpHGf0vxYdc9MpWzcA3_enm0ZcVr-5dKxEuYaArn5EALw_wcB" target="_blank" rel="nofollow">online ordering systems</a> that allow customers to browse menus, place orders, and choose delivery or pickup options. Integration with payment gateways and delivery tracking features can streamline the ordering and delivery process.`,
+      illustration: ecommarceweb,
+    },
+    {
+      id: 2,
+      title: "Menu Management",
+      description:
+        "Dotpot IT can provide menu management solutions that enable restaurants to easily update menus, add seasonal specials, and make changes in real-time. This ensures that customers have access to the most up-to-date menu offerings.",
+      illustration: agencyweb,
+    },
+    {
+      id: 3,
+      title: "Table Reservation Systems",
+      description:
+        "Dotpot IT can develop table reservation systems that allow customers to book tables online, select preferred dining times, and receive confirmation notifications. This improves the customer experience and helps restaurants manage their reservations more efficiently.",
+      illustration: blogweb,
+    },
+    {
+      id: 4,
+      title: "Online Reviews and Ratings Integration",
+      description:
+        `Dotpot IT can integrate online review and rating platforms into restaurant websites, enabling customers to leave feedback and share their dining experiences. This helps restaurants build trust, improve their reputation, and engage with their customers.`,
+      illustration: customappweb,
+    },
+    {
+      id: 5,
+      title: "Website Maintenance and Support",
+      description:
+        `Dotpot IT offers ongoing website maintenance and support services to ensure that restaurant websites are up-to-date, secure, and fully functional. This includes regular updates, performance monitoring, and technical support to provide a smooth online experience for customers.`,
+      illustration: customappweb,
+    },
+  ];
+
   useScrollToTop();
+
   return (
-    <div className="">
+    <div className="bg-background-500">
       <Helmet>
         <title>Food & Restaurants | Dotpot iT a leading it company</title>
         <meta
@@ -50,200 +96,130 @@ const FoodAndRestaurant = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="bg-background-500">
-        <div className="pt-[15vh] pb-10 container mx-auto">
-          <NavigatorComponent navigationData={navigationData} />
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center">
-            Food & Restaurants
-          </h1>
-          <h2 className="text-lg text-gray-400 text-center mb-10">
-            Indulge in our innovative Food & Restaurant solutions, crafted with
-            passion and precision to satisfy your cravings. Elevate your dining
-            experience today.
-          </h2>
-          <div className="border-b border-border container mx-auto">
-            <img
-              className="md:w-1/2 mx-auto "
-              src={food}
-              alt="Food & Restaurants Image"
-            />
-          </div>
-          <div className="container  mx-auto flex flex-col mb-10 my-10">
-            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
-              Overview
-            </h2>
-            {/* Overview */}
-            <div className="text-textColor-500 flex flex-col gap-5 p-5">
-              <p>
-                DotpotiT is a company that offers technology-driven solutions
-                for the food and restaurant industry. Our aim is to provide
-                innovative and efficient tools that help businesses in this
-                sector to improve their operations, increase revenue, and
-                enhance customer experience.
-                <br />
-                With our expertise and experience, we are able to provide a wide
-                range of services to the food and restaurant industry. These
-                include online ordering systems, table reservation management,
-                menu design, food delivery solutions, and more. We understand
-                that the food and restaurant industry is highly competitive, and
-                we strive to offer cutting-edge solutions that keep our clients
-                ahead of the competition.
-                <br />
-                Our solutions are designed to be scalable and customizable,
-                ensuring that they can be tailored to the specific needs of each
-                business. We also place a strong emphasis on customer support,
-                ensuring that our clients have access to a dedicated team of
-                professionals who are ready to assist them with any issues or
-                concerns.
-                <br />
-                At DotpotiT, we believe that technology can play a significant
-                role in the success of the food and restaurant industry. By
-                leveraging our expertise and innovative solutions, we help
-                businesses in this sector to stay ahead of the curve and thrive
-                in an increasingly competitive landscape.
-                <br />
-                At DotpotiT, we understand that the food and restaurant industry
-                is not just about offering delicious cuisine, but also about
-                providing an overall memorable experience for customers. That's
-                why we work with top-notch restaurants and food establishments
-                to help them enhance their customer experience through
-                cutting-edge technology solutions. Our goal is to ensure that
-                every diner who walks through the doors of our partner
-                restaurants has an exceptional experience from the moment they
-                make a reservation to the time they leave the establishment.
-                <br />
-                We believe that food is not just a necessity, but a passion.
-                That's why DotpotiT is committed to working with the best in the
-                food and restaurant industry. We take pride in providing
-                technology solutions that enable our partners to focus on their
-                passion for crafting exceptional dishes and providing
-                outstanding service. By choosing DotpotiT as your technology
-                partner, you can focus on your passion for food and leave the
-                technology to us.
-              </p>
-            </div>
-
-            {/*card for redirect to service quote */}
-            {/* <div className="border-b h-52 w-full md:w-4/5 mx-auto my-5 rounded-xl border flex justify-center items-center shadow-md overflow-hidden relative">
-
-            <div className="flex justify-center items-center">
-              <div className="w-96 absolute">
-                <div class="absolute top-0 -left-4 w-52 h-52 bg-indigo-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-                <div class="absolute top-0 -right-4 w-52 h-52 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-                <div class="absolute -bottom-8 left-20 w-52 h-52 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-              </div>
-
-              <div className="flex flex-col gap-5">
-                <h3 className="text-center text-textColor-500 font-bold text-xl ">
-                  Want to Know How Much Exactly Your Food & Restaurant
-                  applications Will Cost?
-                </h3>
-                <h3 className="text-center text-textColor-500 font-semibold">
-                  "The Experts Are Just A Click Away. Get A Quote."
-                </h3>
-
-                <Link
-                  to="/services"
-                  className="w-52 h-10 flex items-center justify-center rounded-md bg-indigo-500 mx-auto hover:scale-105 transition-all shadow-sm"
-                >
-                  <div className="flex justify-center items-center gap-3">
-                    <p className="text-white font-semibold">Share your Idea</p>
-                    <BsArrowRightCircleFill className="text-white hover:cursor-pointer" />
+      <div className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
+        } `}
+      >
+        <NavigatorComponent navigationData={navigationData} />
+        <div>
+          {/* Banner */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`mt-10 mb-16 ${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 `}
+                  >
+                    <div className="container mx-auto">
+                      <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
+                        <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
+                          <h1 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
+                            Food & Restaurants
+                          </h1>
+                          <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
+                            Indulge in our innovative <a href="https://www.adalot.com/en/guide-restaurant-website-development/" target="_blank" rel="nofollow">Food & Restaurant solutions,</a> crafted with passion and precision to satisfy your cravings. Elevate your dining experience today.
+                          </p>
+                        </div>
+                        <img
+                          src={coverweb}
+                          alt="web development"
+                          className="w-full md:w-1/2 lg:w-1/2"
+                        />
+                      </div>
+                    </div>
                   </div>
-                </Link>
-              </div>
-            </div>
-          </div> */}
+                </>
+              )}
+            </ReactVisibilitySensor>
+          </div>
 
-            {/* paragraph */}
-            <div className="my-3">
-              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-textColor-500 ">
-                How we work?
-              </h2>
-              <div className="text-textColor-500 flex flex-col gap-5 p-5">
-                <p>
-                  At DotpotiT, we understand that every restaurant is unique and
-                  has its own requirements when it comes to the digital
-                  landscape. That’s why we offer tailored solutions that cater
-                  to the specific needs of each of our clients.
-                </p>
-                <p>
-                  Our team of experts begins by working closely with our clients
-                  to understand their business and goals. We then create a
-                  customized plan that addresses their unique challenges and
-                  helps them achieve their objectives. Our approach is
-                  collaborative, and we work closely with our clients every step
-                  of the way to ensure that their vision is realized.
-                </p>
-                <p>
-                  We pride ourselves on being agile and adaptable, and we
-                  understand that the digital landscape is constantly evolving.
-                  That’s why we stay up-to-date with the latest trends and
-                  technologies in the industry. We are committed to delivering
-                  innovative and cutting-edge solutions that help our clients
-                  stay ahead of the competition.
-                </p>
-                <p>
-                  At DotpotiT, we believe that communication is key to a
-                  successful partnership. We provide regular updates to our
-                  clients throughout the process and are always available to
-                  answer any questions they may have. Our goal is to create a
-                  long-term partnership that helps our clients achieve their
-                  business objectives and grow their brand in the digital world.
-                </p>
-                <p>
-                  At DotpotiT, we believe that technology can revolutionize the
-                  food and restaurant industry. Our team of experts works
-                  tirelessly to develop innovative solutions that cater to the
-                  specific needs of our clients. From designing custom websites
-                  and mobile applications to creating efficient online ordering
-                  and delivery systems, we pride ourselves on delivering
-                  cutting-edge technology that streamlines operations and
-                  increases revenue. With DotpotiT, you can be confident that
-                  you're partnering with a company that's committed to your
-                  success.
-                </p>
+          {/* body */}
+          <div className="container mx-auto w-full overflow-hidden">
+            <>
+              <div className={`flex flex-col gap-5`}>
+                {worksData.map(({ id, title, description, illustration }) => (
+                  <div
+                    className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
+                    key={id}
+                  >
+                    <div
+                      className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
+                        } `}
+                    >
+                      <ReactVisibilitySensor partialVisibility>
+                        {({ isVisible }) => (
+                          <div
+                            className={` ${isVisible
+                              ? "opacity-100 translate-y-0"
+                              : "translate-y-20 opacity-0"
+                              } duration-1000 `}
+                          >
+                            <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
+                              {title}
+                            </h2>
+                            <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">
+                              {parse(description)}
+                            </p>
+                          </div>
+                        )}
+                      </ReactVisibilitySensor>
+                    </div>
+                    <ReactVisibilitySensor partialVisibility>
+                      {({ isVisible }) => (
+                        <div
+                          className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
+                            } ${isVisible
+                              ? "opacity-100 translate-y-0"
+                              : "translate-y-20 opacity-0"
+                            } duration-1000 `}
+                        >
+                          <img
+                            className="w-4/5 mx-auto"
+                            src={illustration}
+                            alt={title}
+                          />
+                        </div>
+                      )}
+                    </ReactVisibilitySensor>
+                  </div>
+                ))}
               </div>
-            </div>
-            {/* Advantages of Blockchain Technology */}
-            <ul className="ml-5">
-              <h2 className="text-xl md:text-2xl  my-2 md:mb-1  text-textColor-500 ">
-                Why you should choose us!
-              </h2>
-              <li className=" ml-5 list-disc text-textColor-500 ">
-                <strong>Customized Solutions:</strong> At DotpotiT, we
-                understand that every restaurant has unique needs and
-                requirements. That’s why we provide customized solutions that
-                are tailored to meet the specific needs of each restaurant.
-              </li>
-              <li className=" ml-5 list-disc text-textColor-500 ">
-                <strong>Experienced Team:</strong> Our team consists of
-                experienced professionals who have worked with various
-                restaurants and food businesses in the past. With their
-                expertise, we can provide top-notch solutions that are both
-                effective and efficient.
-              </li>
-              <li className=" ml-5 list-disc text-textColor-500 ">
-                <strong>Timely Delivery:</strong> We understand that time is of
-                the essence in the food and restaurant industry. That’s why we
-                ensure timely delivery of our solutions so that our clients can
-                stay ahead of the competition.
-              </li>
-              <li className=" ml-5 list-disc text-textColor-500 ">
-                <strong>Competitive Pricing: </strong>
-                We offer our services at competitive pricing, making sure that
-                our clients get the best value for their money. Our aim is to
-                provide cost-effective solutions that help our clients achieve
-                their goals.
-              </li>
-              <li className=" ml-5 list-disc text-textColor-500 ">
-                <strong>24/7 Customer Support:</strong> At DotpotiT, we believe
-                in providing exceptional customer support to our clients. We are
-                always available to answer any questions and provide support
-                whenever needed. Our aim is to build long-term relationships
-                with our clients based on trust and reliability.
-              </li>
-            </ul>
+            </>
+          </div>
+
+          {/* Why Dotpot iT */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 p-3 text-textColor-500`}
+                  >
+                    <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
+                      Why Dotpot iT
+                    </h2>
+                    <img
+                      className="w-64 mx-auto"
+                      src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"
+                      alt="Separator Image"
+                    />
+                    <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
+                      Dotpot IT is the top choice for Food & Restaurants businesses. With their expertise in web design and development, they create visually appealing and user-friendly websites. They offer online ordering systems, menu management solutions, table reservation systems, and more. Dotpot IT focuses on user experience and provides ongoing maintenance and support. They help businesses enhance their online presence and deliver exceptional digital experiences.
+                    </p>
+                  </div>
+                </>
+              )}
+            </ReactVisibilitySensor>
+          </div>
+
+          {/* Get in Touch */}
+          <div className="">
+            <GetAQuote />
           </div>
         </div>
       </div>

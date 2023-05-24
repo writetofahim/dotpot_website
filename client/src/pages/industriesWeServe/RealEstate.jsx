@@ -1,15 +1,61 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import re from "../../assets/img/re.png";
+import ReactVisibilitySensor from "react-visibility-sensor";
+import agencyweb from "../../assets/img/agencyweb.png";
+import blogweb from "../../assets/img/blogweb.png";
+import coverweb from "../../assets/img/coverweb.png";
+import customappweb from "../../assets/img/customappweb.png";
+import ecommarceweb from "../../assets/img/ecommarceweb.png";
 import Footer from "../../components/Footer/Footer";
+import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import parse from "react-html-parser";
 
 const RealEstate = () => {
+  const worksData = [
+    {
+      id: 1,
+      title: "Property Comparisons",
+      description:
+        ` Enable users to compare multiple properties side by side, facilitating decision-making by highlighting key features, prices, and specifications.`,
+      illustration: ecommarceweb,
+    },
+    {
+      id: 2,
+      title: "Mortgage Calculator",
+      description:
+        "Include a mortgage calculator tool that helps users estimate their monthly mortgage payments based on the property price, down payment, interest rate, and loan term. This assists potential buyers in making informed financial decisions.",
+      illustration: agencyweb,
+    },
+    {
+      id: 3,
+      title: "Agent Profiles",
+      description:
+        "Showcase profiles of real estate agents or brokers, including their experience, certifications, areas of expertise, and contact information. This allows users to connect with the right professionals for their specific needs.",
+      illustration: blogweb,
+    },
+    {
+      id: 4,
+      title: "Virtual Tours and 3D Floor Plans",
+      description:
+        `Offer <a href="https://www.archilogic.com/insights/4-tips-for-creating-virtual-tours-of-3d-floor-plans" target="_blank" rel="nofollow">virtual tours or 3D floor plans</a> of select properties, allowing users to virtually explore the property's layout and visualize the space before scheduling an in-person visit.`,
+      illustration: blogweb,
+    },
+    {
+      id: 5,
+      title: "Property Management Tools",
+      description:
+        "If applicable, provide property management tools for landlords or property managers to list and manage their rental properties, handle tenant applications, track rent payments, and manage maintenance requests.",
+      illustration: blogweb,
+    },
+  ];
+
   useScrollToTop();
+
   return (
-    <div className="">
+    <div className="bg-background-500">
       <Helmet>
         <title>Real Estate | Dotpot iT a leading it company</title>
         <meta
@@ -50,183 +96,134 @@ const RealEstate = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="bg-background-500">
-        <div className="pt-[15vh] container mx-auto min-h-screen">
-          <NavigatorComponent navigationData={navigationData} />
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center">
-            Real Estate
-          </h1>
-          <h2 className="text-lg text-gray-400 text-center mb-10">
-            Depend on our expertise - Customized real estate solutions that
-            cater to your specific requirements. Trust in our reliable services
-            for success.
-          </h2>
-          <div className="container mx-auto">
-            <img
-              className="md:w-1/2 mx-auto mb-10 "
-              src={re}
-              alt="Real Estate Image"
-            />
-          </div>
-          <div className="container  mx-auto flex flex-col py-10">
-            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
-              Overview
-            </h2>
-            {/* Overview */}
-            <div className="text-textColor-500 flex flex-col gap-5 p-5">
-              <p>
-                At DotpotiT, we understand the unique challenges that come with
-                the real estate industry. With our expertise in technology and
-                digital marketing, we are well-equipped to help real estate
-                companies stay ahead of the competition and reach their full
-                potential.
-                <br />
-                We offer a range of services tailored specifically for the real
-                estate industry, including website design and development,
-                search engine optimization, social media marketing, and more.
-                Whether you're a small real estate agency or a large brokerage,
-                we have the experience and tools necessary to help you succeed.
-                <br />
-                Our team of experts has a deep understanding of the real estate
-                industry and the technology landscape, and we stay up-to-date
-                with the latest trends and developments. We work closely with
-                our clients to understand their unique needs and goals, and we
-                develop customized solutions that deliver real results.
-                <br />
-                At DotpotiT, we are committed to providing our clients with the
-                highest level of service and support. We take pride in our work
-                and are passionate about helping real estate companies achieve
-                their goals. So if you're looking for a partner to help you take
-                your real estate business to the next level, look no further
-                than DotpotiT.
-              </p>
-            </div>
-
-            {/*card for redirect to service quote */}
-            {/* <div className="border-b h-52 w-full md:w-4/5 mx-auto my-5 rounded-xl border flex justify-center items-center shadow-md overflow-hidden relative">
-          
-            <div className="flex justify-center items-center">
-              <div className="w-96 absolute">
-                <div class="absolute top-0 -left-4 w-52 h-52 bg-indigo-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-                <div class="absolute top-0 -right-4 w-52 h-52 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-                <div class="absolute -bottom-8 left-20 w-52 h-52 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-              </div>
-
-              <div className="flex flex-col gap-5">
-                <h3 className="text-center text-primary-500font-bold text-xl ">
-                  Want to Know How Much Exactly Your Real estate application
-                  Will Cost?
-                </h3>
-                <h3 className="text-center text-primary-500font-semibold">
-                  "The Experts Are Just A Click Away. Get A Quote."
-                </h3>
-
-                <Link
-                  to="/services"
-                  className="w-52 h-10 flex items-center justify-center rounded-md bg-indigo-500 mx-auto hover:scale-105 transition-all shadow-sm"
-                >
-                  <div className="flex justify-center items-center gap-3">
-                    <p className="text-white font-semibold">Share your Idea</p>
-                    <BsArrowRightCircleFill className="text-white hover:cursor-pointer" />
+      <div className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
+        } `}
+      >
+        <NavigatorComponent navigationData={navigationData} />
+        <div>
+          {/* Banner */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`mt-10 mb-16 ${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 `}
+                  >
+                    <div className="container mx-auto">
+                      <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
+                        <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
+                          <h1 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
+                            Real Estate
+                          </h1>
+                          <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
+                            Depend on our expertise - Customized <a href="https://inmotionrealestate.com/solutions/web-development/" target="_blank" rel="nofollow">real estate solutions</a> that cater to your specific requirements. Trust in our reliable services for success.
+                          </p>
+                        </div>
+                        <img
+                          src={coverweb}
+                          alt="web development"
+                          className="w-full md:w-1/2 lg:w-1/2"
+                        />
+                      </div>
+                    </div>
                   </div>
-                </Link>
-              </div>
-            </div>
-          </div> */}
+                </>
+              )}
+            </ReactVisibilitySensor>
+          </div>
 
-            {/* paragraph */}
-            <div className="my-3">
-              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-textColor-500">
-                How we work?
-              </h2>
-              <div className="text-textColor-500 flex flex-col gap-5 p-5">
-                <p>
-                  At DotpotiT, we believe that transparency and collaboration
-                  are key to creating successful real estate projects. We work
-                  closely with our clients to understand their needs and goals,
-                  and to ensure that every project is tailored to their specific
-                  requirements. Our team of experienced real estate
-                  professionals has a deep understanding of the market, and we
-                  leverage this expertise to deliver innovative and effective
-                  solutions for our clients.
-                </p>
-                <p>
-                  Our process begins with a comprehensive consultation, during
-                  which we take the time to fully understand our client's vision
-                  and objectives. From there, we work closely with our team of
-                  architects, designers, and contractors to develop a detailed
-                  project plan that encompasses every aspect of the project,
-                  from site selection to design and construction.
-                </p>
-                <p>
-                  Throughout the project lifecycle, we maintain a high level of
-                  communication with our clients, providing regular updates and
-                  progress reports to ensure that they are fully informed every
-                  step of the way. We pride ourselves on our attention to detail
-                  and our ability to navigate complex regulatory environments,
-                  and we work tirelessly to ensure that every project is
-                  completed on time, on budget, and to the highest possible
-                  standard.
-                </p>
-                <p>
-                  At DotpotiT, we are committed to delivering exceptional
-                  results for our clients, and we approach every project with
-                  the same level of dedication and attention to detail. Whether
-                  you are looking to develop a new commercial property, a
-                  residential development, or a mixed-use project, we have the
-                  experience, expertise, and resources to help you achieve your
-                  goals.
-                </p>
+          {/* body */}
+          <div className="container mx-auto w-full overflow-hidden">
+            <>
+              <div className={`flex flex-col gap-5`}>
+                {worksData.map(({ id, title, description, illustration }) => (
+                  <div
+                    className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
+                    key={id}
+                  >
+                    <div
+                      className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
+                        } `}
+                    >
+                      <ReactVisibilitySensor partialVisibility>
+                        {({ isVisible }) => (
+                          <div
+                            className={` ${isVisible
+                              ? "opacity-100 translate-y-0"
+                              : "translate-y-20 opacity-0"
+                              } duration-1000 `}
+                          >
+                            <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
+                              {title}
+                            </h2>
+                            <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">
+                              {parse(description)}
+                            </p>
+                          </div>
+                        )}
+                      </ReactVisibilitySensor>
+                    </div>
+                    <ReactVisibilitySensor partialVisibility>
+                      {({ isVisible }) => (
+                        <div
+                          className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
+                            } ${isVisible
+                              ? "opacity-100 translate-y-0"
+                              : "translate-y-20 opacity-0"
+                            } duration-1000 `}
+                        >
+                          <img
+                            className="w-4/5 mx-auto"
+                            src={illustration}
+                            alt={title}
+                          />
+                        </div>
+                      )}
+                    </ReactVisibilitySensor>
+                  </div>
+                ))}
               </div>
-            </div>
-            {/* Advantages of Blockchain Technology */}
-            <ul className="ml-5">
-              <h2 className="text-xl md:text-2xl  my-2 md:mb-1  text-textColor-500">
-                Why you should choose us!
-              </h2>
-              <li className=" ml-5 list-disc text-textColor-500 ">
-                Our team of experienced professionals has extensive knowledge
-                and expertise in the real estate industry. We stay up to date
-                with the latest market trends and changes to ensure that we
-                provide you with the best advice and service possible.
-              </li>
-              <li className=" ml-5 list-disc text-textColor-500 ">
-                Our top priority is always our clients. We take the time to
-                understand your unique needs and work closely with you to
-                provide customized solutions that meet your specific goals and
-                objectives.
-              </li>
-              <li className=" ml-5 list-disc text-textColor-500 ">
-                At DotpotiT, we believe in being transparent and honest with our
-                clients at all times. We keep you informed throughout the entire
-                process, providing regular updates and communicating clearly and
-                openly.
-              </li>
-              <li className=" ml-5 list-disc text-textColor-500 ">
-                We are committed to upholding the highest standards of integrity
-                and professionalism in everything we do. You can trust that we
-                will always act in your best interests, with honesty, fairness,
-                and respect.
-              </li>
-              <li className=" ml-5 list-disc text-textColor-500 ">
-                We offer competitive pricing for all of our real estate
-                services. We work hard to ensure that you get the best value for
-                your money, without compromising on the quality of our service.
-              </li>
-              <li className=" ml-5 list-disc text-textColor-500 ">
-                We are always looking for new and innovative ways to help our
-                clients achieve their goals. We use the latest technologies and
-                tools to provide efficient and effective solutions that are
-                tailored to your specific needs.
-              </li>
-            </ul>
+            </>
+          </div>
+
+          {/* Why Dotpot iT */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 p-3 text-textColor-500`}
+                  >
+                    <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
+                      Why Dotpot iT
+                    </h2>
+                    <img
+                      className="w-64 mx-auto"
+                      src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"
+                      alt="Separator Image"
+                    />
+                    <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
+                      Dotpot IT is the go-to choice for real estate businesses in need of exceptional web design and development solutions. With their deep industry knowledge, they create visually stunning and user-friendly websites that cater specifically to the needs of the real estate market. Dotpot IT offers a range of tailored services, including property listing management systems, advanced search features, virtual tours, and agent profiles. They prioritize seamless user experiences and provide ongoing maintenance and support to ensure optimal website performance. Dotpot IT empowers real estate companies to enhance their online presence and deliver exceptional digital experiences in this dynamic industry.
+                    </p>
+                  </div>
+                </>
+              )}
+            </ReactVisibilitySensor>
+          </div>
+
+          {/* Get in Touch */}
+          <div className="">
+            <GetAQuote />
           </div>
         </div>
       </div>
-      {/* <OurPartnersSlider /> */}
-      <div className="">
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 };

@@ -1,15 +1,47 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import od from "../../assets/img/od.png";
+import ReactVisibilitySensor from "react-visibility-sensor";
+import agencyweb from "../../assets/img/agencyweb.png";
+import blogweb from "../../assets/img/blogweb.png";
+import coverweb from "../../assets/img/coverweb.png";
+import customappweb from "../../assets/img/customappweb.png";
+import ecommarceweb from "../../assets/img/ecommarceweb.png";
 import Footer from "../../components/Footer/Footer";
+import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import parse from "react-html-parser";
 
 const OnDemand = () => {
+  const worksData = [
+    {
+      id: 1,
+      title: "Overview",
+      description:
+        `DotpotiT: Your on-demand solution provider for quick, reliable, and customizable services. Transforming accessibility, delivering innovation, and empowering businesses to thrive in the digital landscape. Trust us for high-quality, affordable solutions that exceed expectations.`,
+      illustration: ecommarceweb,
+    },
+    {
+      id: 2,
+      title: "How we work?",
+      description:
+        "Collaborative, customized on-demand solutions tailored to your needs. We analyze, develop, and implement using the latest technologies. Transparent communication, ongoing support, and maintenance. Personalized service for effective results. Innovative technology solutions for seamless experiences. Streamlined processes, improved efficiencies, and enhanced user experiences. Hassle-free experience with intuitive, user-friendly interfaces. Comprehensive training and support for optimal utilization.",
+      illustration: agencyweb,
+    },
+    {
+      id: 3,
+      title: "Inventory Management",
+      description:
+        "Develop an inventory management system that allows businesses to track stock levels, manage SKU information, and generate reports on inventory status. Provide alerts for low stock levels and seamless integration with e-commerce platforms.",
+      illustration: blogweb,
+    },
+  ];
+
   useScrollToTop();
+
   return (
-    <div className="">
+    <div className="bg-background-500">
       <Helmet>
         <title>On Demand Solutions | Dotpot iT a leading it company</title>
         <meta
@@ -50,211 +82,130 @@ const OnDemand = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="bg-background-500">
-        <div className="pt-[15vh] pb-10 container mx-auto">
-          <NavigatorComponent navigationData={navigationData} />
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center">
-            On Demand Solutions
-          </h1>
-          <h2 className="text-lg text-center mb-10 text-gray-400">
-            Unlock instant solutions at your fingertips with On Demand
-            Solutions. Seamlessly streamline tasks and access services anytime,
-            anywhere for ultimate convenience.
-          </h2>
-          <div className="border-b container border-border mx-auto">
-            <img
-              className="md:w-1/2 mx-auto "
-              src={od}
-              alt="On Demand Solutions Image"
-            />
-          </div>
-          <div className="container  mx-auto flex flex-col mb-10 my-10">
-            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
-              Overview
-            </h2>
-            {/* Overview */}
-            <div className="text-textColor-500 flex flex-col gap-5 p-5">
-              <p>
-                As our lives become increasingly busy and fast-paced, we often
-                find ourselves needing solutions that can cater to our immediate
-                needs. This is where on-demand solutions come in. At DotpotiT,
-                we specialize in providing technology-driven on-demand solutions
-                to help individuals and businesses meet their needs quickly and
-                efficiently.
-                <br />
-                Our on-demand solutions cover a range of services, from
-                transportation and delivery to home services and healthcare. We
-                use the latest technology and innovative methods to ensure that
-                our clients can access these services easily, conveniently, and
-                cost-effectively.
-                <br />
-                Our focus is on providing flexible, customizable solutions that
-                cater to the specific needs of our clients. Whether you're a
-                busy professional looking for a quick meal delivery or a
-                healthcare provider seeking to streamline patient care, our
-                on-demand solutions can help you achieve your goals.
-                <br />
-                At DotpotiT, we understand the importance of reliability,
-                security, and quality. That's why we work tirelessly to ensure
-                that our solutions are of the highest standards, offering fast
-                and efficient services that you can rely on. With our technology
-                and expertise, we aim to transform the way people access
-                services, making it easier and more convenient for everyone.
-                <br />
-                At DotpotiT, we take pride in our ability to provide customized
-                solutions that meet the unique needs of each of our clients. Our
-                team of experienced professionals works closely with you to
-                identify your specific requirements and tailor our services to
-                best suit your business. Whether it's developing a new product
-                or improving an existing one, we are dedicated to delivering
-                innovative solutions that exceed your expectations.
-                <br />
-                At DotpotiT, we believe that technology should be accessible to
-                everyone. That's why we strive to make our solutions affordable
-                and easy to use, without compromising on quality or
-                functionality. Our goal is to help businesses of all sizes to
-                thrive in today's rapidly changing digital landscape by
-                providing them with the tools and resources they need to
-                succeed. With DotpotiT, you can trust that you're getting the
-                best value for your investment, and that your business is in
-                good hands.
-              </p>
-            </div>
-
-            {/*card for redirect to service quote */}
-            {/* <div className="border-b h-52 w-full md:w-4/5 mx-auto my-5 rounded-xl border flex justify-center items-center shadow-md overflow-hidden relative">
-            
-            <div className="flex justify-center items-center">
-              <div className="w-96 absolute">
-                <div class="absolute top-0 -left-4 w-52 h-52 bg-indigo-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-                <div class="absolute top-0 -right-4 w-52 h-52 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-                <div class="absolute -bottom-8 left-20 w-52 h-52 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-              </div>
-
-              <div className="flex flex-col gap-5">
-                <h3 className="text-centertext-primary-500 font-bold text-xl ">
-                  Want to Know How Much Exactly Your On Demand Solution
-                  applications Will Cost?
-                </h3>
-                <h3 className="text-centertext-primary-500 font-semibold">
-                  "The Experts Are Just A Click Away. Get A Quote."
-                </h3>
-
-                <Link
-                  to="/services"
-                  className="w-52 h-10 flex items-center justify-center rounded-md bg-indigo-500 mx-auto hover:scale-105 transition-all shadow-sm"
-                >
-                  <div className="flex justify-center items-center gap-3">
-                    <p className="text-white font-semibold">Share your Idea</p>
-                    <BsArrowRightCircleFill className="text-white hover:cursor-pointer" />
+      <div className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
+        } `}
+      >
+        <NavigatorComponent navigationData={navigationData} />
+        <div>
+          {/* Banner */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`mt-10 mb-16 ${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 `}
+                  >
+                    <div className="container mx-auto">
+                      <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
+                        <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
+                          <h1 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
+                            On Demand Solutions
+                          </h1>
+                          <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
+                            Unlock instant solutions at your fingertips with <a href="https://www.experian.co.uk/business/glossary/on-demand-software/#:~:text=On%2DDemand%20Software%2C%20often%20referred,your%20customers%20and%20application%20partners." target="_blank" rel="nofollow">On Demand Solutions</a>. Seamlessly streamline tasks and access services anytime, anywhere for ultimate convenience.
+                          </p>
+                        </div>
+                        <img
+                          src={coverweb}
+                          alt="web development"
+                          className="w-full md:w-1/2 lg:w-1/2"
+                        />
+                      </div>
+                    </div>
                   </div>
-                </Link>
-              </div>
-            </div>
-          </div> */}
+                </>
+              )}
+            </ReactVisibilitySensor>
+          </div>
 
-            {/* paragraph */}
-            <div className="my-3">
-              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-textColor-500 ">
-                How we work?
-              </h2>
-              <div className="text-textColor-500 flex flex-col gap-5 p-5">
-                <p>
-                  At DotpotiT, we believe in a collaborative approach to working
-                  with our clients to provide customized on-demand solutions
-                  tailored to their specific needs. Our team of experienced
-                  professionals works closely with clients to understand their
-                  goals and objectives, and then utilizes the latest
-                  technologies and tools to develop and implement the best
-                  solutions.
-                </p>
-                <p>
-                  Our process begins with a thorough analysis of the client's
-                  requirements, followed by the development of a comprehensive
-                  project plan that outlines the scope, timeline, and budget of
-                  the project. We then proceed to the design and development
-                  phase, where we create and refine the solution until it meets
-                  the client's satisfaction.
-                </p>
-                <p>
-                  Throughout the entire process, we prioritize communication and
-                  transparency, keeping our clients informed every step of the
-                  way. We also offer ongoing support and maintenance to ensure
-                  that the solution remains up-to-date and continues to meet the
-                  client's needs.
-                </p>
-                <p>
-                  Our approach is to tailor our solutions to the specific needs
-                  of our clients. We take the time to understand your business,
-                  your goals, and your challenges, and we work closely with you
-                  to create a customized solution that meets your unique
-                  requirements. We believe that a one-size-fits-all approach is
-                  not effective in the on-demand space, and we strive to provide
-                  a personalized service that is tailored to your needs.
-                </p>
-                <p>
-                  We pride ourselves on our innovative and cutting-edge
-                  technology solutions. Our team of experts are always at the
-                  forefront of new developments in the on-demand space, and we
-                  continually invest in the latest tools and technologies to
-                  ensure that we can deliver the best possible solutions for our
-                  clients. We are constantly exploring new and better ways to
-                  streamline processes, improve efficiencies, and enhance user
-                  experiences.
-                </p>
-                <p>
-                  At DotpotiT, we are committed to providing a seamless and
-                  hassle-free experience for our clients. Our on-demand
-                  solutions are designed to be intuitive and user-friendly, and
-                  we provide comprehensive training and support to ensure that
-                  you and your team are fully equipped to use our technology
-                  effectively. We also offer ongoing support and maintenance
-                  services to ensure that your solutions are always up-to-date
-                  and working optimally.
-                </p>
+          {/* body */}
+          <div className="container mx-auto w-full overflow-hidden">
+            <>
+              <div className={`flex flex-col gap-5`}>
+                {worksData.map(({ id, title, description, illustration }) => (
+                  <div
+                    className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
+                    key={id}
+                  >
+                    <div
+                      className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
+                        } `}
+                    >
+                      <ReactVisibilitySensor partialVisibility>
+                        {({ isVisible }) => (
+                          <div
+                            className={` ${isVisible
+                              ? "opacity-100 translate-y-0"
+                              : "translate-y-20 opacity-0"
+                              } duration-1000 `}
+                          >
+                            <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
+                              {title}
+                            </h2>
+                            <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">
+                              {parse(description)}
+                            </p>
+                          </div>
+                        )}
+                      </ReactVisibilitySensor>
+                    </div>
+                    <ReactVisibilitySensor partialVisibility>
+                      {({ isVisible }) => (
+                        <div
+                          className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
+                            } ${isVisible
+                              ? "opacity-100 translate-y-0"
+                              : "translate-y-20 opacity-0"
+                            } duration-1000 `}
+                        >
+                          <img
+                            className="w-4/5 mx-auto"
+                            src={illustration}
+                            alt={title}
+                          />
+                        </div>
+                      )}
+                    </ReactVisibilitySensor>
+                  </div>
+                ))}
               </div>
-            </div>
-            {/* Advantages of Blockchain Technology */}
-            <ul className="ml-5">
-              <h2 className="text-xl md:text-2xl  my-2 md:mb-1 text-textColor-500 ">
-                Why you should choose us!
-              </h2>
-              <li className=" ml-5 list-disc text-textColor-500">
-                <strong>Cutting-edge Technology:</strong> At DotpotiT, we pride
-                ourselves on staying ahead of the curve with the latest and most
-                advanced technology solutions. This means that you can be
-                assured that your on-demand solution will be equipped with the
-                latest and most innovative features available.
-              </li>
-              <li className=" ml-5 list-disc text-textColor-500">
-                <strong>Expertise & Experience:</strong> Our team of experts has
-                extensive experience in developing on-demand solutions across a
-                wide range of industries. We have a proven track record of
-                delivering high-quality solutions that meet our clients' unique
-                needs and requirements.
-              </li>
-              <li className=" ml-5 list-disc text-textColor-500">
-                <strong>Customized Solutions:</strong> We understand that every
-                business is unique, which is why we take a personalized approach
-                to developing on-demand solutions. We work closely with our
-                clients to understand their specific needs and tailor our
-                solutions to meet those needs precisely.
-              </li>
-              <li className=" ml-5 list-disc text-textColor-500">
-                <strong>Fast & Reliable service:</strong>
-                We know that when it comes to on-demand solutions, time is of
-                the essence. That's why we offer fast and reliable services that
-                you can depend on, ensuring that your solution is up and running
-                as quickly as possible.
-              </li>
-              <li className=" ml-5 list-disc text-textColor-500">
-                <strong>Competitive Pricing:</strong> At DotpotiT, we believe in
-                providing high-quality solutions at an affordable price. We
-                offer competitive pricing packages that are designed to meet the
-                needs of businesses of all sizes, from startups to large
-                corporations.
-              </li>
-            </ul>
+            </>
+          </div>
+
+          {/* Why Dotpot iT */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 p-3 text-textColor-500`}
+                  >
+                    <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
+                      Why Dotpot iT
+                    </h2>
+                    <img
+                      className="w-64 mx-auto"
+                      src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"
+                      alt="Separator Image"
+                    />
+                    <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
+                      Dotpot IT is the leading choice for on-demand service businesses in need of top-quality web design and development solutions. With their extensive expertise in this industry, they create visually captivating and user-friendly websites tailored to meet the specific needs of on-demand services. Dotpot IT offers a wide range of specialized services, including real-time order management systems, seamless payment integration, dynamic service scheduling, and customer feedback functionalities. They prioritize exceptional user experiences and provide ongoing maintenance and support to ensure optimal website performance. Dotpot IT empowers on-demand service providers to enhance their online presence and deliver outstanding digital experiences in this rapidly evolving sector.
+                    </p>
+                  </div>
+                </>
+              )}
+            </ReactVisibilitySensor>
+          </div>
+
+          {/* Get in Touch */}
+          <div className="">
+            <GetAQuote />
           </div>
         </div>
       </div>

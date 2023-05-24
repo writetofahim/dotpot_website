@@ -1,15 +1,62 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import edu from "../../assets/img/edu.png";
+import ReactVisibilitySensor from "react-visibility-sensor";
+import agencyweb from "../../assets/img/agencyweb.png";
+import blogweb from "../../assets/img/blogweb.png";
+import coverweb from "../../assets/img/coverweb.png";
+import customappweb from "../../assets/img/customappweb.png";
+import ecommarceweb from "../../assets/img/ecommarceweb.png";
+import shopify from "../../assets/img/shopify.png";
 import Footer from "../../components/Footer/Footer";
+import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import parse from "react-html-parser";
 
 const education = () => {
+  const worksData = [
+    {
+      id: 1,
+      title: "Virtual Classroom Solutions",
+      description:
+        `Dotpot IT can develop <a href="https://corp.kaltura.com/blog/what-is-a-virtual-classroom/#:~:text=A%20virtual%20classroom%20is%20a,essential%20to%20a%20learning%20environment." target="_blank" rel="nofollow">virtual classroom</a> solutions that facilitate real-time interactions between educators and learners. These platforms may include video conferencing, chat features, whiteboarding tools, and document sharing capabilities.`,
+      illustration: ecommarceweb,
+    },
+    {
+      id: 2,
+      title: "Learning Management System (LMS)",
+      description:
+        "Development: Dotpot IT can create customized learning management systems that allow educational institutions to manage and deliver online courses, track student progress, and generate comprehensive reports.",
+      illustration: agencyweb,
+    },
+    {
+      id: 3,
+      title: "Interactive Multimedia Integration",
+      description:
+        " Dotpot IT can incorporate interactive multimedia elements such as videos, animations, simulations, and interactive exercises into e-learning platforms to enhance learner engagement and understanding.",
+      illustration: blogweb,
+    },
+    {
+      id: 4,
+      title: "Mobile Learning Solutions",
+      description:
+        `Dotpot IT can develop mobile learning applications or responsive websites that enable learners to access educational content on-the-go, anytime and anywhere, using their smartphones or tablets.`,
+      illustration: customappweb,
+    },
+    {
+      id: 5,
+      title: "Assessment and Quiz Tools",
+      description:
+        `Dotpot IT can develop mobile learning applications or responsive websites that enable learners to access educational content on-the-go, anytime and anywhere, using their smartphones or tablets.`,
+      illustration: customappweb,
+    },
+  ];
+
   useScrollToTop();
+
   return (
-    <div>
+    <div className="bg-background-500">
       <Helmet>
         <title>Education & E-Learning | Dotpot iT a leading it company</title>
         <meta
@@ -56,261 +103,130 @@ const education = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="bg-background-500">
-        <div className="pt-[15vh] pb-10 container mx-auto">
-          <NavigatorComponent navigationData={navigationData} />
-          <div>
-            <h1 className="text-3xl md:text-5xl font-extrabold mb-2 text-textColor-500 text-center">
-              Education & E-Learning
-            </h1>
-            <h2 className="text-lg text-gray-400 text-center mb-10">
-              Transform your healthcare and fitness business with Dotpot IT's
-              web development services. Revolutionize your online presence for
-              success.
-            </h2>
-          </div>
-          <div className="max-w-4xl mx-auto p-4">
-            <img src={edu} alt="Education & E-Learning" />
-          </div>
-          <div className="my-12 lg:mx-24 mx-6">
-            <h2 className="lg:text-2xl text-xl font-bold mb-4 text-textColor-500">
-              Overview
-            </h2>
-            <div className="text-textColor-500 flex flex-col gap-5 py-2 lg:px-5 text-justify">
-              <p>
-                Dotpot IT provides high-quality web design and development
-                services to businesses in the Education & E-Learning industry.
-                Our team of experienced web developers and designers uses
-                cutting-edge technology and modern design trends to create
-                customized web solutions that meet the unique needs of our
-                clients. We work closely with our clients to understand their
-                goals and objectives and provide tailored solutions that help
-                them achieve their business objectives and enhance their online
-                presence.
-              </p>
-
-              <p>
-                We specialize in developing e-learning websites that are
-                visually appealing, user-friendly, and responsive. Our
-                e-learning website development services include creating
-                user-friendly interfaces, developing online course management
-                systems, and integrating payment gateways. Our websites are also
-                optimized for search engines to ensure that our clients'
-                websites rank higher on search engine results pages, leading to
-                increased online visibility and customer engagement.
-              </p>
-
-              <p>
-                In addition to e-learning website development, we also offer
-                website maintenance and support services to ensure that our
-                clients' websites remain up-to-date, secure, and fully
-                functional. Our expert support team is available to address any
-                website-related issues and provide ongoing support to ensure
-                that our clients' websites are running smoothly.
-              </p>
-              <p>
-                By partnering with Dotpot IT, businesses in the Education &
-                E-Learning industry can transform the way they deliver online
-                learning and enhance their online presence. Our commitment to
-                providing high-quality, customer-focused web solutions makes us
-                the best choice for businesses looking for web design and
-                development services in this industry.
-              </p>
-            </div>
-            <div className="pt-6">
-              <h2 className="lg:text-2xl text-xl font-bold mb-4 text-textColor-500">
-                Benefits of working with Dotpot IT
-              </h2>
-              <p className="text-textColor-500 lg:px-5 text-justify pb-2">
-                Partnering with Dotpot IT provides Education & E-Learning
-                businesses with customized web solutions, enhanced online
-                presence and brand reputation, search engine optimization,
-                e-commerce functionality, expert support and maintenance, and
-                flexible pricing packages. Working with Dotpot IT can
-                revolutionize the way businesses deliver online learning and
-                achieve their business objectives with ease.
-              </p>
-              <ul className="list-disc list-inside">
-                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
-                  <strong className="font-semibold">
-                    Customized Web Solutions:
-                  </strong>
-                  <br />
-                  <p className="px-2">
-                    Dotpot IT provides customized web solutions that are
-                    tailored to the unique needs of businesses in the Education
-                    & E-Learning industry.
-                  </p>
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
-                  <strong className="font-semibold">
-                    Enhanced online visibility:
-                  </strong>
-                  <br />
-                  <p className="px-2">
-                    Our web solutions are designed to improve the online
-                    visibility and customer engagement of businesses in this
-                    industry.
-                  </p>
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
-                  <strong className="font-semibold">
-                    User-friendly websites:{" "}
-                  </strong>
-                  <br />
-                  <p className="px-2">
-                    We create visually appealing and easy-to-use websites that
-                    enhance the user experience and increase the chances of
-                    customer conversions.
-                  </p>
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
-                  <strong className="font-semibold">
-                    Mobile optimization:
-                  </strong>
-                  <br />
-                  <p className="px-2">
-                    Our websites are optimized for mobile devices, ensuring that
-                    they look great and function well on different screen sizes.
-                  </p>
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
-                  <strong className="font-semibold">
-                    Expert Web Developers and Designers:{" "}
-                  </strong>
-                  <br />
-                  <p className="px-2">
-                    Our team of experienced web developers and designers has
-                    extensive experience in e-learning website development,
-                    ensuring that your website is in good hands.
-                  </p>
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
-                  <strong className="font-semibold">
-                    Search engine optimization (SEO):
-                  </strong>
-                  <br />
-                  <p className="px-2">
-                    We optimize our websites for search engines, making it
-                    easier for potential customers to find our client's
-                    businesses online.
-                  </p>
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
-                  <strong className="font-semibold">Expert support: </strong>
-                  <br />
-                  <p className="px-2">
-                    Dotpot IT provides expert website maintenance and support
-                    services, ensuring that our clients' websites remain
-                    up-to-date, secure, and fully functional.
-                  </p>
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
-                  <strong className="font-semibold">
-                    Enhanced Online Presence and Brand Reputation:
-                  </strong>
-                  <br />
-                  <p className="px-2">
-                    Our web solutions can help businesses in the Education &
-                    E-Learning industry to enhance their online presence and
-                    brand reputation, leading to increased customer engagement
-                    and business growth.
-                  </p>
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
-                  <strong className="font-semibold">
-                    Competitive Pricing and Flexible Packages:
-                  </strong>
-                  <br />
-                  <p className="px-2">
-                    We offer competitive pricing and flexible packages to suit
-                    the needs and budget of each client, making it easier for
-                    businesses to get the web solutions they need at an
-                    affordable price.
-                  </p>
-                </li>
-              </ul>
-            </div>
-            <div className="pt-6 flex flex-col gap-5">
-              <h2 className="lg:text-2xl text-xl font-bold mb-2 text-textColor-500">
-                Why we wil be your best choice?
-              </h2>
-              <p className="text-textColor-500 lg:px-5 text-justify">
-                Dotpot IT is a leading provider of web design and development
-                services for businesses in the Education & E-Learning industry.
-                With years of experience and expertise in this field, we offer
-                customized web solutions that cater to the unique needs of each
-                client. Our team of web developers and designers uses the latest
-                technology and design trends to create visually appealing,
-                user-friendly, and responsive websites that are optimized for
-                search engines. We also offer e-learning website development
-                services that help businesses in this industry deliver online
-                courses and training programs to their target audience.
-              </p>
-              <p className="text-textColor-500 lg:px-5 text-justify">
-                What sets Dotpot IT apart is our commitment to providing
-                high-quality, customer-focused web solutions. We work closely
-                with our clients to understand their goals and objectives and
-                provide customized solutions that help them achieve their
-                business objectives and enhance their online presence. Our
-                expert support team also provides website maintenance and
-                support services to ensure that our clients' websites remain
-                up-to-date, secure, and fully functional. By partnering with
-                Dotpot IT, businesses in the Education & E-Learning industry can
-                revolutionize the way they deliver online learning, enhance user
-                experience, and increase customer engagement, leading to
-                improved business growth and revenue.
-              </p>
-              <p className="text-textColor-500 lg:px-5 text-justify">
-                Overall, Dotpot IT is the top choice for web design and
-                development services in the Education & E-Learning industry,
-                thanks to our years of experience, expertise, and
-                customer-centric approach. Our customized web solutions,
-                e-learning website development services, and expert support help
-                businesses achieve their goals and grow their online presence
-                with ease.
-              </p>
-            </div>
-            <div className="pt-6">
-              <p className="text-textColor-500 lg:px-5 text-justify">
-                Elevate your Education & E-Learning business to the next level
-                with Dotpot IT. Our customized web solutions, e-learning website
-                development services, and expert support can help you
-                revolutionize the way you deliver online learning, enhance user
-                experience, and increase customer engagement, leading to
-                improved business growth and revenue. Trust us to deliver
-                high-quality, customer-focused web solutions that help you
-                achieve your business goals and enhance your online presence.
-              </p>
-            </div>
-            {/* <div className=" border-b h-52 w-full md:w-4/5 mx-auto my-5  rounded-xl border flex justify-center items-center shadow-md overflow-hidden relative">
-            <div className=" flex justify-center items-center">
-              <div className="w-96 absolute">
-                <div className="absolute top-0 -left-4 w-52 h-52  bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-                <div className="absolute top-0 -right-4 w-52 h-52  bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-                <div className="absolute -bottom-8 left-20 w-52 h-52  bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-              </div>
-
-              <div className="flex flex-col gap-5">
-                <h3 className="text-center text-purple-500 font-bold text-xl ">
-                  Get Your Idea from Here!
-                </h3>
-                <h3 className="text-center text-purple-500 font-semibold">
-                  "The Experts Are Just A Click Away. Get A Quote."
-                </h3>
-
-                <Link
-                  to="/services"
-                  className="  w-52 h-10 flex items-center justify-center rounded-md bg-secondary-500 mx-auto hover:scale-105 transition-all shadow-sm"
-                >
-                  <div className="flex justify-center items-center gap-3">
-                    <p className="text-white font-semibold">Contact With Us</p>
-                    <BsArrowRightCircleFill className="text-white hover:cursor-pointer" />
+      <div className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
+        } `}
+      >
+        <NavigatorComponent navigationData={navigationData} />
+        <div>
+          {/* Banner */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`mt-10 mb-16 ${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 `}
+                  >
+                    <div className="container mx-auto">
+                      <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
+                        <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
+                          <h1 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
+                            Education & E-Learning
+                          </h1>
+                          <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
+                            Transform your <a href="https://www.digitalclassworld.com/blog/importance-of-elearning-in-education/" target="_blank" rel="nofollow">Education & E-Learning</a> business with Dotpot IT's web development services. Revolutionize your online presence for success.
+                          </p>
+                        </div>
+                        <img
+                          src={coverweb}
+                          alt="web development"
+                          className="w-full md:w-1/2 lg:w-1/2"
+                        />
+                      </div>
+                    </div>
                   </div>
-                </Link>
+                </>
+              )}
+            </ReactVisibilitySensor>
+          </div>
+
+          {/* body */}
+          <div className="container mx-auto w-full overflow-hidden">
+            <>
+              <div className={`flex flex-col gap-5`}>
+                {worksData.map(({ id, title, description, illustration }) => (
+                  <div
+                    className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
+                    key={id}
+                  >
+                    <div
+                      className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
+                        } `}
+                    >
+                      <ReactVisibilitySensor partialVisibility>
+                        {({ isVisible }) => (
+                          <div
+                            className={` ${isVisible
+                              ? "opacity-100 translate-y-0"
+                              : "translate-y-20 opacity-0"
+                              } duration-1000 `}
+                          >
+                            <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
+                              {title}
+                            </h2>
+                            <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">
+                              {parse(description)}
+                            </p>
+                          </div>
+                        )}
+                      </ReactVisibilitySensor>
+                    </div>
+                    <ReactVisibilitySensor partialVisibility>
+                      {({ isVisible }) => (
+                        <div
+                          className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
+                            } ${isVisible
+                              ? "opacity-100 translate-y-0"
+                              : "translate-y-20 opacity-0"
+                            } duration-1000 `}
+                        >
+                          <img
+                            className="w-4/5 mx-auto"
+                            src={illustration}
+                            alt={title}
+                          />
+                        </div>
+                      )}
+                    </ReactVisibilitySensor>
+                  </div>
+                ))}
               </div>
-            </div>
-          </div> */}
+            </>
+          </div>
+
+          {/* Why Dotpot iT */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 p-3 text-textColor-500`}
+                  >
+                    <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
+                      Why Dotpot iT
+                    </h2>
+                    <img
+                      className="w-64 mx-auto"
+                      src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"
+                      alt="Separator Image"
+                    />
+                    <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
+                      Dotpot IT is the best choice for businesses in the Education & E-Learning industry. With their expertise, experience, and focus on customized solutions, they create high-quality web designs and developments tailored to meet clients' unique needs. Utilizing cutting-edge technology and a customer-centric approach, they deliver visually appealing, user-friendly, and responsive e-learning websites. Dotpot IT also offers comprehensive services, including maintenance and support, ensuring seamless functionality. With a strong emphasis on user experience and search engine optimization, Dotpot IT helps businesses enhance their online presence and deliver exceptional online learning experiences.
+                    </p>
+                  </div>
+                </>
+              )}
+            </ReactVisibilitySensor>
+          </div>
+
+          {/* Get in Touch */}
+          <div className="">
+            <GetAQuote />
           </div>
         </div>
       </div>

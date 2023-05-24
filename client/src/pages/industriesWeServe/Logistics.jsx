@@ -1,15 +1,61 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import logistic from "../../assets/img/logistic.png";
+import ReactVisibilitySensor from "react-visibility-sensor";
+import agencyweb from "../../assets/img/agencyweb.png";
+import blogweb from "../../assets/img/blogweb.png";
+import coverweb from "../../assets/img/coverweb.png";
+import customappweb from "../../assets/img/customappweb.png";
+import ecommarceweb from "../../assets/img/ecommarceweb.png";
 import Footer from "../../components/Footer/Footer";
+import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import parse from "react-html-parser";
 
 const Logistics = () => {
+  const worksData = [
+    {
+      id: 1,
+      title: "Shipment Tracking",
+      description:
+        `Implement a robust shipment tracking system that allows customers to track the status and location of their packages in real-time. Provide automated notifications and updates throughout the shipping process.`,
+      illustration: ecommarceweb,
+    },
+    {
+      id: 2,
+      title: "Order Management",
+      description:
+        "Create an intuitive order management system that enables businesses to efficiently process and fulfill orders. Include features such as order tracking, inventory management, and integration with third-party logistics providers if applicable.",
+      illustration: agencyweb,
+    },
+    {
+      id: 3,
+      title: "Inventory Management",
+      description:
+        "Develop an inventory management system that allows businesses to track stock levels, manage SKU information, and generate reports on inventory status. Provide alerts for low stock levels and seamless integration with e-commerce platforms.",
+      illustration: blogweb,
+    },
+    {
+      id: 4,
+      title: "Route Optimization",
+      description:
+        `Incorporate <a href="https://optimoroute.com/what-is-route-optimization/" target="_blank" rel="nofollow">route optimization  </a>capabilities to help logistics companies streamline their delivery processes. Utilize algorithms to calculate the most efficient routes, reducing fuel consumption, and delivery time.`,
+      illustration: blogweb,
+    },
+    {
+      id: 5,
+      title: "Secure Data Handling",
+      description:
+        "Implement robust security measures to protect sensitive customer data, including encryption, secure payment gateways, and adherence to data protection regulations.",
+      illustration: blogweb,
+    },
+  ];
+
   useScrollToTop();
+
   return (
-    <div>
+    <div className="bg-background-500">
       <Helmet>
         <title>Logistics & Distribution | Dotpot iT a leading it company</title>
         <meta
@@ -56,266 +102,130 @@ const Logistics = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="bg-background-500">
-        <div className="pt-[15vh] container mx-auto">
-          <NavigatorComponent navigationData={navigationData} />
-          <div>
-            <h1 className="text-3xl md:text-5xl font-extrabold mb-2 text-textColor-500 text-center">
-              Logistics & Distribution
-            </h1>
-            <h2 className="text-lg text-gray-400 text-center mb-10">
-              Revolutionize your logistics & distribution business with Dotpot
-              IT's customized web solutions. Streamline operations for optimal
-              efficiency and exponential growth.
-            </h2>
-          </div>
-          <div className="max-w-4xl mx-auto p-4">
-            <img src={logistic} alt="Logistics & Distribution Image" />
-          </div>
-          <div className="py-12 lg:mx-24 mx-6">
-            <h2 className="lg:text-2xl text-xl font-bold mb-4 text-textColor-500">
-              Overview
-            </h2>
-            <div className="text-textColor-500 flex flex-col gap-5 py-2 lg:px-5 text-justify">
-              <p>
-                Dotpot IT is a leading provider of web design and development
-                services for businesses in the Logistics & Distribution
-                industry. With years of experience and expertise in this field,
-                we offer customized web solutions that cater to the unique needs
-                of each client. Our team of web developers and designers uses
-                the latest technology and design trends to create visually
-                appealing, user-friendly, and responsive websites that are
-                optimized for search engines. We also offer logistics and
-                distribution website development services that help businesses
-                in this industry streamline their operations and improve their
-                supply chain management.
-              </p>
-
-              <p>
-                Our logistics and distribution website development services
-                include the integration of features such as online tracking,
-                shipping and delivery options, and inventory management to
-                improve visibility and optimize processes. This ensures that our
-                clients can efficiently track shipments and manage their
-                inventory, saving them time and money.
-              </p>
-
-              <p>
-                What sets Dotpot IT apart is our commitment to providing
-                high-quality, customer-focused web solutions. We work closely
-                with our clients to understand their goals and objectives and
-                provide customized solutions that help them achieve their
-                business objectives and enhance their online presence. Our
-                expert support team also provides website maintenance and
-                support services to ensure that our clients' websites remain
-                up-to-date, secure, and fully functional. By partnering with
-                Dotpot IT, businesses in the Logistics & Distribution industry
-                can improve their operations, enhance user experience, and
-                increase customer engagement, leading to improved business
-                growth and revenue.
-              </p>
-              <p>
-                Overall, Dotpot IT is the top choice for web design and
-                development services in the Logistics & Distribution industry,
-                thanks to our years of experience, expertise, and
-                customer-centric approach. Our customized web solutions,
-                logistics and distribution website development services, and
-                expert support help businesses achieve their goals and optimize
-                their supply chain management with ease.
-              </p>
-            </div>
-            <div className="pt-6">
-              <h2 className="lg:text-2xl text-xl font-bold mb-4 text-textColor-500">
-                Benefits of working with Dotpot IT
-              </h2>
-              <p className="text-textColor-500 lg:px-5 text-justify pb-2">
-                By partnering with Dotpot IT for web design and development
-                services in the Logistics & Distribution industry, businesses
-                can benefit from our expertise, experience, and customer-focused
-                approach to achieve their business goals and grow their online
-                presence.
-              </p>
-              <ul className="list-disc list-inside">
-                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
-                  <strong className="font-semibold">
-                    Customized Web Solutions:
-                  </strong>
-                  <br />
-                  <p className="px-2">
-                    Dotpot IT offers customized web solutions tailored to the
-                    unique needs of businesses in the Logistics & Distribution
-                    industry. Our web developers and designers work closely with
-                    clients to understand their requirements and create websites
-                    that meet their business objectives.
-                  </p>
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
-                  <strong className="font-semibold">
-                    Enhanced online visibility:
-                  </strong>
-                  <br />
-                  <p className="px-2">
-                    Our web solutions are designed to improve the online
-                    visibility and customer engagement of businesses in this
-                    industry.
-                  </p>
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
-                  <strong className="font-semibold">
-                    User-friendly websites:{" "}
-                  </strong>
-                  <br />
-                  <p className="px-2">
-                    Our team creates user-friendly websites that are easy to
-                    navigate, enhancing user experience and engagement.
-                  </p>
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
-                  <strong className="font-semibold">
-                    Mobile optimization:
-                  </strong>
-                  <br />
-                  <p className="px-2">
-                    We design and develop websites that are optimized for mobile
-                    devices, ensuring that users can access them from any
-                    device, anywhere, and anytime.
-                  </p>
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
-                  <strong className="font-semibold">
-                    Expert Web Developers and Designers:{" "}
-                  </strong>
-                  <br />
-                  <p className="px-2">
-                    Our team of experienced web developers and designers has
-                    extensive experience in e-learning website development,
-                    ensuring that your website is in good hands.
-                  </p>
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
-                  <strong className="font-semibold">
-                    Search engine optimization (SEO):
-                  </strong>
-                  <br />
-                  <p className="px-2">
-                    We optimize websites for search engines, helping businesses
-                    in this industry improve their online visibility and reach
-                    their target audience.
-                  </p>
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
-                  <strong className="font-semibold">Expert support: </strong>
-                  <br />
-                  <p className="px-2">
-                    We offer website maintenance and support services to ensure
-                    that our clients' websites remain up-to-date, secure, and
-                    fully functional.
-                  </p>
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
-                  <strong className="font-semibold">
-                    Enhanced Online Presence and Brand Reputation:
-                  </strong>
-                  <br />
-                  <p className="px-2">
-                    Our web solutions can help businesses in the Logistics &
-                    Distribution industry to enhance their online presence and
-                    brand reputation, leading to increased customer engagement
-                    and business growth.
-                  </p>
-                </li>
-                <li className="text-textColor-500 mb-2 lg:px-10 px-3">
-                  <strong className="font-semibold">
-                    Competitive Pricing and Flexible Packages:
-                  </strong>
-                  <br />
-                  <p className="px-2">
-                    We offer competitive pricing and flexible packages to suit
-                    the needs and budget of each client, making it easier for
-                    businesses to get the web solutions they need at an
-                    affordable price.
-                  </p>
-                </li>
-              </ul>
-            </div>
-            <div className="pt-6 flex flex-col gap-5">
-              <h2 className="lg:text-2xl text-xl font-bold mb-2 text-textColor-500">
-                Why we wil be your best choice?
-              </h2>
-              <p className="text-textColor-500 lg:px-5 text-justify">
-                Dotpot IT is a trusted provider of web design and development
-                services for businesses in the Logistics & Distribution
-                industry. With extensive experience and expertise in this field,
-                we offer customized web solutions that cater to the unique needs
-                of each client. Our team of web developers and designers uses
-                advanced technology and modern design trends to create visually
-                appealing, user-friendly, and responsive websites that are
-                optimized for search engines. We also provide logistics website
-                development services that help businesses in this industry
-                streamline their logistics operations and improve their overall
-                efficiency.
-              </p>
-              <p className="text-textColor-500 lg:px-5 text-justify">
-                What sets Dotpot IT apart is our unwavering commitment to
-                providing high-quality, customer-focused web solutions. We work
-                closely with our clients to understand their goals and
-                objectives and provide customized solutions that help them
-                achieve their business objectives and enhance their online
-                presence. Our expert support team also provides website
-                maintenance and support services to ensure that our clients'
-                websites remain up-to-date, secure, and fully functional. By
-                partnering with Dotpot IT, businesses in the Logistics &
-                Distribution industry can transform their logistics operations,
-                enhance user experience, and increase customer engagement,
-                leading to improved business growth and revenue.
-              </p>
-              <p className="text-textColor-500 lg:px-5 text-justify">
-                Overall, Dotpot IT is the preferred choice for web design and
-                development services in the Logistics & Distribution industry,
-                thanks to our years of experience, expertise, and
-                customer-centric approach. Our customized web solutions,
-                logistics website development services, and expert support help
-                businesses achieve their goals and streamline their logistics
-                operations with ease.
-              </p>
-            </div>
-            <div className="pt-6">
-              <p className="text-textColor-500 lg:px-5 text-justify">
-                Enhance your Logistics & Distribution business with Dotpot IT's
-                customized web solutions, e-commerce website development
-                services, and expert support. Trust us to deliver high-quality,
-                results-driven web solutions to take your business to the next
-                level.
-              </p>
-            </div>
-            {/* <div className=" border-b h-52 w-full md:w-4/5 mx-auto my-5  rounded-xl border flex justify-center items-center shadow-md overflow-hidden relative">
-            <div className=" flex justify-center items-center">
-              <div className="w-96 absolute">
-                <div className="absolute top-0 -left-4 w-52 h-52  bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-                <div className="absolute top-0 -right-4 w-52 h-52  bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-                <div className="absolute -bottom-8 left-20 w-52 h-52  bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-              </div>
-
-              <div className="flex flex-col gap-5">
-                <h3 className="text-center text-purple-500 font-bold text-xl ">
-                  Get Your Idea from Here!
-                </h3>
-                <h3 className="text-center text-purple-500 font-semibold">
-                  "The Experts Are Just A Click Away. Get A Quote."
-                </h3>
-
-                <Link
-                  to="/services"
-                  className="  w-52 h-10 flex items-center justify-center rounded-md bg-secondary-500 mx-auto hover:scale-105 transition-all shadow-sm"
-                >
-                  <div className="flex justify-center items-center gap-3">
-                    <p className="text-white font-semibold">Contact With Us</p>
-                    <BsArrowRightCircleFill className="text-white hover:cursor-pointer" />
+      <div className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
+        } `}
+      >
+        <NavigatorComponent navigationData={navigationData} />
+        <div>
+          {/* Banner */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`mt-10 mb-16 ${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 `}
+                  >
+                    <div className="container mx-auto">
+                      <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
+                        <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
+                          <h1 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
+                            Logistics & Distribution
+                          </h1>
+                          <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
+                            Revolutionize your <a href="https://www.crownsds.com/whats-the-difference-between-logistics-and-distribution/" target="_blank" rel="nofollow">logistics & distribution</a> business with Dotpot IT's customized web solutions. Streamline operations for optimal efficiency and exponential growth.
+                          </p>
+                        </div>
+                        <img
+                          src={coverweb}
+                          alt="web development"
+                          className="w-full md:w-1/2 lg:w-1/2"
+                        />
+                      </div>
+                    </div>
                   </div>
-                </Link>
+                </>
+              )}
+            </ReactVisibilitySensor>
+          </div>
+
+          {/* body */}
+          <div className="container mx-auto w-full overflow-hidden">
+            <>
+              <div className={`flex flex-col gap-5`}>
+                {worksData.map(({ id, title, description, illustration }) => (
+                  <div
+                    className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
+                    key={id}
+                  >
+                    <div
+                      className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
+                        } `}
+                    >
+                      <ReactVisibilitySensor partialVisibility>
+                        {({ isVisible }) => (
+                          <div
+                            className={` ${isVisible
+                              ? "opacity-100 translate-y-0"
+                              : "translate-y-20 opacity-0"
+                              } duration-1000 `}
+                          >
+                            <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
+                              {title}
+                            </h2>
+                            <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">
+                              {parse(description)}
+                            </p>
+                          </div>
+                        )}
+                      </ReactVisibilitySensor>
+                    </div>
+                    <ReactVisibilitySensor partialVisibility>
+                      {({ isVisible }) => (
+                        <div
+                          className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
+                            } ${isVisible
+                              ? "opacity-100 translate-y-0"
+                              : "translate-y-20 opacity-0"
+                            } duration-1000 `}
+                        >
+                          <img
+                            className="w-4/5 mx-auto"
+                            src={illustration}
+                            alt={title}
+                          />
+                        </div>
+                      )}
+                    </ReactVisibilitySensor>
+                  </div>
+                ))}
               </div>
-            </div>
-          </div> */}
+            </>
+          </div>
+
+          {/* Why Dotpot iT */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 p-3 text-textColor-500`}
+                  >
+                    <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
+                      Why Dotpot iT
+                    </h2>
+                    <img
+                      className="w-64 mx-auto"
+                      src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"
+                      alt="Separator Image"
+                    />
+                    <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
+                      Dotpot IT is the preferred partner for logistics and distribution businesses seeking top-notch web design and development solutions. With their extensive expertise in the field, they craft visually appealing and user-friendly websites that cater specifically to the needs of this industry. Dotpot IT offers a range of tailored services, including inventory management systems, order tracking functionalities, warehouse management portals, and more. They prioritize seamless user experiences and provide ongoing maintenance and support to ensure optimal website performance. Dotpot IT assists logistics and distribution companies in enhancing their online presence and delivering exceptional digital experiences in this ever-evolving sector.
+                    </p>
+                  </div>
+                </>
+              )}
+            </ReactVisibilitySensor>
+          </div>
+
+          {/* Get in Touch */}
+          <div className="">
+            <GetAQuote />
           </div>
         </div>
       </div>

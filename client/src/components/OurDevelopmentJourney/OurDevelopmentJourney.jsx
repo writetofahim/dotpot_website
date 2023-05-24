@@ -33,7 +33,7 @@ const OurDevelopmentJourney = () => {
                     <div className='absolute md:w-10 w-5 h-3 top-1/2  left-5 bg-slate-500 block md:hidden'></div>
                     <div className='h-auto p-5 w-full border border-border bg-background-500 rounded-lg shadow-lg text-gray-400'>
                         <div className="flex lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left mb-5 text-textColor-500">
-                            <h2 className='font-bold'>Dotpose</h2>
+                            <h2 className='font-bold'>Dotpos</h2>
                             <h2 className="ml-auto font-thin">2023</h2>
                         </div>
                         <p className='lg:text-base md:text-sm text-xs text-gray-400 text-justify'>Dotpose: A PHP and Laravel project launched in March 2023. It's a dynamic platform for artists to showcase, connect, and collaborate. Empowering creativity and fostering connections in the art community.</p>

@@ -1,15 +1,40 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import sn from "../../assets/img/sn.png";
+import ReactVisibilitySensor from "react-visibility-sensor";
+import agencyweb from "../../assets/img/agencyweb.png";
+import blogweb from "../../assets/img/blogweb.png";
+import coverweb from "../../assets/img/coverweb.png";
+import customappweb from "../../assets/img/customappweb.png";
+import ecommarceweb from "../../assets/img/ecommarceweb.png";
 import Footer from "../../components/Footer/Footer";
+import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import parse from "react-html-parser";
 
 const SocialNetworking = () => {
+  const worksData = [
+    {
+      id: 1,
+      title: "Overview",
+      description:
+        `Dotpot IT: Your preferred partner for real estate web solutions. Visually stunning, user-friendly websites tailored to the industry's needs. Property listings, advanced search, virtual tours, and agent profiles. Ongoing maintenance and support for optimal performance. Elevate your online presence with Dotpot IT.`,
+      illustration: ecommarceweb,
+    },
+    {
+      id: 2,
+      title: "How we work?",
+      description:
+        "Your trusted partner for top-notch social networking solutions. Tailored services, latest technologies, and exceptional results. One-stop-shop from ideation to launch. Experienced team delivering user-friendly, secure, and scalable sites. We exceed expectations and deliver on our promises. Your social networking project is in good hands with DotpotiT.",
+      illustration: agencyweb,
+    },
+  ];
+
   useScrollToTop();
+
   return (
-    <div className="">
+    <div className="bg-background-500">
       <Helmet>
         <title>Social Networking | Dotpot iT a leading it company</title>
         <meta
@@ -50,166 +75,135 @@ const SocialNetworking = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="bg-background-500">
-        <div className="pt-[15vh] container min-h-screen mx-auto">
-          <NavigatorComponent navigationData={navigationData} />
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center">
-            Social Networking
-          </h1>
-          <h2 className="text-lg  text-center mb-10 text-gray-400">
-            Connect with your audience like never before using DotpotIT's social
-            networking solutions. Engage, interact, and cultivate a thriving
-            online community.
-          </h2>
-          <div className="container mx-auto">
-            <img
-              className="md:w-1/2 mx-auto mb-10"
-              src={sn}
-              alt="Social Networking Image"
-            />
-          </div>
-          <div className="container  mx-auto flex flex-col py-10">
-            <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block ">
-              Overview
-            </h3>
-            {/* Overview */}
-            <div className="text-textColor-500 flex flex-col gap-5 p-5">
-              <p>
-                Social networking is a rapidly evolving industry that has
-                revolutionized the way people connect with each other online. At
-                DotpotiT, we understand the importance of social networking in
-                today's digital age, and we offer a range of services to help
-                businesses and individuals leverage the power of social
-                networking to connect with their audiences.
-                <br />
-                Our team of experts has extensive experience in designing and
-                developing social networking sites that are intuitive,
-                user-friendly, and visually appealing. We work closely with our
-                clients to understand their unique needs and develop customized
-                solutions that meet their specific requirements.
-                <br />
-                Whether you are looking to build a new social networking site
-                from scratch or enhance an existing one, we have the expertise
-                and resources to deliver results. Our services include website
-                design and development, mobile app development, social media
-                marketing, and more.
-                <br />
-                At DotpotiT, we are committed to helping our clients stay ahead
-                of the curve in the ever-changing landscape of social
-                networking. Contact us today to learn more about our services
-                and how we can help you achieve your goals in the social
-                networking industry.
-              </p>
-            </div>
-
-            {/*card for redirect to service quote */}
-            {/* <div className="border-b h-52 w-full md:w-4/5 mx-auto my-5 rounded-xl border flex justify-center items-center shadow-md overflow-hidden relative">
-            
-            <div className="flex justify-center items-center">
-              <div className="w-96 absolute">
-                <div class="absolute top-0 -left-4 w-52 h-52 bg-indigo-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-                <div class="absolute top-0 -right-4 w-52 h-52 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-                <div class="absolute -bottom-8 left-20 w-52 h-52 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-              </div>
-
-              <div className="flex flex-col gap-5">
-                <h3 className="text-center text-purple-500 font-bold text-xl ">
-                  Want to Know How Much Exactly Your Social networking
-                  application Will Cost?
-                </h3>
-                <h3 className="text-center text-purple-500 font-semibold">
-                  "The Experts Are Just A Click Away. Get A Quote."
-                </h3>
-
-                <Link
-                  to="/services"
-                  className="w-52 h-10 flex items-center justify-center rounded-md bg-indigo-500 mx-auto hover:scale-105 transition-all shadow-sm"
-                >
-                  <div className="flex justify-center items-center gap-3">
-                    <p className="text-white font-semibold">Share your Idea</p>
-                    <BsArrowRightCircleFill className="text-white hover:cursor-pointer" />
+      <div className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
+        } `}
+      >
+        <NavigatorComponent navigationData={navigationData} />
+        <div>
+          {/* Banner */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`mt-10 mb-16 ${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 `}
+                  >
+                    <div className="container mx-auto">
+                      <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
+                        <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
+                          <h1 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
+                            Social Networking
+                          </h1>
+                          <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
+                            Connect with your audience like never before using DotpotIT's <a href="https://www.investopedia.com/terms/s/social-networking.asp" target="_blank" rel="nofollow">social networking</a> solutions. Engage, interact, and cultivate a thriving online community.
+                          </p>
+                        </div>
+                        <img
+                          src={coverweb}
+                          alt="web development"
+                          className="w-full md:w-1/2 lg:w-1/2"
+                        />
+                      </div>
+                    </div>
                   </div>
-                </Link>
-              </div>
-            </div>
-          </div> */}
+                </>
+              )}
+            </ReactVisibilitySensor>
+          </div>
 
-            {/* paragraph */}
-            <div className="my-3">
-              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-textColor-500 ">
-                How we work?
-              </h2>
-              <div className="text-textColor-500 flex flex-col gap-5 p-5">
-                <p>
-                  At DotpotiT, we work with a diverse range of clients to
-                  provide top-notch social networking solutions. Our process
-                  starts with understanding our clients' unique needs and
-                  tailoring our services to match those requirements. We then
-                  utilize the latest technologies and development practices to
-                  deliver exceptional results. Our team of experts has years of
-                  experience in the industry and is committed to delivering
-                  excellence on every project. With our dedication to customer
-                  satisfaction and a track record of successful project
-                  deliveries, we are confident that we are the best choice for
-                  all your social networking needs.
-                </p>
-                <p>
-                  At DotpotiT, we pride ourselves on being a one-stop-shop for
-                  all your social networking needs. From ideation to
-                  development, and from design to launch, we have you covered
-                  every step of the way. Our team of experts has extensive
-                  experience in building social networking sites that are
-                  user-friendly, secure, and scalable. We are passionate about
-                  delivering exceptional results and strive to exceed our
-                  clients' expectations. When you work with us, you can rest
-                  assured that your project is in good hands.
-                </p>
-                <p>
-                  We are a team of passionate and dedicated professionals who
-                  understand the importance of delivering on our promises. We
-                  work tirelessly to ensure that our clients' social networking
-                  sites are of the highest quality, meet their requirements, and
-                  exceed their expectations. With our years of experience,
-                  cutting-edge technologies, and commitment to customer
-                  satisfaction, we are confident that we are the right choice
-                  for all your social networking needs.
-                </p>
+          {/* body */}
+          <div className="container mx-auto w-full overflow-hidden">
+            <>
+              <div className={`flex flex-col gap-5`}>
+                {worksData.map(({ id, title, description, illustration }) => (
+                  <div
+                    className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
+                    key={id}
+                  >
+                    <div
+                      className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
+                        } `}
+                    >
+                      <ReactVisibilitySensor partialVisibility>
+                        {({ isVisible }) => (
+                          <div
+                            className={` ${isVisible
+                              ? "opacity-100 translate-y-0"
+                              : "translate-y-20 opacity-0"
+                              } duration-1000 `}
+                          >
+                            <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
+                              {title}
+                            </h2>
+                            <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">
+                              {parse(description)}
+                            </p>
+                          </div>
+                        )}
+                      </ReactVisibilitySensor>
+                    </div>
+                    <ReactVisibilitySensor partialVisibility>
+                      {({ isVisible }) => (
+                        <div
+                          className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
+                            } ${isVisible
+                              ? "opacity-100 translate-y-0"
+                              : "translate-y-20 opacity-0"
+                            } duration-1000 `}
+                        >
+                          <img
+                            className="w-4/5 mx-auto"
+                            src={illustration}
+                            alt={title}
+                          />
+                        </div>
+                      )}
+                    </ReactVisibilitySensor>
+                  </div>
+                ))}
               </div>
-            </div>
-            {/* Advantages of Blockchain Technology */}
-            <ul className="ml-5">
-              <h3 className="text-xl md:text-2xl  my-2 md:mb-1  text-textColor-500">
-                Why you should choose us!
-              </h3>
-              <li className=" ml-5 list-disc text-textColor-500 ">
-                Highly experienced team of developers who are passionate about
-                building innovative solutions.
-              </li>
-              <li className=" ml-5 list-disc text-textColor-500 ">
-                Proven track record of delivering high-quality projects on time
-                and within budget.
-              </li>
-              <li className=" ml-5 list-disc text-textColor-500 ">
-                Commitment to providing exceptional customer service and support
-                throughout the entire development process and beyond.
-              </li>
-              <li className=" ml-5 list-disc text-textColor-500 ">
-                We prioritize communication and transparency throughout the
-                development process, providing regular updates and involving our
-                clients in key decision-making processes.
-              </li>
-              <li className=" ml-5 list-disc text-textColor-500 ">
-                Our team stays up-to-date with the latest industry trends and
-                technologies, ensuring that our clients receive cutting-edge
-                solutions.
-              </li>
-            </ul>
+            </>
+          </div>
+
+          {/* Why Dotpot iT */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 p-3 text-textColor-500`}
+                  >
+                    <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
+                      Why Dotpot iT
+                    </h2>
+                    <img
+                      className="w-64 mx-auto"
+                      src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"
+                      alt="Separator Image"
+                    />
+                    <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
+                      Dotpot IT is the preferred partner for social networking businesses seeking outstanding web design and development solutions. Leveraging their in-depth industry expertise, they create visually captivating and user-friendly websites designed specifically for social networking purposes. Dotpot IT offers a comprehensive range of tailored services, including advanced user profiles, interactive features, messaging systems, and seamless content sharing capabilities. Prioritizing exceptional user experiences, they provide ongoing maintenance and support to ensure optimal website performance. Dotpot IT empowers social networking companies to elevate their online presence and deliver exceptional digital experiences in this dynamic and ever-evolving industry.
+                    </p>
+                  </div>
+                </>
+              )}
+            </ReactVisibilitySensor>
+          </div>
+
+          {/* Get in Touch */}
+          <div className="">
+            <GetAQuote />
           </div>
         </div>
       </div>
-      <div className="">
-        <Footer />
-      </div>
+
+      <Footer />
     </div>
   );
 };

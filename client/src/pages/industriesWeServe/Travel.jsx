@@ -1,15 +1,54 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import travel from "../../assets/img/travel.png";
+import ReactVisibilitySensor from "react-visibility-sensor";
+import agencyweb from "../../assets/img/agencyweb.png";
+import blogweb from "../../assets/img/blogweb.png";
+import coverweb from "../../assets/img/coverweb.png";
+import customappweb from "../../assets/img/customappweb.png";
+import ecommarceweb from "../../assets/img/ecommarceweb.png";
 import Footer from "../../components/Footer/Footer";
+import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import parse from "react-html-parser";
 
 const Travel = () => {
+  const worksData = [
+    {
+      id: 1,
+      title: "Online Booking System",
+      description:
+        `Implement a secure and user-friendly online booking system that allows customers to easily search, select, and book accommodations, flights, car rentals, and other travel services directly from your website.`,
+      illustration: ecommarceweb,
+    },
+    {
+      id: 2,
+      title: "Interactive Maps and Destination Guides",
+      description:
+        `<a href="https://thriftytraveler.com/guides/travel/explore-the-world-destination-guide-interactive-map/" target="_blank" rel="nofollow">Integrate interactive maps to showcase popular destinations,</a> attractions, restaurants, and points of interest. Enhance the user experience with informative destination guides, highlighting key features and providing valuable travel insights.`,
+      illustration: agencyweb,
+    },
+    {
+      id: 3,
+      title: "Multi-language and Currency Support",
+      description:
+        "Cater to a global audience by incorporating multi-language support and enabling users to view prices and make bookings in their preferred currencies.",
+      illustration: agencyweb,
+    },
+    {
+      id: 4,
+      title: "Trip Planning Tools",
+      description:
+        "Offer trip planning tools such as itinerary builders, packing checklists, and weather forecasts to assist travelers in organizing their trips and ensuring a smooth travel experience.",
+      illustration: agencyweb,
+    },
+  ];
+
   useScrollToTop();
+
   return (
-    <div className="">
+    <div className="bg-background-500">
       <Helmet>
         <title>Travel & Hospitality | Dotpot iT a leading it company</title>
         <meta
@@ -50,213 +89,136 @@ const Travel = () => {
         />
       </Helmet>
       <Navbar />
-      <div className="bg-background-500">
-        <div className="pt-[15vh] pb-10 container mx-auto">
-          <NavigatorComponent navigationData={navigationData} />
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center">
-            Travel & Hospitality
-          </h1>
-          <h2 className="text-lg text-gray-400 text-center mb-10">
-            Experience the ultimate travel companion - DotpotiT's
-            state-of-the-art app. Simplify your journey with our cutting-edge
-            features and seamless user experience.
-          </h2>
-          <div className="border-b border-border container mx-auto">
-            <img
-              className="md:w-1/2 mx-auto "
-              src={travel}
-              alt="Travel & Hospitality Image"
-            />
-          </div>
-          <div className="container  mx-auto flex flex-col mb-10 my-10">
-            <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
-              Overview
-            </h3>
-            {/* Overview */}
-            <div className="text-textColor-500 flex flex-col gap-5 p-5">
-              <p>
-                The travel industry has evolved significantly in recent years,
-                with more people looking to explore new destinations and
-                experiences. In response, DotpotiT has been working to provide
-                innovative and comprehensive technological solutions for travel
-                applications. Our solutions are aimed at making travel planning
-                and booking easier, more efficient, and more enjoyable for
-                customers.
-                <br />
-                At DotpotiT, we understand the importance of personalization
-                when it comes to travel planning. We work with our clients to
-                understand their unique needs and preferences, and we use this
-                information to develop tailored solutions that meet their
-                specific requirements. Our aim is to create a seamless and
-                personalized travel experience for each and every customer.
-                <br />
-                We provide a range of technological solutions, including travel
-                booking platforms, travel itinerary management systems, and
-                travel information databases. Our platforms are designed to be
-                user-friendly and intuitive, allowing customers to easily browse
-                and book travel options. We also prioritize security and
-                privacy, ensuring that all customer data is protected at all
-                times.
-                <br />
-                Overall, DotpotiT is committed to providing the best
-                technological solutions for the travel industry. We believe that
-                technology can transform the way people travel, and we are
-                dedicated to making this a reality for our clients.
-              </p>
-            </div>
 
-            {/*card for redirect to service quote */}
-            {/* <div className="border-b h-52 w-full md:w-4/5 mx-auto my-5 rounded-xl border flex justify-center items-center shadow-md overflow-hidden relative">
-            
-            <div className="flex justify-center items-center">
-              <div className="w-96 absolute">
-                <div class="absolute top-0 -left-4 w-52 h-52 bg-indigo-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-                <div class="absolute top-0 -right-4 w-52 h-52 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-                <div class="absolute -bottom-8 left-20 w-52 h-52 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-              </div>
-
-              <div className="flex flex-col gap-5">
-                <h3 className="text-center text-textColor-500 font-bold text-xl ">
-                  Want to Know How Much Exactly Your Travel application Will
-                  Cost?
-                </h3>
-                <h3 className="text-center text-textColor-500 font-semibold">
-                  "The Experts Are Just A Click Away. Get A Quote."
-                </h3>
-
-                <Link
-                  to="/services"
-                  className="w-52 h-10 flex items-center justify-center rounded-md bg-indigo-500 mx-auto hover:scale-105 transition-all shadow-sm"
-                >
-                  <div className="flex justify-center items-center gap-3">
-                    <p className="text-white font-semibold">Share your Idea</p>
-                    <BsArrowRightCircleFill className="text-white hover:cursor-pointer" />
+      <div className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
+        } `}
+      >
+        <NavigatorComponent navigationData={navigationData} />
+        <div>
+          {/* Banner */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`mt-10 mb-16 ${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 `}
+                  >
+                    <div className="container mx-auto">
+                      <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
+                        <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
+                          <h1 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
+                          Travel & Hospitality
+                          </h1>
+                          <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
+                            Experience the ultimate <a href="https://semidotinfotech.com/travel-and-hospitality-solutions" target="_blank" rel="nofollow">travel & hospitality</a> companion - DotpotiT's state-of-the-art app. Simplify your journey with our cutting-edge features and seamless user experience.
+                          </p>
+                        </div>
+                        <img
+                          src={coverweb}
+                          alt="web development"
+                          className="w-full md:w-1/2 lg:w-1/2"
+                        />
+                      </div>
+                    </div>
                   </div>
-                </Link>
-              </div>
-            </div>
-          </div> */}
+                </>
+              )}
+            </ReactVisibilitySensor>
+          </div>
 
-            {/* paragraph */}
-            <div className="my-3">
-              <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-1  block text-textColor-500 ">
-                How we work?
-              </h2>
-              <div className="text-textColor-500 flex flex-col gap-5 p-5">
-                <p>
-                  At DotpotiT, we understand the unique needs and challenges of
-                  the travel industry. Our team of experienced developers,
-                  designers, and project managers work closely with our clients
-                  to develop custom technology solutions that meet their
-                  specific needs. Our collaborative approach ensures that we
-                  fully understand our clients' requirements and can deliver
-                  innovative solutions that drive success.
-                </p>
-                <p>
-                  We follow a streamlined development process that prioritizes
-                  quality, efficiency, and scalability. Our team works closely
-                  with clients to gather requirements and create a detailed
-                  project plan. We then utilize agile methodologies to develop
-                  and test the solution in iterative sprints, ensuring that we
-                  stay on track and deliver on time.
-                </p>
-                <p>
-                  Our technology solutions for the travel industry are designed
-                  to be flexible and scalable, allowing them to adapt to the
-                  changing needs of our clients' businesses. We prioritize the
-                  use of the latest technologies and development frameworks,
-                  ensuring that our solutions are always up-to-date and at the
-                  forefront of industry trends.
-                </p>
-                <p>
-                  At DotpotiT, we believe in providing personalized solutions
-                  that cater to the unique needs of our clients. Our team of
-                  experts takes the time to understand your business
-                  requirements and goals, and we work collaboratively with you
-                  to develop a solution that meets your specific needs. We also
-                  understand that technology can be complex, which is why we
-                  make it a priority to communicate clearly and transparently
-                  with our clients every step of the way.
-                </p>
-                <p>
-                  To ensure the success of our clients, we also provide ongoing
-                  support and maintenance for our solutions. Our team of
-                  dedicated professionals is available around the clock to
-                  answer any questions or concerns you may have and to provide
-                  technical assistance whenever you need it. We also stay
-                  up-to-date with the latest industry trends and innovations, so
-                  you can be sure that your travel application solution is
-                  always cutting-edge and competitive in the market.
-                </p>
+          {/* body */}
+          <div className="container mx-auto w-full overflow-hidden">
+            <>
+              <div className={`flex flex-col gap-5`}>
+                {worksData.map(({ id, title, description, illustration }) => (
+                  <div
+                    className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
+                    key={id}
+                  >
+                    <div
+                      className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
+                        } `}
+                    >
+                      <ReactVisibilitySensor partialVisibility>
+                        {({ isVisible }) => (
+                          <div
+                            className={` ${isVisible
+                              ? "opacity-100 translate-y-0"
+                              : "translate-y-20 opacity-0"
+                              } duration-1000 `}
+                          >
+                            <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
+                              {title}
+                            </h2>
+                            <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">
+                              {parse(description)}
+                            </p>
+                          </div>
+                        )}
+                      </ReactVisibilitySensor>
+                    </div>
+                    <ReactVisibilitySensor partialVisibility>
+                      {({ isVisible }) => (
+                        <div
+                          className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
+                            } ${isVisible
+                              ? "opacity-100 translate-y-0"
+                              : "translate-y-20 opacity-0"
+                            } duration-1000 `}
+                        >
+                          <img
+                            className="w-4/5 mx-auto"
+                            src={illustration}
+                            alt={title}
+                          />
+                        </div>
+                      )}
+                    </ReactVisibilitySensor>
+                  </div>
+                ))}
               </div>
-            </div>
-            {/* Advantages of Blockchain Technology */}
-            <ul className="ml-5">
-              <h2 className="text-xl md:text-2xl  my-2 md:mb-1  text-textColor-500 ">
-                Why you should choose us!
-              </h2>
-              <li className=" ml-5 list-disc text-textColor-500">
-                <strong>Industry Experience:</strong> Our team has years of
-                experience in developing technology solutions for the travel
-                industry, giving us a deep understanding of the unique
-                challenges and opportunities that it presents.
-              </li>
-              <li className=" ml-5 list-disc text-textColor-500">
-                <strong>Expert Travel Advice:</strong> Our team of travel
-                experts has years of experience in the industry, and we use that
-                knowledge to provide you with expert travel advice. We'll help
-                you plan your trip from start to finish, making sure that every
-                aspect of your travel experience is top-notch.
-              </li>
-              <li className=" ml-5 list-disc text-textColor-500">
-                <strong>Customized Solutions:</strong> We work closely with
-                clients to develop custom solutions that are tailored to their
-                specific needs and requirements. Our collaborative approach
-                ensures that we deliver solutions that truly meet our clients'
-                needs.
-              </li>
-              <li className=" ml-5 list-disc text-textColor-500">
-                <strong>Quality and Scalability: </strong>
-                Our solutions are designed to be of the highest quality and are
-                built with scalability in mind. This ensures that our clients'
-                businesses can grow and adapt to changing market conditions.
-              </li>
-              <li className=" ml-5 list-disc text-textColor-500">
-                <strong>Cutting-Edge Technology:</strong> We prioritize the use
-                of the latest technologies and development frameworks, ensuring
-                that our solutions are always at the forefront of industry
-                trends and can provide a competitive advantage.
-              </li>
-              <li className=" ml-5 list-disc text-textColor-500">
-                <strong>24/7 Customer Support:</strong> Our team is committed to
-                providing exceptional customer support throughout the
-                development process and beyond. We work closely with clients to
-                ensure that their needs are met and that their technology
-                solutions are running smoothly.
-              </li>
-              <li className=" ml-5 list-disc text-textColor-500">
-                <strong>Sustainable Tourism:</strong> We believe in responsible
-                and sustainable tourism, and we're committed to working with
-                partners who share our values. We strive to minimize the
-                environmental impact of travel and promote cultural preservation
-                and conservation.
-              </li>
-              <li className=" ml-5 list-disc text-textColor-500">
-                <strong>Innovations:</strong> We are constantly pushing the
-                boundaries of what is possible with technology to provide
-                innovative solutions that deliver real value to our clients. Our
-                approach is to stay ahead of the curve by investing in the
-                latest technologies and tools, so that we can continue to
-                provide cutting-edge solutions that keep our clients ahead of
-                their competition.
-              </li>
-            </ul>
+            </>
+          </div>
+
+          {/* Why Dotpot iT */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 p-3 text-textColor-500`}
+                  >
+                    <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
+                      Why Dotpot iT
+                    </h2>
+                    <img
+                      className="w-64 mx-auto"
+                      src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"
+                      alt="Separator Image"
+                    />
+                    <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
+                      Dotpot IT is the preferred partner for travel businesses seeking outstanding web design and development solutions. With their extensive expertise in the industry, they create visually captivating and user-friendly websites tailored to the unique needs of the travel market. Dotpot IT offers a range of customized services, including itinerary management systems, advanced search functionalities, immersive virtual experiences, and travel agent profiles. Prioritizing seamless user experiences, they provide ongoing maintenance and support to ensure optimal website performance. Dotpot IT empowers travel companies to elevate their online presence and deliver exceptional digital experiences in this dynamic industry.
+                    </p>
+                  </div>
+                </>
+              )}
+            </ReactVisibilitySensor>
+          </div>
+
+          {/* Get in Touch */}
+          <div className="">
+            <GetAQuote />
           </div>
         </div>
       </div>
-      <div className="">
-        <Footer />
-      </div>
+
+      <Footer />
     </div>
   );
 };

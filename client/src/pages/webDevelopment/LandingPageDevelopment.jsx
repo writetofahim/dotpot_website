@@ -182,9 +182,8 @@ const LandingPageDevelopment = () => {
       <Navbar />
 
       <div
-        className={` pt-[15vh] ${
-          window.innerWidth > 1280 ? "md:pt-[11vh]" : "md:pt-[15vh]"
-        } `}
+        className={` pt-[15vh] ${window.innerWidth > 1280 ? "md:pt-[11vh]" : "md:pt-[15vh]"
+          } `}
       >
         <NavigatorComponent navigationData={navigationData} />
         <div>
@@ -194,11 +193,10 @@ const LandingPageDevelopment = () => {
               {({ isVisible }) => (
                 <>
                   <div
-                    className={`mt-10 mb-16 ${
-                      isVisible
+                    className={`mt-10 mb-16 ${isVisible
                         ? "opacity-100 translate-y-0"
                         : "translate-y-20 opacity-0"
-                    } duration-1000 `}
+                      } duration-1000 `}
                   >
                     <div className="container mx-auto">
                       <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
@@ -207,7 +205,7 @@ const LandingPageDevelopment = () => {
                             Landing Page Development with Dotpot iT
                           </h2>
                           <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
-                            Captivate Your Audience with a Stellar Landing Page
+                            Captivate Your Audience with a Stellar <a href="https://www.bluehost.com/blog/landing-pages-what-are-they-and-why-you-need-them/?irpid=101&clickid=P61C101S570N0B5578A2D4499E0000V124&irpid=101&clickid=P61C101S570N0B5578A2D4499E0000V138&gclid=Cj0KCQjwyLGjBhDKARIsAFRNgW990AZbJq_c2LFexYL_4C7yD18b5kwAl_7R5msstWn-4HE987lBpwMaApnEEALw_wcB&gclsrc=aw.ds" target="_blank" rel="nofollow">Landing Page</a>
                           </p>
                         </div>
                         <img
@@ -233,18 +231,16 @@ const LandingPageDevelopment = () => {
                     className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
                   >
                     <div
-                      className={`w-full md:w-1/2 lg:w-1/2 ${
-                        id % 2 === 0 && "order-2"
-                      } `}
+                      className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
+                        } `}
                     >
                       <ReactVisibilitySensor partialVisibility>
                         {({ isVisible }) => (
                           <div
-                            className={` ${
-                              isVisible
+                            className={` ${isVisible
                                 ? "opacity-100 translate-y-0"
                                 : "translate-y-20 opacity-0"
-                            } duration-1000 `}
+                              } duration-1000 `}
                           >
                             <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
                               {title}
@@ -259,13 +255,11 @@ const LandingPageDevelopment = () => {
                     <ReactVisibilitySensor partialVisibility>
                       {({ isVisible }) => (
                         <div
-                          className={`w-full md:w-1/2 lg:w-1/2 ${
-                            id % 2 === 0 && "order-1"
-                          } ${
-                            isVisible
+                          className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
+                            } ${isVisible
                               ? "opacity-100 translate-y-0"
                               : "translate-y-20 opacity-0"
-                          } duration-1000 `}
+                            } duration-1000 `}
                         >
                           <img
                             className="w-4/5 mx-auto"

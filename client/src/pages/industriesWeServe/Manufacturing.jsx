@@ -1,176 +1,219 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import manufacturingCover from "../../assets/img/manufacturing.png";
-import mf1 from "../../assets/img/mf-1.png";
-import mf2 from "../../assets/img/mf-2.png";
-import mf3 from "../../assets/img/mf-3.png";
-import mf4 from "../../assets/img/mf-4.png";
+import ReactVisibilitySensor from "react-visibility-sensor";
+import agencyweb from "../../assets/img/agencyweb.png";
+import blogweb from "../../assets/img/blogweb.png";
+import coverweb from "../../assets/img/coverweb.png";
+import customappweb from "../../assets/img/customappweb.png";
+import ecommarceweb from "../../assets/img/ecommarceweb.png";
 import Footer from "../../components/Footer/Footer";
+import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import parse from "react-html-parser";
 
 const Manufacturing = () => {
+  const worksData = [
+    {
+      id: 1,
+      title: "Product Catalog",
+      description:
+        `Showcase a comprehensive product catalog with detailed information about each product, including specifications, features, and variations. Allow users to filter and search for specific products based on their requirements.`,
+      illustration: ecommarceweb,
+    },
+    {
+      id: 2,
+      title: "Manufacturing Capabilities",
+      description:
+        "Highlight the manufacturing capabilities and processes of the company. Provide information about machinery, technologies, quality control measures, certifications, and compliance standards to instill confidence in potential customers.",
+      illustration: agencyweb,
+    },
+    {
+      id: 3,
+      title: "Case Studies and Success Stories",
+      description:
+        "Showcase successful projects and case studies to demonstrate the expertise and track record of the manufacturing company. Include testimonials from satisfied customers to build credibility.",
+      illustration: blogweb,
+    },
+    {
+      id: 4,
+      title: "Supply Chain Management",
+      description:
+        `Provide transparency into the supply chain management process. Illustrate how the company manages sourcing of raw materials, production, quality control, and delivery to ensure efficient operations and timely fulfillment.`,
+      illustration: blogweb,
+    },
+  ];
+
   useScrollToTop();
+
   return (
-    <div>
-      <div className="">
-        <Helmet>
-          <title>Manufacturing | Dotpot iT a leading it company</title>
-          <meta
-            name="description"
-            content="Optimize manufacturing processes with DotpotIT's custom software solutions. Boost productivity, reduce costs, and drive efficiency for your business success. "
-          />
-          <link
-            rel="canonical"
-            href="https://dotpotit.com/industries-we-serve/manufacturing"
-          />
-          <meta property="og:title" content="Manufacturing | Dotpot iT" />
-          <meta
-            property="og:description"
-            content="Optimize manufacturing processes with DotpotIT's custom software solutions. Boost productivity, reduce costs, and drive efficiency for your business success. "
-          />
-          <meta
-            property="og:image"
-            content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
-          />
-          <meta
-            name="keywords"
-            content="Software development company, Manufacturing software solutions, Process optimization for manufacturing"
-          />
-          <meta property="og:type" content="website" />
-          <meta
-            property="og:url"
-            content="https://dotpotit.com/industries-we-serve/manufacturing"
-          />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Manufacturing | Dotpot iT" />
-          <meta
-            name="twitter:description"
-            content="Optimize manufacturing processes with DotpotIT's custom software solutions. Boost productivity, reduce costs, and drive efficiency for your business success. "
-          />
-          <meta
-            name="twitter:image"
-            content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
-          />
-        </Helmet>
-        <Navbar />
-        <div className="">
-          <section className="relative w-full overflow-hidden overflow-x-clip bg-slate-50 bg-gradient-to-t from-slate-50 to-slate-100 dark1:bg-[#0B1120] dark1:bg-none">
-            <div className="absolute right-[28%] top-0 hidden h-[150px] w-[200px] rotate-12 rounded-3xl bg-gradient-to-l from-blue-600 to-sky-400 opacity-20 blur-3xl filter dark1:block dark1:opacity-30 lg:top-44 lg:-right-20 lg:h-72 lg:w-[350px] xl:h-80 xl:w-[500px]"></div>
-            <div className="absolute bottom-44 -left-64 hidden h-[150px] w-[900px] -rotate-45 rounded-3xl bg-gradient-to-r from-violet-600 to-indigo-800 opacity-30 blur-3xl filter dark1:block lg:bottom-24 lg:-left-20 lg:h-28 lg:w-[250px] lg:-rotate-12 lg:opacity-20 xl:h-40 xl:w-[400px]"></div>
-            <div className="absolute left-[28%] top-28 hidden rotate-12 rounded-3xl bg-sky-800 opacity-90 blur-3xl filter dark1:opacity-30 lg:h-32 lg:w-4/5 md:w-[450px] dark1:lg:block xl:h-44 xl:w-[600px]"></div>
-            <div className="absolute h-16 w-[600px] rotate-[-40deg] rounded-3xl bg-sky-400 opacity-10 blur-2xl filter dark1:hidden lg:bottom-24 lg:-left-28 lg:h-12 lg:w-[600px] lg:opacity-30 lg:blur-2xl xl:-left-40 xl:h-4 xl:w-[700px] xl:opacity-100"></div>
-            <div className="absolute h-14 w-[600px] rotate-[-40deg] rounded-3xl bg-purple-400 opacity-30 blur-2xl filter dark1:hidden lg:bottom-20 lg:-left-28 lg:h-10 lg:w-[600px] lg:opacity-20 lg:blur-xl xl:-left-40 xl:h-2 xl:w-[800px] xl:opacity-100"></div>
-            <div className="absolute hidden h-16 w-[600px] rotate-[-40deg] rounded-3xl bg-sky-400 opacity-10 blur-2xl filter dark1:hidden lg:top-24 lg:-right-28 lg:block lg:h-12 lg:w-[600px] lg:opacity-30 lg:blur-2xl xl:-right-40 xl:h-4 xl:w-[700px] xl:opacity-100"></div>
-            <div className="absolute hidden h-14 w-[600px] rotate-[-40deg] rounded-3xl bg-purple-400 opacity-30 blur-2xl filter dark1:hidden lg:top-20 lg:-right-28 lg:block lg:h-10 lg:w-[600px] lg:opacity-20 lg:blur-xl xl:-right-40 xl:h-2 xl:w-[800px] xl:opacity-100"></div>
-
-            <div className="bg-background-500">
-              <div className="container mx-auto pt-[15vh]">
-                <NavigatorComponent navigationData={navigationData} />
-                <div className="my-5">
-                  <img
-                    className="w-[400px] md:w-1/2 mx-auto px-5"
-                    src={manufacturingCover}
-                    alt="Manufacturing Image"
-                  />
-                </div>
-                {/* cover */}
-                <div className="w-full mx-auto px-5 h-52">
-                  <h1 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-5 block text-textColor-500 text-center ">
-                    Manufacturing
-                  </h1>
-                  <h2 className="text-textColor-500 flex flex-col gap-5 p-5 text-center">
-                    Optimize manufacturing processes with DotpotIT's custom
-                    software solutions. Boost productivity, reduce costs, and
-                    drive efficiency for your business success.
-                  </h2>
-                </div>
-                {/* points */}
-                <div>
-                  <div className="md:flex gap-5 px-5 w-full flex-row-reverse justify-evenly">
-                    <div>
-                      <img
-                        className="w-4/5 md:w-[450px] mx-auto mb-5 rounded-md"
-                        src={mf1}
-                        alt="Tailored Software Solutions Image"
-                      />
-                    </div>
-                    <div className="rounded-lg w-full md:w-[590px] border border-border p-5 flex flex-col justify-center items-center">
-                      <h2 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
-                        Tailored Software
-                        <span className="text-textColor-500"> Solutions</span>
-                      </h2>
-                      <p className="text-center text-textColor-500">
-                        Customized software solutions designed to meet the
-                        specific needs of each client.
-                      </p>
+    <div className="bg-background-500">
+      <Helmet>
+        <title>Manufacturing | Dotpot iT a leading it company</title>
+        <meta
+          name="description"
+          content="Optimize manufacturing processes with DotpotIT's custom software solutions. Boost productivity, reduce costs, and drive efficiency for your business success. "
+        />
+        <link
+          rel="canonical"
+          href="https://dotpotit.com/industries-we-serve/manufacturing"
+        />
+        <meta property="og:title" content="Manufacturing | Dotpot iT" />
+        <meta
+          property="og:description"
+          content="Optimize manufacturing processes with DotpotIT's custom software solutions. Boost productivity, reduce costs, and drive efficiency for your business success. "
+        />
+        <meta
+          property="og:image"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
+        />
+        <meta
+          name="keywords"
+          content="Software development company, Manufacturing software solutions, Process optimization for manufacturing"
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://dotpotit.com/industries-we-serve/manufacturing"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Manufacturing | Dotpot iT" />
+        <meta
+          name="twitter:description"
+          content="Optimize manufacturing processes with DotpotIT's custom software solutions. Boost productivity, reduce costs, and drive efficiency for your business success. "
+        />
+        <meta
+          name="twitter:image"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
+        />
+      </Helmet>
+      <Navbar />
+      <div className={` md:pt-[15vh] pt-[15vh] ${window.innerWidth > 1280 && "md:pt-[11vh]"
+        } `}
+      >
+        <NavigatorComponent navigationData={navigationData} />
+        <div>
+          {/* Banner */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`mt-10 mb-16 ${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 `}
+                  >
+                    <div className="container mx-auto">
+                      <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
+                        <div className="text-center md:text-center lg:text-left w-full md:w-1/2 lg:w-1/2 px-3 pb-10 ">
+                          <h1 className="text-xl md:text-3xl lg:text-5xl font-bold text-textColor-500">
+                            Manufacturing
+                          </h1>
+                          <p className="text-center md:text-center lg:text-left text-xs md:text-base text-gray-400 mt-2">
+                            Optimize <a href="https://www.indeed.com/career-advice/career-development/manufacturing-processes" target="_blank" rel="nofollow">manufacturing processes</a> with DotpotIT's custom software solutions. Boost productivity, reduce costs, and drive efficiency for your business success.
+                          </p>
+                        </div>
+                        <img
+                          src={coverweb}
+                          alt="web development"
+                          className="w-full md:w-1/2 lg:w-1/2"
+                        />
+                      </div>
                     </div>
                   </div>
+                </>
+              )}
+            </ReactVisibilitySensor>
+          </div>
 
-                  <div className="mt-5 md:flex gap-5 px-5 w-full  justify-evenly">
-                    <div>
-                      <img
-                        className="w-4/5 md:w-[450px] mx-auto mb-5 rounded-md"
-                        src={mf2}
-                        alt="Automation for Efficiency and Accuracy Image"
-                      />
+          {/* body */}
+          <div className="container mx-auto w-full overflow-hidden">
+            <>
+              <div className={`flex flex-col gap-5`}>
+                {worksData.map(({ id, title, description, illustration }) => (
+                  <div
+                    className={`md:flex justify-center items-center gap-x-20 font-work p-5`}
+                    key={id}
+                  >
+                    <div
+                      className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-2"
+                        } `}
+                    >
+                      <ReactVisibilitySensor partialVisibility>
+                        {({ isVisible }) => (
+                          <div
+                            className={` ${isVisible
+                              ? "opacity-100 translate-y-0"
+                              : "translate-y-20 opacity-0"
+                              } duration-1000 `}
+                          >
+                            <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
+                              {title}
+                            </h2>
+                            <p className="lg:text-base md:text-sm text-xs text-gray-400 text-justify">
+                              {parse(description)}
+                            </p>
+                          </div>
+                        )}
+                      </ReactVisibilitySensor>
                     </div>
-                    <div className="rounded-lg w-full md:w-[590px] border border-border p-5 flex flex-col justify-center items-center">
-                      <h2 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
-                        Automation for Efficiency and
-                        <span className="text-textColor-500"> Accuracy </span>
-                      </h2>
-                      <p className="text-center text-textColor-500">
-                        Implementation of automation to reduce labor costs and
-                        improve accuracy.
-                      </p>
-                    </div>
+                    <ReactVisibilitySensor partialVisibility>
+                      {({ isVisible }) => (
+                        <div
+                          className={`w-full md:w-1/2 lg:w-1/2 ${id % 2 === 0 && "order-1"
+                            } ${isVisible
+                              ? "opacity-100 translate-y-0"
+                              : "translate-y-20 opacity-0"
+                            } duration-1000 `}
+                        >
+                          <img
+                            className="w-4/5 mx-auto"
+                            src={illustration}
+                            alt={title}
+                          />
+                        </div>
+                      )}
+                    </ReactVisibilitySensor>
                   </div>
-
-                  <div className="mt-5 md:flex gap-5 px-5 w-full flex-row-reverse justify-evenly">
-                    <div>
-                      <img
-                        className="w-4/5 md:w-[450px] mx-auto mb-5 rounded-md"
-                        src={mf3}
-                        alt="Manufacturing Operations Expertise Image"
-                      />
-                    </div>
-                    <div className="rounded-lg w-full md:w-[590px] border border-border p-5 flex flex-col justify-center items-center">
-                      <h2 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
-                        Manufacturing Operations
-                        <span className="text-textColor-500"> Expertise</span>
-                      </h2>
-                      <p className="text-center text-textColor-500">
-                        Expertise in supply chain management, inventory control,
-                        and production scheduling.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="py-5 md:flex gap-5 px-5 w-full  justify-evenly">
-                    <div>
-                      <img
-                        className="w-4/5 md:w-[450px] mx-auto mb-5 rounded-md"
-                        src={mf4}
-                        alt="Data Analytics for Better Decisions Image"
-                      />
-                    </div>
-                    <div className="rounded-lg w-full md:w-[590px] border border-border p-5 flex flex-col justify-center items-center">
-                      <h2 className="text-xl text-center md:text-2xl font-bold mb-2 md:mb-5  block text-textColor-500">
-                        Data Analytics for Better
-                        <span className="text-textColor-500"> Decisions</span>
-                      </h2>
-                      <p className="text-center text-textColor-500">
-                        Integration of data analytics to provide insights for
-                        better decision-making.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
-            </div>
-          </section>
+            </>
+          </div>
+
+          {/* Why Dotpot iT */}
+          <div className="bg-primary-100 py-16">
+            <ReactVisibilitySensor partialVisibility>
+              {({ isVisible }) => (
+                <>
+                  <div
+                    className={`${isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
+                      } duration-1000 p-3 text-textColor-500`}
+                  >
+                    <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
+                      Why Dotpot iT
+                    </h2>
+                    <img
+                      className="w-64 mx-auto"
+                      src="https://uploads-ssl.webflow.com/61235570c731b23718a09b6a/61235570c731b2f7c0a09bad_Underline-02.svg"
+                      alt="Separator Image"
+                    />
+                    <p className="md:w-2/5 w-full mx-auto text-center my-5 text-gray-400">
+                      Dotpot IT is the go-to choice for manufacturing businesses in need of exceptional web design and development solutions. With their extensive expertise in the field, they create visually captivating and user-friendly websites specifically tailored to the unique needs of the manufacturing industry. Dotpot IT offers a comprehensive range of services, including customized inventory management systems, order tracking functionalities, warehouse management portals, and more. They prioritize seamless user experiences and provide ongoing maintenance and support to ensure optimal website performance. Dotpot IT assists manufacturing companies in enhancing their online presence and delivering exceptional digital experiences in this ever-evolving sector.
+                    </p>
+                  </div>
+                </>
+              )}
+            </ReactVisibilitySensor>
+          </div>
+
+          {/* Get in Touch */}
+          <div className="">
+            <GetAQuote />
+          </div>
         </div>
       </div>
       <Footer />

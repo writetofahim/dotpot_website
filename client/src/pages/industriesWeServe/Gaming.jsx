@@ -70,6 +70,7 @@ const Gaming = () => {
       locationElement.scrollIntoView({ behavior: "smooth" });
     }
   }, [fragment]);
+
   return (
     <div className="bg-background-500">
       <Helmet>
@@ -126,8 +127,8 @@ const Gaming = () => {
                 <>
                   <div
                     className={`mt-10 mb-16 ${isVisible
-                        ? "opacity-100 translate-y-0"
-                        : "translate-y-20 opacity-0"
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
                       } duration-1000 `}
                   >
                     <div className="container mx-auto">
@@ -174,8 +175,8 @@ const Gaming = () => {
                           {({ isVisible }) => (
                             <div
                               className={` ${isVisible
-                                  ? "opacity-100 translate-y-0"
-                                  : "translate-y-20 opacity-0"
+                                ? "opacity-100 translate-y-0"
+                                : "translate-y-20 opacity-0"
                                 } duration-1000 `}
                             >
                               <h2 className="lg:text-3xl md:text-xl text-xl text-center md:text-center lg:text-left font-bold mb-5 text-textColor-500">
@@ -219,8 +220,8 @@ const Gaming = () => {
                 <>
                   <div
                     className={`${isVisible
-                        ? "opacity-100 translate-y-0"
-                        : "translate-y-20 opacity-0"
+                      ? "opacity-100 translate-y-0"
+                      : "translate-y-20 opacity-0"
                       } duration-1000 p-3 text-textColor-500`}
                   >
                     <h2 className="lg:text-3xl md:text-2xl text-xl font-bold text-center">
