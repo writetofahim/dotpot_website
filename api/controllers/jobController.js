@@ -1,4 +1,4 @@
-const Job = require('../models/Job');
+const Job = require("../models/Job");
 
 /**
 @params {Object} req - The request object.
@@ -31,12 +31,12 @@ const getAllJobs = async (req, res) => {
       totalJobs: totalJobs,
       totalPages,
       currentPage: page,
-      jobs: jobs
+      jobs: jobs,
     });
   } catch (err) {
     // If there's an error, log it to the console and send a 500 response
     console.log(err);
-    res.status(500).send({ error: 'Server error' });
+    res.status(500).send({ error: "Server error" });
   }
 };
 
@@ -44,15 +44,15 @@ const getJobById = async (req, res) => {
   try {
     const job = await Job.findById(req.params.id);
     if (!job) {
-      return res.status(404).json({ msg: 'Job not found' });
+      return res.status(404).json({ msg: "Job not found" });
     }
     res.json(job);
   } catch (error) {
     console.error(error.message);
-    if (error.kind === 'ObjectId') {
-      return res.status(404).json({ msg: 'Job not found' });
+    if (error.kind === "ObjectId") {
+      return res.status(404).json({ msg: "Job not found" });
     }
-    res.status(500).send('Server error');
+    res.status(500).send("Server error");
   }
 };
 
@@ -63,7 +63,7 @@ const createJob = async (req, res) => {
     res.json(job);
   } catch (error) {
     console.error(error.message);
-    res.status(500).send('Server error');
+    res.status(500).send("Server error");
   }
 };
 
@@ -73,15 +73,15 @@ const updateJobById = async (req, res) => {
       new: true,
     });
     if (!job) {
-      return res.status(404).json({ msg: 'Job not found' });
+      return res.status(404).json({ msg: "Job not found" });
     }
     res.json(job);
   } catch (error) {
     console.error(error.message);
-    if (error.kind === 'ObjectId') {
-      return res.status(404).json({ msg: 'Job not found' });
+    if (error.kind === "ObjectId") {
+      return res.status(404).json({ msg: "Job not found" });
     }
-    res.status(500).send('Server error');
+    res.status(500).send("Server error");
   }
 };
 
@@ -89,15 +89,69 @@ const deleteJobById = async (req, res) => {
   try {
     const job = await Job.findByIdAndRemove(req.params.id);
     if (!job) {
-      return res.status(404).json({ msg: 'Job not found' });
+      return res.status(404).json({ msg: "Job not found" });
     }
-    res.json({ msg: 'Job removed' });
+    res.json({ msg: "Job removed" });
   } catch (error) {
     console.error(error.message);
-    if (error.kind === 'ObjectId') {
-      return res.status(404).json({ msg: 'Job not found' });
+    if (error.kind === "ObjectId") {
+      return res.status(404).json({ msg: "Job not found" });
     }
-    res.status(500).send('Server error');
+    res.status(500).send("Server error");
+  }
+};
+
+// Controller function to like a job
+const likeJob = async (req, res) => {
+  try {
+    const { jobId } = req.params;
+    const { userId } = req.body;
+
+    // Find the job by ID
+    const job = await Job.findById(jobId);
+
+    // Check if the job exists
+    if (!job) {
+      return res.status(404).json({ error: "Job not found" });
+    }
+
+    // Add the user ID to the likes array if not already present
+    if (!job.likes.includes(userId)) {
+      job.likes.push(userId);
+      await job.save();
+    }
+
+    return res.status(200).json({ message: "Job liked successfully" });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ error: "Internal server error" });
+  }
+};
+
+// Controller function to unlike a job
+const unlikeJob = async (req, res) => {
+  try {
+    const { jobId } = req.params;
+    const { userId } = req.body;
+
+    // Find the job by ID
+    const job = await Job.findById(jobId);
+
+    // Check if the job exists
+    if (!job) {
+      return res.status(404).json({ error: "Job not found" });
+    }
+
+    // Remove the user ID from the likes array if present
+    if (job.likes.includes(userId)) {
+      job.likes = job.likes.filter((id) => id !== userId);
+      await job.save();
+    }
+
+    return res.status(200).json({ message: "Job unliked successfully" });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ error: "Internal server error" });
   }
 };
 
@@ -107,4 +161,6 @@ module.exports = {
   createJob,
   updateJobById,
   deleteJobById,
+  likeJob,
+  unlikeJob,
 };

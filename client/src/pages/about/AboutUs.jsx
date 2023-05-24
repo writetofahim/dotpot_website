@@ -70,17 +70,6 @@ const AboutUs = () => {
         <NavigatorComponent navigationData={navigationData} />
         <AboutSection />
 
-        {/* <AboutHero heading="About Dotpot iT" text="A fast growing IT complay" heroImg={heroImg} button={button} /> */}
-        {/* <OurPartnersSlider /> */}
-        {/* <ContactInfo /> */}
-        {/* <ProcessWeFollow /> */}
-        {/* <PartnershipModels /> */}
-        {/* <WhoWeWorkWith /> */}
-        {/* <RecentWorks /> */}
-        {/* <SocialMedia /> */}
-        {/* <GoogleMap /> */}
-        {/* <ChatPopup /> */}
-
         <Footer />
       </div>
     </>
