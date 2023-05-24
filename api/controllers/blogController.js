@@ -47,9 +47,11 @@ const getBlogById = async (req, res) => {
   try {
     let blog;
     if (mongoose.Types.ObjectId.isValid(id)) {
-      blog = await Blog.findById(req.params.id);
+      blog = await Blog.findById(req.params.id).populate("comments.user");
     } else {
-      blog = await Blog.findOne({ slug: req.params.id });
+      blog = await Blog.findOne({ slug: req.params.id }).populate(
+        "comments.user"
+      );
     }
     if (!blog) {
       return res.status(404).send("Blog post not found");
@@ -156,7 +158,7 @@ const deleteBlog = async (req, res) => {
  */
 const addComment = async (req, res) => {
   try {
-    const { blogId, username, content } = req.body;
+    const { blogId, userId, content } = req.body;
 
     // Find the blog by its ID
     const blog = await Blog.findById(blogId);
@@ -168,7 +170,7 @@ const addComment = async (req, res) => {
 
     // Create a new comment object
     const newComment = {
-      username,
+      userId,
       content,
     };
 

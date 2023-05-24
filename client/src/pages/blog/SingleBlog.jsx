@@ -169,16 +169,16 @@ const SingleBlog = () => {
             <>
               <div className="full flex p-[20px]">
                 <div className="container flex flex-col items-start text-justify">
-                  <span className="text-textColor-500 blog-content-font text-xl">
+                  <span className="text-textColor-500 blog-content-font text-sm italic">
                     {moment(new Date(data?.createdAt)).format(
                       "MMMM Do YYYY, h:mm:ss a"
                     )}
                   </span>
-                  <h1 className="my-3 md:text-5xl text-xl font-bold text-textColor-500 blog-content-font">
+                  <h1 className="my-3 md:text-[3.75rem] text-xl leading-[1] font-bold text-textColor-500 blog-content-font">
                     {data?.title}
                   </h1>
                   {/* content summary start*/}
-                  <p className="md:text-2xl text-lg mb-5 text-textColor-500">
+                  <p className="md:text-lg text-lg mb-5 text-textColor-500">
                     {data?.summary}
                   </p>
                   {/* content summary end*/}

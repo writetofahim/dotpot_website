@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthContext";
 import axios from "../../utils/axiosInstance";
 
 const CommentSection = ({ comments: prevComment, blogId }) => {
   const [username, setUsername] = useState("");
   const [content, setContent] = useState("");
   const [comments, setComments] = useState(prevComment);
+  const { user } = useContext(AuthContext);
 
   const handleCommentSubmit = (e) => {
     e.preventDefault();
@@ -13,7 +16,7 @@ const CommentSection = ({ comments: prevComment, blogId }) => {
     axios
       .post("/blog/comment", {
         blogId,
-        username,
+        userId: user._id,
         content,
       })
       .then((response) => {
@@ -39,6 +42,8 @@ const CommentSection = ({ comments: prevComment, blogId }) => {
     return `hsl(${hue}, 50%, 50%)`;
   };
 
+  console.log(user);
+
   return (
     <div className="mt-5">
       <h2 className="text-xl blog-content-font font-bold ">Comments</h2>
@@ -47,16 +52,19 @@ const CommentSection = ({ comments: prevComment, blogId }) => {
       ) : (
         <ul>
           {comments.map((comment) => (
-            <li key={comment.username} className="flex space-x-2 border-b py-3">
+            <li
+              key={comment.username}
+              className="flex justify-start space-x-2 border-b py-3"
+            >
               <div
-                className="w-8 h-8 flex items-center justify-center rounded-full text-buttonText-500 text-lg font-semibold"
-                style={{
-                  backgroundColor: getAvatarBackgroundColor(comment.username),
-                }}
+                className="w-8 h-8 flex items-center justify-center rounded-full text-buttonText-500 text-lg font-semibold bg-[#b5bf40]"
+                // style={{
+                //   backgroundColor: getAvatarBackgroundColor(comment.username),
+                // }}
               >
                 {comment.username.charAt(0)}
               </div>
-              <div className=" mb-5">
+              <div className="w-full mb-5">
                 <span className="text-sm font-bold">{comment.username}</span>
                 <p>{comment.content}</p>
               </div>
@@ -67,31 +75,57 @@ const CommentSection = ({ comments: prevComment, blogId }) => {
       <h2 className="text-xl blog-content-font font-bold mt-3">
         Add your comment here
       </h2>
-      <form onSubmit={handleCommentSubmit} className="mt-4 flex flex-col gap-3">
-        <input
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          placeholder="Your username"
-          className="px-4 py-2 border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-          required
-        />
-        <textarea
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
-          placeholder="Write a comment..."
-          className="mt-2 px-4 py-2 border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-          required
-        ></textarea>
-        <div className="flex justify-end">
-          <button
-            type="submit"
-            className="mt-2 px-4 py-2 bg-textColor-500 text-buttonText-500 focus:outline-none focus:bg-blue-600"
-          >
-            Add Comment
-          </button>
+      {user ? (
+        <div className="flex justify-start space-x-2 border-b py-3">
+          {user.photo ? (
+            <div className="w-8 h-8">
+              <img src={user.photo} alt="" />
+            </div>
+          ) : (
+            <div
+              className="w-8 h-8 flex items-center justify-center rounded-full text-buttonText-500 text-lg font-semibold bg-[#b5bf40]"
+              // style={{
+              //   backgroundColor: getAvatarBackgroundColor(comment.username),
+              // }}
+            >
+              {"M"}
+            </div>
+          )}
+          <div className="flex-1 mb-5">
+            <span className="text-sm font-bold">{user.username}</span>
+            <div className="w-full flex flex-col">
+              <form
+                onSubmit={handleCommentSubmit}
+                className="flex flex-col gap-3"
+              >
+                <textarea
+                  value={content}
+                  onChange={(e) => setContent(e.target.value)}
+                  placeholder="Write a comment..."
+                  className="mt-2 px-4 py-2 border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                  required
+                ></textarea>
+                <div className="flex justify-end">
+                  <button
+                    type="submit"
+                    className="mt-2 px-4 py-2 bg-textColor-500 text-buttonText-500 focus:outline-none focus:bg-blue-600"
+                  >
+                    Add Comment
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
-      </form>
+      ) : (
+        <p className="text-sm ">
+          {" "}
+          <Link className="underline" to={"/login"}>
+            Login
+          </Link>{" "}
+          to comment on this blog
+        </p>
+      )}
     </div>
   );
 };
