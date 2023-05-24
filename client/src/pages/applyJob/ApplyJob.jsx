@@ -1,5 +1,5 @@
 import { Divider } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { AiFillHeart, AiFillStar, AiOutlineHeart } from "react-icons/ai";
 import { BsArrowRight } from "react-icons/bs";
@@ -13,13 +13,43 @@ import axios from "../../utils/axiosInstance";
 import postLogger from "../../utils/postLogger";
 import desktopImg from "../../assets/img/applyjob/Home page herov2_desktop.png";
 import SearchIcon from "@mui/icons-material/Search";
+import { AuthContext } from "../../contexts/AuthContext";
 
 export const JobCard = (props) => {
   const [love, setLove] = useState(false);
+  const [exists, setExist]= useState(props.likes.includes(props.user?._id));
+  
   const handelChick = (_id) => {
     props.setId(props._id);
     props.setActiveJob(props);
   };
+  const toggleLove=()=>{
+    if(props.user){
+        if(!exists){
+          axios
+          .post(`/job/${props._id}/like`, { userId: props.user._id })
+          .then(response => {
+            console.log(response.data); // Handle the response data
+            setExist(true)
+          })
+          .catch(error => {
+            console.error(error); // Handle the error
+          });
+        }else{
+          axios
+          .post(`/job/${props._id}/unlike`, { userId: props.user._id })
+          .then(response => {
+            console.log(response.data); // Handle the response data
+          })
+          .catch(error => {
+            console.error(error); // Handle the error
+          });
+        }
+      setExist(false)
+        }else{
+          alert('Please Login!')
+        }
+  }
   return (
     <>
       {/* For Large screen */}
@@ -35,15 +65,15 @@ export const JobCard = (props) => {
           </h3>
 
           <div className="ritht flex items-center justify-center">
-            {love ? (
+            {exists ? (
               <AiFillHeart
                 className="text-red-600 text-2xl"
-                onClick={() => setLove(!love)}
+                onClick={() => toggleLove()}
               />
             ) : (
               <AiOutlineHeart
                 className="text-textColor-500 text-2xl"
-                onClick={() => setLove(!love)}
+                onClick={() => toggleLove()}
               />
             )}
             {/* <div className="cursor-pointer p-5 rounded-full hover:bg-primary-100">
@@ -114,15 +144,15 @@ export const JobCard = (props) => {
           </div>
         </Link>
         <div onClick={(e)=>e.stopPropagation()} className="ritht flex items-center justify-center absolute top-2 right-0 ">
-              {love ? (
+              {exists ? (
                 <AiFillHeart
                   className="text-red-500 text-2xl"
-                  onClick={() => setLove(!love)}
+                  onClick={() => toggleLove()}
                 />
               ) : (
                 <AiOutlineHeart
                   className="text-red-500 text-2xl"
-                  onClick={() => setLove(!love)}
+                  onClick={() => toggleLove()}
                 />
               )}
               <div onClick={(e) => e.stopPropagation()} className="cursor-pointer p-5 rounded-full hover:bg-primary-100">
@@ -143,6 +173,17 @@ const ApplyJob = () => {
   const [foundJobs, setFoundJobs] = useState("[]");
   const [saveArr, setSaveArr] = useState("[]");
   const [SearchData, setSearchData] = useState("");
+  const [localData, setLocalData] = useState({});
+
+  const { user, login, error, logout } = useContext(AuthContext);
+
+  // useEffect(() => {
+  //   const storedData = localStorage.getItem('user');
+  //   if (storedData) {
+  //     const parsedData = JSON.parse(storedData);
+  //     setLocalData(parsedData);
+  //   }
+  // }, []);
 
   // Data Fetching
   useEffect(() => {
@@ -165,51 +206,13 @@ const ApplyJob = () => {
 
   const handleChange = (e) => {
     const { value } = e.target;
-    performSearch(value);
     setSearchData(value);
     if (value.length <= 0) {
       setData(saveArr);
     }
   };
-  // const performSearch = (value) => {
-  //   const foundJobs = data?.filter((obj) =>
-  //     obj.title.toLowerCase().includes(value.toLowerCase())
-  //   );
-  //   setFoundJobs(foundJobs);
-  //   if (foundJobs.length > 0) {
-  //     console.log(
-  //       "length of data",
-  //       foundJobs.length,
-  //       "and the data is",
-  //       foundJobs
-  //     );
-  //     setData(foundJobs);
-  //   } else {
-  //     console.log("no data found");
-  //     setData(saveArr);
-  //   }
-  // };
-
-  const performSearch = (value) => {
-    const lowercasedValue = value.toLowerCase();
-    const foundJobs = data?.filter((obj) =>
-      obj.title.toLowerCase().includes(lowercasedValue)
-    );
+  const filteredJobs = data?.filter(job=>job.title.toLowerCase().includes(SearchData.toLowerCase()))
   
-    if (foundJobs && foundJobs.length > 0) {
-      console.log("Length of data:", foundJobs.length);
-      console.log("Data found:", foundJobs);
-      setData(foundJobs);
-    } else {
-      console.log("No data found");
-      setData(saveArr);
-    }
-  
-    setFoundJobs(foundJobs || []);
-  };
-  
-
-  // console.log(data)
   return (
     <>
       <NavbarJob />
@@ -297,13 +300,14 @@ const ApplyJob = () => {
             {/* Left sidebar */}
             <div className="left md:w-2/5 flex flex-col gap-5 ">
               {data &&
-                data?.map((item, index) => (
+                filteredJobs?.map((item, index) => (
                   <JobCard
                     key={index}
                     {...item}
                     setId={setId}
                     setActiveJob={setActiveJob}
                     activeJob={activeJob}
+                    user={user}
                   />
                 ))}
             </div>
