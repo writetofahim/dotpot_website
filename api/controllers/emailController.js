@@ -38,6 +38,7 @@ exports.orderEmail = async (req, res) => {
       project_description,
       demo_links,
       order,
+      company_name,
     } = req.body;
 
     // Get the attached file
@@ -105,6 +106,7 @@ exports.orderEmail = async (req, res) => {
         <p>Phone: ${phone}</p>
         <p>Country: ${country}</p>
         <p>Business: ${business}</p>
+        <p>Company name: ${company_name}</p>
         <p>Project Description: ${project_description}</p>
         <p>Demo Links: ${demo_links}</p>
         <h3>Order:</h3>

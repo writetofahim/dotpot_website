@@ -1,10 +1,12 @@
 import React, { useContext, useState } from "react";
+import { Helmet } from "react-helmet";
 import { AiFillDollarCircle, AiOutlineLink } from "react-icons/ai";
 import { BsArrowRight } from "react-icons/bs";
 import { FaSpinner } from "react-icons/fa";
 import { GoGlobe } from "react-icons/go";
 import { IoMdBusiness } from "react-icons/io";
 import { MdMail, MdMessage, MdPerson, MdPhone } from "react-icons/md";
+import { Link } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import RangeSlider from "../../components/Range/RangeSlider";
@@ -17,6 +19,7 @@ const Confirmation = () => {
   const [files, setFiles] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
+  const [isCompanySelected, setIsCompanySelected] = useState(false);
 
   const { order } = useContext(AuthContext);
 
@@ -32,6 +35,7 @@ const Confirmation = () => {
         phone: e.target.elements.phone.value,
         country: e.target.elements.country.value,
         business: e.target.elements.business.value,
+        company_name: e.target.elements.business.companyName,
         files: e.target.elements.files.files[0],
         project_description: e.target.elements.project_description.value,
         demo_links: e.target.elements.demo_links.value,
@@ -54,9 +58,48 @@ const Confirmation = () => {
     }
   };
 
+  const handleBusinessChange = (e) => {
+    const selectedValue = e.target.value;
+    setIsCompanySelected(selectedValue === "company");
+  };
+
   useScrollToTop();
   return (
     <>
+      <Helmet>
+        <title>Confirmation | Dotpot iT leading iT company</title>
+        <meta
+          name="description"
+          content="Dotpot iT provides website design, web development, AI, game, app, and blockchain development, along with comprehensive IT support services. Contact us now."
+        />
+        <link rel="canonical" href="https://dotpotit.com/confirmation" />
+        <meta property="og:title" content="Confirmation | Dotpot iT" />
+        <meta
+          property="og:description"
+          content="Dotpot iT provides website design, web development, AI, game, app, and blockchain development, along with comprehensive IT support services. Contact us now."
+        />
+        <meta
+          name="keywords"
+          content="it company, Website, web development, app development, it supports"
+        />
+        <meta
+          property="og:image"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
+        />
+        <meta property="og:url" content="https://dotpotit.com/confirmation" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Confirmation | Dotpot iT" />
+        <meta
+          name="twitter:description"
+          content="Dotpot iT provides website design, web development, AI, game, app, and blockchain development, along with comprehensive IT support services. Contact us now."
+        />
+        <meta
+          name="twitter:image"
+          content="https://dotpotit.com/api/uploads/blogs/meta_website_summary-1684306601800.png"
+        />
+        <meta property="og:type" content="website" />
+      </Helmet>
       <Navbar />
       <div className="bg-background-500">
         <div className="container mx-auto p-5 pt-[15vh]">
@@ -70,6 +113,12 @@ const Confirmation = () => {
             {order.length === 0 && (
               <p className="">
                 <span className="text-red-500">No service selected! </span>
+                <span className="block">
+                  Select services from{" "}
+                  <Link to="/services" className="underline">
+                    here
+                  </Link>
+                </span>
               </p>
             )}
             {order?.map((item) => (
@@ -151,11 +200,23 @@ const Confirmation = () => {
                   name="business"
                   id=""
                   className="w-full p-2 text-gray-400  bg-background-500 outline-none"
+                  onChange={handleBusinessChange}
                 >
                   <option value="personal">Personal</option>
                   <option value="company">Company</option>
                 </select>
               </div>
+              {isCompanySelected && (
+                <div className="border-b border-border w-full flex items-center mt-5">
+                  <input
+                    name="companyName"
+                    type="text"
+                    placeholder="Company Name"
+                    className="w-full p-2 text-gray-400 bg-background-500 outline-none"
+                    required
+                  />
+                </div>
+              )}
             </div>
             <div className="border-b border-border w-full flex items-center mt-5">
               <input

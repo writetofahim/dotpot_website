@@ -1,10 +1,8 @@
 import MuiAlert from "@mui/material/Alert";
 import Snackbar from "@mui/material/Snackbar";
 import React, { useContext, useEffect, useState } from "react";
-import { AiOutlineDoubleRight } from "react-icons/ai";
 import { BiCircle } from "react-icons/bi";
 import { BsCheckCircleFill } from "react-icons/bs";
-import { FaSpinner } from "react-icons/fa";
 import { FiInfo } from "react-icons/fi";
 import { GrFormClose } from "react-icons/gr";
 import { useNavigate } from "react-router-dom";
@@ -597,7 +595,7 @@ const CustomizeService = () => {
               </div>
             )}
             {/* End of Show Addons section */}
-            {user ? (
+            {/* {user ? (
               <button
                 disabled={isSubmitting}
                 onClick={handlePlaceOrder}
@@ -613,30 +611,31 @@ const CustomizeService = () => {
                 )}
               </button>
             ) : (
-              // <button
-              //   disabled={isSubmitting}
-              //   onClick={() => navigate("/login")}
-              //   className={`flex items-center gap-2 absolute bottom-2 right-2 px-3 py-2 rounded-full hover:shadow text-white bg-secondary-400 hover:bg-secondary-300 hover:scale-105 hover:font-bold transition-all disabled:secondary-100 ${
-              //     isSubmitting && "cursor-not-allowed"
-              //   }`}
-              // >
-              //   Login To Confirm
-              //   {isSubmitting ? (
-              //     <FaSpinner className="animate-spin" />
-              //   ) : (
-              //     <AiOutlineDoubleRight />
-              //   )}
-              // </button>
               <button
                 disabled={isSubmitting}
-                onClick={() => navigate("/confirmation")}
+                onClick={() => navigate("/login")}
                 className={`flex items-center gap-2 absolute bottom-2 right-2 px-3 py-2 rounded-full hover:shadow text-white bg-secondary-400 hover:bg-secondary-300 hover:scale-105 hover:font-bold transition-all disabled:secondary-100 ${
                   isSubmitting && "cursor-not-allowed"
                 }`}
               >
-                Order Now
+                Login To Confirm
+                {isSubmitting ? (
+                  <FaSpinner className="animate-spin" />
+                ) : (
+                  <AiOutlineDoubleRight />
+                )}
               </button>
-            )}
+              
+            )} */}
+            <button
+              disabled={isSubmitting}
+              onClick={() => navigate("/confirmation")}
+              className={`flex items-center gap-2 absolute bottom-2 right-2 px-3 py-2 rounded-full hover:shadow text-white bg-secondary-400 hover:bg-secondary-300 hover:scale-105 hover:font-bold transition-all disabled:secondary-100 ${
+                isSubmitting && "cursor-not-allowed"
+              }`}
+            >
+              Order Now
+            </button>
 
             <Typed
               className="text-xl md:text-2xl text-center md:text-lef absolute bottom-1 hidden md:block text-gray-400"

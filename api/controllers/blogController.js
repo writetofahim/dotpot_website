@@ -170,7 +170,7 @@ const addComment = async (req, res) => {
 
     // Create a new comment object
     const newComment = {
-      userId,
+      user: userId,
       content,
     };
 
