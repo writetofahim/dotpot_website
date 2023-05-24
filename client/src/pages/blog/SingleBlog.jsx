@@ -34,6 +34,7 @@ import NavigatorComponent from "../../components/NavigatorComponent/NavigatorCom
 import axios from "../../utils/axiosInstance";
 import postLogger from "../../utils/postLogger";
 import CommentSection from "./CommentSection";
+import LikesSection from "./LikesSection";
 import NewBlogs from "./NewBlogs";
 import NextBlog from "./NextBlog";
 import WaveformPlayer from "./WaveformPlayer";
@@ -42,6 +43,7 @@ const SingleBlog = () => {
   const { slug } = useParams();
   const [data, setData] = useState(null);
   const [showToast, setShowToast] = useState(false);
+  const [comments, setComments] = useState([]);
 
   const navigate = useNavigate();
 
@@ -55,6 +57,7 @@ const SingleBlog = () => {
       .get(`/blog/${slug}`)
       .then((response) => {
         setData(response.data);
+        setComments(response.data.comments);
         postLogger({ level: "info", message: response.data });
       })
       .catch((error) => {
@@ -101,6 +104,7 @@ const SingleBlog = () => {
           `}
         </script>
         <title>{data?.title}</title>
+
         <meta
           name="description"
           content={`${slicedString} Read more at http://dotpotit.com/blog/${data?.url}.`}
@@ -229,6 +233,7 @@ const SingleBlog = () => {
                         </Link>
                         <div className="flex gap-3 mt-3">
                           <button
+                            className="text-textColor-500"
                             onClick={() => {
                               navigator.clipboard.writeText(
                                 "https://www.dotpotit.com"
@@ -242,19 +247,19 @@ const SingleBlog = () => {
                             href={"https://www.facebook.com/dotpotit"}
                             target="_blank"
                           >
-                            <FaFacebookF />
+                            <FaFacebookF className="text-textColor-500" />
                           </a>
                           <a
                             href={"https://twitter.com/dotpotit"}
                             target="_blank"
                           >
-                            <FaTwitter />
+                            <FaTwitter className="text-textColor-500" />
                           </a>
                           <a
                             href={"https://www.linkedin.com/company/dotpotit"}
                             target="_blank"
                           >
-                            <FaLinkedinIn />
+                            <FaLinkedinIn className="text-textColor-500" />
                           </a>
                         </div>
                       </div>
@@ -264,7 +269,7 @@ const SingleBlog = () => {
                       {/* listen the article start*/}
 
                       {data?.audio && (
-                        <div className="w-full ">
+                        <div className="w-full text-textColor-500">
                           <div className="w-full">
                             <WaveformPlayer
                               audioUrl={`${
@@ -287,8 +292,8 @@ const SingleBlog = () => {
                         </span>
                         <p className="italic">{data?.summary?.slice(1)}</p>
                       </div> */}
-                        <div className="md:text-2xl text-xl mt-7 inline-block blog-content-font ">
-                          <div className="reset-styles">
+                        <div className="md:text-2xl text-xl mt-7 inline-block blog-content-font blog-content-body">
+                          <div className="leading-[2rem]">
                             <div className="first-letter-large">
                               {parse(data?.body)}
                             </div>
@@ -296,6 +301,13 @@ const SingleBlog = () => {
                         </div>
                       </div>
                       <div className="my-5 border-t border-textColor-500 "></div>
+                      {/* likes section start */}
+                      <LikesSection
+                        likes={data?.likes || []}
+                        comments={comments}
+                        blogId={data?._id}
+                      />
+                      {/* likes section end */}
                       <div>
                         <p className="mb-3 text-bold text-xl font-bold text-textColor-500 blog-content-font">
                           Tags
@@ -305,7 +317,7 @@ const SingleBlog = () => {
                             <p
                               onClick={() => navigate(`/blog?tags=${item}`)}
                               key={index}
-                              className="inline px-3 py-1 border border-border rounded-full mr-2 text-textColor-500 hover:text-textColor-500 transition-all hover:underline cursor-pointer"
+                              className="inline px-3 py-1 border border-border rounded-full mr-2 text-textColor-500 hover:text-textColor-500 transition-all hover:underline cursor-pointer hover:shadow-sm hover:shadow-cyan-300"
                             >
                               {item}
                             </p>
@@ -315,10 +327,10 @@ const SingleBlog = () => {
 
                       {/* comment section start */}
                       <CommentSection
-                        comments={data?.comments || []}
+                        comments={comments}
+                        setComments={setComments}
                         blogId={data?._id}
                       />
-
                       {/* comment section end */}
                       {/* social media share start */}
                       <p className="mb-3 text-bold text-xl font-bold text-textColor-500 blog-content-font mt-5">
@@ -329,7 +341,7 @@ const SingleBlog = () => {
                           href={facebookShareUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center justify-center bg-textColor-500 text-buttonText-500 px-4 py-2 rounded hover:bg-textColor-500 duration-300"
+                          className="flex items-center justify-center bg-blue-500 text-buttonText-500 px-4 py-2 rounded hover:bg-blue-600 duration-300"
                         >
                           <FaFacebook className="mr-2" />
                           Facebook
@@ -338,7 +350,7 @@ const SingleBlog = () => {
                           href={twitterShareUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center justify-center bg-textColor-500 text-buttonText-500 px-4 py-2 rounded hover:bg-textColor-500 duration-300"
+                          className="flex items-center justify-center bg-blue-400 text-buttonText-500 px-4 py-2 rounded hover:bg-blue-500 duration-300"
                         >
                           <FaTwitter className="mr-2" />
                           Twitter

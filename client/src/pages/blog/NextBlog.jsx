@@ -64,7 +64,7 @@ const NextBlog = ({ currentBlogId }) => {
                 {slicedString}...
               </p>
             </div>
-            <div className="md:w-1/2 w-full">
+            <div className="md:w-1/2 w-full shadow-lg shadow-secondary-500">
               <Link
                 to={`/blog/${blog.slug}`}
                 className="font-bold mt-3 text-lg hover:underline"

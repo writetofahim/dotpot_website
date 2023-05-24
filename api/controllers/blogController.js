@@ -189,10 +189,10 @@ const addComment = async (req, res) => {
   }
 };
 
-// Controller function to add a like to a blog
+// Controller function to add or remove a like to/from a blog
 const addLike = async (req, res) => {
   try {
-    const { blogId } = req.body;
+    const { blogId, userId } = req.body;
 
     // Find the blog by its ID
     const blog = await Blog.findById(blogId);
@@ -202,15 +202,25 @@ const addLike = async (req, res) => {
       return res.status(404).json({ message: "Blog not found" });
     }
 
-    // Increment the likes count
-    blog.likes += 1;
+    // Check if the user has already liked the blog
+    const existingLikeIndex = blog.likes.findIndex(
+      (like) => like.user.toString() === userId
+    );
+
+    if (existingLikeIndex !== -1) {
+      // User already liked the blog, remove the like
+      blog.likes.splice(existingLikeIndex, 1);
+    } else {
+      // Add a new like
+      blog.likes.push({ user: userId });
+    }
 
     // Save the updated blog
     await blog.save();
 
     res
       .status(200)
-      .json({ message: "Like added successfully", likes: blog.likes });
+      .json({ message: "Like updated successfully", likes: blog.likes.length });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Server Error" });

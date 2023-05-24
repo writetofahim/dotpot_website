@@ -18,7 +18,7 @@ const NewBlogs = ({ currentBlogId, isRelatedBlog }) => {
     axios
       .get(url)
       .then((response) => {
-        console.log("isRelatedBlog", isRelatedBlog, response);
+        // console.log("isRelatedBlog", isRelatedBlog, response);
         const filtered = response.data.blogs.filter(
           (b) => b._id !== currentBlogId
         );
@@ -54,14 +54,14 @@ const NewBlogs = ({ currentBlogId, isRelatedBlog }) => {
                     isVisible
                       ? "opacity-100 translate-y-0"
                       : "translate-y-20 opacity-0"
-                  } duration-1000`}
+                  } duration-1000 hover:shadow-lg hover:shadow-cyan-300 rounded`}
                 >
                   <Link
                     to={`/blog/${blog.slug}`}
-                    className="font-bold mt-3 text-lg hover:underline"
+                    className="font-bold mt-3 text-lg hover:underline "
                   >
                     <img
-                      className="w-full aspect-video object-cover"
+                      className="w-full aspect-video object-cover rounded"
                       src={`${import.meta.env.REACT_APP_SERVER_PATH}/${
                         blog?.image
                       }`}

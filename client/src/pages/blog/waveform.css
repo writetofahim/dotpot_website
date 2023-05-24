@@ -1,51 +1,35 @@
 /* waveform.css */
 
 .waveform-container {
-    width: 100%;
-    height: 200px;
-  }
-  
-  .waveform-play-pause {
-    margin-top: 10px;
-  }
+  width: 100%;
+  height: 200px;
+}
 
-  .first-letter-large::first-letter 
-    {
-      font-size: 5em;
-      font-weight: bold;
-      float: left;
-      margin-right: 10px;
-      margin-bottom: 10px;
-      margin-top: 30px;
-    }
-   /* blog page font change  */
-  .blog-content-font{
-    font-family: 'Times New Roman', Times, serif;
-  }
-  /* Add any additional styles for the waveform player */
-  
+.waveform-play-pause {
+  margin-top: 10px;
+}
 
-  .avatar {
-    width: 8rem;
-    height: 8rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    font-size: 2rem;
-    font-weight: bold;
-  }
-  
-  .comment-container {
-    margin-bottom: 5rem;
-  }
-  
-  .comment-container .username {
-    font-size: 1.2rem;
-    font-weight: bold;
-  }
-  
-  .comment-container .content {
-    margin-top: 1rem;
-  }
-  
+.first-letter-large::first-letter {
+  font-size: 5em;
+  font-weight: bold;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+/* blog page font change  */
+.blog-content-font {
+  font-family: "Times New Roman", Times, serif;
+}
+.blog-content-body .ql-video {
+  width: 100%;
+  @apply aspect-video;
+}
+/* .blog-content-body ul, ol {
+  all:initial;
+  list-style-type: disc;
+  font-size: 20px;
+  font-family: 'Times New Roman', Times, serif;
+} */
+
+/* Add any additional styles for the waveform player */

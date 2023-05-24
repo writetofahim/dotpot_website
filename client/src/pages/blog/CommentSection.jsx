@@ -3,10 +3,8 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import axios from "../../utils/axiosInstance";
 
-const CommentSection = ({ comments: prevComment, blogId }) => {
-  const [username, setUsername] = useState("");
+const CommentSection = ({ comments, setComments, blogId }) => {
   const [content, setContent] = useState("");
-  const [comments, setComments] = useState(prevComment);
   const { user } = useContext(AuthContext);
   console.log(comments);
 
@@ -23,7 +21,6 @@ const CommentSection = ({ comments: prevComment, blogId }) => {
       .then((response) => {
         const { comment } = response.data;
         setComments([...comments, { user, content: comment.content }]);
-        setUsername("");
         setContent("");
       })
       .catch((error) => console.error(error));
@@ -44,10 +41,12 @@ const CommentSection = ({ comments: prevComment, blogId }) => {
   };
 
   return (
-    <div className="mt-5">
-      <h2 className="text-xl blog-content-font font-bold ">Comments</h2>
+    <div className="mt-5 ">
+      <h2 className="text-xl blog-content-font font-bold text-textColor-500">
+        Comments
+      </h2>
       {comments.length === 0 ? (
-        <p>No comments yet</p>
+        <p className="text-textColor-500">No comments yet</p>
       ) : (
         <ul>
           {comments.map((comment) => (
@@ -64,16 +63,16 @@ const CommentSection = ({ comments: prevComment, blogId }) => {
                 {comment.user.username.charAt(0)}
               </div>
               <div className="w-full mb-5">
-                <span className="text-sm font-bold">
+                <span className="text-sm font-bold text-textColor-500">
                   {comment.user.username}
                 </span>
-                <p>{comment.content}</p>
+                <p className="text-textColor-500">{comment.content}</p>
               </div>
             </li>
           ))}
         </ul>
       )}
-      <h2 className="text-xl blog-content-font font-bold mt-3">
+      <h2 className="text-xl blog-content-font text-textColor-500 font-bold mt-3">
         Add your comment here
       </h2>
       {user ? (
@@ -93,7 +92,9 @@ const CommentSection = ({ comments: prevComment, blogId }) => {
             </div>
           )}
           <div className="flex-1 mb-5">
-            <span className="text-sm font-bold">{user.username}</span>
+            <span className="text-sm font-bold text-textColor-500">
+              {user.username}
+            </span>
             <div className="w-full flex flex-col">
               <form
                 onSubmit={handleCommentSubmit}
@@ -103,13 +104,13 @@ const CommentSection = ({ comments: prevComment, blogId }) => {
                   value={content}
                   onChange={(e) => setContent(e.target.value)}
                   placeholder="Write a comment..."
-                  className="mt-2 px-4 py-2 border border-gray-300 focus:outline-none "
+                  className="mt-2 px-4 py-2 border border-gray-300 "
                   required
                 ></textarea>
                 <div className="flex justify-end">
                   <button
                     type="submit"
-                    className="mt-2 px-4 py-2 bg-textColor-500 text-buttonText-500 focus:outline-none "
+                    className="mt-2 px-4 py-2 bg-secondary-400 text-buttonText-500  "
                   >
                     Add Comment
                   </button>
