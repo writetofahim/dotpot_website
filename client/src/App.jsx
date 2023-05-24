@@ -4,8 +4,8 @@ import "slick-carousel/slick/slick.css";
 import axios from "axios";
 import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
+import zannatImage from "./assets/img/zannat.png";
 import AcceptCookiesPopup from "./components/AcceptCookiesPopup/AcceptCookiesPopup";
-import ChatPopup from "./components/ChatPopup/ChatPopup";
 import Confirmation from "./pages/Confirmation/Confirmation";
 import Faq from "./pages/FAQ/Faq";
 import ResetPassword from "./pages/ResetPassword/ResetPassword";
@@ -67,6 +67,10 @@ import SmallToMediumBusiness from "./pages/whoWeWorksWith/SmallToMediumBusiness"
 import StartupBusiness from "./pages/whoWeWorksWith/StartupBusiness";
 import Terms_Conditions from "./terms_conditions/Terms_Conditions";
 
+// Whatsapp Chat Import
+import WhatsAppWidget from "react-whatsapp-chat-widget";
+import "react-whatsapp-chat-widget/index.css";
+
 function App() {
   // const [loading, isLoading] = useState(true);
   useEffect(() => {
@@ -97,7 +101,34 @@ function App() {
     <div className={`relative`}>
       {/* {loading && <Loading />} */}
       <AcceptCookiesPopup />
-      <ChatPopup />
+      {/* ChatPot Chatting Popup */}
+      {/* <ChatPopup /> */}
+      <WhatsAppWidget
+        phoneNo="+8801817176192"
+        position=""
+        iconSize="50"
+        iconColor="white"
+        iconBgColor="teal"
+        headerIcon={zannatImage}
+        headerIconColor="teal"
+        headerTxtColor="white"
+        headerBgColor="teal"
+        headerTitle="Zannat Nisha"
+        headerCaption="Online"
+        bodyBgColor="#bbb"
+        chatPersonName="Support"
+        chatMessage={
+          <>
+            Hi there 👋 <br />
+            Welcome To Dotpot iT
+            <br />
+            <br /> How can I help you?
+          </>
+        }
+        footerBgColor="#999"
+        btnBgColor="teal"
+        btnTxtColor="white"
+      />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/faq" element={<Faq />} />
