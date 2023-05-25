@@ -3,8 +3,8 @@ import "slick-carousel/slick/slick.css";
 
 import axios from "axios";
 import { useEffect } from "react";
+import MessengerCustomerChat from "react-messenger-customer-chat";
 import { Route, Routes } from "react-router-dom";
-import zannatImage from "./assets/img/zannat.png";
 import AcceptCookiesPopup from "./components/AcceptCookiesPopup/AcceptCookiesPopup";
 import Confirmation from "./pages/Confirmation/Confirmation";
 import Faq from "./pages/FAQ/Faq";
@@ -67,10 +67,6 @@ import SmallToMediumBusiness from "./pages/whoWeWorksWith/SmallToMediumBusiness"
 import StartupBusiness from "./pages/whoWeWorksWith/StartupBusiness";
 import Terms_Conditions from "./terms_conditions/Terms_Conditions";
 
-// Whatsapp Chat Import
-import WhatsAppWidget from "react-whatsapp-chat-widget";
-import "react-whatsapp-chat-widget/index.css";
-
 function App() {
   // const [loading, isLoading] = useState(true);
   useEffect(() => {
@@ -103,7 +99,7 @@ function App() {
       <AcceptCookiesPopup />
       {/* ChatPot Chatting Popup */}
       {/* <ChatPopup /> */}
-      <WhatsAppWidget
+      {/* <WhatsAppWidget
         phoneNo="+8801817176192"
         position=""
         iconSize="50"
@@ -128,7 +124,7 @@ function App() {
         footerBgColor="#999"
         btnBgColor="teal"
         btnTxtColor="white"
-      />
+      /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/faq" element={<Faq />} />
@@ -304,6 +300,12 @@ function App() {
           element={<CustomDevelopment />}
         />
       </Routes>
+      <MessengerCustomerChat
+        pageId="102704686073988"
+        appId="1284351839140517"
+        htmlRef="<REF_STRING>"
+      />
+      ,
     </div>
   );
 }
