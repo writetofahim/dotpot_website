@@ -21,7 +21,7 @@ import axios from "../../utils/axiosInstance";
 import CommonModal from "../CommonModal/CommonModal";
 import Submenu from "./Submenu";
 
-const Navbar = () => {
+const Navbar = (props) => {
   const { user, login, error, logout } = useContext(AuthContext);
 
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -525,20 +525,7 @@ const Navbar = () => {
                 </li> */}
 
             {!user ? (
-              <NavLink to="/login">
-                {({ isActive }) => (
-                  <li
-                    className={`${
-                      isActive
-                        ? "lg:text-secondary-400 text-white"
-                        : "lg:text-gray-400 "
-                    } mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-secondary-400`}
-                    onClick={() => setToggleMenu(false)}
-                  >
-                    Login
-                  </li>
-                )}
-              </NavLink>
+              <li className="mx-4 cursor-pointer uppercase text-white font-bold lg:text-gray-400 text-lg hover:scale-110 hover:text-secondary-400" onClick={()=>props.setShowLogin(true)}>Login</li>
             ) : (
               <li
                 className="mx-4 cursor-pointer uppercase text-white font-bold lg:text-gray-400 text-lg hover:scale-110 hover:text-secondary-400"
@@ -668,19 +655,15 @@ const Navbar = () => {
                   </li>
                 </Link>
                 {!user ? (
-                  <Link to="/login">
-                    <li className="mx-4 cursor-pointer uppercase lg:text-gray-400 text-lg font-bold hover:scale-110 mt-2">
-                      Login
-                    </li>
-                  </Link>
-                ) : (
-                  <li
-                    className="mx-4 cursor-pointer uppercase font-bold lg:text-gray-400 text-lg hover:scale-110 "
-                    onClick={() => setOpen(true)}
-                  >
-                    Logout
-                  </li>
-                )}
+              <li className="mx-4 cursor-pointer uppercase text-gray lg:text-gray-400 text-xl font-bold mt-3" onClick={()=>props.setShowLogin(true)}>Login</li>
+            ) : (
+              <li
+                className="mx-4 cursor-pointer uppercase text-gray lg:text-gray-400 text-xl font-bold mt-3"
+                onClick={() => setOpen(true)}
+              >
+                Logout
+              </li>
+            )}
                 <Link to="/apply" target="_blank">
                   <li className="bg-primary-500 py-2 px-7 mx-4 mt-5 rounded-full cursor-pointer text-white">
                     Apply For Jobs

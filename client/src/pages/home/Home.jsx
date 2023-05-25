@@ -21,7 +21,7 @@ GoogleMap
 Footer
  */
 
-import React from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import ContactCenterServices from "../../components/ContactCenterServices/ContactCenterServices";
 import CustomizeService from "../../components/CustomizeService/CustomizeService";
@@ -42,8 +42,10 @@ import SocialMedia from "../../components/SocialMedia/SocialMedia";
 import WhatOurClientSay from "../../components/WhatOurClientsSay/WhatOurClientsSay";
 import WhoWeWorkWith from "../../components/WhoWeWorkWith/WhoWeWorkWith";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
+import LoginModal from "../../components/login/LoginModal";
 
 const Home = () => {
+  const [showLogin, setShowLogin] = useState(false);
   useScrollToTop();
   return (
     <>
@@ -104,7 +106,10 @@ const Home = () => {
         />
         <meta property="og:type" content="website" />
       </Helmet>
-      <Navbar />
+      <Navbar setShowLogin={setShowLogin} />
+      {
+        showLogin && <LoginModal setShowLogin={setShowLogin}/>
+      }
       <Hero />
       <GetAQuote />
       <Information />
