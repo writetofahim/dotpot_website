@@ -33,6 +33,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
 import axios from "../../utils/axiosInstance";
 import postLogger from "../../utils/postLogger";
+import LoginModal from "../lgoin/LoginModal";
 import CommentSection from "./CommentSection";
 import LikesSection from "./LikesSection";
 import NewBlogs from "./NewBlogs";
@@ -44,6 +45,8 @@ const SingleBlog = () => {
   const [data, setData] = useState(null);
   const [showToast, setShowToast] = useState(false);
   const [comments, setComments] = useState([]);
+
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
 
   const navigate = useNavigate();
 
@@ -141,6 +144,9 @@ const SingleBlog = () => {
       </Helmet>
 
       <Navbar />
+      {isLoginModalOpen && (
+        <LoginModal setLoginModelOpen={setIsLoginModalOpen} />
+      )}
       {/* previous single blog start */}
       {/* <div className="bg-background-500">
         <div className="w-full md:p-[15vh] pt-[15vh] ">
@@ -214,7 +220,9 @@ const SingleBlog = () => {
                   <div className="md:flex gap-10 md:mt-16 mt-10">
                     <div className="md:w-[15%] w-full relative">
                       {showToast && (
-                        <div className="absolute top-20 left-0 bg-textColor-500 text-buttonText-500 text-xs py-2 px-4 rounded">
+                        <div
+                          className={`absolute top-20 left-0 bg-textColor-500 text-buttonText-500 text-xs py-2 px-4 rounded`}
+                        >
                           Link copied
                         </div>
                       )}
@@ -330,6 +338,7 @@ const SingleBlog = () => {
                         comments={comments}
                         setComments={setComments}
                         blogId={data?._id}
+                        setIsLoginModalOpen={setIsLoginModalOpen}
                       />
                       {/* comment section end */}
                       {/* social media share start */}

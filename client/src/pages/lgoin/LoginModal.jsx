@@ -1,3 +1,4 @@
+import FacebookIcon from "@mui/icons-material/Facebook";
 import React, { useContext, useEffect, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
 import { RxCross1 } from "react-icons/rx";
@@ -75,11 +76,11 @@ const LoginModal = ({ setLoginModelOpen }) => {
 
   const handleGoogleLogin = async () => {
     await googleLogin();
-    setLoginModelOpen(false);
+    // setLoginModelOpen(false);
   };
 
   return (
-    <div className="fixed w-full h-screen top-0 left-0 bg-black/80 backdrop-blur-sm z-50">
+    <div className="fixed w-full h-screen top-0 left-0 bg-black/80 backdrop-blur-sm z-[99999]">
       {open && (
         <CommonSnackbar message={message} open={open} setOpen={setOpen} />
       )}
@@ -178,14 +179,14 @@ const LoginModal = ({ setLoginModelOpen }) => {
                   password?
                 </button>
               </div>
-              <p className="mt-4 text-center text-gray-600 dark:text-gray-400">
+              <p className="mt-4 text-center text-gray-100/50">
                 or sign in with
               </p>
 
               <button
                 type="button"
                 onClick={handleGoogleLogin}
-                className="w-full flex items-center justify-center px-6 py-3 mt-4 text-gray-600 border rounded-xl hover:bg-primary-100 hover:shadow-xl hover:scale-105 transition-all"
+                className="w-full flex items-center justify-center px-6 py-3 mt-4 text-white hover:text-gray-600 border rounded-xl hover:bg-primary-100 hover:shadow-xl hover:scale-105 transition-all "
               >
                 <svg className="w-6 h-6 mx-2" viewBox="0 0 40 40">
                   <path
@@ -206,11 +207,23 @@ const LoginModal = ({ setLoginModelOpen }) => {
                   />
                 </svg>
 
-                <span className="mx-2">Sign in with Google</span>
+                <span className="mx-2 ">Sign in with Google</span>
+              </button>
+              <button
+                type="button"
+                onClick={googleLogin}
+                className="w-full flex items-center justify-center py-3 mt-4 text-white hover:text-gray-600 border rounded-xl hover:bg-primary-100 hover:shadow-xl md:hover:scale-100 hover:scale-105 transition-all "
+              >
+                <FacebookIcon />
+
+                <span className="mx-2">Sign in with Facebook</span>
               </button>
 
               <div className="mt-6 text-center text-gray-400 font-bold">
-                <Link to="/register" className="text-sm hover:underline">
+                <Link
+                  to="/register"
+                  className="text-sm hover:underline text-white/60"
+                >
                   Don’t have an account yet?{" "}
                   <span className="text-buttonText-500">Sign up</span>
                 </Link>

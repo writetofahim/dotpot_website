@@ -2,11 +2,16 @@ import React, { useContext, useState } from "react";
 import { FaRegPaperPlane } from "react-icons/fa";
 import { AuthContext } from "../../contexts/AuthContext";
 import axios from "../../utils/axiosInstance";
-import LoginModal from "./LoginModal";
+// import LoginModal from "./LoginModal";
 
-const CommentSection = ({ comments, setComments, blogId }) => {
+const CommentSection = ({
+  comments,
+  setComments,
+  blogId,
+  setIsLoginModalOpen,
+}) => {
   const [content, setContent] = useState("");
-  const [isLoginModalOpen, setLoginModelOpen] = useState(false);
+
   const { user } = useContext(AuthContext);
 
   const handleCommentSubmit = (e) => {
@@ -44,7 +49,6 @@ const CommentSection = ({ comments, setComments, blogId }) => {
 
   return (
     <div className="mt-5 ">
-      {isLoginModalOpen && <LoginModal setLoginModelOpen={setLoginModelOpen} />}
       <h2 className="text-xl blog-content-font font-bold text-textColor-500">
         Comments
       </h2>
@@ -147,7 +151,7 @@ const CommentSection = ({ comments, setComments, blogId }) => {
       ) : (
         <p className="text-sm">
           <button
-            onClick={() => setLoginModelOpen(true)}
+            onClick={() => setIsLoginModalOpen(true)}
             className="underline"
             to="/login"
           >

@@ -1,10 +1,10 @@
-import React, { useContext, useState } from "react";
-import { AuthContext } from "../../contexts/AuthContext";
-import { FaSpinner } from "react-icons/fa";
-import axios from "axios";
-import { Link } from "react-router-dom";
 import CancelIcon from "@mui/icons-material/Cancel";
-import FacebookIcon from '@mui/icons-material/Facebook';
+import FacebookIcon from "@mui/icons-material/Facebook";
+import axios from "axios";
+import React, { useContext, useState } from "react";
+import { FaSpinner } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthContext";
 
 const LoginModal = (props) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -36,8 +36,8 @@ const LoginModal = (props) => {
       setIsLoading(false);
     }
   };
-  if(user){
-    props.setShowLogin(false)
+  if (user) {
+    props.setShowLogin(false);
   }
   const handleForgotPassword = async () => {
     setRequestError("");
@@ -61,13 +61,13 @@ const LoginModal = (props) => {
     }
   };
   return (
-    <div className="w-full h-[100vh] flex items-center justify-center fixed z-50 bg-black/40">
+    <div className="w-full h-[100vh] flex items-center justify-center fixed z-50 bg-black/90">
       <form
         onSubmit={handleSubmit}
         className=" w-full max-w-lg p-5  shadow-xl backdrop-blur-md bg-blue-300/30 md:rounded-lg"
       >
-        <div onClick={()=>props.setShowLogin(false)}>
-          <CancelIcon  className="hover:text-red-400 cursor-pointer" />
+        <div onClick={() => props.setShowLogin(false)}>
+          <CancelIcon className="hover:text-red-400 cursor-pointer" />
         </div>
 
         <h1 className="text-center text-6xl text-textColor-500 font-bold pt-5">
@@ -160,10 +160,9 @@ const LoginModal = (props) => {
             <button
               type="button"
               onClick={googleLogin}
-              className="w-full flex items-center justify-center   py-3 mt-4 text-gray-600 border rounded-xl hover:bg-primary-100 hover:shadow-xl md:hover:scale-100 hover:scale-105 transition-all"
+              className="w-full flex items-center justify-center py-3 mt-4 text-gray-600 border rounded-xl hover:bg-primary-100 hover:shadow-xl md:hover:scale-100 hover:scale-105 transition-all"
             >
-              <FacebookIcon/>
-
+              <FacebookIcon />
 
               <span className="mx-2">Sign in with Facebook</span>
             </button>

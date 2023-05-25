@@ -19,6 +19,8 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import axios from "../../utils/axiosInstance";
 import CommonModal from "../CommonModal/CommonModal";
+// import LoginModal from "../login/LoginModal";
+import LoginModal from "../../pages/lgoin/LoginModal";
 import Submenu from "./Submenu";
 
 const Navbar = (props) => {
@@ -32,6 +34,8 @@ const Navbar = (props) => {
   const [companyInfo, setCompanyInfo] = useState({});
 
   const [open, setOpen] = useState(false);
+
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
 
   const serviceButtonRef = useRef(null);
   const serviceSubmenuDiv = useRef(null);
@@ -393,6 +397,11 @@ const Navbar = (props) => {
           title={"Confirm logout"}
         />
       )}
+
+      {isLoginModalOpen && (
+        <LoginModal setLoginModelOpen={setIsLoginModalOpen} />
+      )}
+
       <div className="w-full flex items-center justify-center fixed z-50 bg-background-500">
         <nav
           className="container flex justify-between items-center p-4 z-999"
@@ -541,7 +550,12 @@ const Navbar = (props) => {
                 </li> */}
 
             {!user ? (
-              <li className="mx-4 cursor-pointer uppercase text-white font-bold lg:text-gray-400 text-lg hover:scale-110 hover:text-secondary-400" onClick={()=>props.setShowLogin(true)}>Login</li>
+              <li
+                className="mx-4 cursor-pointer uppercase text-white font-bold lg:text-gray-400 text-lg hover:scale-110 hover:text-secondary-400"
+                onClick={() => setIsLoginModalOpen(true)}
+              >
+                Login
+              </li>
             ) : (
               <li
                 className="mx-4 cursor-pointer uppercase text-white font-bold lg:text-gray-400 text-lg hover:scale-110 hover:text-secondary-400"
@@ -671,15 +685,20 @@ const Navbar = (props) => {
                   </li>
                 </Link>
                 {!user ? (
-              <li className="mx-4 cursor-pointer uppercase text-gray lg:text-gray-400 text-xl font-bold mt-3" onClick={()=>props.setShowLogin(true)}>Login</li>
-            ) : (
-              <li
-                className="mx-4 cursor-pointer uppercase text-gray lg:text-gray-400 text-xl font-bold mt-3"
-                onClick={() => setOpen(true)}
-              >
-                Logout
-              </li>
-            )}
+                  <li
+                    className="mx-4 cursor-pointer uppercase text-gray lg:text-gray-400 text-xl font-bold mt-3"
+                    onClick={() => setIsLoginModalOpen(true)}
+                  >
+                    Login
+                  </li>
+                ) : (
+                  <li
+                    className="mx-4 cursor-pointer uppercase text-gray lg:text-gray-400 text-xl font-bold mt-3"
+                    onClick={() => setOpen(true)}
+                  >
+                    Logout
+                  </li>
+                )}
                 <Link to="/apply" target="_blank">
                   <li className="bg-primary-500 py-2 px-7 mx-4 mt-5 rounded-full cursor-pointer text-white">
                     Apply For Jobs
