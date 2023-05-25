@@ -48,7 +48,6 @@ import ItSupport from "./pages/keyFeatures/ItSupport";
 import MobileAppDevelopment from "./pages/keyFeatures/MobileAppDevelopment";
 import WebsiteDesign from "./pages/keyFeatures/WebsiteDesign";
 import WebsiteDevelopment from "./pages/keyFeatures/websiteDevelopment/WebsiteDevelopment";
-import Login from "./pages/lgoin/Login";
 import FixedPrice from "./pages/partnershipModels/FixedPrice";
 import HireDedicatedModel from "./pages/partnershipModels/HireDedicatedModel";
 import OnSiteDevelopment from "./pages/partnershipModels/OnSiteDevelopment";
@@ -128,7 +127,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/faq" element={<Faq />} />
-        <Route path="/login" element={<Login />} />
+        {/* <Route path="/login" element={<Login />} /> */}
         <Route path="/reset-password/:resetToken" element={<ResetPassword />} />
         <Route path="/register" element={<Register />} />
         <Route path="/apply" element={<ApplyJob />} />
