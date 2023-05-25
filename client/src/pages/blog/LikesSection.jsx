@@ -9,15 +9,15 @@ const LikesSection = ({ likes, blogId, comments }) => {
   const { user } = useContext(AuthContext);
 
   const handleClick = async () => {
+    if (!user) return;
     const response = await axios.post("/blog/like", {
       blogId,
-      userId: user._id,
+      userId: user?._id,
     });
 
-    if (!user) return;
     setTotalLikes((prev) =>
       prev.findIndex((l) => l.user === user?._id) > -1
-        ? prev.filter((b) => b.user !== user._id)
+        ? prev.filter((b) => b.user !== user?._id)
         : [...prev, { user: user._id }]
     );
   };

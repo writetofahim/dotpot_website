@@ -33,3 +33,9 @@
 } */
 
 /* Add any additional styles for the waveform player */
+:root {
+  --random-hue: 107; /* Use 'initial' as a placeholder value */
+}
+.avatar-background{
+  background-color: hsl(var(--random-hue), 50%, 50%) ;
+}

@@ -365,6 +365,22 @@ const Navbar = (props) => {
     }
   }, [currentLocation.pathname]);
 
+  useEffect(() => {
+    const servicesPaths = [
+      "key-features",
+      "contact-center-services",
+      "partnership-model",
+      "industries-we-serve",
+      "who-we-works-with",
+    ];
+    const isPathMatchToServices = servicesPaths.findIndex((path) =>
+      location.pathname.includes(path)
+    );
+    isPathMatchToServices > -1
+      ? setIsServiceActive(true)
+      : setIsServiceActive(false);
+  }, [location.pathname]);
+
   return (
     <>
       {open && (
