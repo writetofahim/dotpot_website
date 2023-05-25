@@ -61,10 +61,10 @@ const LoginModal = (props) => {
     }
   };
   return (
-    <div className="w-full h-[100vh] flex items-center justify-center fixed z-50 bg-black/90">
+    <div className="w-full h-[100vh] flex items-center justify-center fixed z-50 ">
       <form
         onSubmit={handleSubmit}
-        className=" w-full max-w-lg p-5  shadow-xl backdrop-blur-md bg-blue-300/30 md:rounded-lg"
+        className=" w-full max-w-lg p-5  shadow-xl backdrop-blur-xl bg-blue-300/60 md:rounded-lg"
       >
         <div onClick={() => props.setShowLogin(false)}>
           <CancelIcon className="hover:text-red-400 cursor-pointer" />

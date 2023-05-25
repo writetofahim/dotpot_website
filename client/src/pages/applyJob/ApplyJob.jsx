@@ -14,11 +14,18 @@ import { AuthContext } from "../../contexts/AuthContext";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 import axios from "../../utils/axiosInstance";
 import postLogger from "../../utils/postLogger";
+import { Tooltip } from 'react-tooltip';
 
 export const JobCard = (props) => {
   const [love, setLove] = useState(false);
+  const [showToast, setShowToast] = useState(false);
   const [exists, setExist] = useState(props.likes.includes(props.user?._id));
-
+  const handleShowToast = () => {
+    setShowToast(true);
+    setTimeout(() => {
+      setShowToast(false);
+    }, 3000); // Hide the toast after 3 seconds
+  };
   const handelChick = (_id) => {
     props.setId(props._id);
     props.setActiveJob(props);
@@ -47,12 +54,13 @@ export const JobCard = (props) => {
       }
       setExist(false);
     } else {
-      alert("Please Login!");
+      handleShowToast()
     }
   };
   return (
     <>
       {/* For Large screen */}
+      
       <div
         className={`"cursor-pointer job-card w-full p-5 border border-border rounded-xl hover:border border-border-primary-500 text-gray-400 gap-1 hidden md:block md:hover:scale-105 md:hover:shadow-xl transition-all" ${
           props.activeJob?._id === props._id ? "ring-4" : ""
@@ -64,7 +72,7 @@ export const JobCard = (props) => {
             {props.title}
           </h3>
 
-          <div className="ritht flex items-center justify-center">
+          <div className="ritht flex items-center justify-center relative">
             {exists ? (
               <AiFillHeart
                 className="text-red-600 text-2xl"
@@ -76,6 +84,11 @@ export const JobCard = (props) => {
                 onClick={() => toggleLove()}
               />
             )}
+            {showToast && (
+                        <div className="absolute w-28 top-10 right-0 bg-textColor-500 text-buttonText-500 text-xs py-2 px-4 rounded">
+                          Please Login!
+                        </div>
+                      )}
             {/* <div className="cursor-pointer p-5 rounded-full hover:bg-primary-100">
                             <SlOptionsVertical />
                         </div> */}
@@ -158,6 +171,11 @@ export const JobCard = (props) => {
               onClick={() => toggleLove()}
             />
           )}
+          {showToast && (
+                        <div className="absolute w-28 top-12 right-0 bg-textColor-500 text-buttonText-500 text-xs py-2 px-4 rounded">
+                          Please Login!
+                        </div>
+                      )}
           <div
             onClick={(e) => e.stopPropagation()}
             className="cursor-pointer p-5 rounded-full hover:bg-primary-100"
