@@ -14,7 +14,6 @@ import { AuthContext } from "../../contexts/AuthContext";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 import axios from "../../utils/axiosInstance";
 import postLogger from "../../utils/postLogger";
-import { Tooltip } from "react-tooltip";
 
 export const JobCard = (props) => {
   const [love, setLove] = useState(false);
