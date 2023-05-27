@@ -41,8 +41,8 @@ import RecentWorks from "../../components/RecentWorks/RecentWorks";
 import SocialMedia from "../../components/SocialMedia/SocialMedia";
 import WhatOurClientSay from "../../components/WhatOurClientsSay/WhatOurClientsSay";
 import WhoWeWorkWith from "../../components/WhoWeWorkWith/WhoWeWorkWith";
-import { useScrollToTop } from "../../hooks/useScrollToTop";
 import LoginModal from "../../components/login/LoginModal";
+import { useScrollToTop } from "../../hooks/useScrollToTop";
 
 const Home = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -52,10 +52,11 @@ const Home = () => {
       <Helmet>
         <script type="application/ld+json">
           {`
-            {
+             {
               "@context": "http://schema.org",
               "@type": "LocalBusiness",
               "name": "Dotpot iT",
+              "address":"House-1, Road-3, Block-A, Mirpur-10, Dhaka, Bangladesh",
               "telephone": "+880 1817 176 192",
               "email": [
                 "help@dotpotit.com",
@@ -66,7 +67,7 @@ const Home = () => {
           `}
         </script>
         <title>
-          Dotpot iT | It Company with Web, AI, Game, App development service
+          Dotpot iT | It Company with Web, AI, Game, App development
         </title>
         <meta
           name="description"
@@ -75,7 +76,7 @@ const Home = () => {
         <link rel="canonical" href="https://dotpotit.com/" />
         <meta
           property="og:title"
-          content="Dotpot iT | It Company with Web, AI, Game, App development service"
+          content="Dotpot iT | It Company with Web, AI, Game, App development"
         />
         <meta
           property="og:description"
@@ -94,7 +95,7 @@ const Home = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Dotpot iT | It Company with Web, AI, Game, App development service"
+          content="Dotpot iT | It Company with Web, AI, Game, App development"
         />
         <meta
           name="twitter:description"
@@ -107,9 +108,7 @@ const Home = () => {
         <meta property="og:type" content="website" />
       </Helmet>
       <Navbar setShowLogin={setShowLogin} />
-      {
-        showLogin && <LoginModal setShowLogin={setShowLogin}/>
-      }
+      {showLogin && <LoginModal setShowLogin={setShowLogin} />}
       <Hero />
       <GetAQuote />
       <Information />

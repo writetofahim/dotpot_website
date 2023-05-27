@@ -32,7 +32,7 @@ const NewBlogs = ({ currentBlogId, isRelatedBlog }) => {
     <div className="">
       <span className="inline-block w-full h-1.5 bg-textColor-500 text-textColor-500"></span>
       <h1
-        className="text-4xl font-bold mt-3 mb-5 text-textColor-500"
+        className="text-4xl font-bold mt-3 pb-5 text-textColor-500"
         style={{ fontFamily: `Times New Roman` }}
       >
         {isRelatedBlog ? "Related" : "Recent"} Blogs
@@ -54,7 +54,7 @@ const NewBlogs = ({ currentBlogId, isRelatedBlog }) => {
                     isVisible
                       ? "opacity-100 translate-y-0"
                       : "translate-y-20 opacity-0"
-                  } duration-1000 hover:shadow-lg hover:shadow-cyan-300 rounded`}
+                  } duration-1000 hover:shadow-lg hover:shadow-cyan-300 rounded shadow-lg`}
                 >
                   <Link
                     to={`/blog/${blog.slug}`}

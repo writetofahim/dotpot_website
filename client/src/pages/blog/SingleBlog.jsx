@@ -19,15 +19,11 @@ import {
   default as parse,
 } from "react-html-parser";
 import { BiLink } from "react-icons/bi";
-import {
-  FaFacebook,
-  FaFacebookF,
-  FaLinkedinIn,
-  FaTwitter,
-} from "react-icons/fa";
+import { FaEnvelope, FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import striptags from "striptags";
 import dotpotiTLogo from "../../assets/img/icon.png";
+import CommonSnackbar from "../../components/CommonSnackbar/CommonSnackbar";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import NavigatorComponent from "../../components/NavigatorComponent/NavigatorComponent";
@@ -39,12 +35,15 @@ import LikesSection from "./LikesSection";
 import NewBlogs from "./NewBlogs";
 import NextBlog from "./NextBlog";
 import WaveformPlayer from "./WaveformPlayer";
+import "./blog.css";
 
 const SingleBlog = () => {
   const { slug } = useParams();
   const [data, setData] = useState(null);
   const [showToast, setShowToast] = useState(false);
   const [comments, setComments] = useState([]);
+
+  const [isLoginSuccess, setIsLoginSuccess] = useState(false);
 
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
 
@@ -87,16 +86,23 @@ const SingleBlog = () => {
   const twitterShareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
     url
   )}`;
+  const linkedinShareUrl = `https://www.linkedin.com/share?url=${encodeURIComponent(
+    url
+  )}`;
+  const emailShareUrl = `mailto:?subject=${
+    data?.title
+  }&body=Read%20${encodeURIComponent(url)}`;
 
   return (
     <>
       <Helmet>
         <script type="application/ld+json">
           {`
-            {
+             {
               "@context": "http://schema.org",
               "@type": "LocalBusiness",
               "name": "Dotpot iT",
+              "address":"House-1, Road-3, Block-A, Mirpur-10, Dhaka, Bangladesh",
               "telephone": "+880 1817 176 192",
               "email": [
                 "help@dotpotit.com",
@@ -145,7 +151,17 @@ const SingleBlog = () => {
 
       <Navbar />
       {isLoginModalOpen && (
-        <LoginModal setLoginModelOpen={setIsLoginModalOpen} />
+        <LoginModal
+          setLoginModelOpen={setIsLoginModalOpen}
+          setIsLoginSuccess={setIsLoginSuccess}
+        />
+      )}
+      {isLoginSuccess && (
+        <CommonSnackbar
+          message={"Login Successful!"}
+          open={isLoginSuccess}
+          setOpen={setIsLoginSuccess}
+        />
       )}
       {/* previous single blog start */}
       {/* <div className="bg-background-500">
@@ -185,25 +201,25 @@ const SingleBlog = () => {
       </div> */}
       {/* previous single blog end */}
 
-      <div className="bg-background-500 relative">
-        <div className="container mx-auto pt-[15vh] ">
+      <div className="bg-gradient-to-r from-gray-100 to-primary-100 relative">
+        <div className="container mx-auto pt-[15vh] backdrop-blur-3xl ">
           <div className="md:-ml-4 md:pl-0 pl-2">
             <NavigatorComponent navigationData={navigationData} />
           </div>
           {data && (
             <>
               <div className="full flex p-[20px]">
-                <div className="container flex flex-col items-start text-justify">
+                <div className="container flex flex-col items-start ">
                   <span className="text-textColor-500 blog-content-font text-sm italic">
                     {moment(new Date(data?.createdAt)).format(
                       "MMMM Do YYYY, h:mm:ss a"
                     )}
                   </span>
-                  <h1 className="my-3 md:text-[3.75rem] text-xl leading-[1] font-bold text-textColor-500 blog-content-font">
+                  <h1 className="my-3 md:text-[3.75rem] text-xl leading-[1] font-bold text-textColor-500 blog-title-font">
                     {data?.title}
                   </h1>
                   {/* content summary start*/}
-                  <p className="md:text-lg text-lg mb-5 text-textColor-500">
+                  <p className="md:text-lg text-lg mb-5 text-textColor-500 blog-summary-font">
                     {data?.summary}
                   </p>
                   {/* content summary end*/}
@@ -255,7 +271,7 @@ const SingleBlog = () => {
                             href={"https://www.facebook.com/dotpotit"}
                             target="_blank"
                           >
-                            <FaFacebookF className="text-textColor-500" />
+                            <FaFacebook className="text-textColor-500" />
                           </a>
                           <a
                             href={"https://twitter.com/dotpotit"}
@@ -267,7 +283,7 @@ const SingleBlog = () => {
                             href={"https://www.linkedin.com/company/dotpotit"}
                             target="_blank"
                           >
-                            <FaLinkedinIn className="text-textColor-500" />
+                            <FaLinkedin className="text-textColor-500" />
                           </a>
                         </div>
                       </div>
@@ -301,10 +317,8 @@ const SingleBlog = () => {
                         <p className="italic">{data?.summary?.slice(1)}</p>
                       </div> */}
                         <div className="md:text-2xl text-xl mt-7 inline-block blog-content-font blog-content-body">
-                          <div className="leading-[2rem]">
-                            <div className="first-letter-large">
-                              {parse(data?.body)}
-                            </div>
+                          <div className="first-letter-large blog-utopia-font blog-content">
+                            {parse(data?.body)}
                           </div>
                         </div>
                       </div>
@@ -352,8 +366,7 @@ const SingleBlog = () => {
                           rel="noopener noreferrer"
                           className="flex items-center justify-center bg-blue-500 text-buttonText-500 px-4 py-2 rounded hover:bg-blue-600 duration-300"
                         >
-                          <FaFacebook className="mr-2" />
-                          Facebook
+                          <FaFacebook />
                         </a>
                         <a
                           href={twitterShareUrl}
@@ -361,10 +374,26 @@ const SingleBlog = () => {
                           rel="noopener noreferrer"
                           className="flex items-center justify-center bg-blue-400 text-buttonText-500 px-4 py-2 rounded hover:bg-blue-500 duration-300"
                         >
-                          <FaTwitter className="mr-2" />
-                          Twitter
+                          <FaTwitter />
+                        </a>
+                        <a
+                          href={linkedinShareUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center bg-blue-800 text-buttonText-500 px-4 py-2 rounded hover:bg-blue-900 duration-300"
+                        >
+                          <FaLinkedin />
+                        </a>
+                        <a
+                          href={emailShareUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center bg-red-500 text-buttonText-500 px-4 py-2 rounded hover:bg-red-600 duration-300"
+                        >
+                          <FaEnvelope />
                         </a>
                       </div>
+
                       {/* social media share end */}
                     </div>
                     <div className="md:w-[30%] w-full mt-5">
@@ -379,7 +408,7 @@ const SingleBlog = () => {
               <div className="w-full mt-5 md:px-6 px-4">
                 <NextBlog currentBlogId={data?._id} />
               </div>
-              <div className="w-full mt-5 md:px-6 px-4 mb-5">
+              <div className="w-full mt-5 md:px-6 px-4 pb-16">
                 <NewBlogs currentBlogId={data?._id} isRelatedBlog={true} />
               </div>
             </>

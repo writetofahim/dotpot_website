@@ -304,7 +304,6 @@ function App() {
         appId="1284351839140517"
         htmlRef="<REF_STRING>"
       />
-      ,
     </div>
   );
 }

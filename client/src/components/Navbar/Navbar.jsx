@@ -21,6 +21,7 @@ import axios from "../../utils/axiosInstance";
 import CommonModal from "../CommonModal/CommonModal";
 // import LoginModal from "../login/LoginModal";
 import LoginModal from "../../pages/lgoin/LoginModal";
+import CommonSnackbar from "../CommonSnackbar/CommonSnackbar";
 import Submenu from "./Submenu";
 
 const Navbar = (props) => {
@@ -30,6 +31,8 @@ const Navbar = (props) => {
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
   const [selectedSubmenu, setSelectedSubmenu] = useState(null);
+
+  const [isLoginSuccess, setIsLoginSuccess] = useState(false);
 
   const [companyInfo, setCompanyInfo] = useState({});
 
@@ -399,7 +402,18 @@ const Navbar = (props) => {
       )}
 
       {isLoginModalOpen && (
-        <LoginModal setLoginModelOpen={setIsLoginModalOpen} />
+        <LoginModal
+          setLoginModelOpen={setIsLoginModalOpen}
+          setIsLoginSuccess={setIsLoginSuccess}
+        />
+      )}
+
+      {isLoginSuccess && (
+        <CommonSnackbar
+          message={"Login Successful!"}
+          open={isLoginSuccess}
+          setOpen={setIsLoginSuccess}
+        />
       )}
 
       <div className="w-full flex items-center justify-center fixed z-50 bg-background-500">
@@ -408,7 +422,10 @@ const Navbar = (props) => {
           id="nav"
         >
           <div className="lg:flex-[0.5] flex-initial justify-center items-center">
-            <Link to="/">
+            <Link
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              to="/"
+            >
               <img
                 src={`${import.meta.env.REACT_APP_SERVER_PATH}/${
                   companyInfo.primary_logo
@@ -425,7 +442,10 @@ const Navbar = (props) => {
             {/* {["home", "about us", "Services", "Contact"].map((item, index) => (
                         <NavBarItem key={item + index} title={item} />
                     ))} */}
-            <NavLink to="/">
+            <NavLink
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              to="/"
+            >
               {({ isActive }) => (
                 <span
                   className={`${

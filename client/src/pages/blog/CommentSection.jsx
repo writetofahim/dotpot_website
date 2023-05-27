@@ -132,15 +132,15 @@ const CommentSection = ({
                     value={content}
                     onChange={(e) => setContent(e.target.value)}
                     placeholder="Write a comment..."
-                    className="mt-2 border-none rounded-lg transition-colors duration-300 focus:outline-none "
+                    className="mt-2 border-none rounded-lg transition-colors duration-300 focus:outline-none bg-transparent"
                     required
                   ></textarea>
                   <div className="flex justify-end">
                     <button
                       type="submit"
-                      className="mt-2 px-4 py-2 bg-green-400 text-white rounded-full transition-colors duration-300 hover:bg-green-600 focus:outline-none text-sm flex items-center gap-3"
+                      className="mt-2 px-4 py-2 bg-green-400 text-white rounded-full transition-colors duration-300 hover:bg-green-600 focus:outline-none text-sm flex items-center gap-3 "
                     >
-                      <FaRegPaperPlane /> Add Comment
+                      <FaRegPaperPlane className="animate-bounce" /> Add Comment
                     </button>
                   </div>
                 </form>

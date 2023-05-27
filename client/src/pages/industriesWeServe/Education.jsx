@@ -56,10 +56,11 @@ const education = () => {
       <Helmet>
         <script type="application/ld+json">
           {`
-            {
+             {
               "@context": "http://schema.org",
               "@type": "LocalBusiness",
               "name": "Dotpot iT",
+              "address":"House-1, Road-3, Block-A, Mirpur-10, Dhaka, Bangladesh",
               "telephone": "+880 1817 176 192",
               "email": [
                 "help@dotpotit.com",

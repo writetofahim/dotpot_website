@@ -8,7 +8,7 @@ import { AuthContext } from "../../contexts/AuthContext";
 import axios from "../../utils/axiosInstance";
 import postLogger from "../../utils/postLogger";
 
-const LoginModal = ({ setLoginModelOpen }) => {
+const LoginModal = ({ setLoginModelOpen, setIsLoginSuccess }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState("");
   const [open, setOpen] = useState(false);
@@ -22,6 +22,7 @@ const LoginModal = ({ setLoginModelOpen }) => {
   useEffect(() => {
     if (user?._id) {
       setLoginModelOpen(false);
+      setIsLoginSuccess(true);
     }
 
     return () => {};
@@ -44,6 +45,7 @@ const LoginModal = ({ setLoginModelOpen }) => {
       e.target.reset();
       // set isLoading state to false
       setIsLoading(false);
+      setIsLoginSuccess(true);
 
       // if an error occurs
     } catch (error) {
@@ -76,7 +78,6 @@ const LoginModal = ({ setLoginModelOpen }) => {
 
   const handleGoogleLogin = async () => {
     await googleLogin();
-    // setLoginModelOpen(false);
   };
 
   return (

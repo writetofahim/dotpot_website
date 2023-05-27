@@ -54,7 +54,11 @@ const ProcessWeFollow = () => {
           alt=""
           className="md:w-3/4 lg:2/3 hidden md:block"
         /> */}
-        <img src={processSm} alt="process we follow" className="block md:hidden" />
+        <img
+          src={processSm}
+          alt="process we follow"
+          className="block md:hidden"
+        />
       </div>
     </div>
   );

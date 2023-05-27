@@ -223,10 +223,11 @@ const Blog = () => {
       <Helmet>
         <script type="application/ld+json">
           {`
-            {
+             {
               "@context": "http://schema.org",
               "@type": "LocalBusiness",
               "name": "Dotpot iT",
+              "address":"House-1, Road-3, Block-A, Mirpur-10, Dhaka, Bangladesh",
               "telephone": "+880 1817 176 192",
               "email": [
                 "help@dotpotit.com",
@@ -268,6 +269,22 @@ const Blog = () => {
 
       <div className="w-full pt-[15vh] bg-background-500">
         <NavigatorComponent navigationData={navigationData} />
+        {!tags && (
+          <div className=" bg-[url(https://6amtech.com/wp-content/uploads/2023/03/Group-1597883190-scaled.webp)] bg-cover bg-no-repeat md:h-[300px] flex items-center justify-center mb-10">
+            <div className="w-full p-3">
+              <div className="container mx-auto border-2 border-white rounded-md backdrop-blur-3xl py-10 shadow-lg flex items-center justify-center ">
+                <div className="flex flex-col items-center px-2">
+                  <h1 className="md:text-5xl text-3xl font-bold mb-2 text-textColor-500">
+                    Our Blogs
+                  </h1>
+                  <p className="text-center text-textColor-500">
+                    Uncover a World of Stories and Knowledge
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
         <div className="w-full flex flex-col items-center justify-center bg-background-500">
           {tags ? (
             <div className="mb-16 ">
@@ -275,12 +292,12 @@ const Blog = () => {
             </div>
           ) : (
             <>
-              <h1 className="text-6xl mt-10 mb-2 font-bold text-textColor-500">
+              {/* <h1 className="text-6xl mt-10 mb-2 font-bold text-textColor-500">
                 Blogs
               </h1>
               <p className="text-lg mb-10 px-4 text-textColor-500">
                 Follow our blog to get all the latest tech news
-              </p>
+              </p> */}
             </>
           )}
 

@@ -20,7 +20,7 @@ export const JobCard = (props) => {
   const [showToast, setShowToast] = useState(false);
   const [likeAnimation, setLikeAnimation] = useState(false);
   const [exists, setExist] = useState(props.likes.includes(props.user?._id));
-  console.log('exist',exists)
+  console.log("exist", exists);
   const handleShowToast = () => {
     setShowToast(true);
     setTimeout(() => {
@@ -35,16 +35,15 @@ export const JobCard = (props) => {
     setExist(true);
     if (props.user) {
       if (!exists) {
-        setLikeAnimation(true)
-        setTimeout(()=>{
-          setLikeAnimation(false)
-        },1000)
+        setLikeAnimation(true);
+        setTimeout(() => {
+          setLikeAnimation(false);
+        }, 1000);
         axios
           .post(`/job/${props._id}/like`, { userId: props.user._id })
           .then((response) => {
             console.log(response.data); // Handle the response data
             // setExist(true);
-
           })
           .catch((error) => {
             console.error(error); // Handle the error
@@ -84,16 +83,20 @@ export const JobCard = (props) => {
             {exists ? (
               <div className="cursor-pointer">
                 <div className="relative flex items-center justify-center ">
-                <AiFillHeart
-                  className="text-red-600 text-2xl z-20"
-                  onClick={() => toggleLove()}
-                />
-                <div className=" absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <span class="relative flex h-6 w-6">
-                  <span class={`animate-ping absolute inline-flex h-full w-full rounded-full bg-red-600 opacity-75 ${likeAnimation? 'block':'hidden'}`}></span>
-                  {/* <span class="relative inline-flex rounded-full h-6 w-6 bg-sky-500"></span> */}
-                </span>
-                </div>
+                  <AiFillHeart
+                    className="text-red-600 text-2xl z-20"
+                    onClick={() => toggleLove()}
+                  />
+                  <div className=" absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                    <span class="relative flex h-6 w-6">
+                      <span
+                        class={`animate-ping absolute inline-flex h-full w-full rounded-full bg-red-600 opacity-75 ${
+                          likeAnimation ? "block" : "hidden"
+                        }`}
+                      ></span>
+                      {/* <span class="relative inline-flex rounded-full h-6 w-6 bg-sky-500"></span> */}
+                    </span>
+                  </div>
                 </div>
               </div>
             ) : (
@@ -180,19 +183,23 @@ export const JobCard = (props) => {
         >
           {exists ? (
             <div className="cursor-pointer">
-            <div className="relative flex items-center justify-center ">
-            <AiFillHeart
-              className="text-red-600 text-2xl z-20"
-              onClick={() => toggleLove()}
-            />
-            <div className=" absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-            <span class="relative flex h-6 w-6">
-              <span class={`animate-ping absolute inline-flex h-full w-full rounded-full bg-red-600 opacity-75 ${likeAnimation? 'block':'hidden'}`}></span>
-              {/* <span class="relative inline-flex rounded-full h-6 w-6 bg-sky-500"></span> */}
-            </span>
+              <div className="relative flex items-center justify-center ">
+                <AiFillHeart
+                  className="text-red-600 text-2xl z-20"
+                  onClick={() => toggleLove()}
+                />
+                <div className=" absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  <span class="relative flex h-6 w-6">
+                    <span
+                      class={`animate-ping absolute inline-flex h-full w-full rounded-full bg-red-600 opacity-75 ${
+                        likeAnimation ? "block" : "hidden"
+                      }`}
+                    ></span>
+                    {/* <span class="relative inline-flex rounded-full h-6 w-6 bg-sky-500"></span> */}
+                  </span>
+                </div>
+              </div>
             </div>
-            </div>
-          </div>
           ) : (
             <AiOutlineHeart
               className="text-red-500 text-2xl"
@@ -276,6 +283,7 @@ const ApplyJob = () => {
               "@context": "http://schema.org",
               "@type": "LocalBusiness",
               "name": "Dotpot iT",
+              "address":"House-1, Road-3, Block-A, Mirpur-10, Dhaka, Bangladesh",
               "telephone": "+880 1817 176 192",
               "email": [
                 "help@dotpotit.com",

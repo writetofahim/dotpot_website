@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap");
+
+@font-face {
+  font-display: fallback;
+  font-family: reckless;
+  font-style: normal;
+  font-weight: 700;
+  src: url("https://bigthink.com/wp-content/themes/bigthink/build/css/../assets/fonts/RecklessNeue-Bold.woff2")
+      format("woff2"),
+    url("https://bigthink.com/wp-content/themes/bigthink/build/css/../assets/fonts/RecklessNeue-Bold.woff")
+      format("woff");
+}
+@font-face {
+  font-display: fallback;
+  font-family: reckless;
+  font-style: normal;
+  src: url("https://bigthink.com/wp-content/themes/bigthink/build/css/../assets/fonts/RecklessNeue-Regular.woff2")
+      format("woff2"),
+    url("https://bigthink.com/wp-content/themes/bigthink/build/css/../assets/fonts/RecklessNeue-Regular.woff")
+      format("woff");
+}
+
+@font-face {
+  font-family: "utopia-std";
+  src: url("https://use.typekit.net/af/9ff5df/0000000000000000000131a3/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/9ff5df/0000000000000000000131a3/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/9ff5df/0000000000000000000131a3/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
+      format("opentype");
+  font-display: fallback;
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "utopia-std";
+  src: url("https://use.typekit.net/af/aeaf25/0000000000000000000131a2/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/aeaf25/0000000000000000000131a2/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/aeaf25/0000000000000000000131a2/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3")
+      format("opentype");
+  font-display: fallback;
+  font-style: italic;
+  font-weight: 400;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "utopia-std";
+  src: url("https://use.typekit.net/af/6ebf8d/0000000000000000000131a0/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/6ebf8d/0000000000000000000131a0/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/6ebf8d/0000000000000000000131a0/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3")
+      format("opentype");
+  font-display: fallback;
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "utopia-std";
+  src: url("https://use.typekit.net/af/4bab48/0000000000000000000131a1/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/4bab48/0000000000000000000131a1/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/4bab48/0000000000000000000131a1/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3")
+      format("opentype");
+  font-display: fallback;
+  font-style: italic;
+  font-weight: 700;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-display: fallback;
+  font-family: ibm-plex-sans;
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://bigthink.com/wp-content/themes/bigthink/build/css/../assets/fonts/IBMPlexSans-Regular.woff2")
+      format("woff2"),
+    url("https://bigthink.com/wp-content/themes/bigthink/build/css/../assets/fonts/IBMPlexSans-Regular.woff")
+      format("woff");
+}
+@font-face {
+  font-display: fallback;
+  font-family: ibm-plex-sans;
+  font-style: normal;
+  font-weight: 700;
+  src: url("https://bigthink.com/wp-content/themes/bigthink/build/css/../assets/fonts/IBMPlexSans-Bold.woff2")
+      format("woff2"),
+    url("https://bigthink.com/wp-content/themes/bigthink/build/css/../assets/fonts/IBMPlexSans-Bold.woff")
+      format("woff");
+}
+@font-face {
+  font-display: fallback;
+  font-family: ibm-plex-sans;
+  font-style: normal;
+  font-weight: 600;
+  src: url("https://bigthink.com/wp-content/themes/bigthink/build/css/../assets/fonts/IBMPlexSans-SemiBold.woff2")
+      format("woff2"),
+    url("https://bigthink.com/wp-content/themes/bigthink/build/css/../assets/fonts/IBMPlexSans-SemiBold.woff")
+      format("woff");
+}
+
+.first-letter-large::first-letter {
+  font-size: 5em;
+  font-weight: bold;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+/* blog page font change  */
+.blog-content-font {
+  font-family: "Times New Roman", Times, serif;
+}
+.blog-content-body .ql-video {
+  width: 100%;
+  @apply aspect-video;
+}
+
+.blog-content-body h1,
+.blog-content-body h2{
+  @apply border-l-8 border-textColor-500 pl-5;
+  font-family: ibm-plex-sans, sans-serif;
+}
+
+:root {
+  --random-hue: 107; /* Use 'initial' as a placeholder value */
+}
+.avatar-background {
+  background-color: hsl(var(--random-hue), 50%, 50%);
+}
+
+.blog-utopia-font {
+  font-family: "utopia-std", serif;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.2px;
+  line-height: 2rem;
+  @apply font-[1.125rem] md:font-[1.5rem];
+}
+
+.blog-title-font {
+  font-family: reckless, serif;
+}
+
+.blog-summary-font {
+  font-family: ibm-plex-sans, sans-serif;
+  font-weight: 400;
+}
+
+/* like button styles */
+
+.like-button-container {
+  position: relative;
+}
+
+.circles-behind {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.circle-effect-container {
+  position: relative;
+}
+
+.circle-effect {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: red;
+  animation: circleSpread 1s ease-out infinite;
+  position: absolute;
+}
+
+@keyframes circleSpread {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+}
+
+
+
+

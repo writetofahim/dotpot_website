@@ -60,7 +60,7 @@ function WaveformPlayer({ audioUrl }) {
         )}
         <p>Listen this article</p>
       </div>
-      <div className="bg-buttonText-500" ref={waveformRef}></div>
+      <div className="" ref={waveformRef}></div>
     </div>
   );
 }
