@@ -57,7 +57,7 @@ const WhoWeWorkWith = () => {
   }, []);
 
   return (
-    <div className="whoWeWorWith w-full min-h-[60vh] overflow-hidden py-10 md:flex md:flex-col md:justify-center md:items-center bg-primary-100 ">
+    <div className="whoWeWorWith w-full min-h-[60vh] overflow-hidden py-10 md:flex md:flex-col md:justify-center md:items-center bg-primary-100/50 backdrop-blur-sm ">
       <div className="mt-5 w-full md:max-w-[1400px]  flex flex-col lg:flex-row md:flex-row gap-5 items-center">
         <div className="left w-1/1 md:w-1/3 lg:2/3 h-max p-5 text-left">
           <h2 className="text-3xl md:text-5xl text-center md:text-left font-bold mb-5 text-textColor-500">

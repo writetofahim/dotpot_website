@@ -57,7 +57,7 @@ const IndustriesWeServe = () => {
   // console.log(data)
 
   return (
-    <div className="industriesWeServe w-full overflow-hidden py-10 md:flex md:flex-col md:justify-center bg-primary-100">
+    <div className="industriesWeServe w-full overflow-hidden py-10 md:flex md:flex-col md:justify-center bg-primary-100/50 backdrop-blur-sm">
       <div className="p-5 mt-5 w-full md:max-w-[1400px] self-center flex gap-5 flex-wrap items-center justify-center">
         <h2 className="mt-10 text-3xl md:text-5xl text-center font-bold w-full mb-5 text-textColor-500">
           Industries We Serve

@@ -18,7 +18,7 @@ import RecentBlogsSlider from './RecentBlogsSlider'
 
 const RecentBlogs = () => {
     return (
-        <div className='w-full overflow-hidden py-10 md:flex md:flex-col md:justify-center bg-primary-100'>
+        <div className='w-full overflow-hidden py-10 md:flex md:flex-col md:justify-center bg-primary-100/50 backdrop-blur-sm'>
             <div className="p-3 md:p-5 mt-5 w-full md:max-w-[1400px] self-center flex gap-10 flex-wrap items-center justify-center">
                 <Link to="/blog">
                     <h2 className="text-3xl md:text-5xl font-extrabold mb-2 md:mb-2 block text-textColor-500 hover:text-secondary-500">Recent Blogs</h2>
