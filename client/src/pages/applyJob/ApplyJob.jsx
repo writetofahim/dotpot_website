@@ -32,8 +32,8 @@ export const JobCard = (props) => {
     props.setActiveJob(props);
   };
   const toggleLove = () => {
-    setExist(true);
     if (props.user) {
+      setExist(true);
       if (!exists) {
         setLikeAnimation(true);
         setTimeout(() => {
