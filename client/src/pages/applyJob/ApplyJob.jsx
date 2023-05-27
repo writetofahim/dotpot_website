@@ -14,12 +14,14 @@ import { AuthContext } from "../../contexts/AuthContext";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 import axios from "../../utils/axiosInstance";
 import postLogger from "../../utils/postLogger";
-import { Tooltip } from 'react-tooltip';
+import { Tooltip } from "react-tooltip";
 
 export const JobCard = (props) => {
   const [love, setLove] = useState(false);
   const [showToast, setShowToast] = useState(false);
+  const [likeAnimation, setLikeAnimation] = useState(false);
   const [exists, setExist] = useState(props.likes.includes(props.user?._id));
+  console.log('exist',exists)
   const handleShowToast = () => {
     setShowToast(true);
     setTimeout(() => {
@@ -31,18 +33,25 @@ export const JobCard = (props) => {
     props.setActiveJob(props);
   };
   const toggleLove = () => {
+    setExist(true);
     if (props.user) {
       if (!exists) {
+        setLikeAnimation(true)
+        setTimeout(()=>{
+          setLikeAnimation(false)
+        },1000)
         axios
           .post(`/job/${props._id}/like`, { userId: props.user._id })
           .then((response) => {
             console.log(response.data); // Handle the response data
-            setExist(true);
+            // setExist(true);
+
           })
           .catch((error) => {
             console.error(error); // Handle the error
           });
       } else {
+        setExist(false);
         axios
           .post(`/job/${props._id}/unlike`, { userId: props.user._id })
           .then((response) => {
@@ -52,15 +61,15 @@ export const JobCard = (props) => {
             console.error(error); // Handle the error
           });
       }
-      setExist(false);
+      // setExist(false);
     } else {
-      handleShowToast()
+      handleShowToast();
     }
   };
   return (
     <>
       {/* For Large screen */}
-      
+
       <div
         className={`"cursor-pointer job-card w-full p-5 border border-border rounded-xl hover:border border-border-primary-500 text-gray-400 gap-1 hidden md:block md:hover:scale-105 md:hover:shadow-xl transition-all" ${
           props.activeJob?._id === props._id ? "ring-4" : ""
@@ -74,21 +83,31 @@ export const JobCard = (props) => {
 
           <div className="ritht flex items-center justify-center relative">
             {exists ? (
-              <AiFillHeart
-                className="text-red-600 text-2xl"
-                onClick={() => toggleLove()}
-              />
+              <div className="cursor-pointer">
+                <div className="relative flex items-center justify-center ">
+                <AiFillHeart
+                  className="text-red-600 text-2xl z-20"
+                  onClick={() => toggleLove()}
+                />
+                <div className=" absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <span class="relative flex h-6 w-6">
+                  <span class={`animate-ping absolute inline-flex h-full w-full rounded-full bg-red-600 opacity-75 ${likeAnimation? 'block':'hidden'}`}></span>
+                  {/* <span class="relative inline-flex rounded-full h-6 w-6 bg-sky-500"></span> */}
+                </span>
+                </div>
+                </div>
+              </div>
             ) : (
               <AiOutlineHeart
-                className="text-textColor-500 text-2xl"
+                className="text-textColor-500 text-2xl cursor-pointer"
                 onClick={() => toggleLove()}
               />
             )}
             {showToast && (
-                        <div className="absolute w-28 top-10 right-0 bg-textColor-500 text-buttonText-500 text-xs py-2 px-4 rounded">
-                          Please Login!
-                        </div>
-                      )}
+              <div className="absolute w-28 top-10 right-0 bg-textColor-500 text-buttonText-500 text-xs py-2 px-4 rounded">
+                Please Login!
+              </div>
+            )}
             {/* <div className="cursor-pointer p-5 rounded-full hover:bg-primary-100">
                             <SlOptionsVertical />
                         </div> */}
@@ -161,10 +180,20 @@ export const JobCard = (props) => {
           className="ritht flex items-center justify-center absolute top-2 right-0 "
         >
           {exists ? (
+            <div className="cursor-pointer">
+            <div className="relative flex items-center justify-center ">
             <AiFillHeart
-              className="text-red-500 text-2xl"
+              className="text-red-600 text-2xl z-20"
               onClick={() => toggleLove()}
             />
+            <div className=" absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            <span class="relative flex h-6 w-6">
+              <span class={`animate-ping absolute inline-flex h-full w-full rounded-full bg-red-600 opacity-75 ${likeAnimation? 'block':'hidden'}`}></span>
+              {/* <span class="relative inline-flex rounded-full h-6 w-6 bg-sky-500"></span> */}
+            </span>
+            </div>
+            </div>
+          </div>
           ) : (
             <AiOutlineHeart
               className="text-red-500 text-2xl"
@@ -172,10 +201,10 @@ export const JobCard = (props) => {
             />
           )}
           {showToast && (
-                        <div className="absolute w-28 top-12 right-0 bg-textColor-500 text-buttonText-500 text-xs py-2 px-4 rounded">
-                          Please Login!
-                        </div>
-                      )}
+            <div className="absolute w-28 top-12 right-0 bg-textColor-500 text-buttonText-500 text-xs py-2 px-4 rounded">
+              Please Login!
+            </div>
+          )}
           <div
             onClick={(e) => e.stopPropagation()}
             className="cursor-pointer p-5 rounded-full hover:bg-primary-100"

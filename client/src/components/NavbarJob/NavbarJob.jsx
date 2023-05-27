@@ -19,9 +19,11 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/img/logo.png";
 import { AuthContext } from "../../contexts/AuthContext";
 import CommonModal from "../CommonModal/CommonModal";
+import LoginModal from "../../pages/lgoin/LoginModal";
 
 const NavbarJob = () => {
   const [toggleMenu, setToggleMenu] = React.useState(false);
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [open, setOpen] = useState(false);
   const { user, login, error, logout } = useContext(AuthContext);
 
@@ -36,6 +38,9 @@ const NavbarJob = () => {
           buttonTitle="Logout"
           title={"Confirm logout"}
         />
+      )}
+      {isLoginModalOpen && (
+        <LoginModal setLoginModelOpen={setIsLoginModalOpen} />
       )}
       <nav
         className="container w-full mx-auto flex justify-between items-center p-4 z-999 bg-background-500"
@@ -62,19 +67,20 @@ const NavbarJob = () => {
             </li>
           </Link>
           {!user ? (
-            <Link to="/login" target="_blank">
-              <li className="cursor-pointer  text-xl hover:text-primary-400 uppercase text-textColor-500 px-3 py-1 rounded-sm">
+              <li
+                className="cursor-pointer  text-xl hover:text-primary-400 uppercase text-textColor-500 px-3 py-1 rounded-sm"
+                onClick={() => setIsLoginModalOpen(true)}
+              >
                 Login
               </li>
-            </Link>
-          ) : (
-            <li
-              className="cursor-pointer  text-xl hover:text-primary-400 uppercase text-textColor-500 px-3 py-1 rounded-sm"
-              onClick={() => setOpen(true)}
-            >
-              Logout
-            </li>
-          )}
+            ) : (
+              <li
+                className="cursor-pointer  text-xl hover:text-primary-400 uppercase text-textColor-500 px-3 py-1 rounded-sm"
+                onClick={() => setOpen(true)}
+              >
+                Logout
+              </li>
+            )}
         </ul>
         <div className="flex relative md:hidden">
           {!toggleMenu && (
@@ -110,19 +116,20 @@ const NavbarJob = () => {
                 </li>
               </Link>
               {!user ? (
-            <Link to="/login" target="_blank">
-              <li className="cursor-pointer  text-xl hover:text-primary-400 uppercase text-textColor-500 px-3 py-1 rounded-sm">
+              <li
+                className="cursor-pointer  text-xl hover:text-primary-400 uppercase text-textColor-500 px-3 py-1 rounded-sm"
+                onClick={() => setIsLoginModalOpen(true)}
+              >
                 Login
               </li>
-            </Link>
-          ) : (
-            <li
-              className="cursor-pointer  text-xl hover:text-primary-400 uppercase text-textColor-500 px-3 py-1 rounded-sm"
-              onClick={() => setOpen(true)}
-            >
-              Logout
-            </li>
-          )}
+            ) : (
+              <li
+                className="cursor-pointer  text-xl hover:text-primary-400 uppercase text-textColor-500 px-3 py-1 rounded-sm"
+                onClick={() => setOpen(true)}
+              >
+                Logout
+              </li>
+            )}
             </ul>
           )}
         </div>
