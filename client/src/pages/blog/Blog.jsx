@@ -10,11 +10,7 @@ Tailwind css is used for styling
  */
 
 import React, { useState } from "react";
-import {
-  AiOutlineArrowRight,
-  AiOutlineDoubleRight,
-  AiOutlineFieldTime,
-} from "react-icons/ai";
+import { AiOutlineDoubleRight, AiOutlineFieldTime } from "react-icons/ai";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
@@ -184,6 +180,8 @@ const Blog = () => {
   const [page, setPage] = React.useState(1);
   const [totalPages, setTotalPages] = React.useState(1);
 
+  const [showToast, setShowToast] = useState(false);
+
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const tags = queryParams.get("tags");
@@ -216,6 +214,13 @@ const Blog = () => {
 
   const handleNextPage = () => {
     setPage(page + 1);
+  };
+
+  const handleShowToast = () => {
+    setShowToast(true);
+    setTimeout(() => {
+      setShowToast(false);
+    }, 3000); // Hide the toast after 3 seconds
   };
 
   return (
@@ -272,20 +277,50 @@ const Blog = () => {
         {!tags && (
           <div className=" bg-[url(https://6amtech.com/wp-content/uploads/2023/03/Group-1597883190-scaled.webp)] bg-cover bg-no-repeat md:h-[300px] flex items-center justify-center mb-10">
             <div className="w-full p-3">
-              <div className="container mx-auto border-2 border-white rounded-md backdrop-blur-3xl py-10 shadow-lg flex items-center justify-center ">
+              <div className="container mx-auto border-2 border-white rounded-md backdrop-blur-3xl py-10 shadow-lg shadow-pink-200 flex items-center justify-center ">
                 <div className="flex flex-col items-center px-2">
-                  <h1 className="md:text-5xl text-3xl font-bold mb-2 text-textColor-500">
+                  <h1 className="md:text-5xl text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 pb-3">
                     Our Blogs
                   </h1>
-                  <p className="text-center text-textColor-500">
-                    Uncover a World of Stories and Knowledge
+                  <p className="text-center text-textColor-500 md:text-3xl text-xl  ">
+                    Uncover a World of Stories and{" "}
+                    <span className="text-secondary-500">Knowledge</span>
                   </p>
+                  <p className="text-center">
+                    Be the first to receive our latest news, guides, discounts,
+                    and offers.
+                  </p>
+                  <div className="mt-3 relative">
+                    <form
+                      onSubmit={(e) => e.preventDefault()}
+                      className="space-x-2"
+                    >
+                      <input
+                        className="px-3 py-2 rounded focus:outline-pink-100"
+                        type="text"
+                        placeholder="Your email"
+                      />
+                      <button
+                        onClick={() => handleShowToast()}
+                        className="py-2 px-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-md hover:from-pink-500 hover:to-yellow-500 duration-300"
+                      >
+                        Subscribe
+                      </button>
+                    </form>
+                    {showToast && (
+                      <div
+                        className={`absolute top-12 left-0 bg-textColor-500 text-buttonText-500 text-xs py-2 px-4 rounded`}
+                      >
+                        Subscribe is coming soon
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         )}
-        <div className="w-full flex flex-col items-center justify-center bg-background-500">
+        <div className="w-full flex flex-col items-center justify-center ">
           {tags ? (
             <div className="mb-16 ">
               <p className="text-3xl font-bold text-center">{tags} </p>
@@ -319,26 +354,30 @@ const Blog = () => {
           </div>
 
           {/* Pagination Start */}
-          <div className="flex justify-center mt-5 mb-5">
+          <div className="container px-5 flex md:justify-end justify-center items-center mt-5 mb-14">
+            <div className="border border-t w-full"></div>
             <nav aria-label="Page navigation example ">
-              <ul className="inline-flex -space-x-px">
+              <ul className="inline-flex gap-3">
                 <li>
                   <button
                     onClick={handlePrevPage}
                     disabled={page === 1}
-                    className="px-3 py-2 ml-0 leading-tight text-gray-500 bg-background-500 border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 "
+                    className="px-3 py-1.5 leading-tight bg-secondary-500 hover:bg-secondary-600 text-white text-lg "
                   >
-                    <AiOutlineArrowRight className="rotate-180" />
+                    Prev
                   </button>
                 </li>
                 {Array.from({ length: totalPages }, (_, index) => (
                   <li key={index}>
                     <button
-                      onClick={() => setPage(index + 1)}
-                      className={`px-3 py-1.5 leading-tight text-gray-500 bg-background-500 border border-gray-300 hover:bg-gray-100 hover:text-gray-700  ${
+                      onClick={() => {
+                        setPage(index + 1);
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      }}
+                      className={`px-3 py-1.5 leading-tight text-gray-500 bg-background-500 rounded-full hover:bg-secondary-500 hover:text-white border border-secondary-300 text-sm w-12 ${
                         index + 1 === page
-                          ? "text-blue-600 border-blue-600 bg-blue-50"
-                          : ""
+                          ? "bg-secondary-500 text-white "
+                          : " "
                       }`}
                     >
                       {index + 1}
@@ -349,14 +388,15 @@ const Blog = () => {
                   <button
                     onClick={handleNextPage}
                     disabled={page === totalPages}
-                    className="px-3 py-2 leading-tight text-gray-500 bg-background-500 border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 "
+                    className="px-3 py-1.5 leading-tight bg-secondary-500 hover:bg-secondary-600 text-white text-lg "
                   >
-                    <AiOutlineArrowRight />
+                    Next
                   </button>
                 </li>
               </ul>
             </nav>
           </div>
+
           {/* Pagination Start */}
         </div>
 

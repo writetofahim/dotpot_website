@@ -331,7 +331,7 @@ const SingleBlog = () => {
                       />
                       {/* likes section end */}
                       <div>
-                        <p className="mb-3 text-bold text-xl font-bold text-textColor-500 blog-content-font">
+                        <p className="mb-3 text-bold text-xl font-bold text-textColor-500 blog-summary-font">
                           Tags
                         </p>
                         <div className="flex gap-2 items-center flex-wrap">
@@ -356,7 +356,7 @@ const SingleBlog = () => {
                       />
                       {/* comment section end */}
                       {/* social media share start */}
-                      <p className="mb-3 text-bold text-xl font-bold text-textColor-500 blog-content-font mt-5">
+                      <p className="mb-3 text-bold text-xl font-bold text-textColor-500 blog-summary-font mt-5">
                         Share on
                       </p>
                       <div className="flex flex-wrap space-x-4 ">

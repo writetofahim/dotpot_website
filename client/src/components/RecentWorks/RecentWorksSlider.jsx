@@ -136,7 +136,7 @@ function RecentWorksSlider() {
   // Data Fetching
   useEffect(() => {
     axios
-      .get("/work")
+      .get("/work?limit=6")
       .then((response) => {
         setData(response.data.works);
         postLogger({ level: "info", message: response });

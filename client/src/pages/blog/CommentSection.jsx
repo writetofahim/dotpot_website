@@ -1,5 +1,7 @@
+import moment from "moment";
 import React, { useContext, useState } from "react";
 import { FaRegPaperPlane } from "react-icons/fa";
+import { FcCalendar, FcClock } from "react-icons/fc";
 import { AuthContext } from "../../contexts/AuthContext";
 import axios from "../../utils/axiosInstance";
 // import LoginModal from "./LoginModal";
@@ -48,59 +50,74 @@ const CommentSection = ({
   };
 
   return (
-    <div className="mt-5 ">
-      <h2 className="text-xl blog-content-font font-bold text-textColor-500">
-        Comments
+    <div className="mt-14 blog-summary-font">
+      <h2 className="text-3xl font-bold text-textColor-500 text-center mb-5">
+        {comments?.length === 0
+          ? "No Comments"
+          : `${comments?.length} ${
+              comments?.length === 1 ? "Comment" : "Comments"
+            }`}
       </h2>
-      {comments.length === 0 ? (
-        <p className="text-textColor-500">No comments yet</p>
-      ) : (
-        <ul className="space-y-3">
-          {comments.map((comment, i) => {
-            getAvatarBackgroundColor(comment.user.username);
-            return (
-              <li
-                key={i}
-                className="flex justify-start space-x-2 py-3 shadow-md p-3"
-              >
-                {comment.user.photo ? (
-                  <div className="w-8 h-8 ">
-                    <img
-                      src={
-                        comment.user.photo.includes("https://")
-                          ? comment.user.photo
-                          : `${import.meta.env.REACT_APP_SERVER_PATH}/${
-                              comment.user.photo
-                            }`
-                      }
-                      alt={comment.user.username}
-                      className="rounded-full"
-                    />
-                  </div>
-                ) : (
-                  <div className="w-8 h-8 flex items-center justify-center rounded-full text-buttonText-500 text-lg font-semibold avatar-background">
-                    {user?.username?.slice(0, 1)}
-                  </div>
-                )}
-                <div className="w-full mb-5">
-                  <span className="text-sm font-semibold text-textColor-500">
-                    {comment.user.username}
-                  </span>
-                  <p className="text-textColor-500">{comment.content}</p>
+
+      <ul className="space-y-3">
+        {comments.map((comment, i) => {
+          getAvatarBackgroundColor(comment.user.username);
+          return (
+            <li
+              key={i}
+              className="flex justify-start space-x-5 py-3 shadow-md p-3 shadow-pink-200 border bg-background-500/50 backdrop-blur-lg rounded"
+            >
+              {comment.user.photo ? (
+                <div className="w-20 h-20 ">
+                  <img
+                    src={
+                      comment.user.photo.includes("https://")
+                        ? comment.user.photo
+                        : `${import.meta.env.REACT_APP_SERVER_PATH}/${
+                            comment.user.photo
+                          }`
+                    }
+                    alt={comment.user.username}
+                    className="rounded-full"
+                  />
                 </div>
-              </li>
-            );
-          })}
-        </ul>
+              ) : (
+                <div className="w-20 h-20 flex items-center justify-center rounded-full text-buttonText-500 text-lg font-semibold avatar-background">
+                  {user?.username?.slice(0, 1)}
+                </div>
+              )}
+              <div className="w-full mb-5">
+                <span className="text-xl font-semibold text-textColor-500">
+                  {comment.user.username}
+                </span>
+                <div className="flex gap-5">
+                  <p className="text-textColor-500 flex gap-2 items-center">
+                    <FcCalendar className="text-xl" />
+                    {moment(new Date(comment?.createdAt)).format("LL")}
+                  </p>
+                  <p className="text-textColor-500 flex gap-2 items-center">
+                    <FcClock className="text-xl" />
+                    {moment(new Date(comment?.createdAt)).format("LT")}
+                  </p>
+                </div>
+                <p className="text-textColor-500 mt-3">{comment.content}</p>
+              </div>
+            </li>
+          );
+        })}
+      </ul>
+
+      {comments.length === 0 && (
+        <div className="border-t mt-5 border-black "></div>
       )}
-      <h2 className="text-xl blog-content-font text-textColor-500 font-bold mt-3">
+      <h2 className="text-2xl font-bold text-textColor-500 text-center mb-5 mt-5">
         Add your comment here
       </h2>
       {user ? (
-        <div className="flex flex-col space-x-2 border-b py-3 shadow-md p-5 mt-5">
+        <div className="flex flex-col space-x-2 border-b py-3 shadow-md p-5 mt-5 shadow-pink-200 border bg-background-500/50 backdrop-blur-lg rounded">
           <div className="flex gap-2 items-center">
             {user.photo ? (
-              <div className="w-8 h-8 ">
+              <div className="w-14 h-14 ">
                 <img
                   src={
                     user.photo.includes("https://")
@@ -112,11 +129,11 @@ const CommentSection = ({
                 />
               </div>
             ) : (
-              <div className="w-8 h-8 flex items-center justify-center rounded-full text-buttonText-500 text-lg font-semibold avatar-background">
+              <div className="w-14 h-14 flex items-start justify-center rounded-full text-buttonText-500 text-lg font-semibold avatar-background">
                 {user?.username?.slice(0, 1)}
               </div>
             )}
-            <span className="text-sm font-semibold text-textColor-500">
+            <span className="text-xl font-semibold text-textColor-500">
               {user.username}
             </span>
           </div>
@@ -149,7 +166,7 @@ const CommentSection = ({
           </div>
         </div>
       ) : (
-        <p className="text-sm">
+        <p className="text-xl text-center">
           <button
             onClick={() => setIsLoginModalOpen(true)}
             className="underline"

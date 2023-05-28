@@ -134,7 +134,7 @@ function RecentBlogsSlider() {
   // Data Fetching
   useEffect(() => {
     axios
-      .get("/blog")
+      .get("/blog?limit=6")
       .then((response) => {
         setData(response.data.blogs);
         postLogger({ level: "info", message: response });
