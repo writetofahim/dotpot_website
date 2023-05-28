@@ -3,7 +3,6 @@ import "slick-carousel/slick/slick.css";
 
 import axios from "axios";
 import { useEffect } from "react";
-import MessengerCustomerChat from "react-messenger-customer-chat";
 import { Route, Routes } from "react-router-dom";
 import AcceptCookiesPopup from "./components/AcceptCookiesPopup/AcceptCookiesPopup";
 import Confirmation from "./pages/Confirmation/Confirmation";
@@ -299,11 +298,11 @@ function App() {
           element={<CustomDevelopment />}
         />
       </Routes>
-      <MessengerCustomerChat
+      {/* <MessengerCustomerChat
         pageId="102704686073988"
         appId="1284351839140517"
         htmlRef="<REF_STRING>"
-      />
+      /> */}
     </div>
   );
 }
