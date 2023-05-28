@@ -9,56 +9,28 @@ It uses processLg and processSm images to display the process in diffrent breakp
 Tailwind css is used for styling
  */
 
-import React from "react";
-import processLg from "../../assets/img/processLg.png";
-import processSm from "../../assets/img/processSm.png";
-
-// export const ProcessCard = (props) => {
-//   return (
-//     <div className="bg-background-500 rounded-lg flex flex-col items-stretch justify-center p-10 shadow h-[350px] w-[100%] md:w-[40%] lg:w-[22%] md:min-w-[200px]">
-//       <div className="flex flex-col gap-5 items-center justify-center">
-//         <img
-//           src="https://www.hyperlinkinfosystem.com/assets/frontend_assets/img/about/app-development-ab.png"
-//           alt="app downloads"
-//         />
-//         <p className="text-xl font-bold text-center text-textColor-500">
-//           {props.title}
-//         </p>
-//         <p className="text-center">{props.desc}</p>
-//       </div>
-//     </div>
-//   );
-// };
+import React from 'react';
+import ProcessLg from './ProcessLg';
+import ProcessSm from './ProcessSm';
 
 const ProcessWeFollow = () => {
   return (
-    <div className="processWeFollow w-full overflow-hidden py-10 md:flex md:flex-col md:justify-center bg-primary-100">
+    <div className="processWeFollow w-full overflow-hidden pt-10 pb-40 md:flex md:flex-col md:justify-center bg-primary-100/50 backdrop-blur-sm">
       <div className="p-5 mt-5 w-full md:max-w-[1400px] self-center flex gap-10 flex-wrap items-center justify-center">
+        {/* Process heading */}
         <h2 className="text-3xl md:text-5xl text-center font-bold w-full mb-5 text-textColor-500">
           Process We Follow
         </h2>
-        {/* {
-                    processWeFollowData.map((item, index) => {
-                        return (
-                            <ProcessCard key={index} {...item} />
-                        )
-                    })
-                } */}
-        <img
-          src={processLg}
-          alt="process we follow"
-          className="md:w-3/4 lg:2/3 hidden md:block"
-        />
-        {/* <img
-          src="https://i.ibb.co/YhX6GyG/new-finl.gif"
-          alt=""
-          className="md:w-3/4 lg:2/3 hidden md:block"
-        /> */}
-        <img
-          src={processSm}
-          alt="process we follow"
-          className="block md:hidden"
-        />
+
+        {/* Process for large device */}
+        <div className="hidden lg:block">
+          <ProcessLg />
+        </div>
+
+        {/* process for small device */}
+        <div className="md:block lg:hidden">
+          <ProcessSm />
+        </div>
       </div>
     </div>
   );
