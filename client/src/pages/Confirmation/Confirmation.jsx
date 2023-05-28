@@ -123,9 +123,9 @@ const Confirmation = () => {
             Place you order here
           </h1>
           <div>
-            <h1 className="mb-3 font-bold text-xl text-textColor-500">
+            <h2 className="mb-3 font-bold text-xl text-textColor-500">
               You have selected
-            </h1>
+            </h2>
             {order.length === 0 && (
               <p className="">
                 <span className="text-red-500">No service selected! </span>
@@ -144,9 +144,9 @@ const Confirmation = () => {
               >
                 <div className="flex items-center gap-3 md:border-b-0 border-b-2 pb-2">
                   <img className="w-10" src={item.icon} alt={item.title} />
-                  <h1 className=" text-lg text-textColor-500 font-semibold">
+                  <h2 className=" text-lg text-textColor-500 font-semibold">
                     {item.title}
-                  </h1>
+                  </h2>
                 </div>
                 <div className="px-6 py-4">
                   <p className="text-textColor-500 text-lg">Technology</p>
@@ -309,7 +309,7 @@ const Options = ({ item }) => {
   return (
     <div className="flex items-center gap-2">
       <img src={item.icon} alt={item.title} className="w-5 h-5" />
-      <h1 className="text-textColor-500">{item.title}</h1>
+      <h2 className="text-textColor-500">{item.title}</h2>
       {/* <h2 className="text-textColor-500 font-bold ">{item.cost}</h2> */}
     </div>
   );

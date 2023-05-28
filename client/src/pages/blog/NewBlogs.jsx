@@ -31,12 +31,9 @@ const NewBlogs = ({ currentBlogId, isRelatedBlog }) => {
   return (
     <div className="">
       <span className="inline-block w-full h-1.5 bg-textColor-500 text-textColor-500"></span>
-      <h1
-        className="text-4xl font-bold mt-3 pb-5 text-textColor-500"
-        style={{ fontFamily: `Times New Roman` }}
-      >
+      <h2 className="text-4xl font-bold mt-3 pb-5 text-textColor-500">
         {isRelatedBlog ? "Related" : "Recent"} Blogs
-      </h1>
+      </h2>
       {data?.length === 0 && (
         <p className="text-textColor-500">No blogs found!</p>
       )}

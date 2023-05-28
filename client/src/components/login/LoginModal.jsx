@@ -70,9 +70,9 @@ const LoginModal = (props) => {
           <CancelIcon className="hover:text-red-400 cursor-pointer" />
         </div>
 
-        <h1 className="text-center text-6xl text-textColor-500 font-bold pt-5">
+        <h2 className="text-center text-6xl text-textColor-500 font-bold pt-5">
           SIGN IN
-        </h1>
+        </h2>
 
         <div className="relative flex items-center mt-8 ">
           <span className="absolute">

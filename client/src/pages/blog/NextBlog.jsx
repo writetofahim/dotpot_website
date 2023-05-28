@@ -29,12 +29,7 @@ const NextBlog = ({ currentBlogId }) => {
   return (
     <div key={blog._id} className={``}>
       <span className="inline-block w-full h-1.5 bg-textColor-500 text-textColor-500"></span>
-      <h1
-        className="text-4xl font-bold mt-3 mb-5 text-textColor-500"
-        style={{ fontFamily: `Times New Roman` }}
-      >
-        Next
-      </h1>
+      <h2 className="text-4xl font-bold mt-3 mb-5 text-textColor-500">Next</h2>
       <ReactVisibilitySensor partialVisibility key={blog._id}>
         {({ isVisible }) => (
           <div
