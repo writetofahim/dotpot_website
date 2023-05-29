@@ -113,9 +113,9 @@ export const SingleSlide = (props) => {
         </Stack>
         <p className="mt-2 text-white">{props.date}</p>
         <Link to={`/blog/${props.slug}`}>
-          <h1 className="text-xl font-bold text-gray-400 my-2 h-[80px] cursor-pointer">
-            {props.title.split(" ").slice(0, 8).join(" ")}
-          </h1>
+          <h2 className="text-xl font-bold text-gray-400 my-2 h-[80px] cursor-pointer">
+            {props.title.split(" ").slice(0, 5).join(" ")}...
+          </h2>
         </Link>
         <Link
           to={`/blog/${props.slug}`}
