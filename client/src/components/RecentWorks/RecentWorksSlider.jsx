@@ -119,11 +119,18 @@ export const SingleSlide = (props) => {
             ))}
         </div>
       </div>
-      <div className="mt-0 md:group-hover:translate-y-3 lg:translate-y-14 md:translate-y-10 translate-y-2 duration-300 custom-shadow lg:h-[250px] ">
+      {/* <div className="mt-0 md:group-hover:translate-y-3 lg:translate-y-14 md:translate-y-10 translate-y-2 duration-300 custom-shadow lg:h-[250px] ">
         <img
           src={`${import.meta.env.REACT_APP_SERVER_PATH}/${props.image}`}
           alt="recent works img"
-          className="rounded-tl-xl rounded-tr-xl aspect-[1.4] object-cover "
+          className="rounded-tl-xl rounded-tr-xl aspect-[1.4] object-contain "
+        />
+      </div> */}
+      <div className="mt-0 md:group-hover:translate-y-3 lg:translate-y-14 md:translate-y-10 translate-y-2 duration-300 custom-shadow lg:h-[220px]">
+        <img
+          src={`${import.meta.env.REACT_APP_SERVER_PATH}/${props.image}`}
+          alt="recent works img"
+          className="object-contain h-full w-full rounded-xl aspect-[1.4]"
         />
       </div>
     </div>

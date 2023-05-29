@@ -17,7 +17,7 @@ const EcommerceDevelopment = () => {
     {
       id: 1,
       title: "Overview",
-      description: `Dotpot IT offers budget-friendly <a href="https://www.shopify.com/blog/ecommerce-website-development" target="_blank" rel="nofollow">E-Commerce website development</a> services focused on user experience. Their team provides guidance throughout the process and post-launch support.`,
+      description: `Dotpot IT offers budget-friendly <a href="https://www.shopify.com/blog/ecommerce-website-development" target="_blank" rel="nofollow">E-Commerce website development</a> services focused on user experience. Our team provides guidance throughout the process and post-launch support.`,
       illustration: ecomovervoew,
     },
     {

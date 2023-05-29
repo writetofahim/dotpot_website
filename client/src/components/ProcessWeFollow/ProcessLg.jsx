@@ -9,7 +9,7 @@ const ProcessLg = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentDiv((prevDiv) => (prevDiv + 1) % 8);
-        }, 2000);
+        }, 1000);
 
         return () => {
             clearInterval(interval);
@@ -20,7 +20,7 @@ const ProcessLg = () => {
         setShowBorder(true);
         const timeout = setTimeout(() => {
             setShowBorder(false);
-        }, 10000);
+        }, 5000);
 
         return () => {
             clearTimeout(timeout);
@@ -35,22 +35,29 @@ const ProcessLg = () => {
                 <div className="w-32 h-32 rounded-full bg-background-500 shadow-lg flex flex-col items-center justify-center relative">
                     {currentDiv != 0 && (
                         <div
-                            className="absolute -top-2 -left-2 -right-2 -bottom-2 border-primary-500 border-2 rounded-full"
+                            className="absolute -top-2 -left-2 -right-2 -bottom-2 border-primary-500 border-8 rounded-full"
                         ></div>
                     )}
-
                     {currentDiv === 0 && (
                         <div
-                            className="absolute -top-2 -left-2 -right-2 -bottom-2 border-primary-500 border-b-4 rounded-full animate-spin"
+                            className="absolute -top-2 -left-2 -right-2 -bottom-2 border-primary-500 border-b-8 border-t-8 rounded-full animate-spin"
                             ref={spinRef}
                         ></div>
                     )}
+
                     <img
                         src="https://i.ibb.co/XSRGRLd/requirements.gif"
                         alt="Requirements Gathering Image"
                         className="w-12 h-12"
                     />
-                    <h2 className="text-center text-sm text-textColor-500">Requirements Gathering</h2>
+
+                    {currentDiv != 0 && (
+                        <h2 className="text-center text-sm text-textColor-500">Requirements Gathering</h2>
+                    )}
+                    {currentDiv === 0 && (
+                        <h2 className="text-center text-sm text-textColor-500 animate-pulse">Requirements Gathering</h2>
+                    )}
+
                     {currentDiv === 0 && (
                         <div className="absolute -right-4 -bottom-1 animate-bounce font-extrabold text-xl text-secondary-500">
                             <BsArrowDownRight />
@@ -63,13 +70,13 @@ const ProcessLg = () => {
                     className="w-32 h-32 rounded-full bg-background-500 shadow-lg flex flex-col items-center justify-center  translate-y-full relative">
                     {currentDiv != 1 && (
                         <div
-                            className="absolute -top-2 -left-2 -right-2 -bottom-2 border-secondary-500 border-2 rounded-full"
+                            className="absolute -top-2 -left-2 -right-2 -bottom-2 border-secondary-500 border-8 rounded-full"
                         ></div>
                     )}
 
                     {currentDiv === 1 && (
                         <div
-                            className="absolute -top-2 -left-2 -right-2 -bottom-2 border-secondary-500 border-b-4 rounded-full animate-spin"
+                            className="absolute -top-2 -left-2 -right-2 -bottom-2 border-secondary-500 border-b-8 border-t-8 rounded-full animate-spin"
                             ref={spinRef}
                         ></div>
                     )}
@@ -78,7 +85,12 @@ const ProcessLg = () => {
                         alt="UI/UX Design Image"
                         className="w-12 h-12"
                     />
-                    <h2 className="text-center text-sm text-textColor-500">UI/UX Design</h2>
+                    {currentDiv != 1 && (
+                        <h2 className="text-center text-sm text-textColor-500">UI/UX Design</h2>
+                    )}
+                    {currentDiv === 1 && (
+                        <h2 className="text-center text-sm text-textColor-500 animate-pulse">UI/UX Design</h2>
+                    )}
                     {currentDiv === 1 && (
                         <div className="absolute -right-4 -top-1 animate-bounce font-extrabold text-xl text-primary-500">
                             <BsArrowUpRight />
@@ -90,13 +102,13 @@ const ProcessLg = () => {
                 <div className="w-32 h-32 rounded-full bg-background-500 shadow-lg flex flex-col items-center justify-center relative">
                     {currentDiv != 2 && (
                         <div
-                            className="absolute -top-2 -left-2 -right-2 -bottom-2 border-primary-500 border-2 rounded-full"
+                            className="absolute -top-2 -left-2 -right-2 -bottom-2 border-primary-500 border-8 rounded-full"
                         ></div>
                     )}
 
                     {currentDiv === 2 && (
                         <div
-                            className="absolute -top-2 -left-2 -right-2 -bottom-2 border-primary-500 border-b-4 rounded-full animate-spin"
+                            className="absolute -top-2 -left-2 -right-2 -bottom-2 border-primary-500 border-b-8 border-t-8 rounded-full animate-spin"
                             ref={spinRef}
                         ></div>
                     )}
@@ -105,7 +117,12 @@ const ProcessLg = () => {
                         alt="Prototype Build Image"
                         className="w-12 h-12"
                     />
-                    <h2 className="text-center text-sm text-textColor-500">Prototype <br></br> Build</h2>
+                    {currentDiv != 2 && (
+                        <h2 className="text-center text-sm text-textColor-500">Prototype <br></br> Build</h2>
+                    )}
+                    {currentDiv === 2 && (
+                        <h2 className="text-center text-sm text-textColor-500 animate-pulse">Prototype <br></br> Build</h2>
+                    )}
                     {currentDiv === 2 && (
                         <div className="absolute -right-4 -bottom-1 animate-bounce font-extrabold text-xl text-secondary-500">
                             <BsArrowDownRight />
@@ -117,13 +134,13 @@ const ProcessLg = () => {
                 <div className="w-32 h-32 rounded-full bg-background-500 shadow-lg flex flex-col items-center justify-center  translate-y-full relative">
                     {currentDiv != 3 && (
                         <div
-                            className="absolute -top-2 -left-2 -right-2 -bottom-2 border-secondary-500 border-2 rounded-full"
+                            className="absolute -top-2 -left-2 -right-2 -bottom-2 border-secondary-500 border-8 rounded-full"
                         ></div>
                     )}
 
                     {currentDiv === 3 && (
                         <div
-                            className="absolute -top-2 -left-2 -right-2 -bottom-2 border-secondary-500 border-b-4 rounded-full animate-spin"
+                            className="absolute -top-2 -left-2 -right-2 -bottom-2 border-secondary-500 border-b-8 border-t-8 rounded-full animate-spin"
                             ref={spinRef}
                         ></div>
                     )}
@@ -132,7 +149,12 @@ const ProcessLg = () => {
                         alt="Web/Mobile App Development Image"
                         className="w-12 h-12"
                     />
-                    <h2 className="text-center text-sm text-textColor-500">Development</h2>
+                    {currentDiv != 3 && (
+                        <h2 className="text-center text-sm text-textColor-500">Development</h2>
+                    )}
+                    {currentDiv === 3 && (
+                        <h2 className="text-center text-sm text-textColor-500 animate-pulse">Development</h2>
+                    )}
                     {currentDiv === 3 && (
                         <div className="absolute -right-4 -top-1 animate-bounce font-extrabold text-xl text-primary-500">
                             <BsArrowUpRight />
@@ -144,13 +166,13 @@ const ProcessLg = () => {
                 <div className="w-32 h-32 rounded-full bg-background-500 shadow-lg flex flex-col items-center justify-center relative">
                     {currentDiv != 4 && (
                         <div
-                            className="absolute -top-2 -left-2 -right-2 -bottom-2 border-primary-500 border-2 rounded-full"
+                            className="absolute -top-2 -left-2 -right-2 -bottom-2 border-primary-500 border-8 rounded-full"
                         ></div>
                     )}
 
                     {currentDiv === 4 && (
                         <div
-                            className="absolute -top-2 -left-2 -right-2 -bottom-2 border-primary-500 border-b-4 rounded-full animate-spin"
+                            className="absolute -top-2 -left-2 -right-2 -bottom-2 border-primary-500 border-b-8 border-t-8 rounded-full animate-spin"
                             ref={spinRef}
                         ></div>
                     )}
@@ -159,7 +181,13 @@ const ProcessLg = () => {
                         alt="Quality Assurance Image"
                         className="w-12 h-12"
                     />
-                    <h2 className="text-center text-sm text-textColor-500">Quality <br></br> Assurance</h2>
+                    {currentDiv != 4 && (
+                        <h2 className="text-center text-sm text-textColor-500">Quality <br></br> Assurance</h2>
+                    )}
+                    {currentDiv === 4 && (
+                        <h2 className="text-center text-sm text-textColor-500 animate-pulse">Quality <br></br> Assurance</h2>
+                    )}
+                    <h2 className="text-center text-sm text-textColor-500"></h2>
                     {currentDiv === 4 && (
                         <div className="absolute -right-4 -bottom-1 animate-bounce font-extrabold text-xl text-secondary-500">
                             <BsArrowDownRight />
@@ -171,13 +199,13 @@ const ProcessLg = () => {
                 <div className="w-32 h-32 rounded-full bg-background-500 shadow-lg flex flex-col items-center justify-center  translate-y-full relative">
                     {currentDiv != 5 && (
                         <div
-                            className="absolute -top-2 -left-2 -right-2 -bottom-2 border-secondary-500 border-2 rounded-full"
+                            className="absolute -top-2 -left-2 -right-2 -bottom-2 border-secondary-500 border-8 rounded-full"
                         ></div>
                     )}
 
                     {currentDiv === 5 && (
                         <div
-                            className="absolute -top-2 -left-2 -right-2 -bottom-2 border-secondary-500 border-b-4 rounded-full animate-spin"
+                            className="absolute -top-2 -left-2 -right-2 -bottom-2 border-secondary-500 border-b-8 border-t-8 rounded-full animate-spin"
                             ref={spinRef}
                         ></div>
                     )}
@@ -186,7 +214,12 @@ const ProcessLg = () => {
                         alt="Testing Image"
                         className="w-12 h-12"
                     />
-                    <h2 className="text-center text-sm text-textColor-500">Testing</h2>
+                    {currentDiv != 5 && (
+                        <h2 className="text-center text-sm text-textColor-500">Testing</h2>
+                    )}
+                    {currentDiv === 5 && (
+                        <h2 className="text-center text-sm text-textColor-500 animate-pulse">Testing</h2>
+                    )}
                     {currentDiv === 5 && (
                         <div className="absolute -right-4 -top-1 animate-bounce font-extrabold text-xl text-primary-500">
                             <BsArrowUpRight />
@@ -198,13 +231,13 @@ const ProcessLg = () => {
                 <div className="w-32 h-32 rounded-full bg-background-500 shadow-lg flex flex-col items-center justify-center relative">
                     {currentDiv != 6 && (
                         <div
-                            className="absolute -top-2 -left-2 -right-2 -bottom-2 border-primary-500 border-2 rounded-full"
+                            className="absolute -top-2 -left-2 -right-2 -bottom-2 border-primary-500 border-8 rounded-full"
                         ></div>
                     )}
 
                     {currentDiv === 6 && (
                         <div
-                            className="absolute -top-2 -left-2 -right-2 -bottom-2 border-primary-500 border-b-4 rounded-full animate-spin"
+                            className="absolute -top-2 -left-2 -right-2 -bottom-2 border-primary-500 border-b-8 border-t-8 rounded-full animate-spin"
                             ref={spinRef}
                         ></div>
                     )}
@@ -213,7 +246,12 @@ const ProcessLg = () => {
                         alt="Deployment Image"
                         className="w-12 h-12"
                     />
-                    <h2 className='text-center text-sm text-textColor-500'>Deployment</h2>
+                    {currentDiv != 6 && (
+                        <h2 className="text-center text-sm text-textColor-500">Deployment</h2>
+                    )}
+                    {currentDiv === 6 && (
+                        <h2 className="text-center text-sm text-textColor-500 animate-pulse">Deployment</h2>
+                    )}
                     {currentDiv === 6 && (
                         <div className="absolute -right-4 -bottom-1 animate-bounce font-extrabold text-xl text-secondary-500">
                             <BsArrowDownRight />
@@ -225,13 +263,13 @@ const ProcessLg = () => {
                 <div className="w-32 h-32 rounded-full bg-background-500 shadow-lg flex flex-col items-center justify-center  translate-y-full relative">
                     {currentDiv != 7 && (
                         <div
-                            className="absolute -top-2 -left-2 -right-2 -bottom-2 border-secondary-500 border-2 rounded-full"
+                            className="absolute -top-2 -left-2 -right-2 -bottom-2 border-secondary-500 border-8 rounded-full"
                         ></div>
                     )}
 
                     {currentDiv === 7 && (
                         <div
-                            className="absolute -top-2 -left-2 -right-2 -bottom-2 border-secondary-500 border-b-4 rounded-full animate-spin"
+                            className="absolute -top-2 -left-2 -right-2 -bottom-2 border-secondary-500 border-b-8 border-t-8 rounded-full animate-spin"
                             ref={spinRef}
                         ></div>
                     )}
@@ -240,7 +278,12 @@ const ProcessLg = () => {
                         alt="Support & Maintenance Image"
                         className="w-12 h-12"
                     />
-                    <h2 className="text-center text-sm text-textColor-500">Support & Maintenance</h2>
+                    {currentDiv != 7 && (
+                        <h2 className="text-center text-sm text-textColor-500">Support & Maintenance</h2>
+                    )}
+                    {currentDiv === 7 && (
+                        <h2 className="text-center text-sm text-textColor-500 animate-pulse">Support & Maintenance</h2>
+                    )}
                 </div>
             </div>
         </div>
