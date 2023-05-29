@@ -190,7 +190,7 @@ const ProcessSm = () => {
                         className="w-12 h-12"
                     />
                     <h2 className="text-center text-sm text-textColor-500">Testing</h2>
-                    {currentDiv === 1 && (
+                    {currentDiv === 5 && (
                         <div className="absolute -bottom-12 left-1/2 animate-bounce font-extrabold text-xl text-primary-500">
                             <AiOutlineArrowDown />
                         </div>
