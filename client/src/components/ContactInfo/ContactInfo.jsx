@@ -25,9 +25,24 @@ const ContactInfo = () => {
 
   return (
     <section className="text-gray-600 body-font mt-10">
-      <h2 className="text-3xl md:text-5xl text-center font-extrabold pt-10 block backdrop-blur-sm text-textColor-500">
-        Reach us On
-      </h2>
+      <div className=" bg-[url(https://6amtech.com/wp-content/uploads/2023/03/Group-1597883190-scaled.webp)] bg-cover bg-no-repeat md:h-[300px] flex items-center justify-center mb-10">
+        <div className="w-full p-3">
+          <div className="container mx-auto border-2 border-white rounded-md backdrop-blur-3xl py-10 shadow-lg shadow-pink-200 flex items-center justify-center ">
+            <div className="flex flex-col items-center px-2">
+              <h2 className="md:text-5xl text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 pb-3">
+                Reach us On
+              </h2>
+              <p className="text-center text-textColor-500 md:text-3xl text-xl  ">
+                Seamless Communication for Limitless{" "}
+                <span className="text-secondary-500">Opportunities</span>
+              </p>
+              <p className="text-center">
+                Bridge the Gap, Embrace Collaboration.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="container px-5 py-24 mx-auto flex flex-col-reverse md:flex-row flex-wrap gap-10 md:gap-0">
         <div className="lg:w-1/2 w-full mb-10 lg:mb-0 rounded-lg overflow-hidden bg-background-500">
           {/* <iframe
