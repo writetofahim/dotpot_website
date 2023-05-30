@@ -74,7 +74,7 @@ exports.register = async (req, res) => {
         console.log(error);
         return res
           .status(500)
-          .json({ success: false, message: "Email was not not sent" });
+          .json({ success: false, message: "Email was not sent" });
       }
       console.log(info);
       res.json({ token, user: rest });
@@ -221,7 +221,7 @@ exports.googleSignup = async (req, res) => {
           console.log(error);
           return res
             .status(500)
-            .json({ success: false, message: "Email was not not sent" });
+            .json({ success: false, message: "Email was not sent" });
         }
         console.log(info);
         res.json({ token, user: rest });
