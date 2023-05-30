@@ -1,6 +1,7 @@
 const Blog = require("../models/Blog");
 const { removeFile } = require("../utilities/removeFile");
 const mongoose = require("mongoose");
+const generateSitemap = require("../utilities/sitemapUtils");
 
 /**
  * Controller function to retrieve a paginated list of all blogs
@@ -67,6 +68,7 @@ const createBlog = async (req, res) => {
   try {
     const blog = new Blog(req.body);
     await blog.save();
+    await generateSitemap();
     res.status(201).json(blog);
   } catch (err) {
     console.log(err);
@@ -91,6 +93,7 @@ const updateBlog = async (req, res) => {
     if (!blog) {
       return res.status(404).send("Blog post not found");
     }
+    await generateSitemap();
     res.json(blog);
   } catch (err) {
     console.log(err);
@@ -139,6 +142,7 @@ const deleteBlog = async (req, res) => {
     if (!blog) {
       return res.status(404).send("Blog post not found");
     }
+    await generateSitemap();
     res.json(blog);
   } catch (err) {
     console.log(err);

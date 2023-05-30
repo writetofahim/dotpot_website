@@ -23,6 +23,7 @@ import CommonModal from "../CommonModal/CommonModal";
 import LoginModal from "../../pages/lgoin/LoginModal";
 import CommonSnackbar from "../CommonSnackbar/CommonSnackbar";
 import Submenu from "./Submenu";
+import UserMenu from "./UserMenu";
 
 const Navbar = (props) => {
   const { user, login, error, logout } = useContext(AuthContext);
@@ -452,7 +453,7 @@ const Navbar = (props) => {
                     isActive
                       ? "lg:text-secondary-400 text-white"
                       : "lg:text-gray-400 "
-                  } mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-secondary-400`}
+                  } mx-4 cursor-pointer uppercase font-bold  text-md hover:scale-110 hover:text-secondary-400`}
                 >
                   Home
                 </span>
@@ -465,7 +466,7 @@ const Navbar = (props) => {
                     isActive
                       ? "lg:text-secondary-400 text-white"
                       : "lg:text-gray-400 "
-                  } mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-secondary-400`}
+                  } mx-4 cursor-pointer uppercase font-bold  text-md hover:scale-110 hover:text-secondary-400`}
                 >
                   About Us
                 </li>
@@ -474,7 +475,7 @@ const Navbar = (props) => {
             <div className={"relative w-max"}>
               <li
                 ref={serviceButtonRef}
-                className={` mx-4 cursor-pointer uppercase font-bold text-lg hover:scale-110 lg:text-gray-400 hover:text-secondary-400 flex gap-2 items-center ${
+                className={` mx-4 cursor-pointer uppercase font-bold text-md hover:scale-110 lg:text-gray-400 hover:text-secondary-400 flex gap-2 items-center ${
                   isServiceActive && "lg:text-secondary-400 text-white"
                 }`}
                 onClick={() => setIsSubmenuOpen((p) => !p)}
@@ -509,27 +510,6 @@ const Navbar = (props) => {
                       setIsSubmenuOpen={setIsSubmenuOpen}
                       setIsDropDownOpen={setIsDropDownOpen}
                     />
-                    {/* <div
-                    onClick={() => {
-                      navigate(service.to);
-                    }}
-                    className="w-full hover:text-secondary-400 font-[600] flex items-center gap-2"
-                  >
-                    {service.title} <IoIosArrowForward />
-                  </div>
-                  <div className="group-hover/item:flex duration-500 h-0 transition-all group-hover/item:h-max flex-col gap-2 hidden absolute -top-2 lg:left-[285px] bg-background-500 p-3 rounded-md shadow-xl">
-                    {service?.submenu?.map((item, i) => (
-                      <Link
-                        key={i}
-                        to={item.to}
-                        className="w-[200px] hover:text-secondary-400 flex gap-2 items-center"
-                      >
-                        {" "}
-                        <img className="w-4" src={item.icon} alt="" />{" "}
-                        {item.title}
-                      </Link>
-                    ))}
-                  </div> */}
                   </div>
                 ))}
               </div>
@@ -541,7 +521,7 @@ const Navbar = (props) => {
                     isActive
                       ? "lg:text-secondary-400 text-white"
                       : "lg:text-gray-400 "
-                  } mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-secondary-400`}
+                  } mx-4 cursor-pointer uppercase font-bold  text-md hover:scale-110 hover:text-secondary-400`}
                   onClick={() => setToggleMenu(false)}
                 >
                   Contact
@@ -555,7 +535,7 @@ const Navbar = (props) => {
                     isActive
                       ? "lg:text-secondary-400 text-white"
                       : "lg:text-gray-400 "
-                  } mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-secondary-400`}
+                  } mx-4 cursor-pointer uppercase font-bold  text-md hover:scale-110 hover:text-secondary-400`}
                   onClick={() => setToggleMenu(false)}
                 >
                   Blog
@@ -565,28 +545,23 @@ const Navbar = (props) => {
 
             {/* adding team nav as per asif sir */}
 
-            {/* <li className="mx-4 cursor-pointer uppercase font-bold  text-lg hover:scale-110 hover:text-secondary-400 lg:text-gray-400">
+            {/* <li className="mx-4 cursor-pointer uppercase font-bold  text-md hover:scale-110 hover:text-secondary-400 lg:text-gray-400">
                   <a href="#team">Team</a>
                 </li> */}
 
             {!user ? (
               <li
-                className="mx-4 cursor-pointer uppercase text-white font-bold lg:text-gray-400 text-lg hover:scale-110 hover:text-secondary-400"
+                className="mx-4 cursor-pointer uppercase text-white font-bold lg:text-gray-400 text-md hover:scale-110 hover:text-secondary-400"
                 onClick={() => setIsLoginModalOpen(true)}
               >
                 Login
               </li>
             ) : (
-              <li
-                className="mx-4 cursor-pointer uppercase text-white font-bold lg:text-gray-400 text-lg hover:scale-110 hover:text-secondary-400"
-                onClick={() => setOpen(true)}
-              >
-                Logout
-              </li>
+              <UserMenu isLogoutModalOpen={setOpen} user={user} />
             )}
 
             <Link to="/apply" target="_blank">
-              <li className="bg-secondary-400 py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-secondary-500 lg:text-buttonText-500">
+              <li className="bg-secondary-400 py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-secondary-500 lg:text-buttonText-500 text-md">
                 Apply For Jobs
               </li>
             </Link>
@@ -681,7 +656,7 @@ const Navbar = (props) => {
                   ))}
                   <Link to="/services">
                     <li
-                      className="mx-4 cursor-pointer uppercase text-gray lg:text-gray-400 text-lg font-bold mt-3"
+                      className="mx-4 cursor-pointer uppercase text-gray lg:text-gray-400 text-md font-bold mt-3"
                       onClick={() => setToggleMenu(false)}
                     >
                       Get A Quote{" "}

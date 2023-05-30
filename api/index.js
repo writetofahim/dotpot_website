@@ -166,10 +166,12 @@ app.use("*.css", (req, res, next) => {
 
 // swagger doc
 const { swaggerServe, swaggerSetup } = require("./config");
+const generateSitemap = require("./utilities/sitemapUtils");
 app.use("/api-docs", swaggerServe, swaggerSetup);
 
 const port = 8800;
 
 server.listen(port, () => {
   console.log("Backend server is running! on port ", port);
+  generateSitemap();
 });
