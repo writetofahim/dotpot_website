@@ -21,7 +21,7 @@ import axios from "../../utils/axiosInstance";
 import CommonModal from "../CommonModal/CommonModal";
 // import LoginModal from "../login/LoginModal";
 import LoginModal from "../../pages/lgoin/LoginModal";
-import CommonSnackbar from "../CommonSnackbar/CommonSnackbar";
+import LoginSuccessModal from "../../pages/lgoin/LoginSuccessModal";
 import Submenu from "./Submenu";
 import UserMenu from "./UserMenu";
 
@@ -43,6 +43,22 @@ const Navbar = (props) => {
 
   const serviceButtonRef = useRef(null);
   const serviceSubmenuDiv = useRef(null);
+
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.pageYOffset);
+    };
+
+    // Attach the event listener to the scroll event
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     axios.get("/info").then((response) => {
@@ -410,14 +426,18 @@ const Navbar = (props) => {
       )}
 
       {isLoginSuccess && (
-        <CommonSnackbar
+        <LoginSuccessModal
           message={"Login Successful!"}
           open={isLoginSuccess}
           setOpen={setIsLoginSuccess}
         />
       )}
 
-      <div className="w-full flex items-center justify-center fixed z-50 bg-background-500">
+      <div
+        className={`w-full flex items-center justify-center fixed z-50 bg-background-500 duration-500 ${
+          scrollY > 300 && "shadow-lg"
+        }`}
+      >
         <nav
           className="container flex justify-between items-center p-4 z-999"
           id="nav"
@@ -557,7 +577,9 @@ const Navbar = (props) => {
                 Login
               </li>
             ) : (
-              <UserMenu isLogoutModalOpen={setOpen} user={user} />
+              <li className="mx-4 ">
+                <UserMenu isLogoutModalOpen={setOpen} user={user} />
+              </li>
             )}
 
             <Link to="/apply" target="_blank">
@@ -687,15 +709,12 @@ const Navbar = (props) => {
                     Login
                   </li>
                 ) : (
-                  <li
-                    className="mx-4 cursor-pointer uppercase text-gray lg:text-gray-400 text-xl font-bold mt-3"
-                    onClick={() => setOpen(true)}
-                  >
-                    Logout
+                  <li className="mx-4 mt-2">
+                    <UserMenu isLogoutModalOpen={setOpen} user={user} />
                   </li>
                 )}
                 <Link to="/apply" target="_blank">
-                  <li className="bg-primary-500 py-2 px-7 mx-4 mt-5 rounded-full cursor-pointer text-white">
+                  <li className="bg-secondary-500 py-2 px-7 mx-4 mt-5 rounded-full cursor-pointer text-white">
                     Apply For Jobs
                   </li>
                 </Link>

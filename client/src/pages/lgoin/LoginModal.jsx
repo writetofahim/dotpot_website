@@ -3,10 +3,10 @@ import React, { useContext, useEffect, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
 import { RxCross1 } from "react-icons/rx";
 import { Link } from "react-router-dom";
-import CommonSnackbar from "../../components/CommonSnackbar/CommonSnackbar";
 import { AuthContext } from "../../contexts/AuthContext";
 import axios from "../../utils/axiosInstance";
 import postLogger from "../../utils/postLogger";
+import LoginSuccessModal from "./LoginSuccessModal";
 
 const LoginModal = ({ setLoginModelOpen, setIsLoginSuccess }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -82,8 +82,11 @@ const LoginModal = ({ setLoginModelOpen, setIsLoginSuccess }) => {
 
   return (
     <div className="fixed w-full h-screen top-0 left-0 bg-black/80 backdrop-blur-sm z-[99999]">
-      {open && (
+      {/* {open && (
         <CommonSnackbar message={message} open={open} setOpen={setOpen} />
+      )} */}
+      {open && (
+        <LoginSuccessModal message={message} open={open} setOpen={setOpen} />
       )}
       <section className=" flex items-center justify-center">
         <div className="container min-h-[100vh] flex items-center justify-center p-5 relative">
