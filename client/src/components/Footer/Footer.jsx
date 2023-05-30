@@ -85,7 +85,7 @@ const Footer = () => {
       setCompanyInfo(response.data[0]);
       // console.log(response.data[0]);
     });
-    return () => {};
+    return () => { };
   }, []);
 
   useEffect(() => {
@@ -106,30 +106,31 @@ const Footer = () => {
           <div className="md:col-span-2 lg:col-span-1 w-full text-gray-200">
             <Link to="/">
               <img
-                src={`${import.meta.env.REACT_APP_SERVER_PATH}/${
-                  companyInfo.secondary_logo
-                }`}
+                src={`${import.meta.env.REACT_APP_SERVER_PATH}/${companyInfo.secondary_logo
+                  }`}
                 alt="Dotpot iT Logo"
                 className="w-[250px]"
               />
             </Link>
             {/* <p className="mb-3 ml-3">Help Business Successful Online</p> */}
-            <p>Dotpot iT</p>
-            <p>House-1, Road-3, Block-A</p>
-            <p>Mirpur-10, Dhaka, Bangladesh</p>
+            <h2>Dotpot iT</h2>
+            <a href="https://www.google.com/maps/search/House-1,+Road-3,+Block-A,+Mirpur-10,+Dhaka,+Bangladesh/@23.8089482,90.3534604,15z/data=!3m1!4b1?entry=ttu" target="_blank">House-1, Road-3, Block-A, <br></br> Mirpur-10, Dhaka, Bangladesh</a>
+            <br />
             <br />
             <p>
               <strong>Phone:</strong>
             </p>
-            <p>+880 1817 176 192</p>
+            <a href="tel:+8801817176192">+880 1817 176 192</a>
+            <br />
+            <br />
             <p>
               <strong>Emails:</strong>{" "}
             </p>
-            <p>help@dotpotit.com</p>
-            <p> hr@dotpotit.com</p>
-            {/* <p className="text-buttonText-500"> sales@dotpotit.com</p> */}
-            <p> marketing@dotpotit.com</p>
-            {/* <p className="text-buttonText-500"> career@dotpotit.com</p> */}
+            <a href="mailto:help@dotpotit.com">help@dotpotit.com</a><br />
+            <a href="mailto:hr@dotpotit.com">hr@dotpotit.com</a><br />
+            <a href="mailto:marketing@dotpotit.com">marketing@dotpotit.com</a>
+            {/* <a href="mailto:sales@dotpotit.com">sales@dotpotit.com</a> */}
+            {/* <a href="mailto:career@dotpotit.com">career@dotpotit.com</a> */}
             <div className="flex gap-4 mt-5 items-center">
               {socialLinks.map((link, i) => (
                 <a
@@ -170,9 +171,8 @@ const Footer = () => {
         <div className="md:hidden block w-full text-buttonText-500">
           <Link to="/">
             <img
-              src={`${import.meta.env.REACT_APP_SERVER_PATH}/${
-                companyInfo.secondary_logo
-              }`}
+              src={`${import.meta.env.REACT_APP_SERVER_PATH}/${companyInfo.secondary_logo
+                }`}
               alt="Dotpot iT Logo"
               className="w-4/5"
             />
