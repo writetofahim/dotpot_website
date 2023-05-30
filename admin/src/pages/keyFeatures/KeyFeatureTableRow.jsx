@@ -46,7 +46,7 @@ const KeyFeatureTableRow = ({ keyFeature, setData, data }) => {
         <div className="flex gap-3">
           <AiOutlineEdit
             onClick={() => {
-              navigate(`/admin/key-features/add-key-feature?id=${_id}`);
+              navigate(`/key-features/add-key-feature?id=${_id}`);
               console.log("clicked");
             }}
             className="text-violet-500 cursor-pointer"

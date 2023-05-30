@@ -52,8 +52,7 @@ const WorkTableRow = ({ work, setData, data }) => {
         <div className="flex gap-3">
           <AiOutlineEdit
             onClick={() => {
-              navigate(`/admin/works/add-works?id=${_id}`);
-              console.log("clicked");
+              navigate(`/works/add-works?id=${_id}`);
             }}
             className="text-violet-500 cursor-pointer"
           />

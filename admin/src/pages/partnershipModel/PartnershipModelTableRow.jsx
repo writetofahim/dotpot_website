@@ -40,9 +40,7 @@ const PartnershipModelTableRow = ({ partner, setData, data }) => {
         <div className="flex gap-3">
           <AiOutlineEdit
             onClick={() =>
-              navigate(
-                `/admin/partnership-model/add-partnership-model?id=${_id}`
-              )
+              navigate(`/partnership-model/add-partnership-model?id=${_id}`)
             }
             className="text-violet-500 cursor-pointer"
           />

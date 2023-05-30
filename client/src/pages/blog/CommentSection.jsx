@@ -28,7 +28,10 @@ const CommentSection = ({
       })
       .then((response) => {
         const { comment } = response.data;
-        setComments([...comments, { user, content: comment.content }]);
+        setComments([
+          ...comments,
+          { user, content: comment.content, createdAt: new Date() },
+        ]);
         setContent("");
       })
       .catch((error) => console.error(error));
@@ -82,11 +85,11 @@ const CommentSection = ({
                   />
                 </div>
               ) : (
-                <div className="w-20 h-20 flex items-center justify-center rounded-full text-buttonText-500 text-lg font-semibold avatar-background">
+                <div className="w-20 h-20 flex items-center justify-center rounded-full text-buttonText-500 text-5xl uppercase font-semibold avatar-background">
                   {user?.username?.slice(0, 1)}
                 </div>
               )}
-              <div className="w-full mb-5">
+              <div className="flex-1 w-full mb-5">
                 <span className="text-xl font-semibold text-textColor-500">
                   {comment.user.username}
                 </span>
@@ -129,7 +132,7 @@ const CommentSection = ({
                 />
               </div>
             ) : (
-              <div className="w-14 h-14 flex items-start justify-center rounded-full text-buttonText-500 text-lg font-semibold avatar-background">
+              <div className="w-14 h-14 flex items-center justify-center rounded-full text-buttonText-500 text-4xl uppercase font-semibold avatar-background ">
                 {user?.username?.slice(0, 1)}
               </div>
             )}

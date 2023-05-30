@@ -47,7 +47,7 @@ const TeamTableRow = ({ teamMember, setData, data }) => {
         <div className="flex gap-3">
           <AiOutlineEdit
             onClick={() => {
-              navigate(`/admin/team/add-team?id=${_id}`);
+              navigate(`/team/add-team?id=${_id}`);
               console.log("clicked");
             }}
             className="text-violet-500 cursor-pointer"

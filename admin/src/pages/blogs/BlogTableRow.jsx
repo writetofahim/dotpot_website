@@ -68,7 +68,7 @@ const TableRow = ({ blog, setData, data }) => {
       <td className="px-6 py-2 ">
         <div className="flex gap-3">
           <AiOutlineEdit
-            onClick={() => navigate(`/admin/blogs/add-blogs?id=${_id}`)}
+            onClick={() => navigate(`/blogs/add-blogs?id=${_id}`)}
             className="text-violet-500 cursor-pointer"
           />
           <RiDeleteBinLine

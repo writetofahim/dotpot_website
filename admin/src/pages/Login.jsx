@@ -12,7 +12,7 @@ const Login = () => {
   // use the useNavigate hook to get the navigate function
   const location = useLocation();
 
-  const from = location.state?.from?.pathname || "/admin";
+  const from = location.state?.from?.pathname || "/";
 
   useEffect(() => {
     if (user && !loading) {

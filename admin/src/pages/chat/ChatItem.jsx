@@ -44,7 +44,7 @@ const ChatItem = ({ chat, getChatList, setSelectedChatId, selectedChatId }) => {
     });
     getChatList();
     setSelectedChatId(null);
-    navigate("/admin/chat");
+    navigate("/chat");
   };
 
   return (

@@ -86,7 +86,7 @@ const AllContactCenterService = () => {
                   <AiOutlineEdit
                     onClick={() => {
                       navigate(
-                        `/admin/contact-center-service/add-contact-center-service?id=${service._id}`
+                        `/contact-center-service/add-contact-center-service?id=${service._id}`
                       );
                       console.log("clicked");
                     }}

@@ -116,7 +116,7 @@ const SingleBlog = () => {
 
         <meta
           name="description"
-          content={`${slicedString} Read more at http://dotpotit.com/blog/${data?.url}.`}
+          content={`${slicedString} Read more at http://dotpotit.com/blog/${data?.slug}.`}
         />
         <meta
           name="keywords"

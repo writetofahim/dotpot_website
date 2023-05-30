@@ -54,13 +54,13 @@ function App() {
   const { user, logout } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    navigate(location?.pathname === "/" ? "/admin" : location?.pathname);
-  }, []);
+  // useEffect(() => {
+  //   navigate(location?.pathname === "/" ? "/admin" : location?.pathname);
+  // }, []);
 
   useEffect(() => {
     if (!user) {
-      navigate("/admin/login");
+      navigate("/login");
     }
 
     document.querySelector("html").style.scrollBehavior = "auto";
@@ -86,105 +86,102 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/admin/login" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route
           exact
-          path="/admin/"
+          path="/"
           element={
             <RequireAdmin>
               <DashboardLayout />
             </RequireAdmin>
           }
         >
-          <Route path="/admin/" element={<Dashboard />} />
-          <Route path="/admin/chat" element={<Chat />} />
-          <Route path="/admin/theme" element={<Theme />} />
-          <Route path="/admin/job-applications" element={<JobApplications />} />
-          <Route path="/admin/orders" element={<Orders />} />
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/chat" element={<Chat />} />
+          <Route path="/theme" element={<Theme />} />
+          <Route path="/job-applications" element={<JobApplications />} />
+          <Route path="/orders" element={<Orders />} />
           <Route
-            path="/admin/client-response/all-responses"
+            path="/client-response/all-responses"
             element={<AllResponse />}
           />
           <Route
-            path="/admin/client-response/add-responses"
+            path="/client-response/add-responses"
             element={<AddResponse />}
           />
-          <Route path="/admin/users/all-users" element={<AllUsers />} />
-          <Route path="/admin/users/add-users" element={<AddUsers />} />
-          <Route path="/admin/blogs/all-blogs" element={<AllBlogs />} />
-          <Route path="/admin/blogs/add-blogs" element={<AddBlogs />} />
-          <Route path="/admin/works/all-works" element={<AllWorks />} />
-          <Route path="/admin/works/add-works" element={<AddWorks />} />
-          <Route path="/admin/jobs/all-jobs" element={<AllJobs />} />
-          <Route path="/admin/jobs/add-jobs" element={<AddJobs />} />
+          <Route path="/users/all-users" element={<AllUsers />} />
+          <Route path="/users/add-users" element={<AddUsers />} />
+          <Route path="/blogs/all-blogs" element={<AllBlogs />} />
+          <Route path="/blogs/add-blogs" element={<AddBlogs />} />
+          <Route path="/works/all-works" element={<AllWorks />} />
+          <Route path="/works/add-works" element={<AddWorks />} />
+          <Route path="/jobs/all-jobs" element={<AllJobs />} />
+          <Route path="/jobs/add-jobs" element={<AddJobs />} />
+          <Route path="/services/all-services" element={<AllServices />} />
+          <Route path="/services/add-services" element={<AddService />} />
+          <Route path="/team/all-team" element={<AllTeam />} />
+          <Route path="/team/add-team" element={<AddTeam />} />
           <Route
-            path="/admin/services/all-services"
-            element={<AllServices />}
-          />
-          <Route path="/admin/services/add-services" element={<AddService />} />
-          <Route path="/admin/team/all-team" element={<AllTeam />} />
-          <Route path="/admin/team/add-team" element={<AddTeam />} />
-          <Route
-            path="/admin/clients-review/all-clients-review"
+            path="/clients-review/all-clients-review"
             element={<AllClientsReview />}
           />
           <Route
-            path="/admin/clients-review/add-clients-review"
+            path="/clients-review/add-clients-review"
             element={<AddClientsReview />}
           />
           <Route
-            path="/admin/industry-we-serve/all-industry-we-serve"
+            path="/industry-we-serve/all-industry-we-serve"
             element={<AllIndustryWeServe />}
           />
           <Route
-            path="/admin/industry-we-serve/add-industry-we-serve"
+            path="/industry-we-serve/add-industry-we-serve"
             element={<AddIndustryWeServe />}
           />
           <Route
-            path="/admin/contact-center-service/all-contact-center-service"
+            path="/contact-center-service/all-contact-center-service"
             element={<AllContactCenterService />}
           />
           <Route
-            path="/admin/contact-center-service/add-contact-center-service"
+            path="/contact-center-service/add-contact-center-service"
             element={<AddContactCenterService />}
           />
-          <Route path="/admin/order" element={<AllOrders />} />
+          <Route path="/order" element={<AllOrders />} />
           <Route
-            path="/admin/key-features/all-key-features"
+            path="/key-features/all-key-features"
             element={<AllKeyFeatures />}
           />
           <Route
-            path="/admin/key-features/add-key-feature"
+            path="/key-features/add-key-feature"
             element={<AddKeyFeatures />}
           />
           <Route
-            path="/admin/our-partners/all-our-partners"
+            path="/our-partners/all-our-partners"
             element={<AllOurPartners />}
           />
           <Route
-            path="/admin/our-partners/add-our-partners"
+            path="/our-partners/add-our-partners"
             element={<AddOurPartners />}
           />
           <Route
-            path="/admin/partnership-model/all-partnership-model"
+            path="/partnership-model/all-partnership-model"
             element={<AllPartnershipModel />}
           />
           <Route
-            path="/admin/partnership-model/add-partnership-model"
+            path="/partnership-model/add-partnership-model"
             element={<AddPartnershipModel />}
           />
 
           <Route
-            path="/admin/who-we-works-with/all-who-we-works-with"
+            path="/who-we-works-with/all-who-we-works-with"
             element={<AllWhoWeWorksWith />}
           />
           <Route
-            path="/admin/who-we-works-with/add-who-we-works-with"
+            path="/who-we-works-with/add-who-we-works-with"
             element={<AddWhoWeWorksWith />}
           />
 
-          <Route path="/admin/hero" element={<Hero />} />
-          <Route path="/admin/company-info" element={<CompanyInfo />} />
+          <Route path="/hero" element={<Hero />} />
+          <Route path="/company-info" element={<CompanyInfo />} />
         </Route>
       </Routes>
     </>

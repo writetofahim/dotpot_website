@@ -41,9 +41,7 @@ const WhoWeWorksWithTableRow = ({ partner, setData, data }) => {
         <div className="flex gap-3">
           <AiOutlineEdit
             onClick={() =>
-              navigate(
-                `/admin/who-we-works-with/add-who-we-works-with?id=${_id}`
-              )
+              navigate(`/who-we-works-with/add-who-we-works-with?id=${_id}`)
             }
             className="text-violet-500 cursor-pointer"
           />

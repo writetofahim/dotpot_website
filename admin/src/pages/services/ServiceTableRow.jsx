@@ -65,7 +65,7 @@ const ServiceTableRow = ({ service, setData, data }) => {
         <div className="flex gap-3">
           <AiOutlineEdit
             onClick={() => {
-              navigate(`/admin/services/add-services?id=${_id}`);
+              navigate(`/services/add-services?id=${_id}`);
               console.log("clicked");
             }}
             className="text-violet-500 cursor-pointer"

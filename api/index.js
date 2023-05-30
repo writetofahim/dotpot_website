@@ -42,6 +42,7 @@ mongoose
     console.error(err);
   });
 
+app.use(cors());
 app.use(express.json());
 app.use(morgan("combined", { stream: winston.stream }));
 
@@ -86,7 +87,6 @@ const swaggerOptions = {
   apis: ["*.js"],
 };
 
-app.use(cors());
 app.use(
   "/uploads/conversation",
   express.static(__dirname + "/uploads/conversation")
@@ -106,6 +106,7 @@ const io = new Server(server, {
       "https://dotpotit.com",
       "https://dotpotit.com/admin",
       "https://dotpot-admin.vercel.app",
+      "https://admin-red-xi.vercel.app/",
     ],
     methods: ["GET", "POST"],
   },

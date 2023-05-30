@@ -41,9 +41,7 @@ const IndustryWeServeTableRow = ({ industry, setData, data }) => {
         <div className="flex gap-3">
           <AiOutlineEdit
             onClick={() =>
-              navigate(
-                `/admin/industry-we-serve/add-industry-we-serve?id=${_id}`
-              )
+              navigate(`/industry-we-serve/add-industry-we-serve?id=${_id}`)
             }
             className="text-violet-500 cursor-pointer"
           />

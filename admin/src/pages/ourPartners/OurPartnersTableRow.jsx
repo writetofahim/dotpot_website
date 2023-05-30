@@ -47,9 +47,7 @@ const OurPartnersTableRow = ({ partner, setData, data }) => {
       <td className="px-6 py-2 ">
         <div className="flex gap-3">
           <AiOutlineEdit
-            onClick={() =>
-              navigate(`/admin/our-partners/add-our-partners?id=${_id}`)
-            }
+            onClick={() => navigate(`/our-partners/add-our-partners?id=${_id}`)}
             className="text-violet-500 cursor-pointer"
           />
           <RiDeleteBinLine
