@@ -37,12 +37,12 @@ const Information = () => {
     <div className="py-10 md:p-5 bg-primary-100/50 backdrop-blur-sm  w-full flex justify-center items-center">
       <div className="w-full md:max-w[1400px] lg:max-w-[1400px] p-3 md:p-10 md:px-5 lg:px-0 flex flex-col items-center justify-between md:flex-col lg:flex-row gap-5">
         <div className="left flex-[2] h-full">
-          <h1 className="text-3xl md:text-5xl font-bold mb-5 text-center md:text-left text-textColor-500">
+          <h2 className="text-3xl md:text-5xl font-bold mb-5 text-center md:text-left text-textColor-500">
             {data && data.name}
-          </h1>
-          <p className="mb-5 text-xl text-gray-300 font-bold text-center md:text-left">
+          </h2>
+          <h1 className="mb-5 text-xl text-gray-300 font-bold text-center md:text-left">
             {data && data.slogan}
-          </p>
+          </h1>
           <p className="text-justify text-md md:text-lg text-gray-300">
             {isOpen ? data?.about : data?.about.slice(0, 211)}
             {!isOpen && ""}
