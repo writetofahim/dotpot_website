@@ -1,78 +1,350 @@
-# DotpotiT Official Website:
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
-![Version](https://img.shields.io/badge/Version-1.0.0-1abc9c.svg?style=flat-square&colorA=gray&colorB=green) ![Node.js Version](https://img.shields.io/badge/Node.js-v18.15.0-brightgreen.svg?style=flat-square) ![NPM Version](https://img.shields.io/badge/npm-v9.5.0-blue.svg?style=flat-square) ![Deployment Status](https://img.shields.io/badge/Deployment-Live-1abc9c.svg?style=flat-square&colorA=gray&colorB=green) ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-1abc9c.svg?style=flat-square&colorA=gray&colorB=blue)
 
-## Introduction:
+<url>
+  <loc>https://dotpotit.com/</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
 
-Welcome to the DotpotiT Admin App! This is the admin-side application of DotpotiT, which provides an efficient and user-friendly interface for managing Dotpot iT official website. This README.md file provides information on how to set up and deploy the admin app on Vercel.
+<url>
+  <loc>https://dotpotit.com/reset-password</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
 
-## Features:
+<url>
+  <loc>https://dotpotit.com/register</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
 
-- User-friendly interface with modern design
-- Secure API for efficient and secure data storage and management
-- A responsive design that adapts to various screen sizes
-- A portfolio section that showcases the company's previous projects
-- A contact section that allows users to get in touch with the company
-- A Blog section that allows creating and editing blog articles.
-- Company Info Management.
-- Company Services and Products Management.
-- Order Management.
-- Job portal management.
-- Website Theme management.
+<url>
+  <loc>https://dotpotit.com/apply</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
 
-## Technologies Used
+<url>
+  <loc>https://dotpotit.com/applym</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
 
-- NodeJs
-- React Vite
-- MongoDB
-- Tailwind CSS
-- Axios
+<url>
+  <loc>https://dotpotit.com/about</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
 
-## Installation
-### Follow these steps to install and run the admin app:
+<url>
+  <loc>https://dotpotit.com/contact</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
 
-- Make sure you have Git and Node.js installed on your computer.
+<url>
+  <loc>https://dotpotit.com/services</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
 
-- Clone the repository by running the following command in your terminal:
+<url>
+  <loc>https://dotpotit.com/privacyPolicy</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
 
-```git clone https://github.com/DotpotiT/Admin.git```
+<url>
+  <loc>https://dotpotit.com/terms-conditions</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
 
-- Open the downloaded 'Admin' folder in your preferred IDE (e.g., VSCode).
+<url>
+  <loc>https://dotpotit.com/confirmation</loc>
+  <lastmod>2023-05-24T06:53:04+00:00</lastmod>
+</url>
 
-- Open a terminal in the 'admin' directory:
+<url>
+  <loc>https://dotpotit.com/contact-center-services/cti</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
 
-- Install the dependencies by running the following command:
+<url>
+  <loc>https://dotpotit.com/contact-center-services/email-marketing</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
 
-`npm install`
+<url>
+  <loc>https://dotpotit.com/contact-center-services/chat</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
 
-- Start the development server by running the following command:
+<url>
+  <loc>https://dotpotit.com/contact-center-services/pd</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
 
-```npm run dev```
+<url>
+  <loc>https://dotpotit.com/contact-center-services/mobile-app</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
 
-The admin app will be running on http://localhost:5173.
+<url>
+  <loc>https://dotpotit.com/contact-center-services/collection</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
 
-## Deployment on Vercel
-To deploy the admin app on Vercel, follow these steps:
+<url>
+  <loc>https://dotpotit.com/contact-center-services/customer-service</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
 
-- Make sure you have a Vercel account. If you don't, you can sign up at https://vercel.com.
-- Go to [Vercel Dashboard](https://vercel.com/dashboard).
-- Go to Add New Project.
-- From the dropdown select Add Github Account.
-- Import the project you want to deploy.
-- Give a project name.
-- Hit Deploy. And deployment of the project will be done.
-- Now Copy the [Domain Name](https://admin-red-xi.vercel.app) and open it in your browser.
+<url>
+  <loc>https://dotpotit.com/contact-center-services/ivr</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
 
-Now you can use your Admin app using this domain.
+<url>
+  <loc>https://dotpotit.com/contact-center-services/acd</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
 
-## Contributing:
+<url>
+  <loc>https://dotpotit.com/partnership-model/fixed-price-model</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
 
-Contributions are always welcome! If you have any suggestions or improvements, please create a pull request.
+<url>
+  <loc>https://dotpotit.com/partnership-model/hire-dedicated-model</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
 
-## Contact:
+<url>
+  <loc>https://dotpotit.com/partnership-model/on-site-development-model</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
 
-If you have any questions or feedback, please feel free to contact us at [DotpotiT](https://www.dotpotit.com/).
+<url>
+  <loc>https://dotpotit.com/key-features/ai-development</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
 
-## Live Project:
-You can browse the live project here - [Dotpot-Admin](https://admin-red-xi.vercel.app)
-# or just ask to chatGPT 😜😎🤖.
+<url>
+  <loc>https://dotpotit.com/key-features/it-support</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/key-features/blockchain-development</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/key-features/website-design</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/key-features/mobile-app-development</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/key-features/cyber-security</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/key-features/website-development</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/key-features/dedicated-team</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/key-features/contact-center-support</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/who-we-works-with/startup-business</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/who-we-works-with/small-and-medium-business</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/who-we-works-with/small-and-medium-business</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/who-we-works-with/agencies-business</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/industries-we-serve/retail-ecommerce</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/industries-we-serve/education</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/industries-we-serve/healthcare</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/industries-we-serve/logistics</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/industries-we-serve/social-networking</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/industries-we-serve/real-estate</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/industries-we-serve/travel</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/industries-we-serve/food-and-restaurant</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/industries-we-serve/on-demand-solution</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/industries-we-serve/gaming</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/industries-we-serve/ai</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/industries-we-serve/web3</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/industries-we-serve/manufacturing</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/web-development/landing-page</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/web-development/portfolio-website</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/web-development/blog-website</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/web-development/e-commerce-website</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/web-development/custom-website</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/white-paper</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/faq</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/blog</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/blog/exploring-the-advantages-of-using-a-real</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/blog/explore-the-features-of-chatpot-chat-app</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/blog/discover-the-benefits-of-dotpot-it-is-cu</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/blog/streamline-your-enterprise-operations-wi</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/blog/dotpos-the-ultimate-erp-solution-for-you</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/blog/tech-job-fair-connecting-with-talented-i</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/blog/unveiling-the-secrets-behind-dotpot-its-</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/blog/pros-and-cons-of-remote-job</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/blog/all-you-need-to-know-about-3d-modeling</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/blog/mobile-app-development-process</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+<url>
+  <loc>https://dotpotit.com/blog/game-development-with-unity</loc>
+  <lastmod>2023-04-18T07:56:02+00:00</lastmod>
+</url>
+
+</urlset>
