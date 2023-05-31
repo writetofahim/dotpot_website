@@ -45,7 +45,7 @@ const LoginModal = ({ setLoginModelOpen, setIsLoginSuccess }) => {
       e.target.reset();
       // set isLoading state to false
       setIsLoading(false);
-      setIsLoginSuccess(true);
+      // setIsLoginSuccess(true);
 
       // if an error occurs
     } catch (error) {
