@@ -4,9 +4,13 @@ const mongoose = require("mongoose");
 const generateSitemap = require("../utilities/sitemapUtils");
 
 /**
- * Controller function to retrieve a paginated list of all blogs
- * @param {object} req - The Express request object
- * @param {object} res - The Express response object
+ * @description Get all blogs with optional filtering by tags, pagination, and sorting
+ * @route GET /api/blog
+ * @access Public
+ * @queryparam {number} [page=1] - The page number for pagination
+ * @queryparam {number} [limit=10] - The maximum number of blogs per page
+ * @queryparam {string} [tags] - Comma-separated list of tags to filter blogs by
+ * @returns {json} - Status and JSON { totalBlogs: number, totalPages: number, currentPage: number, blogs: [] }
  */
 const getAllBlogs = async (req, res) => {
   try {
@@ -14,14 +18,14 @@ const getAllBlogs = async (req, res) => {
     const limit = parseInt(req.query.limit) || 10;
     let tags = [];
 
-    if (req.query.tags) {
+    if (req.query.tags && typeof req.query.tags === "string") {
       // Validate and sanitize the tags input
       const rawTags = req.query.tags;
       tags = rawTags.split(",").map((tag) => tag.trim());
     }
 
     const query = {};
-    if (tags.length > 0) {
+    if (Array.isArray(tags) && tags.length > 0) {
       // Add a query condition to filter blogs by tags (case-insensitive)
       query.tags = { $in: tags.map((tag) => new RegExp(tag, "i")) };
     }
@@ -43,11 +47,18 @@ const getAllBlogs = async (req, res) => {
       blogs,
     });
   } catch (err) {
-    console.log(err);
+    console.error(err);
     res.status(500).send({ error: "Server error" });
   }
 };
 
+/**
+ * @description Get a blog by ID
+ * @route GET /api/blog/:id
+ * @access Public
+ * @param {string} id - The ID of the blog to retrieve
+ * @returns {json} - Status and JSON { blog: {} }
+ */
 const getBlogById = async (req, res) => {
   const { id } = req.params;
   try {
@@ -64,11 +75,18 @@ const getBlogById = async (req, res) => {
     }
     res.json(blog);
   } catch (err) {
-    console.log(err);
+    console.error(err);
     res.status(500).send("Server error");
   }
 };
 
+/**
+ * @description Create a new blog
+ * @route POST /api/blog
+ * @access Private (requires admin)
+ * @body {object} - The blog data
+ * @returns {json} - Status and JSON { success: true, data: {}, message: string }
+ */
 const createBlog = async (req, res) => {
   try {
     const blog = new Blog(req.body);
@@ -76,11 +94,19 @@ const createBlog = async (req, res) => {
     await generateSitemap();
     res.status(201).json(blog);
   } catch (err) {
-    console.log(err);
+    console.error(err);
     res.status(500).send("Server error");
   }
 };
 
+/**
+ * @description Update a blog by ID
+ * @route PATCH /api/blog/:id
+ * @access Private (requires admin)
+ * @param {string} id - The ID of the blog to update
+ * @body {object} - The updated blog data
+ * @returns {json} - Status and JSON { success: true, data: {}, message: string }
+ */
 const updateBlog = async (req, res) => {
   try {
     const blog = await Blog.findById(req.params.id);
@@ -88,12 +114,12 @@ const updateBlog = async (req, res) => {
       return res.status(404).send("Blog post not found");
     }
 
-    if (req.body.image && req.body.image !== blog.image) {
-      await removeFile(blog.image);
-    }
-    if (req.body.audio && req.body.audio !== blog.audio) {
-      await removeFile(blog.audio);
-    }
+    // if (req.body.image && req.body.image !== blog.image) {
+    //   await removeFile(blog.image);
+    // }
+    // if (req.body.audio && req.body.audio !== blog.audio) {
+    //   await removeFile(blog.audio);
+    // }
 
     const updatedBlog = await Blog.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
@@ -103,12 +129,18 @@ const updateBlog = async (req, res) => {
     await generateSitemap();
     res.json(updatedBlog);
   } catch (err) {
-    console.log(err);
+    console.error(err);
     res.status(500).send("Server error");
   }
 };
 
-// Controller function to find related blogs based on tags
+/**
+ * @description Controller function to find related blogs based on a blog ID
+ * @route GET /api/blog/related/:blogId
+ * @access Public
+ * @param {string} blogId - The ID of the blog to find related blogs for
+ * @returns {json} - Status and JSON { relatedBlogs: [] }
+ */
 const findRelatedBlogs = async (req, res) => {
   const blogId = req.params.blogId;
   const limit = parseInt(req.query.limit) || 5;
@@ -139,12 +171,19 @@ const findRelatedBlogs = async (req, res) => {
   }
 };
 
+/**
+ * @description Delete a blog by ID
+ * @route DELETE /api/blog/:id
+ * @access Private (requires admin)
+ * @param {string} id - The ID of the blog to delete
+ * @returns {json} - Status and JSON { success: true, data: {}, message: string }
+ */
 const deleteBlog = async (req, res) => {
   try {
     const selected = await Blog.findById(req.params.id);
-    if (selected) {
-      await removeFile(selected.image);
-    }
+    // if (selected) {
+    //   await removeFile(selected.image);
+    // }
     const blog = await Blog.findByIdAndDelete(req.params.id);
     if (!blog) {
       return res.status(404).send("Blog post not found");
@@ -152,20 +191,21 @@ const deleteBlog = async (req, res) => {
     await generateSitemap();
     res.json(blog);
   } catch (err) {
-    console.log(err);
+    console.error(err);
     res.status(500).send("Server error");
   }
 };
 
 /**
  * @description Controller function to add a comment to a blog
- * @route POST /api/blog/add-comment
+ * @route POST /api/blog/comment
  * @access Public
  * @param {Object} req - The request object
  * @param {Object} res - The response object
  * @body {string} req.body.blogId - The ID of the blog
- * @body {string} req.body.username - The username of the commenter
+ * @body {string} req.body.userId - The ID of the user making the comment
  * @body {string} req.body.content - The content of the comment
+ * @returns {json} - Status and JSON { success: true, data: { comment: {} }, message: string }
  */
 const addComment = async (req, res) => {
   try {
@@ -200,7 +240,16 @@ const addComment = async (req, res) => {
   }
 };
 
-// Controller function to add or remove a like to/from a blog
+/**
+ * @description Controller function to add or remove a like to/from a blog
+ * @route POST /api/blog/like
+ * @access Public
+ * @param {Object} req - The request object
+ * @param {Object} res - The response object
+ * @body {string} req.body.blogId - The ID of the blog
+ * @body {string} req.body.userId - The ID of the user liking the blog
+ * @returns {json} - Status and JSON { success: true, data: { likes: number }, message: string }
+ */
 const addLike = async (req, res) => {
   try {
     const { blogId, userId } = req.body;
