@@ -1,5 +1,6 @@
 const nodemailer = require("nodemailer");
 const he = require("he");
+const sanitizeHtml = require("sanitize-html");
 
 /**
  * @description Sends an email with order details
@@ -114,7 +115,7 @@ exports.orderEmail = async (req, res) => {
       from: "no-reply@dotpotit.com",
       to: process.env.EMAIL,
       subject: "New order received",
-      html: `
+      html: sanitizeHtml(`
         <p>Name: ${sanitizedName}</p>
         <p>Email: ${sanitizedEmail}</p>
         <p>Phone: ${sanitizedPhone}</p>
@@ -125,7 +126,7 @@ exports.orderEmail = async (req, res) => {
         <p>Demo Links: ${sanitizedDemoLinks}</p>
         <h3>Order:</h3>
         ${orderTable}
-      `,
+      `),
     };
 
     // Send email

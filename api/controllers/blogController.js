@@ -141,13 +141,6 @@ const updateBlog = async (req, res) => {
   }
 };
 
-/**
- * @description Controller function to find related blogs based on a blog ID
- * @route GET /api/blog/related/:blogId
- * @access Public
- * @param {string} blogId - The ID of the blog to find related blogs for
- * @returns {json} - Status and JSON { relatedBlogs: [] }
- */
 const findRelatedBlogs = async (req, res) => {
   const blogId = req.params.blogId;
   const limit = parseInt(req.query.limit) || 5;
@@ -161,9 +154,12 @@ const findRelatedBlogs = async (req, res) => {
 
     const tags = currentBlog.tags;
 
+    // Validate and sanitize tags
+    const sanitizedTags = tags.map((tag) => sanitizeInput(tag));
+
     // Query for related blogs with case-insensitive tag matching
     const relatedBlogs = await Blog.find({
-      tags: { $in: tags.map((tag) => new RegExp(tag, "i")) },
+      tags: { $in: sanitizedTags },
       _id: { $ne: blogId },
     })
       .limit(limit)
@@ -176,6 +172,14 @@ const findRelatedBlogs = async (req, res) => {
     console.error("Error finding related blogs:", error);
     res.status(500).json({ error: "Internal server error" });
   }
+};
+
+// Function to sanitize user input
+const sanitizeInput = (input) => {
+  // Remove any special characters that could affect the regular expression
+  const sanitizedInput = input.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+  return new RegExp(sanitizedInput, "i");
 };
 
 /**
