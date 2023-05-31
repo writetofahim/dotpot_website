@@ -2,11 +2,13 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
-const http = require("http");
+const https = require("https");
 const { Server } = require("socket.io");
 const cors = require("cors");
 const morgan = require("morgan");
 const winston = require("./config/winston");
+// const csrf = require("csurf"); // Import csurf middleware
+const helmet = require("helmet"); // Import helmet middleware
 
 const authRouter = require("./routes/authRoutes");
 const blogRoutes = require("./routes/blogRoutes");
@@ -46,6 +48,9 @@ app.use(cors());
 app.use(express.json());
 app.use(morgan("combined", { stream: winston.stream }));
 
+// Use Helmet!
+app.use(helmet());
+
 // error handler
 app.use(function (err, req, res, next) {
   // Log the error with Winston logging
@@ -74,7 +79,7 @@ app.use(function (err, req, res, next) {
   }
 
   res.status(err.status || 500);
-  res.send(errorResponse);
+  res.send("Server error");
 });
 
 // app.use(cors({
@@ -106,7 +111,7 @@ app.use("/uploads", express.static(__dirname + "/uploads"));
 app.use("/uploads/blogs", express.static(__dirname + "/uploads/blogs"));
 app.use("/uploads/response", express.static(__dirname + "/uploads/response"));
 
-const server = http.createServer(app);
+const server = https.createServer(app);
 const io = new Server(server, {
   cors: {
     origin: [
