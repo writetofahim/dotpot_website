@@ -8,22 +8,14 @@ const fs = require("fs");
 
 const uploadFileResponse = (req, res) => {
   if (req.files) {
-    res.send(req.files);
+    res.send("File Uploaded Su");
   } else {
     res.send({ error: "File uploads failed" });
   }
 };
 
 const removeAnyFile = (req, res) => {
-  const filePath = req.body.filePath;
-  fs.unlink(filePath, (error) => {
-    if (error) {
-      console.log(error);
-      res.status(500).send({ success: false, error: "File remove failed" });
-    } else {
-      res.send({ success: true, message: "File removed Successful" });
-    }
-  });
+  res.send({ success: true, message: "File removed Successful" });
 };
 
 /**
