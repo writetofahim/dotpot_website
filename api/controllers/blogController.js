@@ -174,12 +174,25 @@ const findRelatedBlogs = async (req, res) => {
   }
 };
 
-// Function to sanitize user input
+// Function to sanitize user input without regular expressions
 const sanitizeInput = (input) => {
-  // Remove any special characters that could affect the regular expression
-  const sanitizedInput = input.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  // Define a mapping of special characters and their replacements
+  const specialChars = {
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#x27;",
+    "/": "&#x2F;",
+  };
 
-  return new RegExp(sanitizedInput, "i");
+  // Replace special characters with their corresponding replacements
+  const sanitizedInput = input.replace(
+    /[&<>"'\/]/g,
+    (char) => specialChars[char]
+  );
+
+  return sanitizedInput;
 };
 
 /**
