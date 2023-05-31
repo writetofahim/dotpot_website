@@ -48,22 +48,33 @@ app.use(morgan("combined", { stream: winston.stream }));
 
 // error handler
 app.use(function (err, req, res, next) {
-  // set locals, only providing error in development
-  res.send({
-    message: err.message,
-    error: req.app.get("env") === "development" ? err : {},
-  });
-
-  // include winston logging
+  // Log the error with Winston logging
   winston.error(
     `${err.status || 500} - ${err.message} - ${req.originalUrl} - ${
       req.method
     } - ${req.ip}`
   );
 
-  // render the error page
+  // Set a default error message for the response
+  let errorMessage = "Internal Server Error";
+
+  // Check if the error is a custom application error with a message
+  if (err.message) {
+    errorMessage = err.message;
+  }
+
+  // Send an error response to the client
+  const errorResponse = {
+    error: errorMessage,
+  };
+
+  // Only include the error details in the response during development
+  if (req.app.get("env") === "development") {
+    errorResponse.details = err;
+  }
+
   res.status(err.status || 500);
-  res.render("error");
+  res.send(errorResponse);
 });
 
 // app.use(cors({

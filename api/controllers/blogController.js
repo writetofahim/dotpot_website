@@ -9,16 +9,21 @@ const generateSitemap = require("../utilities/sitemapUtils");
  * @param {object} res - The Express response object
  */
 const getAllBlogs = async (req, res) => {
-  const page = parseInt(req.query.page) || 1;
-  const limit = parseInt(req.query.limit) || 10;
-  const tags = req.query.tags ? req.query.tags.split(",") : [];
-  console.log(tags);
-
   try {
-    let query = {};
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 10;
+    let tags = [];
+
+    if (req.query.tags) {
+      // Validate and sanitize the tags input
+      const rawTags = req.query.tags;
+      tags = rawTags.split(",").map((tag) => tag.trim());
+    }
+
+    const query = {};
     if (tags.length > 0) {
       // Add a query condition to filter blogs by tags (case-insensitive)
-      query = { tags: { $in: tags.map((tag) => new RegExp(tag, "i")) } };
+      query.tags = { $in: tags.map((tag) => new RegExp(tag, "i")) };
     }
 
     const totalBlogs = await Blog.countDocuments(query);

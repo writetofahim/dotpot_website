@@ -4,6 +4,7 @@ const User = require("../models/User");
 const { OAuth2Client } = require("google-auth-library");
 const crypto = require("crypto");
 const nodemailer = require("nodemailer");
+const { escapeHtml } = require("sanitize-html");
 const {
   passwordResetTemplate,
   welcomeEmailTemplate,
@@ -231,25 +232,6 @@ exports.googleSignup = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
-
-function escapeHtml(text) {
-  return text.replace(/[&<"']/g, function (match) {
-    switch (match) {
-      case "&":
-        return "&amp;";
-      case "<":
-        return "&lt;";
-      case ">":
-        return "&gt;";
-      case '"':
-        return "&quot;";
-      case "'":
-        return "&#039;";
-      default:
-        return match;
-    }
-  });
-}
 
 exports.resetPassword = async (req, res) => {
   try {

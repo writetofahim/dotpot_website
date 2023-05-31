@@ -56,7 +56,7 @@ const ChatBody = ({ selectedChatId }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(newMessage, files);
+    // console.log(newMessage, files);
     setError("");
     setIsLoading(true);
     let attachment = null;
