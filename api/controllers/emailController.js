@@ -1,4 +1,5 @@
 const nodemailer = require("nodemailer");
+const he = require("he");
 
 /**
  * @description Sends an email with order details
@@ -46,15 +47,7 @@ exports.orderEmail = async (req, res) => {
       if (typeof text !== "string") {
         return "";
       }
-
-      const map = {
-        "&": "&amp;",
-        "<": "&lt;",
-        ">": "&gt;",
-        '"': "&quot;",
-        "'": "&#039;",
-      };
-      return text.replace(/[&<>"']/g, (m) => map[m]);
+      return he.encode(text);
     };
 
     const escapeHtmlObject = (object) => {
@@ -162,12 +155,6 @@ exports.orderEmail = async (req, res) => {
         <h3>Order:</h3>
         ${orderTable}
       `,
-      // attachments: [
-      //   {
-      //     filename: file.name,
-      //     content: file.data,
-      //   },
-      // ],
     };
 
     // Send email
