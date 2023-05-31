@@ -6,7 +6,8 @@ import { FaSpinner } from "react-icons/fa";
 import { GoGlobe } from "react-icons/go";
 import { IoMdBusiness } from "react-icons/io";
 import { MdMail, MdMessage, MdPerson, MdPhone } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import CommonSnackbar from "../../components/CommonSnackbar/CommonSnackbar";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import RangeSlider from "../../components/Range/RangeSlider";
@@ -20,6 +21,10 @@ const Confirmation = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
   const [isCompanySelected, setIsCompanySelected] = useState(false);
+
+  const [successSnackBar, setSuccessSnackBar] = useState(false);
+
+  const navigate = useNavigate();
 
   const { order } = useContext(AuthContext);
 
@@ -35,7 +40,7 @@ const Confirmation = () => {
         phone: e.target.elements.phone.value,
         country: e.target.elements.country.value,
         business: e.target.elements.business.value,
-        company_name: e.target.elements.business.companyName,
+        company_name: e.target.elements.companyName.value || "",
         files: e.target.elements.files.files[0],
         project_description: e.target.elements.project_description.value,
         demo_links: e.target.elements.demo_links.value,
@@ -50,7 +55,10 @@ const Confirmation = () => {
       // Reset form and show success message
       e.target.reset();
       setIsSubmitting(false);
-      console.log("Email sent successfully");
+      setSuccessSnackBar(true);
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
     } catch (error) {
       console.error("Error sending email:", error);
       setError("An error occurred while sending the email");
@@ -117,6 +125,13 @@ const Confirmation = () => {
         <meta property="og:type" content="website" />
       </Helmet>
       <Navbar />
+      {successSnackBar && (
+        <CommonSnackbar
+          message={"Order placed successfully."}
+          open={successSnackBar}
+          setOpen={setSuccessSnackBar}
+        />
+      )}
       <div className="bg-background-500">
         <div className="container mx-auto p-5 pt-[15vh]">
           <h1 className="text-3xl text-textColor-500 font-bold mb-10 text-center">
@@ -267,11 +282,10 @@ const Confirmation = () => {
                 className="w-full p-2 text-gray-400  bg-background-500 outline-none"
               ></textarea>
             </div>
-            <div className="border-b border-border w-full flex items-center">
-              <AiOutlineLink className="text-textColor-500 text-2xl" />
-              <input
+            <div className="border-b border-border w-full flex items-start">
+              <AiOutlineLink className="text-textColor-500 text-2xl mt-2" />
+              <textarea
                 name="demo_links"
-                type="text"
                 placeholder="Demo links"
                 className="w-full p-2 text-gray-400  bg-background-500 outline-none"
                 required
@@ -280,7 +294,7 @@ const Confirmation = () => {
             <p className="text-gray-400  bg-background-500 mb-10 mt-14">
               We sign NDA for all our projects.
             </p>
-            {error && <p>{error}</p>}
+            {error && <p className="text-red-500">{error}</p>}
             <button
               disabled={isSubmitting}
               variant="contained"

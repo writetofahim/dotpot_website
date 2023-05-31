@@ -62,7 +62,7 @@ const LoginModal = ({ setLoginModelOpen, setIsLoginSuccess }) => {
     try {
       const res = await axios.post("/auth/reset-password", { email });
       postLogger({ level: "info", message: res });
-      setMessage(res?.data?.message);
+      setMessage((p) => res?.data?.message);
       setOpen(true);
     } catch (error) {
       if (error?.response?.data?.message) {

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { FaSpinner } from "react-icons/fa";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import CommonSnackbar from "../../components/CommonSnackbar/CommonSnackbar";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
@@ -15,6 +15,8 @@ const ResetPassword = () => {
   const [success, setSuccess] = useState("");
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  const navigate = useNavigate();
 
   const { resetToken } = useParams();
 
@@ -35,6 +37,9 @@ const ResetPassword = () => {
       postLogger({ level: "info", message: response });
       setSuccess("Password has been reset successfully");
       setOpen(true);
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
       event.target.reset();
     } catch (error) {
       if (error?.response?.data?.message) {

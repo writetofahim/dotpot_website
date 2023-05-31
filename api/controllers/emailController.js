@@ -43,6 +43,10 @@ exports.orderEmail = async (req, res) => {
 
     // Convert the order object to an HTML table
     const escapeHtml = (text) => {
+      if (typeof text !== "string") {
+        return "";
+      }
+
       const map = {
         "&": "&amp;",
         "<": "&lt;",
@@ -57,13 +61,21 @@ exports.orderEmail = async (req, res) => {
       const escapedObject = {};
       for (const key in object) {
         if (object.hasOwnProperty(key)) {
-          escapedObject[key] = escapeHtml(object[key]);
+          if (Array.isArray(object[key])) {
+            escapedObject[key] = escapeHtmlArray(object[key]);
+          } else {
+            escapedObject[key] = escapeHtml(object[key]);
+          }
         }
       }
       return escapedObject;
     };
 
     const escapeHtmlArray = (array) => {
+      if (!Array.isArray(array)) {
+        return [];
+      }
+
       return array.map((item) => escapeHtmlObject(item));
     };
 

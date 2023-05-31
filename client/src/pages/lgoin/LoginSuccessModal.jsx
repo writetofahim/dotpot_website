@@ -18,7 +18,7 @@ const LoginSuccessModal = ({ message, open, setOpen }) => {
         <div
           className={`fixed w-full top-20 right-5 z-[9999999] flex justify-center login-success-modal`}
         >
-          <div className="w-[400px] flex justify-center items-center gap-4 bg-green-300/50 backdrop-blur-lg shadow-xl rounded-lg">
+          <div className="md:w-[500px] w-full flex justify-center items-center gap-4 bg-green-300 backdrop-blur-lg shadow-xl rounded-lg px-3 py-2">
             <div class="wrapper">
               <svg
                 class="checkmark"
@@ -39,7 +39,7 @@ const LoginSuccessModal = ({ message, open, setOpen }) => {
                 />
               </svg>
             </div>
-            <p className="text-2xl font-bold">Login Successful</p>
+            <p className="text-2xl font-bold">{message}</p>
           </div>
         </div>
       )}
