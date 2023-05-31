@@ -25,9 +25,16 @@ const getAllBlogs = async (req, res) => {
     }
 
     const query = {};
+
+    // Function to escape special characters in a string for regex
+    function escapeRegExp(string) {
+      return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); // $& means the whole matched string
+    }
+
     if (Array.isArray(tags) && tags.length > 0) {
-      // Add a query condition to filter blogs by tags (case-insensitive)
-      query.tags = { $in: tags.map((tag) => new RegExp(tag, "i")) };
+      // Sanitize and add a query condition to filter blogs by tags (case-insensitive)
+      const sanitizedTags = tags.map((tag) => escapeRegExp(tag));
+      query.tags = { $in: sanitizedTags };
     }
 
     const totalBlogs = await Blog.countDocuments(query);
