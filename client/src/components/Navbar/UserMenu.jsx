@@ -50,22 +50,21 @@ const UserMenu = ({ user, isLogoutModalOpen }) => {
   };
 
   return (
-    <div className="relative">
+    <div ref={avatarButtonRef} className="relative">
       <div
         onClick={handleMenuClick}
-        ref={avatarButtonRef}
         className="flex gap-2 items-center cursor-pointer"
       >
         {renderUserPhoto()}
       </div>
       <div
         className={`${
-          isMenuOpen ? "opacity-100" : "opacity-0"
-        } absolute top-10 right-2 bg-background-500 backdrop-blur-lg px-3 py-2 rounded-md duration-300 w-48 flex flex-col items-start gap-3  text-textColor-500 shadow-md shadow-secondary-500/50 border border-secondary-500/50`}
+          isMenuOpen ? "block" : "hidden"
+        } absolute top-10 right-2 bg-background-500 backdrop-blur-lg px-3 py-2 rounded-md duration-300 w-48 flex flex-col items-start gap-3  text-textColor-500 shadow-md shadow-secondary-500/50 border border-secondary-500/50 transition-opacity`}
       >
         <span>{user.username}</span>
         <button
-          className="hover:bg-secondary-500 w-full border border-secondary-500 bg-gradient-to-r from-secondary-300 to-secondary-500 "
+          className="hover:bg-secondary-500 w-full border border-secondary-500 bg-gradient-to-r from-secondary-300 to-secondary-500"
           onClick={() => isLogoutModalOpen(true)}
         >
           Logout
