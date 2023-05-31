@@ -4,7 +4,8 @@ const User = require("../models/User");
 const { OAuth2Client } = require("google-auth-library");
 const crypto = require("crypto");
 const nodemailer = require("nodemailer");
-const { escapeHtml } = require("sanitize-html");
+// const { escapeHtml } = require("sanitize-html");
+const sanitizeHtml = require("sanitize-html");
 const {
   passwordResetTemplate,
   welcomeEmailTemplate,
@@ -260,14 +261,14 @@ exports.resetPassword = async (req, res) => {
     });
 
     // Sanitize user input for the HTML template
-    const username = escapeHtml(user.username);
-    const sanitizedLink = escapeHtml(link);
+    const username = user.username;
+    const sanitizedLink = link;
 
     const mailOptions = {
       from: process.env.EMAIL,
       to: user.email,
       subject: "Password Reset Request",
-      html: passwordResetTemplate(username, sanitizedLink),
+      html: sanitizeHtml(passwordResetTemplate(username, sanitizedLink)),
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
