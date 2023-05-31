@@ -206,7 +206,7 @@ const deleteConversation = async (req, res) => {
     const messages = await Message.find({ conversation_id: conversationId });
     for (const message of messages) {
       if (message.attachment) {
-        await removeFile(message.attachment);
+        // await removeFile(message.attachment);
       }
     }
 
