@@ -21,7 +21,7 @@ const removeFile = (filePath) => {
         const resolvedBasePath = path.resolve(basePath);
 
         // Check if the resolved file path is equal to or within the resolved base path
-        if (resolvedPath.startsWith(resolvedBasePath)) {
+        if (!isPathTraversal(resolvedPath, resolvedBasePath)) {
           fs.unlink(resolvedPath, (unlinkError) => {
             if (unlinkError) {
               console.log(unlinkError);
@@ -46,6 +46,13 @@ const isFileInAllowedDirectory = (filePath) => {
 
   // Check if the file path is within the allowed directory or its subdirectories
   return filePath.startsWith(resolvedAllowedDirectory);
+};
+
+const isPathTraversal = (filePath, basePath) => {
+  const resolvedFilePath = path.resolve(filePath);
+
+  // Check if the resolved file path is equal to or within the resolved base path
+  return !resolvedFilePath.startsWith(basePath);
 };
 
 module.exports = { removeFile };
