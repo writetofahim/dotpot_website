@@ -15,9 +15,9 @@ import NavigatorComponent from "../../components/NavigatorComponent/NavigatorCom
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 
 import ReactVisibilitySensor from "react-visibility-sensor";
-import originstory from "../../assets/img/about/originstory.png";
-import ourgoal from "../../assets/img/about/ourgoal.png";
-import whoweare from "../../assets/img/about/whoweare.png";
+import origin from "../../assets/img/about/origin.png";
+import goal from "../../assets/img/about/goal.png";
+import cover from "../../assets/img/about/cover.png";
 import GetAQuote from "../../components/GetAQuote/GetAQuote";
 import OurDevelopmentJourney from "../../components/OurDevelopmentJourney/OurDevelopmentJourney";
 
@@ -137,7 +137,7 @@ const AboutSection = () => {
                         </p>
                       </div>
                       <img
-                        src={whoweare}
+                        src={cover}
                         alt="Who We Are Image"
                         className="w-full md:w-1/2 lg:w-1/2 p-5"
                       />
@@ -166,7 +166,7 @@ const AboutSection = () => {
                   <div className="container mx-auto">
                     <div className="flex flex-col-reverse md:flex-col-reverse lg:flex-row items-center justify-center">
                       <img
-                        src={ourgoal}
+                        src={goal}
                         alt="Who We Are Image"
                         className="w-full md:w-1/2 lg:w-1/2 p-5"
                       />
@@ -233,7 +233,7 @@ const AboutSection = () => {
                         </p>
                       </div>
                       <img
-                        src={originstory}
+                        src={origin}
                         alt="Origin Story Image"
                         className="w-full md:w-1/2 lg:w-1/2 p-5"
                       />
