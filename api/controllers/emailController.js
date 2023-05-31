@@ -41,10 +41,18 @@ exports.orderEmail = async (req, res) => {
       company_name,
     } = req.body;
 
-    // Get the attached file
-    // const file = req.files.file || null;
-
     // Convert the order object to an HTML table
+    const escapeHtml = (text) => {
+      const map = {
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;",
+      };
+      return text.replace(/[&<>"']/g, (m) => map[m]);
+    };
+
     const orderTable = `
     <table style="border-collapse: collapse; width: 100%; border: 1px solid black; padding: 10px;">
       <thead>
@@ -60,18 +68,22 @@ exports.orderEmail = async (req, res) => {
             (item) => `
             <tr>
               <td style="border: 1px solid black; padding: 10px; display: flex; align-items: center;">
-                <img src="${item.icon}" alt="${
+                <img src="${escapeHtml(item.icon)}" alt="${escapeHtml(
               item.title
-            }" width="25" height="25" style="margin-right: 10px;">
-                ${item.title}
+            )}" width="25" height="25" style="margin-right: 10px;">
+                ${escapeHtml(item.title)}
               </td>
               <td style="border: 1px solid black; padding: 10px;">
                 ${item.technologies
                   .map(
                     (technology) => `
                     <div style="display: flex; align-items: center; margin-bottom:5px;">
-                      <img src="${technology.icon}" alt="${technology.title}" width="25" height="25" style="margin-right: 10px;">
-                      ${technology.title}
+                      <img src="${escapeHtml(
+                        technology.icon
+                      )}" alt="${escapeHtml(
+                      technology.title
+                    )}" width="25" height="25" style="margin-right: 10px;">
+                      ${escapeHtml(technology.title)}
                     </div>`
                   )
                   .join("")}
@@ -81,8 +93,10 @@ exports.orderEmail = async (req, res) => {
                   .map(
                     (addon) => `
                     <div style="display: flex; align-items: center; margin-bottom:5px;">
-                      <img src="${addon.icon}" alt="${addon.title}" width="25" height="25" style="margin-right: 10px;">
-                      ${addon.title}
+                      <img src="${escapeHtml(addon.icon)}" alt="${escapeHtml(
+                      addon.title
+                    )}" width="25" height="25" style="margin-right: 10px;">
+                      ${escapeHtml(addon.title)}
                     </div>`
                   )
                   .join("")}
@@ -97,18 +111,18 @@ exports.orderEmail = async (req, res) => {
 
     // Compose email message
     const message = {
-      from: "no-replay@dotpotit.com",
+      from: "no-reply@dotpotit.com",
       to: process.env.EMAIL,
       subject: "New order received",
       html: `
-        <p>Name: ${name}</p>
-        <p>Email: ${email}</p>
-        <p>Phone: ${phone}</p>
-        <p>Country: ${country}</p>
-        <p>Business: ${business}</p>
-        <p>Company name: ${company_name}</p>
-        <p>Project Description: ${project_description}</p>
-        <p>Demo Links: ${demo_links}</p>
+        <p>Name: ${escapeHtml(name)}</p>
+        <p>Email: ${escapeHtml(email)}</p>
+        <p>Phone: ${escapeHtml(phone)}</p>
+        <p>Country: ${escapeHtml(country)}</p>
+        <p>Business: ${escapeHtml(business)}</p>
+        <p>Company name: ${escapeHtml(company_name)}</p>
+        <p>Project Description: ${escapeHtml(project_description)}</p>
+        <p>Demo Links: ${escapeHtml(demo_links)}</p>
         <h3>Order:</h3>
         ${orderTable}
       `,

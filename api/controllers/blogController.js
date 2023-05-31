@@ -77,24 +77,26 @@ const createBlog = async (req, res) => {
 };
 
 const updateBlog = async (req, res) => {
-  if (req.body.image) {
-    const selected = await Blog.findById(req.params.id);
-    await removeFile(selected.image);
-  }
-  if (req.body.audio) {
-    const selected = await Blog.findById(req.params.id);
-    await removeFile(selected.audio);
-  }
   try {
-    const blog = await Blog.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-      runValidators: true,
-    });
+    const blog = await Blog.findById(req.params.id);
     if (!blog) {
       return res.status(404).send("Blog post not found");
     }
+
+    if (req.body.image && req.body.image !== blog.image) {
+      await removeFile(blog.image);
+    }
+    if (req.body.audio && req.body.audio !== blog.audio) {
+      await removeFile(blog.audio);
+    }
+
+    const updatedBlog = await Blog.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+      runValidators: true,
+    });
+
     await generateSitemap();
-    res.json(blog);
+    res.json(updatedBlog);
   } catch (err) {
     console.log(err);
     res.status(500).send("Server error");

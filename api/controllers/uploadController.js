@@ -6,9 +6,20 @@
 
 const fs = require("fs");
 
+const sanitizeFileName = (fileName) => {
+  return fileName.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+};
+
 const uploadFileResponse = (req, res) => {
   if (req.files) {
-    res.send(req.files);
+    const sanitizedFiles = req.files.map((file) => {
+      return {
+        name: sanitizeFileName(file.name),
+        size: file.size,
+        mimetype: file.mimetype,
+      };
+    });
+    res.send(sanitizedFiles);
   } else {
     res.send({ error: "File uploads failed" });
   }
@@ -25,17 +36,6 @@ const removeAnyFile = (req, res) => {
     }
   });
 };
-
-/**
- * Controller for uploading audio files.
- * Endpoint: POST /api/audio/upload
- * Expected Request:
- *   - Form Data: audioFile (audio file to be uploaded)
- * Response:
- *   - Success: 200 OK with the audioUrl of the uploaded file
- *   - Error: 400 Bad Request if no audio file is provided or if the file format is invalid
- *           500 Internal Server Error if an error occurs during the upload process
- */
 
 // Export the controller function
 module.exports = {

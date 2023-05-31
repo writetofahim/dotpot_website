@@ -258,11 +258,15 @@ exports.resetPassword = async (req, res) => {
       },
     });
 
+    // Sanitize user input for the HTML template
+    const username = escapeHtml(user.username);
+    const sanitizedLink = escapeHtml(link);
+
     const mailOptions = {
       from: process.env.EMAIL,
       to: user.email,
       subject: "Password Reset Request",
-      html: passwordResetTemplate(user.username, link),
+      html: passwordResetTemplate(username, sanitizedLink),
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
