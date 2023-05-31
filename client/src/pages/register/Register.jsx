@@ -17,6 +17,8 @@ const Register = () => {
 
   const [isOpen, setOpen] = useState(false);
 
+  const [signUpError, setSignUpError] = useState(false);
+
   const navigate = useNavigate();
   useEffect(() => {
     if (user) {
@@ -29,10 +31,11 @@ const Register = () => {
 
   // Define a function to handle form submission
   const handleSubmit = async (e) => {
+    setSignUpError("");
     e.preventDefault();
     if (e.target.password.value !== e.target.confirmPassword.value) {
       // If the password and confirm password fields don't match,
-      return setError("Password and confirm password is not same!");
+      return setSignUpError("Password and confirm password is not same!");
     }
     setIsLoading(true);
     const user = {
@@ -226,6 +229,9 @@ const Register = () => {
 
             <div className="mt-6">
               {error && <p className="text-red-500 mb-3">{error}</p>}
+              {signUpError && (
+                <p className="text-red-500 mb-3">{signUpError}</p>
+              )}
               <button
                 disabled={isLoading}
                 className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize bg-primary-500 rounded-lg hover:bg-primary-400 hover:shadow-xl hover:scale-105 transition-all "

@@ -38,7 +38,7 @@ exports.register = async (req, res) => {
     });
 
     // Hash password
-    const salt = await bcrypt.genSalt(10);
+    const salt = await bcrypt.genSalt(process.env.BCRYPT_SALT_ROUNDS);
     user.password = await bcrypt.hash(password, salt);
 
     // Save user to database
@@ -185,7 +185,7 @@ exports.googleSignup = async (req, res) => {
       });
 
       // Hash password
-      const salt = await bcrypt.genSalt(10);
+      const salt = await bcrypt.genSalt(process.env.BCRYPT_SALT_ROUNDS);
       user.password = await bcrypt.hash(password, salt);
 
       // Save user to database
@@ -302,7 +302,10 @@ exports.verifyResetPassword = async (req, res) => {
         .json({ success: false, message: "Invalid or expired reset token" });
     }
     // Update user password
-    user.password = await bcrypt.hash(req.body.password, 10);
+    user.password = await bcrypt.hash(
+      req.body.password,
+      process.env.BCRYPT_SALT_ROUNDS
+    );
     user.resetToken = undefined;
     user.resetTokenExpiration = undefined;
     await user.save();

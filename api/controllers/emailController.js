@@ -42,101 +42,72 @@ exports.orderEmail = async (req, res) => {
       company_name,
     } = req.body;
 
+    // Sanitize user input
+    const sanitizedName = he.encode(name);
+    const sanitizedEmail = he.encode(email);
+    const sanitizedPhone = he.encode(phone);
+    const sanitizedCountry = he.encode(country);
+    const sanitizedBusiness = he.encode(business);
+    const sanitizedProjectDescription = he.encode(project_description);
+    const sanitizedDemoLinks = he.encode(demo_links);
+    const sanitizedCompanyName = he.encode(company_name);
+
     // Convert the order object to an HTML table
-    const escapeHtml = (text) => {
-      if (typeof text !== "string") {
-        return "";
-      }
-      return he.encode(text);
-    };
-
-    const escapeHtmlObject = (object) => {
-      const escapedObject = {};
-      for (const key in object) {
-        if (object.hasOwnProperty(key)) {
-          if (Array.isArray(object[key])) {
-            escapedObject[key] = escapeHtmlArray(object[key]);
-          } else {
-            escapedObject[key] = escapeHtml(object[key]);
-          }
-        }
-      }
-      return escapedObject;
-    };
-
-    const escapeHtmlArray = (array) => {
-      if (!Array.isArray(array)) {
-        return [];
-      }
-
-      return array.map((item) => escapeHtmlObject(item));
-    };
-
-    const escapedName = escapeHtml(name);
-    const escapedEmail = escapeHtml(email);
-    const escapedPhone = escapeHtml(phone);
-    const escapedCountry = escapeHtml(country);
-    const escapedBusiness = escapeHtml(business);
-    const escapedProjectDescription = escapeHtml(project_description);
-    const escapedDemoLinks = escapeHtml(demo_links);
-    const escapedOrder = escapeHtmlArray(order);
-    const escapedCompanyName = escapeHtml(company_name);
-
     const orderTable = `
-    <table style="border-collapse: collapse; width: 100%; border: 1px solid black; padding: 10px;">
-      <thead>
-        <tr>
-          <th style="border: 1px solid black; padding: 10px;">Service</th>
-          <th style="border: 1px solid black; padding: 10px;">Technologies</th>
-          <th style="border: 1px solid black; padding: 10px;">Addons</th>
-        </tr>
-      </thead>
-      <tbody>
-        ${escapedOrder
-          .map(
-            (item) => `
-            <tr>
-              <td style="border: 1px solid black; padding: 10px; display: flex; align-items: center;">
-                <img src="${escapeHtml(item.icon)}" alt="${escapeHtml(
-              item.title
-            )}" width="25" height="25" style="margin-right: 10px;">
-                ${escapeHtml(item.title)}
-              </td>
-              <td style="border: 1px solid black; padding: 10px;">
-                ${item.technologies
-                  .map(
-                    (technology) => `
-                    <div style="display: flex; align-items: center; margin-bottom:5px;">
-                      <img src="${escapeHtml(
-                        technology.icon
-                      )}" alt="${escapeHtml(
-                      technology.title
-                    )}" width="25" height="25" style="margin-right: 10px;">
-                      ${escapeHtml(technology.title)}
-                    </div>`
-                  )
-                  .join("")}
-              </td>
-              <td style="border: 1px solid black; padding: 10px;">
-                ${item.addons
-                  .map(
-                    (addon) => `
-                    <div style="display: flex; align-items: center; margin-bottom:5px;">
-                      <img src="${escapeHtml(addon.icon)}" alt="${escapeHtml(
-                      addon.title
-                    )}" width="25" height="25" style="margin-right: 10px;">
-                      ${escapeHtml(addon.title)}
-                    </div>`
-                  )
-                  .join("")}
-              </td>
-            </tr>
-          `
-          )
-          .join("")}
-      </tbody>
-    </table>
-  `;
+      <table style="border-collapse: collapse; width: 100%; border: 1px solid black; padding: 10px;">
+        <thead>
+          <tr>
+            <th style="border: 1px solid black; padding: 10px;">Service</th>
+            <th style="border: 1px solid black; padding: 10px;">Technologies</th>
+            <th style="border: 1px solid black; padding: 10px;">Addons</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${order
+            .map(
+              (item) => `
+              <tr>
+                <td style="border: 1px solid black; padding: 10px; display: flex; align-items: center;">
+                  <img src="${he.encode(item.icon)}" alt="${he.encode(
+                item.title
+              )}" width="25" height="25" style="margin-right: 10px;">
+                  ${he.encode(item.title)}
+                </td>
+                <td style="border: 1px solid black; padding: 10px;">
+                  ${item.technologies
+                    .map(
+                      (technology) => `
+                      <div style="display: flex; align-items: center; margin-bottom:5px;">
+                        <img src="${he.encode(
+                          technology.icon
+                        )}" alt="${he.encode(
+                        technology.title
+                      )}" width="25" height="25" style="margin-right: 10px;">
+                        ${he.encode(technology.title)}
+                      </div>`
+                    )
+                    .join("")}
+                </td>
+                <td style="border: 1px solid black; padding: 10px;">
+                  ${item.addons
+                    .map(
+                      (addon) => `
+                      <div style="display: flex; align-items: center; margin-bottom:5px;">
+                        <img src="${he.encode(addon.icon)}" alt="${he.encode(
+                        addon.title
+                      )}" width="25" height="25" style="margin-right: 10px;">
+                        ${he.encode(addon.title)}
+                      </div>`
+                    )
+                    .join("")}
+                </td>
+              </tr>
+            `
+            )
+            .join("")}
+        </tbody>
+      </table>
+    `;
 
     // Compose email message
     const message = {
@@ -144,14 +115,14 @@ exports.orderEmail = async (req, res) => {
       to: process.env.EMAIL,
       subject: "New order received",
       html: `
-        <p>Name: ${escapedName}</p>
-        <p>Email: ${escapedEmail}</p>
-        <p>Phone: ${escapedPhone}</p>
-        <p>Country: ${escapedCountry}</p>
-        <p>Business: ${escapedBusiness}</p>
-        <p>Company name: ${escapedCompanyName}</p>
-        <p>Project Description: ${escapedProjectDescription}</p>
-        <p>Demo Links: ${escapedDemoLinks}</p>
+        <p>Name: ${sanitizedName}</p>
+        <p>Email: ${sanitizedEmail}</p>
+        <p>Phone: ${sanitizedPhone}</p>
+        <p>Country: ${sanitizedCountry}</p>
+        <p>Business: ${sanitizedBusiness}</p>
+        <p>Company name: ${sanitizedCompanyName}</p>
+        <p>Project Description: ${sanitizedProjectDescription}</p>
+        <p>Demo Links: ${sanitizedDemoLinks}</p>
         <h3>Order:</h3>
         ${orderTable}
       `,
