@@ -1,15 +1,15 @@
-const Work = require('../models/Work');
-const { removeFile } = require('../utilities/removeFile');
+const Work = require("../models/Work");
+const { removeFile } = require("../utilities/removeFile");
 
 // Create a work
 exports.createWork = async (req, res) => {
   try {
     const work = new Work(req.body);
     await work.save();
-    res.status(201).json({ message: 'Work created successfully', work });
+    res.status(201).json({ message: "Work created successfully", work });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).json({ message: "Server error" });
   }
 };
 
@@ -39,18 +39,21 @@ exports.getAllWorks = async (req, res) => {
     const endIndex = page * limit;
 
     // Retrieve the works from the database based on the pagination parameters
-    const works = await Work.find({}).sort({ createdAt: -1 }).skip(startIndex).limit(limit)
+    const works = await Work.find({})
+      .sort({ createdAt: -1 })
+      .skip(startIndex)
+      .limit(limit);
     // Send the works as a response along with metadata about the pagination
     res.json({
       totalWorks: totalWorks,
       totalPages,
       currentPage: page,
-      works: works
+      works: works,
     });
   } catch (err) {
     // If there's an error, log it to the console and send a 500 response
     console.log(err);
-    res.status(500).send({ error: 'Server error' });
+    res.status(500).send({ error: "Server error" });
   }
 };
 
@@ -59,32 +62,34 @@ exports.getWorkById = async (req, res) => {
   try {
     const work = await Work.findById(req.params.id);
     if (!work) {
-      return res.status(404).json({ message: 'Work not found' });
+      return res.status(404).json({ message: "Work not found" });
     }
     res.status(200).json({ work });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).json({ message: "Server error" });
   }
 };
 
 // Update a work by ID
 exports.updateWorkById = async (req, res) => {
   try {
-    if(req.body.image){
+    if (req.body.image) {
       const selected = await Work.findById(req.params.id);
-      if(selected){
-          await removeFile(selected.image);
+      if (selected) {
+        await removeFile(selected.image);
       }
     }
-    const work = await Work.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    const work = await Work.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
     if (!work) {
-      return res.status(404).json({ message: 'Work not found' });
+      return res.status(404).json({ message: "Work not found" });
     }
-    res.status(200).json({ message: 'Work updated successfully', work });
+    res.status(200).json({ message: "Work updated successfully", work });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).json({ message: "Server error" });
   }
 };
 
@@ -92,16 +97,16 @@ exports.updateWorkById = async (req, res) => {
 exports.deleteWorkById = async (req, res) => {
   try {
     const selected = await Work.findById(req.params.id);
-    if(selected){
-        await removeFile(selected.image);
-    }
+    // if(selected){
+    //     await removeFile(selected.image);
+    // }
     const work = await Work.findByIdAndDelete(req.params.id);
     if (!work) {
-      return res.status(404).json({ message: 'Work not found' });
+      return res.status(404).json({ message: "Work not found" });
     }
-    res.status(200).json({ message: 'Work deleted successfully' });
+    res.status(200).json({ message: "Work deleted successfully" });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).json({ message: "Server error" });
   }
 };
