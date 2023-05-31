@@ -1,10 +1,5 @@
-/**
- * Controller function to send a response after file upload is complete
- * @param {object} req - The Express request object
- * @param {object} res - The Express response object
- */
-
 const fs = require("fs");
+const path = require("path");
 
 const sanitizeFileName = (fileName) => {
   return fileName.replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -19,25 +14,37 @@ const uploadFileResponse = (req, res) => {
         mimetype: file.mimetype,
       };
     });
-    res.send(sanitizedFiles);
+    res.json(sanitizedFiles);
   } else {
-    res.send({ error: "File uploads failed" });
+    res.json({ error: "File uploads failed" });
   }
 };
 
 const removeAnyFile = (req, res) => {
   const filePath = req.body.filePath;
-  fs.unlink(filePath, (error) => {
+
+  // Validate the filePath to prevent Path Traversal
+  const resolvedPath = path.resolve(filePath);
+  const allowedDirectory = path.join(__dirname, "../uploads"); // Specify the allowed directory here
+  const resolvedAllowedDirectory = path.resolve(allowedDirectory);
+
+  if (!resolvedPath.startsWith(resolvedAllowedDirectory)) {
+    console.log("Invalid file path:", resolvedPath);
+    res.status(400).json({ success: false, error: "Invalid file path" });
+    return;
+  }
+
+  fs.unlink(resolvedPath, (error) => {
     if (error) {
       console.log(error);
-      res.status(500).send({ success: false, error: "File remove failed" });
+      res.status(500).json({ success: false, error: "File removal failed" });
     } else {
-      res.send({ success: true, message: "File removed Successful" });
+      res.json({ success: true, message: "File removed successfully" });
     }
   });
 };
 
-// Export the controller function
+// Export the controller functions
 module.exports = {
   uploadFileResponse,
   removeAnyFile,

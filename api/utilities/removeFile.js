@@ -17,15 +17,24 @@ const removeFile = (filePath) => {
         console.log(`File does not exist: ${resolvedPath}`);
         resolve();
       } else {
-        fs.unlink(resolvedPath, (unlinkError) => {
-          if (unlinkError) {
-            console.log(unlinkError);
-            resolve();
-          } else {
-            console.log(`Successfully removed file: ${resolvedPath}`);
-            resolve();
-          }
-        });
+        const basePath = path.join(__dirname, "../uploads"); // Specify the base path of the allowed directory
+        const resolvedBasePath = path.resolve(basePath);
+
+        // Check if the resolved file path is equal to or within the resolved base path
+        if (resolvedPath.startsWith(resolvedBasePath)) {
+          fs.unlink(resolvedPath, (unlinkError) => {
+            if (unlinkError) {
+              console.log(unlinkError);
+              resolve();
+            } else {
+              console.log(`Successfully removed file: ${resolvedPath}`);
+              resolve();
+            }
+          });
+        } else {
+          console.log("Invalid file path:", resolvedPath);
+          resolve();
+        }
       }
     });
   });

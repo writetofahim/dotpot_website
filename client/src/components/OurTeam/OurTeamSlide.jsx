@@ -99,7 +99,7 @@ export const SingleSlide = (props) => {
         <h3 className="mt-2 text-xl text-center font-bold text-gray-400">
           {props.name}
         </h3>
-        <p className="font-bold text-center text-secondary-400">
+        <p className="font-bold text-center text-secondary-400 h-10">
           {props.title}
         </p>
       </div>

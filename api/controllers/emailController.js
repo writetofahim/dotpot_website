@@ -53,6 +53,30 @@ exports.orderEmail = async (req, res) => {
       return text.replace(/[&<>"']/g, (m) => map[m]);
     };
 
+    const escapeHtmlObject = (object) => {
+      const escapedObject = {};
+      for (const key in object) {
+        if (object.hasOwnProperty(key)) {
+          escapedObject[key] = escapeHtml(object[key]);
+        }
+      }
+      return escapedObject;
+    };
+
+    const escapeHtmlArray = (array) => {
+      return array.map((item) => escapeHtmlObject(item));
+    };
+
+    const escapedName = escapeHtml(name);
+    const escapedEmail = escapeHtml(email);
+    const escapedPhone = escapeHtml(phone);
+    const escapedCountry = escapeHtml(country);
+    const escapedBusiness = escapeHtml(business);
+    const escapedProjectDescription = escapeHtml(project_description);
+    const escapedDemoLinks = escapeHtml(demo_links);
+    const escapedOrder = escapeHtmlArray(order);
+    const escapedCompanyName = escapeHtml(company_name);
+
     const orderTable = `
     <table style="border-collapse: collapse; width: 100%; border: 1px solid black; padding: 10px;">
       <thead>
@@ -63,7 +87,7 @@ exports.orderEmail = async (req, res) => {
         </tr>
       </thead>
       <tbody>
-        ${order
+        ${escapedOrder
           .map(
             (item) => `
             <tr>
@@ -115,14 +139,14 @@ exports.orderEmail = async (req, res) => {
       to: process.env.EMAIL,
       subject: "New order received",
       html: `
-        <p>Name: ${escapeHtml(name)}</p>
-        <p>Email: ${escapeHtml(email)}</p>
-        <p>Phone: ${escapeHtml(phone)}</p>
-        <p>Country: ${escapeHtml(country)}</p>
-        <p>Business: ${escapeHtml(business)}</p>
-        <p>Company name: ${escapeHtml(company_name)}</p>
-        <p>Project Description: ${escapeHtml(project_description)}</p>
-        <p>Demo Links: ${escapeHtml(demo_links)}</p>
+        <p>Name: ${escapedName}</p>
+        <p>Email: ${escapedEmail}</p>
+        <p>Phone: ${escapedPhone}</p>
+        <p>Country: ${escapedCountry}</p>
+        <p>Business: ${escapedBusiness}</p>
+        <p>Company name: ${escapedCompanyName}</p>
+        <p>Project Description: ${escapedProjectDescription}</p>
+        <p>Demo Links: ${escapedDemoLinks}</p>
         <h3>Order:</h3>
         ${orderTable}
       `,
