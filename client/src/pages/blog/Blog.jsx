@@ -21,6 +21,7 @@ import ReactHtmlParser from "react-html-parser";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 import postLogger from "../../utils/postLogger";
 
+import { Skeleton } from "@mui/material";
 import { renderToString } from "react-dom/server";
 import { Helmet } from "react-helmet";
 import stripTags from "striptags";
@@ -182,12 +183,17 @@ const Blog = () => {
 
   const [showToast, setShowToast] = useState(false);
 
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
+
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const tags = queryParams.get("tags");
 
   const fetchData = async (page, tags = "") => {
     try {
+      setIsLoading(true);
+      setError("");
       let url = `/blog?page=${page}`;
       if (tags) {
         url += `&tags=${tags}`;
@@ -200,7 +206,10 @@ const Blog = () => {
       setTotalPages(response.data.totalPages);
     } catch (error) {
       console.error(error);
+      setError(error?.message);
       postLogger({ level: "error", message: error });
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -343,6 +352,50 @@ const Blog = () => {
                             ))
                         }
                     </div> */}
+
+          {isLoading && (
+            <>
+              <div className="container mx-auto p-5 md:flex w-full gap-5">
+                <div className="md:w-1/2 w-full">
+                  <Skeleton
+                    variant="rectangular"
+                    width="100%"
+                    height={318}
+                    className="rounded"
+                  />
+                </div>
+                <div className="md:w-1/2 w-full">
+                  <Skeleton width="100%" variant="text" height={40} />
+                  <Skeleton width={150} />
+                  <Skeleton width="100%" />
+                  <Skeleton width="100%" />
+                  <Skeleton width="100%" />
+                  <Skeleton width="100%" />
+                  <Skeleton width="100%" />
+                  <Skeleton width="100%" />
+                  <Skeleton width={100} />
+                </div>
+              </div>
+              <div className="md:container w-full grid md:grid-cols-3 grid-cols-1 gap-10 grow p-5">
+                {[...new Array(6)].map((_, i) => (
+                  <div key={i} className="grow">
+                    <Skeleton
+                      className="rounded"
+                      variant="rectangular"
+                      width="100%"
+                      height={218}
+                    />
+                    <Skeleton width="100%" />
+                    <Skeleton width="100%" />
+                    <Skeleton width="100%" />
+                    <Skeleton width="100%" />
+                    <Skeleton width={100} />
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
+          {error && <p className="text-red-500">{error}</p>}
           <div className="container lg:grid lg:grid-cols-2 grid-cols-1 gap-5 lg:space-y-0 space-y-5 md:gap-10 justify-center lg:p-5 p-3 flex-wrap text-textColor-500">
             {data && <FirstBlog {...data[0]} />}
             {data &&
