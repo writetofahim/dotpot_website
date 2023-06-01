@@ -64,48 +64,62 @@ exports.orderEmail = async (req, res) => {
           </tr>
         </thead>
         <tbody>
-          ${order
-            .map(
-              (item) => `
-              <tr>
-                <td style="border: 1px solid black; padding: 10px; display: flex; align-items: center;">
-                  <img src="${he.encode(item.icon)}" alt="${he.encode(
-                item.title
-              )}" width="25" height="25" style="margin-right: 10px;">
-                  ${he.encode(item.title)}
-                </td>
-                <td style="border: 1px solid black; padding: 10px;">
-                  ${item.technologies
-                    .map(
-                      (technology) => `
-                      <div style="display: flex; align-items: center; margin-bottom:5px;">
-                        <img src="${he.encode(
-                          technology.icon
-                        )}" alt="${he.encode(
-                        technology.title
-                      )}" width="25" height="25" style="margin-right: 10px;">
-                        ${he.encode(technology.title)}
-                      </div>`
-                    )
-                    .join("")}
-                </td>
-                <td style="border: 1px solid black; padding: 10px;">
-                  ${item.addons
-                    .map(
-                      (addon) => `
-                      <div style="display: flex; align-items: center; margin-bottom:5px;">
-                        <img src="${he.encode(addon.icon)}" alt="${he.encode(
-                        addon.title
-                      )}" width="25" height="25" style="margin-right: 10px;">
-                        ${he.encode(addon.title)}
-                      </div>`
-                    )
-                    .join("")}
-                </td>
-              </tr>
-            `
-            )
-            .join("")}
+        ${
+          Array.isArray(order)
+            ? order
+                .map(
+                  (item) => `
+                <tr>
+                  <td style="border: 1px solid black; padding: 10px; display: flex; align-items: center;">
+                    <img src="${he.encode(item.icon || "")}" alt="${he.encode(
+                    item.title || ""
+                  )}" width="25" height="25" style="margin-right: 10px;">
+                    ${he.encode(item.title || "")}
+                  </td>
+                  <td style="border: 1px solid black; padding: 10px;">
+                    ${
+                      Array.isArray(item.technologies)
+                        ? item.technologies
+                            .map(
+                              (technology) => `
+                            <div style="display: flex; align-items: center; margin-bottom:5px;">
+                              <img src="${he.encode(
+                                technology.icon || ""
+                              )}" alt="${he.encode(
+                                technology.title || ""
+                              )}" width="25" height="25" style="margin-right: 10px;">
+                              ${he.encode(technology.title || "")}
+                            </div>`
+                            )
+                            .join("")
+                        : ""
+                    }
+                  </td>
+                  <td style="border: 1px solid black; padding: 10px;">
+                    ${
+                      Array.isArray(item.addons)
+                        ? item.addons
+                            .map(
+                              (addon) => `
+                            <div style="display: flex; align-items: center; margin-bottom:5px;">
+                              <img src="${he.encode(
+                                addon.icon || ""
+                              )}" alt="${he.encode(
+                                addon.title || ""
+                              )}" width="25" height="25" style="margin-right: 10px;">
+                              ${he.encode(addon.title || "")}
+                            </div>`
+                            )
+                            .join("")
+                        : ""
+                    }
+                  </td>
+                </tr>
+              `
+                )
+                .join("")
+            : ""
+        }
         </tbody>
       </table>
     `;
