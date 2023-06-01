@@ -2,8 +2,8 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
-const https = require("https");
-const { Server } = require("socket.io");
+// const https = require("https");
+// const { Server } = require("socket.io");
 const cors = require("cors");
 const morgan = require("morgan");
 const winston = require("./config/winston");
@@ -113,37 +113,37 @@ app.use("/uploads", express.static(__dirname + "/uploads"));
 app.use("/uploads/blogs", express.static(__dirname + "/uploads/blogs"));
 app.use("/uploads/response", express.static(__dirname + "/uploads/response"));
 
-const server = https.createServer(app);
-const io = new Server(server, {
-  cors: {
-    origin: [
-      "http://localhost:5173",
-      "http://localhost:5174",
-      "http://dotpotit.com",
-      "http://dotpotit.com/admin",
-      "https://dotpotit.com",
-      "https://dotpotit.com/admin",
-      "https://dotpot-admin.vercel.app",
-      "https://admin-red-xi.vercel.app/",
-    ],
-    methods: ["GET", "POST"],
-  },
-});
-// const io = require("socket.io")(server);
+// const server = https.createServer(app);
+// const io = new Server(server, {
+//   cors: {
+//     origin: [
+//       "http://localhost:5173",
+//       "http://localhost:5174",
+//       "http://dotpotit.com",
+//       "http://dotpotit.com/admin",
+//       "https://dotpotit.com",
+//       "https://dotpotit.com/admin",
+//       "https://dotpot-admin.vercel.app",
+//       "https://admin-red-xi.vercel.app/",
+//     ],
+//     methods: ["GET", "POST"],
+//   },
+// });
+// // const io = require("socket.io")(server);
 
-global.io = io;
+// global.io = io;
 
-io.on("connection", (socket) => {
-  console.log(`User Connected for chat: ${socket.id}`);
+// io.on("connection", (socket) => {
+//   console.log(`User Connected for chat: ${socket.id}`);
 
-  socket.on("join_room", (data) => {
-    socket.join(data);
-  });
+//   socket.on("join_room", (data) => {
+//     socket.join(data);
+//   });
 
-  socket.on("send_message", (data) => {
-    socket.to(data.room).emit("receive_message", data);
-  });
-});
+//   socket.on("send_message", (data) => {
+//     socket.to(data.room).emit("receive_message", data);
+//   });
+// });
 
 // Enable cookie parsing
 app.use(cookieParser());
@@ -201,7 +201,7 @@ app.use("/api-docs", swaggerServe, swaggerSetup);
 
 const port = 8800;
 
-server.listen(port, () => {
+app.listen(port, () => {
   console.log("Backend server is running! on port ", port);
   generateSitemap();
 });

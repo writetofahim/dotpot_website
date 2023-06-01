@@ -15,7 +15,6 @@ import Login from "./pages/Login";
 import Orders from "./pages/Orders";
 import AddBlogs from "./pages/blogs/AddBlogs";
 import AllBlogs from "./pages/blogs/AllBlogs";
-import Chat from "./pages/chat/Chat";
 import AddResponse from "./pages/client-response/AddResponse";
 import AllResponse from "./pages/client-response/AllResponse";
 import AddClientsReview from "./pages/clientsReview/AddClientsReview";
@@ -97,7 +96,7 @@ function App() {
           }
         >
           <Route path="/" element={<Dashboard />} />
-          <Route path="/chat" element={<Chat />} />
+          {/* <Route path="/chat" element={<Chat />} /> */}
           <Route path="/theme" element={<Theme />} />
           <Route path="/job-applications" element={<JobApplications />} />
           <Route path="/orders" element={<Orders />} />

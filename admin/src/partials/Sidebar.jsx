@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-import { AiFillWechat, AiOutlineInfoCircle } from "react-icons/ai";
+import { AiOutlineInfoCircle } from "react-icons/ai";
 import { BiCalendarEdit } from "react-icons/bi";
 import { BsMicrosoftTeams, BsPersonWorkspace } from "react-icons/bs";
 import { FaIndustry, FaRegHandshake } from "react-icons/fa";
@@ -15,13 +15,11 @@ import { SiHandshake } from "react-icons/si";
 import { TfiDashboard, TfiLayoutSlider } from "react-icons/tfi";
 import { TiDocumentText } from "react-icons/ti";
 import logo from "../images/logo1.png";
-import axios from "../utils/axiosInstance";
 
 import { NavLink, useLocation } from "react-router-dom";
 
 import { RiPaintFill } from "react-icons/ri";
 import { AuthContext } from "../contexts/AuthContext";
-import socket from "../socket";
 import SidebarLinkGroup from "./SidebarLinkGroup";
 
 function Sidebar({ sidebarOpen, setSidebarOpen }) {
@@ -31,43 +29,43 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
 
   const trigger = useRef(null);
   const sidebar = useRef(null);
-  const [unseenMessages, setUnseenMessages] = useState(0);
+  // const [unseenMessages, setUnseenMessages] = useState(0);
 
   const storedSidebarExpanded = localStorage.getItem("sidebar-expanded");
   const [sidebarExpanded, setSidebarExpanded] = useState(
     storedSidebarExpanded === null ? false : storedSidebarExpanded === "true"
   );
 
-  const getUnseenCount = () => {
-    const accessToken = JSON.parse(localStorage.getItem("accessToken"));
-    if (accessToken) {
-      axios
-        .get("/chats/totalAdminUnseen", {
-          headers: { Authorization: "Bearer " + accessToken },
-        })
-        .then((response) => {
-          setUnseenMessages(response.data?.count);
-        })
-        .catch((error) => {
-          if (error.response.status === 401) {
-            logout(); // call the logout function from your context
-          }
-        });
-    }
-  };
+  // const getUnseenCount = () => {
+  //   const accessToken = JSON.parse(localStorage.getItem("accessToken"));
+  //   if (accessToken) {
+  //     axios
+  //       .get("/chats/totalAdminUnseen", {
+  //         headers: { Authorization: "Bearer " + accessToken },
+  //       })
+  //       .then((response) => {
+  //         setUnseenMessages(response.data?.count);
+  //       })
+  //       .catch((error) => {
+  //         if (error.response.status === 401) {
+  //           logout(); // call the logout function from your context
+  //         }
+  //       });
+  //   }
+  // };
 
-  useEffect(() => {
-    socket.on("newMessage", (data) => {
-      getUnseenCount();
-    });
-    socket.on("adminSeen", (data) => {
-      getUnseenCount();
-    });
-  }, []);
+  // useEffect(() => {
+  //   socket.on("newMessage", (data) => {
+  //     getUnseenCount();
+  //   });
+  //   socket.on("adminSeen", (data) => {
+  //     getUnseenCount();
+  //   });
+  // }, []);
 
-  useEffect(() => {
-    getUnseenCount();
-  }, []);
+  // useEffect(() => {
+  //   getUnseenCount();
+  // }, []);
   // close on click outside
   useEffect(() => {
     const clickHandler = ({ target }) => {
@@ -200,7 +198,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
               </SidebarLinkGroup>
 
               {/* Chat */}
-              <li
+              {/* <li
                 className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
                   pathname.includes("chat") && "bg-slate-900"
                 }`}
@@ -221,7 +219,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                         Chat
                       </span>
                     </div>
-                    {/* Badge */}
+                    
                     <div className="flex flex-shrink-0 ml-2">
                       <span className="inline-flex items-center justify-center h-5 text-xs font-medium text-white bg-indigo-500 px-2 rounded">
                         {unseenMessages}
@@ -229,7 +227,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                     </div>
                   </div>
                 </NavLink>
-              </li>
+              </li> */}
               {/* Chat */}
               <li
                 className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${

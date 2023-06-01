@@ -31,86 +31,82 @@ export default Dashboard;
 const data = [
   {
     title: "Dashboard",
-    link: "/admin/",
-  },
-  {
-    title: "Chat",
-    link: "/admin/chat",
+    link: "/",
   },
   {
     title: "Job Applications",
-    link: "/admin/job-applications",
+    link: "/job-applications",
   },
   {
     title: "Orders",
-    link: "/admin/order",
+    link: "/order",
   },
   {
     title: "Clients Review",
-    link: "/admin/client-response/all-responses",
+    link: "/client-response/all-responses",
   },
   {
     title: "Users",
-    link: "/admin/users/all-users",
+    link: "/users/all-users",
   },
   {
     title: "Blogs",
-    link: "/admin/blogs/all-blogs",
+    link: "/blogs/all-blogs",
   },
   {
     title: "Works",
-    link: "/admin/works/all-works",
+    link: "/works/all-works",
   },
   {
     title: "Jobs",
-    link: "/admin/jobs/all-jobs",
+    link: "/jobs/all-jobs",
   },
   {
     title: "All Services",
-    link: "/admin/services/all-services",
+    link: "/services/all-services",
   },
   {
     title: "Add Services",
-    link: "/admin/services/add-services",
+    link: "/services/add-services",
   },
   {
     title: "All Teams",
-    link: "/admin/team/all-team",
+    link: "/team/all-team",
   },
   {
     title: "Add Team",
-    link: "/admin/team/add-team",
+    link: "/team/add-team",
   },
   {
     title: "Edit Hero Section",
-    link: "/admin/hero",
+    link: "/hero",
   },
   {
     title: "Edit Company Infos",
-    link: "/admin/company-info",
+    link: "/company-info",
   },
   {
     title: "Edit Clients Review",
-    link: "/admin/company-info",
+    link: "/company-info",
   },
   {
     title: "Edit Contact Center Services",
-    link: "/admin/contact-center-service/all-contact-center-service",
+    link: "/contact-center-service/all-contact-center-service",
   },
   {
     title: "Edit Key Features",
-    link: "/admin/key-features/all-key-features",
+    link: "/key-features/all-key-features",
   },
   {
     title: "Edit Our Partners",
-    link: "/admin/our-partners/all-our-partners",
+    link: "/our-partners/all-our-partners",
   },
   {
     title: "Edit Partnership Model",
-    link: "/admin/partnership-model/all-partnership-model",
+    link: "/partnership-model/all-partnership-model",
   },
   {
     title: "Edit Industry We Serve",
-    link: "/admin/industry-we-serve/add-industry-we-serve",
+    link: "/industry-we-serve/add-industry-we-serve",
   },
 ];
