@@ -28,7 +28,7 @@ export const Card = (props) => {
       <div className="flex flex-col gap-5 items-center justify-center">
         <img
           src={props.icon}
-          alt="icon"
+          alt="who we work with"
           className="w-[50px] md:w-[80px] md:h-[80px] h-[50px] object-contain"
         />
         <h3 className="text-md md:text-xl font-bold text-center text-gray-400">

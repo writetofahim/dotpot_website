@@ -10,6 +10,7 @@ The desc property of the blog object is parsed using parse to render any HTML ta
 This component also renders Navbar, RecentBlogs, and Footer.
  */
 
+import { Skeleton } from "@mui/material";
 import moment from "moment";
 import React, { useEffect, useState } from "react";
 import { renderToString } from "react-dom/server";
@@ -43,6 +44,9 @@ const SingleBlog = () => {
   const [showToast, setShowToast] = useState(false);
   const [comments, setComments] = useState([]);
 
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState("");
+
   const [isLoginSuccess, setIsLoginSuccess] = useState(false);
 
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
@@ -55,6 +59,7 @@ const SingleBlog = () => {
 
   // Data Fetching
   useEffect(() => {
+    setIsLoading(true);
     axios
       .get(`/blog/${slug}`)
       .then((response) => {
@@ -65,6 +70,10 @@ const SingleBlog = () => {
       .catch((error) => {
         console.error(error);
         postLogger({ level: "error", message: error });
+        setError(error?.message);
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   }, [slug]);
 
@@ -206,6 +215,36 @@ const SingleBlog = () => {
           <div className="md:-ml-4 md:pl-0 pl-2">
             <NavigatorComponent navigationData={navigationData} />
           </div>
+          {isLoading && (
+            <div className="grow p-5">
+              <Skeleton width={100} />
+              <Skeleton width="100%" height={50} />
+              <Skeleton width="100%" height={20} />
+              <Skeleton width="100%" height={20} />
+              <Skeleton variant="rectangular" width="100%" height={418} />
+              <div className="md:flex">
+                <div className="md:w-[15%] w-full "></div>
+                <div className="md:w-[55%] w-full mx-auto mt-5">
+                  {[...new Array(5)].map((_, i) => (
+                    <div key={i}>
+                      <Skeleton width="100%" />
+                      <Skeleton width="100%" />
+                      <Skeleton width="100%" />
+                      <Skeleton width="100%" height={318} />
+                      <Skeleton width="100%" />
+                      <div className="my-3"></div>
+                      <Skeleton width="100%" />
+                      <Skeleton width="100%" />
+                      <Skeleton width="100%" />
+                    </div>
+                  ))}
+                </div>
+                <div className="md:w-[30%] w-full "></div>
+              </div>
+              <Skeleton width={100} />
+            </div>
+          )}
+          {error && <p className="text-red-500">{error}</p>}
           {data && (
             <>
               <div className="full flex p-[20px]">

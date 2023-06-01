@@ -69,10 +69,7 @@ const Home = () => {
         <title>
           Dotpot iT | It Company with Web, AI, Game, App development
         </title>
-        <meta
-          name="description"
-          content="Dotpot iT provides web development, AI, game, app, and blockchain development, along with comprehensive IT support services. Contact us now."
-        />
+        
         <link rel="canonical" href="https://dotpotit.com/" />
         <meta
           property="og:title"
