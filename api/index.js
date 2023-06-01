@@ -9,6 +9,8 @@ const morgan = require("morgan");
 const winston = require("./config/winston");
 // const csrf = require("csurf"); // Import csurf middleware
 const helmet = require("helmet"); // Import helmet middleware
+const cookieParser = require("cookie-parser");
+const csurf = require("csurf");
 
 const authRouter = require("./routes/authRoutes");
 const blogRoutes = require("./routes/blogRoutes");
@@ -141,6 +143,18 @@ io.on("connection", (socket) => {
   socket.on("send_message", (data) => {
     socket.to(data.room).emit("receive_message", data);
   });
+});
+
+// Enable cookie parsing
+app.use(cookieParser());
+
+// Set up CSRF protection middleware
+app.use(csurf({ cookie: true }));
+
+// Make the CSRF token available to your views
+app.use(function (req, res, next) {
+  res.locals.csrfToken = req.csrfToken();
+  next();
 });
 
 app.use("/api/auth", authRouter);
