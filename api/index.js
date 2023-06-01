@@ -149,12 +149,13 @@ app.use("/uploads/response", express.static(__dirname + "/uploads/response"));
 app.use(cookieParser());
 
 // Set up CSRF protection middleware
-app.use(csurf({ cookie: true }));
-
-// Make the CSRF token available to your views
 app.use(function (req, res, next) {
-  res.locals.csrfToken = req.csrfToken();
-  next();
+  // Exclude CSRF protection for login and register routes
+  if (req.path === "/api/auth/login" || req.path === "/api/auth/register") {
+    return next();
+  }
+
+  csurf({ cookie: true })(req, res, next);
 });
 
 app.use("/api/auth", authRouter);
