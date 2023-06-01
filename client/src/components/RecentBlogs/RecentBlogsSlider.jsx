@@ -12,8 +12,10 @@ Finally, the RecentWorksSlider function maps over the blogData array to create a
  */
 
 import { Stack } from "@mui/system";
+import moment from "moment";
 import React, { useEffect, useState } from "react";
 import { BsArrowRight } from "react-icons/bs";
+import { FcCalendar } from "react-icons/fc";
 import { GrNext, GrPrevious } from "react-icons/gr";
 import { Link, useNavigate } from "react-router-dom";
 import Slider from "react-slick";
@@ -82,6 +84,23 @@ var settings = {
 
 export const SingleSlide = (props) => {
   const navigate = useNavigate();
+
+  const summary = props.summary;
+  const maxLength = 120;
+
+  let slicedSummary = summary.slice(0, maxLength);
+  const lastSpaceIndex = slicedSummary.lastIndexOf(" ");
+
+  // Check if the last space is found within the sliced summary
+  if (lastSpaceIndex !== -1 && lastSpaceIndex < summary.length - 1) {
+    slicedSummary = slicedSummary.slice(0, lastSpaceIndex);
+  }
+
+  // Add ellipsis if the summary was sliced
+  if (summary.length > slicedSummary.length) {
+    slicedSummary += "...";
+  }
+
   return (
     <div className="mx-5 mb-20 rounded-lg shadow-xl">
       <Link to={`/blog/${props.slug}`}>
@@ -91,7 +110,7 @@ export const SingleSlide = (props) => {
           className="rounded-tl-xl rounded-tr-xl w-full aspect-video object-cover bg-secondary-100"
         />
       </Link>
-      <div className=" bg-background-500 rounded-bl-xl rounded-br-xl shadow p-5 flex flex-col">
+      <div className="bg-background-500 rounded-bl-xl rounded-br-xl shadow p-5 flex flex-col">
         <Stack direction="row" className="flex flex-wrap gap-1">
           {props.tags.slice(0, 2).map((tag, index) => (
             // <Chip
@@ -111,15 +130,22 @@ export const SingleSlide = (props) => {
             </div>
           ))}
         </Stack>
-        <p className="mt-2 text-white">{props.date}</p>
+
+        <p className="text-textColor-500 flex gap-2 items-center mt-2">
+          <FcCalendar className="text-xl" />
+          {moment(new Date(props?.createdAt)).format("LL")}
+        </p>
+
         <Link to={`/blog/${props.slug}`}>
-          <h2 className="text-xl font-bold text-gray-400 my-2 h-[80px] cursor-pointer">
-            {props.title.split(" ").slice(0, 5).join(" ")}...
+          <h2 className="md:text-lg text-base font-bold text-gray-400 mt-4 md:h-[80px] h-[100px] cursor-pointer hover:underline">
+            {props.title.split(" ").slice(0, 10).join(" ")}
+            {/* {props.title} */}
           </h2>
         </Link>
+        <p className="mb-4">{slicedSummary}</p>
         <Link
           to={`/blog/${props.slug}`}
-          className="text-lg font-bold hover:text-secondary-500 text-gray-400 flex items-center gap-2"
+          className="md:text-lg text-base font-bold hover:text-secondary-500 text-gray-400 flex items-center gap-2"
         >
           Read More <BsArrowRight />
         </Link>
