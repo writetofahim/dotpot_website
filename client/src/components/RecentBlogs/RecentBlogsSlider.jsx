@@ -14,7 +14,6 @@ Finally, the RecentWorksSlider function maps over the blogData array to create a
 import { Stack } from "@mui/system";
 import moment from "moment";
 import React, { useEffect, useState } from "react";
-import { BsArrowRight } from "react-icons/bs";
 import { FcCalendar } from "react-icons/fc";
 import { GrNext, GrPrevious } from "react-icons/gr";
 import { Link, useNavigate } from "react-router-dom";
@@ -98,7 +97,7 @@ export const SingleSlide = (props) => {
 
   // Add ellipsis if the summary was sliced
   if (summary.length > slicedSummary.length) {
-    slicedSummary += "...";
+    slicedSummary;
   }
 
   return (
@@ -143,12 +142,12 @@ export const SingleSlide = (props) => {
           </h2>
         </Link>
         <p className="mb-4">{slicedSummary}</p>
-        <Link
+        {/* <Link
           to={`/blog/${props.slug}`}
           className="md:text-lg text-base font-bold hover:text-secondary-500 text-gray-400 flex items-center gap-2"
         >
           Read More <BsArrowRight />
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
